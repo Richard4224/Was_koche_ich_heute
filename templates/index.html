@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+    <div></div>
+    <H3>Es ist {{ moon_phase }} an einem {{ season }} Tag.</H3>
+    <H3>{{ weather }}</H3>
+    <H5>Gericht des Tages: {{ dish_of_the_day }}</H5>
+    <div></div>
+    <p>Suche nach einem beliebigen Rezept:</p>
+
+    <!-- adapted from Bootstrap examples -->
+    <form action="/" method="get" class="d-flex gap-2" role="search">
+        <input name="q" type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+    <button class="btn btn-dark rounded-pill px-3" type="submit">Search</button>
+    </form>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Zubereitungszeit</th>
+            <th>Zutaten</th>
+        </tr>
+    {% for row in recipes %}
+
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.preparation_time }} Minutes</td>
+            <td>{% for ingredient in row.ingredients %}{{ ingredient }}{% if not loop.last%}, {% endif %}{% endfor %}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+flask_session/
+
+# Built from schema.sql + seed.sql
+*.db
+
+# Editor
+.vscode/
+.DS_Store
