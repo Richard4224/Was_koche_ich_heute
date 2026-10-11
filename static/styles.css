@@ -815,6 +815,625 @@ a {
 }
 
 
+/* ---------- Start page: the journey from space down to the hut ---------- */
+
+body.journey {
+    background: var(--night-0);
+}
+
+/* The header floats over the starry sky */
+.journey .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: transparent;
+    backdrop-filter: none;
+    border-image: none;
+    border-bottom: none;
+}
+
+.journey-main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 1. Space */
+.space {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 92vh;
+    min-height: 92svh;
+    padding: 6rem 0 5rem;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(ellipse 50% 35% at 50% 38%, rgba(196, 181, 253, 0.1), transparent 70%),
+        radial-gradient(ellipse 45% 30% at 15% 25%, rgba(139, 92, 246, 0.16), transparent 70%),
+        radial-gradient(ellipse 40% 30% at 88% 60%, rgba(56, 120, 190, 0.14), transparent 70%),
+        linear-gradient(180deg, #020208 0%, #05041a 60%, #0b0a26 100%);
+}
+
+.space-stars {
+    position: absolute;
+    inset: -20% 0 0 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 23px 41px, #fff, transparent),
+        radial-gradient(1px 1px at 97px 13px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 151px 88px, #e9e0ff, transparent),
+        radial-gradient(1px 1px at 211px 27px, #fff, transparent),
+        radial-gradient(2px 2px at 263px 132px, #fff8e0, transparent),
+        radial-gradient(1px 1px at 318px 61px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 367px 171px, #d8f4ff, transparent),
+        radial-gradient(1px 1px at 42px 203px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 126px 251px, #fff, transparent),
+        radial-gradient(1px 1px at 189px 312px, #e9e0ff, transparent),
+        radial-gradient(2px 2px at 241px 229px, #fff, transparent),
+        radial-gradient(1px 1px at 302px 287px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 376px 342px, #fff, transparent),
+        radial-gradient(1px 1px at 67px 371px, #d8f4ff, transparent),
+        radial-gradient(1px 1px at 330px 380px, #fff, transparent),
+        radial-gradient(1px 1px at 170px 160px, #fff, transparent);
+    background-size: 300px 300px;
+    animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+.space-stars-small {
+    background-size: 190px 190px;
+    background-position: 90px 50px;
+    opacity: 0.6;
+    animation-duration: 9s;
+    animation-delay: -3s;
+}
+
+/* Now and then a shooting star crosses the sky */
+.shooting-star {
+    position: absolute;
+    top: 18%;
+    left: 70%;
+    width: 140px;
+    height: 1.5px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), transparent);
+    border-radius: 999px;
+    opacity: 0;
+    transform: rotate(-25deg);
+    animation: shooting-star 11s ease-in infinite;
+    animation-delay: 3s;
+}
+
+@keyframes shooting-star {
+    0%, 90% { opacity: 0; transform: rotate(-25deg) translateX(0); }
+    92%     { opacity: 1; }
+    100%    { opacity: 0; transform: rotate(-25deg) translateX(-420px); }
+}
+
+.space-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-moon.big-moon {
+    width: clamp(120px, 22vw, 190px);
+    height: clamp(120px, 22vw, 190px);
+    margin: 0 0 2.5rem;
+}
+
+.big-moon .moon-disc {
+    box-shadow:
+        0 0 50px rgba(255, 248, 220, 0.5),
+        0 0 140px rgba(196, 181, 253, 0.4),
+        0 0 260px rgba(103, 232, 249, 0.15);
+}
+
+/* A new moon is a dark disc, faintly lit at the rim */
+.big-moon.phase-0 .moon-disc {
+    box-shadow:
+        inset 0 0 0 1px rgba(196, 181, 253, 0.35),
+        0 0 40px rgba(196, 181, 253, 0.25),
+        0 0 120px rgba(103, 232, 249, 0.12);
+}
+
+.space .omen {
+    max-width: 18em;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+    text-shadow: 0 0 30px rgba(167, 139, 250, 0.35);
+}
+
+.space .weather {
+    font-size: 1.1rem;
+}
+
+.descend-link {
+    position: absolute;
+    bottom: 1.75rem;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    translate: -50% 0;  /* separate from transform, which the parallax script sets */
+}
+
+.descend-link svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: bob 2.4s ease-in-out infinite;
+}
+
+@keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/* 2. The descent: a clear, starry night sky getting lighter towards the horizon */
+.descent {
+    position: relative;
+    height: 30vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0b0a26 0%, #17134a 55%, #261c5c 100%);
+}
+
+/* The same stars as in space, so the sky continues seamlessly */
+.sky-stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 23px 41px, #fff, transparent),
+        radial-gradient(1px 1px at 97px 13px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 151px 88px, #e9e0ff, transparent),
+        radial-gradient(1px 1px at 211px 27px, #fff, transparent),
+        radial-gradient(2px 2px at 263px 132px, #fff8e0, transparent),
+        radial-gradient(1px 1px at 318px 61px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 367px 171px, #d8f4ff, transparent),
+        radial-gradient(1px 1px at 42px 203px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 126px 251px, #fff, transparent),
+        radial-gradient(1px 1px at 189px 312px, #e9e0ff, transparent),
+        radial-gradient(2px 2px at 241px 229px, #fff, transparent),
+        radial-gradient(1px 1px at 302px 287px, #fff, transparent);
+    background-size: 330px 330px;
+    animation: twinkle 7s ease-in-out infinite alternate;
+}
+
+.sky-stars-small {
+    background-size: 210px 210px;
+    background-position: 100px 60px;
+    opacity: 0.6;
+    animation-delay: -3s;
+}
+
+/* A plane crossing the sky: steady white light, blinking red light */
+.airplane {
+    position: absolute;
+    top: 26%;
+    left: 0;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.55);
+    animation: fly 75s linear infinite;
+    animation-delay: -22s;
+}
+
+.airplane::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #ff5a6a;
+    box-shadow: 0 0 6px 2px rgba(255, 90, 106, 0.7);
+    animation: blink 1.4s steps(1) infinite;
+}
+
+@keyframes fly {
+    from { transform: translate(-5vw, 0); }
+    to { transform: translate(105vw, -5vh); }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* A small flock of birds flying past */
+.birds {
+    position: absolute;
+    top: 66%;
+    left: 0;
+    width: 150px;
+    animation: flock 42s linear infinite;
+    animation-delay: -10s;
+}
+
+.birds path {
+    fill: #060515;
+    transform-box: fill-box;
+    transform-origin: center 70%;
+    animation: flap 0.7s ease-in-out infinite alternate;
+}
+
+.birds g:nth-child(2) path { animation-delay: -0.25s; }
+.birds g:nth-child(3) path { animation-delay: -0.5s; }
+.birds g:nth-child(4) path { animation-delay: -0.15s; }
+.birds g:nth-child(5) path { animation-delay: -0.4s; }
+
+/* Wings beat between raised and lowered, never completely flat */
+@keyframes flap {
+    from { transform: scaleY(1); }
+    to { transform: scaleY(0.35) translateY(2px); }
+}
+
+@keyframes flock {
+    from { transform: translate(105vw, 0); }
+    to { transform: translate(-15vw, -6vh); }
+}
+
+/* 3. Deep in the forest: giant firs rising from the forest floor */
+.deep-forest {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: linear-gradient(180deg, #261c5c 0%, #33287a 30vh, #33287a 100%);
+}
+
+/* Stars above the horizon */
+.forest-stars {
+    bottom: auto;
+    height: 45vh;
+    opacity: 0.7;
+    -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent);
+    mask-image: linear-gradient(180deg, #000 30%, transparent);
+}
+
+/* Mountains and a town on the horizon, then the land stretching to the forest floor */
+.distant-land {
+    position: absolute;
+    top: 4vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.horizon {
+    display: block;
+    flex: none;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1600 / 300;
+    min-height: 110px;
+    background: linear-gradient(180deg, transparent 30%, rgba(110, 85, 200, 0.35) 85%);  /* glow behind the mountains */
+}
+
+.land {
+    flex: 1;
+    margin-top: -1px;
+    background: linear-gradient(180deg, #1e1750 0%, #181244 35%, #100c32 70%, #08061c 100%);
+}
+
+.mountains-far { fill: #272062; }
+.hills { fill: #1e1750; }
+/* The city: a glow rising into the sky above it, a hazier back row and a darker front row */
+.city-dome { fill: url(#city-light); }
+.city-back { fill: #1a1446; }
+.city-front { fill: #100b30; }
+.city-windows .warm { fill: #ffcf7a; }
+.city-windows .cool { fill: #e4ecff; }
+.city-windows-back { opacity: 0.65; }
+
+.warning-light {
+    fill: #ff4d5e;
+    filter: drop-shadow(0 0 2px rgba(255, 77, 94, 0.9));
+    animation: blink 1.6s steps(1) infinite;
+}
+
+.farm-light {
+    fill: #ffcf7a;
+    filter: drop-shadow(0 0 3px rgba(255, 190, 100, 0.9));
+}
+
+.flicker-slow {
+    animation: hearth 7s ease-in-out infinite;
+}
+
+/* Rows of firs standing on the forest floor, about one and a half screens tall */
+.forest-wall {
+    position: absolute;
+    inset: 0;
+    -webkit-mask-repeat: repeat-x;
+    mask-repeat: repeat-x;
+    -webkit-mask-position: left bottom;
+    mask-position: left bottom;
+}
+
+/* Far away: lighter and hazy, as if seen through mist */
+.forest-wall-far {
+    -webkit-mask-image: url("scenery/firs-far.svg");
+    mask-image: url("scenery/firs-far.svg");
+    /* 80 % of the closer firs: same spacing (the tile is wider), so they stand in the gaps */
+    -webkit-mask-size: auto min(116vh, 80%);
+    mask-size: auto min(116vh, 80%);
+    -webkit-mask-position: 300px bottom;
+    mask-position: 300px bottom;
+    background: linear-gradient(180deg, #4a4294 0%, #2f2a70 50%, #1a164c 100%);
+    opacity: 0.55;
+    filter: blur(1px);
+}
+
+/* Closer: dark silhouettes, with a thin moonlit edge drawn by the rim layer behind them */
+.forest-wall-mid,
+.forest-wall-rim {
+    -webkit-mask-image: url("scenery/firs-mid.svg");
+    mask-image: url("scenery/firs-mid.svg");
+    -webkit-mask-size: auto min(145vh, 100%);
+    mask-size: auto min(145vh, 100%);
+}
+
+.forest-wall-mid {
+    -webkit-mask-position: 300px bottom;
+    mask-position: 300px bottom;
+    background: linear-gradient(180deg, #17133f 0%, #100c30 50%, #08061c 100%);
+}
+
+.forest-wall-rim {
+    -webkit-mask-position: 297px calc(100% - 3px);
+    mask-position: 297px calc(100% - 3px);
+    background: linear-gradient(180deg, #6d5fc4 0%, #4b3f96 60%, #2a2360 100%);
+    opacity: 0.55;
+}
+
+/* Two giant firs right in front, framing the view */
+.forest-edge {
+    position: absolute;
+    bottom: 0;
+    height: min(150vh, 100%);
+    width: 30vw;
+    max-width: 460px;
+    /* contain: the whole fir fits the box, so it is never cut off at the sides */
+    -webkit-mask: url("scenery/fir-edge.svg") center bottom / contain no-repeat;
+    mask: url("scenery/fir-edge.svg") center bottom / contain no-repeat;
+    background: linear-gradient(180deg, #0d0b28 0%, #05040f 55%);
+}
+
+.forest-edge-left {
+    left: -12vw;
+}
+
+.forest-edge-right {
+    right: -14vw;
+}
+
+/* Glowing ground fog behind the closer trees, so their trunks stand out against it */
+.forest-mist-ground {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    background: linear-gradient(180deg, transparent, rgba(120, 100, 200, 0.2) 55%, rgba(120, 100, 200, 0.28) 85%, rgba(120, 100, 200, 0.12));
+}
+
+.deep-forest .firefly {
+    z-index: 1;
+}
+
+.deep-forest .firefly-2 { top: 45%; bottom: auto; left: 18%; }
+.deep-forest .firefly-3 { top: 52%; bottom: auto; left: 78%; }
+.deep-forest .firefly-5 { top: 60%; bottom: auto; left: 8%; }
+.firefly-6 { top: 70%; left: 46%; animation-duration: 16s; animation-delay: -5s; }
+.firefly-7 { top: 84%; left: 64%; animation-duration: 12s; animation-delay: -8s; }
+
+/* A stretch of nothing but trees before reaching the forest floor */
+.forest-depths {
+    height: 55vh;
+}
+
+/* 4. The forest floor: recipes on the left, the cottage on the right */
+.forest-floor {
+    position: relative;
+    z-index: 1;
+}
+
+.forest-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hut-scene {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 520;
+    min-height: 300px;
+    margin-top: -1rem;
+}
+
+@media (min-width: 992px) {
+    /* The cottage fills the bottom of the floor; the recipes stand next to it on the ground */
+    .forest-floor {
+        min-height: calc(100vw * 520 / 1200);
+    }
+
+    .hut-scene {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+    }
+
+    /* Search and recipes on the left; the dish of the day on the right, above the cottage */
+    .forest-content {
+        display: grid;
+        grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+        column-gap: 2.5rem;
+        align-items: start;
+        padding-top: 1rem;
+        padding-bottom: calc(100vw * 62 / 1200 + 1rem);  /* the height of the ground band */
+    }
+
+    .forest-content .dish-of-the-day {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        grid-template-columns: 150px 1fr;
+    }
+
+    .forest-content .search-section {
+        grid-column: 1;
+        grid-row: 1;
+        margin: 0 0 1.25rem;
+    }
+
+    .forest-content .recipes-section {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .forest-content .search-form {
+        margin: 0;
+    }
+
+    /* Three narrower columns, so the whole floor fits on one screen */
+    .forest-content .recipe-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+        gap: 0.75rem;
+    }
+
+    .forest-content .recipe-card {
+        padding: 1rem 1.1rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .forest-content .dish-of-the-day {
+        max-width: 820px;
+        margin: 0 auto;
+    }
+
+    .forest-depths {
+        height: 35vh;
+    }
+
+    /* The page is much longer on phones, so the firs grow taller to reach up past the recipes */
+    .forest-wall-far {
+        -webkit-mask-size: auto min(176vh, 80%);
+        mask-size: auto min(176vh, 80%);
+    }
+
+    .forest-wall-mid,
+    .forest-wall-rim {
+        -webkit-mask-size: auto min(220vh, 100%);
+        mask-size: auto min(220vh, 100%);
+    }
+}
+
+.gnarled-tree {
+    stroke: #0b091d;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.thatch {
+    stroke: #3e325e;
+    stroke-width: 1.3;
+    stroke-linecap: round;
+    opacity: 0.6;
+}
+
+.bushes,
+.ground {
+    fill: #06051a;
+}
+
+.mushroom-glow {
+    opacity: 0.3;
+    filter: url(#soft-glow);
+    animation: hearth 5s ease-in-out infinite;
+}
+
+/* Firelight inside the cottage flickers */
+.flicker {
+    animation: hearth 3.5s ease-in-out infinite;
+}
+
+.roof-moon {
+    filter: drop-shadow(0 0 4px rgba(227, 184, 102, 0.8));
+}
+
+@keyframes hearth {
+    0%, 100% { opacity: 0.85; }
+    30% { opacity: 1; }
+    45% { opacity: 0.7; }
+    70% { opacity: 0.95; }
+}
+
+/* Puffs of steam rise, grow and fade */
+.steam circle {
+    fill: rgba(225, 220, 245, 0.55);
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: steam 6s ease-out infinite;
+}
+
+.steam circle:nth-child(2) { animation-delay: -1.5s; }
+.steam circle:nth-child(3) { animation-delay: -3s; }
+.steam circle:nth-child(4) { animation-delay: -4.5s; }
+
+@keyframes steam {
+    0%   { opacity: 0; transform: translate(0, 0) scale(0.6); }
+    15%  { opacity: 0.8; }
+    70%  { opacity: 0.35; }
+    100% { opacity: 0; transform: translate(-16px, -110px) scale(2.4); }
+}
+
+.journey .site-footer {
+    background: #06051a;
+}
+
+@media (max-width: 575.98px) {
+    .space {
+        min-height: 85vh;
+        min-height: 85svh;
+    }
+
+    .descent {
+        height: 22vh;
+    }
+}
+
+
 /* ---------- Phones ---------- */
 
 @media (max-width: 575.98px) {

@@ -1,0 +1,449 @@
+<svg class="horizon" viewBox="0 0 1600 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+        <linearGradient id="city-light" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#ffb47a" stop-opacity="0.42"/>
+            <stop offset="0.35" stop-color="#ff9cb4" stop-opacity="0.16"/>
+            <stop offset="1" stop-color="#b48cff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="dome-sides" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#000"/>
+            <stop offset="0.15" stop-color="#262626"/>
+            <stop offset="0.3" stop-color="#8c8c8c"/>
+            <stop offset="0.45" stop-color="#fff"/>
+            <stop offset="0.55" stop-color="#fff"/>
+            <stop offset="0.7" stop-color="#8c8c8c"/>
+            <stop offset="0.85" stop-color="#262626"/>
+            <stop offset="1" stop-color="#000"/>
+        </linearGradient>
+        <mask id="dome-fade" maskUnits="userSpaceOnUse" x="780" y="60" width="740" height="200">
+            <rect x="780" y="60" width="740" height="200" fill="url(#dome-sides)"/>
+        </mask>
+    </defs>
+    <path class="mountains-far" d="M0 177.3 L62.9 171.4 L121.2 184.7 L185.4 191.6 L246 174.8 L320 178.1 L370.6 169.3 L445.5 139.9 L483.5 125.9 L565.8 123.3 L631.3 131.5 L668.1 121.3 L706.9 131 L754.5 138.4 L812.8 134.6 L889.2 145 L956 157.8 L1023.8 170.7 L1073.1 163.7 L1156.9 175.2 L1226.9 189.4 L1273.9 187.5 L1313.3 171.3 L1368.5 161.7 L1423.1 149.6 L1499.7 160.4 L1545.8 128.7 L1600 170 L1600 300 L0 300Z"/>
+    <path class="hills" d="M0 238.8 L82.6 243 L181.9 230.7 L255.4 230.5 L333.3 217.8 L441.9 219.7 L513.6 219.3 L571.9 215.1 L638.7 220.2 L724.9 229.2 L831.6 238 L932 244 L1016.3 245.3 L1089.7 238.3 L1201.6 238 L1319.3 229.8 L1401.7 218.7 L1501.9 220 L1600 235 L1600 300 L0 300Z"/>
+    <rect class="city-dome" x="780" y="60" width="740" height="200" mask="url(#dome-fade)"/>
+    <path class="city-back" d="M861.3 258 L861.3 234.9 L866.8 234.9 L866.8 258ZM867.9 258 L867.9 243.9 L873 243.9 L873 258ZM874.1 258 L874.1 228.6 L879.3 228.6 L879.3 258ZM879.9 258 L879.9 233.7 L889.1 233.7 L889.1 258ZM890.2 258 L890.2 237.3 L897 237.3 L897 258ZM897.1 258 L897.1 227.5 L906.7 227.5 L906.7 258ZM899.5 227.5 L899.5 223.5 L904.3 223.5 L904.3 227.5ZM906.8 258 L906.8 243.3 L915.3 243.3 L915.3 258ZM915.6 258 L915.6 235.4 L919.7 235.4 L919.7 258ZM920.7 258 L920.7 224.6 L926.7 224.6 L926.7 258ZM927 258 L927 224.6 L933.4 224.6 L933.4 258ZM933.8 258 L933.8 218.3 L942.4 218.3 L942.4 258ZM943.6 258 L943.6 221 L950.3 221 L950.3 258ZM951.5 258 L951.5 212.4 L956.8 212.4 L956.8 258ZM957.5 258 L957.5 236.2 L963.3 236.2 L963.3 258ZM964.3 258 L964.3 223.2 L971.7 223.2 L971.7 258ZM972.5 258 L972.5 239.4 L981.8 239.4 L981.8 258ZM981.9 258 L981.9 215.6 L991.4 215.6 L991.4 258ZM992.6 258 L992.6 235.4 L1002.2 235.4 L1002.2 258ZM995 235.4 L995 231.4 L999.8 231.4 L999.8 235.4ZM1002.8 258 L1002.8 201.6 L1006.9 201.6 L1006.9 258ZM1007.9 258 L1007.9 206 L1016.1 206 L1016.1 258ZM1017.3 258 L1017.3 214.4 L1026.4 214.4 L1026.4 258ZM1026.9 258 L1026.9 199 L1031.6 199 L1031.6 258ZM1032 258 L1032 206.2 L1037.7 206.2 L1037.7 258ZM1038.6 258 L1038.6 202.5 L1045.3 202.5 L1045.3 258ZM1046 258 L1046 204.4 L1055.4 204.4 L1055.4 258ZM1055.6 258 L1055.6 197.6 L1062.5 197.6 L1062.5 258ZM1057.3 197.6 L1057.3 193.6 L1060.7 193.6 L1060.7 197.6ZM1063 258 L1063 214.6 L1070.1 214.6 L1070.1 258ZM1071.1 258 L1071.1 213.5 L1080.6 213.5 L1080.6 258ZM1080.7 258 L1080.7 212.2 L1087.1 212.2 L1087.1 258ZM1087.9 258 L1087.9 192.9 L1093.9 192.9 L1093.9 258ZM1087.9 192.9 L1090.9 188.1 L1093.9 192.9ZM1095 258 L1095 217 L1102.3 217 L1102.3 258ZM1102.5 258 L1102.5 187.8 L1111 187.8 L1111 258ZM1111.3 258 L1111.3 222.1 L1120.3 222.1 L1120.3 258ZM1120.8 258 L1120.8 232.3 L1128.3 232.3 L1128.3 258ZM1122.6 232.3 L1122.6 228.3 L1126.4 228.3 L1126.4 232.3ZM1128.5 258 L1128.5 232 L1137.8 232 L1137.8 258ZM1130.8 232 L1130.8 228 L1135.5 228 L1135.5 232ZM1138.9 258 L1138.9 222 L1146.4 222 L1146.4 258ZM1146.8 258 L1146.8 191.5 L1154.8 191.5 L1154.8 258ZM1154.9 258 L1154.9 201.5 L1163.5 201.5 L1163.5 258ZM1157.1 201.5 L1157.1 197.5 L1161.3 197.5 L1161.3 201.5ZM1164.3 258 L1164.3 223.4 L1173.5 223.4 L1173.5 258ZM1174.2 258 L1174.2 224.6 L1181.1 224.6 L1181.1 258ZM1181.5 258 L1181.5 223.2 L1187.5 223.2 L1187.5 258ZM1181.5 223.2 L1184.5 218.4 L1187.5 223.2ZM1187.6 258 L1187.6 217.4 L1193.9 217.4 L1193.9 258ZM1194.9 258 L1194.9 197 L1200.7 197 L1200.7 258ZM1201.9 258 L1201.9 206.6 L1205.9 206.6 L1205.9 258ZM1206.7 258 L1206.7 220.1 L1215.6 220.1 L1215.6 258ZM1215.8 258 L1215.8 225.2 L1224.9 225.2 L1224.9 258ZM1225.4 258 L1225.4 195.5 L1232.6 195.5 L1232.6 258ZM1232.6 258 L1232.6 229.2 L1238.6 229.2 L1238.6 258ZM1239.7 258 L1239.7 194.5 L1244 194.5 L1244 258ZM1245.1 258 L1245.1 196 L1252 196 L1252 258ZM1252.2 258 L1252.2 216.4 L1262.1 216.4 L1262.1 258ZM1263 258 L1263 232.2 L1272.4 232.2 L1272.4 258ZM1273.3 258 L1273.3 234.5 L1282.6 234.5 L1282.6 258ZM1282.6 258 L1282.6 229.1 L1292.6 229.1 L1292.6 258ZM1293 258 L1293 226.8 L1300.7 226.8 L1300.7 258ZM1293 226.8 L1296.9 220.6 L1300.7 226.8ZM1300.7 258 L1300.7 238.3 L1308.4 238.3 L1308.4 258ZM1309.4 258 L1309.4 238.4 L1319.1 238.4 L1319.1 258ZM1320 258 L1320 237.3 L1330 237.3 L1330 258ZM1330.5 258 L1330.5 226.9 L1335.4 226.9 L1335.4 258ZM1335.7 258 L1335.7 224.1 L1343.3 224.1 L1343.3 258ZM1343.7 258 L1343.7 233.8 L1349.5 233.8 L1349.5 258ZM1350.4 258 L1350.4 229.3 L1356 229.3 L1356 258ZM1356.9 258 L1356.9 241.6 L1363.8 241.6 L1363.8 258ZM1364.8 258 L1364.8 219 L1370.1 219 L1370.1 258ZM1364.8 219 L1367.4 214.8 L1370.1 219ZM1371.2 258 L1371.2 242 L1379 242 L1379 258ZM1380.1 258 L1380.1 238.4 L1389 238.4 L1389 258ZM1382.3 238.4 L1382.3 234.4 L1386.8 234.4 L1386.8 238.4ZM1389.5 258 L1389.5 226.9 L1397.6 226.9 L1397.6 258ZM1391.5 226.9 L1391.5 222.9 L1395.6 222.9 L1395.6 226.9ZM1398.6 258 L1398.6 233.5 L1406.7 233.5 L1406.7 258ZM1407.5 258 L1407.5 223.2 L1414.8 223.2 L1414.8 258ZM1415.7 258 L1415.7 240.3 L1421.3 240.3 L1421.3 258ZM1417.1 240.3 L1417.1 236.3 L1419.9 236.3 L1419.9 240.3ZM1421.6 258 L1421.6 228.9 L1428.7 228.9 L1428.7 258ZM1423.4 228.9 L1423.4 224.9 L1426.9 224.9 L1426.9 228.9ZM1429.1 258 L1429.1 235 L1434.4 235 L1434.4 258ZM1434.8 258 L1434.8 231 L1439.6 231 L1439.6 258Z"/>
+    <g class="city-windows city-windows-back">
+    <rect class="warm flicker-slow" x="864.7" y="236.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="862.3" y="243.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="875.1" y="233.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="877.5" y="249.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="885.7" y="235.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="885.7" y="238.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="885.7" y="241.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="880.9" y="245" width="1.1" height="1.5"/>
+    <rect class="warm" x="885.7" y="248.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="891.2" y="239.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="891.2" y="248.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="900.5" y="229.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="898.1" y="241.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="900.5" y="241.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="924.1" y="235.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="921.7" y="242.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="928" y="232.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="934.8" y="220.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="934.8" y="229.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="939.6" y="229.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="934.8" y="242" width="1.1" height="1.5"/>
+    <rect class="cool" x="939.6" y="245.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="944.6" y="244.7" width="1.1" height="1.5"/>
+    <rect class="cool flicker-slow" x="952.5" y="214.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="954.9" y="217.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="960.9" y="241.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="960.9" y="244.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="965.3" y="225.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="965.3" y="237.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="965.3" y="240.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="967.7" y="240.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="967.7" y="246.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="982.9" y="223.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="985.3" y="223.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="982.9" y="226.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="982.9" y="233.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="985.3" y="236.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="987.7" y="242.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="985.3" y="248.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="996" y="243.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="998.4" y="243.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1013.7" y="208" width="1.1" height="1.5"/>
+    <rect class="warm" x="1011.3" y="211.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1011.3" y="214.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1013.7" y="226.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1008.9" y="229.7" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1008.9" y="232.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1013.7" y="232.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1008.9" y="245.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1023.1" y="225.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1020.7" y="231.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1018.3" y="235" width="1.1" height="1.5"/>
+    <rect class="warm" x="1023.1" y="235" width="1.1" height="1.5"/>
+    <rect class="cool" x="1023.1" y="247.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1027.9" y="201" width="1.1" height="1.5"/>
+    <rect class="warm" x="1027.9" y="241.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1033" y="220.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1035.4" y="220.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1033" y="226.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1035.4" y="242.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1039.6" y="204.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1042" y="216.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1039.6" y="220" width="1.1" height="1.5"/>
+    <rect class="warm" x="1039.6" y="229.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1042" y="232.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1049.4" y="212.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1051.8" y="212.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1047" y="228.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1049.4" y="228.1" width="1.1" height="1.5"/>
+    <rect class="cool flicker-slow" x="1047" y="234.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1051.8" y="237.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1047" y="240.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1051.8" y="240.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1056.6" y="199.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1056.6" y="202.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1056.6" y="218.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1056.6" y="236.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1059" y="239.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1059" y="243" width="1.1" height="1.5"/>
+    <rect class="warm" x="1064" y="235.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1066.4" y="238.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1064" y="247.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1074.5" y="218.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1076.9" y="218.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1072.1" y="224.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1074.5" y="224.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1072.1" y="227.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1076.9" y="231" width="1.1" height="1.5"/>
+    <rect class="warm" x="1072.1" y="240.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1074.5" y="243.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1074.5" y="249.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1081.7" y="217.3" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1081.7" y="223.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1084.1" y="229.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1088.9" y="194.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1088.9" y="201.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1088.9" y="204.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1091.3" y="204.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1091.3" y="213.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1091.3" y="222.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1088.9" y="247.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1091.3" y="247.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1096" y="219" width="1.1" height="1.5"/>
+    <rect class="cool" x="1098.4" y="228.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1098.4" y="231.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1098.4" y="237.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1098.4" y="250" width="1.1" height="1.5"/>
+    <rect class="warm" x="1103.5" y="189.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1108.3" y="196" width="1.1" height="1.5"/>
+    <rect class="cool" x="1105.9" y="202.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1105.9" y="208.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1103.5" y="211.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1105.9" y="211.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1108.3" y="217.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1103.5" y="223.9" width="1.1" height="1.5"/>
+    <rect class="cool flicker-slow" x="1105.9" y="242.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1117.1" y="224.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1114.7" y="239.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1117.1" y="239.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1112.3" y="242.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1117.1" y="245.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1112.3" y="248.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1131.9" y="237.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1131.9" y="243.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1142.3" y="227.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1144.7" y="230.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1139.9" y="242.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1144.7" y="242.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1144.7" y="245.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1139.9" y="248.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1150.2" y="212.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1147.8" y="215.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1147.8" y="218.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1147.8" y="224.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1147.8" y="230.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1160.7" y="203.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1158.3" y="206.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1160.7" y="215.9" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1158.3" y="219" width="1.1" height="1.5"/>
+    <rect class="warm" x="1155.9" y="225.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1158.3" y="237.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1165.3" y="225.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1167.7" y="234.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1170.1" y="234.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1165.3" y="237.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1165.3" y="240.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1175.2" y="226.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1175.2" y="232.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1177.6" y="245.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1182.5" y="246.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1184.9" y="246.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1191" y="219.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1188.6" y="244.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1195.9" y="199" width="1.1" height="1.5"/>
+    <rect class="warm" x="1198.3" y="233.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1195.9" y="242.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1198.3" y="248.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1202.9" y="211.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1202.9" y="227.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1202.9" y="248.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1210.1" y="237.6" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1210.1" y="240.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1216.8" y="227.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1221.6" y="227.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1221.6" y="230.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1221.6" y="245.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1219.2" y="248.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1226.4" y="203.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1226.4" y="222.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1226.4" y="231.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1226.4" y="240.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1228.8" y="244" width="1.1" height="1.5"/>
+    <rect class="warm" x="1226.4" y="247.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1233.6" y="234.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1236" y="237.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1240.7" y="205.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1240.7" y="215.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1240.7" y="218.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1240.7" y="221.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1246.1" y="201.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1246.1" y="219.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1248.5" y="222.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1248.5" y="229" width="1.1" height="1.5"/>
+    <rect class="warm" x="1246.1" y="235.2" width="1.1" height="1.5"/>
+    <rect class="cool flicker-slow" x="1260.4" y="224.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1258" y="227.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1255.6" y="233.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1260.4" y="240.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1258" y="243.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1253.2" y="246.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1260.4" y="249.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1268.8" y="234.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1264" y="240.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1266.4" y="249.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1274.3" y="236.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1279.1" y="236.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1274.3" y="248.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1286" y="234.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1290.8" y="240.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1283.6" y="243.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1288.4" y="249.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1294" y="228.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1294" y="244.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1304.1" y="243.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1306.5" y="243.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1301.7" y="246.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1304.1" y="246.5" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1306.5" y="246.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1325.8" y="242.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1328.2" y="242.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1321" y="245.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1331.5" y="232" width="1.1" height="1.5"/>
+    <rect class="warm" x="1333.9" y="235.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1331.5" y="241.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1341.5" y="226.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1339.1" y="229.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1341.5" y="229.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1336.7" y="238.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1341.5" y="238.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1339.1" y="241.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1344.7" y="245.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1344.7" y="248.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1351.4" y="237.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1353.8" y="237.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1353.8" y="246.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1360.3" y="243.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1365.8" y="221" width="1.1" height="1.5"/>
+    <rect class="warm" x="1368.2" y="221" width="1.1" height="1.5"/>
+    <rect class="cool" x="1365.8" y="233.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1365.8" y="236.5" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1368.2" y="245.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1365.8" y="248.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1368.2" y="248.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1377" y="244" width="1.1" height="1.5"/>
+    <rect class="warm" x="1381.1" y="240.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1390.5" y="228.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1390.5" y="232" width="1.1" height="1.5"/>
+    <rect class="warm" x="1395.3" y="232" width="1.1" height="1.5"/>
+    <rect class="warm" x="1390.5" y="247.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1404.4" y="235.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1404.4" y="244.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1410.9" y="228.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1408.5" y="231.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1413.3" y="231.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1410.9" y="234.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1408.5" y="237.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1413.3" y="240.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1419.1" y="245.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1416.7" y="248.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1425" y="243.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1430.1" y="240.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1432.5" y="240.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1430.1" y="246.3" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1435.8" y="233" width="1.1" height="1.5"/>
+    </g>
+    <path class="city-back" d="M1004 252 L1005.5 120 L1007.5 120 L1009 252Z M1001 128 A5.5 5 0 0 1 1012 128 A5.5 5 0 0 1 1001 128Z M1006 120 L1006.5 92 L1007 120ZM1186 252 L1186 214 L1222 214 L1222 252Z M1188 214 L1188 182 L1191.5 168 L1195 182 L1195 214Z M1213 214 L1213 182 L1216.5 168 L1220 182 L1220 214ZM1080 252 L1080 176 L1092 176 L1092 252Z M1268 252 L1268 186 L1278 186 L1278 252Z"/>
+    <circle class="warning-light" cx="1006.5" cy="91" r="1.3"/>
+    <circle class="warning-light" cx="1086" cy="175" r="1.3"/>
+    <circle class="warning-light" cx="1273" cy="185" r="1.3"/>
+    <path class="city-front" d="M860.5 258 L860.5 248.3 L866.1 248.3 L866.1 258ZM866.5 258 L866.5 247.9 L872 247.9 L872 258ZM872.1 258 L872.1 244.1 L877.5 244.1 L877.5 258ZM878.7 258 L878.7 239.3 L886.6 239.3 L886.6 258ZM887.7 258 L887.7 247.8 L890.9 247.8 L890.9 258ZM890.9 258 L890.9 239.1 L894.1 239.1 L894.1 258ZM895 258 L895 248.1 L898 248.1 L898 258ZM899.2 258 L899.2 243.5 L906.4 243.5 L906.4 258ZM907 258 L907 239.3 L911.7 239.3 L911.7 258ZM912.2 258 L912.2 243.7 L919.2 243.7 L919.2 258ZM920.2 258 L920.2 244.7 L924.1 244.7 L924.1 258ZM924.9 258 L924.9 239.7 L931.9 239.7 L931.9 258ZM926.7 239.7 L926.7 235.7 L930.2 235.7 L930.2 239.7ZM932.4 258 L932.4 235 L936 235 L936 258ZM936.9 258 L936.9 234 L942.3 234 L942.3 258ZM936.9 234 L939.6 229.7 L942.3 234ZM942.5 258 L942.5 235.9 L946.2 235.9 L946.2 258ZM946.4 258 L946.4 230.9 L950.7 230.9 L950.7 258ZM946.4 230.9 L948.5 227.4 L950.7 230.9ZM951.7 258 L951.7 232.8 L956.9 232.8 L956.9 258ZM957.5 258 L957.5 231.4 L963.5 231.4 L963.5 258ZM964 258 L964 246.9 L968 246.9 L968 258ZM969 258 L969 233.4 L974.8 233.4 L974.8 258ZM975.3 258 L975.3 228.1 L981.2 228.1 L981.2 258ZM981.2 258 L981.2 241.1 L986.6 241.1 L986.6 258ZM987 258 L987 244.8 L992.2 244.8 L992.2 258ZM992.8 258 L992.8 234.4 L997.9 234.4 L997.9 258ZM998.7 258 L998.7 240.9 L1002.4 240.9 L1002.4 258ZM1002.5 258 L1002.5 230.1 L1007.9 230.1 L1007.9 258ZM1003.9 230.1 L1003.9 226.1 L1006.5 226.1 L1006.5 230.1ZM1008.3 258 L1008.3 230.2 L1012.2 230.2 L1012.2 258ZM1013.1 258 L1013.1 239.9 L1016.1 239.9 L1016.1 258ZM1016.7 258 L1016.7 240.6 L1024.6 240.6 L1024.6 258ZM1025.7 258 L1025.7 222.6 L1030.1 222.6 L1030.1 258ZM1030.4 258 L1030.4 231.4 L1034.4 231.4 L1034.4 258ZM1035.1 258 L1035.1 222.6 L1039.2 222.6 L1039.2 258ZM1039.5 258 L1039.5 220.3 L1045.2 220.3 L1045.2 258ZM1045.3 258 L1045.3 230.8 L1050.4 230.8 L1050.4 258ZM1050.7 258 L1050.7 226.1 L1054.9 226.1 L1054.9 258ZM1055.9 258 L1055.9 233.5 L1062.4 233.5 L1062.4 258ZM1063 258 L1063 221.2 L1067.8 221.2 L1067.8 258ZM1068.4 258 L1068.4 239.1 L1074.6 239.1 L1074.6 258ZM1075.1 258 L1075.1 234.7 L1078.6 234.7 L1078.6 258ZM1078.7 258 L1078.7 227 L1082.7 227 L1082.7 258ZM1079.7 227 L1079.7 223 L1081.7 223 L1081.7 227ZM1082.9 258 L1082.9 224 L1086 224 L1086 258ZM1087 258 L1087 240.9 L1092.1 240.9 L1092.1 258ZM1093 258 L1093 236.4 L1096.4 236.4 L1096.4 258ZM1096.8 258 L1096.8 244.2 L1102.5 244.2 L1102.5 258ZM1103.2 258 L1103.2 244.1 L1107.3 244.1 L1107.3 258ZM1107.6 258 L1107.6 224.6 L1113 224.6 L1113 258ZM1109 224.6 L1109 220.6 L1111.7 220.6 L1111.7 224.6ZM1114.1 258 L1114.1 239.4 L1118 239.4 L1118 258ZM1118.4 258 L1118.4 235.3 L1125.3 235.3 L1125.3 258ZM1125.8 258 L1125.8 233.2 L1131.5 233.2 L1131.5 258ZM1131.9 258 L1131.9 237.2 L1136.7 237.2 L1136.7 258ZM1136.9 258 L1136.9 230.5 L1144.1 230.5 L1144.1 258ZM1144.7 258 L1144.7 217.8 L1151.7 217.8 L1151.7 258ZM1151.7 258 L1151.7 233.8 L1156.2 233.8 L1156.2 258ZM1156.7 258 L1156.7 217.7 L1164.7 217.7 L1164.7 258ZM1165.7 258 L1165.7 235 L1172.5 235 L1172.5 258ZM1165.7 235 L1169.1 229.7 L1172.5 235ZM1172.8 258 L1172.8 242.1 L1176.8 242.1 L1176.8 258ZM1177.9 258 L1177.9 241.1 L1184.2 241.1 L1184.2 258ZM1184.7 258 L1184.7 243.3 L1190.3 243.3 L1190.3 258ZM1186.1 243.3 L1186.1 239.3 L1188.9 239.3 L1188.9 243.3ZM1190.9 258 L1190.9 228.3 L1197.8 228.3 L1197.8 258ZM1198.6 258 L1198.6 224.3 L1202.3 224.3 L1202.3 258ZM1202.4 258 L1202.4 222.2 L1209.5 222.2 L1209.5 258ZM1209.8 258 L1209.8 242.1 L1217.8 242.1 L1217.8 258ZM1217.9 258 L1217.9 226 L1223 226 L1223 258ZM1224 258 L1224 240 L1227.2 240 L1227.2 258ZM1227.6 258 L1227.6 225.1 L1233.7 225.1 L1233.7 258ZM1229.1 225.1 L1229.1 221.1 L1232.2 221.1 L1232.2 225.1ZM1234.5 258 L1234.5 224.1 L1238.3 224.1 L1238.3 258ZM1239.4 258 L1239.4 227.3 L1243.1 227.3 L1243.1 258ZM1244.1 258 L1244.1 236.2 L1247.9 236.2 L1247.9 258ZM1248.7 258 L1248.7 234.3 L1253.5 234.3 L1253.5 258ZM1254.1 258 L1254.1 233.3 L1257.1 233.3 L1257.1 258ZM1257.6 258 L1257.6 221.1 L1261.1 221.1 L1261.1 258ZM1261.1 258 L1261.1 243.7 L1266.1 243.7 L1266.1 258ZM1266.7 258 L1266.7 236.6 L1271.1 236.6 L1271.1 258ZM1271.3 258 L1271.3 227.8 L1278.7 227.8 L1278.7 258ZM1279 258 L1279 224.2 L1285.7 224.2 L1285.7 258ZM1286.4 258 L1286.4 237.4 L1291.3 237.4 L1291.3 258ZM1287.6 237.4 L1287.6 233.4 L1290.1 233.4 L1290.1 237.4ZM1291.7 258 L1291.7 237.7 L1296.8 237.7 L1296.8 258ZM1297.1 258 L1297.1 244 L1301.6 244 L1301.6 258ZM1302.1 258 L1302.1 243.3 L1305.7 243.3 L1305.7 258ZM1306.6 258 L1306.6 244.4 L1312.1 244.4 L1312.1 258ZM1308 244.4 L1308 240.4 L1310.7 240.4 L1310.7 244.4ZM1312.4 258 L1312.4 242.1 L1317.8 242.1 L1317.8 258ZM1318.1 258 L1318.1 236.5 L1323.4 236.5 L1323.4 258ZM1323.8 258 L1323.8 240.8 L1328.4 240.8 L1328.4 258ZM1329.3 258 L1329.3 243.8 L1335.7 243.8 L1335.7 258ZM1336.4 258 L1336.4 231.2 L1343.3 231.2 L1343.3 258ZM1336.4 231.2 L1339.8 225.6 L1343.3 231.2ZM1343.4 258 L1343.4 246 L1350.8 246 L1350.8 258ZM1351.3 258 L1351.3 243.9 L1356.9 243.9 L1356.9 258ZM1357.6 258 L1357.6 239.2 L1363.3 239.2 L1363.3 258ZM1364.4 258 L1364.4 238.1 L1369.8 238.1 L1369.8 258ZM1370.7 258 L1370.7 241 L1377.6 241 L1377.6 258ZM1378.3 258 L1378.3 247.5 L1382 247.5 L1382 258ZM1382 258 L1382 241.9 L1385.4 241.9 L1385.4 258ZM1385.7 258 L1385.7 237 L1389.3 237 L1389.3 258ZM1389.3 258 L1389.3 245.2 L1396.1 245.2 L1396.1 258ZM1396.6 258 L1396.6 247.5 L1401.9 247.5 L1401.9 258ZM1402.5 258 L1402.5 245.5 L1409.4 245.5 L1409.4 258ZM1410.6 258 L1410.6 247 L1418.3 247 L1418.3 258ZM1418.4 258 L1418.4 245.8 L1424.3 245.8 L1424.3 258ZM1418.4 245.8 L1421.3 241 L1424.3 245.8ZM1424.6 258 L1424.6 245.2 L1429.1 245.2 L1429.1 258ZM1430.1 258 L1430.1 247.3 L1433.4 247.3 L1433.4 258ZM1433.7 258 L1433.7 249.2 L1437 249.2 L1437 258ZM1437.7 258 L1437.7 244.9 L1442.7 244.9 L1442.7 258Z"/>
+    <g class="city-windows city-windows-front">
+    <rect class="warm flicker-slow" x="875.5" y="246.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="875.5" y="249.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="884.5" y="241.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="884.5" y="247.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="902.6" y="245.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="908" y="241.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="908" y="244.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="908" y="247.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="928.3" y="241.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="928.3" y="244.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="925.9" y="247.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="940.3" y="236" width="1.1" height="1.5"/>
+    <rect class="warm" x="937.9" y="239.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="940.3" y="239.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="937.9" y="248.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="947.4" y="236" width="1.1" height="1.5"/>
+    <rect class="warm" x="952.7" y="234.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="955.1" y="234.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="955.1" y="241" width="1.1" height="1.5"/>
+    <rect class="cool" x="955.1" y="244.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="958.5" y="233.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="958.5" y="236.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="960.9" y="239.6" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="960.9" y="242.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="958.5" y="245.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="965" y="248.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="972.4" y="235.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="972.4" y="247.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="976.3" y="242.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="982.2" y="246.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="982.2" y="249.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="988" y="246.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="993.8" y="245.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1005.9" y="244.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1009.3" y="238.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1014.1" y="245" width="1.1" height="1.5"/>
+    <rect class="warm" x="1014.1" y="248.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1017.7" y="242.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1020.1" y="245.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1026.7" y="243.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1031.4" y="236.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1036.1" y="227.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1040.5" y="222.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1040.5" y="225.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1040.5" y="234.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1042.9" y="237.8" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1040.5" y="240.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1040.5" y="244" width="1.1" height="1.5"/>
+    <rect class="cool" x="1042.9" y="244" width="1.1" height="1.5"/>
+    <rect class="warm" x="1046.3" y="239" width="1.1" height="1.5"/>
+    <rect class="cool" x="1051.7" y="240.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1051.7" y="249.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1069.4" y="247.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1083.9" y="232.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1083.9" y="241.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1100.2" y="246.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1104.2" y="249.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1111" y="226.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1111" y="232.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1111" y="235.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1108.6" y="242.1" width="1.1" height="1.5"/>
+    <rect class="cool" x="1121.8" y="237.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1121.8" y="240.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1121.8" y="246.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1119.4" y="249.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1126.8" y="241.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1132.9" y="242.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1132.9" y="248.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1145.7" y="219.8" width="1.1" height="1.5"/>
+    <rect class="cool flicker-slow" x="1148.1" y="222.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1148.1" y="226" width="1.1" height="1.5"/>
+    <rect class="warm" x="1148.1" y="241.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1152.7" y="238.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1160.1" y="219.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1162.5" y="219.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1160.1" y="222.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1160.1" y="229" width="1.1" height="1.5"/>
+    <rect class="warm" x="1162.5" y="232.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1160.1" y="235.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1162.5" y="238.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1169.1" y="249.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1178.9" y="249.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1185.7" y="248.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1188.1" y="248.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1191.9" y="230.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1194.3" y="230.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1191.9" y="233.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1194.3" y="242.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1191.9" y="245.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1199.6" y="238.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1199.6" y="241.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1199.6" y="248" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1203.4" y="227.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1203.4" y="230.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1205.8" y="230.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1205.8" y="242.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1205.8" y="245.9" width="1.1" height="1.5"/>
+    <rect class="cool" x="1221.3" y="234.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1218.9" y="240.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1218.9" y="243.5" width="1.1" height="1.5"/>
+    <rect class="cool" x="1221.3" y="246.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1218.9" y="249.7" width="1.1" height="1.5"/>
+    <rect class="cool" x="1228.6" y="233.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1228.6" y="236.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1231" y="236.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1235.5" y="226.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1235.5" y="241.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1235.5" y="247.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1240.4" y="241.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1240.4" y="247.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1249.7" y="239.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1255.1" y="244.6" width="1.1" height="1.5"/>
+    <rect class="cool" x="1258.6" y="223.1" width="1.1" height="1.5"/>
+    <rect class="warm" x="1262.1" y="245.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1262.1" y="248.8" width="1.1" height="1.5"/>
+    <rect class="warm flicker-slow" x="1267.7" y="238.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1267.7" y="241.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1267.7" y="247.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1272.3" y="229.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1272.3" y="232.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1277.1" y="232.9" width="1.1" height="1.5"/>
+    <rect class="warm" x="1272.3" y="236" width="1.1" height="1.5"/>
+    <rect class="cool" x="1277.1" y="242.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1277.1" y="245.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1274.7" y="248.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1280" y="226.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1282.4" y="226.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1282.4" y="232.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1280" y="244.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1282.4" y="244.8" width="1.1" height="1.5"/>
+    <rect class="cool" x="1287.4" y="242.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1303.1" y="248.4" width="1.1" height="1.5"/>
+    <rect class="cool" x="1313.4" y="247.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1315.8" y="247.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1321.5" y="241.6" width="1.1" height="1.5"/>
+    <rect class="warm" x="1319.1" y="244.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1321.5" y="244.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1321.5" y="247.8" width="1.1" height="1.5"/>
+    <rect class="cool flicker-slow" x="1324.8" y="242.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1337.4" y="233.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1339.8" y="236.3" width="1.1" height="1.5"/>
+    <rect class="cool" x="1339.8" y="248.7" width="1.1" height="1.5"/>
+    <rect class="warm" x="1352.3" y="249" width="1.1" height="1.5"/>
+    <rect class="cool" x="1358.6" y="241.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1367.8" y="243.2" width="1.1" height="1.5"/>
+    <rect class="warm" x="1367.8" y="246.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1365.4" y="249.4" width="1.1" height="1.5"/>
+    <rect class="warm" x="1383" y="247" width="1.1" height="1.5"/>
+    <rect class="warm" x="1386.7" y="248.3" width="1.1" height="1.5"/>
+    <rect class="warm" x="1392.7" y="247.2" width="1.1" height="1.5"/>
+    <rect class="cool" x="1397.6" y="249.5" width="1.1" height="1.5"/>
+    <rect class="warm" x="1411.6" y="249" width="1.1" height="1.5"/>
+    <rect class="warm" x="1414" y="249" width="1.1" height="1.5"/>
+    <rect class="warm" x="1421.8" y="247.8" width="1.1" height="1.5"/>
+    <rect class="warm" x="1438.7" y="246.9" width="1.1" height="1.5"/>
+    </g>
+    <path class="hills" d="M800 256 Q1150.0 238 1500 256 L1500 300 L800 300Z"/>
+    <circle class="farm-light" cx="240" cy="262" r="1.6"/>
+    <circle class="farm-light" cx="520" cy="255" r="1.6"/>
+    <circle class="farm-light" cx="700" cy="266" r="1.6"/>
+    <circle class="farm-light" cx="1420" cy="258" r="1.6"/>
+</svg>

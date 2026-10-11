@@ -11,7 +11,8 @@
     <title>{% block title %}{% endblock %} · Was koche ich heute?</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
+    {% block scene %}
     <!-- The enchanted night behind every page: sky, moon, lights and forest -->
     <div class="scene" aria-hidden="true">
         <div class="stars"></div>
@@ -85,6 +86,7 @@
             </g>
         </svg>
     </div>
+    {% endblock %}
 
     <header class="site-header">
         <div class="container d-flex align-items-center justify-content-between">
@@ -104,7 +106,7 @@
         </div>
     {% endif %}
 
-    <main class="container pb-5">
+    <main class="{% block main_class %}container pb-5{% endblock %}">
         {% block main %}{% endblock %}
     </main>
 

@@ -4,61 +4,122 @@
     Startseite
 {% endblock %}
 
+{% block body_class %}journey{% endblock %}
+
+{# The start page draws its own scenery: a journey from space down to a hut in the forest #}
+{% block scene %}{% endblock %}
+
+{% block main_class %}journey-main{% endblock %}
+
 {% block main %}
-    <section class="hero">
-        <div class="glass sky-reading">
-            <div class="sky-text">
-                <p class="label">Die Zeichen des Himmels</p>
-                <p class="omen">Es ist {{ moon_phase }} im <span id="season">{{ season }}</span>.</p>
-                <p class="weather" id="weather">Die Sterne befragen das Wetter …</p>
-            </div>
-            <div class="card-moon phase-{{ moon_phase_index }}" aria-hidden="true">
+    <!-- 1. Space: the moon and the stars -->
+    <section class="space">
+        <div class="space-stars" data-depth="0.15" aria-hidden="true"></div>
+        <div class="space-stars space-stars-small" data-depth="0.3" aria-hidden="true"></div>
+        <div class="shooting-star" aria-hidden="true"></div>
+
+        <div class="container space-content" data-depth="0.35">
+            <div class="card-moon big-moon phase-{{ moon_phase_index }}" aria-hidden="true">
                 <div class="moon-disc"><div class="moon-shadow"></div></div>
             </div>
+            <p class="label">Die Zeichen des Himmels</p>
+            <h1 class="omen">Es ist {{ moon_phase }} im <span id="season">{{ season }}</span>.</h1>
+            <p class="weather" id="weather">Die Sterne befragen das Wetter …</p>
         </div>
 
-        {% if dish_of_the_day %}
-            <a href="/recipe/{{ dish_of_the_day.id }}" class="glass dish-of-the-day">
-                {% if dish_of_the_day.image %}
-                    <img src="{{ url_for('static', filename='images/' + dish_of_the_day.image) }}" alt="" class="dish-image">
-                {% else %}
-                    <div class="dish-image image-placeholder">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
-                    </div>
+        <a href="#rezepte" class="descend-link" data-depth="0.35">
+            Hinab in den Wald
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"/></svg>
+        </a>
+    </section>
+
+    <!-- 2. The descent: a clear, starry night sky, now and then a plane or a flock of birds passes -->
+    <section class="descent" aria-hidden="true">
+        <div class="sky-stars"></div>
+        <div class="sky-stars sky-stars-small"></div>
+        <div class="airplane"></div>
+        <svg class="birds" viewBox="0 0 90 52">
+            <g transform="translate(0 22)"><path d="M0 3 C4 -1 8 -1 11 4 C14 -1 18 -1 22 3 C18 1.6 14.5 3 12 7.5 L11 8.5 L10 7.5 C7.5 3 4 1.6 0 3Z"/></g>
+            <g transform="translate(28 8)"><path d="M0 3 C4 -1 8 -1 11 4 C14 -1 18 -1 22 3 C18 1.6 14.5 3 12 7.5 L11 8.5 L10 7.5 C7.5 3 4 1.6 0 3Z"/></g>
+            <g transform="translate(32 36)"><path d="M0 3 C4 -1 8 -1 11 4 C14 -1 18 -1 22 3 C18 1.6 14.5 3 12 7.5 L11 8.5 L10 7.5 C7.5 3 4 1.6 0 3Z"/></g>
+            <g transform="translate(58 0)"><path d="M0 3 C4 -1 8 -1 11 4 C14 -1 18 -1 22 3 C18 1.6 14.5 3 12 7.5 L11 8.5 L10 7.5 C7.5 3 4 1.6 0 3Z"/></g>
+            <g transform="translate(64 42)"><path d="M0 3 C4 -1 8 -1 11 4 C14 -1 18 -1 22 3 C18 1.6 14.5 3 12 7.5 L11 8.5 L10 7.5 C7.5 3 4 1.6 0 3Z"/></g>
+        </svg>
+    </section>
+
+    <!-- 3. Deep in the forest: giant firs, and at the very bottom the cottage
+            where someone is cooking, with the recipes right next to it -->
+    <section class="deep-forest" id="wald">
+        <div class="sky-stars forest-stars" aria-hidden="true"></div>
+        <!-- Far away on the horizon: mountains and a town with lit windows -->
+        <div class="distant-land" aria-hidden="true">
+            {% include "scenery/horizon.svg" %}
+            <div class="land"></div>
+        </div>
+        <div class="forest-wall forest-wall-far" aria-hidden="true"></div>
+        <div class="forest-mist forest-mist-ground" aria-hidden="true"></div>
+        <div class="forest-wall forest-wall-rim" aria-hidden="true"></div>
+        <div class="forest-wall forest-wall-mid" aria-hidden="true"></div>
+        <div class="forest-edge forest-edge-left" aria-hidden="true"></div>
+        <div class="forest-edge forest-edge-right" aria-hidden="true"></div>
+        <div class="firefly firefly-2" aria-hidden="true"></div>
+        <div class="firefly firefly-3" aria-hidden="true"></div>
+        <div class="firefly firefly-5" aria-hidden="true"></div>
+        <div class="firefly firefly-6" aria-hidden="true"></div>
+        <div class="firefly firefly-7" aria-hidden="true"></div>
+
+        <!-- Nothing but trees for a while: you are getting lost in the forest -->
+        <div class="forest-depths" aria-hidden="true"></div>
+
+        <!-- 4. The forest floor: the recipes next to the cottage -->
+        <div class="forest-floor" id="rezepte">
+            <div class="container forest-content">
+                {% if dish_of_the_day %}
+                    <a href="/recipe/{{ dish_of_the_day.id }}" class="glass dish-of-the-day">
+                        {% if dish_of_the_day.image %}
+                            <img src="{{ url_for('static', filename='images/' + dish_of_the_day.image) }}" alt="" class="dish-image">
+                        {% else %}
+                            <div class="dish-image image-placeholder">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                            </div>
+                        {% endif %}
+                        <div class="dish-text">
+                            <p class="label label-amber">Gericht des Tages</p>
+                            <h2 class="dish-name">{{ dish_of_the_day.name }}</h2>
+                            <p class="dish-meta">{{ dish_of_the_day.time }}</p>
+                            <p class="dish-hint">Drinnen im Häuschen köchelt es schon. Die Sterne stehen günstig dafür.</p>
+                        </div>
+                    </a>
                 {% endif %}
-                <div class="dish-text">
-                    <p class="label label-amber">Gericht des Tages</p>
-                    <h2 class="dish-name">{{ dish_of_the_day.name }}</h2>
-                    <p class="dish-meta">{{ dish_of_the_day.time }}</p>
-                    <p class="dish-hint">Heute stehen die Sterne günstig für dieses Gericht.</p>
-                </div>
-            </a>
-        {% endif %}
-    </section>
 
-    <section class="search-section">
-        <form action="/" method="get" role="search" class="search-form">
-            <input name="q" type="search" class="form-control" placeholder="Wonach steht dir heute der Sinn?" aria-label="Rezept suchen">
-            <button class="btn btn-amber" type="submit">Suchen</button>
-        </form>
-    </section>
+                <section class="search-section">
+                    <form action="/" method="get" role="search" class="search-form">
+                        <input name="q" type="search" class="form-control" placeholder="Wonach steht dir heute der Sinn?" aria-label="Rezept suchen">
+                        <button class="btn btn-amber" type="submit">Suchen</button>
+                    </form>
+                </section>
 
-    <section>
-        <div class="section-heading">
-            <h2>Aus dem Rezeptbuch</h2>
-            <span class="section-count">{{ recipes | length }} von {{ recipe_count }} Rezepten</span>
-        </div>
+                <section class="recipes-section">
+                    <div class="section-heading">
+                        <h2>Aus dem Rezeptbuch</h2>
+                        <span class="section-count">{{ recipes | length }} von {{ recipe_count }} Rezepten</span>
+                    </div>
 
-        <div class="recipe-grid">
-            {% for recipe in recipes %}
-                <a href="/recipe/{{ recipe.id }}" class="glass recipe-card">
-                    <h3 class="recipe-card-name">{{ recipe.name }}</h3>
-                    <p class="recipe-card-time">{{ recipe.time }}</p>
-                    <p class="recipe-card-ingredients">
-                        {{ recipe.ingredients[:5] | join(", ") }}{% if recipe.ingredients | length > 5 %} …{% endif %}
-                    </p>
-                </a>
-            {% endfor %}
+                    <div class="recipe-grid">
+                        {% for recipe in recipes %}
+                            <a href="/recipe/{{ recipe.id }}" class="glass recipe-card">
+                                <h3 class="recipe-card-name">{{ recipe.name }}</h3>
+                                <p class="recipe-card-time">{{ recipe.time }}</p>
+                                <p class="recipe-card-ingredients">
+                                    {{ recipe.ingredients[:5] | join(", ") }}{% if recipe.ingredients | length > 5 %} …{% endif %}
+                                </p>
+                            </a>
+                        {% endfor %}
+                    </div>
+                </section>
+            </div>
+
+            {% include "scenery/hut.svg" %}
         </div>
     </section>
 
@@ -88,6 +149,22 @@
             );
         } else {
             showWeather("");
+        }
+
+        // Parallax: far-away things (moon, stars) lag behind while scrolling, so the sky feels deep
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            const layers = document.querySelectorAll("[data-depth]");
+            let ticking = false;
+            window.addEventListener("scroll", () => {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => {
+                    for (const layer of layers) {
+                        layer.style.transform = `translateY(${window.scrollY * layer.dataset.depth}px)`;
+                    }
+                    ticking = false;
+                });
+            }, { passive: true });
         }
     </script>
 {% endblock %}
