@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Overview
+    Recipe Search
 {% endblock %}
 
 {% block main %}
     <div></div>
-    <H3>Es ist {{ moon_phase }} an einem {{ season }} Tag.</H3>
-    <H3>{{ weather }}</H3>
+    <H3>Es ist {{ moon_phase }} an einem <span id="season">{{ season }}</span> Tag.</H3>
+    <H3 id="weather">🔮 Die Sterne befragen das Wetter...</H3>
     <H5>Gericht des Tages: {{ dish_of_the_day }}</H5>
     <div></div>
     <p>Suche nach einem beliebigen Rezept:</p>
@@ -33,4 +33,33 @@
         </tr>
     {% endfor %}
     </table>
+
+    <script>
+        // Ask the server for weather, place and season; with the visitor's location if they allow it
+        async function showWeather(query) {
+            const element = document.querySelector("#weather");
+            try {
+                const response = await fetch("/weather" + query);
+                const data = await response.json();
+                element.textContent = data.place ? `${data.weather} · ${data.place}` : data.weather;
+                document.querySelector("#season").textContent = data.season;
+            } catch {
+                element.textContent = "Das Wetter verbirgt sich gerade im Nebel.";
+            }
+        }
+
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => showWeather(`?lat=${position.coords.latitude}&lon=${position.coords.longitude}`),
+                (error) => {
+                    // 1 = permission denied, 2 = position unavailable, 3 = timeout
+                    console.warn("Standort nicht verfügbar:", error.code, error.message);
+                    showWeather("");  // the server falls back to the IP address' location
+                },
+                { timeout: 5000, maximumAge: 30 * 60 * 1000 }
+            );
+        } else {
+            showWeather("");
+        }
+    </script>
 {% endblock %}

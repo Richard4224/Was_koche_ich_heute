@@ -1,5 +1,6 @@
 #todo: implement these for real
 
+import ipaddress
 import json
 import time
 import urllib.request
@@ -7,11 +8,17 @@ import urllib.request
 from flask import render_template
 from datetime import datetime, timezone
 
-# Location for the weather (Berlin); change to your own city
+# Fallback location for the weather when neither the browser nor the IP address reveal one
 LATITUDE = 52.52
 LONGITUDE = 13.41
+PLACE = "Berlin"
 WEATHER_CACHE_SECONDS = 15 * 60
-_weather_cache = None  # (timestamp, weather string)
+_weather_cache = {}  # (latitude, longitude) -> (timestamp, weather string)
+_place_cache = {}  # (latitude, longitude) -> place name or None
+_ip_location_cache = {}  # IP address -> (latitude, longitude, city) or None
+
+# Nominatim (OpenStreetMap) requires an identifying User-Agent
+USER_AGENT = "WasKocheIchHeute/1.0 (https://github.com/Richard4224/recipe-search)"
 
 # WMO weather codes used by Open-Meteo: https://open-meteo.com/en/docs
 WEATHER_CODES = {
@@ -78,8 +85,8 @@ def get_moon_phase(date=None):
 
 
 
-def get_season(date=None):
-    """Return the astronomical season for date (default: today), northern hemisphere."""
+def get_season(date=None, latitude=LATITUDE):
+    """Return the astronomical season for date (default: today) at latitude."""
 
     if date is None:
         date = datetime.now()
@@ -87,12 +94,19 @@ def get_season(date=None):
     # Equinoxes and solstices shift by a day or two between years; these dates are close enough
     day = (date.month, date.day)
     if (3, 20) <= day < (6, 21):
-        return "Frühling"
-    if (6, 21) <= day < (9, 23):
-        return "Sommer"
-    if (9, 23) <= day < (12, 21):
-        return "Herbst"
-    return "Winter"
+        season = "Frühling"
+    elif (6, 21) <= day < (9, 23):
+        season = "Sommer"
+    elif (9, 23) <= day < (12, 21):
+        season = "Herbst"
+    else:
+        season = "Winter"
+
+    # The southern hemisphere has the opposite season
+    if latitude < 0:
+        season = {"Frühling": "Herbst", "Sommer": "Winter", "Herbst": "Frühling", "Winter": "Sommer"}[season]
+
+    return season
 
 
 
@@ -113,18 +127,21 @@ def return_error(message="You've run into an error", code=400):
 
     return render_template("error.html", message=message, code=code)
 
-def get_weather():
-    """Return the current weather at LATITUDE/LONGITUDE, e.g. "☁️ 12 °C, Bewölkt"."""
+def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
+    """Return the current weather at a location, e.g. "☁️ 12 °C (gefühlt 9 °C), Bewölkt"."""
 
-    global _weather_cache
+    # Round to ~1 km so nearby visitors share a cache entry
+    location = (round(latitude, 2), round(longitude, 2))
 
     # Weather changes slowly, so don't ask the API on every page load
-    if _weather_cache and time.time() - _weather_cache[0] < WEATHER_CACHE_SECONDS:
-        return _weather_cache[1]
+    cached = _weather_cache.get(location)
+    if cached and time.time() - cached[0] < WEATHER_CACHE_SECONDS:
+        return cached[1]
 
     url = (
         "https://api.open-meteo.com/v1/forecast"
-        f"?latitude={LATITUDE}&longitude={LONGITUDE}&current=temperature_2m,weather_code"
+        f"?latitude={location[0]}&longitude={location[1]}"
+        "&current=temperature_2m,apparent_temperature,weather_code,is_day"
     )
     try:
         with urllib.request.urlopen(url, timeout=5) as response:
@@ -133,9 +150,75 @@ def get_weather():
         return "Das Wetter verbirgt sich gerade im Nebel."
 
     emoji, description = WEATHER_CODES.get(current["weather_code"], ("🌡️", "Unbekannt"))
-    weather = f"{emoji} {round(current['temperature_2m'])} °C, {description}"
+    if not current["is_day"] and current["weather_code"] in (0, 1):
+        emoji = "🌙"  # no sun in a clear night sky
+    temperature = round(current["temperature_2m"])
+    feels_like = round(current["apparent_temperature"])
 
-    _weather_cache = (time.time(), weather)
+    weather = f"{emoji} {temperature} °C"
+    if feels_like != temperature:
+        weather += f" (gefühlt {feels_like} °C)"
+    weather += f", {description}"
+
+    _weather_cache[location] = (time.time(), weather)
     return weather
+
+
+def get_place(latitude=LATITUDE, longitude=LONGITUDE):
+    """Return a place name like "Woltmershausen, Bremen" for a location, or None if unknown."""
+
+    if (latitude, longitude) == (LATITUDE, LONGITUDE):
+        return PLACE
+
+    location = (round(latitude, 2), round(longitude, 2))
+    if location in _place_cache:
+        return _place_cache[location]
+
+    url = (
+        "https://nominatim.openstreetmap.org/reverse"
+        f"?lat={location[0]}&lon={location[1]}&format=jsonv2&zoom=14&accept-language=de"
+    )
+    try:
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(request, timeout=5) as response:
+            address = json.load(response).get("address", {})
+    except (OSError, ValueError):
+        return None
+
+    # District (e.g. "Woltmershausen") plus town (e.g. "Bremen"), whichever exist
+    district = address.get("suburb") or address.get("city_district")
+    town = address.get("city") or address.get("town") or address.get("village") or address.get("municipality")
+    parts = [part for part in dict.fromkeys([district, town]) if part]
+    place = ", ".join(parts) or None
+
+    _place_cache[location] = place
+    return place
+
+
+def get_ip_location(ip):
+    """Return (latitude, longitude, city) roughly locating an IP address, or None if unknown."""
+
+    if ip in _ip_location_cache:
+        return _ip_location_cache[ip]
+
+    # A local address (e.g. 127.0.0.1 while developing) means the visitor is on this machine,
+    # so ask about this machine's own public IP instead
+    try:
+        is_public = ipaddress.ip_address(ip).is_global
+    except ValueError:
+        is_public = False
+    url = f"https://ipinfo.io/{ip}/json" if is_public else "https://ipinfo.io/json"
+
+    try:
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(request, timeout=5) as response:
+            data = json.load(response)
+        latitude, longitude = (float(value) for value in data["loc"].split(","))
+        location = (latitude, longitude, data.get("city"))
+    except (OSError, ValueError, KeyError):
+        return None
+
+    _ip_location_cache[ip] = location
+    return location
 
 
