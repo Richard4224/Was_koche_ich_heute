@@ -1,11 +1,39 @@
 #todo: implement these for real
 
 from flask import render_template
+from datetime import datetime, timezone
 
-def get_moon_phase():
-    """Return current moon phase."""
+SECONDS_IN_A_DAY = 86400
+SYNODIC_MONTH = 29.530588853  # days from one new moon to the next
+MOON_PHASES = [
+    "🌑 Neumond",
+    "🌒 Zunehmende Sichel",
+    "🌓 Zunehmender Halbmond",
+    "🌔 Zunehmender Mond",
+    "🌕 Vollmond",
+    "🌖 Abnehmender Mond",
+    "🌗 Abnehmender Halbmond",
+    "🌘 Abnehmende Sichel",
+]
 
-    return "Vollmond"
+def get_moon_phase(date=None):
+    """Return the moon phase for date (default: now). Accurate to about ±1 day."""
+
+    reference_point = datetime(2000, 1, 6, 18, 14, tzinfo=timezone.utc)  # a known new moon
+    if date is None:
+        date = datetime.now(timezone.utc)
+
+    time_delta = date - reference_point
+    days_since_reference = time_delta.total_seconds() / SECONDS_IN_A_DAY
+
+    # Position in the current cycle: 0 = new moon, ~14.8 = full moon
+    moon_age = days_since_reference % SYNODIC_MONTH
+
+    # Split the cycle into 8 phases; round so each exact phase sits in the middle of its slot
+    index = round(moon_age / (SYNODIC_MONTH / 8)) % 8
+
+    return MOON_PHASES[index]
+
 
 
 def get_season():
