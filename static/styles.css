@@ -1,0 +1,20 @@
+/* Recipe page */
+.recipe-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.recipe-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    font-size: 6rem;
+    background: var(--bs-tertiary-bg);
+}
+
+/* Keep the line breaks of the numbered steps */
+.instructions {
+    white-space: pre-line;
+}

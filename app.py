@@ -1,7 +1,7 @@
 # Idea brainstorming, pseudocode and databank layout from Claude
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_season, get_dish_of_the_day, get_recipes, return_error, get_weather, get_place, get_ip_location
+from helpers import get_moon_phase, get_season, get_dish_of_the_day, get_recipes, get_recipe, return_error, get_weather, get_place, get_ip_location
 
 app = Flask(__name__)
 
@@ -48,12 +48,13 @@ def weather():
 
 @app.route("/recipe/<int:recipe_id>")
 def recipe(recipe_id):
+    """Show a recipe, scaled to ?servings=N if given."""
 
-    if recipe_id not in get_recipes():
+    recipe = get_recipe(recipe_id, request.args.get("servings", type=int))
+    if recipe is None:
+        return return_error("Dieses Rezept gibt es nicht.", 404)
 
-        return_error("Recipe was not found", 404)
-
-    return render_template("recipe.html")
+    return render_template("recipe.html", recipe=recipe)
 
 
 

@@ -2,11 +2,20 @@
 
 import ipaddress
 import json
+import os
+import sqlite3
 import time
 import urllib.request
 
+from contextlib import closing
 from flask import render_template
 from datetime import datetime, timezone
+
+from scaling import format_amount, format_duration, scale_text, servings_unit_name
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE = os.path.join(BASE_DIR, "recipes.db")
+MAX_SERVINGS = 1000
 
 # Fallback location for the weather when neither the browser nor the IP address reveal one
 LATITUDE = 52.52
@@ -117,15 +126,99 @@ def get_dish_of_the_day():
 
 
 
+def get_db():
+    """Open the recipe database, building it from schema.sql and seed.sql on first use."""
+
+    is_new = not os.path.exists(DATABASE)
+    db = sqlite3.connect(DATABASE)
+    db.row_factory = sqlite3.Row
+    db.execute("PRAGMA foreign_keys = ON")
+
+    if is_new:
+        for script in ("schema.sql", "seed.sql"):
+            with open(os.path.join(BASE_DIR, script), encoding="utf-8") as file:
+                db.executescript(file.read())
+    return db
+
+
 def get_recipes():
-    """Return a list of recipes."""
+    """Return all recipes with their ingredient names, sorted by name."""
 
-    return [{"recipe_id": 1, "name": "Kürbissuppe", "preparation_time": 20, "ingredients": ["1 Hokkaido-Kürbis (ca. 1 kg)", "1 Zwiebel", "2 Knoblauchzehen", "1 Stück Ingwer (ca. 2 cm)", "2 EL Olivenöl", "800 ml Gemüsebrühe", "200 ml Kokosmilch", "Salz", "Pfeffer", "Muskatnuss", "Kürbiskerne zum Garnieren"], "manual": "Kürbissuppe (4 Portionen)\n\nZutaten:\n- 1 Hokkaido-Kürbis (ca. 1 kg)\n- 1 Zwiebel\n- 2 Knoblauchzehen\n- 1 Stück Ingwer (ca. 2 cm)\n- 2 EL Olivenöl\n- 800 ml Gemüsebrühe\n- 200 ml Kokosmilch oder Sahne\n- Salz, Pfeffer, Muskatnuss\n- Kürbiskerne zum Garnieren\n\nZubereitung:\n1. Kürbis waschen, halbieren, entkernen und in Würfel schneiden (Hokkaido muss nicht geschält werden).\n2. Zwiebel, Knoblauch und Ingwer schälen und fein hacken.\n3. Olivenöl in einem Topf erhitzen und Zwiebel, Knoblauch und Ingwer darin 3 Minuten andünsten.\n4. Kürbiswürfel dazugeben und 2 Minuten mitbraten.\n5. Mit der Gemüsebrühe ablöschen und ca. 20 Minuten köcheln lassen, bis der Kürbis weich ist.\n6. Kokosmilch oder Sahne hinzufügen und alles fein pürieren.\n7. Mit Salz, Pfeffer und Muskatnuss abschmecken.\n8. In Schüsseln füllen und mit gerösteten Kürbiskernen garnieren.\n\nGuten Appetit!"}]
+    with closing(get_db()) as db:
+        rows = db.execute(
+            """
+            SELECT recipes.id, recipes.name, recipes.preparation_time,
+                   group_concat(ingredients.name, char(31)) AS ingredients
+            FROM recipes
+            JOIN recipe_ingredients ON recipe_ingredients.recipe_id = recipes.id
+            JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+            GROUP BY recipes.id
+            ORDER BY recipes.name
+            """
+        ).fetchall()
 
-def return_error(message="You've run into an error", code=400):
-    """Return an HTTP Error Message to the user."""
+    return [
+        {
+            "id": row["id"],
+            "name": row["name"],
+            "time": format_duration(row["preparation_time"]),
+            "ingredients": row["ingredients"].split(chr(31)),
+        }
+        for row in rows
+    ]
 
-    return render_template("error.html", message=message, code=code)
+
+def get_recipe(recipe_id, servings=None):
+    """Return a recipe with amounts scaled to servings (default: its own), or None if it doesn't exist."""
+
+    with closing(get_db()) as db:
+        recipe = db.execute("SELECT * FROM recipes WHERE id = ?", (recipe_id,)).fetchone()
+        if recipe is None:
+            return None
+        ingredients = db.execute(
+            """
+            SELECT ingredients.name, recipe_ingredients.amount, recipe_ingredients.unit
+            FROM recipe_ingredients
+            JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+            WHERE recipe_ingredients.recipe_id = ?
+            ORDER BY recipe_ingredients.rowid
+            """,
+            (recipe_id,),
+        ).fetchall()
+
+    # Only whole numbers, so recipes for a baking tin scale to whole tins
+    if servings is None or not 1 <= servings <= MAX_SERVINGS:
+        servings = recipe["servings"]
+    factor = servings / recipe["servings"]
+
+    image = recipe["image"]
+    if image and not os.path.isfile(os.path.join(BASE_DIR, "static", "images", image)):
+        image = None
+
+    return {
+        "id": recipe["id"],
+        "name": recipe["name"],
+        "time": format_duration(recipe["preparation_time"]),
+        "season": recipe["season"],
+        "servings": servings,
+        "servings_unit": servings_unit_name(servings, recipe["servings_unit"]),
+        "ingredients": [
+            {
+                "name": row["name"],
+                "amount": None if row["amount"] is None else format_amount(row["amount"] * factor, row["unit"]),
+            }
+            for row in ingredients
+        ],
+        "instructions": scale_text(recipe["instructions"], factor),
+        "image": image,
+    }
+
+
+def return_error(message="Da ist etwas schiefgelaufen.", code=400):
+    """Render an error page with an HTTP status code."""
+
+    return render_template("error.html", message=message, code=code), code
+
 
 def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
     """Return the current weather at a location, e.g. "☁️ 12 °C (gefühlt 9 °C), Bewölkt"."""

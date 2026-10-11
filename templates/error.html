@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Fehler {{ code }}
+{% endblock %}
+
+{% block main %}
+    <div class="text-center my-5">
+        <h2>{{ code }}</h2>
+        <p>{{ message }}</p>
+        <p><a href="/">← Zurück zu allen Rezepten</a></p>
+    </div>
+{% endblock %}

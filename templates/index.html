@@ -27,8 +27,8 @@
     {% for row in recipes %}
 
         <tr>
-            <td>{{ row.name }}</td>
-            <td>{{ row.preparation_time }} Minutes</td>
+            <td><a href="/recipe/{{ row.id }}">{{ row.name }}</a></td>
+            <td>{{ row.time }}</td>
             <td>{% for ingredient in row.ingredients %}{{ ingredient }}{% if not loop.last%}, {% endif %}{% endfor %}</td>
         </tr>
     {% endfor %}

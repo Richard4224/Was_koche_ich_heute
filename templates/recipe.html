@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ recipe.name }}
+{% endblock %}
+
+{% block main %}
+    <p class="mt-3"><a href="/">← Alle Rezepte</a></p>
+
+    <h2>{{ recipe.name }}</h2>
+    <p class="text-body-secondary">⏱️ {{ recipe.time }} · {{ recipe.season }}</p>
+
+    {% if recipe.image %}
+        <img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }}" class="recipe-image rounded mb-4">
+    {% else %}
+        <div class="recipe-image recipe-image-placeholder rounded mb-4" aria-hidden="true">🎃</div>
+    {% endif %}
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <h4>Zutaten</h4>
+
+            <form action="/recipe/{{ recipe.id }}" method="get" class="d-flex align-items-center gap-2 mb-3">
+                <label for="servings">für</label>
+                <input id="servings" name="servings" type="number" min="1" step="1" value="{{ recipe.servings }}"
+                       class="form-control" style="width: 6rem" onchange="this.form.submit()">
+                <span>{{ recipe.servings_unit }}</span>
+                <noscript><button type="submit" class="btn btn-secondary btn-sm">Umrechnen</button></noscript>
+            </form>
+
+            <ul class="list-unstyled">
+                {% for ingredient in recipe.ingredients %}
+                    <li class="mb-1">
+                        {% if ingredient.amount %}
+                            <strong>{{ ingredient.amount }}</strong> {{ ingredient.name }}
+                        {% else %}
+                            {{ ingredient.name }} <span class="text-body-secondary">(nach Geschmack)</span>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-8">
+            <h4>Zubereitung</h4>
+            <div class="instructions">{{ recipe.instructions }}</div>
+        </div>
+    </div>
+{% endblock %}
