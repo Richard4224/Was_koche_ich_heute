@@ -5,45 +5,61 @@
 {% endblock %}
 
 {% block main %}
-    <p class="mt-3"><a href="/">← Alle Rezepte</a></p>
+    <p class="back-link"><a href="/">← Zurück zum Rezeptbuch</a></p>
 
-    <h2>{{ recipe.name }}</h2>
-    <p class="text-body-secondary">⏱️ {{ recipe.time }} · {{ recipe.season }}</p>
+    <header class="recipe-header">
+        {% if recipe.image %}
+            <img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }}" class="recipe-image">
+        {% else %}
+            <div class="recipe-image image-placeholder">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+            </div>
+        {% endif %}
+        <div class="recipe-title">
+            <h1>{{ recipe.name }}</h1>
+            <p class="recipe-meta">{{ recipe.time }} · {{ recipe.season }}</p>
+        </div>
+    </header>
 
-    {% if recipe.image %}
-        <img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }}" class="recipe-image rounded mb-4">
-    {% else %}
-        <div class="recipe-image recipe-image-placeholder rounded mb-4" aria-hidden="true">🎃</div>
-    {% endif %}
+    <div class="recipe-body">
+        <aside class="glass ingredients">
+            <h2>Zutaten</h2>
 
-    <div class="row g-4">
-        <div class="col-md-4">
-            <h4>Zutaten</h4>
-
-            <form action="/recipe/{{ recipe.id }}" method="get" class="d-flex align-items-center gap-2 mb-3">
+            <form action="/recipe/{{ recipe.id }}" method="get" class="servings-form">
                 <label for="servings">für</label>
                 <input id="servings" name="servings" type="number" min="1" step="1" value="{{ recipe.servings }}"
-                       class="form-control" style="width: 6rem" onchange="this.form.submit()">
+                       class="form-control servings-input" onchange="this.form.submit()">
                 <span>{{ recipe.servings_unit }}</span>
-                <noscript><button type="submit" class="btn btn-secondary btn-sm">Umrechnen</button></noscript>
+                <noscript><button type="submit" class="btn btn-amber btn-sm">Umrechnen</button></noscript>
             </form>
 
-            <ul class="list-unstyled">
+            <ul class="ingredient-list">
                 {% for ingredient in recipe.ingredients %}
-                    <li class="mb-1">
-                        {% if ingredient.amount %}
-                            <strong>{{ ingredient.amount }}</strong> {{ ingredient.name }}
-                        {% else %}
-                            {{ ingredient.name }} <span class="text-body-secondary">(nach Geschmack)</span>
-                        {% endif %}
-                    </li>
+                    {% if ingredient.amount %}
+                        <li>
+                            <span class="amount">{{ ingredient.amount }}</span>
+                            <span>{{ ingredient.name }}</span>
+                        </li>
+                    {% else %}
+                        <li class="to-taste">
+                            <span>{{ ingredient.name }}</span>
+                            <span class="to-taste-label">nach Geschmack</span>
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
-        </div>
+        </aside>
 
-        <div class="col-md-8">
-            <h4>Zubereitung</h4>
-            <div class="instructions">{{ recipe.instructions }}</div>
-        </div>
+        <section class="glass steps">
+            <h2>Zubereitung</h2>
+            <ol class="step-list">
+                {% for step in recipe.steps %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+            {% if recipe.closing %}
+                <p class="closing">{{ recipe.closing }}</p>
+            {% endif %}
+        </section>
     </div>
 {% endblock %}

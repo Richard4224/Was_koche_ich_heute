@@ -1,38 +1,66 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Recipe Search
+    Startseite
 {% endblock %}
 
 {% block main %}
-    <div></div>
-    <H3>Es ist {{ moon_phase }} an einem <span id="season">{{ season }}</span> Tag.</H3>
-    <H3 id="weather">🔮 Die Sterne befragen das Wetter...</H3>
-    <H5>Gericht des Tages: {{ dish_of_the_day }}</H5>
-    <div></div>
-    <p>Suche nach einem beliebigen Rezept:</p>
+    <section class="hero">
+        <div class="glass sky-reading">
+            <div class="sky-text">
+                <p class="label">Die Zeichen des Himmels</p>
+                <p class="omen">Es ist {{ moon_phase }} im <span id="season">{{ season }}</span>.</p>
+                <p class="weather" id="weather">Die Sterne befragen das Wetter …</p>
+            </div>
+            <div class="card-moon phase-{{ moon_phase_index }}" aria-hidden="true">
+                <div class="moon-disc"><div class="moon-shadow"></div></div>
+            </div>
+        </div>
 
-    <!-- adapted from Bootstrap examples -->
-    <form action="/" method="get" class="d-flex gap-2" role="search">
-        <input name="q" type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
-    <button class="btn btn-dark rounded-pill px-3" type="submit">Search</button>
-    </form>
+        {% if dish_of_the_day %}
+            <a href="/recipe/{{ dish_of_the_day.id }}" class="glass dish-of-the-day">
+                {% if dish_of_the_day.image %}
+                    <img src="{{ url_for('static', filename='images/' + dish_of_the_day.image) }}" alt="" class="dish-image">
+                {% else %}
+                    <div class="dish-image image-placeholder">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                    </div>
+                {% endif %}
+                <div class="dish-text">
+                    <p class="label label-amber">Gericht des Tages</p>
+                    <h2 class="dish-name">{{ dish_of_the_day.name }}</h2>
+                    <p class="dish-meta">{{ dish_of_the_day.time }}</p>
+                    <p class="dish-hint">Heute stehen die Sterne günstig für dieses Gericht.</p>
+                </div>
+            </a>
+        {% endif %}
+    </section>
 
-    <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>Zubereitungszeit</th>
-            <th>Zutaten</th>
-        </tr>
-    {% for row in recipes %}
+    <section class="search-section">
+        <form action="/" method="get" role="search" class="search-form">
+            <input name="q" type="search" class="form-control" placeholder="Wonach steht dir heute der Sinn?" aria-label="Rezept suchen">
+            <button class="btn btn-amber" type="submit">Suchen</button>
+        </form>
+    </section>
 
-        <tr>
-            <td><a href="/recipe/{{ row.id }}">{{ row.name }}</a></td>
-            <td>{{ row.time }}</td>
-            <td>{% for ingredient in row.ingredients %}{{ ingredient }}{% if not loop.last%}, {% endif %}{% endfor %}</td>
-        </tr>
-    {% endfor %}
-    </table>
+    <section>
+        <div class="section-heading">
+            <h2>Aus dem Rezeptbuch</h2>
+            <span class="section-count">{{ recipes | length }} von {{ recipe_count }} Rezepten</span>
+        </div>
+
+        <div class="recipe-grid">
+            {% for recipe in recipes %}
+                <a href="/recipe/{{ recipe.id }}" class="glass recipe-card">
+                    <h3 class="recipe-card-name">{{ recipe.name }}</h3>
+                    <p class="recipe-card-time">{{ recipe.time }}</p>
+                    <p class="recipe-card-ingredients">
+                        {{ recipe.ingredients[:5] | join(", ") }}{% if recipe.ingredients | length > 5 %} …{% endif %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </section>
 
     <script>
         // Ask the server for weather, place and season; with the visitor's location if they allow it

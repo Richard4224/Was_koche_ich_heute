@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    <div class="text-center my-5">
-        <h2>{{ code }}</h2>
-        <p>{{ message }}</p>
-        <p><a href="/">← Zurück zu allen Rezepten</a></p>
+    <div class="glass error-box">
+        <p class="error-code">{{ code }}</p>
+        <p class="error-flavor">Du hast dich im Wald verirrt.</p>
+        <p class="error-message">{{ message }}</p>
+        <a href="/" class="btn btn-amber">Zurück zum Rezeptbuch</a>
     </div>
 {% endblock %}

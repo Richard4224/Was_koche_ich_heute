@@ -3,6 +3,7 @@
 import ipaddress
 import json
 import os
+import re
 import sqlite3
 import time
 import urllib.request
@@ -31,51 +32,57 @@ USER_AGENT = "WasKocheIchHeute/1.0 (https://github.com/Richard4224/recipe-search
 
 # WMO weather codes used by Open-Meteo: https://open-meteo.com/en/docs
 WEATHER_CODES = {
-    0: ("☀️", "Klar"),
-    1: ("🌤️", "Überwiegend klar"),
-    2: ("⛅", "Teilweise bewölkt"),
-    3: ("☁️", "Bewölkt"),
-    45: ("🌫️", "Nebel"),
-    48: ("🌫️", "Reifnebel"),
-    51: ("🌦️", "Leichter Nieselregen"),
-    53: ("🌦️", "Nieselregen"),
-    55: ("🌦️", "Starker Nieselregen"),
-    56: ("🌧️", "Gefrierender Nieselregen"),
-    57: ("🌧️", "Gefrierender Nieselregen"),
-    61: ("🌧️", "Leichter Regen"),
-    63: ("🌧️", "Regen"),
-    65: ("🌧️", "Starker Regen"),
-    66: ("🌧️", "Gefrierender Regen"),
-    67: ("🌧️", "Gefrierender Regen"),
-    71: ("🌨️", "Leichter Schneefall"),
-    73: ("🌨️", "Schneefall"),
-    75: ("🌨️", "Starker Schneefall"),
-    77: ("🌨️", "Schneegriesel"),
-    80: ("🌦️", "Leichte Regenschauer"),
-    81: ("🌦️", "Regenschauer"),
-    82: ("🌧️", "Heftige Regenschauer"),
-    85: ("🌨️", "Schneeschauer"),
-    86: ("🌨️", "Starke Schneeschauer"),
-    95: ("⛈️", "Gewitter"),
-    96: ("⛈️", "Gewitter mit Hagel"),
-    99: ("⛈️", "Gewitter mit starkem Hagel"),
+    0: "Klar",
+    1: "Überwiegend klar",
+    2: "Teilweise bewölkt",
+    3: "Bewölkt",
+    45: "Nebel",
+    48: "Reifnebel",
+    51: "Leichter Nieselregen",
+    53: "Nieselregen",
+    55: "Starker Nieselregen",
+    56: "Gefrierender Nieselregen",
+    57: "Gefrierender Nieselregen",
+    61: "Leichter Regen",
+    63: "Regen",
+    65: "Starker Regen",
+    66: "Gefrierender Regen",
+    67: "Gefrierender Regen",
+    71: "Leichter Schneefall",
+    73: "Schneefall",
+    75: "Starker Schneefall",
+    77: "Schneegriesel",
+    80: "Leichte Regenschauer",
+    81: "Regenschauer",
+    82: "Heftige Regenschauer",
+    85: "Schneeschauer",
+    86: "Starke Schneeschauer",
+    95: "Gewitter",
+    96: "Gewitter mit Hagel",
+    99: "Gewitter mit starkem Hagel",
 }
 
 SECONDS_IN_A_DAY = 86400
 SYNODIC_MONTH = 29.530588853  # days from one new moon to the next
 MOON_PHASES = [
-    "🌑 Neumond",
-    "🌒 Zunehmende Sichel",
-    "🌓 Zunehmender Halbmond",
-    "🌔 Zunehmender Mond",
-    "🌕 Vollmond",
-    "🌖 Abnehmender Mond",
-    "🌗 Abnehmender Halbmond",
-    "🌘 Abnehmende Sichel",
+    "Neumond",
+    "Zunehmende Sichel",
+    "Zunehmender Halbmond",
+    "Zunehmender Mond",
+    "Vollmond",
+    "Abnehmender Mond",
+    "Abnehmender Halbmond",
+    "Abnehmende Sichel",
 ]
 
 def get_moon_phase(date=None):
-    """Return the moon phase for date (default: now). Accurate to about ±1 day."""
+    """Return the moon phase for date (default: now), e.g. "Vollmond". Accurate to about ±1 day."""
+
+    return MOON_PHASES[get_moon_phase_index(date)]
+
+
+def get_moon_phase_index(date=None):
+    """Return the moon phase for date (default: now) as 0 (new moon) to 7, with 4 = full moon."""
 
     reference_point = datetime(2000, 1, 6, 18, 14, tzinfo=timezone.utc)  # a known new moon
     if date is None:
@@ -88,9 +95,7 @@ def get_moon_phase(date=None):
     moon_age = days_since_reference % SYNODIC_MONTH
 
     # Split the cycle into 8 phases; round so each exact phase sits in the middle of its slot
-    index = round(moon_age / (SYNODIC_MONTH / 8)) % 8
-
-    return MOON_PHASES[index]
+    return round(moon_age / (SYNODIC_MONTH / 8)) % 8
 
 
 
@@ -122,7 +127,8 @@ def get_season(date=None, latitude=LATITUDE):
 def get_dish_of_the_day():
     """Return dish which best suits the current day."""
 
-    return "Kürbissuppe"
+    # TODO: choose by moon phase, season and weather
+    return get_recipe(1)
 
 
 
@@ -141,8 +147,15 @@ def get_db():
     return db
 
 
-def get_recipes():
-    """Return all recipes with their ingredient names, sorted by name."""
+def count_recipes():
+    """Return how many recipes there are."""
+
+    with closing(get_db()) as db:
+        return db.execute("SELECT count(*) FROM recipes").fetchone()[0]
+
+
+def get_recipes(limit=-1):
+    """Return recipes with their ingredient names, sorted by name; all of them unless limit is given."""
 
     with closing(get_db()) as db:
         rows = db.execute(
@@ -154,7 +167,9 @@ def get_recipes():
             JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
             GROUP BY recipes.id
             ORDER BY recipes.name
-            """
+            LIMIT ?
+            """,
+            (limit,),
         ).fetchall()
 
     return [
@@ -209,9 +224,22 @@ def get_recipe(recipe_id, servings=None):
             }
             for row in ingredients
         ],
-        "instructions": scale_text(recipe["instructions"], factor),
+        **split_instructions(scale_text(recipe["instructions"], factor)),
         "image": image,
     }
+
+
+def split_instructions(text):
+    """Split "1. Do this\n2. Do that\n\nGuten Appetit!" into steps and closing lines."""
+
+    steps, closing_lines = [], []
+    for line in text.splitlines():
+        match = re.match(r"\d+\.\s+(.*)", line)
+        if match:
+            steps.append(match.group(1))
+        elif line.strip():
+            closing_lines.append(line.strip())
+    return {"steps": steps, "closing": " ".join(closing_lines)}
 
 
 def return_error(message="Da ist etwas schiefgelaufen.", code=400):
@@ -221,7 +249,7 @@ def return_error(message="Da ist etwas schiefgelaufen.", code=400):
 
 
 def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
-    """Return the current weather at a location, e.g. "☁️ 12 °C (gefühlt 9 °C), Bewölkt"."""
+    """Return the current weather at a location, e.g. "12 °C (gefühlt 9 °C), Bewölkt"."""
 
     # Round to ~1 km so nearby visitors share a cache entry
     location = (round(latitude, 2), round(longitude, 2))
@@ -234,7 +262,7 @@ def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
     url = (
         "https://api.open-meteo.com/v1/forecast"
         f"?latitude={location[0]}&longitude={location[1]}"
-        "&current=temperature_2m,apparent_temperature,weather_code,is_day"
+        "&current=temperature_2m,apparent_temperature,weather_code"
     )
     try:
         with urllib.request.urlopen(url, timeout=5) as response:
@@ -242,13 +270,11 @@ def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
     except (OSError, ValueError, KeyError):
         return "Das Wetter verbirgt sich gerade im Nebel."
 
-    emoji, description = WEATHER_CODES.get(current["weather_code"], ("🌡️", "Unbekannt"))
-    if not current["is_day"] and current["weather_code"] in (0, 1):
-        emoji = "🌙"  # no sun in a clear night sky
+    description = WEATHER_CODES.get(current["weather_code"], "Unbekannt")
     temperature = round(current["temperature_2m"])
     feels_like = round(current["apparent_temperature"])
 
-    weather = f"{emoji} {temperature} °C"
+    weather = f"{temperature} °C"
     if feels_like != temperature:
         weather += f" (gefühlt {feels_like} °C)"
     weather += f", {description}"

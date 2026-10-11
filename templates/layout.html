@@ -4,31 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,100&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link href="/static/styles.css" rel="stylesheet">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}{% endblock %} · Was koche ich heute?</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
-
 </head>
 <body>
-    <!-- adapted from Bootstrap examples -->
-    <header class="bd-header bg-dark py-3 d-flex align-items-stretch border-bottom border-dark">
-        <div class="container-fluid d-flex align-items-center">
-            <h1 class="d-flex align-items-center fs-4 text-white mb-0"> Was koche ich heute?</h1>
+    <!-- The enchanted night behind every page: sky, moon, lights and forest -->
+    <div class="scene" aria-hidden="true">
+        <div class="stars"></div>
+        <div class="stars stars-small"></div>
+        <div class="bokeh bokeh-1"></div>
+        <div class="bokeh bokeh-2"></div>
+        <div class="bokeh bokeh-3"></div>
+        <div class="bokeh bokeh-4"></div>
+        <div class="firefly firefly-1"></div>
+        <div class="firefly firefly-2"></div>
+        <div class="firefly firefly-3"></div>
+        <div class="firefly firefly-4"></div>
+        <div class="firefly firefly-5"></div>
+        <!-- Every tree starts below y = 100, so this viewBox never cuts off a treetop -->
+        <svg class="forest" viewBox="0 100 1200 160" preserveAspectRatio="xMidYMax slice">
+            <defs>
+                <!-- A ragged fir: uneven branch tiers so the trees look grown, not stamped -->
+                <path id="fir" d="M20 0 L23 9 L21.5 9 L27 21 L24 20 L30.5 34 L26 33 L34 49 L28.5 48 L37 65 L31 64 L40 84 L22.5 82 L22.5 100 L17.5 100 L17.5 82 L0 84 L9 64 L3 65 L11.5 48 L6 49 L14 33 L9.5 34 L16 20 L13 21 L18.5 9 L17 9 Z"/>
+                <linearGradient id="far-fade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#2a2d66"/>
+                    <stop offset="1" stop-color="#121236"/>
+                </linearGradient>
+                <linearGradient id="mid-fade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#171a45"/>
+                    <stop offset="1" stop-color="#0a0a24"/>
+                </linearGradient>
+            </defs>
+            <g class="forest-far" fill="url(#far-fade)">
+                <use href="#fir" transform="translate(-10 135) scale(0.9 1)"/>
+                <use href="#fir" transform="translate(40 110) scale(1.1 1.3)"/>
+                <use href="#fir" transform="translate(95 140) scale(0.8 0.95)"/>
+                <use href="#fir" transform="translate(150 100) scale(1.2 1.45)"/>
+                <use href="#fir" transform="translate(215 130) scale(0.95 1.1)"/>
+                <use href="#fir" transform="translate(270 115) scale(1 1.25)"/>
+                <use href="#fir" transform="translate(335 140) scale(0.85 0.95)"/>
+                <use href="#fir" transform="translate(390 105) scale(1.15 1.4)"/>
+                <use href="#fir" transform="translate(455 135) scale(0.9 1)"/>
+                <use href="#fir" transform="translate(505 118) scale(1.05 1.2)"/>
+                <use href="#fir" transform="translate(570 140) scale(0.8 0.9)"/>
+                <use href="#fir" transform="translate(625 108) scale(1.2 1.35)"/>
+                <use href="#fir" transform="translate(690 132) scale(0.95 1.05)"/>
+                <use href="#fir" transform="translate(745 112) scale(1.05 1.3)"/>
+                <use href="#fir" transform="translate(810 138) scale(0.85 0.95)"/>
+                <use href="#fir" transform="translate(860 100) scale(1.2 1.45)"/>
+                <use href="#fir" transform="translate(930 130) scale(0.9 1.1)"/>
+                <use href="#fir" transform="translate(985 115) scale(1.1 1.25)"/>
+                <use href="#fir" transform="translate(1050 140) scale(0.85 0.95)"/>
+                <use href="#fir" transform="translate(1100 105) scale(1.15 1.4)"/>
+                <use href="#fir" transform="translate(1165 130) scale(0.95 1.05)"/>
+            </g>
+            <g class="forest-mid" fill="url(#mid-fade)">
+                <use href="#fir" transform="translate(10 120) scale(1.4 1.5)"/>
+                <use href="#fir" transform="translate(120 150) scale(1.1 1.1)"/>
+                <use href="#fir" transform="translate(240 135) scale(1.3 1.3)"/>
+                <use href="#fir" transform="translate(360 160) scale(1 1)"/>
+                <use href="#fir" transform="translate(480 140) scale(1.25 1.25)"/>
+                <use href="#fir" transform="translate(660 155) scale(1.05 1.05)"/>
+                <use href="#fir" transform="translate(770 135) scale(1.3 1.3)"/>
+                <use href="#fir" transform="translate(890 150) scale(1.1 1.1)"/>
+                <use href="#fir" transform="translate(1010 125) scale(1.4 1.4)"/>
+                <use href="#fir" transform="translate(1120 145) scale(1.2 1.2)"/>
+            </g>
+            <g class="forest-near">
+                <use href="#fir" transform="translate(-30 100) scale(1.7 1.6)"/>
+                <use href="#fir" transform="translate(60 120) scale(1.6 1.4)"/>
+                <use href="#fir" transform="translate(300 175) scale(1.1 0.9)"/>
+                <use href="#fir" transform="translate(580 180) scale(1 0.85)"/>
+                <use href="#fir" transform="translate(840 175) scale(1.1 0.9)"/>
+                <use href="#fir" transform="translate(1060 110) scale(1.7 1.5)"/>
+                <use href="#fir" transform="translate(1135 100) scale(1.75 1.6)"/>
+            </g>
+        </svg>
+    </div>
+
+    <header class="site-header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="/" class="brand">
+                <svg class="brand-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+                <span>Was koche ich heute?</span>
+            </a>
+            <span class="brand-tagline d-none d-md-inline">Rezepte, bei denen die Sterne richtig stehen</span>
         </div>
     </header>
 
     {% if get_flashed_messages() %}
-            <header>
-                <div class="alert alert-primary mb-0 text-center" role="alert">
-                    {{ get_flashed_messages() | join(" ") }}
-                </div>
-            </header>
+        <div class="container mt-3">
+            <div class="alert glass mb-0 text-center" role="alert">
+                {{ get_flashed_messages() | join(" ") }}
+            </div>
+        </div>
     {% endif %}
 
-
-    <main class="container">
+    <main class="container pb-5">
         {% block main %}{% endblock %}
     </main>
+
+    <footer class="site-footer">
+        Gekocht im Mondlicht · CS50x Final Project
+    </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

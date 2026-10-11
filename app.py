@@ -1,7 +1,7 @@
 # Idea brainstorming, pseudocode and databank layout from Claude
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_season, get_dish_of_the_day, get_recipes, get_recipe, return_error, get_weather, get_place, get_ip_location
+from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, get_recipes, get_recipe, count_recipes, return_error, get_weather, get_place, get_ip_location
 
 app = Flask(__name__)
 
@@ -12,12 +12,14 @@ def index():
             searched_value = request.form.get("q")
     
     moon_phase = get_moon_phase()
+    moon_phase_index = get_moon_phase_index()
     season = get_season()
     dish_of_the_day = get_dish_of_the_day()
-    recipes = get_recipes()
+    recipes = get_recipes(limit=10)
+    recipe_count = count_recipes()
 
 
-    return render_template("index.html", moon_phase=moon_phase, season=season, dish_of_the_day=dish_of_the_day, recipes=recipes)
+    return render_template("index.html", moon_phase=moon_phase, moon_phase_index=moon_phase_index, season=season, dish_of_the_day=dish_of_the_day, recipes=recipes, recipe_count=recipe_count)
 
 @app.route("/weather")
 def weather():

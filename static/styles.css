@@ -1,20 +1,844 @@
-/* Recipe page */
-.recipe-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
+/* Was koche ich heute? — an enchanted forest at night:
+   starry sky, moonlight, lantern light and a hint of arcane crystal glow */
+
+:root {
+    --night-0: #07061a;
+    --night-2: #161334;
+    --glass: rgba(22, 19, 48, 0.62);
+    --glass-strong: rgba(28, 24, 58, 0.78);
+    --glass-border: rgba(167, 139, 250, 0.2);
+    --text: #ece8f8;
+    --text-muted: #a8a2c9;
+    --violet: #a78bfa;
+    --violet-light: #c4b5fd;
+    --magenta: #e879f9;
+    --cyan: #67e8f9;
+    --amber: #ffb547;
+    --amber-deep: #f08a24;
+    --radius: 1.1rem;
+    --font-heading: "Fraunces", Georgia, serif;
+    --font-body: "Source Sans 3", system-ui, sans-serif;
 }
 
-.recipe-image-placeholder {
+[data-bs-theme="dark"] {
+    --bs-body-bg: var(--night-0);
+    --bs-body-color: var(--text);
+    --bs-body-font-family: var(--font-body);
+    --bs-body-font-size: 1.0625rem;
+    --bs-link-color: var(--violet-light);
+    --bs-link-color-rgb: 196, 181, 253;
+    --bs-link-hover-color: var(--amber);
+    --bs-link-hover-color-rgb: 255, 181, 71;
+    --bs-secondary-color: var(--text-muted);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(ellipse 70% 50% at 50% 30%, rgba(60, 130, 180, 0.28), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 12% 15%, rgba(139, 92, 246, 0.28), transparent 70%),
+        radial-gradient(ellipse 45% 35% at 90% 75%, rgba(217, 70, 239, 0.16), transparent 70%),
+        linear-gradient(180deg, #0b0a24 0%, #121838 45%, #0c0a22 80%, var(--night-0) 100%);
+    background-attachment: fixed;
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-variation-settings: "SOFT" 100;
+    letter-spacing: -0.005em;
+}
+
+a {
+    transition: color 0.2s;
+}
+
+::selection {
+    background: rgba(167, 139, 250, 0.45);
+}
+
+
+/* ---------- The night scene behind the content ---------- */
+
+.scene {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Ground mist over the forest */
+.scene::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 35vh;
+    background: linear-gradient(0deg, rgba(110, 90, 200, 0.18), transparent);
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1.5px 1.5px at 23px 41px, #fff, transparent),
+        radial-gradient(1px 1px at 97px 13px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 151px 88px, #e9e0ff, transparent),
+        radial-gradient(1px 1px at 211px 27px, #fff, transparent),
+        radial-gradient(2px 2px at 263px 132px, #fff8e0, transparent),
+        radial-gradient(1px 1px at 318px 61px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 367px 171px, #d8f4ff, transparent),
+        radial-gradient(1px 1px at 42px 203px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 126px 251px, #fff, transparent),
+        radial-gradient(1px 1px at 189px 312px, #e9e0ff, transparent),
+        radial-gradient(2px 2px at 241px 229px, #fff, transparent),
+        radial-gradient(1px 1px at 302px 287px, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 376px 342px, #fff, transparent),
+        radial-gradient(1px 1px at 67px 371px, #d8f4ff, transparent);
+    background-size: 400px 400px;
+    mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 85%);
+    animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+.stars-small {
+    background-size: 260px 260px;
+    background-position: 130px 70px;
+    opacity: 0.6;
+    animation-duration: 9s;
+    animation-delay: -3s;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.45; }
+    to { opacity: 1; }
+}
+
+/* Soft out-of-focus lights drifting through the trees */
+.bokeh {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(170, 215, 255, 0.22), rgba(170, 215, 255, 0.05) 60%, transparent 70%);
+    filter: blur(2px);
+    animation: drift 22s ease-in-out infinite alternate;
+}
+
+.bokeh-1 { width: 180px; height: 180px; top: 18%; left: 22%; }
+.bokeh-2 { width: 120px; height: 120px; top: 34%; left: 58%; animation-duration: 28s; animation-delay: -6s; }
+.bokeh-3 { width: 240px; height: 240px; top: 8%; left: 64%; animation-duration: 32s; animation-delay: -12s; }
+.bokeh-4 { width: 140px; height: 140px; top: 48%; left: 8%; animation-duration: 26s; animation-delay: -3s;
+           background: radial-gradient(circle, rgba(196, 140, 255, 0.2), transparent 70%); }
+
+@keyframes drift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(40px, -30px); }
+}
+
+/* Fireflies glowing like tiny lanterns */
+.firefly {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ffd27a;
+    box-shadow: 0 0 8px 3px rgba(255, 181, 71, 0.6);
+    animation: firefly 12s ease-in-out infinite;
+}
+
+.firefly-1 { bottom: 22%; left: 12%; }
+.firefly-2 { bottom: 30%; left: 38%; animation-duration: 15s; animation-delay: -4s; }
+.firefly-3 { bottom: 18%; left: 63%; animation-duration: 11s; animation-delay: -7s; }
+.firefly-4 { bottom: 34%; left: 82%; animation-duration: 17s; animation-delay: -2s; }
+.firefly-5 { bottom: 12%; left: 92%; animation-duration: 13s; animation-delay: -9s; }
+
+@keyframes firefly {
+    0%   { transform: translate(0, 0); opacity: 0; }
+    15%  { opacity: 1; }
+    50%  { transform: translate(30px, -60px); opacity: 0.3; }
+    70%  { opacity: 1; }
+    100% { transform: translate(-20px, -110px); opacity: 0; }
+}
+
+/* Grow with the width so treetops are never cut off; on narrow screens keep
+   a minimum height and trim the sides instead */
+.forest {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 160;
+    min-height: 120px;
+}
+
+.forest-far { opacity: 0.75; filter: blur(1.2px); }
+.forest-mid { opacity: 0.95; }
+.forest-near { fill: #04030f; }
+
+
+/* ---------- Header and footer ---------- */
+
+.site-header {
+    padding: 1rem 0;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.45), rgba(103, 232, 249, 0.35), transparent) 1;
+    background: linear-gradient(180deg, rgba(7, 6, 26, 0.75), rgba(7, 6, 26, 0.2));
+    backdrop-filter: blur(6px);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-variation-settings: "SOFT" 100;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: var(--amber);
+}
+
+.brand-moon {
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: var(--amber);
+    filter: drop-shadow(0 0 8px rgba(255, 170, 60, 0.7));
+}
+
+.brand-tagline {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.site-footer {
+    margin-top: auto;
+    padding: 2rem 1rem 2.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+
+/* ---------- Shared building blocks ---------- */
+
+.glass {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.label {
+    margin-bottom: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--violet);
+}
+
+.label-amber {
+    color: var(--amber);
+}
+
+.btn-amber {
+    padding: 0.55rem 1.4rem;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffcf7a, var(--amber) 45%, var(--amber-deep));
+    color: #2a1405;
+    font-weight: 600;
+    box-shadow: 0 0 18px rgba(255, 170, 60, 0.45);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.btn-amber:hover,
+.btn-amber:focus-visible {
+    background: linear-gradient(135deg, #ffd98f, #ffbe5c 45%, #f59a3a);
+    color: #2a1405;
+    box-shadow: 0 0 28px rgba(255, 170, 60, 0.75);
+    transform: translateY(-1px);
+}
+
+.form-control {
+    background: rgba(12, 10, 32, 0.7);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+}
+
+.form-control:focus {
+    background: rgba(12, 10, 32, 0.85);
+    border-color: var(--violet);
+    color: var(--text);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.25), 0 0 24px rgba(167, 139, 250, 0.3);
+}
+
+.form-control::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+.image-placeholder {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 250px;
-    font-size: 6rem;
-    background: var(--bs-tertiary-bg);
+    background: radial-gradient(circle, rgba(255, 160, 50, 0.22), rgba(60, 30, 90, 0.35) 55%, var(--night-2) 85%);
 }
 
-/* Keep the line breaks of the numbered steps */
-.instructions {
-    white-space: pre-line;
+.image-placeholder svg {
+    width: 3rem;
+    height: 3rem;
+    fill: rgba(255, 190, 100, 0.85);
+    filter: drop-shadow(0 0 12px rgba(255, 170, 60, 0.6));
+}
+
+
+/* ---------- Start page ---------- */
+
+.hero {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr 1.25fr;
+        margin-top: 2rem;
+    }
+}
+
+.sky-reading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    overflow: hidden;
+    padding: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .sky-reading {
+        padding: 1.75rem;
+    }
+}
+
+/* Moonlight spilling into the card */
+.sky-reading::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -70px;
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.2), transparent 65%);
+}
+
+.sky-text {
+    position: relative;
+    min-width: 0;
+}
+
+.omen {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-variation-settings: "SOFT" 100;
+    line-height: 1.3;
+}
+
+.weather {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* The moon shows the actual phase */
+.card-moon {
+    position: relative;
+    flex: none;
+    width: 52px;
+    height: 52px;
+    margin-right: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .card-moon {
+        width: 68px;
+        height: 68px;
+        margin-right: 1rem;
+    }
+}
+
+.moon-disc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    background: radial-gradient(circle at 36% 34%, #fffdf0, #ece6cc 55%, #cbc2a2);
+    box-shadow:
+        0 0 30px rgba(255, 248, 220, 0.55),
+        0 0 90px rgba(196, 181, 253, 0.45),
+        0 0 180px rgba(103, 232, 249, 0.18);
+}
+
+/* A thin, glowing halo circling the moon */
+.card-moon::after {
+    content: "";
+    position: absolute;
+    inset: -14% -32%;
+    border: 1.5px solid rgba(198, 246, 166, 0.55);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+    box-shadow: 0 0 12px rgba(198, 246, 166, 0.35);
+    animation: halo 14s ease-in-out infinite alternate;
+}
+
+@keyframes halo {
+    from { transform: rotate(-18deg) scale(1); opacity: 0.55; }
+    to { transform: rotate(-8deg) scale(1.06); opacity: 0.9; }
+}
+
+/* The earth's shadow slides across the disc: from the left while waxing, from the right while waning */
+.moon-shadow {
+    position: absolute;
+    inset: -1px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, #1a1838, #0f0d26);
+    box-shadow: 0 0 6px 2px #0f0d26;
+}
+
+.phase-0 .moon-shadow { transform: translateX(0); }
+.phase-1 .moon-shadow { transform: translateX(-30%); }
+.phase-2 .moon-shadow { transform: translateX(-55%); }
+.phase-3 .moon-shadow { transform: translateX(-80%); }
+.phase-4 .moon-shadow { transform: translateX(-120%); }
+.phase-5 .moon-shadow { transform: translateX(80%); }
+.phase-6 .moon-shadow { transform: translateX(55%); }
+.phase-7 .moon-shadow { transform: translateX(30%); }
+
+/* A new moon barely glows */
+.phase-0 .moon-disc {
+    box-shadow: 0 0 24px rgba(196, 181, 253, 0.25), 0 0 60px rgba(103, 232, 249, 0.1);
+}
+
+.dish-of-the-day {
+    display: grid;
+    overflow: hidden;
+    color: var(--text);
+    text-decoration: none;
+    border-color: rgba(255, 181, 71, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), 0 0 40px rgba(240, 138, 36, 0.14);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.dish-of-the-day:hover {
+    color: var(--text);
+    border-color: rgba(255, 181, 71, 0.6);
+    box-shadow: 0 14px 44px rgba(0, 0, 0, 0.4), 0 0 60px rgba(240, 138, 36, 0.3);
+    transform: translateY(-3px);
+}
+
+@media (min-width: 576px) {
+    .dish-of-the-day {
+        grid-template-columns: 190px 1fr;
+    }
+}
+
+.dish-image {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+@media (min-width: 576px) {
+    .dish-image {
+        height: 100%;
+        min-height: 170px;
+    }
+}
+
+.dish-text {
+    padding: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .dish-text {
+        padding: 1.5rem 1.75rem;
+    }
+}
+
+.dish-name {
+    margin-bottom: 0.3rem;
+    font-size: 1.75rem;
+    background: linear-gradient(120deg, #fff1d6, var(--amber) 60%, var(--amber-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 14px rgba(255, 170, 60, 0.35));
+}
+
+.dish-meta {
+    margin-bottom: 0.5rem;
+    color: var(--amber);
+}
+
+.dish-hint {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.search-section {
+    margin: 2rem 0;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.search-form .form-control {
+    min-width: 0;
+    padding: 0.65rem 1.2rem;
+    border-radius: 999px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.section-count {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+    gap: 1rem;
+}
+
+.recipe-card {
+    display: block;
+    padding: 1.2rem 1.35rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.recipe-card:hover {
+    color: var(--text);
+    border-color: rgba(167, 139, 250, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 28px rgba(167, 139, 250, 0.3), inset 0 0 30px rgba(103, 232, 249, 0.06);
+    transform: translateY(-3px);
+}
+
+.recipe-card-name {
+    margin-bottom: 0.25rem;
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+.recipe-card:hover .recipe-card-name {
+    color: var(--violet-light);
+}
+
+.recipe-card-time {
+    margin-bottom: 0.45rem;
+    font-size: 0.9rem;
+    color: var(--amber);
+}
+
+.recipe-card-ingredients {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+/* ---------- Recipe page ---------- */
+
+.back-link {
+    margin: 1.25rem 0 0.75rem;
+}
+
+.back-link a {
+    text-decoration: none;
+}
+
+.recipe-header {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    border-radius: calc(var(--radius) * 1.2);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+}
+
+.recipe-image {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 40vh, 380px);
+    object-fit: cover;
+}
+
+/* Without a photo: the moon sits above the title instead of behind it */
+.recipe-image.image-placeholder {
+    display: flex;
+    align-items: flex-start;
+    height: 200px;
+    padding-top: 2.5rem;
+}
+
+/* Darken the bottom of the image so the title stays readable */
+.recipe-header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(7, 6, 26, 0.92) 0%, rgba(7, 6, 26, 0.4) 45%, transparent 75%);
+}
+
+.recipe-title {
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 1;
+    padding: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .recipe-title {
+        padding: 1.5rem 1.75rem;
+    }
+}
+
+.recipe-title h1 {
+    margin-bottom: 0.2rem;
+    font-size: clamp(1.7rem, 5vw, 2.6rem);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(167, 139, 250, 0.4);
+}
+
+.recipe-meta {
+    margin: 0;
+    color: var(--text);
+    opacity: 0.85;
+}
+
+.recipe-body {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .recipe-body {
+        grid-template-columns: minmax(280px, 340px) 1fr;
+        align-items: start;
+    }
+
+    .ingredients {
+        position: sticky;
+        top: 1rem;
+    }
+}
+
+.ingredients,
+.steps {
+    padding: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .ingredients,
+    .steps {
+        padding: 1.5rem 1.75rem;
+    }
+}
+
+.ingredients h2,
+.steps h2 {
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
+}
+
+.servings-form {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-muted);
+}
+
+.servings-input {
+    width: 5.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.ingredient-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ingredient-list li {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(167, 139, 250, 0.15);
+}
+
+.ingredient-list li:last-child {
+    border-bottom: none;
+}
+
+.amount {
+    font-weight: 600;
+    color: var(--amber);
+    text-align: right;
+}
+
+/* Spices without an amount: name first, a quiet note on the right */
+.ingredient-list li.to-taste {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.to-taste-label {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.step-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.step-list li {
+    position: relative;
+    padding: 0.2rem 0 1.1rem 3.1rem;
+    line-height: 1.6;
+    counter-increment: step;
+}
+
+/* Numbers glowing like little runes */
+.step-list li::before {
+    content: counter(step);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: 1px solid rgba(167, 139, 250, 0.55);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.35), rgba(30, 20, 70, 0.6));
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 0 14px rgba(167, 139, 250, 0.45);
+}
+
+.closing {
+    margin: 0.75rem 0 0;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--amber);
+    text-shadow: 0 0 16px rgba(255, 170, 60, 0.45);
+}
+
+
+/* ---------- Error page ---------- */
+
+.error-box {
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+}
+
+.error-code {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 1;
+    background: linear-gradient(120deg, var(--violet-light), var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.5));
+}
+
+.error-flavor {
+    margin: 0.9rem 0 0.3rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.error-message {
+    color: var(--text-muted);
+}
+
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 575.98px) {
+    .brand {
+        font-size: 1.15rem;
+    }
+
+    .omen {
+        font-size: 1.2rem;
+    }
+
+    .dish-name {
+        font-size: 1.45rem;
+    }
+}
+
+
+/* ---------- Less motion for those who prefer it ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
