@@ -1,15 +1,22 @@
-"""Find freely licensed photos for the recipes on Wikimedia Commons and build a page to choose them.
+"""Find freely licensed photos for the recipes on Wikimedia Commons or Pexels and build a page to choose them.
 
-Run:   python tools/find_images.py            (all recipes without a photo)
+Run:   python tools/find_images.py            (all recipes without a photo, from Commons)
        python tools/find_images.py --all      (all recipes, also those that have one)
+       python tools/find_images.py --pexels   (from Pexels instead)
+
+Pexels needs a free API key from https://www.pexels.com/api/, either in the environment variable PEXELS_API_KEY
+or in tools/images/pexels-key.txt. It allows 200 searches an hour; answers are kept in tools/images/pexels.json,
+so after hitting the limit simply run the script again later.
 
 Writes tools/images/review.html. Open it in a browser, check the pre-selected photo of every recipe (click
 another one or "Kein Bild"), then click "Auswahl speichern" and run tools/fetch_images.py with the saved file.
 
-Only photos usable on this site are offered: public domain, CC0, CC BY and CC BY-SA (credit the author,
-share alike), landscape-ish and at least 800 pixels wide.
+Only photos usable on this site are offered: from Commons public domain, CC0, CC BY and CC BY-SA (credit the
+author, share alike), landscape-ish and at least 800 pixels wide; from Pexels landscape photos, which its licence
+lets anyone use.
 """
 
+import functools
 import html
 import json
 import os
@@ -17,6 +24,7 @@ import re
 import sqlite3
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -25,6 +33,8 @@ OUT = os.path.join(ROOT, "tools", "images")
 API = "https://commons.wikimedia.org/w/api.php"
 WIKIPEDIA = "https://de.wikipedia.org/w/api.php"
 USER_AGENT = "WasKocheIchHeute/1.0 (https://github.com/Richard4224/recipe-search) recipe photo search"
+PEXELS = "https://api.pexels.com/v1/search"
+PEXELS_LICENSE = "https://www.pexels.com/license/"
 CANDIDATES = 6
 IMAGE_INFO = {"prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 360}
 
@@ -171,6 +181,61 @@ def find(name):
     return found[:CANDIDATES]
 
 
+class RateLimited(Exception):
+    """Pexels' 200 searches for this hour are used up."""
+
+
+def pexels_key():
+    key = os.environ.get("PEXELS_API_KEY")
+    path = os.path.join(OUT, "pexels-key.txt")
+    if not key and os.path.exists(path):
+        with open(path, encoding="utf-8") as file:
+            key = file.read().strip()
+    if not key:
+        sys.exit("Für --pexels brauchst du einen kostenlosen API-Key von https://www.pexels.com/api/.\n"
+                 f"Leg ihn in {path} ab oder in die Umgebungsvariable PEXELS_API_KEY.")
+    return key
+
+
+def search_pexels(term, key, cache):
+    """Landscape photos on Pexels for term, which it reads as German. Answers are kept in cache."""
+    if term not in cache:
+        query = urllib.parse.urlencode({
+            "query": term, "locale": "de-DE", "orientation": "landscape", "per_page": CANDIDATES,
+        })
+        request = urllib.request.Request(f"{PEXELS}?{query}", headers={"Authorization": key, "User-Agent": USER_AGENT})
+        try:
+            with urllib.request.urlopen(request, timeout=20) as response:
+                cache[term] = json.load(response).get("photos", [])
+                left = response.headers.get("X-Ratelimit-Remaining")
+        except urllib.error.HTTPError as error:
+            if error.code == 429:
+                raise RateLimited
+            raise
+        time.sleep(0.3)
+        if left == "0":
+            raise RateLimited
+    return [{
+        "title": f"Pexels {photo['id']}",
+        "thumb": photo["src"]["medium"],
+        "download": photo["src"]["large2x"],
+        "source": photo["url"],
+        "author": photo["photographer"],
+        "license": "Pexels-Lizenz",
+        "size": f"{photo['width']}×{photo['height']}",
+    } for photo in cache[term]]
+
+
+def find_pexels(name, key, cache):
+    """Up to CANDIDATES Pexels photos for a recipe: by its name, or if that finds nothing, by the dish alone."""
+    terms = search_terms(name)
+    for term in dict.fromkeys([terms[1] if len(terms) > 1 else terms[0], terms[-1]]):  # without brackets first
+        found = search_pexels(term, key, cache)
+        if found:
+            return [{**photo, "via": term} for photo in found]
+    return []
+
+
 def main():
     db = sqlite3.connect(os.path.join(ROOT, "recipes.db"))
     rows = db.execute("SELECT name, image FROM recipes ORDER BY name").fetchall()
@@ -180,24 +245,44 @@ def main():
                         and db.execute("SELECT image_author FROM recipes WHERE name = ?", (name,)).fetchone()[0])]
 
     os.makedirs(OUT, exist_ok=True)
+    source = "pexels" if "--pexels" in sys.argv else "commons"
+    cache_path = os.path.join(OUT, "pexels.json")
+    cache = {}
+    if source == "pexels":
+        if os.path.exists(cache_path):
+            with open(cache_path, encoding="utf-8") as file:
+                cache = json.load(file)
+        find_photos = functools.partial(find_pexels, key=pexels_key(), cache=cache)
+    else:
+        find_photos = find
+
     results = []
-    for number, (name, image) in enumerate(rows, 1):
-        candidates = find(name)
-        results.append({"recipe": name, "file": image, "candidates": candidates})
-        print(f"[{number}/{len(rows)}] {name}: {len(candidates)} Fotos", flush=True)
+    try:
+        for number, (name, image) in enumerate(rows, 1):
+            candidates = find_photos(name)
+            results.append({"recipe": name, "file": image, "candidates": candidates})
+            print(f"[{number}/{len(rows)}] {name}: {len(candidates)} Fotos", flush=True)
+    except RateLimited:
+        print(f"\nPexels-Limit für diese Stunde erreicht, {len(rows) - len(results)} Rezepte fehlen noch. "
+              "Starte das Skript in einer Stunde nochmal, Gefundenes wird nicht neu gesucht.")
+    finally:
+        if cache:
+            with open(cache_path, "w", encoding="utf-8") as file:
+                json.dump(cache, file, ensure_ascii=False)
 
     with open(os.path.join(OUT, "candidates.json"), "w", encoding="utf-8") as file:
         json.dump(results, file, ensure_ascii=False, indent=1)
-    write_review(results)
+    write_review(results, source)
     found = sum(1 for result in results if result["candidates"])
     print(f"\nFertig: für {found} von {len(results)} Rezepten Fotos gefunden.")
     print(f"Jetzt im Browser öffnen: {os.path.join(OUT, 'review.html')}")
 
 
-def write_review(results):
+def write_review(results, source="commons"):
     """The page to choose the photos on, with the search results built in."""
+    page = REVIEW_PAGE.replace("__SOURCE__", source)
     with open(os.path.join(OUT, "review.html"), "w", encoding="utf-8") as file:
-        file.write(REVIEW_PAGE.replace("__DATA__", json.dumps(results, ensure_ascii=False).replace("</", "<\\/")))
+        file.write(page.replace("__DATA__", json.dumps(results, ensure_ascii=False).replace("</", "<\\/")))
 
 
 REVIEW_PAGE = """<!DOCTYPE html>
@@ -223,14 +308,15 @@ REVIEW_PAGE = """<!DOCTYPE html>
 </style></head><body>
 <h1>Fotos auswählen</h1>
 <p class="hint">Bei jedem Rezept ist das erste Foto schon gewählt. Klick ein anderes an, wenn es besser passt, oder
-"Kein Bild", wenn keins passt. Ein Klick auf das Foto mit gedrückter Strg-Taste öffnet es auf Commons.
+"Kein Bild", wenn keins passt. Ein Klick auf das Foto mit gedrückter Strg-Taste öffnet es auf Commons bzw. Pexels.
 Deine Auswahl bleibt auch nach dem Neuladen erhalten.</p>
 <div id="list"></div>
 <div class="bar"><button id="save">Auswahl speichern</button><span id="status"></span></div>
 <script>
     const data = __DATA__;
     let saved = {};  // choices made before a reload or a new search
-    try { saved = JSON.parse(localStorage.getItem("bildauswahl")) || {}; } catch {}
+    const KEY = "bildauswahl-__SOURCE__";
+    try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch {}
     const choice = {};
     const list = document.getElementById("list");
     const status = document.getElementById("status");
@@ -238,7 +324,7 @@ Deine Auswahl bleibt auch nach dem Neuladen erhalten.</p>
     function update() {
         const chosen = Object.values(choice).filter(Boolean).length;
         status.textContent = `${chosen} Rezepte mit Foto, ${data.length - chosen} ohne`;
-        try { localStorage.setItem("bildauswahl", JSON.stringify({ ...saved, ...choice })); } catch {}
+        try { localStorage.setItem(KEY, JSON.stringify({ ...saved, ...choice })); } catch {}
     }
 
     for (const entry of data) {

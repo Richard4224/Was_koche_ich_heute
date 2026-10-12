@@ -19,7 +19,7 @@ import urllib.request
 from contextlib import closing
 from PIL import Image, ImageOps
 
-from find_images import ROOT, USER_AGENT, author, commons, free_license, plain
+from find_images import PEXELS_LICENSE, ROOT, USER_AGENT, author, commons, free_license, plain
 
 IMAGES = os.path.join(ROOT, "static", "images")
 CREDITS = os.path.join(ROOT, "images.sql")
@@ -44,6 +44,17 @@ def photo_info(title):
         "image_license": license_name,
         "image_license_url": meta.get("LicenseUrl", {}).get("value") or None,
         "image_source": info["descriptionurl"],
+    }
+
+
+def pexels_info(photo):
+    """Download URL and credit of a Pexels photo; the search already told us everything."""
+    return {
+        "url": photo["download"],
+        "image_author": photo["author"],
+        "image_license": "Pexels-Lizenz",
+        "image_license_url": PEXELS_LICENSE,
+        "image_source": photo["source"],
     }
 
 
@@ -135,7 +146,7 @@ def main():
 
             if row[1] == photo["source"] and os.path.exists(file_path):
                 continue  # already there
-            info = photo_info(photo["title"])
+            info = pexels_info(photo) if photo["title"].startswith("Pexels ") else photo_info(photo["title"])
             if not info:
                 failed += 1
                 print(f"[{number}/{len(choices)}] {name}: {photo['title']} nicht mehr frei verfügbar", flush=True)

@@ -20,7 +20,7 @@ My CS50x final project. I also want to use it at home, which is why everything a
 - **A quick bar of main ingredients** ("Worauf hast du Lust?"): Geflügel, Rind & Kalb, Schwein, Fisch, Ei, Käse, Tofu, Pilze, Kartoffeln, Nudeln, Reis, … One click for "with", the minus next to it for "without".
 - **Results scroll in their own box** and load more as you reach its end, so the page stays where it is.
 - **Coming back from a recipe** returns you to the same search, scrolled to the same spot.
-- **Photos from Wikimedia Commons,** each credited under the photo and on the page *Bildnachweise*.
+- **Photos from Wikimedia Commons and Pexels,** each credited under the photo and on the page *Bildnachweise*.
 - **A dish of the day** chosen by the season and the holidays, the time of day, the weather and the moon, with the reason on the card ("Ein Herbstgericht zum Abendessen. Wärmt bei 8 °C und ist rund wie der Vollmond.").
 - **Works on phones:** the layout adapts, and visitors who prefer reduced motion get a still picture.
 
@@ -51,7 +51,7 @@ Then open http://127.0.0.1:5000.
   python tools/find_images.py
   python tools/fetch_images.py path/to/bildauswahl.json
   ```
-  Both only look at recipes that don't have a credited photo yet (`--all` for every recipe).
+  Both only look at recipes that don't have a credited photo yet (`--all` for every recipe). `--pexels` searches Pexels instead of Commons; it needs a free API key from [pexels.com/api](https://www.pexels.com/api/) in `tools/images/pexels-key.txt` (or the environment variable `PEXELS_API_KEY`).
 
 ## Project structure
 
@@ -76,7 +76,7 @@ Then open http://127.0.0.1:5000.
 | `static/images/` | The recipe photos, named like the recipe (`kuerbissuppe.jpg`). |
 | `static/scenery/*.svg` | Fir silhouettes, used as CSS masks for the rows of trees, and the grass of the forest floor. |
 | `tools/generate_scenery.py` | Generates all scenery SVGs. |
-| `tools/find_images.py` | Searches Wikimedia Commons for photos of the recipes and builds a page to choose them. |
+| `tools/find_images.py` | Searches Wikimedia Commons or Pexels for photos of the recipes and builds a page to choose them. |
 | `tools/fetch_images.py` | Downloads the chosen photos in web size and writes their credits to `images.sql`. |
 
 ## Design decisions
@@ -130,11 +130,12 @@ Every recipe gets points; the one with the most wins. What counts, from most to 
 
 ### Photos
 
-I didn't want to take 300 photos myself or have them generated, so the photos come from Wikimedia Commons.
+I didn't want to take 300 photos myself or have them generated, so the photos come from Wikimedia Commons, and where it has nothing fitting, from Pexels.
 
 - **Only licences that allow this use:** public domain, CC0, CC BY and CC BY-SA. Not "non-commercial" (NC) or "no derivatives" (ND), and not GFDL alone, which wants the whole licence text printed next to the photo. The licence is checked again when a photo is downloaded.
 - **Found by a script, chosen by me.** `find_images.py` searches Commons for the recipe's name. Most photos there are described in English, so "Bratapfel" alone finds little; the script then asks the German Wikipedia, takes the photo of the matching article and searches again with its English title ("Baked apple"), and also tries the dish without its sides ("Lammkeule" for "Lammkeule mit Rosmarin und Knoblauch"). Those hits are often right and sometimes a painting or the elder bush instead of the fritters, so the results go to a page where I pick one per recipe (the first is pre-selected) or none.
-- **Credits are data.** Author, licence, link to the licence and the photo's Commons page are stored with the recipe and shown under the photo and on *Bildnachweise*. They live in their own file, `images.sql`, so redoing the photos never touches the recipes in `seed.sql`.
+- **Pexels fills the gaps.** Commons photos are mostly people's own home cooking, which suits a cottage in the woods, but for dishes like "Ofen-Feta-Pasta" or "Champignon-Cremesuppe" it has nothing. Pexels has styled food photography, understands German searches and its licence allows using the photos freely. Its API allows 200 searches an hour, so the script keeps every answer and stops cleanly at the limit; run it again later and it continues.
+- **Credits are data.** Author, licence, link to the licence and the photo's page on Commons or Pexels are stored with the recipe and shown under the photo and on *Bildnachweise*. They live in their own file, `images.sql`, so redoing the photos never touches the recipes in `seed.sql`.
 - **Web size:** 960 pixels wide at JPEG quality 75, about 100 KB each, so a few hundred photos fit in the repository.
 
 ### Look and feel
@@ -160,4 +161,4 @@ The vibe I wanted: mysterious and enchanted, a moonlit night in a forest lit by 
 - **Place names:** [Nominatim](https://nominatim.openstreetmap.org), data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (ODbL).
 - **IP location:** [ipinfo.io](https://ipinfo.io).
 - **Frameworks and fonts:** [Flask](https://flask.palletsprojects.com), [Bootstrap 5](https://getbootstrap.com), [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) via Google Fonts.
-- **Photos:** from [Wikimedia Commons](https://commons.wikimedia.org), each under its own free licence. Author, licence and source are named under every photo and on the page *Bildnachweise* (`/bildnachweise`).
+- **Photos:** from [Wikimedia Commons](https://commons.wikimedia.org), each under its own free licence, and [Pexels](https://www.pexels.com) under the [Pexels licence](https://www.pexels.com/license/). Author, licence and source are named under every photo and on the page *Bildnachweise* (`/bildnachweise`).
