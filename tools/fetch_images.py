@@ -19,7 +19,8 @@ import urllib.request
 from contextlib import closing
 from PIL import Image, ImageOps
 
-from find_images import PEXELS_LICENSE, ROOT, USER_AGENT, author, commons, free_license, plain
+from find_images import (PIXABAY_LICENSE, ROOT, USER_AGENT, author, commons, free_license, pixabay, pixabay_key,
+                         plain)
 
 IMAGES = os.path.join(ROOT, "static", "images")
 CREDITS = os.path.join(ROOT, "images.sql")
@@ -47,14 +48,17 @@ def photo_info(title):
     }
 
 
-def pexels_info(photo):
-    """Download URL and credit of a Pexels photo; the search already told us everything."""
+def pixabay_info(title):
+    """Download URL and credit of a Pixabay photo, or None if it is gone. Its links expire, so ask anew."""
+    hits = pixabay({"id": title.removeprefix("Pixabay ")}, pixabay_key()).get("hits", [])
+    if not hits:
+        return None
     return {
-        "url": photo["download"],
-        "image_author": photo["author"],
-        "image_license": "Pexels-Lizenz",
-        "image_license_url": PEXELS_LICENSE,
-        "image_source": photo["source"],
+        "url": hits[0]["largeImageURL"],
+        "image_author": hits[0]["user"],
+        "image_license": "Pixabay-Lizenz",
+        "image_license_url": PIXABAY_LICENSE,
+        "image_source": hits[0]["pageURL"],
     }
 
 
@@ -146,7 +150,7 @@ def main():
 
             if row[1] == photo["source"] and os.path.exists(file_path):
                 continue  # already there
-            info = pexels_info(photo) if photo["title"].startswith("Pexels ") else photo_info(photo["title"])
+            info = pixabay_info(photo["title"]) if photo["title"].startswith("Pixabay ") else photo_info(photo["title"])
             if not info:
                 failed += 1
                 print(f"[{number}/{len(choices)}] {name}: {photo['title']} nicht mehr frei verfügbar", flush=True)

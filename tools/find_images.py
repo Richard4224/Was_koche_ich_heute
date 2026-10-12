@@ -1,19 +1,18 @@
-"""Find freely licensed photos for the recipes on Wikimedia Commons or Pexels and build a page to choose them.
+"""Find freely licensed photos for the recipes on Wikimedia Commons or Pixabay and build a page to choose them.
 
-Run:   python tools/find_images.py            (all recipes without a photo, from Commons)
-       python tools/find_images.py --all      (all recipes, also those that have one)
-       python tools/find_images.py --pexels   (from Pexels instead)
+Run:   python tools/find_images.py             (all recipes without a photo, from Commons)
+       python tools/find_images.py --all       (all recipes, also those that have one)
+       python tools/find_images.py --pixabay   (from Pixabay instead)
 
-Pexels needs a free API key from https://www.pexels.com/api/, either in the environment variable PEXELS_API_KEY
-or in tools/images/pexels-key.txt. It allows 200 searches an hour; answers are kept in tools/images/pexels.json,
-so after hitting the limit simply run the script again later.
+Pixabay needs a free API key (log in, then see https://pixabay.com/api/docs/), either in the environment variable
+PIXABAY_API_KEY or in tools/images/pixabay-key.txt. Its answers are kept in tools/images/pixabay.json for a day.
 
 Writes tools/images/review.html. Open it in a browser, check the pre-selected photo of every recipe (click
 another one or "Kein Bild"), then click "Auswahl speichern" and run tools/fetch_images.py with the saved file.
 
 Only photos usable on this site are offered: from Commons public domain, CC0, CC BY and CC BY-SA (credit the
-author, share alike), landscape-ish and at least 800 pixels wide; from Pexels landscape photos, which its licence
-lets anyone use.
+author, share alike), landscape-ish and at least 800 pixels wide; from Pixabay landscape food photos at least
+960 pixels wide, which its licence lets anyone use.
 """
 
 import functools
@@ -33,8 +32,8 @@ OUT = os.path.join(ROOT, "tools", "images")
 API = "https://commons.wikimedia.org/w/api.php"
 WIKIPEDIA = "https://de.wikipedia.org/w/api.php"
 USER_AGENT = "WasKocheIchHeute/1.0 (https://github.com/Richard4224/recipe-search) recipe photo search"
-PEXELS = "https://api.pexels.com/v1/search"
-PEXELS_LICENSE = "https://www.pexels.com/license/"
+PIXABAY = "https://pixabay.com/api/"
+PIXABAY_LICENSE = "https://pixabay.com/service/license-summary/"
 CANDIDATES = 6
 IMAGE_INFO = {"prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 360}
 
@@ -181,56 +180,62 @@ def find(name):
     return found[:CANDIDATES]
 
 
-class RateLimited(Exception):
-    """Pexels' 200 searches for this hour are used up."""
-
-
-def pexels_key():
-    key = os.environ.get("PEXELS_API_KEY")
-    path = os.path.join(OUT, "pexels-key.txt")
+def pixabay_key():
+    key = os.environ.get("PIXABAY_API_KEY")
+    path = os.path.join(OUT, "pixabay-key.txt")
     if not key and os.path.exists(path):
         with open(path, encoding="utf-8") as file:
             key = file.read().strip()
     if not key:
-        sys.exit("Für --pexels brauchst du einen kostenlosen API-Key von https://www.pexels.com/api/.\n"
-                 f"Leg ihn in {path} ab oder in die Umgebungsvariable PEXELS_API_KEY.")
+        sys.exit("Für Pixabay brauchst du einen kostenlosen API-Key: einloggen, dann steht er auf "
+                 f"https://pixabay.com/api/docs/.\nLeg ihn in {path} ab oder in die Umgebungsvariable PIXABAY_API_KEY.")
     return key
 
 
-def search_pexels(term, key, cache):
-    """Landscape photos on Pexels for term, which it reads as German. Answers are kept in cache."""
-    if term not in cache:
-        query = urllib.parse.urlencode({
-            "query": term, "locale": "de-DE", "orientation": "landscape", "per_page": CANDIDATES,
-        })
-        request = urllib.request.Request(f"{PEXELS}?{query}", headers={"Authorization": key, "User-Agent": USER_AGENT})
+def pixabay(params, key):
+    """Ask the Pixabay API. It allows 100 requests a minute; if they are used up, wait a minute."""
+    url = PIXABAY + "?" + urllib.parse.urlencode({"key": key, **params})
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    for attempt in range(3):
         try:
             with urllib.request.urlopen(request, timeout=20) as response:
-                cache[term] = json.load(response).get("photos", [])
-                left = response.headers.get("X-Ratelimit-Remaining")
+                data = json.load(response)
+            time.sleep(0.7)
+            return data
         except urllib.error.HTTPError as error:
-            if error.code == 429:
-                raise RateLimited
-            raise
-        time.sleep(0.3)
-        if left == "0":
-            raise RateLimited
+            if error.code != 429:
+                raise
+            time.sleep(60)
+    return {}
+
+
+def search_pixabay(term, key, cache):
+    """Landscape food photos on Pixabay for term, read as German.
+
+    Answers are kept in cache for a day: Pixabay asks for that, and its preview links expire after 24 hours.
+    """
+    entry = cache.get(term)
+    if not entry or time.time() - entry["time"] > 23 * 3600:
+        data = pixabay({
+            "q": term[:100], "lang": "de", "image_type": "photo", "orientation": "horizontal", "category": "food",
+            "min_width": 960, "safesearch": "true", "per_page": CANDIDATES,
+        }, key)
+        entry = cache[term] = {"time": time.time(), "hits": data.get("hits", [])}
     return [{
-        "title": f"Pexels {photo['id']}",
-        "thumb": photo["src"]["medium"],
-        "download": photo["src"]["large2x"],
-        "source": photo["url"],
-        "author": photo["photographer"],
-        "license": "Pexels-Lizenz",
-        "size": f"{photo['width']}×{photo['height']}",
-    } for photo in cache[term]]
+        "title": f"Pixabay {hit['id']}",
+        "thumb": hit["webformatURL"],
+        "source": hit["pageURL"],
+        "author": hit["user"],
+        "license": "Pixabay-Lizenz",
+        "size": f"{hit['imageWidth']}×{hit['imageHeight']}",
+    } for hit in entry["hits"]]
 
 
-def find_pexels(name, key, cache):
-    """Up to CANDIDATES Pexels photos for a recipe: by its name, or if that finds nothing, by the dish alone."""
+def find_pixabay(name, key, cache):
+    """Up to CANDIDATES Pixabay photos for a recipe: by its name, or if that finds nothing, by the dish alone."""
     terms = search_terms(name)
     for term in dict.fromkeys([terms[1] if len(terms) > 1 else terms[0], terms[-1]]):  # without brackets first
-        found = search_pexels(term, key, cache)
+        found = search_pixabay(term, key, cache)
         if found:
             return [{**photo, "via": term} for photo in found]
     return []
@@ -245,14 +250,14 @@ def main():
                         and db.execute("SELECT image_author FROM recipes WHERE name = ?", (name,)).fetchone()[0])]
 
     os.makedirs(OUT, exist_ok=True)
-    source = "pexels" if "--pexels" in sys.argv else "commons"
-    cache_path = os.path.join(OUT, "pexels.json")
+    source = "pixabay" if "--pixabay" in sys.argv else "commons"
+    cache_path = os.path.join(OUT, "pixabay.json")
     cache = {}
-    if source == "pexels":
+    if source == "pixabay":
         if os.path.exists(cache_path):
             with open(cache_path, encoding="utf-8") as file:
                 cache = json.load(file)
-        find_photos = functools.partial(find_pexels, key=pexels_key(), cache=cache)
+        find_photos = functools.partial(find_pixabay, key=pixabay_key(), cache=cache)
     else:
         find_photos = find
 
@@ -262,9 +267,6 @@ def main():
             candidates = find_photos(name)
             results.append({"recipe": name, "file": image, "candidates": candidates})
             print(f"[{number}/{len(rows)}] {name}: {len(candidates)} Fotos", flush=True)
-    except RateLimited:
-        print(f"\nPexels-Limit für diese Stunde erreicht, {len(rows) - len(results)} Rezepte fehlen noch. "
-              "Starte das Skript in einer Stunde nochmal, Gefundenes wird nicht neu gesucht.")
     finally:
         if cache:
             with open(cache_path, "w", encoding="utf-8") as file:
@@ -308,7 +310,7 @@ REVIEW_PAGE = """<!DOCTYPE html>
 </style></head><body>
 <h1>Fotos auswählen</h1>
 <p class="hint">Bei jedem Rezept ist das erste Foto schon gewählt. Klick ein anderes an, wenn es besser passt, oder
-"Kein Bild", wenn keins passt. Ein Klick auf das Foto mit gedrückter Strg-Taste öffnet es auf Commons bzw. Pexels.
+"Kein Bild", wenn keins passt. Ein Klick auf das Foto mit gedrückter Strg-Taste öffnet es auf Commons bzw. Pixabay.
 Deine Auswahl bleibt auch nach dem Neuladen erhalten.</p>
 <div id="list"></div>
 <div class="bar"><button id="save">Auswahl speichern</button><span id="status"></span></div>
