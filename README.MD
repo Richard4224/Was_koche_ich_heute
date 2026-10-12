@@ -20,12 +20,11 @@ My CS50x final project. I also want to use it at home, which is why everything a
 - **A quick bar of main ingredients** ("Worauf hast du Lust?"): Geflügel, Rind & Kalb, Schwein, Fisch, Ei, Käse, Tofu, Pilze, Kartoffeln, Nudeln, Reis, … One click for "with", the minus next to it for "without".
 - **Results scroll in their own box** and load more as you reach its end, so the page stays where it is.
 - **Coming back from a recipe** returns you to the same search, scrolled to the same spot.
-- **Dish of the day** on the start page.
+- **A dish of the day** chosen by the season and the holidays, the time of day, the weather and the moon, with the reason on the card ("Ein Herbstgericht zum Abendessen. Wärmt bei 8 °C und ist rund wie der Vollmond.").
 - **Works on phones:** the layout adapts, and visitors who prefer reduced motion get a still picture.
 
 ### Not done yet
 
-- **A real dish of the day.** For now it is always the pumpkin soup. The plan is to choose it by moon phase, season and weather.
 - **Photos** for most recipes. Recipes without one show a moon instead.
 - Maybe a German/English switch.
 
@@ -53,12 +52,14 @@ Then open http://127.0.0.1:5000.
 |---|---|
 | `app.py` | Flask routes: `/` (the start page, also showing search results for `?q=…&vegan=1&zutat=…&ohne=…&mit=geflügel&kein=schwein`), `/recipes` (the matching recipe cards as HTML, for the live search), `/recipe/<id>?servings=N` (a recipe) and `/weather?lat=…&lon=…` (weather, place and season as JSON for the start page's JavaScript). |
 | `helpers.py` | Moon phase, season, weather, place names and IP location, plus everything that reads the database (`search_recipes`, `get_recipe`, …). |
+| `daily_dish.py` | Chooses the dish of the day (see below). |
 | `scaling.py` | Scales and formats amounts: kitchen rounding, fractions, units in singular and plural, durations. Knows nothing about Flask or the database. |
 | `schema.sql` | The database tables. |
 | `seed.sql` | The 318 recipes and their 352 ingredients. |
 | `templates/layout.html` | Shared frame: header and the night background of the recipe pages. |
 | `templates/index.html` | The start page: the journey from space down to the cottage, plus the scripts for the weather and the live search. |
 | `templates/recipe_cards.html` | The recipe cards, shared by the start page and the live search. |
+| `templates/dish_card.html` | The dish of the day, shared by the start page and `/weather`. |
 | `templates/recipe.html` | A recipe with servings field, ingredients and steps. |
 | `templates/error.html` | Error page ("Du hast dich im Wald verirrt."). |
 | `templates/scenery/*.svg` | The cottage and the horizon, inlined into the start page so CSS can animate the lights and the steam. |
@@ -72,6 +73,7 @@ Then open http://127.0.0.1:5000.
 
 - **Three tables:** `recipes`, `ingredients` and `recipe_ingredients` in between, because a recipe has many ingredients and an ingredient appears in many recipes. Storing ingredients as text in the recipe would make filtering by ingredient impossible ("Zwiebel" vs. "Zwiebeln").
 - **Recipe and ingredient names are unique.** Every ingredient exists exactly once, which is what filtering by ingredient relies on. It also lets `seed.sql` link recipes and ingredients by name instead of remembering ids.
+- **Every recipe has a meal type** (breakfast, main, soup, salad, cake, dessert, snack, …), says whether it's eaten warm, and may belong to an occasion (Christmas, New Year's Eve, Easter, Halloween, Oktoberfest). Like the categories, these are set at the end of `seed.sql`.
 - **Every ingredient has a category** (spice, oil, pantry, vegetable, poultry, beef, …), set at the end of `seed.sql`. Spices, oils and pantry staples (flour, sugar, onions, garlic, broth, vinegar, …) are assumed to be in every kitchen; the main ingredient categories make up the quick bar.
 - **Vegan, vegetarian and gluten-free are stored per ingredient,** not per recipe. A recipe is vegan if all of its ingredients are. One deliberate call: Parmesan and Pecorino count as not vegetarian (animal rennet).
 - **Amounts are numbers** (`REAL`), always for the recipe's base `servings`, so they can be scaled. `NULL` means "to taste" (salt, pepper, …).
@@ -90,6 +92,21 @@ Then open http://127.0.0.1:5000.
 - **Ingredients are picked from the list of all 352,** so only names that really exist end up in the search. Typing "Ei" on the way to "Eigelb" doesn't add "Ei" too early: only choosing a suggestion or pressing Enter adds one.
 - **The quick bar is about the main ingredient,** because that's usually the question: "something with chicken", "rice", "no pork". "With" groups must all be in the recipe (chicken *and* rice); "without" groups must not appear at all. Its links work without JavaScript too.
 - **12 results at a time in a scrolling box.** Reaching its end loads the next 12; `overscroll-behavior: contain` keeps the page from scrolling along. How many are shown is kept in the URL, and the scroll position inside the box is remembered, so coming back from a recipe you land on the same card.
+
+### The dish of the day
+
+Every recipe gets points; the one with the most wins. What counts, from most to least:
+
+| | Weight | |
+|---|---|---|
+| Season | 4 | Dishes of the current season most, "all year" ones somewhat, the neighbouring seasons a little. On occasions, their dishes win: cookies in Advent, raclette on New Year's Eve, Grüne Soße from Maundy Thursday (Easter is calculated for every year), pumpkin before Halloween, Wiesn-Hendl during Oktoberfest. |
+| Time of day | 3 | Breakfast (5–10), lunch, coffee and cake (14–17), dinner (17–22), late-night snack. Dishes that don't suit the time at all lose 5 points, so no roast for breakfast. |
+| Weather | 2 | Cold: something warm. Rain or snow: soups and stews. Warm and dry: the grill. Hot: something cold and fresh. Judged in bands (frosty, cold, mild, warm, hot), so half a degree doesn't change the dish. |
+| Moon | 1 | Full moon: something round (pancakes, pizza, dumplings, cakes). New moon: something dark (chocolate, beetroot, black lentils). Waxing: something hearty to gather strength. Waning: something light. |
+
+- **Deterministic, but not boring.** Two "dice" calculated from the date and the recipe (SHA-256, not random) pick among similar dishes: one changes daily, one yearly, so each year favours different dishes. The same day, time of day and weather always give the same dish, so reloading doesn't change it.
+- **No repeats within a week** at the same time of day. Which dish a day gets depends on the days before, so the days of a year are worked out one after another from 1 January (without weather, since past weather is unknown) and remembered: the first request takes well under a second, every later day a few milliseconds.
+- **The page appears at once, the weather follows.** The server picks the dish by season, time and moon; when the browser has the weather for its location, `/weather` answers with the dish for that weather and the browser's own clock, and the card fades over if a different dish fits better.
 
 ### Moon, season, weather
 

@@ -5,6 +5,9 @@ CREATE TABLE recipes (
     servings INTEGER NOT NULL CHECK (servings > 0),        -- Grundmenge, auf die sich alle amounts beziehen
     servings_unit TEXT NOT NULL DEFAULT 'Portionen',       -- z. B. 'Portionen', 'Stück', 'Springform (26 cm)'
     season TEXT NOT NULL CHECK (season IN ('Frühling', 'Sommer', 'Herbst', 'Winter', 'Ganzjährig')),
+    meal TEXT NOT NULL DEFAULT 'hauptgericht',             -- 'frühstück', 'suppe', 'kuchen', 'dessert', …; see seed.sql
+    warm INTEGER NOT NULL DEFAULT 1,                       -- 1 = eaten warm, 0 = cold
+    occasion TEXT,                                         -- 'weihnachten', 'ostern', 'halloween', … or NULL
     instructions TEXT NOT NULL,
     image TEXT
 );

@@ -94,23 +94,9 @@
         <!-- 4. The forest floor: the recipes next to the cottage -->
         <div class="forest-floor" id="rezepte">
             <div class="container forest-content">
-                {% if dish_of_the_day %}
-                    <a href="/recipe/{{ dish_of_the_day.id }}" class="glass dish-of-the-day">
-                        {% if dish_of_the_day.image %}
-                            <img src="{{ url_for('static', filename='images/' + dish_of_the_day.image) }}" alt="" class="dish-image">
-                        {% else %}
-                            <div class="dish-image image-placeholder">
-                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
-                            </div>
-                        {% endif %}
-                        <div class="dish-text">
-                            <p class="label label-amber">Gericht des Tages</p>
-                            <h2 class="dish-name">{{ dish_of_the_day.name }}</h2>
-                            <p class="dish-meta">{{ dish_of_the_day.time }}</p>
-                            <p class="dish-hint">Drinnen im Häuschen köchelt es schon. Die Sterne stehen günstig dafür.</p>
-                        </div>
-                    </a>
-                {% endif %}
+                <div class="dish-slot" id="dish-of-the-day">
+                    {% include "dish_card.html" %}
+                </div>
 
                 <section class="search-section">
                     <!-- Works without JavaScript too; with it, the results update while you type -->
@@ -193,17 +179,36 @@
     </section>
 
     <script>
-        // Ask the server for weather, place and season; with the visitor's location if they allow it
+        // Ask the server for weather, place and season; with the visitor's location if they allow it.
+        // The answer also brings the dish of the day for this weather and the visitor's own clock.
         async function showWeather(query) {
             const element = document.querySelector("#weather");
             try {
-                const response = await fetch("/weather" + query);
+                const separator = query ? "&" : "?";
+                const response = await fetch(`/weather${query}${separator}stunde=${new Date().getHours()}`);
                 const data = await response.json();
                 element.textContent = data.place ? `${data.weather} · ${data.place}` : data.weather;
                 document.querySelector("#season").textContent = data.season;
+                showDish(data);
             } catch {
                 element.textContent = "Das Wetter verbirgt sich gerade im Nebel.";
             }
+        }
+
+        // The weather may call for a different dish (fade it in) or only add to the reason (just update it)
+        function showDish(data) {
+            const place = document.querySelector("#dish-of-the-day");
+            const current = place.querySelector("[data-recipe]");
+            if (!data.dish_html) return;
+            if (current && Number(current.dataset.recipe) === data.dish) {
+                place.innerHTML = data.dish_html;
+                return;
+            }
+            place.classList.add("is-changing");
+            setTimeout(() => {
+                place.innerHTML = data.dish_html;
+                place.classList.remove("is-changing");
+            }, 400);
         }
 
         if ("geolocation" in navigator) {

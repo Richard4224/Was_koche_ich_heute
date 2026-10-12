@@ -1,0 +1,18 @@
+{# The dish of the day, shared by the start page and /weather (which may pick a better one for the weather) #}
+{% if dish_of_the_day %}
+    <a href="/recipe/{{ dish_of_the_day.id }}" class="glass dish-of-the-day" data-recipe="{{ dish_of_the_day.id }}">
+        {% if dish_of_the_day.image %}
+            <img src="{{ url_for('static', filename='images/' + dish_of_the_day.image) }}" alt="" class="dish-image">
+        {% else %}
+            <div class="dish-image image-placeholder">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+            </div>
+        {% endif %}
+        <div class="dish-text">
+            <p class="label label-amber">Gericht des Tages</p>
+            <h2 class="dish-name">{{ dish_of_the_day.name }}</h2>
+            <p class="dish-meta">{{ dish_of_the_day.time }}</p>
+            <p class="dish-hint">{{ dish_of_the_day.reason }}</p>
+        </div>
+    </a>
+{% endif %}

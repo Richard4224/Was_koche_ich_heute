@@ -427,6 +427,15 @@ a {
     transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
+/* When the weather picks a different dish, the old card fades out and the new one in */
+.dish-slot {
+    transition: opacity 0.4s;
+}
+
+.dish-slot.is-changing {
+    opacity: 0;
+}
+
 .dish-of-the-day:hover {
     color: var(--text);
     border-color: rgba(255, 181, 71, 0.6);
@@ -1580,8 +1589,11 @@ body.journey {
         padding-bottom: calc(100vw * 62 / 1200 + 1rem);  /* the height of the ground band */
     }
 
-    .forest-content .dish-of-the-day {
+    .forest-content .dish-slot {
         grid-area: dish;
+    }
+
+    .forest-content .dish-of-the-day {
         grid-template-columns: 150px 1fr;
     }
 
@@ -1649,7 +1661,7 @@ body.journey {
         margin-bottom: 1.5rem;
     }
 
-    .forest-content .dish-of-the-day {
+    .forest-content .dish-slot {
         max-width: 820px;
         margin: 0 auto;
     }

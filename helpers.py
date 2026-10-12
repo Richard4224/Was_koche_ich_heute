@@ -48,7 +48,7 @@ LATITUDE = 52.52
 LONGITUDE = 13.41
 PLACE = "Berlin"
 WEATHER_CACHE_SECONDS = 15 * 60
-_weather_cache = {}  # (latitude, longitude) -> (timestamp, weather string)
+_weather_cache = {}  # (latitude, longitude) -> (timestamp, weather data)
 _place_cache = {}  # (latitude, longitude) -> place name or None
 _ip_location_cache = {}  # IP address -> (latitude, longitude, city) or None
 
@@ -149,11 +149,15 @@ def get_season(date=None, latitude=LATITUDE):
 
 
 
-def get_dish_of_the_day():
-    """Return dish which best suits the current day."""
+def get_dish_of_the_day(now=None, latitude=LATITUDE, weather=None):
+    """Return the recipe that best fits this moment (see daily_dish.py), with the reason in "reason"."""
 
-    # TODO: choose by moon phase, season and weather
-    return get_recipe(1)
+    import daily_dish  # imported here because daily_dish itself uses helpers
+
+    recipe_id, reason = daily_dish.choose(now or datetime.now(), latitude, weather)
+    dish = get_recipe(recipe_id)
+    dish["reason"] = reason
+    return dish
 
 
 
@@ -347,8 +351,9 @@ def return_error(message="Da ist etwas schiefgelaufen.", code=400):
     return render_template("error.html", message=message, code=code), code
 
 
-def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
-    """Return the current weather at a location, e.g. "12 °C (gefühlt 9 °C), Bewölkt"."""
+def get_weather_data(latitude=LATITUDE, longitude=LONGITUDE):
+    """Return the current weather at a location as {"temperature", "feels_like", "code", "description"},
+    or None if the weather service can't be reached."""
 
     # Round to ~1 km so nearby visitors share a cache entry
     location = (round(latitude, 2), round(longitude, 2))
@@ -366,20 +371,28 @@ def get_weather(latitude=LATITUDE, longitude=LONGITUDE):
     try:
         with urllib.request.urlopen(url, timeout=5) as response:
             current = json.load(response)["current"]
-    except (OSError, ValueError, KeyError):
-        return "Das Wetter verbirgt sich gerade im Nebel."
-
-    description = WEATHER_CODES.get(current["weather_code"], "Unbekannt")
-    temperature = round(current["temperature_2m"])
-    feels_like = round(current["apparent_temperature"])
-
-    weather = f"{temperature} °C"
-    if feels_like != temperature:
-        weather += f" (gefühlt {feels_like} °C)"
-    weather += f", {description}"
+        weather = {
+            "temperature": round(current["temperature_2m"]),
+            "feels_like": round(current["apparent_temperature"]),
+            "code": current["weather_code"],
+            "description": WEATHER_CODES.get(current["weather_code"], "Unbekannt"),
+        }
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
 
     _weather_cache[location] = (time.time(), weather)
     return weather
+
+
+def describe_weather(weather):
+    """Return weather data as text, e.g. "12 °C (gefühlt 9 °C), Bewölkt"."""
+
+    if weather is None:
+        return "Das Wetter verbirgt sich gerade im Nebel."
+    text = f"{weather['temperature']} °C"
+    if weather["feels_like"] != weather["temperature"]:
+        text += f" (gefühlt {weather['feels_like']} °C)"
+    return text + f", {weather['description']}"
 
 
 def get_place(latitude=LATITUDE, longitude=LONGITUDE):

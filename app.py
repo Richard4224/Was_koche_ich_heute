@@ -1,9 +1,10 @@
 # Idea brainstorming, pseudocode and databank layout from Claude
 
+from datetime import datetime
 from urllib.parse import urlencode
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, return_error, get_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS
+from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, return_error, get_weather_data, describe_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS, LATITUDE
 
 app = Flask(__name__)
 
@@ -103,7 +104,7 @@ def index():
     moon_phase = get_moon_phase()
     moon_phase_index = get_moon_phase_index()
     season = get_season()
-    dish_of_the_day = get_dish_of_the_day()
+    dish_of_the_day = get_dish_of_the_day(datetime.now())
 
     # ?n= keeps the results loaded further down the list when coming back from a recipe
     filters = read_filters()
@@ -138,30 +139,39 @@ def recipes():
 
 @app.route("/weather")
 def weather():
-    """Return weather, place and season as JSON, for the browser's location if it sent one."""
+    """Return weather, place and season as JSON for the browser's location (or a guess), plus the dish of the
+    day for that weather and the browser's hour (?stunde=), which may differ from the one on the page."""
 
     latitude = request.args.get("lat", type=float)
     longitude = request.args.get("lon", type=float)
+    place = None
 
     if latitude is None or longitude is None or not (-90 <= latitude <= 90 and -180 <= longitude <= 180):
-
         # No location from the browser: guess the city from the IP address, else use the default
         ip_location = get_ip_location(request.remote_addr)
         if ip_location is None:
-            return jsonify(weather=get_weather(), place=get_place(), season=get_season())
+            latitude, longitude = LATITUDE, None
+        else:
+            latitude, longitude, place = ip_location  # only city-level accurate, so no district is looked up
 
-        latitude, longitude, city = ip_location
-        return jsonify(
-            weather=get_weather(latitude, longitude),
-            place=city,  # only city-level accurate, so don't look up a district
-            season=get_season(latitude=latitude),
-        )
+    weather = get_weather_data(latitude, longitude) if longitude is not None else get_weather_data()
+    if place is None:
+        place = get_place(latitude, longitude) if longitude is not None else get_place()
+
+    now = datetime.now()
+    hour = request.args.get("stunde", type=int)
+    if hour is not None and 0 <= hour <= 23:
+        now = now.replace(hour=hour)
+    dish = get_dish_of_the_day(now, latitude, weather)
 
     return jsonify(
-        weather=get_weather(latitude, longitude),
-        place=get_place(latitude, longitude),
+        weather=describe_weather(weather),
+        place=place,
         season=get_season(latitude=latitude),
+        dish=dish["id"],
+        dish_html=render_template("dish_card.html", dish_of_the_day=dish),
     )
+
 
 @app.route("/recipe/<int:recipe_id>")
 def recipe(recipe_id):
