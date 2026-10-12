@@ -162,13 +162,36 @@ def get_ingredient_names():
         return [row["name"] for row in db.execute("SELECT name FROM ingredients ORDER BY name")]
 
 
-def search_recipes(query="", diets=(), have=(), limit=-1, offset=0):
-    """Find recipes by name, diet and the ingredients someone has at home.
+def get_common_ingredients(limit=16):
+    """Return the ingredients used in the most recipes, most common first.
 
-    query:  part of the recipe name, any case
-    diets:  keys of DIETS a recipe must satisfy, e.g. ["vegan"]
-    have:   ingredient names someone has; then only recipes using at least one of them are found,
-            the ones missing the fewest ingredients first
+    Staples and uses "to taste" (no amount) don't count: those are assumed to be in the kitchen anyway.
+    """
+
+    placeholders = ", ".join("?" * len(STAPLES))
+    with closing(get_db()) as db:
+        rows = db.execute(
+            f"""
+            SELECT ingredients.name FROM recipe_ingredients
+            JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+            WHERE ingredients.name NOT IN ({placeholders}) AND recipe_ingredients.amount IS NOT NULL
+            GROUP BY ingredients.id
+            ORDER BY count(*) DESC, ingredients.name
+            LIMIT ?
+            """,
+            (*STAPLES, limit),
+        )
+        return [row["name"] for row in rows]
+
+
+def search_recipes(query="", diets=(), have=(), exclude=(), limit=-1, offset=0):
+    """Find recipes by name, diet and the ingredients someone has at home or doesn't want.
+
+    query:   part of the recipe name, any case
+    diets:   keys of DIETS a recipe must satisfy, e.g. ["vegan"]
+    have:    ingredient names someone has; then only recipes using at least one of them are found,
+             the ones missing the fewest ingredients first
+    exclude: ingredient names someone doesn't want; recipes containing any of them are left out
 
     Returns (recipes, total): the requested slice and how many recipes match in all.
     """
@@ -185,6 +208,13 @@ def search_recipes(query="", diets=(), have=(), limit=-1, offset=0):
             NOT EXISTS (SELECT 1 FROM recipe_ingredients
                         JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
                         WHERE recipe_ingredients.recipe_id = recipes.id AND ingredients.{DIETS[diet]} = 0)""")
+    if exclude:
+        placeholders = ", ".join("?" * len(exclude))
+        conditions.append(f"""
+            NOT EXISTS (SELECT 1 FROM recipe_ingredients
+                        JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+                        WHERE recipe_ingredients.recipe_id = recipes.id AND ingredients.name IN ({placeholders}))""")
+        params.extend(exclude)
     where = "WHERE " + " AND ".join(conditions) if conditions else ""
 
     with closing(get_db()) as db:

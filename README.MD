@@ -16,7 +16,9 @@ My CS50x final project. I also want to use it at home, which is why everything a
 - **Your location, if you allow it:** the browser shares its position. If it doesn't (or times out), the server guesses the city from the IP address, and if that fails too, it falls back to Berlin. The season flips on the southern hemisphere.
 - **318 recipes** in an SQLite database, each with ingredients, amounts, time, season and step-by-step instructions.
 - **Recipe pages with adjustable servings:** all amounts are recalculated, including amounts mentioned inside the instructions, and shown in kitchen-friendly form (`¼ Zwiebel`, `1,2 kg`, `2 Prisen`, `3 Tage 3 Std.`).
-- **Search and filters** that update the results while you type: by name, vegan, vegetarian, gluten-free, and by what you have at home. Pick your ingredients and the recipes that miss the fewest come first, each card saying what's missing ("Es fehlt: Sahne") or "Alles da".
+- **Search and filters** that update the results while you type: by name, vegan, vegetarian, gluten-free, by what you have at home and by what you don't want. Pick your ingredients and the recipes that miss the fewest come first, each card saying what's missing ("Es fehlt: Sahne") or "Alles da".
+- **A quick bar of common ingredients:** one click adds one ("hab ich"), the minus next to it excludes it ("ohne").
+- **Results scroll in their own box** and load more as you reach its end, so the page stays where it is.
 - **Coming back from a recipe** returns you to the same search, scrolled to the same spot.
 - **Dish of the day** on the start page.
 - **Works on phones:** the layout adapts, and visitors who prefer reduced motion get a still picture.
@@ -49,7 +51,7 @@ Then open http://127.0.0.1:5000.
 
 | File | What it does |
 |---|---|
-| `app.py` | Flask routes: `/` (the start page, also showing search results for `?q=…&vegan=1&zutat=…`), `/recipes` (the matching recipe cards as HTML, for the live search), `/recipe/<id>?servings=N` (a recipe) and `/weather?lat=…&lon=…` (weather, place and season as JSON for the start page's JavaScript). |
+| `app.py` | Flask routes: `/` (the start page, also showing search results for `?q=…&vegan=1&zutat=…&ohne=…`), `/recipes` (the matching recipe cards as HTML, for the live search), `/recipe/<id>?servings=N` (a recipe) and `/weather?lat=…&lon=…` (weather, place and season as JSON for the start page's JavaScript). |
 | `helpers.py` | Moon phase, season, weather, place names and IP location, plus everything that reads the database (`search_recipes`, `get_recipe`, …). |
 | `scaling.py` | Scales and formats amounts: kitchen rounding, fractions, units in singular and plural, durations. Knows nothing about Flask or the database. |
 | `schema.sql` | The database tables. |
@@ -83,8 +85,10 @@ Then open http://127.0.0.1:5000.
 - **Case doesn't matter, umlauts included.** SQLite's `LIKE` only ignores case for A–Z, so the app registers Python's `str.casefold` as an SQL function. `%` and `_` are escaped, so they are searched for literally.
 - **Diets are checked in SQL:** a recipe is vegan if there is no ingredient in it that isn't (`NOT EXISTS`).
 - **"What do I have at home?" ranks instead of excludes.** Requiring every ingredient would almost always find nothing, so all recipes using at least one of your ingredients are found, sorted by how many ingredients are missing. Salt, pepper and anything "to taste" (no amount) never count as missing.
+- **Excluding ingredients is strict:** a recipe containing any of them is left out (`NOT EXISTS … IN (…)`). An ingredient can be either "have" or "without", never both; choosing one takes it out of the other.
 - **Ingredients are picked from the list of all 352,** so only names that really exist end up in the search. Typing "Ei" on the way to "Eigelb" doesn't add "Ei" too early: only choosing a suggestion or pressing Enter adds one.
-- **12 results at a time**, "Mehr anzeigen" loads the next ones. How many are shown is kept in the URL too, so coming back from a recipe you land on the same card.
+- **The quick bar** shows the 16 ingredients used in the most recipes, counting only real amounts, so salt, pepper and spices "to taste" don't crowd it. Its links work without JavaScript too.
+- **12 results at a time in a scrolling box.** Reaching its end loads the next 12; `overscroll-behavior: contain` keeps the page from scrolling along. How many are shown is kept in the URL, and the scroll position inside the box is remembered, so coming back from a recipe you land on the same card.
 
 ### Moon, season, weather
 

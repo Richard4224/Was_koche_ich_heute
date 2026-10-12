@@ -1,5 +1,25 @@
 {% extends "layout.html" %}
 
+{# An ingredient field: chosen ingredients become chips (hidden inputs), new ones are picked from the list #}
+{% macro chip_field(param, kind, label, placeholder, names) %}
+    <div class="chip-field" data-param="{{ param }}" data-kind="{{ kind }}">
+        <label class="pantry-label" for="{{ param }}-input">{{ label }}</label>
+        <div class="pantry-box">
+            <span class="chips">
+                {% for name in names %}
+                    <span class="chip chip-{{ kind }}">
+                        <input type="hidden" name="{{ param }}" value="{{ name }}">
+                        {{ name }}
+                        <button type="button" class="chip-remove" aria-label="{{ name }} entfernen">×</button>
+                    </span>
+                {% endfor %}
+            </span>
+            <input id="{{ param }}-input" name="{{ param }}" list="ingredient-names" class="chip-input"
+                   autocomplete="off" placeholder="{{ placeholder }}">
+        </div>
+    </div>
+{% endmacro %}
+
 {% block title %}
     Startseite
 {% endblock %}
@@ -109,49 +129,52 @@
                             {% endfor %}
                         </div>
 
-                        <div class="pantry">
-                            <label class="pantry-label" for="pantry-input">Was hast du zu Hause?</label>
-                            <div class="pantry-box">
-                                <span class="pantry-chips">
-                                    {% for name in filters.have %}
-                                        <span class="pantry-chip">
-                                            <input type="hidden" name="zutat" value="{{ name }}">
-                                            {{ name }}
-                                            <button type="button" class="pantry-remove" aria-label="{{ name }} entfernen">×</button>
-                                        </span>
-                                    {% endfor %}
-                                </span>
-                                <input id="pantry-input" name="zutat" list="ingredient-names" class="pantry-input"
-                                       autocomplete="off" placeholder="Zutat hinzufügen …">
-                            </div>
-                            <datalist id="ingredient-names">
-                                {% for name in ingredient_names %}<option value="{{ name }}">{% endfor %}
-                            </datalist>
-                            <p class="pantry-hint">Salz, Pfeffer und Gewürze nach Geschmack setzen wir voraus.</p>
+                        <div class="chip-fields">
+                            {{ chip_field("zutat", "have", "Was hast du zu Hause?", "Zutat hinzufügen …", filters.have) }}
+                            {{ chip_field("ohne", "exclude", "Was soll nicht rein?", "Zutat ausschließen …", filters.exclude) }}
                         </div>
+                        <datalist id="ingredient-names">
+                            {% for name in ingredient_names %}<option value="{{ name }}">{% endfor %}
+                        </datalist>
+                        <p class="pantry-hint">Salz, Pfeffer und Gewürze nach Geschmack setzen wir voraus.</p>
                     </form>
                 </section>
+
+                <!-- Quick bar: the most common ingredients, one click to add ("hab ich") or exclude ("ohne") -->
+                <aside class="quick-bar" aria-label="Häufige Zutaten">
+                    <p class="label">Häufige Zutaten</p>
+                    <ul class="quick-list">
+                        {% for item in quick %}
+                            <li class="quick-item{% if item.have %} is-have{% endif %}{% if item.excluded %} is-excluded{% endif %}" data-name="{{ item.name }}">
+                                <a href="{{ item.have_url }}" class="quick-add" title="{{ item.name }} hab ich">{{ item.name }}</a>
+                                <a href="{{ item.exclude_url }}" class="quick-exclude" title="Ohne {{ item.name }}" aria-label="Ohne {{ item.name }}">−</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
 
                 <section class="recipes-section">
                     <div class="section-heading">
                         <h2>Aus dem Rezeptbuch</h2>
-                        <span class="section-count" id="result-count">{{ count }}</span>
+                        <span class="section-count">
+                            <span id="result-count">{{ count }}</span>
+                            <a href="/#rezepte" class="reset-link" id="reset-link" {% if not filtered %}hidden{% endif %}>Filter zurücksetzen</a>
+                        </span>
                     </div>
 
-                    <div class="recipe-grid" id="recipe-grid">
-                        {% include "recipe_cards.html" %}
-                    </div>
+                    <!-- The results scroll on their own; reaching the end loads the next ones -->
+                    <div class="results-box" id="results-box">
+                        <div class="recipe-grid" id="recipe-grid">
+                            {% include "recipe_cards.html" %}
+                        </div>
 
-                    <div class="glass no-results" id="no-results" {% if total %}hidden{% endif %}>
-                        Hier wächst leider nichts. Versuch es mit weniger Filtern.
-                    </div>
+                        <div class="glass no-results" id="no-results" {% if total %}hidden{% endif %}>
+                            Hier wächst leider nichts. Versuch es mit weniger Filtern.
+                        </div>
 
-                    <div class="results-actions">
-                        <button type="button" class="btn more-button" id="more-button" {% if recipes | length >= total %}hidden{% endif %}>
+                        <a href="{{ more_url }}" class="more-link" id="more-link" {% if recipes | length >= total %}hidden{% endif %}>
                             Mehr anzeigen
-                        </button>
-                        <a href="/#rezepte" class="reset-link" id="reset-link"
-                           {% if not (filters.q or filters.diets or filters.have) %}hidden{% endif %}>Filter zurücksetzen</a>
+                        </a>
                     </div>
                 </section>
             </div>
@@ -188,24 +211,31 @@
             showWeather("");
         }
 
-        // ---- Live search: results update while typing, ticking a filter or adding an ingredient
+        // ---- Live search: results update while typing, ticking a filter or choosing ingredients
         const filterForm = document.querySelector("#recipe-filter");
+        const resultsBox = document.querySelector("#results-box");
         const grid = document.querySelector("#recipe-grid");
         const countLabel = document.querySelector("#result-count");
         const noResults = document.querySelector("#no-results");
-        const moreButton = document.querySelector("#more-button");
+        const moreLink = document.querySelector("#more-link");
         const resetLink = document.querySelector("#reset-link");
-        const pantryInput = document.querySelector("#pantry-input");
-        const pantryChips = document.querySelector(".pantry-chips");
+        const quickItems = document.querySelectorAll(".quick-item");
         const ingredientNames = new Map(
             [...document.querySelectorAll("#ingredient-names option")].map((option) => [option.value.toLowerCase(), option.value])
         );
 
-        // Without JavaScript the typed ingredient is sent with the form; with it, only the chips count
-        pantryInput.removeAttribute("name");
+        // The two ingredient fields: "zutat" (have at home) and "ohne" (don't want)
+        const fields = {};
+        for (const field of document.querySelectorAll(".chip-field")) {
+            const input = field.querySelector(".chip-input");
+            input.removeAttribute("name");  // without JavaScript the typed text is sent; with it, only the chips
+            fields[field.dataset.param] = { kind: field.dataset.kind, chips: field.querySelector(".chips"), input };
+        }
 
         let shown = grid.querySelectorAll(".recipe-card").length;
+        let hasMore = !moreLink.hidden;
         let loadedMore = new URLSearchParams(location.search).has("n");
+        let loading = false;
         let latestRequest = 0;  // so that a slow answer to an older search can't overwrite a newer one
 
         function filterParams() {
@@ -219,11 +249,13 @@
         async function loadRecipes(append = false) {
             const params = filterParams();
             const request = ++latestRequest;
+            loading = true;
             let data;
             try {
                 const response = await fetch(`/recipes?${params}&offset=${append ? shown : 0}`);
                 data = await response.json();
             } catch {
+                loading = false;
                 return;  // offline or server gone: keep showing the current results
             }
             if (request !== latestRequest) return;
@@ -232,13 +264,17 @@
                 grid.insertAdjacentHTML("beforeend", data.html);
             } else {
                 grid.innerHTML = data.html;
+                resultsBox.scrollTop = 0;
                 loadedMore = false;
             }
             shown = data.shown;
+            hasMore = shown < data.total;
             countLabel.textContent = data.count;
             noResults.hidden = data.total > 0;
-            moreButton.hidden = data.shown >= data.total;
+            moreLink.hidden = !hasMore;
             resetLink.hidden = params.toString() === "";
+            syncQuickBar();
+            loading = false;
 
             // Keep the search in the address, so a reload or coming back from a recipe shows the same results
             if (loadedMore) params.set("n", shown);
@@ -246,6 +282,7 @@
             history.replaceState(null, "", (query ? `/?${query}` : "/") + "#rezepte");
         }
 
+        // Typing waits a moment, so not every single letter starts a search
         let typingTimer;
         filterForm.elements.q.addEventListener("input", () => {
             clearTimeout(typingTimer);
@@ -258,70 +295,119 @@
 
         filterForm.addEventListener("submit", (event) => {
             event.preventDefault();
-            addIngredient(pantryInput.value);
+            for (const [param, field] of Object.entries(fields)) addChip(param, field.input.value);
             loadRecipes();
         });
 
-        // Ingredients become chips once they match a known ingredient
-        function addIngredient(typed) {
+        // ---- Ingredient chips
+        function chipNames(param) {
+            return [...fields[param].chips.querySelectorAll("input")].map((input) => input.value);
+        }
+
+        function removeChip(param, name) {
+            for (const input of fields[param].chips.querySelectorAll("input")) {
+                if (input.value === name) input.closest(".chip").remove();
+            }
+        }
+
+        // Adds a known ingredient as a chip (and takes it out of the other field); false if the name is unknown
+        function addChip(param, typed) {
             const name = ingredientNames.get(typed.trim().toLowerCase());
             if (!name) return false;
-            const known = [...pantryChips.querySelectorAll("input")].some((input) => input.value === name);
-            if (!known) {
+            const field = fields[param];
+            for (const other of Object.keys(fields)) {
+                if (other !== param) removeChip(other, name);
+            }
+            if (!chipNames(param).includes(name)) {
                 const chip = document.createElement("span");
-                chip.className = "pantry-chip";
-                const hidden = Object.assign(document.createElement("input"), { type: "hidden", name: "zutat", value: name });
-                const remove = Object.assign(document.createElement("button"), { type: "button", className: "pantry-remove", textContent: "×" });
+                chip.className = `chip chip-${field.kind}`;
+                const hidden = Object.assign(document.createElement("input"), { type: "hidden", name: param, value: name });
+                const remove = Object.assign(document.createElement("button"), { type: "button", className: "chip-remove", textContent: "×" });
                 remove.setAttribute("aria-label", `${name} entfernen`);
                 chip.append(hidden, name, remove);
-                pantryChips.append(chip);
+                field.chips.append(chip);
             }
-            pantryInput.value = "";
+            field.input.value = "";
             return true;
         }
 
-        pantryInput.addEventListener("input", (event) => {
-            // Picking a suggestion from the list has no inputType (or a replacement); typing letters doesn't count,
-            // so typing "Ei" on the way to "Eigelb" doesn't add "Ei" too early
-            if ((!event.inputType || event.inputType === "insertReplacementText") && addIngredient(pantryInput.value)) {
-                loadRecipes();
-            }
-        });
+        for (const [param, field] of Object.entries(fields)) {
+            field.input.addEventListener("input", (event) => {
+                // Picking a suggestion has no inputType (or a replacement); typed letters don't count,
+                // so typing "Ei" on the way to "Eigelb" doesn't add "Ei" too early
+                if ((!event.inputType || event.inputType === "insertReplacementText") && addChip(param, field.input.value)) {
+                    loadRecipes();
+                }
+            });
+            field.input.addEventListener("keydown", (event) => {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    if (addChip(param, field.input.value)) loadRecipes();
+                }
+            });
+            field.chips.addEventListener("click", (event) => {
+                const remove = event.target.closest(".chip-remove");
+                if (remove) {
+                    remove.closest(".chip").remove();
+                    loadRecipes();
+                }
+            });
+        }
 
-        pantryInput.addEventListener("keydown", (event) => {
-            if (event.key === "Enter") {
+        // ---- Quick bar: click a name to add it ("hab ich"), the minus to exclude it; again to undo
+        function syncQuickBar() {
+            const have = chipNames("zutat");
+            const without = chipNames("ohne");
+            for (const item of quickItems) {
+                item.classList.toggle("is-have", have.includes(item.dataset.name));
+                item.classList.toggle("is-excluded", without.includes(item.dataset.name));
+            }
+        }
+
+        for (const item of quickItems) {
+            const name = item.dataset.name;
+            item.querySelector(".quick-add").addEventListener("click", (event) => {
                 event.preventDefault();
-                if (addIngredient(pantryInput.value)) loadRecipes();
-            }
-        });
-
-        pantryChips.addEventListener("click", (event) => {
-            const remove = event.target.closest(".pantry-remove");
-            if (remove) {
-                remove.closest(".pantry-chip").remove();
+                if (chipNames("zutat").includes(name)) removeChip("zutat", name); else addChip("zutat", name);
                 loadRecipes();
-            }
-        });
+            });
+            item.querySelector(".quick-exclude").addEventListener("click", (event) => {
+                event.preventDefault();
+                if (chipNames("ohne").includes(name)) removeChip("ohne", name); else addChip("ohne", name);
+                loadRecipes();
+            });
+        }
 
-        moreButton.addEventListener("click", () => {
+        // ---- More results: scrolling to the end of the results box loads the next ones
+        function loadMore() {
+            if (loading || !hasMore) return;
             loadedMore = true;
             loadRecipes(true);
+        }
+
+        moreLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            loadMore();
         });
+
+        resultsBox.addEventListener("scroll", () => {
+            if (resultsBox.scrollTop + resultsBox.clientHeight >= resultsBox.scrollHeight - 150) loadMore();
+        }, { passive: true });
 
         resetLink.addEventListener("click", (event) => {
             event.preventDefault();
             filterForm.elements.q.value = "";
             filterForm.querySelectorAll(".diet-check").forEach((check) => { check.checked = false; });
-            pantryChips.replaceChildren();
+            for (const field of Object.values(fields)) field.chips.replaceChildren();
             loadRecipes();
         });
 
-        // ---- Coming back from a recipe: the recipe page links back to the remembered search,
-        // and the start page returns to the exact spot where the recipe was clicked
+        // ---- Coming back from a recipe: the recipe page links back to the remembered search, and the
+        // start page returns to the exact spot, on the page and inside the results box
         const BOOK_KEY = "recipeBook";
         document.addEventListener("click", (event) => {
             if (event.target.closest('a[href^="/recipe/"]')) {
-                const place = { url: location.pathname + location.search, scroll: window.scrollY };
+                const place = { url: location.pathname + location.search, scroll: window.scrollY, boxScroll: resultsBox.scrollTop };
                 try { sessionStorage.setItem(BOOK_KEY, JSON.stringify(place)); } catch {}
             }
         });
@@ -338,6 +424,7 @@
             const restore = () => {
                 if (sameSearch) {
                     window.scrollTo({ top: saved.scroll, behavior: "instant" });
+                    resultsBox.scrollTop = saved.boxScroll || 0;
                 } else {
                     document.querySelector("#rezepte").scrollIntoView({ behavior: "instant" });
                 }
