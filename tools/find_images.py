@@ -59,7 +59,18 @@ def plain(text):
 
 def author(meta):
     """The photographer as plain text, or "Unbekannt" if Commons doesn't know."""
-    name = plain(meta.get("Artist", {}).get("value", ""))
+    return tidy_author(plain(meta.get("Artist", {}).get("value", "")))
+
+
+def tidy_author(name):
+    """Turn the usual Commons phrasings into a plain name."""
+    assumed = re.match(r"No machine-readable author provided\. (.+?) assumed", name)
+    if assumed:
+        name = assumed.group(1)
+    name = re.sub(r"^(File:)?[^:]+\.(jpe?g|png|tiff?)\s*:\s*", "", name, flags=re.I)  # "File:Cake.jpg: Anna"
+    name = re.sub(r"\s+derivative work:\s*", ", bearbeitet von ", name)
+    name = re.sub(r"\s*\((talk|photographer)\).*$", "", name)  # "Elya (talk) 10:54, 29 August 2021 (UTC)"
+    name = re.sub(r"^(©\s*|User:)", "", name).replace("_", " ").strip()
     return "Unbekannt" if not name or "unknown author" in name.lower() else name
 
 

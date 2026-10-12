@@ -1836,6 +1836,12 @@ body.journey {
     color: var(--text-muted);
 }
 
+/* Keep "CC BY-SA 4.0" in one piece */
+.image-credit a[rel~="license"],
+.credit-line a[rel~="license"] {
+    white-space: nowrap;
+}
+
 /* ---------- Less motion for those who prefer it ---------- */
 
 @media (prefers-reduced-motion: reduce) {
