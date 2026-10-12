@@ -28,7 +28,7 @@
         </div>
 
         <a href="#rezepte" class="descend-link" data-depth="0.35">
-            Hinab in den Wald
+            Rezepte
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"/></svg>
         </a>
     </section>
@@ -165,6 +165,34 @@
                     ticking = false;
                 });
             }, { passive: true });
+        }
+
+        // Coming back from a recipe ("Zurück zum Rezeptbuch" links to /#rezepte):
+        // return to the exact spot on the forest floor where the recipe was clicked
+        const SCROLL_KEY = "recipeBookScroll";
+        document.addEventListener("click", (event) => {
+            if (event.target.closest('a[href^="/recipe/"]')) {
+                try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch {}
+            }
+        });
+
+        if (location.hash === "#rezepte") {
+            let saved = null;
+            try {
+                saved = sessionStorage.getItem(SCROLL_KEY);
+                sessionStorage.removeItem(SCROLL_KEY);
+            } catch {}
+
+            // Jump without animation, and again once everything has loaded, in case the page grew
+            const restore = () => {
+                if (saved !== null) {
+                    window.scrollTo({ top: Number(saved), behavior: "instant" });
+                } else {
+                    document.querySelector("#rezepte").scrollIntoView({ behavior: "instant" });
+                }
+            };
+            restore();
+            window.addEventListener("load", restore, { once: true });
         }
     </script>
 {% endblock %}
