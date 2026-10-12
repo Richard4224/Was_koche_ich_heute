@@ -19,7 +19,7 @@ import urllib.request
 from contextlib import closing
 from PIL import Image, ImageOps
 
-from find_images import ROOT, USER_AGENT, commons, free_license, plain
+from find_images import ROOT, USER_AGENT, author, commons, free_license, plain
 
 IMAGES = os.path.join(ROOT, "static", "images")
 CREDITS = os.path.join(ROOT, "images.sql")
@@ -40,7 +40,7 @@ def photo_info(title):
         return None
     return {
         "url": info["thumburl"],
-        "image_author": plain(meta.get("Artist", {}).get("value", "")) or "Unbekannt",
+        "image_author": author(meta),
         "image_license": license_name,
         "image_license_url": meta.get("LicenseUrl", {}).get("value") or None,
         "image_source": info["descriptionurl"],

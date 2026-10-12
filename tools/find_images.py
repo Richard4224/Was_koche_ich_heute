@@ -57,6 +57,12 @@ def plain(text):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", text or ""))).strip()
 
 
+def author(meta):
+    """The photographer as plain text, or "Unbekannt" if Commons doesn't know."""
+    name = plain(meta.get("Artist", {}).get("value", ""))
+    return "Unbekannt" if not name or "unknown author" in name.lower() else name
+
+
 def search_terms(name):
     """The recipe name, without and only the part in brackets, and the dish alone ("Lammkeule mit Rosmarin")."""
     bare = re.sub(r"\s*\(.*?\)", "", name).strip()
@@ -79,7 +85,7 @@ def photos(pages):
             "title": page["title"],
             "thumb": info.get("thumburl"),
             "source": info.get("descriptionurl"),
-            "author": plain(meta.get("Artist", {}).get("value", "")) or "Unbekannt",
+            "author": author(meta),
             "license": license_name,
             "size": f"{width}×{height}",
         })
@@ -160,11 +166,16 @@ def main():
 
     with open(os.path.join(OUT, "candidates.json"), "w", encoding="utf-8") as file:
         json.dump(results, file, ensure_ascii=False, indent=1)
-    with open(os.path.join(OUT, "review.html"), "w", encoding="utf-8") as file:
-        file.write(REVIEW_PAGE.replace("__DATA__", json.dumps(results, ensure_ascii=False).replace("</", "<\\/")))
+    write_review(results)
     found = sum(1 for result in results if result["candidates"])
     print(f"\nFertig: für {found} von {len(results)} Rezepten Fotos gefunden.")
     print(f"Jetzt im Browser öffnen: {os.path.join(OUT, 'review.html')}")
+
+
+def write_review(results):
+    """The page to choose the photos on, with the search results built in."""
+    with open(os.path.join(OUT, "review.html"), "w", encoding="utf-8") as file:
+        file.write(REVIEW_PAGE.replace("__DATA__", json.dumps(results, ensure_ascii=False).replace("</", "<\\/")))
 
 
 REVIEW_PAGE = """<!DOCTYPE html>
@@ -180,7 +191,7 @@ REVIEW_PAGE = """<!DOCTYPE html>
     .option { flex: none; width: 200px; padding: 0; border: 3px solid transparent; border-radius: 8px; background: #1c1930;
               color: inherit; text-align: left; cursor: pointer; }
     .option img { display: block; width: 100%; height: 130px; object-fit: cover; border-radius: 5px 5px 0 0; }
-    .option span { display: block; padding: 0.35rem 0.5rem; font-size: 0.75rem; color: #a8a2c9; }
+    .option span { display: block; padding: 0.35rem 0.5rem; font-size: 0.75rem; color: #a8a2c9; overflow-wrap: anywhere; }
     .option.chosen { border-color: #ffb547; }
     .option.skip { display: grid; place-items: center; height: 186px; color: #e88aa8; text-align: center; }
     .bar { position: fixed; inset: auto 0 0 0; display: flex; gap: 1rem; align-items: center; padding: 0.9rem 2rem;
