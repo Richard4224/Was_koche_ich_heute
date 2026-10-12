@@ -18,6 +18,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, "recipes.db")
 MAX_SERVINGS = 1000
 
+# Diet filters as they appear in the URL (?vegan=1), mapped to their column in the ingredients table
+DIETS = {"vegan": "vegan", "vegetarisch": "vegetarian", "glutenfrei": "gluten_free"}
+
+# Assumed to be in every kitchen, so never reported as missing
+STAPLES = {"Salz", "Pfeffer"}
+
 # Fallback location for the weather when neither the browser nor the IP address reveal one
 LATITUDE = 52.52
 LONGITUDE = 13.41
@@ -139,6 +145,8 @@ def get_db():
     db = sqlite3.connect(DATABASE)
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys = ON")
+    # SQLite's own lower() and LIKE ignore case only for A-Z, so "kürbis" wouldn't find "Kürbis"
+    db.create_function("casefold", 1, lambda text: text.casefold() if text else text, deterministic=True)
 
     if is_new:
         for script in ("schema.sql", "seed.sql"):
@@ -147,40 +155,78 @@ def get_db():
     return db
 
 
-def count_recipes():
-    """Return how many recipes there are."""
+def get_ingredient_names():
+    """Return the names of all ingredients, sorted."""
 
     with closing(get_db()) as db:
-        return db.execute("SELECT count(*) FROM recipes").fetchone()[0]
+        return [row["name"] for row in db.execute("SELECT name FROM ingredients ORDER BY name")]
 
 
-def get_recipes(limit=-1):
-    """Return recipes with their ingredient names, sorted by name; all of them unless limit is given."""
+def search_recipes(query="", diets=(), have=(), limit=-1, offset=0):
+    """Find recipes by name, diet and the ingredients someone has at home.
+
+    query:  part of the recipe name, any case
+    diets:  keys of DIETS a recipe must satisfy, e.g. ["vegan"]
+    have:   ingredient names someone has; then only recipes using at least one of them are found,
+            the ones missing the fewest ingredients first
+
+    Returns (recipes, total): the requested slice and how many recipes match in all.
+    """
+
+    conditions, params = [], []
+    if query:
+        # % and _ are wildcards in LIKE; escape them so they are searched for literally
+        escaped = query.casefold().replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+        conditions.append("casefold(recipes.name) LIKE ? ESCAPE '\\'")
+        params.append(f"%{escaped}%")
+    for diet in diets:
+        # A recipe is vegan (etc.) if none of its ingredients isn't; the column name comes from DIETS
+        conditions.append(f"""
+            NOT EXISTS (SELECT 1 FROM recipe_ingredients
+                        JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+                        WHERE recipe_ingredients.recipe_id = recipes.id AND ingredients.{DIETS[diet]} = 0)""")
+    where = "WHERE " + " AND ".join(conditions) if conditions else ""
 
     with closing(get_db()) as db:
         rows = db.execute(
-            """
-            SELECT recipes.id, recipes.name, recipes.preparation_time,
-                   group_concat(ingredients.name, char(31)) AS ingredients
-            FROM recipes
-            JOIN recipe_ingredients ON recipe_ingredients.recipe_id = recipes.id
-            JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
-            GROUP BY recipes.id
-            ORDER BY recipes.name
-            LIMIT ?
-            """,
-            (limit,),
+            f"SELECT id, name, preparation_time FROM recipes {where} ORDER BY name", params
         ).fetchall()
+        ingredients = {}
+        for row in db.execute(
+            """
+            SELECT recipe_ingredients.recipe_id, ingredients.name, recipe_ingredients.amount
+            FROM recipe_ingredients
+            JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+            ORDER BY recipe_ingredients.rowid
+            """
+        ):
+            ingredients.setdefault(row["recipe_id"], []).append((row["name"], row["amount"]))
 
-    return [
-        {
+    have = set(have)
+    recipes = []
+    for row in rows:
+        recipe = {
             "id": row["id"],
             "name": row["name"],
             "time": format_duration(row["preparation_time"]),
-            "ingredients": row["ingredients"].split(chr(31)),
+            "ingredients": [name for name, amount in ingredients[row["id"]]],
+            "missing": None,
         }
-        for row in rows
-    ]
+        if have:
+            used = [name for name in recipe["ingredients"] if name in have]
+            if not used:
+                continue
+            # Staples and anything "to taste" (no amount) don't count as missing
+            recipe["missing"] = [name for name, amount in ingredients[row["id"]]
+                                 if name not in have and name not in STAPLES and amount is not None]
+            recipe["used"] = len(used)
+        recipes.append(recipe)
+
+    if have:
+        recipes.sort(key=lambda recipe: (len(recipe["missing"]), -recipe["used"], recipe["name"]))
+
+    end = None if limit < 0 else offset + limit
+    return recipes[offset:end], len(recipes)
 
 
 def get_recipe(recipe_id, servings=None):

@@ -1,25 +1,80 @@
 # Idea brainstorming, pseudocode and databank layout from Claude
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, get_recipes, get_recipe, count_recipes, return_error, get_weather, get_place, get_ip_location
+from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_recipe, return_error, get_weather, get_place, get_ip_location, DIETS
 
 app = Flask(__name__)
+
+PAGE_SIZE = 12  # recipes per page of results; "Mehr anzeigen" loads the next ones
+MAX_SHOWN = 400
+DIET_LABELS = {"vegan": "Vegan", "vegetarisch": "Vegetarisch", "glutenfrei": "Glutenfrei"}
+
+
+def read_filters():
+    """Read the search and filters from the URL (?q=…&vegan=1&zutat=Zwiebel), ignoring anything unknown."""
+
+    names = {name.casefold(): name for name in get_ingredient_names()}
+    have = []
+    for typed in request.args.getlist("zutat"):
+        name = names.get(typed.strip().casefold())
+        if name and name not in have:
+            have.append(name)
+
+    return {
+        "q": request.args.get("q", "").strip()[:100],
+        "diets": [diet for diet in DIETS if request.args.get(diet)],
+        "have": have,
+    }
+
+
+def count_label(shown, total, filters):
+    """Describe how many recipes are shown, e.g. "12 von 318 Rezepten" or "3 Treffer"."""
+
+    if not (filters["q"] or filters["diets"] or filters["have"]):
+        return f"{shown} von {total} Rezepten"
+    if total == 0:
+        return "Keine Treffer"
+    if shown < total:
+        return f"{shown} von {total} Treffern"
+    return "1 Treffer" if total == 1 else f"{total} Treffer"
+
 
 @app.route("/")
 def index():
 
-    if request.method == "GET":
-            searched_value = request.form.get("q")
-    
     moon_phase = get_moon_phase()
     moon_phase_index = get_moon_phase_index()
     season = get_season()
     dish_of_the_day = get_dish_of_the_day()
-    recipes = get_recipes(limit=10)
-    recipe_count = count_recipes()
+
+    # ?n= keeps the results loaded with "Mehr anzeigen" when coming back from a recipe
+    filters = read_filters()
+    limit = min(max(request.args.get("n", PAGE_SIZE, type=int), PAGE_SIZE), MAX_SHOWN)
+    recipes, total = search_recipes(filters["q"], filters["diets"], filters["have"], limit=limit)
+
+    return render_template(
+        "index.html", moon_phase=moon_phase, moon_phase_index=moon_phase_index, season=season,
+        dish_of_the_day=dish_of_the_day, recipes=recipes, total=total, filters=filters,
+        count=count_label(len(recipes), total, filters), ingredient_names=get_ingredient_names(),
+        diet_labels=DIET_LABELS,
+    )
 
 
-    return render_template("index.html", moon_phase=moon_phase, moon_phase_index=moon_phase_index, season=season, dish_of_the_day=dish_of_the_day, recipes=recipes, recipe_count=recipe_count)
+@app.route("/recipes")
+def recipes():
+    """Return the matching recipe cards as HTML, for the live search on the start page."""
+
+    filters = read_filters()
+    offset = max(request.args.get("offset", 0, type=int), 0)
+    found, total = search_recipes(filters["q"], filters["diets"], filters["have"], limit=PAGE_SIZE, offset=offset)
+    shown = offset + len(found)
+
+    return jsonify(
+        html=render_template("recipe_cards.html", recipes=found),
+        total=total,
+        shown=shown,
+        count=count_label(shown, total, filters),
+    )
 
 @app.route("/weather")
 def weather():

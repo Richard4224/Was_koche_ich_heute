@@ -93,28 +93,65 @@
                 {% endif %}
 
                 <section class="search-section">
-                    <form action="/" method="get" role="search" class="search-form">
-                        <input name="q" type="search" class="form-control" placeholder="Wonach steht dir heute der Sinn?" aria-label="Rezept suchen">
-                        <button class="btn btn-amber" type="submit">Suchen</button>
+                    <!-- Works without JavaScript too; with it, the results update while you type -->
+                    <form action="/#rezepte" method="get" role="search" class="search-form" id="recipe-filter">
+                        <div class="search-row">
+                            <input name="q" type="search" value="{{ filters.q }}" class="form-control" autocomplete="off"
+                                   placeholder="Wonach steht dir heute der Sinn?" aria-label="Rezept suchen">
+                            <button class="btn btn-amber" type="submit">Suchen</button>
+                        </div>
+
+                        <div class="diet-filters" role="group" aria-label="Ernährung">
+                            {% for key, label in diet_labels.items() %}
+                                <input type="checkbox" class="diet-check" id="diet-{{ key }}" name="{{ key }}" value="1"
+                                       {% if key in filters.diets %}checked{% endif %}>
+                                <label class="diet-chip" for="diet-{{ key }}">{{ label }}</label>
+                            {% endfor %}
+                        </div>
+
+                        <div class="pantry">
+                            <label class="pantry-label" for="pantry-input">Was hast du zu Hause?</label>
+                            <div class="pantry-box">
+                                <span class="pantry-chips">
+                                    {% for name in filters.have %}
+                                        <span class="pantry-chip">
+                                            <input type="hidden" name="zutat" value="{{ name }}">
+                                            {{ name }}
+                                            <button type="button" class="pantry-remove" aria-label="{{ name }} entfernen">×</button>
+                                        </span>
+                                    {% endfor %}
+                                </span>
+                                <input id="pantry-input" name="zutat" list="ingredient-names" class="pantry-input"
+                                       autocomplete="off" placeholder="Zutat hinzufügen …">
+                            </div>
+                            <datalist id="ingredient-names">
+                                {% for name in ingredient_names %}<option value="{{ name }}">{% endfor %}
+                            </datalist>
+                            <p class="pantry-hint">Salz, Pfeffer und Gewürze nach Geschmack setzen wir voraus.</p>
+                        </div>
                     </form>
                 </section>
 
                 <section class="recipes-section">
                     <div class="section-heading">
                         <h2>Aus dem Rezeptbuch</h2>
-                        <span class="section-count">{{ recipes | length }} von {{ recipe_count }} Rezepten</span>
+                        <span class="section-count" id="result-count">{{ count }}</span>
                     </div>
 
-                    <div class="recipe-grid">
-                        {% for recipe in recipes %}
-                            <a href="/recipe/{{ recipe.id }}" class="glass recipe-card">
-                                <h3 class="recipe-card-name">{{ recipe.name }}</h3>
-                                <p class="recipe-card-time">{{ recipe.time }}</p>
-                                <p class="recipe-card-ingredients">
-                                    {{ recipe.ingredients[:5] | join(", ") }}{% if recipe.ingredients | length > 5 %} …{% endif %}
-                                </p>
-                            </a>
-                        {% endfor %}
+                    <div class="recipe-grid" id="recipe-grid">
+                        {% include "recipe_cards.html" %}
+                    </div>
+
+                    <div class="glass no-results" id="no-results" {% if total %}hidden{% endif %}>
+                        Hier wächst leider nichts. Versuch es mit weniger Filtern.
+                    </div>
+
+                    <div class="results-actions">
+                        <button type="button" class="btn more-button" id="more-button" {% if recipes | length >= total %}hidden{% endif %}>
+                            Mehr anzeigen
+                        </button>
+                        <a href="/#rezepte" class="reset-link" id="reset-link"
+                           {% if not (filters.q or filters.diets or filters.have) %}hidden{% endif %}>Filter zurücksetzen</a>
                     </div>
                 </section>
             </div>
@@ -151,26 +188,156 @@
             showWeather("");
         }
 
-        // Coming back from a recipe ("Zurück zum Rezeptbuch" links to /#rezepte):
-        // return to the exact spot on the forest floor where the recipe was clicked
-        const SCROLL_KEY = "recipeBookScroll";
+        // ---- Live search: results update while typing, ticking a filter or adding an ingredient
+        const filterForm = document.querySelector("#recipe-filter");
+        const grid = document.querySelector("#recipe-grid");
+        const countLabel = document.querySelector("#result-count");
+        const noResults = document.querySelector("#no-results");
+        const moreButton = document.querySelector("#more-button");
+        const resetLink = document.querySelector("#reset-link");
+        const pantryInput = document.querySelector("#pantry-input");
+        const pantryChips = document.querySelector(".pantry-chips");
+        const ingredientNames = new Map(
+            [...document.querySelectorAll("#ingredient-names option")].map((option) => [option.value.toLowerCase(), option.value])
+        );
+
+        // Without JavaScript the typed ingredient is sent with the form; with it, only the chips count
+        pantryInput.removeAttribute("name");
+
+        let shown = grid.querySelectorAll(".recipe-card").length;
+        let loadedMore = new URLSearchParams(location.search).has("n");
+        let latestRequest = 0;  // so that a slow answer to an older search can't overwrite a newer one
+
+        function filterParams() {
+            const params = new URLSearchParams();
+            for (const [key, value] of new FormData(filterForm)) {
+                if (value.trim()) params.append(key, value.trim());
+            }
+            return params;
+        }
+
+        async function loadRecipes(append = false) {
+            const params = filterParams();
+            const request = ++latestRequest;
+            let data;
+            try {
+                const response = await fetch(`/recipes?${params}&offset=${append ? shown : 0}`);
+                data = await response.json();
+            } catch {
+                return;  // offline or server gone: keep showing the current results
+            }
+            if (request !== latestRequest) return;
+
+            if (append) {
+                grid.insertAdjacentHTML("beforeend", data.html);
+            } else {
+                grid.innerHTML = data.html;
+                loadedMore = false;
+            }
+            shown = data.shown;
+            countLabel.textContent = data.count;
+            noResults.hidden = data.total > 0;
+            moreButton.hidden = data.shown >= data.total;
+            resetLink.hidden = params.toString() === "";
+
+            // Keep the search in the address, so a reload or coming back from a recipe shows the same results
+            if (loadedMore) params.set("n", shown);
+            const query = params.toString();
+            history.replaceState(null, "", (query ? `/?${query}` : "/") + "#rezepte");
+        }
+
+        let typingTimer;
+        filterForm.elements.q.addEventListener("input", () => {
+            clearTimeout(typingTimer);
+            typingTimer = setTimeout(() => loadRecipes(), 250);
+        });
+
+        filterForm.addEventListener("change", (event) => {
+            if (event.target.classList.contains("diet-check")) loadRecipes();
+        });
+
+        filterForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            addIngredient(pantryInput.value);
+            loadRecipes();
+        });
+
+        // Ingredients become chips once they match a known ingredient
+        function addIngredient(typed) {
+            const name = ingredientNames.get(typed.trim().toLowerCase());
+            if (!name) return false;
+            const known = [...pantryChips.querySelectorAll("input")].some((input) => input.value === name);
+            if (!known) {
+                const chip = document.createElement("span");
+                chip.className = "pantry-chip";
+                const hidden = Object.assign(document.createElement("input"), { type: "hidden", name: "zutat", value: name });
+                const remove = Object.assign(document.createElement("button"), { type: "button", className: "pantry-remove", textContent: "×" });
+                remove.setAttribute("aria-label", `${name} entfernen`);
+                chip.append(hidden, name, remove);
+                pantryChips.append(chip);
+            }
+            pantryInput.value = "";
+            return true;
+        }
+
+        pantryInput.addEventListener("input", (event) => {
+            // Picking a suggestion from the list has no inputType (or a replacement); typing letters doesn't count,
+            // so typing "Ei" on the way to "Eigelb" doesn't add "Ei" too early
+            if ((!event.inputType || event.inputType === "insertReplacementText") && addIngredient(pantryInput.value)) {
+                loadRecipes();
+            }
+        });
+
+        pantryInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                if (addIngredient(pantryInput.value)) loadRecipes();
+            }
+        });
+
+        pantryChips.addEventListener("click", (event) => {
+            const remove = event.target.closest(".pantry-remove");
+            if (remove) {
+                remove.closest(".pantry-chip").remove();
+                loadRecipes();
+            }
+        });
+
+        moreButton.addEventListener("click", () => {
+            loadedMore = true;
+            loadRecipes(true);
+        });
+
+        resetLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            filterForm.elements.q.value = "";
+            filterForm.querySelectorAll(".diet-check").forEach((check) => { check.checked = false; });
+            pantryChips.replaceChildren();
+            loadRecipes();
+        });
+
+        // ---- Coming back from a recipe: the recipe page links back to the remembered search,
+        // and the start page returns to the exact spot where the recipe was clicked
+        const BOOK_KEY = "recipeBook";
         document.addEventListener("click", (event) => {
             if (event.target.closest('a[href^="/recipe/"]')) {
-                try { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); } catch {}
+                const place = { url: location.pathname + location.search, scroll: window.scrollY };
+                try { sessionStorage.setItem(BOOK_KEY, JSON.stringify(place)); } catch {}
             }
         });
 
         if (location.hash === "#rezepte") {
             let saved = null;
             try {
-                saved = sessionStorage.getItem(SCROLL_KEY);
-                sessionStorage.removeItem(SCROLL_KEY);
+                saved = JSON.parse(sessionStorage.getItem(BOOK_KEY));
+                sessionStorage.removeItem(BOOK_KEY);
             } catch {}
+            const sameSearch = saved && saved.url === location.pathname + location.search;
 
             // Jump without animation, and again once everything has loaded, in case the page grew
             const restore = () => {
-                if (saved !== null) {
-                    window.scrollTo({ top: Number(saved), behavior: "instant" });
+                if (sameSearch) {
+                    window.scrollTo({ top: saved.scroll, behavior: "instant" });
                 } else {
                     document.querySelector("#rezepte").scrollIntoView({ behavior: "instant" });
                 }

@@ -1,0 +1,19 @@
+{# Recipe cards, shared by the start page and the live search (/recipes) #}
+{% for recipe in recipes %}
+    <a href="/recipe/{{ recipe.id }}" class="glass recipe-card">
+        <h3 class="recipe-card-name">{{ recipe.name }}</h3>
+        <p class="recipe-card-time">{{ recipe.time }}</p>
+        {% if recipe.missing is none %}
+            <p class="recipe-card-ingredients">
+                {{ recipe.ingredients[:5] | join(", ") }}{% if recipe.ingredients | length > 5 %} …{% endif %}
+            </p>
+        {% elif not recipe.missing %}
+            <p class="recipe-card-status recipe-card-status-complete">Alles da</p>
+        {% else %}
+            <p class="recipe-card-status">
+                Es {{ "fehlt" if recipe.missing | length == 1 else "fehlen" }}:
+                {{ recipe.missing[:3] | join(", ") }}{% if recipe.missing | length > 3 %} und {{ recipe.missing | length - 3 }} weitere{% endif %}
+            </p>
+        {% endif %}
+    </a>
+{% endfor %}

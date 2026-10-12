@@ -62,4 +62,14 @@
             {% endif %}
         </section>
     </div>
+
+    <script>
+        // Lead back to the search this recipe was opened from (the start page remembered it)
+        try {
+            const saved = JSON.parse(sessionStorage.getItem("recipeBook"));
+            if (saved && saved.url.startsWith("/")) {
+                document.querySelector(".back-link a").href = saved.url + "#rezepte";
+            }
+        } catch {}
+    </script>
 {% endblock %}
