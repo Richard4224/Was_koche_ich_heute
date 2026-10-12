@@ -101,6 +101,13 @@ def search(term):
     return photos(data.get("query", {}).get("pages", {}))
 
 
+def related(term, title):
+    """True if term and an article title share a word, so "Maultasche" fits "Geschmälzte Maultaschen", but
+    "Liste Münchner Straßennamen/K" (with a photo of Kafka) doesn't fit "Kerbelsuppe"."""
+    words = [[word for word in re.split(r"[\W_]+", text.casefold()) if len(word) >= 4] for text in (term, title)]
+    return any(a in b or b in a for a in words[0] for b in words[1])
+
+
 def wikipedia(terms):
     """The German Wikipedia article that best matches one of terms: its main photo and its English title.
 
@@ -109,18 +116,22 @@ def wikipedia(terms):
     """
     for term in terms:
         data = commons({
-            "action": "query", "generator": "search", "gsrsearch": term, "gsrnamespace": 0, "gsrlimit": 1,
-            "prop": "langlinks|pageimages", "lllang": "en", "piprop": "name",
+            "action": "query", "list": "search", "srsearch": term, "srnamespace": 0, "srlimit": 3,
+            "srprop": "redirecttitle",
         }, WIKIPEDIA)
-        page = next(iter(data.get("query", {}).get("pages", {}).values()), None)
-        if page:
-            image = page.get("pageimage")
-            if image:
-                data = commons({"action": "query", "titles": "File:" + image, **IMAGE_INFO})
+        for hit in data.get("query", {}).get("search", []):
+            if not (related(term, hit["title"]) or related(term, hit.get("redirecttitle", ""))):
+                continue
+            data = commons({
+                "action": "query", "titles": hit["title"], "prop": "langlinks|pageimages", "lllang": "en",
+                "piprop": "name",
+            }, WIKIPEDIA)
+            page = next(iter(data.get("query", {}).get("pages", {}).values()), {})
+            found = []
+            if page.get("pageimage"):
+                data = commons({"action": "query", "titles": "File:" + page["pageimage"], **IMAGE_INFO})
                 found = photos(data.get("query", {}).get("pages", {}))
-            else:
-                found = []
-            return page["title"], found, (page.get("langlinks") or [{}])[0].get("*")
+            return hit["title"], found, (page.get("langlinks") or [{}])[0].get("*")
     return None, [], None
 
 
@@ -201,11 +212,14 @@ REVIEW_PAGE = """<!DOCTYPE html>
 </style></head><body>
 <h1>Fotos auswählen</h1>
 <p class="hint">Bei jedem Rezept ist das erste Foto schon gewählt. Klick ein anderes an, wenn es besser passt, oder
-"Kein Bild", wenn keins passt. Ein Klick auf das Foto mit gedrückter Strg-Taste öffnet es auf Commons.</p>
+"Kein Bild", wenn keins passt. Ein Klick auf das Foto mit gedrückter Strg-Taste öffnet es auf Commons.
+Deine Auswahl bleibt auch nach dem Neuladen erhalten.</p>
 <div id="list"></div>
 <div class="bar"><button id="save">Auswahl speichern</button><span id="status"></span></div>
 <script>
     const data = __DATA__;
+    let saved = {};  // choices made before a reload or a new search
+    try { saved = JSON.parse(localStorage.getItem("bildauswahl")) || {}; } catch {}
     const choice = {};
     const list = document.getElementById("list");
     const status = document.getElementById("status");
@@ -213,10 +227,13 @@ REVIEW_PAGE = """<!DOCTYPE html>
     function update() {
         const chosen = Object.values(choice).filter(Boolean).length;
         status.textContent = `${chosen} Rezepte mit Foto, ${data.length - chosen} ohne`;
+        try { localStorage.setItem("bildauswahl", JSON.stringify({ ...saved, ...choice })); } catch {}
     }
 
     for (const entry of data) {
-        choice[entry.recipe] = entry.candidates.length ? entry.candidates[0].title : null;
+        const titles = entry.candidates.map((photo) => photo.title);
+        const before = saved[entry.recipe];
+        choice[entry.recipe] = before === null || titles.includes(before) ? before : (titles[0] ?? null);
         const block = document.createElement("section");
         block.className = "recipe";
         block.innerHTML = `<h2></h2><div class="options"></div>`;
