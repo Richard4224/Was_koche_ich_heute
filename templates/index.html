@@ -14,8 +14,8 @@
 {% block main %}
     <!-- 1. Space: the moon and the stars -->
     <section class="space">
-        <div class="space-stars" data-depth="0.15" aria-hidden="true"></div>
-        <div class="space-stars space-stars-small" data-depth="0.3" aria-hidden="true"></div>
+        <div class="space-stars" aria-hidden="true"></div>
+        <div class="space-stars space-stars-small" aria-hidden="true"></div>
         <div class="shooting-star" aria-hidden="true"></div>
 
         <div class="container space-content">
@@ -149,22 +149,6 @@
             );
         } else {
             showWeather("");
-        }
-
-        // Parallax: the stars lag behind a little while scrolling, so the sky feels deep
-        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            const layers = document.querySelectorAll("[data-depth]");
-            let ticking = false;
-            window.addEventListener("scroll", () => {
-                if (ticking) return;
-                ticking = true;
-                requestAnimationFrame(() => {
-                    for (const layer of layers) {
-                        layer.style.transform = `translateY(${window.scrollY * layer.dataset.depth}px)`;
-                    }
-                    ticking = false;
-                });
-            }, { passive: true });
         }
 
         // Coming back from a recipe ("Zurück zum Rezeptbuch" links to /#rezepte):
