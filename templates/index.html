@@ -18,7 +18,7 @@
         <div class="space-stars space-stars-small" data-depth="0.3" aria-hidden="true"></div>
         <div class="shooting-star" aria-hidden="true"></div>
 
-        <div class="container space-content" data-depth="0.35">
+        <div class="container space-content">
             <div class="card-moon big-moon phase-{{ moon_phase_index }}" aria-hidden="true">
                 <div class="moon-disc"><div class="moon-shadow"></div></div>
             </div>
@@ -27,7 +27,7 @@
             <p class="weather" id="weather">Die Sterne befragen das Wetter …</p>
         </div>
 
-        <a href="#rezepte" class="descend-link" data-depth="0.35">
+        <a href="#rezepte" class="descend-link">
             Rezepte
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6"/></svg>
         </a>
@@ -151,7 +151,7 @@
             showWeather("");
         }
 
-        // Parallax: far-away things (moon, stars) lag behind while scrolling, so the sky feels deep
+        // Parallax: the stars lag behind a little while scrolling, so the sky feels deep
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             const layers = document.querySelectorAll("[data-depth]");
             let ticking = false;

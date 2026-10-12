@@ -211,21 +211,6 @@ a {
     filter: drop-shadow(0 0 8px rgba(255, 170, 60, 0.7));
 }
 
-.brand-tagline {
-    font-size: 0.95rem;
-    font-style: italic;
-    color: var(--text-muted);
-}
-
-.site-footer {
-    margin-top: auto;
-    padding: 2rem 1rem 2.5rem;
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
-
-
 /* ---------- Shared building blocks ---------- */
 
 .glass {
@@ -970,7 +955,7 @@ body.journey {
     color: var(--text-muted);
     font-size: 0.9rem;
     text-decoration: none;
-    translate: -50% 0;  /* separate from transform, which the parallax script sets */
+    transform: translateX(-50%);
 }
 
 .descend-link svg {
@@ -1416,10 +1401,6 @@ body.journey {
     15%  { opacity: 0.8; }
     70%  { opacity: 0.35; }
     100% { opacity: 0; transform: translate(-16px, -110px) scale(2.4); }
-}
-
-.journey .site-footer {
-    background: #06051a;
 }
 
 @media (max-width: 575.98px) {

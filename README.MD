@@ -53,7 +53,7 @@ Then open http://127.0.0.1:5000.
 | `scaling.py` | Scales and formats amounts: kitchen rounding, fractions, units in singular and plural, durations. Knows nothing about Flask or the database. |
 | `schema.sql` | The database tables. |
 | `seed.sql` | The 318 recipes and their 352 ingredients. |
-| `templates/layout.html` | Shared frame: header, footer and the night background of the recipe pages. |
+| `templates/layout.html` | Shared frame: header and the night background of the recipe pages. |
 | `templates/index.html` | The start page: the journey from space down to the cottage, and the script that fetches the weather. |
 | `templates/recipe.html` | A recipe with servings field, ingredients and steps. |
 | `templates/error.html` | Error page ("Du hast dich im Wald verirrt."). |

@@ -422,10 +422,10 @@ skyline("back", (14, 58), (4, 10), 0.16, "city-back", ["warm", "warm", "cool"])
 
 # Landmarks: a TV tower, a cathedral with two spires and two high-rises with aircraft warning lights
 add('<path class="city-back" d="'
-    'M1004 252 L1005.5 120 L1007.5 120 L1009 252Z M1001 128 A5.5 5 0 0 1 1012 128 A5.5 5 0 0 1 1001 128Z M1006 120 L1006.5 92 L1007 120Z'
+    'M1004.5 252 L1005.7 178 L1007.3 178 L1008.5 252Z M1002.5 184 A4 3.6 0 0 1 1010.5 184 A4 3.6 0 0 1 1002.5 184Z M1006 178 L1006.5 162 L1007 178Z'
     'M1186 252 L1186 214 L1222 214 L1222 252Z M1188 214 L1188 182 L1191.5 168 L1195 182 L1195 214Z M1213 214 L1213 182 L1216.5 168 L1220 182 L1220 214Z'
     'M1080 252 L1080 176 L1092 176 L1092 252Z M1268 252 L1268 186 L1278 186 L1278 252Z"/>')
-for x, y in [(1006.5, 91), (1086, 175), (1273, 185)]:
+for x, y in [(1006.5, 161), (1086, 175), (1273, 185)]:
     add(f'<circle class="warning-light" cx="{x}" cy="{y}" r="1.3"/>')
 
 skyline("front", (6, 30), (3, 8), 0.24, "city-front", ["warm", "warm", "warm", "cool"])
