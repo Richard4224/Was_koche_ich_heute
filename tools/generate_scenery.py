@@ -23,9 +23,9 @@ def poly(points):
 
 # ---------------------------------------------------------------- tall firs
 
-def fir_path(cx, top, bottom, base_w, rng, tier_gap=46):
+def fir_path(cx, top, bottom, base_w, rng, tier_gap=46, crown_ratio=0.78):
     """A slender fir: clean, drooping branch tiers, then a sturdy trunk with flared roots."""
-    crown_bottom = top + (bottom - top) * 0.78
+    crown_bottom = top + (bottom - top) * crown_ratio
     height = crown_bottom - top
     tiers = max(7, int(height / tier_gap))
     spacing = height / tiers
@@ -79,6 +79,10 @@ def fir_tile(name, width, height, firs, seed):
     rng = random.Random(seed)
     paths = []
     for cx, top, base_w in firs:
+        # Give every tree its own build: wider or narrower, taller or shorter, denser or sparser branches
+        base_w *= rng.uniform(0.86, 1.14)
+        top = max(0, top + rng.uniform(-40, 60))
+        build = {"tier_gap": rng.uniform(38, 56), "crown_ratio": rng.uniform(0.73, 0.83)}
         # Repeat firs that cross the tile edge on the other side, so the tile repeats seamlessly
         offsets = [0]
         if cx - base_w / 2 < 0:
@@ -88,7 +92,7 @@ def fir_tile(name, width, height, firs, seed):
         state = rng.getstate()
         for offset in offsets:
             rng.setstate(state)
-            paths.append(f'<path d="{fir_path(cx + offset, top, height, base_w, rng)}"/>')
+            paths.append(f'<path d="{fir_path(cx + offset, top, height, base_w, rng, **build)}"/>')
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" '
            f'viewBox="0 0 {width} {height}">' + "".join(paths) + "</svg>\n")
     with open(f"{ROOT}/static/scenery/{name}", "w", encoding="utf-8") as file:
@@ -97,8 +101,11 @@ def fir_tile(name, width, height, firs, seed):
 
 # Same on-screen spacing as the mid row (the CSS draws far firs at 80 % of their height), but shifted
 # by half a gap, so every far fir stands between two closer ones
-fir_tile("firs-far.svg", 1375, 1600, [(454, 90, 290), (908, 0, 310), (1361, 150, 270)], 1)
-fir_tile("firs-mid.svg", 1100, 1600, [(170, 80, 300), (560, 0, 330), (910, 170, 280)], 2)
+# Nine firs per tile (three groups of three), so on most screens no tree appears twice.
+fir_tile("firs-far.svg", 4125, 1600,
+         [((k + f) * 1375, top, w) for k in range(3) for f, top, w in [(0.33, 90, 290), (0.66, 0, 310), (0.99, 150, 270)]], 1)
+fir_tile("firs-mid.svg", 3300, 1600,
+         [((k + f) * 1100, top, w) for k in range(3) for f, top, w in [(0.155, 80, 300), (0.51, 0, 330), (0.83, 170, 280)]], 2)
 fir_tile("fir-edge.svg", 600, 1600, [(300, 0, 540)], 3)
 
 
@@ -211,41 +218,42 @@ stone_rows(866, 1090, 218, 460)
 # Warm light from the windows and door on the stones
 add('<ellipse cx="976" cy="405" rx="120" ry="80" fill="url(#hearth-light)"/>')
 # Shadow under the roof edge
-add('<path d="M872 346 Q926 276 979 216 Q1033 272 1082 342" fill="none" stroke="#0c0a18" stroke-width="16" opacity="0.65"/>')
+add('<path d="M874 350 L978 232 L1082 346" fill="none" stroke="#0c0a18" stroke-width="16" opacity="0.65"/>')
 add("</g>")
 
-# Thatched roof: thick, sagging, with a bumpy edge
-outer_left = [bezier((846, 354), (902, 262), (980, 180), i / 40) for i in range(41)]
-outer_right = [bezier((980, 180), (1054, 258), (1108, 350), i / 40) for i in range(1, 41)]
+# Thatched roof: thick, sagging, with a bumpy edge. Its underside follows the straight gable of the
+# wall and reaches a little below it, so the roof sits on the house instead of floating above it.
+OUTER_LEFT = ((848, 360), (900, 272), (980, 190))      # eave to ridge
+OUTER_RIGHT = ((1110, 356), (1056, 268), (980, 190))
+INNER_LEFT = ((874, 350), (926, 291), (978, 232))      # straight lines, just below the wall's gable
+INNER_RIGHT = ((1082, 346), (1030, 289), (978, 232))
+outer_left = [bezier(*OUTER_LEFT, i / 40) for i in range(41)]
+outer_right = [bezier(*OUTER_RIGHT, 1 - i / 40) for i in range(1, 41)]
 outer = []
 for i, (x, y) in enumerate(outer_left + outer_right):
     bump = 2.6 * math.sin(i * 1.7) + rng.uniform(-1, 1)
     outer.append((x, y - bump))
-inner_right = [bezier((1083, 343), (1034, 272), (979, 215), i / 30) for i in range(31)]
-inner_left = [bezier((979, 215), (927, 276), (871, 347), i / 30) for i in range(1, 31)]
-roof = (poly(outer + [(1112, 358), (1096, 362)] + inner_right + inner_left + [(858, 364), (842, 360)]))
+inner_right = [bezier(*INNER_RIGHT, i / 30) for i in range(31)]
+inner_left = [bezier(*INNER_LEFT, 1 - i / 30) for i in range(1, 31)]
+roof = poly(outer + [(1114, 364), (1098, 368)] + inner_right + inner_left + [(860, 370), (844, 366)])
 add(f'<path d="{roof}" fill="url(#roof-shade)"/>')
 add('<g class="thatch">')
 for _ in range(170):
     left = rng.random() < 0.5
     t = rng.uniform(0.03, 0.97)
-    if left:
-        ox, oy = bezier((846, 354), (902, 262), (980, 180), t)
-        ix, iy = bezier((871, 347), (927, 276), (979, 215), t)
-    else:
-        ox, oy = bezier((1108, 350), (1054, 258), (980, 180), t)
-        ix, iy = bezier((1083, 343), (1034, 272), (979, 215), t)
+    ox, oy = bezier(*(OUTER_LEFT if left else OUTER_RIGHT), t)
+    ix, iy = bezier(*(INNER_LEFT if left else INNER_RIGHT), t)
     depth = rng.uniform(0.1, 0.85)
     x, y = ox + (ix - ox) * depth, oy + (iy - oy) * depth
     dx, dy = (-1 if left else 1) * 0.62, 0.78  # down the slope
     length = rng.uniform(7, 15)
     add(f'<path d="M{f(x)} {f(y)} l{f(dx * length)} {f(dy * length)}"/>')
 add("</g>")
-for x, y, rx, ry in [(925, 268, 14, 5), (1050, 290, 18, 6), (968, 196, 8, 4)]:
+for x, y, rx, ry in [(925, 280, 14, 5), (1052, 300, 18, 6), (968, 206, 8, 4)]:
     add(f'<ellipse cx="{x}" cy="{y}" rx="{rx}" ry="{ry}" fill="#2f4a45" opacity="0.5" transform="rotate({rng.uniform(-40, 40):.0f} {x} {y})"/>')
 # A little crescent moon on top of the roof
-add('<path d="M980 181 L983 160" stroke="#2a2440" stroke-width="2.5"/>')
-add('<path d="M988 146 A9 9 0 1 0 988 162 A6.5 6.5 0 1 1 988 146 Z" fill="#e3b866" class="roof-moon"/>')
+add('<path d="M980 191 L983 170" stroke="#2a2440" stroke-width="2.5"/>')
+add('<path d="M988 156 A9 9 0 1 0 988 172 A6.5 6.5 0 1 1 988 156 Z" fill="#e3b866" class="roof-moon"/>')
 
 # Round attic window
 add('<circle cx="978" cy="292" r="19" fill="url(#window-glow)" class="flicker"/>')
@@ -304,13 +312,34 @@ for x, y, rx in [(962, 472, 17), (938, 484, 19), (908, 496, 21), (872, 508, 23)]
 
 cottage = "\n".join(out)
 
-# Ground with grass tufts along its edge
+# The forest floor and its grass
 ground_top = [bezier((0, 478), (500, 456), (1200, 460), i / 200) for i in range(201)]
-tufts = []
-for x, y in ground_top[::2]:
-    h = rng.uniform(3, 10)
-    tufts.append(f"M{f(x - 2.5)} {f(y + 1)} L{f(x + rng.uniform(-2, 2))} {f(y - h)} L{f(x + 2.5)} {f(y + 1)}Z")
 ground = poly(ground_top + [(1200, 520), (0, 520)])
+
+
+def blade(x, y, height, lean, width):
+    """One curved blade of grass, wide at the root and pointed at the tip."""
+    cx, cy = x + lean * 0.3, y - height * 0.6
+    return (f"M{f(x - width)} {f(y + 2)} Q{f(cx - width * 0.4)} {f(cy)} {f(x + lean)} {f(y - height)} "
+            f"Q{f(cx + width * 0.4)} {f(cy)} {f(x + width)} {f(y + 2)}Z")
+
+
+back_blades, front_blades, lit_blades = [], [], []
+for x, y in ground_top:
+    for _ in range(rng.randint(1, 3)):
+        back_blades.append(blade(x + rng.uniform(-3, 3), y - 2, rng.uniform(7, 17), rng.uniform(-5, 5), rng.uniform(0.9, 1.5)))
+    for _ in range(rng.randint(2, 4)):
+        height = rng.uniform(4, 12) * (1.7 if rng.random() < 0.07 else 1)  # now and then a tall stalk
+        b = blade(x + rng.uniform(-3, 3), y + rng.uniform(0, 3), height, rng.uniform(-6, 6), rng.uniform(1, 1.7))
+        (lit_blades if 850 < x < 1110 and rng.random() < 0.5 else front_blades).append(b)
+
+# The grass is a separate file, so the browser can cache it instead of loading it with every page
+with open(f"{ROOT}/static/scenery/grass.svg", "w", encoding="utf-8") as file:
+    file.write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">'
+               f'<path fill="#110e2c" d="{"".join(back_blades)}"/>'
+               f'<path fill="#06051a" d="{"".join(front_blades)}"/>'
+               f'<path fill="#3a2a40" d="{"".join(lit_blades)}"/>'
+               "</svg>\n")
 
 scene = f'''<svg class="hut-scene" viewBox="0 0 1200 520" preserveAspectRatio="xMaxYMax slice" aria-hidden="true">
     <defs>
@@ -348,7 +377,7 @@ scene = f'''<svg class="hut-scene" viewBox="0 0 1200 520" preserveAspectRatio="x
 
     <!-- The forest floor -->
     <path class="ground" d="{ground}"/>
-    <path class="ground" d="{''.join(tufts)}"/>
+    <image href="{{{{ url_for('static', filename='scenery/grass.svg') }}}}" x="0" y="0" width="1200" height="520"/>
 </svg>
 '''
 

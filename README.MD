@@ -59,7 +59,7 @@ Then open http://127.0.0.1:5000.
 | `templates/error.html` | Error page ("Du hast dich im Wald verirrt."). |
 | `templates/scenery/*.svg` | The cottage and the horizon, inlined into the start page so CSS can animate the lights and the steam. |
 | `static/styles.css` | All styling, including the scenery and its animations. |
-| `static/scenery/*.svg` | Fir silhouettes, used as CSS masks for the rows of trees. |
+| `static/scenery/*.svg` | Fir silhouettes, used as CSS masks for the rows of trees, and the grass of the forest floor. |
 | `tools/generate_scenery.py` | Generates all scenery SVGs. |
 
 ## Design decisions
