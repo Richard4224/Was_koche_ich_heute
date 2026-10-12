@@ -162,7 +162,7 @@ def get_dish_of_the_day(now=None, latitude=LATITUDE, weather=None):
 
 
 def get_db():
-    """Open the recipe database, building it from schema.sql and seed.sql on first use."""
+    """Open the recipe database, building it from schema.sql, seed.sql and images.sql on first use."""
 
     is_new = not os.path.exists(DATABASE)
     db = sqlite3.connect(DATABASE)
@@ -172,9 +172,11 @@ def get_db():
     db.create_function("casefold", 1, lambda text: text.casefold() if text else text, deterministic=True)
 
     if is_new:
-        for script in ("schema.sql", "seed.sql"):
-            with open(os.path.join(BASE_DIR, script), encoding="utf-8") as file:
-                db.executescript(file.read())
+        for script in ("schema.sql", "seed.sql", "images.sql"):
+            path = os.path.join(BASE_DIR, script)
+            if os.path.exists(path):  # images.sql only exists once photos have been chosen
+                with open(path, encoding="utf-8") as file:
+                    db.executescript(file.read())
     return db
 
 
@@ -286,6 +288,31 @@ def search_recipes(query="", diets=(), have=(), exclude=(), with_groups=(), with
     return recipes[offset:end], len(recipes)
 
 
+def image_credit(recipe):
+    """The photo credit of a recipe as {"author", "license", "license_url", "source"}, or None if it has none."""
+
+    if not recipe["image_author"]:
+        return None
+    return {
+        "author": recipe["image_author"],
+        "license": recipe["image_license"],
+        "license_url": recipe["image_license_url"],
+        "source": recipe["image_source"],
+    }
+
+
+def get_image_credits():
+    """All recipes that have a photo, with its credit, sorted by name (for the "Bildnachweise" page)."""
+
+    with closing(get_db()) as db:
+        rows = db.execute("SELECT * FROM recipes WHERE image_author IS NOT NULL ORDER BY name").fetchall()
+    return [
+        {"id": row["id"], "name": row["name"], "image": row["image"], "credit": image_credit(row)}
+        for row in rows
+        if os.path.isfile(os.path.join(BASE_DIR, "static", "images", row["image"]))
+    ]
+
+
 def get_recipe(recipe_id, servings=None):
     """Return a recipe with amounts scaled to servings (default: its own), or None if it doesn't exist."""
 
@@ -329,6 +356,7 @@ def get_recipe(recipe_id, servings=None):
         ],
         **split_instructions(scale_text(recipe["instructions"], factor)),
         "image": image,
+        "credit": image_credit(recipe) if image else None,
     }
 
 

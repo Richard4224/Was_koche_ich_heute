@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bildnachweise
+{% endblock %}
+
+{% block main %}
+    <p class="back-link"><a href="/#rezepte">← Zurück zum Rezeptbuch</a></p>
+
+    <section class="glass credits">
+        <h1>Bildnachweise</h1>
+        <p class="credits-intro">
+            Alle Fotos stammen von <a href="https://commons.wikimedia.org" rel="noopener">Wikimedia Commons</a>
+            und stehen unter freien Lizenzen. Danke an alle, die sie dort teilen.
+        </p>
+
+        {% if credits %}
+            <ul class="credit-list">
+                {% for item in credits %}
+                    <li>
+                        <img src="{{ url_for('static', filename='images/' + item.image) }}" alt="" loading="lazy">
+                        <div>
+                            <a href="/recipe/{{ item.id }}" class="credit-recipe">{{ item.name }}</a>
+                            <span class="credit-line">
+                                Foto: <a href="{{ item.credit.source }}" rel="noopener">{{ item.credit.author }}</a>
+                                ·
+                                {% if item.credit.license_url %}
+                                    <a href="{{ item.credit.license_url }}" rel="noopener license">{{ item.credit.license }}</a>
+                                {% else %}
+                                    {{ item.credit.license }}
+                                {% endif %}
+                            </span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="credits-intro">Noch sind keine Fotos ausgewählt.</p>
+        {% endif %}
+    </section>
+{% endblock %}

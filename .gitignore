@@ -11,3 +11,6 @@ flask_session/
 # Editor
 .vscode/
 .DS_Store
+
+# Working files of tools/find_images.py
+tools/images/

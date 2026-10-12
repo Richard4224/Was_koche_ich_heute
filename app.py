@@ -4,7 +4,7 @@ from datetime import datetime
 from urllib.parse import urlencode
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, return_error, get_weather_data, describe_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS, LATITUDE
+from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, get_image_credits, return_error, get_weather_data, describe_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS, LATITUDE
 
 app = Flask(__name__)
 
@@ -171,6 +171,13 @@ def weather():
         dish=dish["id"],
         dish_html=render_template("dish_card.html", dish_of_the_day=dish),
     )
+
+
+@app.route("/bildnachweise")
+def image_credits():
+    """Who took the photos, and under which licence."""
+
+    return render_template("credits.html", credits=get_image_credits())
 
 
 @app.route("/recipe/<int:recipe_id>")

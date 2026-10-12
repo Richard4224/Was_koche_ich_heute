@@ -1773,6 +1773,69 @@ body.journey {
 }
 
 
+/* ---------- Photo credits ---------- */
+
+.image-credit {
+    margin: 0.5rem 0.25rem 0;
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.credits-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.credits {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 1.75rem;
+}
+
+.credits h1 {
+    font-size: 1.9rem;
+}
+
+.credits-intro {
+    color: var(--text-muted);
+}
+
+.credit-list {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.credit-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.credit-list img {
+    flex: none;
+    width: 88px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.credit-recipe {
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.credit-line {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
 /* ---------- Less motion for those who prefer it ---------- */
 
 @media (prefers-reduced-motion: reduce) {

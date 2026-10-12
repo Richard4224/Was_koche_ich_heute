@@ -20,6 +20,18 @@
             <p class="recipe-meta">{{ recipe.time }} · {{ recipe.season }}</p>
         </div>
     </header>
+    {% if recipe.credit %}
+        <p class="image-credit">
+            Foto: <a href="{{ recipe.credit.source }}" rel="noopener">{{ recipe.credit.author }}</a>
+            ·
+            {% if recipe.credit.license_url %}
+                <a href="{{ recipe.credit.license_url }}" rel="noopener license">{{ recipe.credit.license }}</a>
+            {% else %}
+                {{ recipe.credit.license }}
+            {% endif %}
+            · <a href="/bildnachweise">Bildnachweise</a>
+        </p>
+    {% endif %}
 
     <div class="recipe-body">
         <aside class="glass ingredients">

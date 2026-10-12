@@ -9,7 +9,11 @@ CREATE TABLE recipes (
     warm INTEGER NOT NULL DEFAULT 1,                       -- 1 = eaten warm, 0 = cold
     occasion TEXT,                                         -- 'weihnachten', 'ostern', 'halloween', … or NULL
     instructions TEXT NOT NULL,
-    image TEXT
+    image TEXT,                                            -- file in static/images/
+    image_author TEXT,                                     -- photo credit, set in images.sql
+    image_license TEXT,                                    -- e.g. 'CC BY-SA 4.0'
+    image_license_url TEXT,                                -- the licence text, NULL for public domain
+    image_source TEXT                                      -- page of the photo on Wikimedia Commons
 );
 
 CREATE TABLE ingredients (
