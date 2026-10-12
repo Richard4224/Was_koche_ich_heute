@@ -648,6 +648,25 @@ a {
     color: var(--text-muted);
 }
 
+/* Opens to list everything assumed to be in the kitchen */
+.pantry-hint summary {
+    cursor: pointer;
+    list-style-position: inside;
+}
+
+.pantry-hint summary:hover {
+    color: var(--text);
+}
+
+.pantry-hint p {
+    margin: 0.4rem 0 0;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 0.8rem;
+    background: rgba(12, 10, 32, 0.7);
+    line-height: 1.5;
+}
+
 /* Quick bar: common ingredients, the name adds it ("hab ich"), the minus excludes it */
 .quick-bar .label {
     margin-bottom: 0.6rem;

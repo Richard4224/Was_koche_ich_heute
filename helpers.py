@@ -21,8 +21,27 @@ MAX_SERVINGS = 1000
 # Diet filters as they appear in the URL (?vegan=1), mapped to their column in the ingredients table
 DIETS = {"vegan": "vegan", "vegetarisch": "vegetarian", "glutenfrei": "gluten_free"}
 
-# Assumed to be in every kitchen, so never reported as missing
-STAPLES = {"Salz", "Pfeffer"}
+# Ingredient categories assumed to be in every kitchen (spices, oils, flour, sugar, onions, …),
+# so they never count as missing
+PANTRY_CATEGORIES = ("gewürz", "öl", "vorrat")
+
+# Main ingredient groups for the quick bar ("Geflügel", "ohne Schwein"), by their category in the database
+MAIN_GROUPS = {
+    "geflügel": "Geflügel",
+    "rind": "Rind & Kalb",
+    "schwein": "Schwein",
+    "lamm-wild": "Lamm & Wild",
+    "fisch": "Fisch",
+    "meeresfrüchte": "Meeresfrüchte",
+    "ei": "Ei",
+    "käse": "Käse",
+    "tofu": "Tofu",
+    "hülsenfrüchte": "Hülsenfrüchte",
+    "pilze": "Pilze",
+    "kartoffel": "Kartoffeln",
+    "nudeln": "Nudeln",
+    "reis": "Reis",
+}
 
 # Fallback location for the weather when neither the browser nor the IP address reveal one
 LATITUDE = 52.52
@@ -162,36 +181,25 @@ def get_ingredient_names():
         return [row["name"] for row in db.execute("SELECT name FROM ingredients ORDER BY name")]
 
 
-def get_common_ingredients(limit=16):
-    """Return the ingredients used in the most recipes, most common first.
+def get_pantry_names():
+    """Return the names of all ingredients assumed to be in every kitchen, sorted."""
 
-    Staples and uses "to taste" (no amount) don't count: those are assumed to be in the kitchen anyway.
-    """
-
-    placeholders = ", ".join("?" * len(STAPLES))
+    placeholders = ", ".join("?" * len(PANTRY_CATEGORIES))
     with closing(get_db()) as db:
-        rows = db.execute(
-            f"""
-            SELECT ingredients.name FROM recipe_ingredients
-            JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
-            WHERE ingredients.name NOT IN ({placeholders}) AND recipe_ingredients.amount IS NOT NULL
-            GROUP BY ingredients.id
-            ORDER BY count(*) DESC, ingredients.name
-            LIMIT ?
-            """,
-            (*STAPLES, limit),
-        )
+        rows = db.execute(f"SELECT name FROM ingredients WHERE category IN ({placeholders}) ORDER BY name", PANTRY_CATEGORIES)
         return [row["name"] for row in rows]
 
 
-def search_recipes(query="", diets=(), have=(), exclude=(), limit=-1, offset=0):
-    """Find recipes by name, diet and the ingredients someone has at home or doesn't want.
+def search_recipes(query="", diets=(), have=(), exclude=(), with_groups=(), without_groups=(), limit=-1, offset=0):
+    """Find recipes by name, diet, main ingredient and the ingredients someone has at home or doesn't want.
 
-    query:   part of the recipe name, any case
-    diets:   keys of DIETS a recipe must satisfy, e.g. ["vegan"]
-    have:    ingredient names someone has; then only recipes using at least one of them are found,
-             the ones missing the fewest ingredients first
-    exclude: ingredient names someone doesn't want; recipes containing any of them are left out
+    query:          part of the recipe name, any case
+    diets:          keys of DIETS a recipe must satisfy, e.g. ["vegan"]
+    have:           ingredient names someone has; then only recipes using at least one of them are found,
+                    the ones missing the fewest ingredients first
+    exclude:        ingredient names someone doesn't want; recipes containing any of them are left out
+    with_groups:    keys of MAIN_GROUPS a recipe must contain, e.g. ["geflügel", "reis"] (all of them)
+    without_groups: keys of MAIN_GROUPS a recipe must not contain, e.g. ["schwein"]
 
     Returns (recipes, total): the requested slice and how many recipes match in all.
     """
@@ -215,6 +223,19 @@ def search_recipes(query="", diets=(), have=(), exclude=(), limit=-1, offset=0):
                         JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
                         WHERE recipe_ingredients.recipe_id = recipes.id AND ingredients.name IN ({placeholders}))""")
         params.extend(exclude)
+    for group in with_groups:
+        conditions.append("""
+            EXISTS (SELECT 1 FROM recipe_ingredients
+                    JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+                    WHERE recipe_ingredients.recipe_id = recipes.id AND ingredients.category = ?)""")
+        params.append(group)
+    if without_groups:
+        placeholders = ", ".join("?" * len(without_groups))
+        conditions.append(f"""
+            NOT EXISTS (SELECT 1 FROM recipe_ingredients
+                        JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
+                        WHERE recipe_ingredients.recipe_id = recipes.id AND ingredients.category IN ({placeholders}))""")
+        params.extend(without_groups)
     where = "WHERE " + " AND ".join(conditions) if conditions else ""
 
     with closing(get_db()) as db:
@@ -224,31 +245,33 @@ def search_recipes(query="", diets=(), have=(), exclude=(), limit=-1, offset=0):
         ingredients = {}
         for row in db.execute(
             """
-            SELECT recipe_ingredients.recipe_id, ingredients.name, recipe_ingredients.amount
+            SELECT recipe_ingredients.recipe_id, ingredients.name, recipe_ingredients.amount, ingredients.category
             FROM recipe_ingredients
             JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
             ORDER BY recipe_ingredients.rowid
             """
         ):
-            ingredients.setdefault(row["recipe_id"], []).append((row["name"], row["amount"]))
+            pantry = row["category"] in PANTRY_CATEGORIES or row["amount"] is None  # always at hand, or "to taste"
+            ingredients.setdefault(row["recipe_id"], []).append((row["name"], pantry))
 
     have = set(have)
     recipes = []
     for row in rows:
+        names = [name for name, pantry in ingredients[row["id"]]]
+        # The card shows what makes the dish, not salt and pepper
+        main = [name for name, pantry in ingredients[row["id"]] if not pantry]
         recipe = {
             "id": row["id"],
             "name": row["name"],
             "time": format_duration(row["preparation_time"]),
-            "ingredients": [name for name, amount in ingredients[row["id"]]],
+            "ingredients": main or names,
             "missing": None,
         }
         if have:
-            used = [name for name in recipe["ingredients"] if name in have]
+            used = [name for name in names if name in have]
             if not used:
                 continue
-            # Staples and anything "to taste" (no amount) don't count as missing
-            recipe["missing"] = [name for name, amount in ingredients[row["id"]]
-                                 if name not in have and name not in STAPLES and amount is not None]
+            recipe["missing"] = [name for name in main if name not in have]
             recipe["used"] = len(used)
         recipes.append(recipe)
 

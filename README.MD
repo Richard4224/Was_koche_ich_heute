@@ -17,7 +17,7 @@ My CS50x final project. I also want to use it at home, which is why everything a
 - **318 recipes** in an SQLite database, each with ingredients, amounts, time, season and step-by-step instructions.
 - **Recipe pages with adjustable servings:** all amounts are recalculated, including amounts mentioned inside the instructions, and shown in kitchen-friendly form (`¼ Zwiebel`, `1,2 kg`, `2 Prisen`, `3 Tage 3 Std.`).
 - **Search and filters** that update the results while you type: by name, vegan, vegetarian, gluten-free, by what you have at home and by what you don't want. Pick your ingredients and the recipes that miss the fewest come first, each card saying what's missing ("Es fehlt: Sahne") or "Alles da".
-- **A quick bar of common ingredients:** one click adds one ("hab ich"), the minus next to it excludes it ("ohne").
+- **A quick bar of main ingredients** ("Worauf hast du Lust?"): Geflügel, Rind & Kalb, Schwein, Fisch, Ei, Käse, Tofu, Pilze, Kartoffeln, Nudeln, Reis, … One click for "with", the minus next to it for "without".
 - **Results scroll in their own box** and load more as you reach its end, so the page stays where it is.
 - **Coming back from a recipe** returns you to the same search, scrolled to the same spot.
 - **Dish of the day** on the start page.
@@ -51,7 +51,7 @@ Then open http://127.0.0.1:5000.
 
 | File | What it does |
 |---|---|
-| `app.py` | Flask routes: `/` (the start page, also showing search results for `?q=…&vegan=1&zutat=…&ohne=…`), `/recipes` (the matching recipe cards as HTML, for the live search), `/recipe/<id>?servings=N` (a recipe) and `/weather?lat=…&lon=…` (weather, place and season as JSON for the start page's JavaScript). |
+| `app.py` | Flask routes: `/` (the start page, also showing search results for `?q=…&vegan=1&zutat=…&ohne=…&mit=geflügel&kein=schwein`), `/recipes` (the matching recipe cards as HTML, for the live search), `/recipe/<id>?servings=N` (a recipe) and `/weather?lat=…&lon=…` (weather, place and season as JSON for the start page's JavaScript). |
 | `helpers.py` | Moon phase, season, weather, place names and IP location, plus everything that reads the database (`search_recipes`, `get_recipe`, …). |
 | `scaling.py` | Scales and formats amounts: kitchen rounding, fractions, units in singular and plural, durations. Knows nothing about Flask or the database. |
 | `schema.sql` | The database tables. |
@@ -72,6 +72,7 @@ Then open http://127.0.0.1:5000.
 
 - **Three tables:** `recipes`, `ingredients` and `recipe_ingredients` in between, because a recipe has many ingredients and an ingredient appears in many recipes. Storing ingredients as text in the recipe would make filtering by ingredient impossible ("Zwiebel" vs. "Zwiebeln").
 - **Recipe and ingredient names are unique.** Every ingredient exists exactly once, which is what filtering by ingredient relies on. It also lets `seed.sql` link recipes and ingredients by name instead of remembering ids.
+- **Every ingredient has a category** (spice, oil, pantry, vegetable, poultry, beef, …), set at the end of `seed.sql`. Spices, oils and pantry staples (flour, sugar, onions, garlic, broth, vinegar, …) are assumed to be in every kitchen; the main ingredient categories make up the quick bar.
 - **Vegan, vegetarian and gluten-free are stored per ingredient,** not per recipe. A recipe is vegan if all of its ingredients are. One deliberate call: Parmesan and Pecorino count as not vegetarian (animal rennet).
 - **Amounts are numbers** (`REAL`), always for the recipe's base `servings`, so they can be scaled. `NULL` means "to taste" (salt, pepper, …).
 - **Amounts inside the instructions are placeholders** like `{100 g}` or `{2-3 EL}`, so "add 100 g flour" scales along with the ingredient list.
@@ -84,10 +85,10 @@ Then open http://127.0.0.1:5000.
 - **One search, two ways in.** The start page reads the search from the URL (`/?q=suppe&vegan=1&zutat=Zwiebel`), so it works without JavaScript and survives a reload. With JavaScript, `/recipes` returns just the cards and the page swaps them in while you type, keeping the URL up to date.
 - **Case doesn't matter, umlauts included.** SQLite's `LIKE` only ignores case for A–Z, so the app registers Python's `str.casefold` as an SQL function. `%` and `_` are escaped, so they are searched for literally.
 - **Diets are checked in SQL:** a recipe is vegan if there is no ingredient in it that isn't (`NOT EXISTS`).
-- **"What do I have at home?" ranks instead of excludes.** Requiring every ingredient would almost always find nothing, so all recipes using at least one of your ingredients are found, sorted by how many ingredients are missing. Salt, pepper and anything "to taste" (no amount) never count as missing.
+- **"What do I have at home?" ranks instead of excludes.** Requiring every ingredient would almost always find nothing, so all recipes using at least one of your ingredients are found, sorted by how many ingredients are missing. Spices, oils, pantry staples and anything "to taste" (no amount) never count as missing; you can open the full list below the field.
 - **Excluding ingredients is strict:** a recipe containing any of them is left out (`NOT EXISTS … IN (…)`). An ingredient can be either "have" or "without", never both; choosing one takes it out of the other.
 - **Ingredients are picked from the list of all 352,** so only names that really exist end up in the search. Typing "Ei" on the way to "Eigelb" doesn't add "Ei" too early: only choosing a suggestion or pressing Enter adds one.
-- **The quick bar** shows the 16 ingredients used in the most recipes, counting only real amounts, so salt, pepper and spices "to taste" don't crowd it. Its links work without JavaScript too.
+- **The quick bar is about the main ingredient,** because that's usually the question: "something with chicken", "rice", "no pork". "With" groups must all be in the recipe (chicken *and* rice); "without" groups must not appear at all. Its links work without JavaScript too.
 - **12 results at a time in a scrolling box.** Reaching its end loads the next 12; `overscroll-behavior: contain` keeps the page from scrolling along. How many are shown is kept in the URL, and the scroll position inside the box is remembered, so coming back from a recipe you land on the same card.
 
 ### Moon, season, weather

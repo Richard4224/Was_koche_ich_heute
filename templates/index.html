@@ -136,18 +136,27 @@
                         <datalist id="ingredient-names">
                             {% for name in ingredient_names %}<option value="{{ name }}">{% endfor %}
                         </datalist>
-                        <p class="pantry-hint">Salz, Pfeffer und Gewürze nach Geschmack setzen wir voraus.</p>
+                        <details class="pantry-hint">
+                            <summary>Gewürze, Öle und Vorräte wie Mehl, Zucker, Zwiebeln und Knoblauch setzen wir voraus.</summary>
+                            <p>{{ pantry_names | join(", ") }}</p>
+                        </details>
+
+                        <!-- The main ingredient groups chosen in the quick bar -->
+                        <span id="group-inputs" hidden>
+                            {% for group in filters.with_groups %}<input type="hidden" name="mit" value="{{ group }}">{% endfor %}
+                            {% for group in filters.without_groups %}<input type="hidden" name="kein" value="{{ group }}">{% endfor %}
+                        </span>
                     </form>
                 </section>
 
-                <!-- Quick bar: the most common ingredients, one click to add ("hab ich") or exclude ("ohne") -->
-                <aside class="quick-bar" aria-label="Häufige Zutaten">
-                    <p class="label">Häufige Zutaten</p>
+                <!-- Quick bar: main ingredients, one click for "mit …", the minus for "ohne …" -->
+                <aside class="quick-bar" aria-label="Hauptzutaten">
+                    <p class="label">Worauf hast du Lust?</p>
                     <ul class="quick-list">
                         {% for item in quick %}
-                            <li class="quick-item{% if item.have %} is-have{% endif %}{% if item.excluded %} is-excluded{% endif %}" data-name="{{ item.name }}">
-                                <a href="{{ item.have_url }}" class="quick-add" title="{{ item.name }} hab ich">{{ item.name }}</a>
-                                <a href="{{ item.exclude_url }}" class="quick-exclude" title="Ohne {{ item.name }}" aria-label="Ohne {{ item.name }}">−</a>
+                            <li class="quick-item{% if item.chosen %} is-have{% endif %}{% if item.excluded %} is-excluded{% endif %}" data-group="{{ item.group }}">
+                                <a href="{{ item.with_url }}" class="quick-add" title="Mit {{ item.label }}">{{ item.label }}</a>
+                                <a href="{{ item.without_url }}" class="quick-exclude" title="Ohne {{ item.label }}" aria-label="Ohne {{ item.label }}">−</a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -354,26 +363,40 @@
             });
         }
 
-        // ---- Quick bar: click a name to add it ("hab ich"), the minus to exclude it; again to undo
+        // ---- Quick bar: click a group for "mit …", the minus for "ohne …"; again to undo
+        const groupInputs = document.querySelector("#group-inputs");
+
+        function groupValues(param) {
+            return [...groupInputs.querySelectorAll(`input[name="${param}"]`)].map((input) => input.value);
+        }
+
+        // Puts a group under "mit" or "kein", or takes it out of both (param null)
+        function setGroup(group, param) {
+            for (const input of groupInputs.querySelectorAll("input")) {
+                if (input.value === group) input.remove();
+            }
+            if (param) groupInputs.append(Object.assign(document.createElement("input"), { type: "hidden", name: param, value: group }));
+        }
+
         function syncQuickBar() {
-            const have = chipNames("zutat");
-            const without = chipNames("ohne");
+            const chosen = groupValues("mit");
+            const excluded = groupValues("kein");
             for (const item of quickItems) {
-                item.classList.toggle("is-have", have.includes(item.dataset.name));
-                item.classList.toggle("is-excluded", without.includes(item.dataset.name));
+                item.classList.toggle("is-have", chosen.includes(item.dataset.group));
+                item.classList.toggle("is-excluded", excluded.includes(item.dataset.group));
             }
         }
 
         for (const item of quickItems) {
-            const name = item.dataset.name;
+            const group = item.dataset.group;
             item.querySelector(".quick-add").addEventListener("click", (event) => {
                 event.preventDefault();
-                if (chipNames("zutat").includes(name)) removeChip("zutat", name); else addChip("zutat", name);
+                setGroup(group, groupValues("mit").includes(group) ? null : "mit");
                 loadRecipes();
             });
             item.querySelector(".quick-exclude").addEventListener("click", (event) => {
                 event.preventDefault();
-                if (chipNames("ohne").includes(name)) removeChip("ohne", name); else addChip("ohne", name);
+                setGroup(group, groupValues("kein").includes(group) ? null : "kein");
                 loadRecipes();
             });
         }
@@ -399,6 +422,7 @@
             filterForm.elements.q.value = "";
             filterForm.querySelectorAll(".diet-check").forEach((check) => { check.checked = false; });
             for (const field of Object.values(fields)) field.chips.replaceChildren();
+            groupInputs.replaceChildren();
             loadRecipes();
         });
 

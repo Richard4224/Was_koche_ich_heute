@@ -14,7 +14,8 @@ CREATE TABLE ingredients (
     name TEXT NOT NULL UNIQUE,
     vegan INTEGER NOT NULL,
     vegetarian INTEGER NOT NULL,
-    gluten_free INTEGER NOT NULL
+    gluten_free INTEGER NOT NULL,
+    category TEXT NOT NULL DEFAULT 'sonstiges'                -- e.g. 'gewürz', 'gemüse', 'geflügel'; see seed.sql
 );
 
 CREATE TABLE recipe_ingredients (

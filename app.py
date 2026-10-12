@@ -3,7 +3,7 @@
 from urllib.parse import urlencode
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_common_ingredients, get_recipe, return_error, get_weather, get_place, get_ip_location, DIETS
+from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, return_error, get_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS
 
 app = Flask(__name__)
 
@@ -13,7 +13,8 @@ DIET_LABELS = {"vegan": "Vegan", "vegetarisch": "Vegetarisch", "glutenfrei": "Gl
 
 
 def read_filters():
-    """Read the search and filters from the URL (?q=…&vegan=1&zutat=Zwiebel&ohne=Ei), ignoring anything unknown."""
+    """Read the search and filters from the URL (?q=…&vegan=1&zutat=Zwiebel&ohne=Ei&mit=geflügel&kein=schwein),
+    ignoring anything unknown."""
 
     names = {name.casefold(): name for name in get_ingredient_names()}
 
@@ -25,17 +26,24 @@ def read_filters():
                 found.append(name)
         return found
 
+    def groups(param):
+        chosen = request.args.getlist(param)
+        return [group for group in MAIN_GROUPS if group in chosen]
+
     exclude = ingredients("ohne")
+    without_groups = groups("kein")
     return {
         "q": request.args.get("q", "").strip()[:100],
         "diets": [diet for diet in DIETS if request.args.get(diet)],
         "have": [name for name in ingredients("zutat") if name not in exclude],  # "without" wins
         "exclude": exclude,
+        "with_groups": [group for group in groups("mit") if group not in without_groups],
+        "without_groups": without_groups,
     }
 
 
 def is_filtered(filters):
-    return bool(filters["q"] or filters["diets"] or filters["have"] or filters["exclude"])
+    return any(filters.values())
 
 
 def filter_url(filters, **extra):
@@ -45,24 +53,29 @@ def filter_url(filters, **extra):
     params += [(diet, "1") for diet in filters["diets"]]
     params += [("zutat", name) for name in filters["have"]]
     params += [("ohne", name) for name in filters["exclude"]]
+    params += [("mit", group) for group in filters["with_groups"]]
+    params += [("kein", group) for group in filters["without_groups"]]
     params += list(extra.items())
     return "/?" + urlencode(params) + "#rezepte" if params else "/#rezepte"
 
 
-def quick_ingredients(filters):
-    """The quick bar: common ingredients with links that add them to "have" or "without" (or take them out again)."""
+def quick_groups(filters):
+    """The quick bar: main ingredient groups with links that add them ("mit") or leave them out ("ohne"), or undo that."""
 
     items = []
-    for name in get_common_ingredients():
-        have, excluded = name in filters["have"], name in filters["exclude"]
-        others_have = [other for other in filters["have"] if other != name]
-        others_exclude = [other for other in filters["exclude"] if other != name]
+    for group, label in MAIN_GROUPS.items():
+        chosen, excluded = group in filters["with_groups"], group in filters["without_groups"]
+        others_with = [other for other in filters["with_groups"] if other != group]
+        others_without = [other for other in filters["without_groups"] if other != group]
         items.append({
-            "name": name,
-            "have": have,
+            "group": group,
+            "label": label,
+            "chosen": chosen,
             "excluded": excluded,
-            "have_url": filter_url({**filters, "have": others_have if have else others_have + [name], "exclude": others_exclude}),
-            "exclude_url": filter_url({**filters, "exclude": others_exclude if excluded else others_exclude + [name], "have": others_have}),
+            "with_url": filter_url({**filters, "with_groups": others_with if chosen else others_with + [group],
+                                    "without_groups": others_without}),
+            "without_url": filter_url({**filters, "without_groups": others_without if excluded else others_without + [group],
+                                       "with_groups": others_with}),
         })
     return items
 
@@ -80,7 +93,8 @@ def count_label(shown, total, filters):
 
 
 def find(filters, limit, offset=0):
-    return search_recipes(filters["q"], filters["diets"], filters["have"], filters["exclude"], limit=limit, offset=offset)
+    return search_recipes(filters["q"], filters["diets"], filters["have"], filters["exclude"],
+                          filters["with_groups"], filters["without_groups"], limit=limit, offset=offset)
 
 
 @app.route("/")
@@ -100,8 +114,8 @@ def index():
         "index.html", moon_phase=moon_phase, moon_phase_index=moon_phase_index, season=season,
         dish_of_the_day=dish_of_the_day, recipes=recipes, total=total, filters=filters,
         filtered=is_filtered(filters), count=count_label(len(recipes), total, filters),
-        more_url=filter_url(filters, n=len(recipes) + PAGE_SIZE), quick=quick_ingredients(filters),
-        ingredient_names=get_ingredient_names(), diet_labels=DIET_LABELS,
+        more_url=filter_url(filters, n=len(recipes) + PAGE_SIZE), quick=quick_groups(filters),
+        ingredient_names=get_ingredient_names(), pantry_names=get_pantry_names(), diet_labels=DIET_LABELS,
     )
 
 
