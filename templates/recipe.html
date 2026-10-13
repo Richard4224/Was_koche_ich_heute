@@ -4,13 +4,27 @@
     {{ recipe.name }}
 {% endblock %}
 
+{% block description %}{{ recipe.description or super() }}{% endblock %}
+
+{# Small icons for the diets, drawn in the current text colour #}
+{% macro diet_icon(diet) %}
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        {% if diet == "vegan" %}
+            <path d="M5 19C5 10.5 10.5 5 19 5c0 8.5-5.5 14-14 14Z"/><path d="M5 19l7.5-7.5"/>
+        {% elif diet == "vegetarisch" %}
+            <path d="M12 21v-9"/><path d="M12 12c0-4-3-6.5-7-6.5 0 4 3 6.5 7 6.5Z"/><path d="M12 10c0-3.2 2.5-5.5 6.5-5.5 0 3.5-2.5 5.5-6.5 5.5Z"/>
+        {% else %}
+            <path d="M12 21V8"/><path d="M12 9.5C9.8 9.5 8.5 8 8.5 6c2.2 0 3.5 1.5 3.5 3.5Zm0 0c2.2 0 3.5-1.5 3.5-3.5-2.2 0-3.5 1.5-3.5 3.5Z"/><path d="M12 14c-2.2 0-3.5-1.5-3.5-3.5 2.2 0 3.5 1.5 3.5 3.5Zm0 0c2.2 0 3.5-1.5 3.5-3.5-2.2 0-3.5 1.5-3.5 3.5Z"/><path d="M12 6.5V3"/><path d="M4 4l16 16"/>
+        {% endif %}
+    </svg>
+{% endmacro %}
+
 {% block main %}
     <p class="back-link"><a href="/#rezepte">← Zurück zum Rezeptbuch</a></p>
 
-    <header class="recipe-header">
-        {% if recipe.image %}
-            <img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }}" class="recipe-image">
-        {% else %}
+    {# With a photo: title and credit next to the whole, uncropped photo. Without: the title under a moon #}
+    <header class="recipe-header{% if recipe.image %} glass has-photo{% endif %}">
+        {% if not recipe.image %}
             <div class="recipe-image image-placeholder">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
             </div>
@@ -18,20 +32,37 @@
         <div class="recipe-title">
             <h1>{{ recipe.name }}</h1>
             <p class="recipe-meta">{{ recipe.time }} · {{ recipe.season }}</p>
-        </div>
-    </header>
-    {% if recipe.credit %}
-        <p class="image-credit">
-            Foto: <a href="{{ recipe.credit.source }}" rel="noopener">{{ recipe.credit.author }}</a>
-            ·
-            {% if recipe.credit.license_url %}
-                <a href="{{ recipe.credit.license_url }}" rel="noopener license">{{ recipe.credit.license }}</a>
-            {% else %}
-                {{ recipe.credit.license }}
+            {% if recipe.diets %}
+                <ul class="diet-badges" aria-label="Ernährung">
+                    {% for diet in recipe.diets %}
+                        <li class="diet-badge diet-{{ diet }}"
+                            {% if diet == "vegan" %}title="Vegan, also auch vegetarisch"{% endif %}>
+                            {{ diet_icon(diet) }}
+                            {{ diet | capitalize }}
+                        </li>
+                    {% endfor %}
+                </ul>
             {% endif %}
-            · <a href="/bildnachweise">Bildnachweise</a>
-        </p>
-    {% endif %}
+            {% if recipe.description %}
+                <p class="recipe-description">{{ recipe.description }}</p>
+            {% endif %}
+            {% if recipe.credit %}
+                <p class="image-credit">
+                    Foto: <a href="{{ recipe.credit.source }}" rel="noopener">{{ recipe.credit.author }}</a>
+                    ·
+                    {% if recipe.credit.license_url %}
+                        <a href="{{ recipe.credit.license_url }}" rel="noopener license">{{ recipe.credit.license }}</a>
+                    {% else %}
+                        {{ recipe.credit.license }}
+                    {% endif %}
+                    · <a href="/bildnachweise">Bildnachweise</a>
+                </p>
+            {% endif %}
+        </div>
+        {% if recipe.image %}
+            <img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }}" class="recipe-image">
+        {% endif %}
+    </header>
 
     <div class="recipe-body">
         <aside class="glass ingredients">
@@ -47,17 +78,14 @@
 
             <ul class="ingredient-list">
                 {% for ingredient in recipe.ingredients %}
-                    {% if ingredient.amount %}
-                        <li>
+                    <li>
+                        {% if ingredient.amount %}
                             <span class="amount">{{ ingredient.amount }}</span>
-                            <span>{{ ingredient.name }}</span>
-                        </li>
-                    {% else %}
-                        <li class="to-taste">
-                            <span>{{ ingredient.name }}</span>
-                            <span class="to-taste-label">nach Geschmack</span>
-                        </li>
-                    {% endif %}
+                        {% else %}
+                            <span class="amount"><abbr title="nach Geschmack">n. G.</abbr></span>
+                        {% endif %}
+                        <span>{{ ingredient.name }}</span>
+                    </li>
                 {% endfor %}
             </ul>
         </aside>
@@ -69,6 +97,9 @@
                     <li>{{ step }}</li>
                 {% endfor %}
             </ol>
+            {% if recipe.tip %}
+                <p class="recipe-tip"><span class="label label-amber">Tipp</span>{{ recipe.tip }}</p>
+            {% endif %}
             {% if recipe.closing %}
                 <p class="closing">{{ recipe.closing }}</p>
             {% endif %}

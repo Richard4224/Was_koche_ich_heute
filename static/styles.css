@@ -883,23 +883,73 @@ a {
     box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
 }
 
-.recipe-image {
+/* With a photo: on phones the photo on top and the title below it,
+   from tablets on the title on the left and the photo on the right */
+.recipe-header.has-photo {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.has-photo .recipe-image {
+    order: -1;
+    justify-self: center;
     display: block;
-    width: 100%;
-    height: clamp(220px, 40vh, 380px);
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;  /* the whole photo, never cropped */
+    max-height: 60vh;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+.has-photo .recipe-title {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.25rem 0.25rem;
+}
+
+/* The credit sits at the bottom of the title column */
+.has-photo .image-credit {
+    margin: 1rem 0 0;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .recipe-header.has-photo {
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .has-photo .recipe-image {
+        order: 0;
+        max-width: min(460px, 45vw);
+        max-height: 320px;
+    }
+
+    .has-photo .recipe-title {
+        padding: 0 0 0 0.25rem;
+    }
+
+    /* Title in the middle of the free space, credit at the bottom */
+    .has-photo .recipe-title h1,
+    .has-photo .image-credit {
+        margin-top: auto;
+    }
 }
 
 /* Without a photo: the moon sits above the title instead of behind it */
 .recipe-image.image-placeholder {
     display: flex;
     align-items: flex-start;
+    width: 100%;
     height: 200px;
     padding-top: 2.5rem;
 }
 
-/* Darken the bottom of the image so the title stays readable */
-.recipe-header::after {
+/* Darken the bottom so the title stays readable */
+.recipe-header:not(.has-photo)::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -929,6 +979,58 @@ a {
     margin: 0;
     color: var(--text);
     opacity: 0.85;
+}
+
+/* Vegan / vegetarisch / glutenfrei at a glance */
+.diet-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.diet-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: rgba(10, 8, 30, 0.45);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.diet-badge svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.diet-vegan {
+    color: #86efac;
+}
+
+.diet-vegetarisch {
+    color: #bef264;
+}
+
+.diet-glutenfrei {
+    color: var(--amber);
+}
+
+.recipe-description {
+    max-width: 60ch;
+    margin: 0.9rem 0 0;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--text);
 }
 
 .recipe-body {
@@ -1005,18 +1107,10 @@ a {
     text-align: right;
 }
 
-/* Spices without an amount: name first, a quiet note on the right */
-.ingredient-list li.to-taste {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.75rem;
-}
-
-.to-taste-label {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--text-muted);
+/* "n. G." (nach Geschmack) for salt, pepper & co.: the full words show on hover */
+.amount abbr {
+    text-decoration: none;
+    cursor: help;
 }
 
 .step-list {
@@ -1051,6 +1145,19 @@ a {
     font-weight: 600;
     color: #fff;
     box-shadow: 0 0 14px rgba(167, 139, 250, 0.45);
+}
+
+.recipe-tip {
+    margin: 0.5rem 0 1.25rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid rgba(255, 181, 71, 0.3);
+    border-radius: var(--radius);
+    background: rgba(255, 181, 71, 0.07);
+    line-height: 1.6;
+}
+
+.recipe-tip .label {
+    display: block;
 }
 
 .closing {
@@ -1782,11 +1889,34 @@ body.journey {
     color: var(--text-muted);
 }
 
-.credits-link {
-    display: inline-block;
-    margin-top: 0.75rem;
+/* ---------- Footer links: Kontakt, Impressum, Datenschutz, Bildnachweise ---------- */
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
     font-size: 0.8rem;
+}
+
+.footer-links a {
     color: var(--text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--amber);
+}
+
+.site-footer {
+    margin-top: auto;  /* at the bottom of short pages */
+    padding: 1rem 0 1.5rem;
+}
+
+.site-footer .footer-links {
+    justify-content: center;
+}
+
+.forest-links {
+    margin-top: 0.75rem;
 }
 
 .credits {
@@ -1840,6 +1970,79 @@ body.journey {
 .image-credit a[rel~="license"],
 .credit-line a[rel~="license"] {
     white-space: nowrap;
+}
+
+/* ---------- Impressum, Datenschutz, Kontakt ---------- */
+
+.legal {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    padding: 1.75rem;
+}
+
+.legal h1 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+}
+
+.legal h2 {
+    font-size: 1.2rem;
+    margin: 1.75rem 0 0.5rem;
+}
+
+.legal p {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.legal-date {
+    margin: 1.75rem 0 0;
+    font-size: 0.875rem;
+    color: var(--text-muted) !important;
+}
+
+.contact-form {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+}
+
+.contact-form label:not(:first-child) {
+    margin-top: 0.6rem;
+}
+
+.contact-form .optional,
+.contact-note {
+    color: var(--text-muted) !important;
+}
+
+.contact-note {
+    margin: 0.75rem 0 0.5rem;
+    font-size: 0.875rem;
+}
+
+.contact-form button {
+    justify-self: start;
+}
+
+/* Off screen, for bots only */
+.contact-trap {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.contact-error {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(248, 113, 113, 0.45);
+    border-radius: 0.75rem;
+    background: rgba(248, 113, 113, 0.12);
+}
+
+.contact-sent {
+    color: var(--amber) !important;
 }
 
 /* ---------- Less motion for those who prefer it ---------- */

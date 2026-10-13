@@ -1,5 +1,3 @@
-#todo: implement these for real
-
 import ipaddress
 import json
 import os
@@ -11,11 +9,13 @@ import urllib.request
 from contextlib import closing
 from flask import render_template
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 from scaling import format_amount, format_duration, scale_text, servings_unit_name
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, "recipes.db")
+DATABASE_SOURCES = ("schema.sql", "seed.sql", "images.sql")  # recipes.db is built from these, in this order
 MAX_SERVINGS = 1000
 
 # Diet filters as they appear in the URL (?vegan=1), mapped to their column in the ingredients table
@@ -43,6 +43,9 @@ MAIN_GROUPS = {
     "reis": "Reis",
 }
 
+# The site is German, so meal times and days follow German time, whatever clock the server runs on
+TIMEZONE = ZoneInfo("Europe/Berlin")
+
 # Fallback location for the weather when neither the browser nor the IP address reveal one
 LATITUDE = 52.52
 LONGITUDE = 13.41
@@ -50,7 +53,7 @@ PLACE = "Berlin"
 WEATHER_CACHE_SECONDS = 15 * 60
 _weather_cache = {}  # (latitude, longitude) -> (timestamp, weather data)
 _place_cache = {}  # (latitude, longitude) -> place name or None
-_ip_location_cache = {}  # IP address -> (latitude, longitude, city) or None
+_ip_location_cache = {}  # shortened IP address -> (latitude, longitude, city) or None
 
 # Nominatim (OpenStreetMap) requires an identifying User-Agent
 USER_AGENT = "WasKocheIchHeute/1.0 (https://github.com/Richard4224/recipe-search)"
@@ -86,6 +89,12 @@ WEATHER_CODES = {
     96: "Gewitter mit Hagel",
     99: "Gewitter mit starkem Hagel",
 }
+
+def local_now():
+    """The current date and time in Germany (without time zone, like datetime.now())."""
+
+    return datetime.now(TIMEZONE).replace(tzinfo=None)
+
 
 SECONDS_IN_A_DAY = 86400
 SYNODIC_MONTH = 29.530588853  # days from one new moon to the next
@@ -128,7 +137,7 @@ def get_season(date=None, latitude=LATITUDE):
     """Return the astronomical season for date (default: today) at latitude."""
 
     if date is None:
-        date = datetime.now()
+        date = local_now()
 
     # Equinoxes and solstices shift by a day or two between years; these dates are close enough
     day = (date.month, date.day)
@@ -154,29 +163,50 @@ def get_dish_of_the_day(now=None, latitude=LATITUDE, weather=None):
 
     import daily_dish  # imported here because daily_dish itself uses helpers
 
-    recipe_id, reason = daily_dish.choose(now or datetime.now(), latitude, weather)
+    recipe_id, reason = daily_dish.choose(now or local_now(), latitude, weather)
     dish = get_recipe(recipe_id)
     dish["reason"] = reason
     return dish
 
 
 
-def get_db():
-    """Open the recipe database, building it from schema.sql, seed.sql and images.sql on first use."""
+def database_version():
+    """Make sure recipes.db is up to date and return when it was built (changes whenever it is rebuilt).
 
-    is_new = not os.path.exists(DATABASE)
+    recipes.db is built from schema.sql, seed.sql and images.sql, and built anew as soon as one of them is newer,
+    e.g. after editing the recipes or pulling new ones with git.
+    """
+
+    sources = [os.path.join(BASE_DIR, name) for name in DATABASE_SOURCES]
+    sources = [path for path in sources if os.path.exists(path)]  # images.sql only exists once photos are chosen
+    built = os.path.getmtime(DATABASE) if os.path.exists(DATABASE) else None
+    if built is None or any(os.path.getmtime(path) > built for path in sources):
+        # Build next to it and swap it in at once, so other requests never see a half-built database
+        temporary = f"{DATABASE}.{os.getpid()}.tmp"
+        if os.path.exists(temporary):
+            os.remove(temporary)
+        with closing(sqlite3.connect(temporary)) as db:
+            for path in sources:
+                with open(path, encoding="utf-8") as file:
+                    db.executescript(file.read())
+        try:
+            os.replace(temporary, DATABASE)
+        except PermissionError:  # Windows won't replace a file that is open; the next request tries again
+            os.remove(temporary)
+            if built is None:
+                raise
+    return os.path.getmtime(DATABASE)
+
+
+def get_db():
+    """Open the recipe database, (re)building it first if needed (see database_version)."""
+
+    database_version()
     db = sqlite3.connect(DATABASE)
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys = ON")
     # SQLite's own lower() and LIKE ignore case only for A-Z, so "kürbis" wouldn't find "Kürbis"
     db.create_function("casefold", 1, lambda text: text.casefold() if text else text, deterministic=True)
-
-    if is_new:
-        for script in ("schema.sql", "seed.sql", "images.sql"):
-            path = os.path.join(BASE_DIR, script)
-            if os.path.exists(path):  # images.sql only exists once photos have been chosen
-                with open(path, encoding="utf-8") as file:
-                    db.executescript(file.read())
     return db
 
 
@@ -322,7 +352,8 @@ def get_recipe(recipe_id, servings=None):
             return None
         ingredients = db.execute(
             """
-            SELECT ingredients.name, recipe_ingredients.amount, recipe_ingredients.unit
+            SELECT ingredients.name, recipe_ingredients.amount, recipe_ingredients.unit,
+                   ingredients.vegan, ingredients.vegetarian, ingredients.gluten_free
             FROM recipe_ingredients
             JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
             WHERE recipe_ingredients.recipe_id = ?
@@ -343,6 +374,8 @@ def get_recipe(recipe_id, servings=None):
     return {
         "id": recipe["id"],
         "name": recipe["name"],
+        "description": recipe["description"],
+        "diets": recipe_diets(ingredients),
         "time": format_duration(recipe["preparation_time"]),
         "season": recipe["season"],
         "servings": servings,
@@ -360,17 +393,36 @@ def get_recipe(recipe_id, servings=None):
     }
 
 
-def split_instructions(text):
-    """Split "1. Do this\n2. Do that\n\nGuten Appetit!" into steps and closing lines."""
+def recipe_diets(ingredients):
+    """Which of vegan, vegetarian and gluten-free a recipe is, judged by its ingredients, e.g. ["vegan", "glutenfrei"].
+    Vegan already says vegetarian, so vegetarian is only named for recipes that aren't vegan."""
 
-    steps, closing_lines = [], []
+    def all_are(column):
+        return all(row[column] for row in ingredients)
+
+    diets = []
+    if all_are("vegan"):
+        diets.append("vegan")
+    elif all_are("vegetarian"):
+        diets.append("vegetarisch")
+    if all_are("gluten_free"):
+        diets.append("glutenfrei")
+    return diets
+
+
+def split_instructions(text):
+    """Split "1. Do this\n2. Do that\n\nTipp: …\n\nGuten Appetit!" into steps, a tip (or None) and closing lines."""
+
+    steps, tip, closing_lines = [], None, []
     for line in text.splitlines():
         match = re.match(r"\d+\.\s+(.*)", line)
         if match:
             steps.append(match.group(1))
+        elif line.startswith("Tipp:"):
+            tip = line.removeprefix("Tipp:").strip()
         elif line.strip():
             closing_lines.append(line.strip())
-    return {"steps": steps, "closing": " ".join(closing_lines)}
+    return {"steps": steps, "tip": tip, "closing": " ".join(closing_lines)}
 
 
 def return_error(message="Da ist etwas schiefgelaufen.", code=400):
@@ -454,19 +506,30 @@ def get_place(latitude=LATITUDE, longitude=LONGITUDE):
     return place
 
 
-def get_ip_location(ip):
-    """Return (latitude, longitude, city) roughly locating an IP address, or None if unknown."""
+def shorten_ip(ip):
+    """Cut an IP address down to its network, e.g. 203.0.113.42 to 203.0.113.0 (IPv6: the first 48 bits).
+    That still tells the city, but no longer the visitor. Returns None for an invalid address."""
 
-    if ip in _ip_location_cache:
-        return _ip_location_cache[ip]
+    try:
+        address = ipaddress.ip_address(ip)
+    except ValueError:
+        return None
+    prefix = 24 if address.version == 4 else 48
+    return str(ipaddress.ip_network(f"{address}/{prefix}", strict=False).network_address)
+
+
+def get_ip_location(ip):
+    """Return (latitude, longitude, city) roughly locating an IP address, or None if unknown.
+    Only the shortened address (see shorten_ip) is looked up and remembered."""
+
+    short = shorten_ip(ip)
+    if short in _ip_location_cache:
+        return _ip_location_cache[short]
 
     # A local address (e.g. 127.0.0.1 while developing) means the visitor is on this machine,
     # so ask about this machine's own public IP instead
-    try:
-        is_public = ipaddress.ip_address(ip).is_global
-    except ValueError:
-        is_public = False
-    url = f"https://ipinfo.io/{ip}/json" if is_public else "https://ipinfo.io/json"
+    is_public = short is not None and ipaddress.ip_address(ip).is_global
+    url = f"https://ipinfo.io/{short}/json" if is_public else "https://ipinfo.io/json"
 
     try:
         request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
@@ -477,7 +540,7 @@ def get_ip_location(ip):
     except (OSError, ValueError, KeyError):
         return None
 
-    _ip_location_cache[ip] = location
+    _ip_location_cache[short] = location
     return location
 
 

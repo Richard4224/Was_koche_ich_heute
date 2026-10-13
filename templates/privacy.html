@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Datenschutz
+{% endblock %}
+
+{% block main %}
+    <p class="back-link"><a href="/#rezepte">← Zurück zum Rezeptbuch</a></p>
+
+    <section class="glass legal">
+        <h1>Datenschutzerklärung</h1>
+        <p>
+            Kurz gesagt: Diese Seite kommt ohne Konto, ohne Cookies, ohne Tracking und ohne Werbung aus. Personenbezogene
+            Daten werden nur verarbeitet, soweit es für die Funktionen nötig ist, und nicht dauerhaft gespeichert.
+            Im Einzelnen:
+        </p>
+
+        <h2>Verantwortlicher</h2>
+        <p>
+            Benedikt Richard Brickwell<br>
+            Am Tabakquartier 27<br>
+            28197 Bremen<br>
+            E-Mail: <a href="mailto:brickwellbenedikt@gmail.com">brickwellbenedikt@gmail.com</a>
+        </p>
+
+        <h2>Aufruf der Website</h2>
+        {# Where the site is hosted: if a hosting service runs it, name it here (and what it logs) #}
+        <p>
+            Wenn du die Seite aufrufst, übermittelt dein Browser technisch bedingt deine IP-Adresse sowie Angaben wie
+            die aufgerufene Adresse, Datum und Uhrzeit und den Browsertyp an den Server. Ohne diese Daten kann die Seite
+            nicht ausgeliefert werden (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse am Betrieb der Website).
+            Zugriffsprotokolle mit IP-Adressen werden nicht gespeichert.
+        </p>
+        <p>
+            Schriften, Gestaltung und Fotos werden von diesem Server geladen, nicht von Drittanbietern wie Google
+            Fonts oder einem CDN. Links zu anderen Seiten (z. B. zu den Fotos auf Wikimedia Commons und Pixabay)
+            werden erst aufgerufen, wenn du sie anklickst.
+        </p>
+
+        <h2>Standort und Wetter</h2>
+        <p>
+            Die Startseite zeigt das Wetter an deinem Ort und wählt danach das Gericht des Tages. Dafür fragt dein
+            Browser, ob die Seite deinen Standort verwenden darf. Nur wenn du zustimmst (Art. 6 Abs. 1 lit. a DSGVO),
+            wird er übermittelt, und zwar auf etwa einen Kilometer gerundet. Der Server fragt damit das Wetter bei
+            <a href="https://open-meteo.com/en/terms" rel="noopener">Open-Meteo</a> und den Namen des Ortes bei
+            <a href="https://osmfoundation.org/wiki/Privacy_Policy" rel="noopener">OpenStreetMap (Nominatim)</a> ab.
+            Diese Dienste bekommen nur die gerundeten Koordinaten vom Server, nicht deine IP-Adresse. Du kannst die
+            Zustimmung jederzeit in den Einstellungen deines Browsers widerrufen.
+        </p>
+        <p>
+            Ohne Zustimmung schätzt der Server deine Stadt anhand deiner IP-Adresse. Dazu wird sie zuerst gekürzt
+            (bei IPv4 entfällt der letzte Block, z. B. 203.0.113.42 wird zu 203.0.113.0), sodass sie nur noch auf ein
+            Netz und nicht mehr auf deinen Anschluss verweist. Nur diese gekürzte Adresse geht an
+            <a href="https://ipinfo.io/privacy-policy" rel="noopener">ipinfo.io</a> (IPinfo Inc., USA). In den USA
+            gilt nicht unbedingt ein dem EU-Recht gleichwertiges Datenschutzniveau, deshalb wird die Adresse vorher
+            gekürzt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, das berechtigte Interesse, auch ohne Zustimmung
+            ein ungefähres Wetter anzuzeigen.
+        </p>
+        <p>
+            Die Antworten dieser Dienste werden nur im Arbeitsspeicher des Servers zwischengespeichert, nach gerundeten
+            Koordinaten bzw. gekürzter IP-Adresse, und gehen bei einem Neustart verloren.
+        </p>
+
+        <h2>Speicher im Browser</h2>
+        <p>
+            Wenn du ein Rezept öffnest, merkt sich die Seite im Sitzungsspeicher deines Browsers (sessionStorage) deine
+            Suche und die Stelle in der Liste, damit „Zurück zum Rezeptbuch“ dorthin führt. Diese Angabe verlässt deinen
+            Browser nicht und wird gelöscht, wenn du den Tab schließt. Sie ist für diese von dir gewünschte Funktion
+            unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Cookies werden nicht gesetzt.
+        </p>
+
+        <h2 id="kontakt">Kontaktformular und E-Mail</h2>
+        <p>
+            Wenn du das Kontaktformular nutzt, werden deine E-Mail-Adresse, deine Nachricht und, falls angegeben, dein
+            Name an mich weitergeleitet, um dir antworten zu können (Art. 6 Abs. 1 lit. f DSGVO). Dafür schickt der
+            Server sie an den Formulardienst <a href="https://formsubmit.co" rel="noopener">FormSubmit</a>
+            (Devro LABS), der sie mir per E-Mail zustellt, siehe dessen
+            <a href="https://formsubmit.co/privacy.pdf" rel="noopener">Datenschutzerklärung</a>. Deine IP-Adresse
+            bekommt FormSubmit nicht, da nicht dein Browser, sondern der Server die Nachricht übermittelt. Dabei
+            können Daten in Länder außerhalb der EU übermittelt werden, in denen kein gleichwertiges
+            Datenschutzniveau besteht.
+        </p>
+        <p>
+            Mein Postfach liegt bei Gmail von Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4,
+            Irland), siehe <a href="https://policies.google.com/privacy" rel="noopener">Datenschutzerklärung von
+            Google</a>. Das gilt auch, wenn du mir direkt eine E-Mail schreibst. Ich lösche die Nachrichten, sobald
+            dein Anliegen erledigt ist. Gegen Spam merkt sich der Server für höchstens einen Tag im Arbeitsspeicher,
+            wann von einer gekürzten IP-Adresse aus Nachrichten gesendet wurden.
+        </p>
+
+        <h2>Deine Rechte</h2>
+        <p>
+            Du hast das Recht auf Auskunft über deine bei mir gespeicherten Daten (Art. 15 DSGVO), auf Berichtigung
+            (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit
+            (Art. 20). Einer Verarbeitung aufgrund eines berechtigten Interesses kannst du widersprechen (Art. 21),
+            eine Einwilligung kannst du jederzeit widerrufen. Schreib mir dafür einfach eine E-Mail.
+        </p>
+        <p>
+            Außerdem kannst du dich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO), z. B. bei der
+            <a href="https://www.datenschutz.bremen.de" rel="noopener">Landesbeauftragten für Datenschutz und
+            Informationsfreiheit der Freien Hansestadt Bremen</a>.
+        </p>
+
+        <p class="legal-date">Stand: Oktober 2026</p>
+    </section>
+{% endblock %}

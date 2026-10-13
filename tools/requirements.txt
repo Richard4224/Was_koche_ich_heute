@@ -1,0 +1,2 @@
+# Only for finding and downloading photos (tools/find_images.py, tools/fetch_images.py)
+Pillow>=11.0

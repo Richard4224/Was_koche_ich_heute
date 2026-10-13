@@ -398,15 +398,17 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Maultasc
 -- ======================================================================
 
 -- Kürbissuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbissuppe', 30, 4, 'Portionen', 'Herbst', '1. Kürbis waschen, halbieren, entkernen und in Würfel schneiden. Hokkaido muss nicht geschält werden.
-2. Zwiebel, Knoblauch und Ingwer schälen und fein hacken.
-3. Olivenöl in einem Topf erhitzen und Zwiebel, Knoblauch und Ingwer darin 3 Minuten andünsten.
-4. Kürbiswürfel dazugeben und 2 Minuten mitbraten.
-5. Mit der Gemüsebrühe ablöschen und ca. 20 Minuten köcheln lassen, bis der Kürbis weich ist.
-6. Kokosmilch hinzufügen und alles fein pürieren.
-7. Mit Salz, Pfeffer und Muskatnuss abschmecken.
-8. In Schüsseln füllen und mit gerösteten Kürbiskernen garnieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kürbissuppe', 'Samtig, leuchtend orange und mit einem Hauch Ingwer: die Suppe, die den Herbst in die Schüssel holt.', 30, 4, 'Portionen', 'Herbst', '1. Den Hokkaido-Kürbis gründlich waschen, halbieren und die Kerne mit einem Esslöffel herauskratzen. Die Schale darf dranbleiben, sie wird beim Kochen weich und färbt die Suppe kräftig orange. Das Fruchtfleisch in etwa 2 cm große Würfel schneiden.
+2. Zwiebel, {2} Knoblauchzehen und Ingwer schälen und fein hacken. Den Ingwer schält man am leichtesten, indem man die Haut mit einem Teelöffel abschabt.
+3. {2 EL} Olivenöl in einem großen Topf bei mittlerer Hitze erhitzen. Zwiebel, Knoblauch und Ingwer darin etwa 3 Minuten andünsten, bis die Zwiebel glasig ist. Sie soll dabei nicht braun werden.
+4. Die Kürbiswürfel dazugeben und unter Rühren 2 Minuten mitbraten, damit sie etwas Röstaroma bekommen.
+5. Mit {800 ml} Gemüsebrühe ablöschen, aufkochen und zugedeckt bei schwacher Hitze etwa 20 Minuten köcheln lassen, bis sich der Kürbis mit einer Gabel ganz leicht zerdrücken lässt.
+6. Inzwischen die Kürbiskerne in einer Pfanne ohne Fett bei mittlerer Hitze rösten, bis sie duften und leise knistern.
+7. {200 ml} Kokosmilch in die Suppe geben und alles mit dem Stabmixer sehr fein pürieren. Ist die Suppe zu dick, einen Schuss Wasser oder Brühe dazugeben.
+8. Mit Salz, Pfeffer und frisch geriebener Muskatnuss abschmecken. In vorgewärmte Schüsseln füllen und mit den gerösteten Kürbiskernen bestreuen.
+
+Tipp: Die Suppe lässt sich gut einfrieren. Beim Aufwärmen noch einmal kurz durchmixen, dann wird sie wieder schön sämig.
 
 Guten Appetit!', 'kuerbissuppe.jpg');
 
@@ -428,13 +430,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 -- ======================================================================
 
 -- Bärlauchsuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bärlauchsuppe', 30, 4, 'Portionen', 'Frühling', '1. Zwiebel und Kartoffeln schälen und klein würfeln.
-2. Butter in einem Topf erhitzen und die Zwiebel darin glasig dünsten. Kartoffeln kurz mitdünsten.
-3. Mit der Gemüsebrühe ablöschen und ca. 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
-4. Bärlauch waschen, trocken schütteln und grob hacken.
-5. Bärlauch und Sahne zugeben und alles fein pürieren. Nicht mehr kochen lassen, damit der Bärlauch schön grün bleibt.
-6. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bärlauchsuppe', 'Der erste grüne Gruß des Frühlings: eine cremige Kartoffelsuppe, die nach frischem Bärlauch duftet.', 30, 4, 'Portionen', 'Frühling', '1. Zwiebel schälen und fein würfeln. {300 g} Kartoffeln schälen und in etwa 1 cm große Würfel schneiden. Je kleiner sie sind, desto schneller werden sie weich.
+2. {1 EL} Butter in einem Topf bei mittlerer Hitze schmelzen. Die Zwiebel darin 2–3 Minuten glasig dünsten, dann die Kartoffeln zugeben und 1 Minute mitdünsten.
+3. Mit {800 ml} Gemüsebrühe ablöschen, aufkochen und zugedeckt etwa 15 Minuten leise köcheln lassen, bis die Kartoffeln weich sind.
+4. Währenddessen {100 g} Bärlauch in kaltem Wasser waschen, gut trocken schütteln und die Stiele abschneiden. Die Blätter grob hacken, ein paar feine Streifen zum Bestreuen beiseitelegen.
+5. Den Topf vom Herd nehmen. Bärlauch und {100 ml} Sahne zugeben und alles mit dem Stabmixer fein pürieren. Die Suppe danach nicht mehr kochen lassen, sonst wird der Bärlauch graugrün und verliert sein Aroma.
+6. Mit Salz, Pfeffer und etwas Muskatnuss abschmecken, auf Teller verteilen und mit den Bärlauchstreifen bestreuen.
+
+Tipp: Wer Bärlauch selbst im Wald sammelt, sollte jedes Blatt zwischen den Fingern zerreiben: Nur Bärlauch riecht deutlich nach Knoblauch, seine giftigen Doppelgänger Maiglöckchen und Herbstzeitlose nicht.
 
 Guten Appetit!', 'baerlauchsuppe.jpg');
 
@@ -449,12 +453,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bärlauchsuppe'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Spaghetti mit Bärlauchpesto
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti mit Bärlauchpesto', 20, 4, 'Portionen', 'Frühling', '1. Spaghetti in reichlich Salzwasser nach Packungsangabe bissfest kochen.
-2. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten und abkühlen lassen.
-3. Bärlauch waschen, trocken tupfen und grob schneiden.
-4. Bärlauch, Pinienkerne, Olivenöl und einen Spritzer Zitronensaft im Mixer zu einem Pesto pürieren. Mit Salz und Pfeffer abschmecken.
-5. Spaghetti abgießen, dabei etwas Nudelwasser auffangen. Pesto mit {2-3 EL} Nudelwasser unter die Nudeln mischen und sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spaghetti mit Bärlauchpesto', 'Wild, würzig und in 20 Minuten auf dem Tisch: selbst gemachtes Pesto aus frischem Bärlauch.', 20, 4, 'Portionen', 'Frühling', '1. Reichlich Wasser in einem großen Topf aufkochen und kräftig salzen. {400 g} Spaghetti darin nach Packungsangabe bissfest kochen.
+2. Währenddessen {40 g} Pinienkerne in einer Pfanne ohne Fett bei mittlerer Hitze unter Schwenken goldbraun rösten. Gut aufpassen, sie werden schnell zu dunkel. Auf einem Teller abkühlen lassen.
+3. {100 g} Bärlauch waschen, gründlich trocken tupfen und grob schneiden. Nasse Blätter verwässern das Pesto.
+4. Bärlauch, Pinienkerne, {100 ml} Olivenöl und einen Spritzer Zitronensaft im Mixer oder mit dem Stabmixer zu einem cremigen Pesto pürieren. Nicht zu lange mixen, sonst wird es warm und bitter. Mit Salz und Pfeffer abschmecken.
+5. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen. Die Spaghetti abgießen, zurück in den Topf geben und das Pesto mit {2-3 EL} Nudelwasser untermischen, bis alles cremig glänzt. Sofort servieren.
+
+Tipp: Übriges Pesto in ein sauberes Glas füllen und mit etwas Olivenöl bedecken. So hält es im Kühlschrank etwa eine Woche.
 
 Guten Appetit!', 'spaghetti-mit-baerlauchpesto.jpg');
 
@@ -467,11 +473,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spaghetti mit Bärlauchpesto'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Rührei mit Bärlauch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rührei mit Bärlauch', 10, 2, 'Portionen', 'Frühling', '1. Bärlauch waschen und in feine Streifen schneiden.
-2. Eier mit Milch, Salz und Pfeffer verquirlen.
-3. Butter in einer Pfanne bei mittlerer Hitze schmelzen, die Eimasse hineingeben und mit einem Pfannenwender langsam zu cremigem Rührei schieben.
-4. Kurz bevor das Ei ganz gestockt ist, den Bärlauch unterheben. Sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rührei mit Bärlauch', 'Weiches, cremiges Rührei mit frischen Bärlauchstreifen: ein Frühlingsfrühstück in zehn Minuten.', 10, 2, 'Portionen', 'Frühling', '1. Den Bärlauch waschen, trocken schütteln und in feine Streifen schneiden.
+2. {4} Eier mit {2 EL} Milch, einer Prise Salz und etwas Pfeffer in einer Schüssel mit der Gabel verquirlen, bis keine Eiweißschlieren mehr zu sehen sind.
+3. {1 EL} Butter in einer beschichteten Pfanne bei mittlerer bis schwacher Hitze schmelzen. Sie soll schäumen, aber nicht braun werden.
+4. Die Eimasse hineingießen und kurz warten, bis sie am Rand zu stocken beginnt. Dann mit einem Pfannenwender langsam vom Rand zur Mitte schieben, sodass große, weiche Flocken entstehen. Nicht rühren, sonst wird das Rührei krümelig.
+5. Wenn das Ei fast gestockt ist, aber noch glänzt, den Bärlauch unterheben und die Pfanne vom Herd ziehen. Die Resthitze gart es fertig. Sofort servieren.
+
+Tipp: Dazu passt eine Scheibe frisches Bauernbrot mit Butter.
 
 Guten Appetit!', 'ruehrei-mit-baerlauch.jpg');
 
@@ -483,13 +492,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rührei mit Bärlauch'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spargel mit Sauce Hollandaise
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargel mit Sauce Hollandaise', 45, 4, 'Portionen', 'Frühling', '1. Kartoffeln schälen und in Salzwasser ca. 20 Minuten garen.
-2. Spargel schälen und die holzigen Enden abschneiden. Reichlich Wasser mit Salz, einer Prise Zucker und einem Stückchen Butter aufkochen und den Spargel darin 12–15 Minuten garen.
-3. Für die Hollandaise {200 g} Butter schmelzen. Eier trennen und die Eigelbe mit Weißwein und {1 EL} Zitronensaft über einem heißen Wasserbad dickcremig aufschlagen.
-4. Die flüssige Butter erst tropfenweise, dann in dünnem Strahl unterschlagen. Mit Salz, Pfeffer und Zitronensaft abschmecken.
-5. Kartoffeln in der restlichen Butter schwenken und mit gehackter Petersilie bestreuen.
-6. Spargel abtropfen lassen und mit Kartoffeln und Hollandaise servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spargel mit Sauce Hollandaise', 'Der Klassiker der Spargelzeit: zarte weiße Stangen, Salzkartoffeln und eine selbst aufgeschlagene Hollandaise.', 45, 4, 'Portionen', 'Frühling', '1. {800 g} Kartoffeln schälen, größere halbieren und in Salzwasser zugedeckt etwa 20 Minuten garen, bis sie weich sind.
+2. Den Spargel mit einem Sparschäler vom Kopf abwärts gründlich schälen und die holzigen Enden 1–2 cm breit abschneiden. Einen großen Topf mit reichlich Wasser, Salz, einer Prise Zucker und einem kleinen Stück Butter aufkochen. Den Spargel hineinlegen und bei schwacher Hitze je nach Dicke 12–15 Minuten ziehen lassen. Er ist gar, wenn er sich beim Anheben leicht biegt.
+3. Für die Hollandaise {200 g} Butter in einem kleinen Topf schmelzen und etwas abkühlen lassen. Die Zitrone auspressen. {3} Eier trennen, die Eiweiße werden nicht gebraucht. Die Eigelbe mit {2 EL} Weißwein und {1 EL} Zitronensaft in einer Metallschüssel verrühren.
+4. Die Schüssel über ein Wasserbad setzen, das nur leise siedet. Das Wasser darf die Schüssel nicht berühren. Die Eigelbe mit dem Schneebesen 3–4 Minuten kräftig aufschlagen, bis sie hell, dickcremig und lauwarm sind. Werden sie zu heiß, gerinnen sie: dann die Schüssel kurz vom Wasserbad nehmen und weiterschlagen.
+5. Die flüssige Butter erst tropfenweise, dann in einem dünnen Strahl unterschlagen, bis eine glänzende, cremige Soße entsteht. Mit Salz, Pfeffer und etwas Zitronensaft abschmecken.
+6. Die Kartoffeln abgießen und in der restlichen Butter schwenken. Die Petersilie hacken und darüberstreuen.
+7. Den Spargel mit einer Schaumkelle herausheben, gut abtropfen lassen und mit Kartoffeln und Hollandaise auf vorgewärmten Tellern anrichten.
+
+Tipp: Die Spargelschalen nicht wegwerfen: In Wasser ausgekocht ergeben sie einen feinen Fond für eine Spargelsuppe am nächsten Tag.
 
 Guten Appetit!', 'spargel-mit-sauce-hollandaise.jpg');
 
@@ -505,13 +517,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spargel mit Sauce Hollandaise'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Spargelcremesuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargelcremesuppe', 45, 4, 'Portionen', 'Frühling', '1. Spargel schälen. Schalen und Enden in der Gemüsebrühe 15 Minuten auskochen und abseihen.
-2. Spargelstangen in Stücke schneiden, die Spitzen beiseitelegen.
-3. Schalotte würfeln und in Butter andünsten, Spargelstücke zugeben und kurz mitdünsten.
-4. Mit dem Spargelfond ablöschen und 15 Minuten köcheln. Die Spitzen in den letzten 5 Minuten mitgaren und wieder herausnehmen.
-5. Sahne zugeben, fein pürieren und mit Salz, Zucker, Muskat und Zitronensaft abschmecken.
-6. Mit Spargelspitzen und Schnittlauchröllchen servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spargelcremesuppe', 'Fein, mild und samtig. Hier wandert der ganze Spargel in die Suppe, sogar die Schalen geben ihr Aroma ab.', 45, 4, 'Portionen', 'Frühling', '1. {500 g} Spargel schälen und die holzigen Enden abschneiden. Schalen und Enden mit {750 ml} Gemüsebrühe in einen Topf geben, aufkochen und 15 Minuten leise auskochen. Dann durch ein Sieb gießen, den Fond auffangen und die Schalen wegwerfen.
+2. Währenddessen die Spargelstangen in 2–3 cm lange Stücke schneiden. Die Spitzen beiseitelegen.
+3. Die Schalotte schälen und fein würfeln. {2 EL} Butter in einem Topf bei mittlerer Hitze schmelzen und die Schalotte darin 2 Minuten glasig dünsten. Die Spargelstücke ohne die Spitzen zugeben und 2 Minuten mitdünsten, ohne dass sie Farbe nehmen.
+4. Mit dem Spargelfond ablöschen und zugedeckt 15 Minuten köcheln lassen. Die Spitzen in den letzten 5 Minuten mitgaren, dann mit einer Schaumkelle herausheben und beiseitelegen.
+5. {200 ml} Sahne zugeben und die Suppe mit dem Stabmixer sehr fein pürieren. Wer sie besonders samtig mag, streicht sie zusätzlich durch ein feines Sieb.
+6. Mit Salz, einer Prise Zucker, etwas Muskatnuss und einem Spritzer Zitronensaft abschmecken. Der Zucker nimmt dem Spargel die leichte Bitterkeit.
+7. Den Schnittlauch in feine Röllchen schneiden. Die Suppe in Teller füllen, die Spargelspitzen hineinlegen und mit Schnittlauch bestreuen.
 
 Guten Appetit!', 'spargelcremesuppe.jpg');
 
@@ -527,12 +540,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spargelcremesuppe'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Grüner Spargel aus dem Ofen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüner Spargel aus dem Ofen', 25, 4, 'Portionen', 'Frühling', '1. Ofen auf 220 °C Ober-/Unterhitze vorheizen.
-2. Vom grünen Spargel nur das untere Drittel schälen und die holzigen Enden abschneiden.
-3. Spargel auf ein Backblech legen und mit Olivenöl, gehacktem Knoblauch, Salz, Pfeffer und Chiliflocken vermengen.
-4. 12–15 Minuten im Ofen rösten, bis die Spitzen leicht gebräunt sind.
-5. Mit Zitronenabrieb und etwas Zitronensaft beträufeln und sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grüner Spargel aus dem Ofen', 'Im heißen Ofen geröstet, bis die Spitzen knusprig werden: grüner Spargel mit Knoblauch, Chili und viel Zitrone.', 25, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen.
+2. Den Spargel waschen, die holzigen Enden abschneiden und nur das untere Drittel schälen. Grüner Spargel hat eine dünne Schale, oben braucht er nichts.
+3. {2} Knoblauchzehen schälen und fein hacken. Den Spargel auf ein Backblech legen, mit {3 EL} Olivenöl, Knoblauch, Salz, Pfeffer und einer Prise Chiliflocken vermengen, bis alle Stangen glänzen. Nebeneinander verteilen, nicht übereinander, sonst dämpft er, statt zu rösten.
+4. Im Ofen auf mittlerer Schiene 12–15 Minuten rösten, bis die Stangen bissfest und die Spitzen leicht gebräunt sind. Dünne Stangen brauchen eher 10 Minuten.
+5. Inzwischen die Zitrone heiß waschen, die Schale fein abreiben und die Zitrone halbieren.
+6. Den Spargel mit dem Zitronenabrieb bestreuen, mit etwas Zitronensaft beträufeln und sofort servieren.
+
+Tipp: Als Hauptgericht mit frischem Baguette servieren, als Beilage passt er zu Fisch und Steak.
 
 Guten Appetit!', 'gruener-spargel-aus-dem-ofen.jpg');
 
@@ -545,12 +561,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grüner Spargel aus dem Ofen'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spargel-Risotto
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargel-Risotto', 40, 4, 'Portionen', 'Frühling', '1. Spargel putzen, die Spitzen abschneiden und die Stangen in 2 cm lange Stücke schneiden. Brühe erhitzen.
-2. Schalotten fein würfeln und in der Hälfte der Butter glasig dünsten. Reis zugeben und unter Rühren glasig anschwitzen.
-3. Mit Weißwein ablöschen. Nach und nach heiße Brühe angießen und unter Rühren ca. 18 Minuten garen.
-4. Nach 10 Minuten die Spargelstücke, nach 14 Minuten die Spitzen zugeben.
-5. Restliche Butter, geriebenen Käse und etwas Zitronenabrieb unterrühren. Mit Salz und Pfeffer abschmecken und 2 Minuten ruhen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spargel-Risotto', 'Cremig, frisch und voller Frühling: Risotto mit grünem Spargel, Zitrone und Hartkäse.', 40, 4, 'Portionen', 'Frühling', '1. Den Spargel waschen, die holzigen Enden abschneiden und das untere Drittel schälen. Die Spitzen etwa 4 cm lang abschneiden und beiseitelegen, die Stangen in 2 cm lange Stücke schneiden.
+2. {1000 ml} Gemüsebrühe in einem Topf erhitzen und auf kleinster Stufe heiß halten. Kalte Brühe würde das Garen jedes Mal unterbrechen.
+3. {2} Schalotten schälen und fein würfeln. Die Hälfte der Butter in einem breiten Topf bei mittlerer Hitze schmelzen und die Schalotten darin 2 Minuten glasig dünsten. {300 g} Risottoreis zugeben und unter Rühren 1–2 Minuten anschwitzen, bis die Körner glasig schimmern.
+4. Mit {100 ml} Weißwein ablöschen und rühren, bis er fast verkocht ist. Dann eine Kelle heiße Brühe angießen und unter häufigem Rühren einkochen lassen. Erst wenn der Reis die Flüssigkeit fast aufgenommen hat, die nächste Kelle zugeben. So insgesamt etwa 18 Minuten garen.
+5. Nach 10 Minuten die Spargelstücke, nach 14 Minuten die Spitzen unterrühren.
+6. Inzwischen {60 g} Hartkäse reiben und die Zitronenschale fein abreiben. Wenn der Reis cremig ist, innen aber noch leichten Biss hat, den Topf vom Herd nehmen. Die restliche Butter, den Käse und etwas Zitronenabrieb unterrühren. Mit Salz und Pfeffer abschmecken.
+7. Zugedeckt 2 Minuten ruhen lassen und sofort servieren. Ein gutes Risotto fließt auf dem Teller langsam auseinander.
+
+Tipp: Nicht immer wird die ganze Brühe gebraucht, manchmal etwas mehr. Entscheidend ist der Biss des Reises, nicht die Menge.
 
 Guten Appetit!', 'spargel-risotto.jpg');
 
@@ -566,12 +586,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spargel-Risotto'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spargelsalat mit Erdbeeren
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargelsalat mit Erdbeeren', 30, 4, 'Portionen', 'Frühling', '1. Weißen Spargel ganz, grünen Spargel nur im unteren Drittel schälen. Holzige Enden entfernen.
-2. Spargel in 4 cm lange Stücke schneiden, in Salzwasser 5–8 Minuten bissfest garen und kalt abschrecken.
-3. Erdbeeren waschen, putzen und vierteln. Rucola waschen und trocken schleudern.
-4. Aus Essig, Öl, Ahornsirup, Salz und Pfeffer ein Dressing rühren.
-5. Spargel, Erdbeeren und Rucola mit dem Dressing vermengen und kurz durchziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spargelsalat mit Erdbeeren', 'Süß, säuerlich und ein bisschen pfeffrig: Spargel und Erdbeeren sind das Traumpaar des Frühsommers.', 30, 4, 'Portionen', 'Frühling', '1. Den weißen Spargel ganz schälen, den grünen nur im unteren Drittel. Bei beiden die holzigen Enden abschneiden.
+2. Den Spargel schräg in 4 cm lange Stücke schneiden. Reichlich Salzwasser aufkochen, den weißen Spargel darin 8 Minuten garen und den grünen nach 3 Minuten dazugeben. Er soll noch deutlich Biss haben.
+3. Den Spargel in ein Sieb gießen und sofort in eiskaltem Wasser abschrecken, damit er nicht nachgart und der grüne seine Farbe behält. Gut abtropfen lassen.
+4. {250 g} Erdbeeren waschen, erst danach die Kelchblätter entfernen, sonst saugen sie sich mit Wasser voll, und die Beeren vierteln. {50 g} Rucola waschen und trocken schleudern.
+5. Für das Dressing {3 EL} Balsamicoessig, {4 EL} Olivenöl, {1 TL} Ahornsirup, Salz und Pfeffer in einem Schraubglas kräftig schütteln.
+6. Spargel und Erdbeeren mit dem Dressing mischen und 10 Minuten durchziehen lassen. Erst kurz vor dem Servieren den Rucola unterheben, damit er nicht zusammenfällt.
+
+Tipp: Frisch gemahlener Pfeffer direkt auf den Erdbeeren klingt seltsam, schmeckt aber großartig.
 
 Guten Appetit!', 'spargelsalat-mit-erdbeeren.jpg');
 
@@ -586,12 +609,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spargelsalat mit Erdbeeren'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spargel mit Kochschinken und Kratzede
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargel mit Kochschinken und Kratzede', 50, 4, 'Portionen', 'Frühling', '1. Spargel schälen und in Salzwasser mit Zucker und etwas Butter 12–15 Minuten garen.
-2. Für die Kratzede Mehl, Milch, Eier und eine Prise Salz glatt verrühren und 10 Minuten quellen lassen.
-3. Etwas Butter in einer Pfanne erhitzen, eine Kelle Teig hineingeben und leicht stocken lassen. Den Pfannkuchen mit zwei Gabeln in Stücke reißen und rundherum goldbraun braten. Mit dem restlichen Teig ebenso verfahren.
-4. Restliche Butter in einem kleinen Topf hellbraun aufschäumen lassen.
-5. Spargel mit Kochschinken und Kratzede anrichten, mit der braunen Butter beträufeln und mit Schnittlauch bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spargel mit Kochschinken und Kratzede', 'Badisches Spargelessen, wie es sein soll: zerrupfte, goldbraune Pfannkuchen, Schinken und braune Butter.', 50, 4, 'Portionen', 'Frühling', '1. Für die Kratzede {200 g} Mehl, {300 ml} Milch, {4} Eier und eine Prise Salz mit dem Schneebesen zu einem glatten Teig verrühren und 10 Minuten quellen lassen.
+2. Den Spargel vom Kopf abwärts gründlich schälen und die holzigen Enden abschneiden. Reichlich Wasser mit Salz, einer Prise Zucker und einem Stückchen Butter aufkochen. Den Spargel darin bei schwacher Hitze 12–15 Minuten ziehen lassen.
+3. Inzwischen etwas Butter in einer großen Pfanne bei mittlerer Hitze erhitzen. Eine Kelle Teig hineingeben und stocken lassen, bis die Unterseite goldbraun ist. Den Pfannkuchen wenden, kurz weiterbraten und dann mit zwei Pfannenwendern oder Gabeln in mundgerechte Stücke reißen. Die Stücke rundherum knusprig braten. Mit dem restlichen Teig genauso verfahren und die fertige Kratzede im Ofen bei 80 °C warm halten.
+4. Den Schnittlauch in feine Röllchen schneiden. {300 g} Kochschinken auf einer Platte anrichten.
+5. Die restliche Butter in einem kleinen Topf bei mittlerer Hitze schmelzen und weiter erhitzen, bis sie schäumt, nussig duftet und am Boden hellbraun wird. Sofort vom Herd nehmen, sie verbrennt schnell.
+6. Den Spargel abtropfen lassen und mit Kochschinken und Kratzede anrichten. Mit der braunen Butter beträufeln und mit Schnittlauch bestreuen.
+
+Tipp: Für besonders lockere Kratzede die Eier trennen und das Eiweiß steif geschlagen zuletzt unter den Teig heben.
 
 Guten Appetit!', 'spargel-mit-kochschinken-und-kratzede.jpg');
 
@@ -606,12 +632,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spargel mit Kochschinken und Kratzede'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Lachs mit grünem Spargel aus dem Ofen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lachs mit grünem Spargel aus dem Ofen', 30, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Spargel putzen, Tomaten halbieren.
-2. Spargel und Tomaten auf einem Blech mit {2 EL} Öl, gehacktem Knoblauch, Salz und Pfeffer mischen und 8 Minuten vorgaren.
-3. Lachs in {4 Stücke} teilen, salzen, pfeffern, mit Zitronenscheiben belegen und zwischen das Gemüse legen. Mit restlichem Öl beträufeln.
-4. Weitere 12–15 Minuten garen, bis der Lachs innen gerade noch zart-glasig ist.
-5. Mit gehacktem Dill und einem Spritzer Zitronensaft servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Lachs mit grünem Spargel aus dem Ofen', 'Alles auf ein Blech: saftiger Lachs, knackiger Spargel und Kirschtomaten, die im Ofen süß werden.', 30, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Den Spargel waschen, die holzigen Enden abschneiden und das untere Drittel schälen. {200 g} Kirschtomaten halbieren. Den Knoblauch schälen und fein hacken.
+2. Spargel und Tomaten auf einem Backblech mit {2 EL} Olivenöl, Knoblauch, Salz und Pfeffer mischen und gleichmäßig verteilen. 8 Minuten im Ofen vorgaren.
+3. Inzwischen {600 g} Lachsfilet mit Küchenpapier trocken tupfen und in {4} gleich große Stücke schneiden. Von beiden Seiten salzen und pfeffern. Die Zitrone halbieren und eine Hälfte in dünne Scheiben schneiden.
+4. Das Blech herausnehmen, das Gemüse etwas zur Seite schieben und die Lachsstücke mit der Hautseite nach unten dazwischenlegen. Mit je einer Zitronenscheibe belegen und mit dem restlichen Öl beträufeln.
+5. Weitere 12–15 Minuten garen, bis sich der Lachs an der dicksten Stelle leicht auseinanderzupfen lässt, innen aber noch zart glasig ist. Zu lange gegart wird er trocken.
+6. Den Dill fein hacken und darüberstreuen. Mit einem Spritzer Saft von der zweiten Zitronenhälfte servieren.
+
+Tipp: Dazu passt Reis oder frisches Baguette, das die Säfte vom Blech aufnimmt.
 
 Guten Appetit!', 'lachs-mit-gruenem-spargel-aus-dem-ofen.jpg');
 
@@ -626,12 +655,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Lachs mit grünem Spargel aus dem Ofen'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Frankfurter Grüne Soße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Frankfurter Grüne Soße', 60, 4, 'Portionen', 'Frühling', '1. Kartoffeln als Pellkartoffeln ca. 20 Minuten kochen. Eier 10 Minuten hart kochen, abschrecken und pellen.
-2. Die sieben Kräuter waschen, trocken schütteln, grobe Stiele entfernen und sehr fein hacken oder mit etwas Joghurt pürieren.
-3. Schmand, Joghurt, Senf und Zitronensaft verrühren und die Kräuter unterziehen. {2} Eier fein hacken und untermischen.
-4. Mit Salz und Pfeffer abschmecken und mindestens 30 Minuten ziehen lassen.
-5. Mit den restlichen halbierten Eiern und den Kartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Frankfurter Grüne Soße', 'Sieben Kräuter, kalt und cremig: Frankfurts berühmteste Soße, traditionell am Gründonnerstag mit Eiern und Pellkartoffeln.', 60, 4, 'Portionen', 'Frühling', '1. {1000 g} Kartoffeln waschen und in Salzwasser zugedeckt etwa 20 Minuten als Pellkartoffeln garen.
+2. {8} Eier in kochendem Wasser 10 Minuten hart kochen, kalt abschrecken und pellen.
+3. Die sieben Kräuter waschen und gründlich trocken schütteln: Borretsch, Kerbel, Kresse, Petersilie, Pimpinelle, Sauerampfer und Schnittlauch. Grobe Stiele entfernen. Die Kräuter mit einem großen Messer sehr fein hacken oder mit etwas Joghurt im Mixer pürieren. In Frankfurt ist die Soße eher fein und kräftig grün.
+4. {200 g} Schmand, {200 g} Joghurt, {1 TL} Senf und den Saft der halben Zitrone glatt rühren und die Kräuter unterziehen.
+5. {2} Eier sehr fein hacken und untermischen. Mit Salz und Pfeffer kräftig abschmecken.
+6. Die Soße abgedeckt mindestens 30 Minuten im Kühlschrank ziehen lassen, damit sich die Aromen verbinden.
+7. Die Kartoffeln pellen, die restlichen Eier halbieren und alles mit der Grünen Soße anrichten.
+
+Tipp: Auf dem Wochenmarkt gibt es die sieben Kräuter im Frühjahr oft fertig gebündelt, in Hessen klassisch in weißes Papier gewickelt.
 
 Guten Appetit!', 'frankfurter-gruene-sosse.jpg');
 
@@ -652,11 +685,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Frankfurter Grüne Soße'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Pellkartoffeln mit Kräuterquark und Leinöl
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pellkartoffeln mit Kräuterquark und Leinöl', 30, 4, 'Portionen', 'Frühling', '1. Kartoffeln gründlich waschen und mit Kümmel in Salzwasser ca. 20 Minuten garen.
-2. Quark mit Milch glatt rühren. Kräuter fein hacken, Radieschen in feine Würfel schneiden und beides unterrühren.
-3. Mit Salz und Pfeffer kräftig abschmecken.
-4. Kartoffeln pellen, mit dem Kräuterquark anrichten und den Quark großzügig mit Leinöl beträufeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pellkartoffeln mit Kräuterquark und Leinöl', 'Einfach und ehrlich: Pellkartoffeln mit kühlem Kräuterquark und einem Schuss nussigem Leinöl, wie man es aus dem Spreewald kennt.', 30, 4, 'Portionen', 'Frühling', '1. {1000 g} möglichst gleich große Kartoffeln gründlich waschen. Mit {1 TL} Kümmel in einen Topf geben, mit Wasser bedecken, salzen und zugedeckt etwa 20 Minuten kochen, bis ein Messer leicht hineingleitet.
+2. Inzwischen {500 g} Quark mit {100 ml} Milch glatt rühren. Er soll cremig, aber nicht flüssig sein.
+3. Den Schnittlauch in feine Röllchen schneiden und die Petersilie fein hacken. Die Radieschen waschen, putzen und in kleine Würfel schneiden. Alles unter den Quark rühren.
+4. Mit Salz und Pfeffer kräftig abschmecken. Kalter Quark schmeckt schnell fade, also ruhig großzügig würzen.
+5. Die Kartoffeln abgießen, kurz ausdampfen lassen und pellen oder mit Schale servieren. Den Kräuterquark daneben anrichten, eine kleine Mulde hineindrücken und mit {4 EL} Leinöl füllen.
+
+Tipp: Leinöl schmeckt nur frisch. Es gehört in den Kühlschrank und sollte nach dem Öffnen innerhalb weniger Wochen aufgebraucht werden.
 
 Guten Appetit!', 'pellkartoffeln-mit-kraeuterquark-und-leinoel.jpg');
 
@@ -672,12 +708,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pellkartoffeln mit Kräuterquark und Leinöl'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Rhabarberkuchen mit Streuseln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rhabarberkuchen mit Streuseln', 80, 1, 'Springform (26 cm)', 'Frühling', '1. Rhabarber waschen, putzen und in 2 cm lange Stücke schneiden. Mit {2 EL} Zucker mischen und 15 Minuten ziehen lassen. Ofen auf 180 °C vorheizen.
-2. Für den Rührteig {100 g} Butter, {100 g} Zucker, Vanillezucker und Eier schaumig schlagen. {200 g} Mehl mit Backpulver und Salz mischen und abwechselnd mit der Milch unterrühren.
-3. Teig in eine gefettete Springform streichen und den abgetropften Rhabarber darauf verteilen.
-4. Für die Streusel restliches Mehl, restlichen Zucker, restliche Butter und Zimt mit den Fingern zu Streuseln verkneten und über den Rhabarber streuen.
-5. Ca. 45 Minuten goldbraun backen und in der Form abkühlen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rhabarberkuchen mit Streuseln', 'Saurer Rhabarber, saftiger Rührteig und dicke, buttrige Streusel: der Kuchen, auf den man sich das ganze Frühjahr freut.', 80, 1, 'Springform (26 cm)', 'Frühling', '1. Den Rhabarber waschen, die Enden abschneiden und faserige Haut abziehen. In 2 cm lange Stücke schneiden, mit {2 EL} Zucker mischen und 15 Minuten ziehen lassen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Springform (26 cm) fetten.
+3. Für den Rührteig {100 g} weiche Butter, {100 g} Zucker und den Vanillezucker mit dem Handrührgerät 3 Minuten hell und cremig schlagen. Die {2} Eier einzeln je eine halbe Minute unterrühren.
+4. {200 g} Mehl mit {2 TL} Backpulver und einer Prise Salz mischen und abwechselnd mit {50 ml} Milch kurz unterrühren, nur bis alles verbunden ist.
+5. Den Teig in die Form streichen. Den Rhabarber in einem Sieb abtropfen lassen, damit der Saft den Teig nicht durchweicht, und gleichmäßig darauf verteilen.
+6. Für die Streusel das restliche Mehl, den restlichen Zucker, die restliche Butter in Stücken und eine Prise Zimt mit den Fingern zu groben Streuseln verkneten und über den Rhabarber streuen.
+7. Im Ofen auf mittlerer Schiene etwa 45 Minuten backen, bis die Streusel goldbraun sind. Mit einem Holzstäbchen in den Teig stechen: Bleibt nichts daran kleben, ist er fertig. In der Form vollständig abkühlen lassen.
+
+Tipp: Am besten schmeckt er am Backtag, mit einem Klecks geschlagener Sahne.
 
 Guten Appetit!', 'rhabarberkuchen-mit-streuseln.jpg');
 
@@ -693,12 +733,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rhabarberkuchen mit Streuseln'), (SELECT id FROM ingredients WHERE name = 'Salz'), 1, 'Prise');
 
 -- Rhabarberkompott mit Vanille
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rhabarberkompott mit Vanille', 20, 4, 'Portionen', 'Frühling', '1. Rhabarber putzen und in 2 cm lange Stücke schneiden.
-2. Vanilleschote längs aufschneiden und das Mark herauskratzen.
-3. Orangensaft mit Zucker, Vanillemark und Schote aufkochen, Rhabarber zugeben und 5 Minuten sanft köcheln, bis er weich ist, aber nicht zerfällt.
-4. Speisestärke mit wenig kaltem Wasser anrühren, einrühren und kurz aufkochen. Vanilleschote entfernen.
-5. Warm oder kalt servieren, zum Beispiel zu Grießbrei oder Joghurt.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rhabarberkompott mit Vanille', 'Rosa, fruchtig und duftend nach Vanille: ein schnelles Kompott für Grießbrei, Joghurt oder Eis.', 20, 4, 'Portionen', 'Frühling', '1. {500 g} Rhabarber waschen, die Enden abschneiden und faserige Haut abziehen. In 2 cm lange Stücke schneiden.
+2. Die Vanilleschote mit einem spitzen Messer längs aufschneiden und das Mark mit dem Messerrücken herauskratzen.
+3. {100 ml} Orangensaft mit {80 g} Zucker, dem Vanillemark und der ausgekratzten Schote in einem Topf aufkochen, bis sich der Zucker gelöst hat.
+4. Den Rhabarber zugeben und zugedeckt bei schwacher Hitze etwa 5 Minuten sanft köcheln lassen. Er soll weich sein, aber noch seine Form behalten. Nicht umrühren, den Topf nur ab und zu schwenken.
+5. {1 TL} Speisestärke mit 2 EL kaltem Wasser glatt rühren, unter das Kompott ziehen und einmal kurz aufkochen, bis der Saft leicht bindet. Die Vanilleschote herausnehmen.
+6. Warm oder abgekühlt servieren, zum Beispiel zu Grießbrei, Joghurt oder Vanilleeis.
+
+Tipp: Je röter die Stangen, desto milder ist der Rhabarber und desto schöner wird die Farbe.
 
 Guten Appetit!', 'rhabarberkompott-mit-vanille.jpg');
 
@@ -709,11 +752,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rhabarberkompott mit Vanille'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'TL');
 
 -- Rhabarber-Crumble
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rhabarber-Crumble', 45, 4, 'Portionen', 'Frühling', '1. Ofen auf 190 °C vorheizen. Rhabarber putzen und in Stücke schneiden, Erdbeeren halbieren.
-2. Obst mit {50 g} Zucker und dem Vanillezucker in einer Auflaufform mischen.
-3. Mehl, Haferflocken, restlichen Zucker, Zimt und kalte Butterwürfel zu Streuseln verreiben und über das Obst geben.
-4. 30 Minuten backen, bis die Streusel goldbraun sind und das Obst blubbert. Lauwarm servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rhabarber-Crumble', 'Blubberndes Obst unter knusprigen Haferstreuseln, lauwarm aus dem Ofen: das gemütlichste Dessert, das es gibt.', 45, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen.
+2. {500 g} Rhabarber waschen, putzen und in 2 cm lange Stücke schneiden. {200 g} Erdbeeren waschen, entkelchen und halbieren.
+3. Das Obst mit {50 g} Zucker und dem Vanillezucker in einer Auflaufform mischen.
+4. Für die Streusel {100 g} Mehl, {50 g} Haferflocken, den restlichen Zucker und {1 TL} Zimt in einer Schüssel mischen. {80 g} kalte Butter in kleinen Würfeln dazugeben und alles mit den Fingerspitzen rasch zu Streuseln verreiben. Die Butter soll dabei nicht schmelzen, sonst werden die Streusel teigig statt knusprig.
+5. Die Streusel locker über dem Obst verteilen, nicht andrücken.
+6. Im Ofen etwa 30 Minuten backen, bis die Streusel goldbraun sind und das Obst am Rand Blasen wirft. 10 Minuten abkühlen lassen und lauwarm servieren.
+
+Tipp: Dazu eine Kugel Vanilleeis, die langsam auf dem warmen Crumble schmilzt.
 
 Guten Appetit!', 'rhabarber-crumble.jpg');
 
@@ -727,13 +774,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rhabarber-Crumble'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 1, 'TL');
 
 -- Erdbeerkuchen mit Biskuitboden
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeerkuchen mit Biskuitboden', 120, 1, 'Springform (26 cm)', 'Frühling', '1. Ofen auf 180 °C vorheizen und den Boden einer Springform mit Backpapier auslegen.
-2. Eier mit {3 EL} warmem Wasser und {80 g} Zucker 8 Minuten sehr schaumig schlagen. Mehl, {20 g} Speisestärke und Backpulver darübersieben und vorsichtig unterheben.
-3. Teig in die Form füllen, 20 Minuten backen, auskühlen lassen und aus der Form lösen.
-4. Erdbeeren waschen, putzen, halbieren und dicht auf den Boden setzen. Einen Tortenring darumlegen.
-5. Apfelsaft mit dem restlichen Zucker aufkochen. Restliche Stärke mit wenig Wasser anrühren, einrühren, 1 Minute köcheln und sofort über die Erdbeeren gießen.
-6. Kuchen 1 Stunde kühlen. Sahne mit Vanillezucker steif schlagen und dazu servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Erdbeerkuchen mit Biskuitboden', 'Luftiger Biskuit, ein Berg frischer Erdbeeren und glänzender Guss: der Sommerkuchen schlechthin.', 120, 1, 'Springform (26 cm)', 'Frühling', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Nur den Boden einer Springform (26 cm) mit Backpapier auslegen und den Rand nicht fetten, so kann der Biskuit beim Backen daran hochklettern.
+2. {3} Eier mit {3 EL} warmem Wasser und {80 g} Zucker mit dem Handrührgerät 8 Minuten sehr hell und schaumig schlagen. Die Masse sollte ihr Volumen etwa verdreifachen.
+3. {80 g} Mehl, {20 g} Speisestärke und {1 TL} Backpulver mischen, über die Eimasse sieben und mit einem Teigschaber vorsichtig unterheben. Nicht rühren, sonst fällt der Schaum zusammen.
+4. Den Teig in die Form füllen, glatt streichen und etwa 20 Minuten backen, bis er goldgelb ist und auf leichten Fingerdruck zurückfedert. Mit einem Messer vom Rand lösen, auskühlen lassen und aus der Form nehmen.
+5. {750 g} Erdbeeren waschen, trocken tupfen, entkelchen und halbieren. Mit der Schnittfläche nach unten dicht an dicht auf den Boden setzen. Einen Tortenring oder den gesäuberten Springformrand um den Boden legen.
+6. {250 ml} Apfelsaft mit dem restlichen Zucker aufkochen. Die restliche Speisestärke mit 3 EL kaltem Wasser glatt rühren, in den kochenden Saft rühren und 1 Minute köcheln lassen, bis er klar und dick wird. Sofort mit einem Löffel gleichmäßig über die Erdbeeren verteilen.
+7. Den Kuchen mindestens 1 Stunde kühl stellen, bis der Guss fest ist. {200 ml} Sahne mit dem Vanillezucker steif schlagen und dazu servieren.
+
+Tipp: Wer mag, bestreicht den Boden vor dem Belegen dünn mit Erdbeerkonfitüre, dann weicht er nicht durch.
 
 Guten Appetit!', 'erdbeerkuchen-mit-biskuitboden.jpg');
 
@@ -748,11 +798,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Erdbeerkuchen mit Biskuitboden'), (SELECT id FROM ingredients WHERE name = 'Vanillezucker'), 1, 'Pck.');
 
 -- Erdbeer-Quark-Creme
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeer-Quark-Creme', 15, 4, 'Portionen', 'Frühling', '1. Erdbeeren waschen und putzen. Die Hälfte mit {1 EL} Zucker pürieren, den Rest klein schneiden.
-2. Quark mit restlichem Zucker, Vanillezucker und Zitronensaft glatt rühren.
-3. Sahne steif schlagen und unter den Quark heben.
-4. Creme, Erdbeerpüree und Erdbeerstücke abwechselnd in Gläser schichten, mit Minze garnieren und gekühlt servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Erdbeer-Quark-Creme', 'Fruchtig, cremig und schnell geschichtet: ein Dessert im Glas, das nach Sommer schmeckt.', 15, 4, 'Portionen', 'Frühling', '1. {500 g} Erdbeeren waschen, trocken tupfen und entkelchen. Die Hälfte mit {1 EL} Zucker fein pürieren, die andere Hälfte in kleine Stücke schneiden.
+2. {500 g} Quark mit dem restlichen Zucker, dem Vanillezucker und dem Saft der halben Zitrone glatt rühren.
+3. {200 ml} gut gekühlte Sahne steif schlagen und mit einem Teigschaber locker unter den Quark heben, damit die Creme luftig bleibt.
+4. In {4} Gläser abwechselnd Quarkcreme, Erdbeerpüree und Erdbeerstücke schichten und mit Erdbeerstücken abschließen.
+5. Mindestens 15 Minuten kalt stellen. Vor dem Servieren mit je einem Minzblatt garnieren.
+
+Tipp: Mit Magerquark wird die Creme leichter, mit Sahnequark noch cremiger.
 
 Guten Appetit!', 'erdbeer-quark-creme.jpg');
 
@@ -765,11 +818,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Erdbeer-Quark-Creme'), (SELECT id FROM ingredients WHERE name = 'Minze'), 4, 'Blatt');
 
 -- Radieschensalat mit Schnittlauch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Radieschensalat mit Schnittlauch', 15, 4, 'Portionen', 'Frühling', '1. Radieschen waschen, putzen und in dünne Scheiben hobeln.
-2. Schnittlauch in feine Röllchen schneiden.
-3. Essig, Öl, Senf, Zucker, Salz und Pfeffer zu einer Vinaigrette verrühren.
-4. Radieschen und Schnittlauch mit der Vinaigrette mischen und 10 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Radieschensalat mit Schnittlauch', 'Knackig, scharf und ganz schnell gemacht: Radieschen in feinen Scheiben mit einer frischen Senf-Vinaigrette.', 15, 4, 'Portionen', 'Frühling', '1. {2 Bund} Radieschen waschen, Blätter und Wurzelenden abschneiden. Mit einem Gemüsehobel oder einem scharfen Messer in dünne Scheiben schneiden.
+2. Den Schnittlauch waschen, trocken schütteln und in feine Röllchen schneiden.
+3. {2 EL} Apfelessig, {1 TL} Senf, eine Prise Zucker, Salz und Pfeffer verrühren. {3 EL} Rapsöl langsam unterschlagen, bis die Vinaigrette leicht cremig wird.
+4. Radieschen und Schnittlauch mit der Vinaigrette mischen und etwa 10 Minuten ziehen lassen. Die Radieschen geben dabei etwas Saft ab und werden milder. Vor dem Servieren noch einmal abschmecken.
+
+Tipp: Die zarten Radieschenblätter nicht wegwerfen. Fein gehackt passen sie in den Salat oder in Kräuterquark.
 
 Guten Appetit!', 'radieschensalat-mit-schnittlauch.jpg');
 
@@ -783,12 +838,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Radieschensalat mit Schnittlauch'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Kohlrabi-Schnitzel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kohlrabi-Schnitzel', 30, 4, 'Portionen', 'Frühling', '1. Kohlrabi schälen und in 1 cm dicke Scheiben schneiden. In Salzwasser 5 Minuten vorgaren, abschrecken und trocken tupfen.
-2. Scheiben mit Salz, Pfeffer und etwas Muskat würzen.
-3. Nacheinander in Mehl, verquirltem Ei und Paniermehl wenden.
-4. Butterschmalz in einer Pfanne erhitzen und die Schnitzel pro Seite ca. 3 Minuten goldbraun braten.
-5. Mit Zitronenspalten servieren. Dazu passt Kartoffelsalat.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kohlrabi-Schnitzel', 'Außen knusprig, innen zart und mild: Kohlrabi, paniert wie ein Wiener Schnitzel. Da greifen auch Fleischfans gern zu.', 30, 4, 'Portionen', 'Frühling', '1. {2} Kohlrabi schälen, holzige Stellen großzügig wegschneiden und die Knollen in 1 cm dicke Scheiben schneiden.
+2. Die Scheiben in kochendem Salzwasser 5 Minuten vorgaren, in kaltem Wasser abschrecken und auf Küchenpapier gründlich trocken tupfen. Nur trockene Scheiben halten die Panade.
+3. Die Scheiben von beiden Seiten mit Salz, Pfeffer und etwas Muskatnuss würzen.
+4. Drei tiefe Teller bereitstellen: {50 g} Mehl, {2} mit einer Prise Salz verquirlte Eier und {100 g} Paniermehl. Jede Scheibe erst in Mehl wenden und abklopfen, dann durch das Ei ziehen und zuletzt im Paniermehl wenden. Die Panade nur leicht andrücken.
+5. {4 EL} Butterschmalz in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen. Es ist heiß genug, wenn an einem hineingehaltenen Holzlöffelstiel kleine Bläschen aufsteigen. Die Schnitzel portionsweise pro Seite etwa 3 Minuten goldbraun braten und auf Küchenpapier abtropfen lassen.
+6. Die Zitrone in Spalten schneiden und mit den Schnitzeln servieren.
+
+Tipp: Dazu passen Kartoffelsalat oder ein grüner Salat mit Joghurtdressing.
 
 Guten Appetit!', 'kohlrabi-schnitzel.jpg');
 
@@ -803,11 +861,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kohlrabi-Schnitzel'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Kohlrabigemüse in Rahmsoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kohlrabigemüse in Rahmsoße', 25, 4, 'Portionen', 'Frühling', '1. Kohlrabi schälen und in Stifte schneiden. Zarte Blätter fein hacken.
-2. Kohlrabi in der Brühe zugedeckt 8–10 Minuten bissfest garen, dabei die Brühe auffangen.
-3. Butter schmelzen, Mehl darin anschwitzen und unter Rühren mit der Kochbrühe und der Sahne ablöschen. 5 Minuten köcheln lassen.
-4. Kohlrabi und Blätter unterheben, mit Salz, Pfeffer und Muskat abschmecken und mit Petersilie bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kohlrabigemüse in Rahmsoße', 'Zarte Kohlrabistifte in einer hellen, cremigen Soße mit einem Hauch Muskat: die Beilage wie bei Oma.', 25, 4, 'Portionen', 'Frühling', '1. {3} Kohlrabi schälen, holzige Stellen wegschneiden und die Knollen in etwa 1 cm dicke Stifte schneiden. Die zarten inneren Blätter nicht wegwerfen, sondern fein hacken.
+2. Die Kohlrabistifte mit {200 ml} Gemüsebrühe in einen Topf geben, aufkochen und zugedeckt bei mittlerer Hitze 8–10 Minuten bissfest garen. In ein Sieb abgießen und die Kochbrühe dabei in einer Schüssel auffangen.
+3. Im selben Topf {2 EL} Butter schmelzen. {1 EL} Mehl einstreuen und unter Rühren 1 Minute hell anschwitzen, es soll keine Farbe annehmen.
+4. Erst die aufgefangene Brühe, dann {150 ml} Sahne nach und nach mit dem Schneebesen einrühren, damit keine Klümpchen entstehen. Die Soße 5 Minuten leise köcheln lassen, bis sie sämig ist.
+5. Kohlrabi und gehackte Blätter in die Soße geben und kurz erwärmen. Mit Salz, Pfeffer und frisch geriebener Muskatnuss abschmecken.
+6. Die Petersilie fein hacken und darüberstreuen.
+
+Tipp: Passt besonders gut zu Frikadellen, Schnitzel oder einfach zu Salzkartoffeln.
 
 Guten Appetit!', 'kohlrabigemuese-in-rahmsosse.jpg');
 
@@ -822,12 +884,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kohlrabigemüse in Rahmsoße'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Erbsen-Minz-Suppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erbsen-Minz-Suppe', 20, 4, 'Portionen', 'Frühling', '1. Zwiebel würfeln und in Olivenöl glasig dünsten.
-2. Erbsen (tiefgekühlt) zugeben, mit Brühe auffüllen und 5–8 Minuten köcheln.
-3. Minzblätter abzupfen, einige zum Garnieren beiseitelegen und den Rest mit der Sojasahne in die Suppe geben.
-4. Fein pürieren und mit Salz, Pfeffer und Zitronensaft abschmecken.
-5. Mit den Minzblättern garniert servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Erbsen-Minz-Suppe', 'Leuchtend grün, frisch und in 20 Minuten fertig: Erbsen und Minze sind wie füreinander gemacht.', 20, 4, 'Portionen', 'Frühling', '1. Die Zwiebel schälen und fein würfeln. {2 EL} Olivenöl in einem Topf bei mittlerer Hitze erhitzen und die Zwiebel darin 3 Minuten glasig dünsten.
+2. {600 g} Erbsen zugeben, tiefgekühlte müssen nicht aufgetaut werden. Mit {800 ml} Gemüsebrühe auffüllen, aufkochen und 5–8 Minuten köcheln lassen, bis die Erbsen weich sind. Länger sollten sie nicht kochen, sonst verlieren sie ihre leuchtende Farbe.
+3. Die Minzblätter von den Stielen zupfen. Ein paar schöne Blätter zum Garnieren beiseitelegen, den Rest mit {100 ml} Sojasahne in die Suppe geben.
+4. Alles mit dem Stabmixer sehr fein pürieren. Mit Salz, Pfeffer und dem Saft der halben Zitrone abschmecken. Erst die Säure macht die Suppe richtig frisch.
+5. In Teller füllen und mit den Minzblättern garniert servieren.
+
+Tipp: Im Sommer schmeckt die Suppe auch kalt. Dann etwas kräftiger würzen, Kälte dämpft den Geschmack.
 
 Guten Appetit!', 'erbsen-minz-suppe.jpg');
 
@@ -842,12 +906,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Erbsen-Minz-Suppe'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Risi e Bisi
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Risi e Bisi', 35, 4, 'Portionen', 'Frühling', '1. Brühe erhitzen. Zwiebel fein würfeln und in der Hälfte der Butter glasig dünsten.
-2. Reis zugeben, kurz mitdünsten und mit einem Teil der Brühe ablöschen.
-3. Nach und nach Brühe angießen und unter gelegentlichem Rühren 15 Minuten garen.
-4. Erbsen zugeben und weitere 5 Minuten garen. Risi e Bisi darf etwas suppiger sein als ein Risotto.
-5. Restliche Butter, geriebenen Käse und gehackte Petersilie unterrühren und abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Risi e Bisi', 'Reis und Erbsen auf venezianische Art: etwas suppiger als ein Risotto und herrlich einfach.', 35, 4, 'Portionen', 'Frühling', '1. {1200 ml} Gemüsebrühe in einem Topf aufkochen und auf kleiner Stufe heiß halten.
+2. Die Zwiebel schälen und fein würfeln. Die Hälfte der Butter in einem breiten Topf bei mittlerer Hitze schmelzen und die Zwiebel darin 2–3 Minuten glasig dünsten.
+3. {300 g} Risottoreis zugeben und unter Rühren 1 Minute anschwitzen, bis die Körner glasig schimmern. Mit zwei Kellen heißer Brühe ablöschen.
+4. Immer wieder eine Kelle Brühe angießen, sobald der Reis die Flüssigkeit fast aufgenommen hat, und dabei gelegentlich umrühren. So etwa 15 Minuten garen.
+5. {400 g} Erbsen zugeben und weitere 5 Minuten garen. Risi e Bisi darf ruhig suppiger sein als ein Risotto: Wenn man den Topf schwenkt, soll der Reis in der Flüssigkeit schwimmen.
+6. Inzwischen {60 g} Hartkäse reiben und die Petersilie fein hacken. Den Topf vom Herd nehmen, die restliche Butter, den Käse und die Petersilie unterrühren. Mit Salz und Pfeffer abschmecken und sofort in tiefen Tellern servieren.
+
+Tipp: In Venedig kocht man die leeren Schoten frischer Erbsen in der Brühe mit. Das gibt ein besonders intensives Erbsenaroma.
 
 Guten Appetit!', 'risi-e-bisi.jpg');
 
@@ -862,12 +929,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Risi e Bisi'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Lammkeule mit Rosmarin und Knoblauch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lammkeule mit Rosmarin und Knoblauch', 180, 6, 'Portionen', 'Frühling', '1. Ofen auf 170 °C Ober-/Unterhitze vorheizen. Lammkeule trocken tupfen und mit einem spitzen Messer rundherum einstechen.
-2. Knoblauch in Stifte schneiden und mit kleinen Rosmarinzweigen in die Einschnitte stecken. Keule mit Öl, Zitronenabrieb, Salz und Pfeffer einreiben.
-3. In einem Bräter rundherum scharf anbraten, mit Rotwein und Brühe ablöschen und den Thymian dazulegen.
-4. Im Ofen ca. 2 Stunden garen und regelmäßig mit dem Bratensaft begießen. Nach einer Stunde die geviertelten Kartoffeln um die Keule legen.
-5. Keule 10 Minuten ruhen lassen, aufschneiden und mit Kartoffeln und Bratensaft servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Lammkeule mit Rosmarin und Knoblauch', 'Der Festtagsbraten zu Ostern: zarte Lammkeule, gespickt mit Knoblauch und Rosmarin, dazu Kartoffeln aus dem Bräter.', 180, 6, 'Portionen', 'Frühling', '1. Die Lammkeule etwa 1 Stunde vor dem Garen aus dem Kühlschrank nehmen, damit sie Zimmertemperatur annimmt. Den Ofen auf 170 °C Ober-/Unterhitze vorheizen.
+2. Die Keule trocken tupfen und grobe Fettstücke und Sehnen abschneiden. Mit einem spitzen Messer rundherum etwa 15 kleine, 2 cm tiefe Taschen einstechen.
+3. {6} Knoblauchzehen schälen und in Stifte schneiden. Von {2} Rosmarinzweigen kleine Spitzen abzupfen und mit den Knoblauchstiften in die Taschen stecken. Die Zitrone heiß waschen und die Schale abreiben. Die Keule mit {2 EL} Olivenöl, Zitronenabrieb, Salz und Pfeffer rundherum einreiben.
+4. Das restliche Öl in einem Bräter auf dem Herd stark erhitzen und die Keule darin von allen Seiten je 2–3 Minuten kräftig anbraten. Mit {250 ml} Rotwein und {250 ml} Gemüsebrühe ablöschen, den Thymian und den restlichen Rosmarin dazulegen.
+5. Im Ofen offen etwa 2 Stunden garen und alle 20 Minuten mit dem Bratensaft begießen. Inzwischen {1000 g} Kartoffeln schälen und vierteln. Nach einer Stunde die Kartoffeln um die Keule im Bratensaft verteilen und leicht salzen.
+6. Die Keule herausnehmen, in Alufolie wickeln und 10 Minuten ruhen lassen, damit sich der Fleischsaft verteilt. Die Kartoffeln so lange im Ofen weiterbräunen lassen.
+7. Das Fleisch quer zur Faser in Scheiben schneiden und mit den Kartoffeln und dem Bratensaft servieren.
+
+Tipp: Mit einem Bratenthermometer gelingt die Keule sicher: Bei 60 °C Kerntemperatur ist sie rosa, bei 70 °C durchgegart. Dann einfach früher herausnehmen.
 
 Guten Appetit!', 'lammkeule-mit-rosmarin-und-knoblauch.jpg');
 
@@ -884,12 +955,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Lammkeule mit Rosmarin und Knoblauch'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Navarin d'agneau (Lammragout mit Frühlingsgemüse)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Navarin d''agneau (Lammragout mit Frühlingsgemüse)', 120, 4, 'Portionen', 'Frühling', '1. Lammschulter in 3 cm große Würfel schneiden, salzen und pfeffern.
-2. Öl in einem Schmortopf erhitzen und das Fleisch portionsweise kräftig anbraten. Geschälte Schalotten zugeben und kurz mitbraten.
-3. Tomatenmark einrühren und anrösten, mit Weißwein ablöschen und mit Brühe auffüllen. Thymian und Lorbeer zugeben und zugedeckt 1 Stunde schmoren.
-4. Karotten und Kartoffeln schälen, in mundgerechte Stücke schneiden und zum Fleisch geben. 20 Minuten weiterschmoren.
-5. Bohnen und Erbsen zugeben und 10 Minuten mitgaren. Abschmecken und servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Navarin d''agneau (Lammragout mit Frühlingsgemüse)', 'Französisches Frühlingsragout: lange geschmortes Lamm mit jungem Gemüse, das erst zum Schluss dazukommt und knackig bleibt.', 120, 4, 'Portionen', 'Frühling', '1. {1000 g} Lammschulter von groben Sehnen befreien, in 3 cm große Würfel schneiden, trocken tupfen und mit Salz und Pfeffer würzen. {4} Schalotten schälen und ganz lassen.
+2. {2 EL} Rapsöl in einem Schmortopf stark erhitzen. Das Fleisch in zwei bis drei Portionen rundherum kräftig braun anbraten. Nicht zu viel auf einmal in den Topf geben, sonst kocht es im eigenen Saft, statt zu bräunen. Dann alles Fleisch zurück in den Topf geben und die Schalotten 2 Minuten mitbraten.
+3. {2 EL} Tomatenmark einrühren und 1 Minute anrösten. Mit {200 ml} Weißwein ablöschen und den Bratensatz vom Topfboden lösen. {500 ml} Gemüsebrühe angießen, Thymian und das Lorbeerblatt zugeben und zugedeckt bei schwacher Hitze 1 Stunde schmoren.
+4. Inzwischen {4} Karotten und {400 g} Kartoffeln schälen und in mundgerechte Stücke schneiden. Zum Fleisch geben und weitere 20 Minuten schmoren.
+5. {200 g} grüne Bohnen putzen und halbieren. Mit {200 g} Erbsen zugeben und ohne Deckel 10 Minuten mitgaren, bis die Bohnen bissfest sind und die Soße etwas eingekocht ist.
+6. Thymianzweige und Lorbeerblatt herausnehmen, mit Salz und Pfeffer abschmecken und im Topf servieren.
+
+Tipp: Dazu passt frisches Baguette, mit dem man die Soße auftunken kann.
 
 Guten Appetit!', 'navarin-d-agneau-lammragout-mit-fruehlingsgemuese.jpg');
 
@@ -909,12 +983,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Navarin d''agneau (Lammragout mit Frühlingsgemüse)'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Rahmspinat mit Spiegelei und Salzkartoffeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rahmspinat mit Spiegelei und Salzkartoffeln', 35, 4, 'Portionen', 'Frühling', '1. Kartoffeln schälen, vierteln und in Salzwasser ca. 20 Minuten garen.
-2. Spinat waschen, in kochendem Wasser 1 Minute blanchieren, abschrecken, gut ausdrücken und grob hacken.
-3. Zwiebel und Knoblauch fein würfeln und in {1 EL} Butter glasig dünsten. Spinat und Sahne zugeben, kurz einköcheln lassen und mit Salz, Pfeffer und Muskat würzen.
-4. In der restlichen Butter {4} Spiegeleier braten.
-5. Kartoffeln mit Rahmspinat und Spiegelei servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rahmspinat mit Spiegelei und Salzkartoffeln', 'Ein Teller Kindheit: cremiger Rahmspinat, ein Spiegelei mit flüssigem Eigelb und Salzkartoffeln.', 35, 4, 'Portionen', 'Frühling', '1. {1000 g} Kartoffeln schälen, vierteln und in Salzwasser zugedeckt etwa 20 Minuten garen.
+2. {1000 g} Spinat gründlich waschen und grobe Stiele entfernen. In einem großen Topf mit kochendem Salzwasser 1 Minute blanchieren, bis er zusammenfällt. In eiskaltem Wasser abschrecken, damit er grün bleibt, dann mit den Händen kräftig ausdrücken und grob hacken.
+3. Zwiebel und Knoblauch schälen und fein würfeln. {1 EL} Butter in einem Topf bei mittlerer Hitze schmelzen und beides darin 2–3 Minuten glasig dünsten.
+4. Den Spinat und {150 ml} Sahne zugeben und unter Rühren 3–4 Minuten einköcheln lassen, bis der Spinat cremig ist. Mit Salz, Pfeffer und reichlich Muskatnuss abschmecken. Wer ihn feiner mag, püriert ihn kurz mit dem Stabmixer.
+5. Die restliche Butter in einer großen Pfanne bei mittlerer Hitze schmelzen. {4} Eier vorsichtig hineinschlagen und 3–4 Minuten braten, bis das Eiweiß fest, das Eigelb aber noch flüssig ist. Das Eiweiß leicht salzen.
+6. Die Kartoffeln abgießen und mit Rahmspinat und je einem Spiegelei auf Tellern anrichten.
+
+Tipp: Mit tiefgekühltem Blattspinat geht es schneller: Etwa 600 g auftauen lassen, gut ausdrücken und mit Schritt 3 weitermachen.
 
 Guten Appetit!', 'rahmspinat-mit-spiegelei-und-salzkartoffeln.jpg');
 
@@ -930,13 +1007,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rahmspinat mit Spiegelei und Salzkartoffeln'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spinatknödel mit brauner Butter
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spinatknödel mit brauner Butter', 50, 4, 'Portionen', 'Frühling', '1. Altbackene Brötchen in kleine Würfel schneiden, mit warmer Milch übergießen und 10 Minuten einweichen.
-2. Spinat blanchieren, gut ausdrücken und fein hacken. Zwiebel würfeln und in {1 EL} Butter glasig dünsten.
-3. Spinat, Zwiebel, Eier, Mehl, die Hälfte des Käses, Salz, Pfeffer und Muskat zu den Brötchen geben, zu einem formbaren Teig verkneten und 15 Minuten ruhen lassen.
-4. Mit nassen Händen {8} Knödel formen und in siedendem Salzwasser ca. 15 Minuten gar ziehen lassen.
-5. Restliche Butter in einer Pfanne hellbraun aufschäumen lassen.
-6. Knödel mit der braunen Butter beträufeln und mit dem restlichen Käse bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spinatknödel mit brauner Butter', 'Südtiroler Spinatknödel: würzig, saftig und in nussiger brauner Butter geschwenkt.', 50, 4, 'Portionen', 'Frühling', '1. {250 g} altbackene Brötchen in kleine Würfel schneiden. {200 ml} Milch lauwarm erwärmen, darübergießen, mischen und 10 Minuten einweichen lassen.
+2. {300 g} Spinat waschen und in kochendem Wasser 1 Minute blanchieren. Kalt abschrecken, sehr gut ausdrücken und fein hacken. Je trockener der Spinat ist, desto besser halten die Knödel.
+3. Die Zwiebel schälen und fein würfeln. {1 EL} Butter in einer Pfanne schmelzen und die Zwiebel darin glasig dünsten.
+4. {60 g} Hartkäse reiben. Spinat, Zwiebel, {2} Eier, {2 EL} Mehl und die Hälfte des Käses zu den Brötchen geben. Mit Salz, Pfeffer und Muskatnuss würzen und alles mit den Händen zu einem formbaren Teig verkneten. 15 Minuten ruhen lassen.
+5. In einem großen Topf reichlich Salzwasser aufkochen und die Hitze reduzieren, bis es nur noch siedet. Mit nassen Händen {8} gleich große Knödel formen und ins Wasser gleiten lassen. Etwa 15 Minuten gar ziehen lassen. Das Wasser darf dabei nicht sprudelnd kochen, sonst zerfallen sie.
+6. Kurz vor Ende die restliche Butter in einer Pfanne bei mittlerer Hitze aufschäumen lassen, bis sie hellbraun ist und nussig duftet.
+7. Die Knödel mit einer Schaumkelle herausheben, gut abtropfen lassen und auf Teller setzen. Mit der braunen Butter beträufeln und mit dem restlichen Käse bestreuen.
+
+Tipp: Zuerst einen Probeknödel kochen. Zerfällt er, noch etwas Mehl in den Teig kneten.
 
 Guten Appetit!', 'spinatknoedel-mit-brauner-butter.jpg');
 
@@ -953,12 +1033,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spinatknödel mit brauner Butter'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Mangoldgemüse mit Pinienkernen und Rosinen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mangoldgemüse mit Pinienkernen und Rosinen', 20, 4, 'Portionen', 'Frühling', '1. Rosinen in warmem Wasser einweichen. Pinienkerne in einer Pfanne ohne Fett rösten.
-2. Mangold waschen, die Stiele in schmale und die Blätter in breite Streifen schneiden.
-3. Öl erhitzen und gehackten Knoblauch mit den Mangoldstielen 3 Minuten dünsten.
-4. Blätter und abgetropfte Rosinen zugeben und zusammenfallen lassen.
-5. Mit Salz, Pfeffer und Zitronensaft abschmecken und die Pinienkerne darüberstreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Mangoldgemüse mit Pinienkernen und Rosinen', 'Mangold auf sizilianische Art: süße Rosinen, geröstete Pinienkerne und ein Spritzer Zitrone.', 20, 4, 'Portionen', 'Frühling', '1. {30 g} Rosinen in einer kleinen Schüssel mit warmem Wasser bedecken und 10 Minuten einweichen, damit sie saftig werden.
+2. {30 g} Pinienkerne in einer großen Pfanne ohne Fett bei mittlerer Hitze unter Schwenken goldbraun rösten und herausnehmen.
+3. {800 g} Mangold waschen. Die Stiele von den Blättern schneiden, die Stiele in schmale, die Blätter in breite Streifen schneiden. Die Stiele brauchen länger und kommen deshalb zuerst in die Pfanne.
+4. {2} Knoblauchzehen schälen und fein hacken. {3 EL} Olivenöl in der Pfanne erhitzen, Knoblauch und Mangoldstiele darin 3 Minuten dünsten, bis die Stiele etwas weicher sind.
+5. Die Rosinen abtropfen lassen und mit den Mangoldblättern in die Pfanne geben. Unter Wenden 2–3 Minuten zusammenfallen lassen.
+6. Mit Salz, Pfeffer und dem Saft der halben Zitrone abschmecken und mit den Pinienkernen bestreut servieren.
+
+Tipp: Bunter Mangold mit roten oder gelben Stielen sieht auf dem Teller besonders schön aus.
 
 Guten Appetit!', 'mangoldgemuese-mit-pinienkernen-und-rosinen.jpg');
 
@@ -972,13 +1055,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Mangoldgemüse mit Pinienkernen und Rosinen'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Finkenwerder Scholle
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Finkenwerder Scholle', 35, 4, 'Portionen', 'Frühling', '1. Kartoffeln schälen und in Salzwasser ca. 20 Minuten garen.
-2. Speck fein würfeln, in einer großen Pfanne knusprig auslassen und herausnehmen.
-3. Küchenfertige Schollen waschen, trocken tupfen, mit Zitronensaft beträufeln, salzen, pfeffern und in Mehl wenden.
-4. Butterschmalz im Speckfett erhitzen und die Schollen nacheinander pro Seite ca. 4 Minuten goldbraun braten.
-5. Speck und Krabben kurz in der Pfanne erwärmen und über die Schollen geben.
-6. Kartoffeln in Butter schwenken, mit Petersilie bestreuen und zur Scholle servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Finkenwerder Scholle', 'Hamburgs Fischklassiker: goldbraun gebratene Scholle mit knusprigem Speck und Nordseekrabben.', 35, 4, 'Portionen', 'Frühling', '1. {1000 g} Kartoffeln schälen und in Salzwasser zugedeckt etwa 20 Minuten garen.
+2. {150 g} Speck fein würfeln und in einer großen Pfanne ohne Fett bei mittlerer Hitze knusprig auslassen. Mit einer Schaumkelle herausnehmen und das Fett in der Pfanne lassen.
+3. {4} küchenfertige Schollen kalt abspülen und gründlich trocken tupfen. Mit etwas Zitronensaft beträufeln, salzen und pfeffern. In {4 EL} Mehl wenden und überschüssiges Mehl abklopfen.
+4. {4 EL} Butterschmalz zum Speckfett geben und erhitzen. Die Schollen nacheinander, mit der dunklen Seite zuerst, bei mittlerer Hitze pro Seite etwa 4 Minuten goldbraun braten und im Ofen bei 80 °C warm halten. Sie sind gar, wenn sich das Fleisch an der Mittelgräte leicht lösen lässt.
+5. Speck und {150 g} Nordseekrabben in der Pfanne nur kurz erwärmen. Die Krabben sollen nicht braten, sonst werden sie zäh. Über die Schollen verteilen.
+6. Die Petersilie hacken. Die Kartoffeln abgießen, in {2 EL} Butter schwenken und mit Petersilie bestreuen. Mit der Scholle und Zitronenspalten servieren.
+
+Tipp: Am besten schmeckt das Gericht im Mai und Juni, wenn die Maischollen besonders zart sind.
 
 Guten Appetit!', 'finkenwerder-scholle.jpg');
 
@@ -995,12 +1080,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Finkenwerder Scholle'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Forelle Müllerin Art
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Forelle Müllerin Art', 30, 4, 'Portionen', 'Frühling', '1. Küchenfertige Forellen innen und außen waschen und trocken tupfen. Innen und außen salzen, pfeffern und mit Zitronensaft beträufeln.
-2. In Mehl wenden und überschüssiges Mehl abklopfen.
-3. {50 g} Butter in einer großen Pfanne erhitzen und die Forellen pro Seite 5–6 Minuten braten.
-4. Fische warm stellen. Restliche Butter in die Pfanne geben, aufschäumen lassen und gehackte Petersilie sowie etwas Zitronensaft zugeben.
-5. Forellen mit der Petersilienbutter beträufeln und mit Zitronenspalten servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Forelle Müllerin Art', 'Ganze Forelle in Butter gebraten, mit Petersilie und Zitrone: einfach, klassisch und unschlagbar.', 30, 4, 'Portionen', 'Frühling', '1. {4} küchenfertige Forellen innen und außen kalt abspülen und gründlich trocken tupfen. Eine Zitrone auspressen, die andere in Spalten schneiden. Die Fische innen und außen salzen, pfeffern und mit etwas Zitronensaft beträufeln.
+2. Die Forellen in {4 EL} Mehl wenden und überschüssiges Mehl gut abklopfen. Die dünne Mehlschicht sorgt für eine goldene, leicht knusprige Haut.
+3. {50 g} Butter in einer großen Pfanne bei mittlerer Hitze schmelzen, bis sie schäumt. Die Forellen hineinlegen, bei Bedarf in zwei Pfannen, und pro Seite 5–6 Minuten braten. Erst wenden, wenn die Haut goldbraun ist. Die Forelle ist gar, wenn sich die Rückenflosse leicht herausziehen lässt.
+4. Die Fische auf vorgewärmte Teller legen und im Ofen bei 80 °C warm halten. Die Petersilie fein hacken.
+5. Die restliche Butter in die Pfanne geben und aufschäumen lassen, bis sie leicht nussig duftet. Petersilie und einen Schuss Zitronensaft zugeben und kurz durchschwenken.
+6. Die Forellen mit der Petersilienbutter beträufeln und mit Zitronenspalten servieren.
+
+Tipp: Dazu gehören Salzkartoffeln und ein grüner Salat.
 
 Guten Appetit!', 'forelle-muellerin-art.jpg');
 
@@ -1013,12 +1101,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Forelle Müllerin Art'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Graved Lachs mit Honig-Senf-Soße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Graved Lachs mit Honig-Senf-Soße', 2900, 6, 'Portionen', 'Frühling', '1. Lachs (mit Haut, entgrätet) waschen und trocken tupfen. Salz, Zucker und grob zerstoßenen Pfeffer mischen.
-2. Die Hälfte des gehackten Dills in eine Form streuen, den Lachs mit der Hautseite nach unten darauflegen, mit der Salz-Zucker-Mischung einreiben und mit dem restlichen Dill bis auf {2 EL} bedecken.
-3. Mit Frischhaltefolie abdecken, mit einem Brett beschweren und 48 Stunden im Kühlschrank beizen. Dabei zweimal wenden.
-4. Für die Soße Senf, Honig und Essig verrühren, das Öl langsam unterschlagen und den restlichen Dill unterrühren.
-5. Beize abstreifen und den Lachs schräg in hauchdünne Scheiben schneiden. Mit der Soße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Graved Lachs mit Honig-Senf-Soße', 'Skandinavisch gebeizter Lachs mit Dill und süßem Senf: Er braucht etwas Geduld, aber kaum Arbeit.', 2900, 6, 'Portionen', 'Frühling', '1. {800 g} Lachsfilet mit Haut kaufen und mit den Fingern prüfen, ob noch Gräten darin stecken. Diese mit einer Pinzette ziehen. Den Lachs kalt abspülen und trocken tupfen.
+2. {1 TL} Pfefferkörner im Mörser grob zerstoßen und mit {50 g} Salz und {50 g} Zucker mischen. Den Dill fein hacken und {2 EL} davon für die Soße beiseitestellen.
+3. Die Hälfte des übrigen Dills in eine Form streuen, die knapp größer ist als der Lachs. Den Lachs mit der Hautseite nach unten darauflegen, die Fleischseite gleichmäßig mit der Salz-Zucker-Mischung einreiben und mit dem restlichen Dill bedecken.
+4. Mit Frischhaltefolie abdecken, mit einem Brettchen und ein paar Konservendosen beschweren und 48 Stunden im Kühlschrank beizen. Dabei zweimal wenden und mit der entstandenen Lake begießen.
+5. Für die Soße {3 EL} Senf, {2 EL} Honig und {1 EL} Weißweinessig verrühren. {4 EL} Rapsöl langsam unterschlagen, bis die Soße cremig wird, dann den beiseitegestellten Dill unterrühren.
+6. Die Beize mit einem Messerrücken vom Lachs abstreifen. Den Lachs mit einem langen, scharfen Messer schräg in hauchdünne Scheiben von der Haut schneiden und mit der Honig-Senf-Soße servieren.
+
+Tipp: Nur sehr frischen Fisch verwenden, am besten in Sushi-Qualität. Gut eingewickelt hält sich der fertige Lachs im Kühlschrank 4–5 Tage.
 
 Guten Appetit!', 'graved-lachs-mit-honig-senf-sosse.jpg');
 
@@ -1033,11 +1124,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Graved Lachs mit Honig-Senf-Soße'), (SELECT id FROM ingredients WHERE name = 'Rapsöl'), 4, 'EL');
 
 -- Eiersalat mit Schnittlauch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Eiersalat mit Schnittlauch', 25, 4, 'Portionen', 'Frühling', '1. Eier 10 Minuten hart kochen, kalt abschrecken, pellen und abkühlen lassen.
-2. Eier würfeln, Gewürzgurken fein würfeln und Schnittlauch in Röllchen schneiden.
-3. Mayonnaise, Joghurt und Senf verrühren und mit Salz, Pfeffer und Paprika würzen.
-4. Eier, Gurken und Schnittlauch vorsichtig unterheben und 10 Minuten durchziehen lassen. Passt aufs Brot oder zu Blattsalat.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Eiersalat mit Schnittlauch', 'Cremig, aber nicht schwer: Eiersalat mit Joghurt, knackigen Gewürzgurken und viel Schnittlauch.', 25, 4, 'Portionen', 'Frühling', '1. {8} Eier in kochendes Wasser legen und 10 Minuten hart kochen. Sofort in kaltem Wasser abschrecken, damit sich kein grauer Rand um das Eigelb bildet. Pellen und vollständig abkühlen lassen.
+2. Die Eier mit einem Messer oder Eierschneider in kleine Würfel schneiden. {2} Gewürzgurken fein würfeln und den Schnittlauch in feine Röllchen schneiden.
+3. {3 EL} Mayonnaise, {100 g} Joghurt und {1 TL} Senf glatt rühren und mit Salz, Pfeffer und einer Prise Paprikapulver würzen. Der Joghurt macht den Salat leichter und frischer als reine Mayonnaise.
+4. Eier, Gurken und Schnittlauch mit einem Teigschaber vorsichtig unterheben, damit die Eigelbe nicht zerdrückt werden.
+5. Abgedeckt mindestens 10 Minuten im Kühlschrank durchziehen lassen und noch einmal abschmecken. Passt aufs Brot, zu Blattsalat oder einfach so.
+
+Tipp: Ein Schuss Gurkenwasser aus dem Glas macht das Dressing würziger.
 
 Guten Appetit!', 'eiersalat-mit-schnittlauch.jpg');
 
@@ -1052,11 +1146,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Eiersalat mit Schnittlauch'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Gefüllte Eier
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Eier', 25, 4, 'Portionen', 'Frühling', '1. Eier 10 Minuten hart kochen, abschrecken, pellen und längs halbieren.
-2. Eigelbe herauslösen und mit Mayonnaise, Senf, Salz und Pfeffer cremig rühren.
-3. Creme in einen Spritzbeutel mit Sterntülle füllen und in die Eiweißhälften spritzen.
-4. Mit Paprikapulver bestäuben und mit Kresse garnieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gefüllte Eier', 'Der Partyklassiker: halbe Eier mit cremiger Senffüllung, Paprika und frischer Kresse.', 25, 4, 'Portionen', 'Frühling', '1. {8} Eier 10 Minuten hart kochen, kalt abschrecken und pellen. Ganz frische Eier lassen sich schwer pellen, ein paar Tage alte gehen leichter.
+2. Die Eier längs halbieren. Die Eigelbe vorsichtig mit einem Teelöffel herauslösen und in eine Schüssel geben, die Eiweißhälften auf eine Platte legen.
+3. Die Eigelbe mit einer Gabel fein zerdrücken. {2 EL} Mayonnaise und {1 TL} Senf zugeben und alles glatt und cremig rühren. Mit Salz und Pfeffer abschmecken.
+4. Die Creme in einen Spritzbeutel mit Sterntülle füllen und in die Eiweißhälften spritzen. Ohne Spritzbeutel geht es auch mit zwei Teelöffeln.
+5. Mit Paprikapulver bestäuben, die Kresse abschneiden und darüberstreuen. Bis zum Servieren kühl stellen.
+
+Tipp: Für eine feurige Variante eine Prise Cayennepfeffer in die Creme rühren.
 
 Guten Appetit!', 'gefuellte-eier.jpg');
 
@@ -1069,12 +1166,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gefüllte Eier'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Hefezopf
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hefezopf', 150, 1, 'Zopf', 'Frühling', '1. Milch lauwarm erwärmen und Hefe mit {1 TL} Zucker darin auflösen.
-2. Mehl, restlichen Zucker, Salz und Zitronenabrieb mischen. Hefemilch, weiche Butter und {1} Ei zugeben und 8–10 Minuten zu einem glatten Teig kneten.
-3. Zugedeckt an einem warmen Ort ca. 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
-4. Pro Zopf drei Teigstränge formen, zu einem Zopf flechten und auf ein Backblech legen. Weitere 30 Minuten gehen lassen. Ofen auf 180 °C vorheizen.
-5. Zopf mit dem restlichen, verquirlten Ei bestreichen, mit gehobelten Mandeln bestreuen und ca. 30 Minuten goldbraun backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hefezopf', 'Fluffig, leicht süß und goldglänzend: Hefezopf für den Sonntagsfrühstückstisch und das Osterfest.', 150, 1, 'Zopf', 'Frühling', '1. {250 ml} Milch in einem Topf lauwarm erwärmen. Sie darf höchstens handwarm sein, sonst stirbt die Hefe. Die Hefe hineinbröckeln und mit {1 TL} Zucker verrühren, bis sie sich aufgelöst hat. 5 Minuten stehen lassen.
+2. {500 g} Mehl, den restlichen Zucker, eine Prise Salz und die abgeriebene Schale der Zitrone in einer großen Schüssel mischen. Die Hefemilch, {80 g} weiche Butter und {1} Ei zugeben.
+3. Alles mit den Knethaken oder den Händen 8–10 Minuten zu einem glatten, geschmeidigen Teig kneten, der sich vom Schüsselrand löst. Zugedeckt an einem warmen Ort etwa 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
+4. Den Teig auf der leicht bemehlten Arbeitsfläche kurz durchkneten. Pro Zopf drei gleich große Stücke abteilen und jedes zu einem etwa 40 cm langen Strang rollen. Die Stränge oben zusammendrücken, locker zu einem Zopf flechten und die Enden unterschlagen.
+5. Auf ein mit Backpapier belegtes Blech legen und zugedeckt weitere 30 Minuten gehen lassen. Inzwischen den Ofen auf 180 °C Ober-/Unterhitze vorheizen.
+6. Das restliche Ei verquirlen, den Zopf damit bestreichen und mit {2 EL} gehobelten Mandeln bestreuen. Etwa 30 Minuten goldbraun backen. Klingt er beim Klopfen auf die Unterseite hohl, ist er fertig. Auf einem Gitter abkühlen lassen.
+
+Tipp: Frisch schmeckt er mit Butter und Marmelade, am nächsten Tag getoastet.
 
 Guten Appetit!', 'hefezopf.jpg');
 
@@ -1089,13 +1189,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hefezopf'), (SELECT id FROM ingredients WHERE name = 'Mandeln'), 2, 'EL');
 
 -- Aargauer Rüblitorte
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Aargauer Rüblitorte', 90, 1, 'Springform (26 cm)', 'Frühling', '1. Ofen auf 180 °C vorheizen und eine Springform einfetten. Karotten schälen und fein raspeln.
-2. Eier trennen. Eigelbe mit Zucker, Zitronenabrieb und Kirschwasser cremig schlagen.
-3. Mandeln, Stärke, Backpulver und Zimt mischen und mit den Karotten unter die Eigelbmasse rühren.
-4. Eiweiße mit einer Prise Salz steif schlagen und vorsichtig unterheben.
-5. Teig in die Form füllen, ca. 50 Minuten backen und auskühlen lassen.
-6. Puderzucker mit {2-3 EL} Zitronensaft zu einem dicken Guss rühren und die Torte damit glasieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Aargauer Rüblitorte', 'Die saftige Karottentorte aus der Schweiz: ganz ohne Mehl, mit viel Mandeln und einem Zitronenguss.', 90, 1, 'Springform (26 cm)', 'Frühling', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Eine Springform (26 cm) fetten und den Boden mit Backpapier auslegen. {300 g} Karotten schälen und auf der feinen Seite der Reibe raspeln.
+2. {5} Eier trennen. Die Zitrone heiß waschen, die Schale abreiben und den Saft auspressen.
+3. Die Eigelbe mit {200 g} Zucker, dem Zitronenabrieb und {1 EL} Kirschwasser mit dem Handrührgerät etwa 5 Minuten hell und cremig schlagen.
+4. {300 g} gemahlene Mandeln, {50 g} Speisestärke, {1 TL} Backpulver und {1 TL} Zimt mischen und zusammen mit den Karotten unter die Eigelbmasse rühren.
+5. Die Eiweiße mit einer Prise Salz in einer fettfreien Schüssel steif schlagen. Erst ein Drittel unter den Teig rühren, um ihn zu lockern, dann den Rest vorsichtig unterheben.
+6. Den Teig in die Form füllen und etwa 50 Minuten backen. Wird die Oberfläche zu dunkel, nach 30 Minuten mit Alufolie abdecken. Stäbchenprobe machen, die Torte 10 Minuten in der Form abkühlen lassen, dann herauslösen und ganz auskühlen lassen.
+7. {150 g} Puderzucker mit {2-3 EL} Zitronensaft zu einem dicken, glatten Guss rühren und auf der Torte verstreichen. Fest werden lassen.
+
+Tipp: Am zweiten Tag schmeckt die Torte am besten, wenn sie gut durchgezogen ist. Traditionell wird sie mit kleinen Marzipan-Rüebli verziert.
 
 Guten Appetit!', 'aargauer-rueblitorte.jpg');
 
@@ -1112,10 +1215,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Aargauer Rüblitorte'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 150, 'g');
 
 -- Honig-Karotten aus dem Ofen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Honig-Karotten aus dem Ofen', 35, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Junge Karotten schälen und das Grün bis auf 1 cm abschneiden. Dicke Karotten längs halbieren.
-2. Öl, Honig, Thymianblättchen, Salz und Pfeffer verrühren und die Karotten darin wenden.
-3. Auf einem Backblech verteilen und ca. 25 Minuten rösten, bis sie weich und leicht karamellisiert sind. Zwischendurch einmal wenden.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Honig-Karotten aus dem Ofen', 'Süß, würzig und leicht karamellisiert: junge Karotten aus dem Ofen mit Honig und Thymian.', 35, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen und ein Backblech mit Backpapier auslegen.
+2. {800 g} junge Karotten schälen oder nur gründlich abbürsten und das Grün bis auf 1 cm abschneiden. Dicke Karotten längs halbieren, damit alle gleichzeitig gar werden.
+3. Die Blättchen von {4} Thymianzweigen abzupfen. {2 EL} Olivenöl, {2 EL} Honig, Thymian, Salz und Pfeffer in einer großen Schüssel verrühren und die Karotten darin wenden, bis sie rundum überzogen sind.
+4. Die Karotten nebeneinander auf dem Blech verteilen und etwa 25 Minuten rösten, bis sie weich sind und an den Rändern karamellisieren. Nach der Hälfte der Zeit einmal wenden.
+5. Mit dem Honig vom Blech beträufeln und noch warm servieren.
+
+Tipp: Bunte Karotten in Gelb, Lila und Orange machen aus der Beilage einen echten Hingucker.
 
 Guten Appetit!', 'honig-karotten-aus-dem-ofen.jpg');
 
@@ -1127,12 +1234,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Honig-Karotten aus dem Ofen'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Sauerampfersuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Sauerampfersuppe', 30, 4, 'Portionen', 'Frühling', '1. Schalotten und Kartoffeln schälen und würfeln.
-2. In Butter andünsten, mit Brühe auffüllen und 15 Minuten köcheln lassen.
-3. Sauerampfer waschen, grobe Stiele entfernen und die Blätter grob schneiden.
-4. Sauerampfer und Sahne in die Suppe geben, kurz aufkochen und fein pürieren.
-5. Mit Salz, Pfeffer und Muskat abschmecken. Dazu passt frisches Brot.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Sauerampfersuppe', 'Frisch und angenehm säuerlich: eine fast vergessene Frühlingssuppe aus wilden Blättern.', 30, 4, 'Portionen', 'Frühling', '1. {2} Schalotten und {300 g} Kartoffeln schälen und in kleine Würfel schneiden.
+2. {2 EL} Butter in einem Topf bei mittlerer Hitze schmelzen. Schalotten und Kartoffeln darin 3 Minuten andünsten, ohne dass sie braun werden.
+3. Mit {800 ml} Gemüsebrühe auffüllen, aufkochen und zugedeckt etwa 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Inzwischen {150 g} Sauerampfer waschen, grobe Stiele entfernen und die Blätter grob schneiden. Ein paar Blätter in feine Streifen schneiden und zum Garnieren beiseitelegen.
+5. Den Sauerampfer und {150 ml} Sahne in die Suppe geben, einmal kurz aufkochen und sofort fein pürieren. Sauerampfer verliert beim Kochen schnell seine grüne Farbe, deshalb nur kurz erhitzen.
+6. Mit Salz, Pfeffer und Muskatnuss abschmecken und mit den Sauerampferstreifen bestreuen. Dazu passt frisches Brot.
+
+Tipp: Sauerampfer wächst im Frühjahr auf fast jeder Wiese. Junge Blätter vor der Blüte schmecken am mildesten.
 
 Guten Appetit!', 'sauerampfersuppe.jpg');
 
@@ -1147,12 +1257,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Sauerampfersuppe'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Brennnesselsuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Brennnesselsuppe', 35, 4, 'Portionen', 'Frühling', '1. Junge Brennnesselspitzen mit Handschuhen pflücken, waschen und abtropfen lassen.
-2. Zwiebel, Knoblauch und Kartoffeln schälen, würfeln und in Öl andünsten.
-3. Mit Brühe aufgießen und 15 Minuten köcheln lassen.
-4. Brennnesseln zugeben und 5 Minuten mitkochen – danach brennen sie nicht mehr.
-5. Sojasahne zugeben, fein pürieren und mit Salz, Pfeffer und Muskat abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Brennnesselsuppe', 'Wildkräuterküche zum Selbersammeln: Junge Brennnesseln schmecken mild, ein bisschen wie Spinat.', 35, 4, 'Portionen', 'Frühling', '1. {200 g} junge Brennnesselspitzen, also die obersten vier bis sechs Blätter, mit Handschuhen pflücken. In einer Schüssel mit kaltem Wasser waschen und in einem Sieb abtropfen lassen. Die Handschuhe dabei anbehalten.
+2. Zwiebel, Knoblauch und {300 g} Kartoffeln schälen und würfeln. {2 EL} Rapsöl in einem Topf erhitzen und alles darin 3 Minuten andünsten.
+3. Mit {1000 ml} Gemüsebrühe aufgießen, aufkochen und zugedeckt 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Die Brennnesseln zugeben und 5 Minuten mitkochen. Danach brennen sie nicht mehr.
+5. {100 ml} Sojasahne zugeben und die Suppe mit dem Stabmixer fein pürieren. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+
+Tipp: Am besten abseits von Straßen und Hundewegen sammeln, und nur bis zur Blüte im Frühsommer.
 
 Guten Appetit!', 'brennnesselsuppe.jpg');
 
@@ -1168,12 +1280,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Brennnesselsuppe'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Hollerküchle (gebackene Holunderblüten)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hollerküchle (gebackene Holunderblüten)', 30, 4, 'Portionen', 'Frühling', '1. Holunderblüten gut ausschütteln, aber nicht waschen, damit das Aroma erhalten bleibt.
-2. Mehl, Milch, Eier, Zucker und Salz zu einem dickflüssigen Pfannkuchenteig verrühren.
-3. Öl in einem Topf auf ca. 170 °C erhitzen.
-4. Blütendolden am Stiel fassen, in den Teig tauchen, abtropfen lassen und im Öl goldgelb ausbacken.
-5. Auf Küchenpapier abtropfen lassen, dicke Stiele abschneiden und mit Puderzucker und Zimt bestäuben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hollerküchle (gebackene Holunderblüten)', 'Holunderblüten in Pfannkuchenteig, knusprig ausgebacken: ein duftender Schatz, den es nur ein paar Wochen im Jahr gibt.', 30, 4, 'Portionen', 'Frühling', '1. {12} Holunderblütendolden kurz kräftig ausschütteln, um kleine Insekten zu entfernen. Nicht waschen, sonst gehen der Blütenstaub und damit das Aroma verloren.
+2. {150 g} Mehl, {200 ml} Milch, {2} Eier, {1 EL} Zucker und eine Prise Salz mit dem Schneebesen zu einem glatten, dickflüssigen Teig verrühren, etwa wie Pfannkuchenteig. 10 Minuten quellen lassen.
+3. {1000 ml} Rapsöl in einem hohen Topf auf etwa 170 °C erhitzen. Das Öl hat die richtige Temperatur, wenn an einem hineingehaltenen Holzlöffelstiel kleine Bläschen aufsteigen.
+4. Die Dolden am Stiel fassen, in den Teig tauchen, kurz abtropfen lassen und mit den Blüten nach unten ins heiße Öl legen. In 1–2 Minuten goldgelb ausbacken, dabei einmal wenden. Nicht zu viele auf einmal backen, sonst kühlt das Öl ab.
+5. Auf Küchenpapier abtropfen lassen und die dicken Stiele abschneiden. {2 EL} Puderzucker mit {1 TL} Zimt mischen und darüberstäuben. Noch warm servieren.
+
+Tipp: Die Dolden am besten an einem sonnigen Vormittag pflücken, dann duften sie am stärksten.
 
 Guten Appetit!', 'hollerkuechle-gebackene-holunderblueten.jpg');
 
@@ -1188,12 +1302,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hollerküchle (gebackene Holunderblüten)'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 1, 'TL');
 
 -- Holunderblütensirup
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Holunderblütensirup', 2910, 3, 'Flaschen (à 0,5 l)', 'Frühling', '1. {1 Liter} Wasser mit dem Zucker aufkochen, bis sich der Zucker gelöst hat, und abkühlen lassen.
-2. Holunderblüten ausschütteln und grobe Stiele entfernen. Zitronen in Scheiben schneiden.
-3. Blüten und Zitronenscheiben in ein großes Gefäß geben und mit dem abgekühlten Zuckersirup übergießen.
-4. Abgedeckt 2 Tage an einem kühlen Ort ziehen lassen und täglich umrühren.
-5. Durch ein mit einem Tuch ausgelegtes Sieb abseihen, nochmals aufkochen und heiß in sterile Flaschen füllen. Mit Wasser oder Sekt verdünnt genießen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Holunderblütensirup', 'Der Duft des Frühsommers in Flaschen: Holunderblütensirup für Schorle, Limonade und Hugo.', 2910, 3, 'Flaschen (à 0,5 l)', 'Frühling', '1. {1000 ml} Wasser mit {1000 g} Zucker in einem Topf aufkochen und rühren, bis sich der Zucker vollständig gelöst hat. Den Sirup ganz abkühlen lassen, heiß würde er die feinen Blüten kochen.
+2. {20} Holunderblütendolden ausschütteln, nicht waschen, und grobe Stiele abschneiden. {2} Zitronen heiß waschen und in Scheiben schneiden.
+3. Blüten und Zitronenscheiben in ein großes Glas- oder Porzellangefäß geben und mit dem abgekühlten Zuckersirup übergießen. Die Blüten sollen vollständig bedeckt sein.
+4. Abgedeckt 2 Tage an einem kühlen Ort ziehen lassen und einmal täglich umrühren.
+5. Ein Sieb mit einem sauberen Geschirrtuch auslegen, den Sirup hindurchgießen und die Blüten gut ausdrücken. Den Sirup noch einmal aufkochen.
+6. Heiß in sterilisierte Flaschen füllen und sofort verschließen. Kühl und dunkel gelagert hält er mindestens ein halbes Jahr, geöffnet im Kühlschrank einige Wochen.
+
+Tipp: Zum Sterilisieren die Flaschen 10 Minuten in kochendes Wasser legen. Den Sirup etwa 1 zu 8 mit Wasser verdünnen.
 
 Zum Wohl!', 'holunderbluetensirup.jpg');
 
@@ -1202,12 +1319,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Holunderblütensirup'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 2, NULL);
 
 -- Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)', 30, 4, 'Portionen', 'Frühling', '1. Frühlingszwiebeln waschen und in 6–8 cm lange Stücke schneiden, dicke Stücke längs halbieren.
-2. Mehl, Stärke, Ei, Salz und {250 ml} eiskaltes Wasser zu einem glatten, flüssigen Teig verrühren.
-3. {2 EL} Öl in einer Pfanne erhitzen, die Hälfte der Frühlingszwiebeln hineinlegen und mit der Hälfte des Teigs übergießen.
-4. Bei mittlerer Hitze 4 Minuten braten, wenden und weitere 3–4 Minuten knusprig braten. Mit dem Rest ebenso verfahren.
-5. Für den Dip Sojasauce, Reisessig, Sesam und Chiliflocken verrühren. Pfannkuchen in Stücke schneiden und mit dem Dip servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)', 'Knusprige Pfannkuchen voller Frühlingszwiebeln mit einem würzigen Soja-Dip: Koreas liebster Snack für Regentage.', 30, 4, 'Portionen', 'Frühling', '1. {2 Bund} Frühlingszwiebeln waschen, die Wurzelenden abschneiden und die Stangen in 6–8 cm lange Stücke schneiden. Dicke weiße Teile längs halbieren, damit alles gleichmäßig gart.
+2. {200 g} Mehl, {2 EL} Speisestärke, {1} Ei, eine Prise Salz und {250 ml} eiskaltes Wasser mit dem Schneebesen zu einem glatten, eher flüssigen Teig verrühren. Das kalte Wasser macht die Pfannkuchen besonders knusprig. Nur so lange rühren, bis keine Klümpchen mehr da sind.
+3. Für den Dip {3 EL} Sojasauce, {1 EL} Reisessig, {1 TL} Sesam und eine Prise Chiliflocken verrühren.
+4. Etwas Rapsöl in einer großen beschichteten Pfanne bei mittlerer bis hoher Hitze erhitzen. Einen Teil der Frühlingszwiebeln nebeneinander hineinlegen und so viel Teig darübergießen, dass alle Zwiebeln bedeckt sind.
+5. 4 Minuten braten, bis die Unterseite goldbraun und knusprig ist. Mit einem großen Pfannenwender oder mithilfe eines Tellers wenden und weitere 3–4 Minuten braten, dabei leicht flach drücken. Mit dem restlichen Öl, den übrigen Zwiebeln und dem übrigen Teig weitere Pfannkuchen backen.
+6. Die Pfannkuchen in Stücke schneiden und heiß mit dem Dip servieren.
+
+Tipp: In Korea isst man Pajeon gern an Regentagen, angeblich weil das Brutzeln in der Pfanne wie Regen klingt.
 
 Guten Appetit!', 'koreanische-fruehlingszwiebel-pfannkuchen-pajeon.jpg');
 
@@ -1223,12 +1343,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)'), (SELECT id FROM ingredients WHERE name = 'Chiliflocken'), 1, 'Prise');
 
 -- Pasta Primavera
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pasta Primavera', 25, 4, 'Portionen', 'Frühling', '1. Penne in Salzwasser bissfest kochen.
-2. Spargel putzen und schräg in Stücke schneiden, Zucchini würfeln, Zuckerschoten halbieren und Frühlingszwiebeln in Ringe schneiden.
-3. Öl in einer großen Pfanne erhitzen und Knoblauch mit dem Spargel 3 Minuten braten. Zucchini und Zuckerschoten zugeben und 3 Minuten mitbraten.
-4. Erbsen und Frühlingszwiebeln zugeben und 2 Minuten mitgaren.
-5. Nudeln mit etwas Nudelwasser zum Gemüse geben, mit Zitronenabrieb, Zitronensaft, Salz und Pfeffer abschmecken und mit Basilikum servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pasta Primavera', 'Ein Frühlingsgarten auf dem Teller: Penne mit knackigem grünem Gemüse, Zitrone und Basilikum.', 25, 4, 'Portionen', 'Frühling', '1. Reichlich Salzwasser aufkochen und {400 g} Penne darin nach Packungsangabe bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. Inzwischen das Gemüse vorbereiten: {250 g} Spargel waschen, die holzigen Enden abschneiden und schräg in 3 cm lange Stücke schneiden. Die Zucchini längs vierteln und in Scheiben schneiden. {150 g} Zuckerschoten schräg halbieren. {3} Frühlingszwiebeln in Ringe schneiden und {2} Knoblauchzehen fein hacken.
+3. {4 EL} Olivenöl in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen. Knoblauch und Spargel darin 3 Minuten braten. Zucchini und Zuckerschoten zugeben und weitere 3 Minuten braten, bis das Gemüse leicht Farbe nimmt, aber noch Biss hat.
+4. {150 g} Erbsen und die Frühlingszwiebeln zugeben und 2 Minuten mitgaren.
+5. Die Zitrone heiß waschen, die Schale abreiben und den Saft auspressen. Die abgetropften Nudeln mit einem Schuss Nudelwasser zum Gemüse geben und gut durchschwenken. Mit Zitronenabrieb, Zitronensaft, Salz und Pfeffer abschmecken.
+6. Die Basilikumblätter grob zupfen, darüberstreuen und sofort servieren.
+
+Tipp: Frisch geriebener Hartkäse oder ein paar Löffel Ricotta machen die Pasta noch cremiger.
 
 Guten Appetit!', 'pasta-primavera.jpg');
 
@@ -1246,12 +1369,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pasta Primavera'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spinat-Feta-Börek
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spinat-Feta-Börek', 60, 6, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Zwiebel würfeln und in {1 EL} Öl andünsten, Spinat zugeben und zusammenfallen lassen. Gut ausdrücken und abkühlen lassen.
-2. Spinat mit zerbröseltem Feta, Salz und Pfeffer mischen.
-3. {1} Ei mit Joghurt, Milch und dem restlichen Öl verquirlen.
-4. Yufkablätter einzeln mit der Joghurtmischung bestreichen, die Füllung darauf verteilen, aufrollen und schneckenförmig in eine gefettete Form legen.
-5. Mit dem restlichen, verquirlten Ei bestreichen, mit Sesam bestreuen und ca. 35 Minuten goldbraun backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spinat-Feta-Börek', 'Knusprige Teigschnecke mit würziger Spinat-Feta-Füllung, wie vom türkischen Lieblingsbäcker.', 60, 6, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen und eine runde Auflaufform oder Springform (etwa 28 cm) fetten.
+2. Die Zwiebel schälen und fein würfeln. {1 EL} Olivenöl in einer großen Pfanne erhitzen und die Zwiebel darin glasig dünsten. {500 g} Spinat zugeben und unter Wenden zusammenfallen lassen. In ein Sieb geben, gut ausdrücken und abkühlen lassen. Überschüssige Flüssigkeit würde den Teig durchweichen.
+3. Den Spinat grob hacken und mit {200 g} zerbröseltem Feta mischen. Mit Pfeffer und nur wenig Salz würzen, der Feta ist schon salzig.
+4. {1} Ei mit {150 g} Joghurt, {100 ml} Milch und dem restlichen Olivenöl verquirlen.
+5. Ein Yufkablatt ausbreiten und dünn mit der Joghurtmischung bestreichen. Einen Streifen Füllung an die lange Seite legen, locker aufrollen und die Rolle schneckenförmig in die Form legen. Mit den übrigen Blättern genauso verfahren und die Rollen jeweils außen ansetzen, bis die Form gefüllt ist. Die restliche Joghurtmischung darübergießen.
+6. Das zweite Ei verquirlen, die Oberfläche damit bestreichen und mit {1 EL} Sesam bestreuen. Etwa 35 Minuten backen, bis der Börek goldbraun und knusprig ist. Kurz abkühlen lassen und in Stücke schneiden.
+
+Tipp: Schmeckt warm wie kalt und ist ideal fürs Picknick. Dazu passt ein Glas Ayran.
 
 Guten Appetit!', 'spinat-feta-boerek.jpg');
 
@@ -1268,12 +1394,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spinat-Feta-Börek'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Zitronen-Hähnchen mit Frühlingsgemüse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zitronen-Hähnchen mit Frühlingsgemüse', 50, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Kleine Kartoffeln halbieren, Karotten schälen und in Stücke schneiden.
-2. Abrieb und Saft von {1} Zitrone, Öl, gepressten Knoblauch, Salz und Pfeffer verrühren.
-3. Hähnchenschenkel und Gemüse auf einem Blech mit der Marinade vermengen, Thymian und Scheiben der restlichen Zitrone dazulegen.
-4. Ca. 40 Minuten backen, bis die Haut knusprig ist.
-5. Nach 30 Minuten Erbsen und Frühlingszwiebelstücke zugeben und mitgaren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zitronen-Hähnchen mit Frühlingsgemüse', 'Knusprige Hähnchenschenkel und Gemüse vom Blech, mit viel Zitrone, Knoblauch und Thymian.', 50, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {600 g} kleine Kartoffeln waschen und halbieren. {4} Karotten schälen und in 3 cm lange Stücke schneiden.
+2. {1} Zitrone heiß waschen, die Schale abreiben und den Saft auspressen. {4} Knoblauchzehen schälen und pressen. Zitronenabrieb und -saft, {4 EL} Olivenöl, Knoblauch, Salz und Pfeffer zu einer Marinade verrühren.
+3. {4} Hähnchenschenkel trocken tupfen und mit Kartoffeln und Karotten auf einem tiefen Backblech mit der Marinade vermengen. Die Schenkel mit der Hautseite nach oben obenauf legen, damit die Haut knusprig wird. Die zweite Zitrone in Scheiben schneiden und mit dem Thymian dazwischenlegen.
+4. Im Ofen etwa 30 Minuten backen.
+5. Inzwischen die Frühlingszwiebeln in 3 cm lange Stücke schneiden. Mit {150 g} Erbsen auf dem Blech verteilen und weitere 10 Minuten backen, bis die Haut goldbraun und knusprig ist und beim Einstechen an der dicksten Stelle klarer Saft austritt.
+6. Mit dem Bratensaft vom Blech beträufeln und servieren.
+
+Tipp: Für extra knusprige Haut in den letzten 3 Minuten den Ofengrill einschalten.
 
 Guten Appetit!', 'zitronen-haehnchen-mit-fruehlingsgemuese.jpg');
 
@@ -1290,12 +1419,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zitronen-Hähnchen mit Frühlingsgemüse'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Kerbelsuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kerbelsuppe', 30, 4, 'Portionen', 'Frühling', '1. Schalotten und Kartoffeln schälen, würfeln und in Butter andünsten.
-2. Mit Brühe auffüllen und ca. 15 Minuten köcheln lassen.
-3. Kerbel waschen und grobe Stiele entfernen. Einige Blättchen zum Garnieren beiseitelegen.
-4. Kerbel und Sahne in die Suppe geben und sofort fein pürieren.
-5. Mit Salz, Pfeffer und Muskat abschmecken und mit Kerbelblättchen servieren. Traditionell gibt es sie am Gründonnerstag.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kerbelsuppe', 'Zartgrün, fein und mit leichtem Anisduft: die traditionelle Suppe zum Gründonnerstag.', 30, 4, 'Portionen', 'Frühling', '1. {2} Schalotten und {250 g} Kartoffeln schälen und in kleine Würfel schneiden.
+2. {2 EL} Butter in einem Topf bei mittlerer Hitze schmelzen und Schalotten und Kartoffeln darin 3 Minuten andünsten, ohne dass sie Farbe nehmen.
+3. Mit {800 ml} Gemüsebrühe auffüllen, aufkochen und zugedeckt etwa 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Inzwischen {2 Bund} Kerbel waschen, trocken schütteln und grobe Stiele entfernen. Ein paar schöne Blättchen zum Garnieren beiseitelegen.
+5. Den Topf vom Herd nehmen. Kerbel und {100 ml} Sahne zugeben und sofort fein pürieren. Kerbel ist sehr zart, Hitze nimmt ihm schnell Farbe und Aroma.
+6. Mit Salz, Pfeffer und Muskatnuss abschmecken und mit den Kerbelblättchen servieren.
+
+Tipp: Gekaufter Kerbel welkt schnell. In ein feuchtes Küchentuch gewickelt hält er sich im Kühlschrank ein bis zwei Tage.
 
 Guten Appetit!', 'kerbelsuppe.jpg');
 
@@ -1310,11 +1442,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kerbelsuppe'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Omas Kopfsalat mit Sahnedressing
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Omas Kopfsalat mit Sahnedressing', 10, 4, 'Portionen', 'Frühling', '1. Kopfsalat in einzelne Blätter teilen, waschen und trocken schleudern. Große Blätter zerpflücken.
-2. Sahne mit Zitronensaft, Zucker und Salz verrühren, bis sie leicht andickt.
-3. Schnittlauch und Dill fein schneiden und unterrühren.
-4. Dressing erst kurz vor dem Servieren über den Salat geben und vorsichtig mischen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Omas Kopfsalat mit Sahnedressing', 'Zarte Salatblätter in einem süß-säuerlichen Sahnedressing: So schmeckte der Sommer bei Oma.', 10, 4, 'Portionen', 'Frühling', '1. Den Kopfsalat in einzelne Blätter teilen und die äußeren welken Blätter entfernen. Die Blätter in reichlich kaltem Wasser waschen und in einer Salatschleuder gründlich trocken schleudern. Nasse Blätter verwässern das Dressing.
+2. Große Blätter mit den Händen in mundgerechte Stücke zupfen. Nicht schneiden, sonst werden die Schnittkanten schnell braun.
+3. {100 ml} Sahne mit dem Saft der halben Zitrone, {1 TL} Zucker und einer Prise Salz verrühren. Die Säure lässt die Sahne nach kurzer Zeit leicht andicken.
+4. Den Schnittlauch in feine Röllchen schneiden, den Dill fein hacken und beides unter das Dressing rühren. Abschmecken: Es soll deutlich süß-säuerlich sein.
+5. Das Dressing erst direkt vor dem Servieren über den Salat geben und vorsichtig mit den Händen mischen, damit die zarten Blätter nicht zusammenfallen.
+
+Tipp: Klassisch dazu: neue Kartoffeln mit Butter oder ein Stück gebratener Fisch.
 
 Guten Appetit!', 'omas-kopfsalat-mit-sahnedressing.jpg');
 
@@ -1327,12 +1462,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Omas Kopfsalat mit Sahnedressing'), (SELECT id FROM ingredients WHERE name = 'Dill'), 0.5, 'Bund');
 
 -- Möhren-Ingwer-Suppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Möhren-Ingwer-Suppe', 30, 4, 'Portionen', 'Frühling', '1. Karotten, Kartoffel, Zwiebel und Ingwer schälen und klein schneiden.
-2. Zwiebel und Ingwer in Öl andünsten, Karotten und Kartoffel zugeben und kurz mitdünsten.
-3. Mit Brühe auffüllen und 20 Minuten weich köcheln.
-4. Kokosmilch und Orangensaft zugeben und fein pürieren.
-5. Mit Salz und Pfeffer abschmecken und mit Koriandergrün servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Möhren-Ingwer-Suppe', 'Wärmend, sonnig und ein bisschen scharf: Möhren, Ingwer, Kokos und ein Schuss Orange.', 30, 4, 'Portionen', 'Frühling', '1. {600 g} Karotten, {150 g} Kartoffeln, die Zwiebel und {20 g} Ingwer schälen. Karotten in Scheiben und Kartoffeln in Würfel schneiden, Zwiebel und Ingwer fein hacken.
+2. {2 EL} Rapsöl in einem Topf bei mittlerer Hitze erhitzen. Zwiebel und Ingwer darin 2 Minuten andünsten, bis es duftet. Karotten und Kartoffeln zugeben und 2 Minuten mitdünsten.
+3. Mit {900 ml} Gemüsebrühe auffüllen, aufkochen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Karotten ganz weich sind.
+4. {200 ml} Kokosmilch und {100 ml} Orangensaft zugeben und alles mit dem Stabmixer sehr fein pürieren.
+5. Mit Salz und Pfeffer abschmecken. Wer es schärfer mag, reibt noch etwas frischen Ingwer hinein.
+6. Das Koriandergrün grob zupfen und die Suppe damit bestreut servieren.
+
+Tipp: Wer keinen Koriander mag, nimmt glatte Petersilie oder geröstete Kürbiskerne.
 
 Guten Appetit!', 'moehren-ingwer-suppe.jpg');
 
@@ -1349,12 +1487,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Möhren-Ingwer-Suppe'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Spinat-Feta-Frittata
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spinat-Feta-Frittata', 25, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen.
-2. Frühlingszwiebeln in Ringe schneiden und in einer ofenfesten Pfanne in Öl andünsten. Spinat zugeben und zusammenfallen lassen.
-3. Eier mit Milch, Salz, Pfeffer und Muskat verquirlen und über das Gemüse gießen. Feta darüberbröseln.
-4. Bei kleiner Hitze 5 Minuten stocken lassen und anschließend im Ofen 8–10 Minuten fertig garen.
-5. In Stücke schneiden und warm oder kalt servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spinat-Feta-Frittata', 'Die italienische Antwort aufs Omelett: dick, saftig, mit Spinat und Feta, und warm wie kalt ein Genuss.', 25, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen.
+2. {3} Frühlingszwiebeln in feine Ringe schneiden. {2 EL} Olivenöl in einer ofenfesten Pfanne (etwa 26 cm) bei mittlerer Hitze erhitzen und die Frühlingszwiebeln darin 2 Minuten andünsten. {200 g} Spinat zugeben und unter Wenden zusammenfallen lassen. Überschüssige Flüssigkeit abgießen.
+3. {8} Eier mit {50 ml} Milch, Salz, Pfeffer und etwas Muskatnuss kräftig verquirlen. Über das Gemüse in der Pfanne gießen und gleichmäßig verteilen. {150 g} Feta darüberbröseln.
+4. Bei schwacher Hitze etwa 5 Minuten stocken lassen, bis der Rand fest wird, die Mitte aber noch flüssig ist. Nicht rühren.
+5. Die Pfanne in den Ofen stellen und die Frittata 8–10 Minuten fertig garen, bis sie in der Mitte gestockt und leicht gebräunt ist. Vorsicht, der Pfannengriff wird heiß.
+6. Kurz ruhen lassen, auf ein Brett gleiten lassen und in Stücke schneiden. Warm oder kalt servieren.
+
+Tipp: Reste in Stücke schneiden und am nächsten Tag als Pausenbrot mitnehmen.
 
 Guten Appetit!', 'spinat-feta-frittata.jpg');
 
@@ -1369,11 +1510,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spinat-Feta-Frittata'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Erdbeer-Rhabarber-Marmelade
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeer-Rhabarber-Marmelade', 100, 5, 'Gläser', 'Frühling', '1. Rhabarber putzen und in kleine Stücke schneiden. Erdbeeren waschen, putzen und klein schneiden.
-2. Früchte mit Gelierzucker (2:1), Zitronensaft und Vanillemark in einem großen Topf mischen und 1 Stunde ziehen lassen.
-3. Unter Rühren aufkochen und 4 Minuten sprudelnd kochen lassen. Eine Gelierprobe machen.
-4. Heiß in saubere, ausgekochte Gläser füllen, sofort verschließen und 5 Minuten auf den Kopf stellen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Erdbeer-Rhabarber-Marmelade', 'Fruchtig, leicht säuerlich und mit einem Hauch Vanille: der Frühsommer im Glas.', 100, 5, 'Gläser', 'Frühling', '1. {5} Gläser mit Schraubdeckeln heiß ausspülen, 10 Minuten in kochendes Wasser legen und kopfüber auf einem sauberen Tuch abtropfen lassen.
+2. {400 g} Rhabarber waschen, putzen, faserige Haut abziehen und in kleine Stücke schneiden. {600 g} Erdbeeren waschen, entkelchen und klein schneiden.
+3. Die Vanilleschote längs aufschneiden und das Mark herauskratzen. Die Zitrone auspressen.
+4. Die Früchte mit {500 g} Gelierzucker (2:1), dem Zitronensaft, dem Vanillemark und der Schote in einem großen Topf mischen und zugedeckt 1 Stunde ziehen lassen, bis sie Saft gezogen haben.
+5. Unter Rühren zum Kochen bringen und 4 Minuten sprudelnd kochen lassen. Für die Gelierprobe einen Teelöffel Marmelade auf einen kalten Teller geben: Wird sie nach einer Minute fest, ist sie fertig. Sonst noch 1 Minute weiterkochen.
+6. Die Vanilleschote entfernen. Die Marmelade heiß bis knapp unter den Rand in die Gläser füllen, sofort verschließen und 5 Minuten auf den Deckel stellen. Dann umdrehen und abkühlen lassen.
+
+Tipp: Wer die Marmelade ohne Stücke mag, püriert die Früchte vor dem Kochen kurz an.
 
 Guten Appetit!', 'erdbeer-rhabarber-marmelade.jpg');
 
@@ -1384,12 +1529,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Erdbeer-Rhabarber-Marmelade'), (SELECT id FROM ingredients WHERE name = 'Vanilleschote'), 1, NULL);
 
 -- Omelett mit Frühlingskräutern
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Omelett mit Frühlingskräutern', 15, 2, 'Portionen', 'Frühling', '1. Kräuter waschen, trocken schütteln und fein hacken.
-2. Eier mit Milch, Salz, Pfeffer und der Hälfte der Kräuter verquirlen.
-3. Etwas Butter in einer beschichteten Pfanne erhitzen und Eimasse für ein Omelett (aus 2 Eiern) hineingeben. Bei mittlerer Hitze stocken lassen und die Pfanne dabei leicht schwenken.
-4. Mit etwas Ziegenkäse belegen, zusammenklappen und auf einen Teller gleiten lassen. Aus der restlichen Eimasse weitere Omeletts zubereiten.
-5. Mit den restlichen Kräutern bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Omelett mit Frühlingskräutern', 'Ein zartes, goldgelbes Omelett voller frischer Kräuter mit cremigem Ziegenkäse: Frühstück, wie es sein soll.', 15, 2, 'Portionen', 'Frühling', '1. Schnittlauch, Petersilie und Kerbel waschen, trocken schütteln und fein hacken.
+2. {4} Eier mit {2 EL} Milch, Salz, Pfeffer und der Hälfte der Kräuter verquirlen.
+3. Etwas Butter in einer beschichteten Pfanne (etwa 20 cm) bei mittlerer Hitze schmelzen. Die Eimasse für ein Omelett, also aus 2 Eiern, hineingießen. Die Pfanne leicht schwenken und die gestockten Ränder mit einem Pfannenwender immer wieder zur Mitte schieben, damit flüssiges Ei nachläuft.
+4. Wenn das Omelett unten gestockt, oben aber noch leicht feucht ist, etwas Ziegenkäse darauf zerbröseln. Eine Hälfte über die andere klappen und auf einen vorgewärmten Teller gleiten lassen.
+5. Mit der übrigen Butter, Eimasse und dem übrigen Ziegenkäse genauso weitere Omeletts backen.
+6. Mit den restlichen Kräutern bestreuen und sofort servieren.
+
+Tipp: Ein gutes Omelett ist innen noch cremig. Lieber zu früh als zu spät aus der Pfanne nehmen.
 
 Guten Appetit!', 'omelett-mit-fruehlingskraeutern.jpg');
 
@@ -1404,12 +1552,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Omelett mit Frühlingskräutern'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Grünes Frühlingscurry mit Spargel und Zuckerschoten
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünes Frühlingscurry mit Spargel und Zuckerschoten', 30, 4, 'Portionen', 'Frühling', '1. Reis nach Packungsangabe garen.
-2. Spargel putzen und schräg in Stücke schneiden. Karotten in dünne Scheiben und Frühlingszwiebeln in Ringe schneiden.
-3. Kokosöl im Wok erhitzen und die Currypaste 1 Minute anrösten. Kokosmilch und Brühe zugießen und aufkochen.
-4. Karotten 4 Minuten darin garen, dann Spargel und Zuckerschoten zugeben und weitere 4 Minuten garen.
-5. Mit Limettensaft und Salz abschmecken, Frühlingszwiebeln und Koriander darüberstreuen und mit dem Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grünes Frühlingscurry mit Spargel und Zuckerschoten', 'Thailändisch und aromatisch: grünes Curry mit Spargel und Zuckerschoten in cremiger Kokosmilch.', 30, 4, 'Portionen', 'Frühling', '1. {250 g} Basmatireis in einem Sieb waschen, bis das Wasser klar bleibt, und nach Packungsangabe garen.
+2. {400 g} Spargel waschen, die holzigen Enden abschneiden und schräg in 3–4 cm lange Stücke schneiden. {2} Karotten schälen und in dünne Scheiben schneiden. {3} Frühlingszwiebeln in Ringe schneiden.
+3. {1 EL} Kokosöl im Wok oder einer großen Pfanne erhitzen. {2 EL} grüne Currypaste darin unter Rühren 1 Minute anrösten, bis es intensiv duftet. Mit {400 ml} Kokosmilch und {150 ml} Gemüsebrühe ablöschen und aufkochen.
+4. Die Karotten hineingeben und 4 Minuten köcheln lassen. Dann Spargel und {200 g} Zuckerschoten zugeben und weitere 4 Minuten garen. Das Gemüse soll knackig bleiben.
+5. Mit dem Saft der Limette und Salz abschmecken. Currypasten sind unterschiedlich scharf, bei Bedarf noch etwas Paste unterrühren.
+6. Frühlingszwiebeln und gezupften Koriander darüberstreuen und mit dem Reis servieren.
+
+Tipp: Viele grüne Currypasten enthalten Garnelenpaste. Wer es vegetarisch oder vegan möchte, sollte auf die Zutatenliste schauen.
 
 Guten Appetit!', 'gruenes-fruehlingscurry-mit-spargel-und-zuckerschoten.jpg');
 
@@ -1432,11 +1583,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 -- ======================================================================
 
 -- Gazpacho
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gazpacho', 140, 4, 'Portionen', 'Sommer', '1. Tomaten kreuzweise einritzen, kurz überbrühen, häuten und grob würfeln. Gurke schälen, Paprika entkernen und beides grob würfeln.
-2. Zwiebel und Knoblauch schälen und grob hacken. Baguette in Wasser einweichen und ausdrücken.
-3. Gemüse, Brot, Öl und Essig im Mixer sehr fein pürieren und mit Salz und Pfeffer abschmecken.
-4. Mindestens 2 Stunden kalt stellen. Mit etwas fein gewürfeltem Gemüse und einem Schuss Olivenöl servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gazpacho', 'Andalusiens kalte Gemüsesuppe: erfrischend, samtig und genau richtig für heiße Tage.', 140, 4, 'Portionen', 'Sommer', '1. {1000 g} Tomaten am Boden kreuzweise einritzen, 30 Sekunden in kochendes Wasser legen und in Eiswasser abschrecken. Die Haut abziehen, den Stielansatz entfernen und die Tomaten grob würfeln.
+2. Die Gurke schälen und die Paprika entkernen. Von beiden ein kleines Stück fein würfeln und zum Garnieren beiseitelegen, den Rest grob würfeln.
+3. Die Zwiebel und den Knoblauch schälen und grob hacken. {50 g} Baguette in Stücke reißen, kurz in Wasser einweichen und ausdrücken. Das Brot macht die Suppe sämig.
+4. Gemüse, Brot, {80 ml} Olivenöl und {2 EL} Rotweinessig im Standmixer sehr fein pürieren, eventuell in zwei Portionen. Wer es ganz glatt mag, streicht die Suppe durch ein Sieb. Mit Salz und Pfeffer kräftig abschmecken.
+5. Mindestens 2 Stunden kalt stellen, gern auch über Nacht. Kälte dämpft den Geschmack, deshalb vor dem Servieren noch einmal abschmecken.
+6. In Schalen oder Gläsern servieren, mit dem gewürfelten Gemüse bestreuen und mit einem Schuss Olivenöl beträufeln.
+
+Tipp: An heißen Tagen halten ein paar Eiswürfel in den Schalen die Suppe schön kühl.
 
 Guten Appetit!', 'gazpacho.jpg');
 
@@ -1452,11 +1607,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gazpacho'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Tomatensalat mit Zwiebeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tomatensalat mit Zwiebeln', 15, 4, 'Portionen', 'Sommer', '1. Tomaten waschen, den Strunk entfernen, in Scheiben schneiden und auf einer Platte anrichten.
-2. Zwiebel in feine Würfel schneiden und über die Tomaten geben.
-3. Essig mit Zucker, Salz und Pfeffer verrühren, das Öl unterschlagen und über den Salat träufeln.
-4. Mit Schnittlauchröllchen bestreuen und 10 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tomatensalat mit Zwiebeln', 'So einfach und so gut: reife Tomaten, feine Zwiebelwürfel und eine schlichte Vinaigrette.', 15, 4, 'Portionen', 'Sommer', '1. {6} reife Tomaten waschen, den Strunk keilförmig herausschneiden und die Tomaten mit einem scharfen Messer in Scheiben schneiden. Auf einer Platte leicht überlappend anrichten.
+2. Die Zwiebel schälen, sehr fein würfeln und über die Tomaten streuen.
+3. {2 EL} Weißweinessig mit einer Prise Zucker, Salz und Pfeffer verrühren, bis sich Salz und Zucker gelöst haben. {3 EL} Olivenöl unterschlagen und die Vinaigrette gleichmäßig über die Tomaten träufeln.
+4. Den Schnittlauch in feine Röllchen schneiden und darüberstreuen. Etwa 10 Minuten ziehen lassen, damit die Tomaten Saft abgeben. Der ist das Beste am Salat, also unbedingt mit Brot auftunken.
+
+Tipp: Tomaten nie im Kühlschrank lagern, dort verlieren sie ihr Aroma. Zimmerwarm schmecken sie am besten.
 
 Guten Appetit!', 'tomatensalat-mit-zwiebeln.jpg');
 
@@ -1470,10 +1627,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tomatensalat mit Zwiebeln'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Caprese (Tomate-Mozzarella)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Caprese (Tomate-Mozzarella)', 10, 4, 'Portionen', 'Sommer', '1. Tomaten und Mozzarella in gleich dicke Scheiben schneiden.
-2. Abwechselnd mit Basilikumblättern dachziegelartig auf einer Platte anrichten.
-3. Mit Salz und frisch gemahlenem Pfeffer würzen, mit Olivenöl und nach Belieben mit etwas Balsamico beträufeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Caprese (Tomate-Mozzarella)', 'Rot, weiß und grün wie die italienische Flagge: Tomaten, Mozzarella und Basilikum. Mehr braucht es nicht.', 10, 4, 'Portionen', 'Sommer', '1. {4} reife Tomaten waschen, den Stielansatz entfernen und in etwa 1 cm dicke Scheiben schneiden.
+2. {250 g} Mozzarella abtropfen lassen, mit Küchenpapier trocken tupfen und in gleich dicke Scheiben schneiden.
+3. Tomaten, Mozzarella und Basilikumblätter abwechselnd dachziegelartig auf einer Platte anrichten.
+4. Mit Salz und frisch gemahlenem Pfeffer würzen, mit {3 EL} gutem Olivenöl und nach Belieben mit {1 EL} Balsamicoessig beträufeln. Sofort servieren.
+
+Tipp: Den Mozzarella 20 Minuten vorher aus dem Kühlschrank nehmen. Büffelmozzarella ist noch cremiger und aromatischer.
 
 Guten Appetit!', 'caprese-tomate-mozzarella.jpg');
 
@@ -1486,12 +1646,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Caprese (Tomate-Mozzarella)'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Panzanella (toskanischer Brotsalat)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Panzanella (toskanischer Brotsalat)', 25, 4, 'Portionen', 'Sommer', '1. Altbackenes Brot in 2 cm große Würfel schneiden und in {2 EL} Olivenöl mit dem angedrückten Knoblauch goldbraun rösten.
-2. Tomaten grob würfeln, salzen und in einem Sieb 10 Minuten abtropfen lassen. Den Saft auffangen.
-3. Gurke würfeln und die Zwiebel in feine Streifen schneiden.
-4. Tomatensaft mit Essig, restlichem Öl, Salz und Pfeffer verrühren.
-5. Brot, Tomaten, Gurke, Zwiebel, Kapern und Basilikum mit dem Dressing mischen und 10 Minuten durchziehen lassen, damit das Brot den Saft aufsaugt.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Panzanella (toskanischer Brotsalat)', 'Toskanische Resteküche vom Feinsten: geröstetes Brot, das sich mit Tomatensaft vollsaugt.', 25, 4, 'Portionen', 'Sommer', '1. {250 g} altbackenes Baguette in 2 cm große Würfel schneiden. Die Knoblauchzehe schälen und mit dem Messerrücken andrücken.
+2. {2 EL} Olivenöl in einer großen Pfanne erhitzen. Knoblauch und Brotwürfel darin bei mittlerer Hitze unter Wenden etwa 5 Minuten goldbraun rösten. Den Knoblauch herausnehmen.
+3. {600 g} Tomaten grob würfeln, in ein Sieb über einer Schüssel geben, salzen und 10 Minuten abtropfen lassen. Den Saft auffangen, aus ihm wird das Dressing.
+4. Die Gurke längs halbieren, mit einem Löffel entkernen und in Scheiben schneiden. Die Zwiebel in feine Streifen schneiden.
+5. Den aufgefangenen Tomatensaft mit {3 EL} Rotweinessig, dem restlichen Öl, Salz und Pfeffer verrühren.
+6. Brot, Tomaten, Gurke, Zwiebel, {1 EL} Kapern und die gezupften Basilikumblätter mit dem Dressing mischen. 10 Minuten durchziehen lassen, damit das Brot den Saft aufsaugt, außen aber noch etwas knusprig ist.
+
+Tipp: Je reifer und aromatischer die Tomaten, desto besser der Salat. Am schönsten gelingt er im Spätsommer.
 
 Guten Appetit!', 'panzanella-toskanischer-brotsalat.jpg');
 
@@ -1508,11 +1671,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Panzanella (toskanischer Brotsalat)'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Bruschetta
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bruschetta', 15, 4, 'Portionen', 'Sommer', '1. Tomaten entkernen und fein würfeln. Mit gehacktem Basilikum, {2 EL} Öl, Salz und Pfeffer mischen.
-2. Baguette schräg in Scheiben schneiden, mit dem restlichen Öl beträufeln und im Ofen oder in der Grillpfanne goldbraun rösten.
-3. Brotscheiben noch warm mit einer halbierten Knoblauchzehe einreiben.
-4. Tomatenmischung auf den Brotscheiben verteilen und sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bruschetta', 'Knuspriges Röstbrot mit Knoblauch, saftigen Tomaten und Basilikum: Italiens schönste Vorspeise.', 15, 4, 'Portionen', 'Sommer', '1. {4} Tomaten halbieren, die Kerne mit einem Teelöffel herauskratzen und das Fruchtfleisch fein würfeln. Ohne die Kerne weicht das Brot nicht durch.
+2. Das Basilikum in feine Streifen schneiden. Mit den Tomaten, {2 EL} Olivenöl, Salz und Pfeffer mischen und kurz ziehen lassen.
+3. Den Ofengrill vorheizen oder eine Grillpfanne erhitzen. {1} Baguette schräg in etwa 1 cm dicke Scheiben schneiden, mit dem restlichen Öl beträufeln und von beiden Seiten goldbraun rösten. Unter dem Grill dauert das nur 1–2 Minuten pro Seite, also dabeibleiben.
+4. {2} Knoblauchzehen halbieren und die noch warmen Brotscheiben damit einreiben. Die raue Oberfläche wirkt wie eine Reibe.
+5. Die Tomatenmischung erst direkt vor dem Servieren auf die Brote verteilen und sofort servieren.
 
 Guten Appetit!', 'bruschetta.jpg');
 
@@ -1525,11 +1689,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bruschetta'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Griechischer Bauernsalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Griechischer Bauernsalat', 15, 4, 'Portionen', 'Sommer', '1. Tomaten in Spalten, Gurke in dicke Halbmonde, Paprika in Streifen und Zwiebel in Ringe schneiden.
-2. Gemüse mit den Oliven in einer Schüssel mischen.
-3. Essig, Öl, Salz und Pfeffer verrühren und über den Salat geben.
-4. Feta als ganzes Stück obenauf legen, mit Oregano bestreuen und mit etwas Olivenöl beträufeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Griechischer Bauernsalat', 'Horiatiki wie in jeder griechischen Taverne: grobes Gemüse, Oliven und ein ganzes Stück Feta obendrauf.', 15, 4, 'Portionen', 'Sommer', '1. {4} Tomaten in grobe Spalten schneiden. Die Gurke schälen, längs halbieren und in dicke Halbmonde schneiden. Die Paprika entkernen und in Streifen schneiden. Die Zwiebel in dünne Ringe schneiden.
+2. Das Gemüse mit {100 g} Oliven in einer großen Schüssel mischen. In Griechenland bleibt alles schön grob.
+3. {2 EL} Rotweinessig mit Salz und Pfeffer verrühren und {4 EL} Olivenöl unterschlagen. Über den Salat geben und vorsichtig mischen.
+4. {200 g} Feta als ganzes Stück obenauf legen, mit {1 TL} Oregano bestreuen und mit dem restlichen Olivenöl beträufeln. Am Tisch zerteilt jeder seinen Feta selbst.
+
+Tipp: Unbedingt frisches Weißbrot dazu servieren, um die Mischung aus Tomatensaft und Olivenöl am Schüsselboden aufzutunken.
 
 Guten Appetit!', 'griechischer-bauernsalat.jpg');
 
@@ -1546,11 +1712,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Griechischer Bauernsalat'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Tzatziki
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tzatziki', 45, 4, 'Portionen', 'Sommer', '1. Gurke grob raspeln, salzen und 10 Minuten ziehen lassen. Dann in einem Tuch kräftig ausdrücken.
-2. Joghurt (am besten griechischer mit 10 % Fett) mit gepresstem Knoblauch, Öl und Essig verrühren.
-3. Gurke und gehackten Dill unterrühren und mit Salz und Pfeffer abschmecken.
-4. Mindestens 30 Minuten kalt stellen, damit sich das Aroma entfaltet.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tzatziki', 'Kühl, cremig und mit ordentlich Knoblauch: der griechische Joghurtdip zu Gegrilltem, Gyros oder einfach zu Brot.', 45, 4, 'Portionen', 'Sommer', '1. Die Gurke waschen und mit Schale grob raspeln. Mit einer Prise Salz mischen und 10 Minuten ziehen lassen.
+2. Die geraspelte Gurke in ein sauberes Geschirrtuch geben und kräftig ausdrücken, bis kaum noch Flüssigkeit kommt. Das ist der wichtigste Schritt, sonst wird das Tzatziki wässrig.
+3. {500 g} Joghurt, am besten griechischen mit 10 % Fett, in eine Schüssel geben. {2} Knoblauchzehen schälen und dazupressen. {2 EL} Olivenöl und {1 TL} Weißweinessig unterrühren.
+4. Den Dill fein hacken. Gurke und Dill unter den Joghurt rühren und mit Salz und Pfeffer abschmecken.
+5. Abgedeckt mindestens 30 Minuten kalt stellen, damit sich das Knoblaucharoma entfaltet. Vor dem Servieren mit einem Schuss Olivenöl beträufeln.
+
+Tipp: Am nächsten Tag schmeckt der Knoblauch noch kräftiger. Für Knoblauchfans ein Vorteil.
 
 Guten Appetit!', 'tzatziki.jpg');
 
@@ -1564,11 +1733,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tzatziki'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Gurkensalat mit Dill
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gurkensalat mit Dill', 15, 4, 'Portionen', 'Sommer', '1. Gurken waschen, nach Belieben schälen und in sehr dünne Scheiben hobeln.
-2. Leicht salzen, 10 Minuten ziehen lassen und das Wasser abgießen.
-3. Essig, Zucker, Öl und Pfeffer verrühren. Dill fein hacken und unterrühren.
-4. Dressing mit den Gurken mischen und kurz durchziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gurkensalat mit Dill', 'Hauchdünne Gurkenscheiben in süß-saurer Marinade mit viel Dill: die erfrischendste Beilage des Sommers.', 15, 4, 'Portionen', 'Sommer', '1. {2} Gurken waschen, nach Belieben schälen und mit einem Gurkenhobel in sehr dünne Scheiben hobeln.
+2. Die Scheiben in einer Schüssel leicht salzen, mischen und 10 Minuten ziehen lassen. Das Salz zieht Wasser aus der Gurke. Das Wasser abgießen und die Gurken leicht ausdrücken, so wird der Salat nicht wässrig.
+3. {3 EL} Weißweinessig, {1 TL} Zucker, {2 EL} Rapsöl und Pfeffer verrühren, bis sich der Zucker gelöst hat.
+4. Den Dill fein hacken und unterrühren.
+5. Das Dressing mit den Gurken mischen und 5–10 Minuten durchziehen lassen. Erst danach abschmecken und nur wenn nötig nachsalzen.
+
+Tipp: Ein Löffel saure Sahne oder Schmand im Dressing macht daraus die cremige Variante.
 
 Guten Appetit!', 'gurkensalat-mit-dill.jpg');
 
@@ -1581,11 +1753,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gurkensalat mit Dill'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Schwäbischer Kartoffelsalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwäbischer Kartoffelsalat', 60, 4, 'Portionen', 'Sommer', '1. Festkochende Kartoffeln ca. 20 Minuten kochen, pellen und noch warm in dünne Scheiben schneiden.
-2. Zwiebel sehr fein würfeln und in der Brühe 2 Minuten aufkochen. Essig, Senf, Zucker, Salz und Pfeffer einrühren.
-3. Die heiße Marinade über die warmen Kartoffeln gießen, vorsichtig mischen und 30 Minuten ziehen lassen.
-4. Öl unterheben und nochmals abschmecken – der Salat soll schön "schlonzig" sein. Mit Schnittlauch bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schwäbischer Kartoffelsalat', 'Lauwarm, saftig und ganz ohne Mayonnaise: der Kartoffelsalat aus dem Süden, der schön „schlonzig“ sein muss.', 60, 4, 'Portionen', 'Sommer', '1. {1000 g} festkochende Kartoffeln waschen und mit Schale in Salzwasser etwa 20 Minuten kochen, bis sie gerade gar sind. Sie sollen nicht zerfallen.
+2. Die Kartoffeln abgießen, kurz ausdampfen lassen und noch warm pellen. In dünne Scheiben schneiden und in eine große Schüssel geben. Nur warme Kartoffeln nehmen die Marinade richtig auf.
+3. Die Zwiebel schälen und sehr fein würfeln. Mit {250 ml} Gemüsebrühe aufkochen und 2 Minuten köcheln lassen. {4 EL} Weißweinessig, {1 TL} Senf, eine Prise Zucker, Salz und Pfeffer einrühren.
+4. Die heiße Marinade über die warmen Kartoffeln gießen und vorsichtig mit den Händen oder einem Teigschaber mischen. Zugedeckt mindestens 30 Minuten ziehen lassen und ab und zu umheben.
+5. Erst dann {4 EL} Rapsöl unterheben. Das Öl kommt zuletzt, damit die Kartoffeln vorher die Brühe aufsaugen. Noch einmal kräftig abschmecken. Der Salat soll saftig glänzen und leicht sämig sein, auf Schwäbisch „schlonzig“.
+6. Den Schnittlauch in Röllchen schneiden und darüberstreuen. Lauwarm oder zimmerwarm servieren, nie kalt aus dem Kühlschrank.
+
+Tipp: Klassisch dazu: Maultaschen, Leberkäse oder Wiener Würstchen.
 
 Guten Appetit!', 'schwaebischer-kartoffelsalat.jpg');
 
@@ -1601,12 +1777,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schwäbischer Kartoffelsalat'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Norddeutscher Kartoffelsalat mit Mayonnaise
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Norddeutscher Kartoffelsalat mit Mayonnaise', 110, 4, 'Portionen', 'Sommer', '1. Kartoffeln mit Schale ca. 20 Minuten kochen, pellen, abkühlen lassen und in Scheiben schneiden.
-2. Eier hart kochen, pellen und würfeln. Gewürzgurken und Zwiebel fein würfeln.
-3. Mayonnaise, Joghurt, Senf und {3-4 EL} Gurkenwasser aus dem Glas verrühren und mit Salz und Pfeffer würzen.
-4. Alle Zutaten vorsichtig mit dem Dressing vermengen und mindestens 1 Stunde im Kühlschrank durchziehen lassen.
-5. Vor dem Servieren abschmecken und mit Schnittlauch bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Norddeutscher Kartoffelsalat mit Mayonnaise', 'Cremig, mit Ei und Gewürzgurken: der Kartoffelsalat aus dem Norden, der zu jedem Grillfest und an Heiligabend auf den Tisch gehört.', 110, 4, 'Portionen', 'Sommer', '1. {1000 g} festkochende Kartoffeln waschen und mit Schale in Salzwasser etwa 20 Minuten kochen, bis sie gerade gar sind. Abgießen, pellen und vollständig abkühlen lassen. Dann in Scheiben schneiden. Kalte Kartoffeln zerfallen nicht so leicht.
+2. Inzwischen {3} Eier in kochendem Wasser 10 Minuten hart kochen, kalt abschrecken, pellen und würfeln. {4} Gewürzgurken und die Zwiebel fein würfeln.
+3. {150 g} Mayonnaise, {100 g} Joghurt, {1 TL} Senf und {3-4 EL} Gurkenwasser aus dem Glas glatt rühren. Mit Salz und Pfeffer kräftig würzen. Das Gurkenwasser bringt die typische säuerliche Note.
+4. Kartoffeln, Eier, Gurken und Zwiebel in einer großen Schüssel mit dem Dressing vorsichtig vermengen.
+5. Abgedeckt mindestens 1 Stunde im Kühlschrank durchziehen lassen. Die Kartoffeln saugen dabei Dressing auf, deshalb vor dem Servieren noch einmal abschmecken und bei Bedarf einen Schuss Gurkenwasser zugeben.
+6. Den Schnittlauch in Röllchen schneiden und darüberstreuen.
+
+Tipp: Am besten schmeckt der Salat, wenn er schon am Vortag gemacht wird.
 
 Guten Appetit!', 'norddeutscher-kartoffelsalat-mit-mayonnaise.jpg');
 
@@ -1622,11 +1801,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Norddeutscher Kartoffelsalat mit Mayonnaise'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Nudelsalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Nudelsalat', 90, 6, 'Portionen', 'Sommer', '1. Fusilli in Salzwasser bissfest kochen, abschrecken und abtropfen lassen. Die Erbsen in den letzten 2 Minuten mitgaren.
-2. Paprika, Gewürzgurken und Gouda in kleine Würfel schneiden. Mais abtropfen lassen.
-3. Mayonnaise, Joghurt und etwas Gurkenwasser verrühren und mit Salz, Pfeffer und Paprikapulver würzen.
-4. Alles vermengen und mindestens 1 Stunde durchziehen lassen. Vor dem Servieren abschmecken und mit Schnittlauch bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Nudelsalat', 'Der Partyklassiker mit Erbsen, Mais, Paprika und Gouda: bunt, cremig und immer als Erstes leer.', 90, 6, 'Portionen', 'Sommer', '1. Reichlich Salzwasser aufkochen und {500 g} Fusilli darin bissfest kochen. In den letzten 2 Minuten {200 g} Erbsen mitgaren. Abgießen, kalt abschrecken, damit die Nudeln nicht weitergaren und nicht zusammenkleben, und gut abtropfen lassen.
+2. Die Paprika entkernen und mit {4} Gewürzgurken und {150 g} Gouda in kleine Würfel schneiden. {150 g} Mais in einem Sieb abtropfen lassen.
+3. {200 g} Mayonnaise, {150 g} Joghurt und einen kräftigen Schuss Gurkenwasser aus dem Glas glatt rühren. Mit Salz, Pfeffer und {1 TL} Paprikapulver würzen.
+4. Nudeln, Erbsen, Paprika, Gurken, Gouda und Mais mit dem Dressing vermengen.
+5. Abgedeckt mindestens 1 Stunde im Kühlschrank durchziehen lassen. Vor dem Servieren noch einmal abschmecken: Nudeln schlucken viel Dressing, eventuell noch etwas Joghurt oder Gurkenwasser unterrühren.
+6. Den Schnittlauch in Röllchen schneiden und darüberstreuen.
+
+Tipp: Wer mag, gibt noch gewürfelten Kochschinken oder Fleischwurst dazu.
 
 Guten Appetit!', 'nudelsalat.jpg');
 
@@ -1644,11 +1827,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Nudelsalat'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Couscous-Salat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Couscous-Salat', 25, 4, 'Portionen', 'Sommer', '1. Couscous mit der kochenden Brühe übergießen, abdecken und 5 Minuten quellen lassen. Mit einer Gabel auflockern und abkühlen lassen.
-2. Gurke, Paprika und Tomaten würfeln, Frühlingszwiebeln in Ringe schneiden. Kichererbsen abspülen und abtropfen lassen.
-3. Kräuter hacken. Zitronensaft, Öl, Kreuzkümmel, Salz und Pfeffer verrühren.
-4. Alles mit dem Couscous mischen und 10 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Couscous-Salat', 'Locker, frisch und schnell gemacht: Couscous mit knackigem Gemüse, Kichererbsen, Minze und Zitrone.', 25, 4, 'Portionen', 'Sommer', '1. {250 ml} Gemüsebrühe aufkochen und über {250 g} Couscous in einer großen Schüssel gießen. Abdecken und 5 Minuten quellen lassen. Mit einer Gabel auflockern, damit keine Klumpen bleiben, und abkühlen lassen.
+2. Die Gurke und die entkernte Paprika in kleine Würfel schneiden, {200 g} Kirschtomaten vierteln und {3} Frühlingszwiebeln in feine Ringe schneiden. {240 g} Kichererbsen in einem Sieb abspülen und abtropfen lassen.
+3. Minze und Petersilie fein hacken.
+4. Für das Dressing den Saft der Zitrone, {4 EL} Olivenöl, {0.5 TL} Kreuzkümmel, Salz und Pfeffer verrühren.
+5. Gemüse, Kichererbsen, Kräuter und Dressing unter den Couscous mischen und 10 Minuten durchziehen lassen. Noch einmal abschmecken: Couscous braucht meist mehr Salz und Zitrone, als man denkt.
+
+Tipp: Ideal zum Mitnehmen ins Büro oder zum Picknick. Der Salat hält sich zwei Tage im Kühlschrank.
 
 Guten Appetit!', 'couscous-salat.jpg');
 
@@ -1668,11 +1854,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Couscous-Salat'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Tabouleh
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tabouleh', 30, 4, 'Portionen', 'Sommer', '1. Feinen Bulgur mit {150 ml} kochendem Wasser übergießen und 15 Minuten quellen lassen.
-2. Petersilie und Minze waschen, sehr gut trocknen und fein hacken – Tabouleh ist ein Kräutersalat, kein Getreidesalat.
-3. Tomaten fein würfeln, Frühlingszwiebeln in feine Ringe schneiden.
-4. Bulgur, Kräuter, Tomaten und Frühlingszwiebeln mischen und mit Zitronensaft, Öl, Salz und Pfeffer kräftig abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tabouleh', 'Ein libanesischer Kräutersalat, kein Getreidesalat: viel Petersilie und Minze, wenig Bulgur und eine Menge Zitrone.', 30, 4, 'Portionen', 'Sommer', '1. {100 g} feinen Bulgur in eine Schüssel geben, mit {150 ml} kochendem Wasser übergießen, abdecken und 15 Minuten quellen lassen. Mit einer Gabel auflockern und abkühlen lassen.
+2. {3 Bund} Petersilie und {1 Bund} Minze waschen und sehr gründlich trocken schleudern. Die groben Stiele entfernen und die Blätter mit einem scharfen Messer fein hacken. Nicht im Mixer, sonst werden die Kräuter matschig.
+3. {3} Tomaten in kleine Würfel schneiden, {4} Frühlingszwiebeln in feine Ringe schneiden.
+4. Bulgur, Kräuter, Tomaten und Frühlingszwiebeln in einer großen Schüssel mischen.
+5. Mit dem Saft der {2} Zitronen, {5 EL} Olivenöl, Salz und Pfeffer kräftig abschmecken. Tabouleh soll frisch und deutlich zitronig schmecken.
+
+Tipp: Im Libanon isst man Tabouleh mit knackigen Romanasalatblättern, die man als Löffel benutzt.
 
 Guten Appetit!', 'tabouleh.jpg');
 
@@ -1687,11 +1876,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tabouleh'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Wassermelonen-Feta-Salat mit Minze
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wassermelonen-Feta-Salat mit Minze', 15, 4, 'Portionen', 'Sommer', '1. Wassermelone schälen, entkernen und in mundgerechte Würfel schneiden.
-2. Zwiebel in hauchdünne Ringe schneiden und kurz in Limettensaft einlegen.
-3. Melone auf einer Platte verteilen, Feta darüberbröseln und Zwiebelringe, Oliven und Minzblätter darauf verteilen.
-4. Mit Olivenöl und dem Limettensaft beträufeln, mit Pfeffer würzen und sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Wassermelonen-Feta-Salat mit Minze', 'Süß, salzig, frisch: Wassermelone und Feta sind die überraschendste Kombination des Sommers.', 15, 4, 'Portionen', 'Sommer', '1. {1000 g} Wassermelone schälen, die Kerne so gut es geht entfernen und das Fruchtfleisch in mundgerechte Würfel schneiden. Kalt stellen, bis alles andere fertig ist.
+2. Die Zwiebel in hauchdünne Ringe schneiden. Die Limette auspressen und die Zwiebelringe 10 Minuten im Limettensaft einlegen. So verlieren sie ihre Schärfe und werden schön rosa.
+3. Die Melonenwürfel auf einer großen Platte verteilen. {200 g} Feta darüberbröseln und die Zwiebelringe, {50 g} Oliven und die gezupften Minzblätter darauf verteilen.
+4. Mit {2 EL} Olivenöl und dem Limettensaft beträufeln, mit Pfeffer würzen und sofort servieren. Salz ist nicht nötig, der Feta bringt genug mit.
+
+Tipp: Gut gekühlt schmeckt der Salat am besten. Er passt perfekt zu Gegrilltem.
 
 Guten Appetit!', 'wassermelonen-feta-salat-mit-minze.jpg');
 
@@ -1705,12 +1896,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Wassermelonen-Feta-Salat mit Minze'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Ratatouille
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ratatouille', 70, 4, 'Portionen', 'Sommer', '1. Aubergine, Zucchini und Paprika in 2 cm große Würfel schneiden. Tomaten häuten und würfeln. Zwiebel und Knoblauch hacken.
-2. Aubergine in {2 EL} Öl kräftig anbraten und herausnehmen, dann Zucchini und Paprika nacheinander ebenso anbraten.
-3. Zwiebel und Knoblauch im restlichen Öl andünsten, Tomatenmark kurz mitrösten und die Tomaten zugeben.
-4. Das angebratene Gemüse, Thymian, Rosmarin und Lorbeer zugeben und zugedeckt bei kleiner Hitze 30–40 Minuten schmoren.
-5. Kräuterzweige entfernen, mit Salz und Pfeffer abschmecken und mit Basilikum bestreuen. Schmeckt warm und kalt.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ratatouille', 'Provenzalisches Sommergemüse, langsam geschmort mit Thymian und Rosmarin: schmeckt warm wie kalt und am nächsten Tag noch besser.', 70, 4, 'Portionen', 'Sommer', '1. Die Aubergine, {2} Zucchini und {2} Paprika in etwa 2 cm große Würfel schneiden. {4} Tomaten am Boden kreuzweise einritzen, kurz in kochendes Wasser legen, häuten und würfeln. Zwiebel und {3} Knoblauchzehen schälen und fein hacken.
+2. {2 EL} Olivenöl in einem großen Schmortopf stark erhitzen und die Aubergine darin 5 Minuten kräftig anbraten, bis sie goldbraun ist. Herausnehmen. Dann nacheinander Zucchini und Paprika mit je etwas Öl ebenso anbraten und herausnehmen. Getrennt gebraten behält jedes Gemüse seinen eigenen Geschmack.
+3. Im restlichen Öl Zwiebel und Knoblauch 3 Minuten andünsten. {1 EL} Tomatenmark kurz mitrösten und die Tomaten zugeben.
+4. Das angebratene Gemüse, Thymian, Rosmarin und das Lorbeerblatt zugeben, salzen und pfeffern. Zugedeckt bei schwacher Hitze 30–40 Minuten schmoren, bis das Gemüse weich ist, aber nicht zerfällt. Gelegentlich vorsichtig umrühren.
+5. Die Kräuterzweige und das Lorbeerblatt herausnehmen, mit Salz und Pfeffer abschmecken und mit gezupftem Basilikum bestreuen.
+
+Tipp: Dazu passen Baguette, Reis oder ein Stück gebratener Fisch.
 
 Guten Appetit!', 'ratatouille.jpg');
 
@@ -1730,12 +1923,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ratatouille'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Gefüllte Paprika mit Hackfleisch und Reis
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Paprika mit Hackfleisch und Reis', 75, 4, 'Portionen', 'Sommer', '1. Reis in Salzwasser 10 Minuten vorgaren und abgießen.
-2. Von den Paprika einen Deckel abschneiden und die Kerne entfernen.
-3. Hackfleisch mit Reis, fein gewürfelter Zwiebel, Ei, Paprikapulver, gehackter Petersilie, Salz und Pfeffer verkneten und in die Paprika füllen.
-4. Passierte Tomaten mit Tomatenmark, Zucker, Salz und Pfeffer in einem breiten Topf aufkochen.
-5. Paprika hineinsetzen, Deckel auflegen und zugedeckt ca. 45 Minuten bei kleiner Hitze schmoren. Dazu passen Kartoffeln oder Reis.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gefüllte Paprika mit Hackfleisch und Reis', 'Ein Stück Kindheit: Paprikaschoten, gefüllt mit würzigem Hackfleisch und Reis, in fruchtiger Tomatensoße geschmort.', 75, 4, 'Portionen', 'Sommer', '1. {100 g} Reis in Salzwasser 10 Minuten vorgaren und abgießen. Er gart in der Paprika fertig.
+2. Von {4} Paprika oben einen Deckel abschneiden, die Kerne und weißen Trennwände mit einem Löffel herauslösen. Die Paprika innen leicht salzen.
+3. Die Zwiebel schälen und fein würfeln, die Petersilie hacken. {400 g} Hackfleisch mit Reis, Zwiebel, {1} Ei, {1 TL} Paprikapulver, Petersilie, Salz und Pfeffer gründlich verkneten. In die Paprika füllen und die Deckel aufsetzen.
+4. {500 ml} passierte Tomaten mit {1 EL} Tomatenmark, einer Prise Zucker, Salz und Pfeffer in einem breiten Topf aufkochen, in den die Paprika aufrecht nebeneinander passen.
+5. Die Paprika hineinsetzen, den Topf zudecken und alles bei schwacher Hitze etwa 45 Minuten schmoren, bis die Paprika weich und die Füllung durchgegart ist. Zwischendurch etwas Soße über die Paprika löffeln.
+6. Die Soße abschmecken und die Paprika mit reichlich Soße servieren. Dazu passen Kartoffeln oder Reis.
+
+Tipp: Übrige Füllung zu kleinen Bällchen formen und in der Soße mitgaren.
 
 Guten Appetit!', 'gefuellte-paprika-mit-hackfleisch-und-reis.jpg');
 
@@ -1753,12 +1949,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gefüllte Paprika mit Hackfleisch und Reis'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Gefüllte Zucchini mit Couscous und Feta
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Zucchini mit Couscous und Feta', 50, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Große Zucchini längs halbieren und mit einem Löffel aushöhlen. Das Fruchtfleisch fein hacken.
-2. Couscous mit der heißen Brühe übergießen und 5 Minuten quellen lassen.
-3. Zucchinifruchtfleisch und Knoblauch in {1 EL} Öl anbraten und mit Couscous, halbierten Tomaten, der Hälfte des Fetas, Pinienkernen, Oregano, Salz und Pfeffer mischen.
-4. Zucchinihälften in eine geölte Form legen, die Füllung hineingeben und mit dem restlichen Feta bestreuen.
-5. Mit dem restlichen Öl beträufeln und ca. 25 Minuten backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gefüllte Zucchini mit Couscous und Feta', 'Mediterrane Zucchiniboote mit Couscous, Tomaten, Feta und gerösteten Pinienkernen.', 50, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {2} große Zucchini längs halbieren und das Innere mit einem Teelöffel herauskratzen, sodass ein etwa 1 cm dicker Rand bleibt. Das Fruchtfleisch fein hacken.
+2. {120 ml} Gemüsebrühe aufkochen, über {100 g} Couscous gießen und abgedeckt 5 Minuten quellen lassen. Mit einer Gabel auflockern.
+3. {2 EL} Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Den Knoblauch fein hacken. {1 EL} Olivenöl in der Pfanne erhitzen und Zucchinifruchtfleisch und Knoblauch darin 3 Minuten braten.
+4. {150 g} Kirschtomaten halbieren. Couscous, Zucchinimasse, Tomaten, die Hälfte des Fetas, die Pinienkerne und {1 TL} Oregano mischen und mit Salz und Pfeffer abschmecken.
+5. Die Zucchinihälften in eine geölte Auflaufform legen, leicht salzen und die Füllung hineingeben. Den restlichen Feta darüberbröseln und mit dem restlichen Olivenöl beträufeln.
+6. Etwa 25 Minuten backen, bis die Zucchini weich und der Feta leicht gebräunt ist.
+
+Tipp: Dazu passt ein Klecks Joghurt mit etwas Knoblauch und Minze.
 
 Guten Appetit!', 'gefuellte-zucchini-mit-couscous-und-feta.jpg');
 
@@ -1775,12 +1974,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gefüllte Zucchini mit Couscous und Feta'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Zucchini-Puffer mit Joghurt-Dip
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zucchini-Puffer mit Joghurt-Dip', 35, 4, 'Portionen', 'Sommer', '1. Zucchini grob raspeln, salzen und 10 Minuten ziehen lassen. Dann in einem Tuch kräftig ausdrücken.
-2. Zucchini mit Eiern, Mehl, zerbröseltem Feta, Frühlingszwiebelringen, der Hälfte des Dills und Pfeffer verrühren.
-3. Öl in einer Pfanne erhitzen, je 1 EL Teig hineingeben, flach drücken und pro Seite 3 Minuten goldbraun braten.
-4. Für den Dip Joghurt mit gepresstem Knoblauch, restlichem Dill, Zitronensaft, Salz und Pfeffer verrühren.
-5. Puffer auf Küchenpapier abtropfen lassen und mit dem Dip servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zucchini-Puffer mit Joghurt-Dip', 'Außen knusprig, innen saftig: Zucchini-Puffer mit Feta und Dill, dazu ein frischer Joghurt-Dip.', 35, 4, 'Portionen', 'Sommer', '1. {2} Zucchini waschen und grob raspeln. In einer Schüssel mit etwas Salz mischen und 10 Minuten ziehen lassen. Dann in einem sauberen Geschirrtuch kräftig ausdrücken. Je trockener die Zucchini, desto knuspriger die Puffer.
+2. {2} Frühlingszwiebeln in feine Ringe schneiden und den Dill hacken. Die Zucchini mit {2} Eiern, {4 EL} Mehl, {100 g} zerbröseltem Feta, den Frühlingszwiebeln, der Hälfte des Dills und Pfeffer verrühren.
+3. {4 EL} Rapsöl in einer großen Pfanne bei mittlerer Hitze erhitzen. Pro Puffer einen gehäuften Esslöffel Teig hineingeben, flach drücken und pro Seite etwa 3 Minuten goldbraun braten. Nicht zu früh wenden, sonst zerfallen sie.
+4. Für den Dip {200 g} Joghurt mit der gepressten Knoblauchzehe, dem restlichen Dill, dem Saft der halben Zitrone, Salz und Pfeffer verrühren.
+5. Die Puffer auf Küchenpapier abtropfen lassen und warm mit dem Dip servieren.
+
+Tipp: Im Ofen bei 100 °C bleiben die fertigen Puffer warm und knusprig, während der Rest brät.
 
 Guten Appetit!', 'zucchini-puffer-mit-joghurt-dip.jpg');
 
@@ -1798,12 +1999,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zucchini-Puffer mit Joghurt-Dip'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 0.5, NULL);
 
 -- Melanzane alla Parmigiana (Auberginen-Auflauf)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Melanzane alla Parmigiana (Auberginen-Auflauf)', 90, 4, 'Portionen', 'Sommer', '1. Auberginen längs in 1 cm dicke Scheiben schneiden, salzen und 20 Minuten Wasser ziehen lassen. Trocken tupfen.
-2. Scheiben portionsweise in Olivenöl goldbraun braten oder mit Öl bepinselt bei 220 °C im Ofen rösten.
-3. Zwiebel und Knoblauch in {1 EL} Öl andünsten, passierte Tomaten zugeben und mit Zucker, Salz und Pfeffer 15 Minuten einkochen. Basilikum unterrühren.
-4. Ofen auf 200 °C einstellen. Tomatensoße, Auberginen, Mozzarellascheiben und geriebenen Käse in einer Auflaufform schichten und mit Soße und Käse abschließen.
-5. Ca. 30 Minuten backen und vor dem Anschneiden 10 Minuten ruhen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Melanzane alla Parmigiana (Auberginen-Auflauf)', 'Der Stolz Süditaliens: Schicht um Schicht gebratene Auberginen, Tomatensoße, Mozzarella und Hartkäse.', 90, 4, 'Portionen', 'Sommer', '1. {3} Auberginen längs in 1 cm dicke Scheiben schneiden, von beiden Seiten salzen und 20 Minuten Wasser ziehen lassen. Mit Küchenpapier gründlich trocken tupfen. So werden sie beim Braten nicht bitter und saugen weniger Öl auf.
+2. Die Scheiben portionsweise in reichlich Olivenöl bei mittlerer bis hoher Hitze von beiden Seiten goldbraun braten und auf Küchenpapier abtropfen lassen. Schneller geht es, die Scheiben mit Öl zu bepinseln und bei 220 °C im Ofen 15–20 Minuten zu rösten.
+3. Für die Soße die Zwiebel und {2} Knoblauchzehen fein hacken und in {1 EL} Olivenöl glasig dünsten. {700 ml} passierte Tomaten, eine Prise Zucker, Salz und Pfeffer zugeben und offen 15 Minuten einkochen lassen. Die Hälfte des Basilikums zupfen und unterrühren.
+4. Den Ofen auf 200 °C einstellen. {250 g} Mozzarella in Scheiben schneiden und {80 g} Hartkäse reiben. In eine Auflaufform erst etwas Tomatensoße streichen, dann abwechselnd Auberginen, Soße, Mozzarella und Hartkäse schichten. Mit Soße und Hartkäse abschließen.
+5. Etwa 30 Minuten backen, bis die Oberfläche goldbraun ist und an den Rändern blubbert.
+6. Vor dem Anschneiden mindestens 10 Minuten ruhen lassen, dann halten die Schichten zusammen. Mit dem restlichen Basilikum bestreuen.
+
+Tipp: Lauwarm schmeckt die Parmigiana fast noch besser als heiß.
 
 Guten Appetit!', 'melanzane-alla-parmigiana-auberginen-auflauf.jpg');
 
@@ -1820,11 +2024,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Melanzane alla Parmigiana (Auberginen-Auflauf)'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Baba Ganoush
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Baba Ganoush', 50, 4, 'Portionen', 'Sommer', '1. Auberginen mehrfach mit einer Gabel einstechen und unter dem Backofengrill oder auf dem Grill rundherum ca. 30 Minuten rösten, bis die Haut schwarz und das Innere ganz weich ist.
-2. Etwas abkühlen lassen, längs aufschneiden und das Fruchtfleisch herauslöffeln. In einem Sieb 10 Minuten abtropfen lassen.
-3. Fruchtfleisch mit Tahini, gepresstem Knoblauch, Zitronensaft, Kreuzkümmel und Salz grob zerdrücken oder kurz pürieren.
-4. Mit Olivenöl beträufeln und mit Petersilie und Granatapfelkernen bestreuen. Dazu passt Fladenbrot.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Baba Ganoush', 'Rauchig, cremig und nussig: der Auberginendip aus der Levante, der am besten über offener Flamme gelingt.', 50, 4, 'Portionen', 'Sommer', '1. {2} Auberginen mehrmals mit einer Gabel einstechen, damit sie nicht platzen. Unter dem heißen Backofengrill, auf dem Grill oder direkt über der Gasflamme rundherum etwa 30 Minuten rösten, bis die Haut schwarz und das Innere ganz weich ist. Die verkohlte Haut sorgt für das typische Raucharoma.
+2. Etwas abkühlen lassen, längs aufschneiden und das Fruchtfleisch mit einem Löffel herauskratzen. In einem Sieb 10 Minuten abtropfen lassen, damit der Dip nicht wässrig wird.
+3. Das Fruchtfleisch mit {2 EL} Tahini, der gepressten Knoblauchzehe, dem Saft der Zitrone, {0.5 TL} Kreuzkümmel und Salz mit einer Gabel grob zerdrücken oder nur kurz pürieren. Er soll noch etwas Struktur haben.
+4. Abschmecken: Es darf ruhig zitronig sein.
+5. Auf einem Teller verstreichen, eine Mulde hineindrücken und mit {2 EL} Olivenöl beträufeln. Mit gehackter Petersilie und den Kernen des halben Granatapfels bestreuen. Dazu passt warmes Fladenbrot.
+
+Tipp: Granatapfelkerne löst man am einfachsten, indem man die halbierte Frucht mit der Schnittfläche nach unten über eine Schüssel hält und mit einem Kochlöffel kräftig auf die Schale klopft.
 
 Guten Appetit!', 'baba-ganoush.jpg');
 
@@ -1839,12 +2046,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Baba Ganoush'), (SELECT id FROM ingredients WHERE name = 'Granatapfel'), 0.5, NULL);
 
 -- Shakshuka
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Shakshuka', 30, 4, 'Portionen', 'Sommer', '1. Zwiebel und Paprika in Streifen schneiden, Knoblauch hacken und alles in einer großen Pfanne in Öl 8 Minuten weich dünsten.
-2. Kreuzkümmel, Paprikapulver und Chiliflocken kurz mitrösten. Tomaten zugeben, salzen und 10 Minuten einköcheln lassen.
-3. Mit einem Löffel {6} Mulden in die Soße drücken und je ein Ei hineinschlagen.
-4. Zugedeckt bei kleiner Hitze 6–8 Minuten garen, bis das Eiweiß gestockt und das Eigelb noch flüssig ist.
-5. Mit zerbröseltem Feta, Koriander und Pfeffer bestreuen und in der Pfanne servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Shakshuka', 'Eier, pochiert in würziger Tomaten-Paprika-Soße, direkt aus der Pfanne: Frühstück für alle, die es kräftig mögen.', 30, 4, 'Portionen', 'Sommer', '1. Die Zwiebel und {2} Paprika in Streifen schneiden und {2} Knoblauchzehen hacken. {2 EL} Olivenöl in einer großen Pfanne mit Deckel erhitzen und alles darin bei mittlerer Hitze etwa 8 Minuten weich dünsten.
+2. {1 TL} Kreuzkümmel, {1 TL} Paprikapulver und {0.5 TL} Chiliflocken zugeben und 1 Minute mitrösten, bis es duftet. {800 g} gehackte Tomaten zugeben, salzen und offen etwa 10 Minuten einköcheln lassen, bis die Soße dicklich ist.
+3. Mit einem Löffel {6} Mulden in die Soße drücken und in jede vorsichtig ein Ei schlagen. Das Eiweiß leicht salzen.
+4. Den Deckel auflegen und bei schwacher Hitze 6–8 Minuten garen, bis das Eiweiß gestockt und das Eigelb noch flüssig ist. Zwischendurch nachsehen, die Eier garen schnell nach.
+5. {100 g} Feta darüberbröseln, mit gezupftem Koriander und Pfeffer bestreuen und direkt in der Pfanne servieren.
+
+Tipp: Unbedingt frisches Brot zum Tunken dazu reichen.
 
 Guten Appetit!', 'shakshuka.jpg');
 
@@ -1863,11 +2072,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Shakshuka'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Peperonata
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Peperonata', 40, 4, 'Portionen', 'Sommer', '1. Rote und gelbe Paprika in Streifen und die Zwiebel in Ringe schneiden, Knoblauch hacken und Tomaten würfeln.
-2. Öl in einem breiten Topf erhitzen und Zwiebel und Paprika 10 Minuten bei mittlerer Hitze dünsten.
-3. Knoblauch und Tomaten zugeben und zugedeckt 20 Minuten schmoren, bis die Paprika ganz weich sind.
-4. Mit Essig, Zucker, Salz und Pfeffer abschmecken und das Basilikum unterheben. Warm oder lauwarm als Beilage oder auf Brot servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Peperonata', 'Langsam geschmorte Paprika, süß-säuerlich abgeschmeckt: Italiens bunte Beilage für warme Abende.', 40, 4, 'Portionen', 'Sommer', '1. {4} rote und gelbe Paprika entkernen und in etwa 1 cm breite Streifen schneiden. Die Zwiebel in Ringe schneiden, {2} Knoblauchzehen hacken und {2} Tomaten würfeln.
+2. {4 EL} Olivenöl in einem breiten Topf erhitzen. Zwiebel und Paprika darin bei mittlerer Hitze unter gelegentlichem Rühren 10 Minuten dünsten, bis sie weicher werden.
+3. Knoblauch und Tomaten zugeben, salzen und zugedeckt bei schwacher Hitze etwa 20 Minuten schmoren, bis die Paprika ganz weich und süß ist.
+4. Mit {1 EL} Weißweinessig, {1 TL} Zucker, Salz und Pfeffer süß-säuerlich abschmecken. Die Basilikumblätter zupfen und unterheben.
+5. Warm oder lauwarm als Beilage zu Fleisch und Fisch servieren, oder auf geröstetem Brot.
+
+Tipp: Im Kühlschrank hält sie sich mehrere Tage und schmeckt durchgezogen sogar besser.
 
 Guten Appetit!', 'peperonata.jpg');
 
@@ -1883,11 +2095,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Peperonata'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Halloumi-Gemüse-Spieße vom Grill
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Halloumi-Gemüse-Spieße vom Grill', 35, 4, 'Portionen', 'Sommer', '1. Halloumi, Zucchini, Paprika und Zwiebel in mundgerechte Stücke schneiden.
-2. Olivenöl, Zitronensaft, Oregano, gepressten Knoblauch und Pfeffer verrühren und alles darin 15 Minuten marinieren.
-3. Abwechselnd mit den Tomaten auf Spieße stecken. Holzspieße vorher wässern.
-4. Auf dem heißen Grill oder in der Grillpfanne rundherum 8–10 Minuten grillen. Halloumi ist salzig genug, zusätzliches Salz ist nicht nötig.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Halloumi-Gemüse-Spieße vom Grill', 'Quietschender Grillkäse mit buntem Gemüse und Zitronen-Oregano-Marinade: der Liebling jeder vegetarischen Grillparty.', 35, 4, 'Portionen', 'Sommer', '1. Holzspieße mindestens 30 Minuten in Wasser einweichen, damit sie auf dem Grill nicht verbrennen.
+2. {250 g} Halloumi, die Zucchini, die Paprika und die Zwiebel in etwa 3 cm große Stücke schneiden.
+3. {4 EL} Olivenöl, den Saft der Zitrone, {1 TL} Oregano, die gepresste Knoblauchzehe und Pfeffer verrühren. Halloumi und Gemüse darin wenden und 15 Minuten marinieren.
+4. Halloumi, Gemüse und {200 g} Kirschtomaten abwechselnd auf die Spieße stecken.
+5. Auf dem heißen Grill oder in einer Grillpfanne rundherum 8–10 Minuten grillen, bis der Halloumi goldbraune Streifen hat und das Gemüse weich ist. Zwischendurch mit der übrigen Marinade bestreichen. Halloumi ist salzig genug, zusätzliches Salz ist nicht nötig.
+
+Tipp: Dazu passen Tzatziki und Fladenbrot.
 
 Guten Appetit!', 'halloumi-gemuese-spiesse-vom-grill.jpg');
 
@@ -1903,12 +2118,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Halloumi-Gemüse-Spieße vom Grill'), (SELECT id FROM ingredients WHERE name = 'Kirschtomate'), 200, 'g');
 
 -- Hähnchen-Gemüse-Spieße vom Grill
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hähnchen-Gemüse-Spieße vom Grill', 100, 4, 'Portionen', 'Sommer', '1. Hähnchenbrust in 3 cm große Würfel schneiden.
-2. Joghurt mit Zitronensaft, gepresstem Knoblauch, Paprikapulver, Kreuzkümmel, Öl, Salz und Pfeffer verrühren und das Fleisch darin mindestens 1 Stunde marinieren.
-3. Paprika, Zucchini und Zwiebel in Stücke schneiden.
-4. Fleisch und Gemüse abwechselnd auf Spieße stecken.
-5. Auf dem Grill bei mittlerer Hitze 10–12 Minuten rundherum grillen, bis das Fleisch durchgegart ist.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hähnchen-Gemüse-Spieße vom Grill', 'Saftiges Hähnchen in würziger Joghurtmarinade mit buntem Gemüse vom Grill.', 100, 4, 'Portionen', 'Sommer', '1. {600 g} Hähnchenbrust trocken tupfen und in 3 cm große Würfel schneiden.
+2. {150 g} Joghurt mit dem Saft der Zitrone, {2} gepressten Knoblauchzehen, {1 TL} Paprikapulver, {0.5 TL} Kreuzkümmel, {2 EL} Olivenöl, Salz und Pfeffer verrühren. Das Fleisch darin wenden und abgedeckt mindestens 1 Stunde im Kühlschrank marinieren. Der Joghurt macht das Hähnchen besonders zart.
+3. Holzspieße inzwischen in Wasser einweichen. {2} Paprika, die Zucchini und die Zwiebel in etwa 3 cm große Stücke schneiden.
+4. Fleisch und Gemüse abwechselnd auf die Spieße stecken. Überschüssige Marinade leicht abstreifen, damit sie auf dem Grill nicht verbrennt.
+5. Auf dem Grill bei mittlerer Hitze 10–12 Minuten rundherum grillen, bis das Fleisch durchgegart und leicht gebräunt ist. Zur Probe ein Stück aufschneiden: Innen darf es nicht mehr rosa sein.
+
+Tipp: In der Grillpfanne oder unter dem Backofengrill gelingen die Spieße genauso gut.
 
 Guten Appetit!', 'haehnchen-gemuese-spiesse-vom-grill.jpg');
 
@@ -1926,12 +2143,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hähnchen-Gemüse-Spieße vom Grill'), (SELECT id FROM ingredients WHERE name = 'Rote Zwiebel'), 1, NULL);
 
 -- Gegrillter Schweinenacken mit Kräutermarinade
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gegrillter Schweinenacken mit Kräutermarinade', 160, 4, 'Portionen', 'Sommer', '1. Kräuter fein hacken und mit gepresstem Knoblauch, Senf, Paprikapulver, Öl und Pfeffer verrühren.
-2. Nackensteaks (ca. 2 cm dick) mit der Marinade einreiben und abgedeckt mindestens 2 Stunden, besser über Nacht, im Kühlschrank ziehen lassen.
-3. Steaks 30 Minuten vor dem Grillen aus dem Kühlschrank nehmen und überschüssige Marinade abstreifen.
-4. Bei direkter, starker Hitze pro Seite 4–5 Minuten grillen und anschließend bei indirekter Hitze 5 Minuten ziehen lassen.
-5. Erst nach dem Grillen salzen und servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gegrillter Schweinenacken mit Kräutermarinade', 'Saftige Nackensteaks mit Rosmarin, Thymian und Knoblauch: der Grillklassiker, selbst mariniert statt aus der Schale.', 160, 4, 'Portionen', 'Sommer', '1. Die Nadeln von {2} Rosmarinzweigen und die Blättchen von {4} Thymianzweigen abzupfen und fein hacken. {3} Knoblauchzehen schälen und pressen.
+2. Kräuter und Knoblauch mit {1 EL} Senf, {1 TL} Paprikapulver, {6 EL} Rapsöl und Pfeffer verrühren. Kein Salz in die Marinade, es würde dem Fleisch Saft entziehen.
+3. {800 g} Schweinenacken in etwa 2 cm dicke Steaks schneiden oder fertig geschnittene Steaks nehmen. Rundherum mit der Marinade einreiben und abgedeckt mindestens 2 Stunden, besser über Nacht, im Kühlschrank ziehen lassen.
+4. Die Steaks 30 Minuten vor dem Grillen aus dem Kühlschrank nehmen und überschüssige Marinade abstreifen. Die Kräuter würden sonst auf dem Rost verbrennen.
+5. Bei direkter, starker Hitze pro Seite 4–5 Minuten grillen, bis sie ein schönes Grillmuster haben. Dann an den Rand des Grills legen und bei indirekter Hitze noch 5 Minuten ziehen lassen.
+6. Erst nach dem Grillen salzen und sofort servieren.
+
+Tipp: Nacken bleibt durch seine Fettmarmorierung auch bei etwas längerer Grillzeit saftig, ideal für Grillanfänger.
 
 Guten Appetit!', 'gegrillter-schweinenacken-mit-kraeutermarinade.jpg');
 
@@ -1946,12 +2166,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gegrillter Schweinenacken mit Kräutermarinade'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Klassischer Burger
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Klassischer Burger', 40, 4, 'Portionen', 'Sommer', '1. Hackfleisch mit Salz und Pfeffer locker vermengen und zu {4} flachen Patties (ca. 1,5 cm dick) formen. Mit dem Daumen eine leichte Mulde in die Mitte drücken.
-2. Tomaten und Zwiebel in Scheiben, Gewürzgurken in dünne Scheiben schneiden. Salat waschen.
-3. Für die Soße Mayonnaise, Ketchup und Senf verrühren.
-4. Patties auf dem heißen Grill oder in einer Pfanne mit wenig Öl pro Seite 3–4 Minuten braten. In der letzten Minute mit Cheddar belegen und schmelzen lassen.
-5. Brötchen aufschneiden, die Schnittflächen kurz rösten und mit Soße, Salat, Patty, Tomate, Zwiebel und Gurke belegen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Klassischer Burger', 'Saftiges Rindfleisch, geschmolzener Cheddar und eine schnelle Burgersoße: der Burger, für den man nicht ins Restaurant muss.', 40, 4, 'Portionen', 'Sommer', '1. {600 g} Rinderhackfleisch mit Salz und Pfeffer nur locker vermengen, nicht kneten, sonst wird es zäh. Zu {4} flachen Patties von etwa 1,5 cm Dicke formen, die etwas größer sind als die Brötchen. Mit dem Daumen eine leichte Mulde in die Mitte drücken, damit sie sich beim Braten nicht wölben.
+2. {2} Tomaten und die Zwiebel in Scheiben, {2} Gewürzgurken in dünne Scheiben schneiden. Die Salatblätter waschen und trocken tupfen.
+3. Für die Soße {2 EL} Mayonnaise, {4 EL} Ketchup und {1 TL} Senf verrühren.
+4. Den Grill oder eine Pfanne mit {1 EL} Rapsöl stark erhitzen. Die Patties pro Seite 3–4 Minuten braten und dabei nicht flach drücken, sonst läuft der Saft heraus. In der letzten Minute je eine Scheibe Cheddar auflegen und schmelzen lassen, in der Pfanne mit Deckel.
+5. {4} Brötchen aufschneiden und die Schnittflächen kurz anrösten. Die Unterseiten mit Soße bestreichen und mit Salat, Patty, Tomate, Zwiebel und Gurke belegen. Deckel drauf und sofort servieren.
+
+Tipp: Angeröstete Brötchen weichen nicht so schnell durch.
 
 Guten Appetit!', 'klassischer-burger.jpg');
 
@@ -1970,12 +2192,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Klassischer Burger'), (SELECT id FROM ingredients WHERE name = 'Brötchen'), 4, NULL);
 
 -- Kichererbsen-Burger
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kichererbsen-Burger', 45, 4, 'Portionen', 'Sommer', '1. Kichererbsen abspülen und gut abtropfen lassen. Zwiebel halbieren: eine Hälfte fein würfeln, die andere in Ringe schneiden.
-2. Kichererbsen mit Zwiebelwürfeln, Knoblauch, Haferflocken, Gewürzen, Petersilie, Salz und Pfeffer grob pürieren, sodass noch Stückchen bleiben.
-3. Mit feuchten Händen {4} Patties formen und 15 Minuten kühlen.
-4. Patties in Öl pro Seite ca. 4 Minuten knusprig braten.
-5. Sojajoghurt mit Zitronensaft, Salz und Pfeffer verrühren. Brötchen rösten und mit Soße, Salat, Patty, Tomatenscheiben und Zwiebelringen belegen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kichererbsen-Burger', 'Würzige Kichererbsen-Patties mit knuspriger Kruste und frischer Zitronen-Joghurtsoße: ein Burger, der niemanden vermissen lässt.', 45, 4, 'Portionen', 'Sommer', '1. {480 g} Kichererbsen in einem Sieb abspülen und sehr gut abtropfen lassen, am besten noch mit Küchenpapier trocken tupfen. Die Zwiebel halbieren: eine Hälfte fein würfeln, die andere in Ringe schneiden.
+2. Kichererbsen, Zwiebelwürfel, den Knoblauch, {60 g} Haferflocken, {1 TL} Kreuzkümmel, {1 TL} Paprikapulver, die Petersilie, Salz und Pfeffer im Mixer oder mit dem Kartoffelstampfer grob zerkleinern. Es sollen noch Stückchen zu sehen sein, sonst wird die Masse breiig.
+3. Mit feuchten Händen {4} Patties formen und 15 Minuten im Kühlschrank fest werden lassen.
+4. {3 EL} Rapsöl in einer Pfanne bei mittlerer Hitze erhitzen und die Patties pro Seite etwa 4 Minuten knusprig braten. Vorsichtig wenden, sie sind recht zart.
+5. {100 g} Sojajoghurt mit dem Saft der halben Zitrone, Salz und Pfeffer verrühren.
+6. {4} Brötchen aufschneiden und rösten. Mit Soße, Salat, Patty, Tomatenscheiben und Zwiebelringen belegen.
+
+Tipp: Zerfallen die Patties beim Formen, noch einen Esslöffel Haferflocken untermischen und kurz quellen lassen.
 
 Guten Appetit!', 'kichererbsen-burger.jpg');
 
@@ -1996,11 +2221,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kichererbsen-Burger'), (SELECT id FROM ingredients WHERE name = 'Tomate'), 2, NULL);
 
 -- Maiskolben vom Grill mit Kräuterbutter
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Maiskolben vom Grill mit Kräuterbutter', 30, 4, 'Portionen', 'Sommer', '1. Weiche Butter mit fein gehackten Kräutern, gepresstem Knoblauch, etwas Zitronenabrieb, Salz und Pfeffer verrühren und kalt stellen.
-2. Maiskolben von Blättern und Fäden befreien und in Salzwasser 10 Minuten vorgaren.
-3. Auf dem heißen Grill unter Wenden 8–10 Minuten grillen, bis sie rundherum leicht gebräunt sind.
-4. Heiß mit der Kräuterbutter bestreichen und mit etwas Salz bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Maiskolben vom Grill mit Kräuterbutter', 'Süße, leicht rauchige Maiskolben, frisch vom Grill und dick mit Kräuterbutter bestrichen.', 30, 4, 'Portionen', 'Sommer', '1. {80 g} weiche Butter mit fein gehackter Petersilie, Schnittlauchröllchen, der gepressten Knoblauchzehe, etwas abgeriebener Zitronenschale, Salz und Pfeffer verrühren. Kalt stellen.
+2. {4} Maiskolben von Blättern und Fäden befreien. In kochendem Salzwasser 10 Minuten vorgaren, dann werden sie auf dem Grill schön zart.
+3. Die Kolben auf dem heißen Grill unter häufigem Wenden 8–10 Minuten grillen, bis sie rundherum leicht gebräunt sind und einzelne Körner etwas Farbe haben.
+4. Heiß mit der Kräuterbutter bestreichen, mit etwas Salz bestreuen und sofort servieren.
+
+Tipp: Ein Spritzer Limettensaft und eine Prise Chili machen den Mais mexikanisch.
 
 Guten Appetit!', 'maiskolben-vom-grill-mit-kraeuterbutter.jpg');
 
@@ -2014,12 +2241,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Maiskolben vom Grill mit Kräuterbutter'), (SELECT id FROM ingredients WHERE name = 'Maiskolben'), 4, NULL);
 
 -- Stockbrot
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Stockbrot', 90, 8, 'Stück', 'Sommer', '1. Mehl, Hefe, Zucker, Salz und fein gehackten Rosmarin mischen. Olivenöl und ca. {300 ml} lauwarmes Wasser zugeben und zu einem glatten Teig kneten.
-2. Zugedeckt ca. 1 Stunde gehen lassen.
-3. Teig in {8} Portionen teilen und zu langen, fingerdicken Strängen rollen.
-4. Stränge spiralförmig um das Ende langer, geschälter Stöcke wickeln.
-5. Über der Glut – nicht in den Flammen – unter ständigem Drehen 10–15 Minuten goldbraun backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Stockbrot', 'Teig am Stock über der Glut: das schönste Lagerfeuerritual für Groß und Klein, mit einem Hauch Rosmarin.', 90, 8, 'Stück', 'Sommer', '1. {500 g} Mehl, die Trockenhefe, {1 TL} Zucker, {1 TL} Salz und die fein gehackten Nadeln des Rosmarinzweigs in einer Schüssel mischen.
+2. {3 EL} Olivenöl und etwa {300 ml} lauwarmes Wasser zugeben und alles 5–8 Minuten zu einem glatten, geschmeidigen Teig kneten. Klebt er zu sehr, etwas Mehl zugeben.
+3. Den Teig zugedeckt an einem warmen Ort etwa 1 Stunde gehen lassen, bis er sich sichtbar vergrößert hat.
+4. In der Zwischenzeit lange, fingerdicke Stöcke suchen und die Enden auf 20 cm Länge mit einem Messer von der Rinde befreien.
+5. Den Teig in {8} Portionen teilen und jede zu einem langen, fingerdicken Strang rollen. Die Stränge spiralförmig um die geschälten Stockenden wickeln und die Enden gut andrücken.
+6. Über der Glut, nicht in den Flammen, unter ständigem Drehen 10–15 Minuten backen, bis das Brot goldbraun ist und sich leicht vom Stock lösen lässt.
+
+Tipp: Ein Klecks Kräuterbutter oder Kräuterquark in das Loch, das der Stock hinterlässt, macht Stockbrot zum Fest.
 
 Guten Appetit!', 'stockbrot.jpg');
 
@@ -2031,12 +2261,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Stockbrot'), (SELECT id FROM ingredients WHERE name = 'Olivenöl'), 3, 'EL');
 
 -- Elsässer Flammkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Elsässer Flammkuchen', 40, 2, 'Bleche', 'Sommer', '1. Ofen mit einem Blech auf höchster Stufe (mindestens 250 °C) vorheizen.
-2. Mehl, Öl, Salz und ca. {150 ml} Wasser zu einem glatten Teig kneten, in {2} Portionen teilen und auf Backpapier hauchdünn ausrollen.
-3. Crème fraîche und Schmand verrühren und mit Salz, Pfeffer und Muskat würzen. Dünn auf die Teigfladen streichen.
-4. Zwiebeln in feine Ringe und Speck in feine Streifen schneiden und darauf verteilen.
-5. Nacheinander auf dem heißen Blech 8–10 Minuten knusprig backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Elsässer Flammkuchen', 'Hauchdünn, knusprig und in zehn Minuten gebacken: Flammkuchen mit Crème fraîche, Zwiebeln und Speck, wie im Elsass.', 40, 2, 'Bleche', 'Sommer', '1. Den Ofen mit einem Backblech auf höchster Stufe vorheizen, mindestens 250 °C Ober-/Unterhitze. Je heißer der Ofen, desto knuspriger der Boden.
+2. {250 g} Mehl, {2 EL} Rapsöl, eine Prise Salz und etwa {150 ml} lauwarmes Wasser 5 Minuten zu einem glatten, geschmeidigen Teig kneten. Er kommt ohne Hefe aus.
+3. Den Teig in {2} Portionen teilen und jede Portion auf einem Bogen Backpapier hauchdünn rechteckig ausrollen, so dünn, dass man fast durchsehen kann.
+4. {200 g} Crème fraîche und {100 g} Schmand verrühren und mit Salz, Pfeffer und etwas Muskatnuss würzen. Dünn auf die Teigfladen streichen und einen schmalen Rand frei lassen.
+5. {2} Zwiebeln schälen und in hauchdünne Ringe schneiden, {150 g} Speck in feine Streifen schneiden. Beides gleichmäßig auf den Fladen verteilen.
+6. Einen Flammkuchen mit dem Backpapier auf das heiße Blech ziehen und 8–10 Minuten backen, bis die Ränder braun und knusprig sind. Mit dem zweiten genauso verfahren. Sofort in Stücke schneiden und heiß servieren.
+
+Tipp: Für die süße Variante den Belag durch Apfelscheiben, Zimt und Zucker ersetzen.
 
 Guten Appetit!', 'elsaesser-flammkuchen.jpg');
 
@@ -2051,13 +2284,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Elsässer Flammkuchen'), (SELECT id FROM ingredients WHERE name = 'Speck'), 150, 'g');
 
 -- Pizza Margherita
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pizza Margherita', 120, 2, 'Pizzen', 'Sommer', '1. Mehl, Hefe, Salz und Zucker mischen. {250 ml} lauwarmes Wasser und {2 EL} Öl zugeben und 10 Minuten zu einem glatten Teig kneten.
-2. Abgedeckt ca. 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
-3. Ofen mit einem Blech oder Pizzastein auf höchster Stufe vorheizen.
-4. Passierte Tomaten mit Oregano, einer Prise Salz und {1 EL} Öl verrühren. Teig in {2} Portionen teilen und dünn ausrollen.
-5. Mit Tomatensoße bestreichen, mit zerzupftem Mozzarella belegen und je ca. 10 Minuten backen.
-6. Mit frischem Basilikum belegen und sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pizza Margherita', 'Die Königin der Pizzen: dünner, luftiger Teig, fruchtige Tomatensoße, Mozzarella und frisches Basilikum.', 120, 2, 'Pizzen', 'Sommer', '1. {400 g} Mehl, die Trockenhefe, {1 TL} Salz und eine Prise Zucker in einer Schüssel mischen. {250 ml} lauwarmes Wasser und {2 EL} Olivenöl zugeben und 10 Minuten zu einem glatten, elastischen Teig kneten. Er soll leicht klebrig sein.
+2. Abgedeckt an einem warmen Ort etwa 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
+3. Den Ofen mit einem Backblech oder Pizzastein auf höchster Stufe vorheizen, mindestens 30 Minuten lang. Je heißer, desto näher kommt man an den Holzofen heran.
+4. {200 ml} passierte Tomaten mit {1 TL} Oregano, einer Prise Salz und {1 EL} Olivenöl verrühren. Die Soße wird nicht gekocht, sie gart im Ofen.
+5. Den Teig in {2} Portionen teilen und auf Backpapier dünn rund ausrollen oder mit den Fingern auseinanderziehen, der Rand darf etwas dicker bleiben. Mit der Tomatensoße bestreichen und {250 g} gut abgetropften Mozzarella in Stücken darauf verteilen.
+6. Die Pizzen nacheinander mit dem Backpapier auf das heiße Blech ziehen und je etwa 10 Minuten backen, bis der Rand gebräunt ist und der Käse blubbert.
+7. Mit frischen Basilikumblättern belegen und sofort servieren.
+
+Tipp: Wer Zeit hat, lässt den Teig abgedeckt über Nacht im Kühlschrank gehen. Er wird dadurch aromatischer und bekömmlicher.
 
 Guten Appetit!', 'pizza-margherita.jpg');
 
@@ -2072,12 +2308,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pizza Margherita'), (SELECT id FROM ingredients WHERE name = 'Basilikum'), 0.5, 'Bund');
 
 -- Spaghetti mit Kirschtomaten und Basilikum
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti mit Kirschtomaten und Basilikum', 20, 4, 'Portionen', 'Sommer', '1. Spaghetti in Salzwasser bissfest kochen.
-2. Knoblauch in dünne Scheiben schneiden und in Olivenöl bei mittlerer Hitze leicht anbraten.
-3. Halbierte Kirschtomaten und Chiliflocken zugeben und 5 Minuten braten, bis die Tomaten aufplatzen.
-4. Spaghetti mit einer Kelle Nudelwasser zu den Tomaten geben und gut durchschwenken.
-5. Mit Salz und Pfeffer abschmecken und mit reichlich Basilikum servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spaghetti mit Kirschtomaten und Basilikum', 'Schnell, sommerlich und voller Geschmack: Kirschtomaten, die in Knoblauchöl aufplatzen, und viel frisches Basilikum.', 20, 4, 'Portionen', 'Sommer', '1. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin nach Packungsangabe bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. Inzwischen {3} Knoblauchzehen schälen und in dünne Scheiben schneiden. {5 EL} Olivenöl in einer großen Pfanne bei mittlerer Hitze erwärmen und den Knoblauch darin 1–2 Minuten sanft braten, bis er hellgolden ist. Er darf nicht braun werden, sonst wird er bitter.
+3. {500 g} Kirschtomaten halbieren und mit einer Prise Chiliflocken in die Pfanne geben. Bei mittlerer bis hoher Hitze etwa 5 Minuten braten, bis die Tomaten aufplatzen und Saft abgeben. Leicht salzen.
+4. Die abgetropften Spaghetti mit einer Kelle Nudelwasser zu den Tomaten geben und kräftig durchschwenken, bis eine leicht sämige Soße entsteht.
+5. Mit Salz und Pfeffer abschmecken, die Basilikumblätter grob zerzupfen und unterheben. Sofort servieren.
+
+Tipp: Geriebener Hartkäse oder ein paar Stücke Burrata obendrauf machen das Gericht noch feiner.
 
 Guten Appetit!', 'spaghetti-mit-kirschtomaten-und-basilikum.jpg');
 
@@ -2091,12 +2329,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spaghetti mit Kirschtomaten und Basilikum'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spaghetti mit Basilikumpesto
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti mit Basilikumpesto', 20, 4, 'Portionen', 'Sommer', '1. Pinienkerne ohne Fett goldbraun rösten und abkühlen lassen.
-2. Basilikumblätter, Pinienkerne, Knoblauch und eine Prise Salz im Mörser oder Mixer zerkleinern und nach und nach das Olivenöl einarbeiten.
-3. Fein geriebenen Käse unterrühren.
-4. Spaghetti in Salzwasser bissfest kochen, abgießen und dabei etwas Nudelwasser auffangen.
-5. Pesto mit {2-3 EL} Nudelwasser unter die Nudeln mischen. Das Pesto nicht erhitzen, sonst wird das Basilikum bitter.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spaghetti mit Basilikumpesto', 'Pesto alla Genovese, frisch gemacht: duftendes Basilikum, geröstete Pinienkerne, Knoblauch und gutes Olivenöl.', 20, 4, 'Portionen', 'Sommer', '1. {40 g} Pinienkerne in einer Pfanne ohne Fett bei mittlerer Hitze goldbraun rösten und abkühlen lassen.
+2. Die Blätter von {2 Bund} Basilikum abzupfen. Mit den Pinienkernen, dem Knoblauch und einer Prise Salz im Mörser zerstoßen oder im Mixer kurz zerkleinern. Nach und nach {120 ml} Olivenöl einarbeiten, bis eine cremige Paste entsteht. Im Mixer nur kurz pulsieren, die Wärme der Messer macht das Basilikum dunkel und bitter.
+3. {50 g} Hartkäse fein reiben und unterrühren.
+4. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin bissfest kochen. Beim Abgießen etwas Nudelwasser auffangen.
+5. Die Nudeln zurück in den Topf geben und das Pesto mit {2-3 EL} Nudelwasser unterheben, bis alles cremig überzogen ist. Das Pesto nicht erhitzen, sonst wird das Basilikum bitter. Sofort servieren.
+
+Tipp: In Ligurien kommen noch ein paar Kartoffelwürfel und grüne Bohnen mit ins Nudelwasser.
 
 Guten Appetit!', 'spaghetti-mit-basilikumpesto.jpg');
 
@@ -2109,11 +2349,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spaghetti mit Basilikumpesto'), (SELECT id FROM ingredients WHERE name = 'Spaghetti'), 400, 'g');
 
 -- Kalte Gurkensuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kalte Gurkensuppe', 75, 4, 'Portionen', 'Sommer', '1. Gurken schälen, längs halbieren, entkernen und grob würfeln. Einige Würfel zum Garnieren beiseitelegen.
-2. Gurke mit Joghurt, Knoblauch, dem Großteil des Dills, Zitronensaft und kalter Brühe fein pürieren.
-3. Mit Salz und Pfeffer kräftig abschmecken und mindestens 1 Stunde kalt stellen.
-4. In Schalen füllen, mit Gurkenwürfeln und Dill garnieren und mit Olivenöl beträufeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kalte Gurkensuppe', 'Erfrischend wie ein Sprung in den See: kalte Gurken-Joghurt-Suppe mit Dill für die heißesten Tage.', 75, 4, 'Portionen', 'Sommer', '1. {2} Gurken schälen, längs halbieren und die Kerne mit einem Teelöffel herauskratzen. Grob würfeln und ein paar kleine Würfel zum Garnieren beiseitelegen.
+2. Gurke, {500 g} Joghurt, die Knoblauchzehe, den größten Teil des Dills, den Saft der halben Zitrone und {150 ml} kalte Gemüsebrühe im Mixer sehr fein pürieren.
+3. Mit Salz und Pfeffer kräftig abschmecken. Kalte Suppen brauchen mehr Würze, als man denkt.
+4. Mindestens 1 Stunde kalt stellen, damit sich die Aromen verbinden und die Suppe richtig kühl ist.
+5. Noch einmal durchrühren und abschmecken. In Schalen füllen, mit den Gurkenwürfeln und dem restlichen Dill garnieren und mit {2 EL} Olivenöl beträufeln.
+
+Tipp: Ein paar Eiswürfel in den Schalen halten die Suppe auch draußen auf der Terrasse kühl.
 
 Guten Appetit!', 'kalte-gurkensuppe.jpg');
 
@@ -2128,13 +2371,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kalte Gurkensuppe'), (SELECT id FROM ingredients WHERE name = 'Olivenöl'), 2, 'EL');
 
 -- Pfifferlinge in Rahmsoße mit Semmelknödeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pfifferlinge in Rahmsoße mit Semmelknödeln', 60, 4, 'Portionen', 'Sommer', '1. Altbackene Brötchen würfeln, mit warmer Milch übergießen und 15 Minuten einweichen.
-2. {1} Zwiebel würfeln und in {1 EL} Butter glasig dünsten. Mit Eiern, der Hälfte der gehackten Petersilie, Salz, Pfeffer und Muskat zu den Brötchen geben und gut verkneten.
-3. Mit nassen Händen {8} Knödel formen und in siedendem Salzwasser ca. 20 Minuten gar ziehen lassen.
-4. Pfifferlinge trocken putzen und große Exemplare halbieren. Die restliche Zwiebel würfeln.
-5. Pilze in der restlichen Butter bei starker Hitze anbraten, Zwiebel zugeben und kurz mitbraten. Mit Brühe und Sahne ablöschen und 5 Minuten einkochen.
-6. Mit Salz und Pfeffer abschmecken, restliche Petersilie unterrühren und mit den Knödeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pfifferlinge in Rahmsoße mit Semmelknödeln', 'Waldpilze in cremiger Soße mit fluffigen Semmelknödeln: ein Spätsommergericht, das nach Wald und Wiese duftet.', 60, 4, 'Portionen', 'Sommer', '1. {300 g} altbackene Brötchen in kleine Würfel schneiden. {250 ml} Milch lauwarm erwärmen, darübergießen und 15 Minuten einweichen.
+2. {1} Zwiebel schälen und fein würfeln, die Petersilie hacken. {1 EL} Butter in einer Pfanne schmelzen und die Zwiebel darin glasig dünsten. Zwiebel, {2} Eier, die Hälfte der Petersilie, Salz, Pfeffer und etwas Muskatnuss zu den Brötchen geben und mit den Händen gut verkneten.
+3. In einem großen Topf Salzwasser aufkochen und die Hitze reduzieren, bis es nur noch siedet. Mit nassen Händen {8} Knödel formen und etwa 20 Minuten gar ziehen lassen. Das Wasser darf nicht sprudeln, sonst zerfallen sie.
+4. Inzwischen {500 g} Pfifferlinge mit einem Pinsel oder Küchenpapier trocken putzen. Nur stark verschmutzte Pilze kurz abbrausen, sie saugen sich sonst mit Wasser voll. Große Pilze halbieren. Die restliche Zwiebel fein würfeln.
+5. Die restliche Butter in einer großen Pfanne stark erhitzen und die Pfifferlinge darin 3–4 Minuten anbraten, bis sie leicht gebräunt sind. Die Zwiebel zugeben und 1 Minute mitbraten. Mit {100 ml} Gemüsebrühe und {200 ml} Sahne ablöschen und 5 Minuten sämig einkochen lassen.
+6. Mit Salz und Pfeffer abschmecken, die restliche Petersilie unterrühren und mit den Knödeln servieren.
+
+Tipp: Pilze in einer großen Pfanne nicht zu dicht braten, sonst ziehen sie Wasser, statt zu bräunen. Lieber in zwei Portionen.
 
 Guten Appetit!', 'pfifferlinge-in-rahmsosse-mit-semmelknoedeln.jpg');
 
@@ -2152,12 +2397,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pfifferlinge in Rahmsoße mit Semmelknödeln'), (SELECT id FROM ingredients WHERE name = 'Sahne'), 200, 'ml');
 
 -- Matjes nach Hausfrauenart
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Matjes nach Hausfrauenart', 45, 4, 'Portionen', 'Sommer', '1. Kartoffeln als Pellkartoffeln kochen.
-2. Matjesfilets kurz wässern, trocken tupfen und in mundgerechte Stücke schneiden.
-3. Apfel entkernen und würfeln, Zwiebel in feine Ringe und Gewürzgurken in Scheiben schneiden.
-4. Saure Sahne, Joghurt, Zitronensaft und Zucker verrühren und mit Pfeffer und wenig Salz würzen.
-5. Matjes, Apfel, Zwiebel und Gurken unterheben, mindestens 15 Minuten ziehen lassen und mit Dill bestreut zu den Pellkartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Matjes nach Hausfrauenart', 'Zarte Matjesfilets in einer frischen Soße mit Apfel, Zwiebeln und Gewürzgurke: Norddeutschland auf dem Teller.', 45, 4, 'Portionen', 'Sommer', '1. {800 g} Kartoffeln waschen und in Salzwasser zugedeckt etwa 20 Minuten als Pellkartoffeln garen.
+2. {8} Matjesfilets kurz in kaltem Wasser wässern, wenn sie sehr salzig sind, trocken tupfen und in mundgerechte Stücke schneiden.
+3. Den Apfel waschen, entkernen und in kleine Würfel schneiden. Die Zwiebel in feine Ringe und {2} Gewürzgurken in Scheiben schneiden.
+4. {200 g} saure Sahne, {150 g} Joghurt, den Saft der halben Zitrone und eine Prise Zucker verrühren. Mit Pfeffer und nur wenig Salz würzen, der Matjes ist schon salzig.
+5. Matjes, Apfel, Zwiebel und Gurken unterheben und mindestens 15 Minuten im Kühlschrank ziehen lassen.
+6. Den Dill hacken und darüberstreuen. Mit den heißen Pellkartoffeln servieren.
+
+Tipp: Die beste Matjeszeit ist im Frühsommer, wenn der neue Fang auf den Markt kommt.
 
 Guten Appetit!', 'matjes-nach-hausfrauenart.jpg');
 
@@ -2175,12 +2423,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Matjes nach Hausfrauenart'), (SELECT id FROM ingredients WHERE name = 'Dill'), 0.5, 'Bund');
 
 -- Fisch-Tacos mit Mango-Salsa
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Fisch-Tacos mit Mango-Salsa', 35, 4, 'Portionen', 'Sommer', '1. Mango schälen und würfeln, Zwiebel und Chili fein hacken. Mit dem Saft einer Limette, der Hälfte des Korianders und Salz zu einer Salsa mischen.
-2. Weißkohl in sehr feine Streifen schneiden und mit etwas Limettensaft und Salz verkneten.
-3. Fisch in breite Streifen schneiden, mit Paprika, Kreuzkümmel und Salz würzen und in Öl pro Seite 2–3 Minuten braten.
-4. Tortillas in einer trockenen Pfanne kurz erwärmen.
-5. Tortillas mit Kohl, Fisch, Salsa und einem Klecks saurer Sahne füllen. Mit restlichem Koriander und Limettenspalten servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Fisch-Tacos mit Mango-Salsa', 'Knusprig gewürzter Fisch, fruchtige Mango-Salsa und knackiger Kohl in warmen Tortillas: Urlaub zum Mitnehmen.', 35, 4, 'Portionen', 'Sommer', '1. Für die Salsa die Mango schälen, das Fruchtfleisch vom Stein schneiden und klein würfeln. Die Zwiebel fein hacken. Die Chilischote entkernen und sehr fein hacken. Alles mit dem Saft {1} Limette, der Hälfte des gehackten Korianders und etwas Salz mischen.
+2. {150 g} Weißkohl in sehr feine Streifen schneiden oder hobeln. Mit etwas Limettensaft und Salz kräftig mit den Händen verkneten, bis er etwas weicher wird.
+3. {500 g} Kabeljaufilet trocken tupfen und in breite Streifen schneiden. Mit {1 TL} Paprikapulver, {0.5 TL} Kreuzkümmel und Salz würzen.
+4. {2 EL} Rapsöl in einer Pfanne erhitzen und den Fisch pro Seite 2–3 Minuten braten, bis er leicht gebräunt ist und in große Stücke zerfällt. Vorsichtig wenden.
+5. {8} Maistortillas in einer trockenen Pfanne kurz von beiden Seiten erwärmen, bis sie weich und biegsam sind.
+6. Die Tortillas mit Kohl, Fisch, Salsa und einem Klecks von {150 g} saurer Sahne füllen. Mit dem restlichen Koriander und Limettenspalten servieren.
+
+Tipp: Die Tortillas zwischen zwei Küchentüchern warm halten, bis alle am Tisch sitzen.
 
 Guten Appetit!', 'fisch-tacos-mit-mango-salsa.jpg');
 
@@ -2199,12 +2450,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Fisch-Tacos mit Mango-Salsa'), (SELECT id FROM ingredients WHERE name = 'Saure Sahne'), 150, 'g');
 
 -- Gambas al Ajillo
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gambas al Ajillo', 15, 4, 'Portionen', 'Sommer', '1. Garnelen schälen, den Darm entfernen und trocken tupfen.
-2. Knoblauch in feine Scheiben und Chili in Ringe schneiden.
-3. Olivenöl in einer Tonform oder Pfanne erhitzen und Knoblauch und Chili darin 1 Minute anschwitzen, ohne dass der Knoblauch braun wird.
-4. Garnelen zugeben und 2–3 Minuten garen, bis sie rosa sind.
-5. Mit Salz und gehackter Petersilie bestreuen und brutzelnd servieren. Dazu passt Weißbrot zum Tunken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gambas al Ajillo', 'Garnelen in brutzelndem Knoblauchöl, direkt aus der Pfanne: Spaniens berühmteste Tapa.', 15, 4, 'Portionen', 'Sommer', '1. {400 g} Garnelen schälen, falls nötig, am Rücken längs einschneiden und den dunklen Darm entfernen. Gründlich trocken tupfen.
+2. {6} Knoblauchzehen schälen und in feine Scheiben schneiden. Die Chilischote in dünne Ringe schneiden.
+3. {150 ml} Olivenöl in einer Tonform oder kleinen Pfanne bei mittlerer Hitze erwärmen. Knoblauch und Chili darin 1 Minute anschwitzen, bis es duftet. Der Knoblauch darf nicht braun werden, sonst schmeckt das Öl bitter.
+4. Die Garnelen zugeben und unter Wenden 2–3 Minuten garen, bis sie rosa und gerade durch sind. Nicht länger, sonst werden sie gummiartig.
+5. Mit Salz und gehackter Petersilie bestreuen und brutzelnd heiß in der Form servieren.
+
+Tipp: Unbedingt Weißbrot dazu reichen. Das Knoblauchöl ist fast das Beste daran.
 
 Guten Appetit!', 'gambas-al-ajillo.jpg');
 
@@ -2216,13 +2469,17 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gambas al Ajillo'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Paella
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Paella', 60, 4, 'Portionen', 'Sommer', '1. Entbeintes Hähnchen in Stücke, Chorizo in Scheiben und Paprika in Streifen schneiden. Zwiebel und Knoblauch hacken, Tomaten fein würfeln.
-2. Öl in einer Paellapfanne erhitzen und Hähnchen und Chorizo rundherum anbraten. Zwiebel, Knoblauch und Paprika zugeben und 5 Minuten mitbraten.
-3. Tomaten und Paprikapulver einrühren, dann den Reis zugeben und kurz anrösten.
-4. Heiße Brühe mit dem Safran zugießen, salzen, einmal umrühren und danach nicht mehr rühren. 10 Minuten kräftig köcheln lassen.
-5. Garnelen, geputzte Muscheln und Erbsen auf dem Reis verteilen und bei kleiner Hitze weitere 10 Minuten garen, bis die Flüssigkeit aufgesogen ist und sich die Muscheln geöffnet haben. Geschlossene Muscheln wegwerfen.
-6. Abgedeckt 5 Minuten ruhen lassen und mit Zitronenspalten servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Paella', 'Safrangelber Reis mit Hähnchen, Chorizo, Garnelen und Muscheln, gegart in einer großen Pfanne: ein Fest zum Teilen.', 60, 4, 'Portionen', 'Sommer', '1. {400 g} entbeintes Hähnchenschenkelfleisch in mundgerechte Stücke, {100 g} Chorizo in Scheiben und die Paprika in Streifen schneiden. Die Zwiebel und {2} Knoblauchzehen fein hacken, {2} Tomaten fein würfeln.
+2. {900 ml} Hühnerbrühe erhitzen und den Safran darin auflösen.
+3. {4 EL} Olivenöl in einer Paellapfanne oder einer großen, flachen Pfanne erhitzen. Hähnchen und Chorizo darin rundherum anbraten, bis das Hähnchen gebräunt ist. Zwiebel, Knoblauch und Paprika zugeben und 5 Minuten mitbraten.
+4. Tomaten und {1 TL} Paprikapulver einrühren und 2 Minuten einkochen. {300 g} Reis zugeben und 1 Minute unter Rühren anrösten.
+5. Die heiße Safranbrühe angießen, salzen, den Reis gleichmäßig verteilen und ab jetzt nicht mehr rühren. 10 Minuten kräftig köcheln lassen.
+6. Inzwischen {500 g} Miesmuscheln unter kaltem Wasser abbürsten und die Bärte entfernen. Geöffnete Muscheln, die sich beim Antippen nicht schließen, wegwerfen.
+7. {200 g} Garnelen, die Muscheln und {100 g} Erbsen auf dem Reis verteilen und leicht hineindrücken. Bei schwacher Hitze weitere 10 Minuten garen, bis die Flüssigkeit aufgesogen ist und sich die Muscheln geöffnet haben. Geschlossene Muscheln wegwerfen.
+8. Mit einem Tuch oder Alufolie abdecken, 5 Minuten ruhen lassen und mit Zitronenspalten in der Pfanne servieren.
+
+Tipp: Die leicht angeröstete Reiskruste am Pfannenboden heißt Socarrat und ist in Spanien heiß begehrt.
 
 Guten Appetit!', 'paella.jpg');
 
@@ -2244,12 +2501,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Paella'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 1, NULL);
 
 -- Spanische Tortilla
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spanische Tortilla', 50, 4, 'Portionen', 'Sommer', '1. Kartoffeln schälen, vierteln und in dünne Scheiben schneiden. Zwiebel in feine Streifen schneiden.
-2. Öl in einer beschichteten Pfanne erhitzen und Kartoffeln und Zwiebeln bei mittlerer Hitze ca. 20 Minuten weich garen, ohne sie zu bräunen. In einem Sieb abtropfen lassen und das Öl auffangen.
-3. Eier mit Salz verquirlen, Kartoffeln untermischen und 10 Minuten ziehen lassen.
-4. {2 EL} vom aufgefangenen Öl in der Pfanne erhitzen, die Masse hineingeben und bei kleiner Hitze 6–8 Minuten stocken lassen.
-5. Tortilla mithilfe eines Tellers wenden und weitere 4–5 Minuten garen. Warm oder kalt in Stücken servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spanische Tortilla', 'Dick, saftig und nur aus Kartoffeln, Zwiebeln und Eiern: die Tortilla de patatas, wie man sie in jeder spanischen Bar findet.', 50, 4, 'Portionen', 'Sommer', '1. {700 g} Kartoffeln schälen, vierteln und in dünne Scheiben schneiden. Die Zwiebel in feine Streifen schneiden.
+2. {200 ml} Olivenöl in einer beschichteten Pfanne (etwa 24 cm) erhitzen. Kartoffeln und Zwiebel hineingeben, salzen und bei mittlerer Hitze etwa 20 Minuten mehr schmoren als braten, bis die Kartoffeln weich sind. Dabei öfter wenden, sie sollen nicht braun werden.
+3. Kartoffeln und Zwiebel in ein Sieb über einer Schüssel geben und das Öl auffangen.
+4. {6} Eier mit Salz in einer großen Schüssel verquirlen. Die noch warmen Kartoffeln untermischen und 10 Minuten ziehen lassen, damit sie sich mit dem Ei verbinden.
+5. {2 EL} vom aufgefangenen Öl in der Pfanne erhitzen. Die Masse hineingeben, glatt streichen und bei schwacher Hitze 6–8 Minuten stocken lassen, bis der Rand fest ist. Die Mitte darf noch weich sein.
+6. Einen großen Teller auf die Pfanne legen, beides mit Schwung umdrehen und die Tortilla zurück in die Pfanne gleiten lassen. Weitere 4–5 Minuten garen. Warm oder kalt in Stücken servieren.
+
+Tipp: Das übrige Öl hat Kartoffel- und Zwiebelaroma und eignet sich prima zum Braten.
 
 Guten Appetit!', 'spanische-tortilla.jpg');
 
@@ -2260,12 +2520,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spanische Tortilla'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Sommerrollen mit Erdnuss-Dip
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Sommerrollen mit Erdnuss-Dip', 40, 4, 'Portionen', 'Sommer', '1. Reisnudeln nach Packungsangabe garen, abschrecken und abtropfen lassen.
-2. Karotten und Gurke in feine Stifte und Tofu in Streifen schneiden. Salat in Streifen schneiden und Kräuterblätter abzupfen.
-3. Ein Reispapierblatt kurz in lauwarmes Wasser tauchen und auf ein feuchtes Brett legen. Mit Salat, Nudeln, Gemüse, Tofu und Kräutern belegen.
-4. Seiten einschlagen und straff aufrollen. Mit den übrigen Blättern ebenso verfahren.
-5. Für den Dip Erdnussmus, Sojasauce, Limettensaft, Ahornsirup, Chili und {3-4 EL} warmes Wasser glatt rühren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Sommerrollen mit Erdnuss-Dip', 'Frisch, knackig und durchscheinend: vietnamesische Sommerrollen voller Gemüse, Kräuter und Tofu mit cremigem Erdnuss-Dip.', 40, 4, 'Portionen', 'Sommer', '1. {100 g} Reisnudeln nach Packungsangabe garen, kalt abschrecken und gut abtropfen lassen.
+2. {2} Karotten schälen und mit der Gurke in feine Stifte schneiden. {200 g} Tofu trocken tupfen und in Streifen schneiden. Die Salatblätter in Streifen schneiden, Minz- und Korianderblätter abzupfen.
+3. Alle Zutaten griffbereit vor sich aufstellen. Ein Reispapierblatt 2–3 Sekunden in lauwarmes Wasser tauchen und auf ein feuchtes Brett legen. Es wird nach kurzer Zeit weich.
+4. Auf das untere Drittel etwas Salat, Nudeln, Gemüse, Tofu und Kräuter legen. Nicht zu viel, sonst reißt das Papier. Die Seiten einschlagen und von unten straff aufrollen. Mit den übrigen {12} Blättern genauso verfahren und die fertigen Rollen mit etwas Abstand auf eine Platte legen, damit sie nicht zusammenkleben.
+5. Für den Dip {3 EL} Erdnussmus, {2 EL} Sojasauce, den Saft der Limette, {1 TL} Ahornsirup, eine Prise Chiliflocken und {3-4 EL} warmes Wasser glatt rühren.
+6. Die Rollen halbieren und mit dem Dip servieren.
+
+Tipp: Mit einem feuchten Küchentuch abgedeckt bleiben die Rollen ein paar Stunden frisch.
 
 Guten Appetit!', 'sommerrollen-mit-erdnuss-dip.jpg');
 
@@ -2284,12 +2547,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Sommerrollen mit Erdnuss-Dip'), (SELECT id FROM ingredients WHERE name = 'Chiliflocken'), 1, 'Prise');
 
 -- Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)', 30, 4, 'Portionen', 'Sommer', '1. Glasnudeln 10 Minuten in heißem Wasser einweichen, abgießen und mit einer Schere kürzen.
-2. Garnelen in kochendem Wasser 2 Minuten garen und abtropfen lassen.
-3. Tomaten halbieren, Zwiebel in feine Streifen und Sellerie in dünne Scheiben schneiden. Koriander grob hacken.
-4. Für das Dressing Limettensaft, Fischsauce, Zucker, gehackten Knoblauch und fein gehackte Chili verrühren.
-5. Nudeln, Garnelen, Gemüse und Koriander mit dem Dressing mischen und mit gehackten, gerösteten Erdnüssen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)', 'Scharf, sauer, salzig und süß zugleich: ein leichter thailändischer Glasnudelsalat mit Garnelen und viel Koriander.', 30, 4, 'Portionen', 'Sommer', '1. {150 g} Glasnudeln 10 Minuten in heißem Wasser einweichen, abgießen, kalt abspülen und mit einer Küchenschere in kürzere Stücke schneiden.
+2. {250 g} Garnelen in kochendem Wasser etwa 2 Minuten garen, bis sie rosa sind. Abgießen und abtropfen lassen.
+3. {150 g} Kirschtomaten halbieren, die Zwiebel in feine Streifen und {2} Selleriestangen in dünne Scheiben schneiden. Den Koriander grob hacken.
+4. Für das Dressing den Saft der {2} Limetten, {3 EL} Fischsauce, {1 TL} Zucker, den fein gehackten Knoblauch und die fein gehackte Chilischote verrühren, bis sich der Zucker gelöst hat. Es soll kräftig sauer-salzig mit leichter Schärfe schmecken.
+5. {30 g} Erdnüsse in einer Pfanne ohne Fett rösten und grob hacken.
+6. Nudeln, Garnelen, Gemüse und Koriander mit dem Dressing mischen und mit den Erdnüssen bestreuen. Sofort servieren.
+
+Tipp: Wer es weniger scharf mag, entkernt die Chilischote vorher.
 
 Guten Appetit!', 'thai-glasnudelsalat-mit-garnelen-yam-woon-sen.jpg');
 
@@ -2307,10 +2573,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)'), (SELECT id FROM ingredients WHERE name = 'Erdnüsse'), 30, 'g');
 
 -- Mango-Lassi
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mango-Lassi', 5, 2, 'Gläser', 'Sommer', '1. Mango schälen, das Fruchtfleisch vom Stein schneiden und grob würfeln.
-2. Mango mit Joghurt, Milch, Honig und Kardamom im Mixer fein pürieren.
-3. In Gläser füllen und gut gekühlt, nach Belieben mit Eiswürfeln, servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Mango-Lassi', 'Cremig, fruchtig und mit einem Hauch Kardamom: der indische Joghurtdrink, der jeden heißen Tag rettet.', 5, 2, 'Gläser', 'Sommer', '1. Die Mango schälen, das Fruchtfleisch vom Stein schneiden und grob würfeln. Am besten eine sehr reife, duftende Mango nehmen.
+2. Mango, {300 g} Joghurt, {100 ml} Milch, {1 EL} Honig und eine Prise Kardamom im Mixer so lange pürieren, bis der Lassi ganz glatt und schaumig ist.
+3. Abschmecken und bei Bedarf noch etwas Honig oder Milch zugeben.
+4. In Gläser füllen und gut gekühlt servieren, nach Belieben mit Eiswürfeln.
+
+Tipp: Mit tiefgekühlten Mangowürfeln wird der Lassi direkt eiskalt und noch cremiger.
 
 Zum Wohl!', 'mango-lassi.jpg');
 
@@ -2321,12 +2590,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Mango-Lassi'), (SELECT id FROM ingredients WHERE name = 'Kardamom'), 1, 'Prise');
 
 -- Erdbeer-Tiramisu
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeer-Tiramisu', 270, 6, 'Portionen', 'Sommer', '1. Die Hälfte der Erdbeeren mit {2 EL} Zucker pürieren, die andere Hälfte in Scheiben schneiden.
-2. Mascarpone, Quark, restlichen Zucker, Vanillezucker und Zitronenabrieb glatt rühren.
-3. Orangensaft mit {3 EL} Erdbeerpüree mischen, die Löffelbiskuits kurz darin tränken und eine Form damit auslegen.
-4. Erdbeerpüree, Erdbeerscheiben und Creme daraufschichten und mit einer zweiten Lage Biskuits und Creme wiederholen.
-5. Mindestens 4 Stunden kühlen und vor dem Servieren mit Erdbeeren garnieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Erdbeer-Tiramisu', 'Die sommerliche Schwester des Klassikers: Erdbeeren statt Kaffee, leichte Mascarponecreme und Orangensaft.', 270, 6, 'Portionen', 'Sommer', '1. {500 g} Erdbeeren waschen und entkelchen. Die Hälfte mit {2 EL} Zucker fein pürieren, die andere Hälfte in Scheiben schneiden.
+2. {250 g} Mascarpone, {250 g} Quark, den restlichen Zucker, den Vanillezucker und die abgeriebene Schale der Zitrone glatt rühren. Nicht zu lange rühren, sonst wird die Mascarpone flüssig.
+3. {150 ml} Orangensaft mit {3 EL} Erdbeerpüree in einem tiefen Teller mischen. Die Hälfte von {200 g} Löffelbiskuits nacheinander kurz darin wenden, wirklich nur kurz, sonst werden sie matschig, und eine Form (etwa 20 × 30 cm) damit auslegen.
+4. Die Hälfte des übrigen Erdbeerpürees auf den Biskuits verteilen, die Hälfte der Erdbeerscheiben darauflegen und die Hälfte der Creme darüberstreichen.
+5. Mit den übrigen Biskuits, Püree, Erdbeerscheiben und Creme eine zweite Schicht genauso aufbauen. Ein paar Erdbeerscheiben für die Deko zurückbehalten.
+6. Abgedeckt mindestens 4 Stunden im Kühlschrank durchziehen lassen. Vor dem Servieren mit den übrigen Erdbeeren garnieren.
+
+Tipp: Am Vortag zubereitet schmeckt es noch besser, dann ist alles schön durchgezogen.
 
 Guten Appetit!', 'erdbeer-tiramisu.jpg');
 
@@ -2340,12 +2612,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Erdbeer-Tiramisu'), (SELECT id FROM ingredients WHERE name = 'Löffelbiskuits'), 200, 'g');
 
 -- Kirschenmichel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kirschenmichel', 75, 6, 'Portionen', 'Sommer', '1. Altbackene Brötchen in Scheiben schneiden, mit warmer Milch übergießen und 15 Minuten einweichen. Kirschen waschen und entsteinen.
-2. Ofen auf 180 °C vorheizen und eine Auflaufform mit Butter fetten.
-3. Eier trennen. Weiche Butter mit Zucker, Vanillezucker und Eigelben schaumig rühren. Mandeln, Zimt, Zitronenabrieb und die eingeweichten Brötchen unterrühren.
-4. Eiweiße steif schlagen und mit den Kirschen vorsichtig unterheben.
-5. In die Form füllen und ca. 45 Minuten goldbraun backen. Mit Puderzucker bestäuben – dazu passt Vanillesoße.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kirschenmichel', 'Ein pfälzischer Auflauf aus altbackenen Brötchen und saftigen Kirschen: Resteverwertung, die nach Sonntag schmeckt.', 75, 6, 'Portionen', 'Sommer', '1. {300 g} altbackene Brötchen in dünne Scheiben schneiden. {400 ml} Milch lauwarm erwärmen, darübergießen und 15 Minuten einweichen.
+2. {750 g} Kirschen waschen und entsteinen. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Auflaufform mit etwas Butter fetten.
+3. {4} Eier trennen. Die restliche weiche Butter mit {100 g} Zucker, dem Vanillezucker und den Eigelben 3 Minuten schaumig rühren. {50 g} gemahlene Mandeln, {1 TL} Zimt, die abgeriebene Schale der Zitrone und die eingeweichten Brötchen unterrühren.
+4. Die Eiweiße steif schlagen. Zusammen mit den Kirschen vorsichtig unter die Masse heben.
+5. In die Form füllen, glatt streichen und etwa 45 Minuten backen, bis die Oberfläche goldbraun ist und der Auflauf in der Mitte fest wird.
+6. Mit {1 EL} Puderzucker bestäuben und warm servieren.
+
+Tipp: Dazu passt Vanillesoße. Außerhalb der Kirschzeit gehen auch abgetropfte Kirschen aus dem Glas.
 
 Guten Appetit!', 'kirschenmichel.jpg');
 
@@ -2362,12 +2637,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kirschenmichel'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 1, 'EL');
 
 -- Kirsch-Clafoutis
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kirsch-Clafoutis', 50, 6, 'Portionen', 'Sommer', '1. Ofen auf 190 °C vorheizen. Eine Auflaufform mit Butter fetten und mit {1 EL} Zucker ausstreuen.
-2. Kirschen waschen und in der Form verteilen. Traditionell bleiben die Steine drin, das gibt mehr Aroma – dann beim Essen aufpassen.
-3. Eier mit restlichem Zucker, Vanillezucker und Salz verquirlen. Mehl einrühren, dann Milch und Sahne zu einem glatten, dünnen Teig unterrühren.
-4. Teig über die Kirschen gießen und ca. 35 Minuten backen, bis der Clafoutis goldbraun und gestockt ist.
-5. Lauwarm mit Puderzucker bestäubt servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kirsch-Clafoutis', 'Ein französisches Ofen-Dessert: saftige Kirschen in einem zarten, puddingartigen Pfannkuchenteig.', 50, 6, 'Portionen', 'Sommer', '1. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen. Eine Auflaufform (etwa 24 cm) mit {1 EL} Butter fetten und mit {1 EL} Zucker ausstreuen. Der Zucker gibt später eine leicht karamellisierte Kruste.
+2. {500 g} Kirschen waschen, trocken tupfen und in der Form verteilen. Traditionell bleiben die Steine drin, das gibt ein feines Mandelaroma. Dann beim Essen aufpassen, oder die Kirschen vorher entsteinen.
+3. {3} Eier mit dem restlichen Zucker, dem Vanillezucker und einer Prise Salz verquirlen. {60 g} Mehl einrühren, dann nach und nach {250 ml} Milch und {100 ml} Sahne zugeben, bis ein glatter, dünnflüssiger Teig entsteht.
+4. Den Teig über die Kirschen gießen und etwa 35 Minuten backen, bis der Clafoutis goldbraun aufgegangen und in der Mitte gestockt ist. Er fällt beim Abkühlen wieder etwas zusammen, das ist normal.
+5. Lauwarm mit {1 EL} Puderzucker bestäubt servieren.
+
+Tipp: Im Herbst gelingt der Clafoutis genauso gut mit Birnen oder Pflaumen.
 
 Guten Appetit!', 'kirsch-clafoutis.jpg');
 
@@ -2383,13 +2660,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kirsch-Clafoutis'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 1, 'EL');
 
 -- Marillenknödel (Aprikosenknödel)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Marillenknödel (Aprikosenknödel)', 60, 4, 'Portionen', 'Sommer', '1. Quark gut abtropfen lassen und mit {30 g} weicher Butter, Ei, Mehl, Grieß und Salz zu einem glatten Teig verkneten. 30 Minuten kühlen.
-2. Aprikosen waschen, seitlich aufschneiden, entsteinen und mit je etwas Zucker füllen.
-3. Teig zu einer Rolle formen, in {8 Stücke} teilen, flach drücken und jede Aprikose darin einschlagen. Gut verschließen.
-4. Knödel in leicht siedendem Salzwasser ca. 12 Minuten ziehen lassen.
-5. Restliche Butter in einer Pfanne schmelzen und Paniermehl mit {1 EL} Zucker und Zimt darin goldbraun rösten.
-6. Knödel in den Bröseln wälzen und mit Puderzucker bestäubt servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Marillenknödel (Aprikosenknödel)', 'Österreichischer Sommergenuss: zarte Topfenknödel mit einer ganzen Aprikose im Inneren, gewälzt in Butterbröseln.', 60, 4, 'Portionen', 'Sommer', '1. {250 g} Quark in einem Sieb gut abtropfen lassen, damit der Teig nicht zu weich wird. Mit {30 g} weicher Butter, {1} Ei, {150 g} Mehl, {30 g} Grieß und einer Prise Salz zu einem glatten Teig verkneten. Abgedeckt 30 Minuten kühlen, damit der Grieß quellen kann.
+2. {8} Aprikosen waschen, seitlich aufschneiden, ohne sie zu halbieren, und den Stein herauslösen. In jede Aprikose etwas Zucker füllen.
+3. Den Teig auf der bemehlten Arbeitsfläche zu einer Rolle formen und in {8} gleich große Stücke teilen. Jedes Stück flach drücken, eine Aprikose daraufsetzen und mit dem Teig rundherum einschlagen. Gut verschließen und zwischen den Handflächen rund formen.
+4. Reichlich leicht gesalzenes Wasser aufkochen, die Hitze reduzieren und die Knödel hineingeben. Etwa 12 Minuten sanft ziehen lassen, bis sie an die Oberfläche steigen.
+5. Inzwischen die restliche Butter in einer Pfanne schmelzen. {80 g} Paniermehl mit {1 EL} Zucker und {1 TL} Zimt darin unter Rühren goldbraun rösten.
+6. Die Knödel mit einer Schaumkelle herausheben, abtropfen lassen und in den Butterbröseln wälzen. Mit {2 EL} Puderzucker bestäubt servieren.
+
+Tipp: Im Herbst gelingen die Knödel genauso mit Zwetschgen.
 
 Guten Appetit!', 'marillenknoedel-aprikosenknoedel.jpg');
 
@@ -2406,11 +2685,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Marillenknödel (Aprikosenknödel)'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 2, 'EL');
 
 -- Gegrillte Pfirsiche mit Ricotta und Honig
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gegrillte Pfirsiche mit Ricotta und Honig', 15, 4, 'Portionen', 'Sommer', '1. Pfirsiche halbieren und entsteinen. Die Schnittflächen mit flüssiger Butter bepinseln.
-2. Mit der Schnittfläche nach unten auf dem heißen Grill oder in der Grillpfanne 3–4 Minuten grillen, bis sich Röststreifen bilden.
-3. Pistazien grob hacken.
-4. Pfirsiche mit je einem Löffel Ricotta füllen, mit Honig beträufeln und mit Pistazien und Thymianblättchen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gegrillte Pfirsiche mit Ricotta und Honig', 'Warme, karamellisierte Pfirsiche mit cremigem Ricotta, Honig und Pistazien: das Dessert, das gleich mit auf den Grill wandert.', 15, 4, 'Portionen', 'Sommer', '1. {4} reife, aber noch feste Pfirsiche halbieren und entsteinen. {1 EL} Butter schmelzen und die Schnittflächen damit bepinseln.
+2. Die Pfirsiche mit der Schnittfläche nach unten auf den heißen Grill oder in eine Grillpfanne legen und 3–4 Minuten grillen, bis sich Röststreifen bilden und sie leicht weich werden. Nicht bewegen, sonst gibt es keine Streifen.
+3. {30 g} Pistazien grob hacken. Die Thymianblättchen abzupfen.
+4. Die Pfirsiche auf Tellern anrichten und jede Hälfte mit einem Löffel von {200 g} Ricotta füllen. Mit {3 EL} Honig beträufeln und mit Pistazien und Thymian bestreuen. Warm servieren.
+
+Tipp: Statt Ricotta passt auch eine Kugel Vanilleeis.
 
 Guten Appetit!', 'gegrillte-pfirsiche-mit-ricotta-und-honig.jpg');
 
@@ -2422,10 +2703,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gegrillte Pfirsiche mit Ricotta und Honig'), (SELECT id FROM ingredients WHERE name = 'Thymian'), 2, 'Zweig');
 
 -- Beeren-Frozen-Joghurt
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Beeren-Frozen-Joghurt', 40, 4, 'Portionen', 'Sommer', '1. Tiefgekühlte Beeren verwenden oder frische Beeren mindestens 4 Stunden einfrieren.
-2. Gefrorene Beeren mit Joghurt, Honig und Zitronensaft in einem leistungsstarken Mixer cremig pürieren.
-3. Sofort als Softeis servieren oder für eine festere Konsistenz 30 Minuten ins Gefrierfach stellen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Beeren-Frozen-Joghurt', 'Cremiges Softeis in fünf Minuten, ganz ohne Eismaschine: gefrorene Beeren, Joghurt und Honig.', 40, 4, 'Portionen', 'Sommer', '1. Tiefgekühlte Beeren verwenden oder {250 g} frische Himbeeren und {250 g} Heidelbeeren mindestens 4 Stunden einfrieren, am besten ausgebreitet auf einem Teller, damit sie nicht zusammenfrieren.
+2. Die gefrorenen Beeren mit {300 g} Joghurt, {3 EL} Honig und dem Saft der halben Zitrone in einen leistungsstarken Mixer geben. Kurz antauen lassen, das schont den Mixer.
+3. Alles pürieren, bis eine cremige Masse entsteht. Zwischendurch mit einem Teigschaber nach unten schieben.
+4. Sofort als Softeis servieren oder für eine festere Konsistenz 30 Minuten ins Gefrierfach stellen. Länger gefroren wird es steinhart, dann vor dem Servieren 10 Minuten antauen lassen.
+
+Tipp: Mit griechischem Joghurt wird das Eis besonders cremig.
 
 Guten Appetit!', 'beeren-frozen-joghurt.jpg');
 
@@ -2436,12 +2720,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Beeren-Frozen-Joghurt'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 0.5, NULL);
 
 -- Rote Grütze mit Vanillesoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote Grütze mit Vanillesoße', 160, 6, 'Portionen', 'Sommer', '1. Kirschen entsteinen, Johannisbeeren von den Rispen streifen und Erdbeeren halbieren.
-2. {400 ml} Kirschsaft mit {80 g} Zucker aufkochen. {40 g} Stärke mit dem restlichen Saft anrühren, einrühren und 1 Minute köcheln lassen.
-3. Früchte unterheben, kurz aufkochen und in Schalen füllen. Mindestens 2 Stunden kalt stellen.
-4. Für die Vanillesoße die Milch mit ausgekratztem Vanillemark, Schote und restlichem Zucker aufkochen und die Schote entfernen.
-5. Eigelbe mit der restlichen Stärke und etwas Milch verrühren, in die heiße Milch rühren und unter Rühren kurz aufkochen, bis die Soße bindet. Abkühlen lassen und zur Grütze servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rote Grütze mit Vanillesoße', 'Norddeutschlands Lieblingsdessert: rote Sommerbeeren in fruchtigem Kirschsaft, dazu selbst gekochte Vanillesoße.', 160, 6, 'Portionen', 'Sommer', '1. {300 g} Kirschen waschen und entsteinen. {200 g} Johannisbeeren mit einer Gabel von den Rispen streifen. {200 g} Erdbeeren entkelchen und halbieren, {200 g} Himbeeren verlesen, aber nicht waschen, sie sind sehr empfindlich.
+2. {400 ml} Kirschsaft mit {80 g} Zucker in einem Topf aufkochen. {40 g} Speisestärke mit dem restlichen kalten Kirschsaft glatt rühren, in den kochenden Saft rühren und unter Rühren 1 Minute köcheln lassen, bis er klar und dick wird.
+3. Den Topf vom Herd nehmen. Kirschen und Johannisbeeren unterheben und kurz aufkochen, dann Erdbeeren und Himbeeren nur noch unterheben, damit sie ihre Form behalten. In eine Schüssel oder Schalen füllen und mindestens 2 Stunden kalt stellen.
+4. Für die Vanillesoße die Vanilleschote längs aufschneiden und das Mark herauskratzen. Von {500 ml} Milch 5 EL beiseitestellen, den Rest mit Vanillemark, Schote und dem restlichen Zucker aufkochen. Die Schote herausnehmen.
+5. {2} Eier trennen, das Eiweiß wird nicht gebraucht. Die Eigelbe mit der restlichen Speisestärke und der zurückbehaltenen kalten Milch glatt rühren. Unter ständigem Rühren in die heiße Milch gießen und einmal kurz aufkochen, bis die Soße bindet. Nicht länger kochen, sonst gerinnt das Eigelb.
+6. Die Soße in eine Schüssel füllen und abkühlen lassen. Damit sich keine Haut bildet, Frischhaltefolie direkt auf die Oberfläche legen. Zur kalten Grütze servieren.
+
+Tipp: Statt Vanillesoße schmeckt auch ein Klecks flüssige Sahne oder Vanilleeis.
 
 Guten Appetit!', 'rote-gruetze-mit-vanillesosse.jpg');
 
@@ -2457,12 +2744,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rote Grütze mit Vanillesoße'), (SELECT id FROM ingredients WHERE name = 'Ei'), 2, NULL);
 
 -- Heidelbeer-Pfannkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Heidelbeer-Pfannkuchen', 30, 4, 'Portionen', 'Sommer', '1. Mehl, Backpulver, Zucker und Salz mischen.
-2. Buttermilch, Eier und {30 g} geschmolzene Butter verquirlen und nur kurz unter die Mehlmischung rühren – kleine Klümpchen sind erwünscht.
-3. Etwas Butter in einer Pfanne erhitzen, je 2 EL Teig hineingeben und einige Heidelbeeren daraufstreuen.
-4. Wenn sich Bläschen an der Oberfläche bilden, wenden und weitere 1–2 Minuten goldbraun backen.
-5. Gestapelt mit Ahornsirup und den restlichen Heidelbeeren servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Heidelbeer-Pfannkuchen', 'Dicke, fluffige Pancakes mit Buttermilch und saftigen Heidelbeeren, gestapelt und mit Ahornsirup übergossen.', 30, 4, 'Portionen', 'Sommer', '1. {250 g} Mehl, {2 TL} Backpulver, {2 EL} Zucker und eine Prise Salz in einer großen Schüssel mischen.
+2. {30 g} Butter schmelzen. {300 ml} Buttermilch und {2} Eier verquirlen und die geschmolzene Butter unterrühren.
+3. Die flüssigen Zutaten zur Mehlmischung geben und nur kurz mit einem Schneebesen unterrühren, bis gerade kein trockenes Mehl mehr zu sehen ist. Kleine Klümpchen sind erwünscht, zu viel Rühren macht die Pancakes zäh. 5 Minuten ruhen lassen.
+4. Eine beschichtete Pfanne bei mittlerer Hitze erhitzen und mit etwas Butter auspinseln. Pro Pancake etwa 2 EL Teig hineingeben und gleich ein paar Heidelbeeren daraufstreuen.
+5. Wenn sich an der Oberfläche Bläschen bilden und die Ränder matt werden, nach etwa 2 Minuten, wenden und weitere 1–2 Minuten goldbraun backen. Fertige Pancakes im Ofen bei 80 °C warm halten.
+6. Gestapelt mit {4 EL} Ahornsirup und den restlichen Heidelbeeren servieren.
+
+Tipp: Die erste Portion wird meist nichts. Das ist normal, die Pfanne braucht ein wenig, bis sie die richtige Temperatur hat.
 
 Guten Appetit!', 'heidelbeer-pfannkuchen.jpg');
 
@@ -2477,12 +2767,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Heidelbeer-Pfannkuchen'), (SELECT id FROM ingredients WHERE name = 'Ahornsirup'), 4, 'EL');
 
 -- Johannisbeerkuchen mit Baiser
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Johannisbeerkuchen mit Baiser', 90, 1, 'Springform (26 cm)', 'Sommer', '1. Eier trennen. Mehl, Backpulver, kalte Butter, {80 g} Zucker, die Eigelbe und eine Prise Salz zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Ofen auf 180 °C vorheizen. Teig in einer gefetteten Springform als Boden mit 3 cm hohem Rand auslegen, mit Mandeln bestreuen und 15 Minuten vorbacken.
-3. Johannisbeeren waschen und mit einer Gabel von den Rispen streifen.
-4. Eiweiße steif schlagen, den restlichen Zucker einrieseln lassen und weiterschlagen, bis eine glänzende Masse entsteht. Stärke und Johannisbeeren vorsichtig unterheben.
-5. Masse auf den vorgebackenen Boden geben und ca. 30 Minuten backen, bis das Baiser goldgelb ist. Vollständig auskühlen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Johannisbeerkuchen mit Baiser', 'Säuerliche Johannisbeeren unter einer süßen, luftigen Baiserhaube auf knusprigem Mürbeteig: ein Sommerkuchen wie aus der Konditorei.', 90, 1, 'Springform (26 cm)', 'Sommer', '1. {3} Eier trennen. {200 g} Mehl, {1 TL} Backpulver, {100 g} kalte Butter in Stücken, {80 g} Zucker, die Eigelbe und eine Prise Salz rasch zu einem glatten Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Springform (26 cm) fetten. Den Teig in der Form als Boden mit einem etwa 3 cm hohen Rand auslegen und mehrmals mit einer Gabel einstechen. Mit {50 g} gemahlenen Mandeln bestreuen, sie saugen später den Fruchtsaft auf. 15 Minuten vorbacken.
+3. Inzwischen {500 g} Johannisbeeren waschen, gut abtropfen lassen und mit einer Gabel von den Rispen streifen.
+4. Die Eiweiße in einer fettfreien Schüssel steif schlagen. Den restlichen Zucker langsam einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht, in der sich der Zucker gelöst hat. {1 EL} Speisestärke und die Johannisbeeren vorsichtig unterheben.
+5. Die Masse auf dem vorgebackenen Boden verteilen und mit einem Löffel kleine Spitzen hochziehen. Etwa 30 Minuten backen, bis das Baiser goldgelb ist und die Spitzen leicht gebräunt sind.
+6. In der Form vollständig auskühlen lassen und erst dann vorsichtig herauslösen. Zum Schneiden das Messer zwischendurch in heißes Wasser tauchen.
+
+Tipp: Mit Stachelbeeren schmeckt der Kuchen genauso gut.
 
 Guten Appetit!', 'johannisbeerkuchen-mit-baiser.jpg');
 
@@ -2497,12 +2790,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Johannisbeerkuchen mit Baiser'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'EL');
 
 -- Wassermelonen-Limetten-Sorbet
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wassermelonen-Limetten-Sorbet', 260, 6, 'Portionen', 'Sommer', '1. Zucker mit {100 ml} Wasser aufkochen, bis er sich gelöst hat, und abkühlen lassen.
-2. Wassermelone schälen, entkernen und mit Limettensaft und -abrieb fein pürieren.
-3. Püree mit dem Zuckersirup verrühren und in einer flachen Form ins Gefrierfach stellen.
-4. In den ersten 3 Stunden alle 30 Minuten mit einer Gabel kräftig durchrühren, damit sich feine Kristalle bilden. Alternativ in der Eismaschine gefrieren.
-5. In Gläsern anrichten und mit Minze garnieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Wassermelonen-Limetten-Sorbet', 'Leuchtend rosa, eiskalt und herrlich erfrischend: Sorbet aus Wassermelone und Limette, ganz ohne Sahne.', 260, 6, 'Portionen', 'Sommer', '1. {100 g} Zucker mit {100 ml} Wasser aufkochen und rühren, bis sich der Zucker gelöst hat. Den Sirup vollständig abkühlen lassen.
+2. {1000 g} Wassermelone schälen, die Kerne entfernen und das Fruchtfleisch grob würfeln. {2} Limetten heiß waschen, die Schale fein abreiben und den Saft auspressen.
+3. Melone, Limettensaft und Limettenabrieb im Mixer fein pürieren und mit dem Zuckersirup verrühren. Abschmecken: Es soll etwas süßer schmecken als gewünscht, Kälte dämpft die Süße.
+4. Die Masse in eine flache Metall- oder Glasform gießen und ins Gefrierfach stellen. In den ersten 3 Stunden alle 30 Minuten mit einer Gabel kräftig durchrühren und die gefrorenen Ränder in die Mitte ziehen. So bilden sich feine Eiskristalle statt eines festen Blocks. Mit einer Eismaschine geht es schneller.
+5. Vor dem Servieren 5 Minuten antauen lassen, mit einem Löffel in Gläser schaben und mit {4} Minzblättern garnieren.
+
+Tipp: Ein Schuss Wodka oder Rum in der Masse hält das Sorbet weicher, dann aber nur für Erwachsene.
 
 Guten Appetit!', 'wassermelonen-limetten-sorbet.jpg');
 
@@ -2512,11 +2807,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Wassermelonen-Limetten-Sorbet'), (SELECT id FROM ingredients WHERE name = 'Minze'), 4, 'Blatt');
 
 -- Grüner Bohnensalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüner Bohnensalat', 25, 4, 'Portionen', 'Sommer', '1. Bohnen putzen und mit Bohnenkraut in Salzwasser 8–10 Minuten bissfest garen. In Eiswasser abschrecken.
-2. Schalotten fein würfeln.
-3. Essig, Senf, Zucker, Salz und Pfeffer verrühren, das Öl unterschlagen und die Schalotten zugeben.
-4. Bohnen noch lauwarm mit der Vinaigrette mischen und 15 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grüner Bohnensalat', 'Knackige grüne Bohnen in einer würzigen Schalotten-Vinaigrette mit Bohnenkraut: der Salat zu Bratkartoffeln und Grillgut.', 25, 4, 'Portionen', 'Sommer', '1. {600 g} grüne Bohnen waschen und die Enden abknipsen. In reichlich Salzwasser mit {2} Bohnenkrautzweigen 8–10 Minuten bissfest garen.
+2. Die Bohnen abgießen und sofort in Eiswasser abschrecken, damit sie ihre leuchtend grüne Farbe behalten. Gut abtropfen lassen.
+3. {2} Schalotten schälen und sehr fein würfeln.
+4. {3 EL} Weißweinessig, {1 TL} Senf, eine Prise Zucker, Salz und Pfeffer verrühren. {4 EL} Rapsöl unterschlagen und die Schalotten zugeben.
+5. Die noch lauwarmen Bohnen mit der Vinaigrette mischen und mindestens 15 Minuten ziehen lassen. Lauwarm nehmen die Bohnen die Marinade besser auf. Vor dem Servieren noch einmal abschmecken.
+
+Tipp: Grüne Bohnen nie roh essen, sie enthalten Stoffe, die erst beim Kochen unschädlich werden.
 
 Guten Appetit!', 'gruener-bohnensalat.jpg');
 
@@ -2531,10 +2829,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grüner Bohnensalat'), (SELECT id FROM ingredients WHERE name = 'Rapsöl'), 4, 'EL');
 
 -- Grüne Bohnen im Speckmantel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüne Bohnen im Speckmantel', 25, 4, 'Portionen', 'Sommer', '1. Bohnen putzen und mit Bohnenkraut in Salzwasser 6 Minuten vorgaren. Abschrecken und gut abtropfen lassen.
-2. Je 6–8 Bohnen bündeln, pfeffern und mit einer Scheibe Speck umwickeln.
-3. Butter in einer Pfanne erhitzen und die Bündel rundherum 5–6 Minuten braten, bis der Speck knusprig ist. Eine klassische Beilage zu Steak oder Braten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grüne Bohnen im Speckmantel', 'Kleine Bohnenbündel in knusprigem Speck: die klassische Beilage zu Steak, Braten und Festtagsessen.', 25, 4, 'Portionen', 'Sommer', '1. {500 g} grüne Bohnen waschen und die Enden abknipsen. Mit dem Bohnenkraut in Salzwasser 6 Minuten vorgaren, sie sollen noch deutlich Biss haben. In Eiswasser abschrecken und gut abtropfen lassen, am besten auf einem Küchentuch.
+2. Jeweils 6–8 Bohnen zu einem Bündel legen und pfeffern. Mit {12} Scheiben Speck je ein Bündel straff umwickeln, die Enden des Specks liegen unten.
+3. {1 EL} Butter in einer Pfanne bei mittlerer Hitze erhitzen. Die Bündel mit der Speckenden-Seite nach unten hineinlegen, so halten sie zusammen. Rundherum 5–6 Minuten braten, bis der Speck knusprig ist.
+4. Nur wenn nötig leicht salzen, der Speck bringt Salz mit. Sofort servieren.
+
+Tipp: Im Ofen geht es auch: bei 200 °C etwa 15 Minuten, praktisch, wenn der Braten ohnehin drin ist.
 
 Guten Appetit!', 'gruene-bohnen-im-speckmantel.jpg');
 
@@ -2546,11 +2847,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grüne Bohnen im Speckmantel'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Grüne-Bohnen-Eintopf
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüne-Bohnen-Eintopf', 50, 4, 'Portionen', 'Sommer', '1. Zwiebel würfeln und in Öl glasig dünsten.
-2. Kartoffeln und Karotten schälen und würfeln, Bohnen putzen und in 3 cm lange Stücke brechen.
-3. Gemüse zur Zwiebel geben, mit Brühe auffüllen, Bohnenkraut zugeben und ca. 25 Minuten köcheln lassen.
-4. Bohnenkraut entfernen, mit Salz und Pfeffer abschmecken und mit Petersilie bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grüne-Bohnen-Eintopf', 'Ein Eintopf wie früher: grüne Bohnen, Kartoffeln und Karotten mit viel Bohnenkraut, einfach und wärmend.', 50, 4, 'Portionen', 'Sommer', '1. Die Zwiebel schälen und würfeln. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebel darin glasig dünsten.
+2. {500 g} Kartoffeln und {2} Karotten schälen und in mundgerechte Würfel schneiden. {500 g} grüne Bohnen waschen, die Enden abknipsen und in 3 cm lange Stücke brechen.
+3. Das Gemüse zur Zwiebel geben, kurz mitdünsten und mit {1200 ml} Gemüsebrühe auffüllen. {3} Bohnenkrautzweige zugeben, aufkochen und zugedeckt bei mittlerer Hitze etwa 25 Minuten köcheln lassen, bis Kartoffeln und Bohnen weich sind.
+4. Das Bohnenkraut herausnehmen. Ein paar Kartoffelstücke mit dem Kochlöffel am Topfrand zerdrücken, das macht den Eintopf sämiger. Mit Salz und Pfeffer abschmecken.
+5. Die Petersilie hacken und darüberstreuen.
+
+Tipp: Wer mag, lässt ein paar Würstchen oder geräucherten Speck in der Brühe mitziehen.
 
 Guten Appetit!', 'gruene-bohnen-eintopf.jpg');
 
@@ -2566,12 +2870,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grüne-Bohnen-Eintopf'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Tomatensuppe aus frischen Tomaten
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tomatensuppe aus frischen Tomaten', 40, 4, 'Portionen', 'Sommer', '1. Tomaten grob würfeln, Zwiebel und Knoblauch hacken.
-2. Zwiebel und Knoblauch in Öl andünsten und das Tomatenmark kurz anrösten.
-3. Tomaten und Brühe zugeben und 25 Minuten köcheln lassen.
-4. Fein pürieren und durch ein Sieb streichen, damit Schalen und Kerne zurückbleiben.
-5. Mit Zucker, Salz und Pfeffer abschmecken und mit Basilikum und einem Schuss Olivenöl servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tomatensuppe aus frischen Tomaten', 'Samtig, fruchtig und konzentriert nach Sommer: Tomatensuppe aus reifen Tomaten, ganz ohne Dose.', 40, 4, 'Portionen', 'Sommer', '1. {1200 g} reife Tomaten waschen, den Stielansatz entfernen und grob würfeln. Die Zwiebel und {2} Knoblauchzehen schälen und hacken.
+2. {3 EL} Olivenöl in einem großen Topf erhitzen. Zwiebel und Knoblauch darin 3 Minuten glasig dünsten. {1 EL} Tomatenmark einrühren und 1 Minute mitrösten, bis es dunkler wird. Das bringt Tiefe in die Suppe.
+3. Tomaten und {400 ml} Gemüsebrühe zugeben, aufkochen und offen etwa 25 Minuten köcheln lassen, bis die Tomaten zerfallen sind.
+4. Die Suppe fein pürieren und durch ein Sieb streichen, damit Schalen und Kerne zurückbleiben. Das ist etwas Arbeit, macht die Suppe aber wunderbar samtig.
+5. Mit {1 TL} Zucker, Salz und Pfeffer abschmecken. Der Zucker gleicht die Säure der Tomaten aus.
+6. In Teller füllen, mit gezupftem Basilikum bestreuen und mit einem Schuss Olivenöl servieren.
+
+Tipp: Ein Klecks Sahne oder ein paar geröstete Brotwürfel machen die Suppe noch runder.
 
 Guten Appetit!', 'tomatensuppe-aus-frischen-tomaten.jpg');
 
@@ -2587,12 +2894,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tomatensuppe aus frischen Tomaten'), (SELECT id FROM ingredients WHERE name = 'Basilikum'), 1, 'Bund');
 
 -- Tomaten-Blätterteig-Tarte
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tomaten-Blätterteig-Tarte', 40, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Blätterteig auf einem Blech entrollen, einen 2 cm breiten Rand leicht einritzen und die Innenfläche mehrmals mit einer Gabel einstechen.
-2. Innenfläche dünn mit Senf bestreichen.
-3. Tomaten in Scheiben schneiden, dachziegelartig darauflegen und den Ziegenkäse darüberbröseln.
-4. Mit Thymianblättchen, Salz und Pfeffer würzen und mit Olivenöl und Honig beträufeln.
-5. 20–25 Minuten backen, bis der Rand aufgegangen und goldbraun ist.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tomaten-Blätterteig-Tarte', 'Goldener, aufgegangener Blätterteig, reife Tomaten, Ziegenkäse und ein Hauch Honig: schnell gemacht und hübsch anzusehen.', 40, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {275 g} Blätterteig mit dem Backpapier auf ein Blech entrollen. Mit einem Messer einen 2 cm breiten Rand leicht einritzen, nicht durchschneiden. Die Innenfläche mehrmals mit einer Gabel einstechen, so geht nur der Rand auf.
+2. Die Innenfläche dünn mit {1 EL} Senf bestreichen.
+3. {4} Tomaten in dünne Scheiben schneiden und kurz auf Küchenpapier abtropfen lassen, damit der Teig nicht durchweicht. Dachziegelartig auf die Innenfläche legen und {100 g} Ziegenkäse darüberbröseln.
+4. Mit den Blättchen von {3} Thymianzweigen, Salz und Pfeffer bestreuen und mit {1 EL} Olivenöl und {1 EL} Honig beträufeln.
+5. 20–25 Minuten backen, bis der Rand hoch aufgegangen und goldbraun ist. Etwas abkühlen lassen und in Stücke schneiden.
+
+Tipp: Mit einem grünen Salat ist die Tarte ein leichtes Abendessen, in kleine Quadrate geschnitten ein schöner Fingerfood.
 
 Guten Appetit!', 'tomaten-blaetterteig-tarte.jpg');
 
@@ -2607,12 +2916,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tomaten-Blätterteig-Tarte'), (SELECT id FROM ingredients WHERE name = 'Honig'), 1, 'EL');
 
 -- Gemista (gefüllte Tomaten mit Reis)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gemista (gefüllte Tomaten mit Reis)', 90, 4, 'Portionen', 'Sommer', '1. Ofen auf 190 °C vorheizen. Von großen Fleischtomaten einen Deckel abschneiden, das Innere herauslöffeln und fein hacken. Tomaten innen leicht salzen und umgedreht abtropfen lassen.
-2. Zwiebel und Knoblauch hacken und in {2 EL} Öl andünsten. Reis, Tomatenfruchtfleisch, gehackte Kräuter, Zucker, Salz und Pfeffer zugeben und 5 Minuten köcheln.
-3. Tomaten zu drei Vierteln mit der Reismischung füllen – der Reis quillt noch – und den Deckel aufsetzen.
-4. In eine Auflaufform setzen, Kartoffelspalten dazwischenlegen, mit Oregano und Salz würzen, mit dem restlichen Öl beträufeln und {100 ml} Wasser angießen.
-5. Ca. 60 Minuten backen, bis der Reis gar ist und die Tomaten leicht gebräunt sind.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gemista (gefüllte Tomaten mit Reis)', 'Griechische Sommerküche: große Tomaten, gefüllt mit Kräuterreis, langsam im Ofen gegart, mit Kartoffeln im Bratensaft.', 90, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen. Von {8} großen Fleischtomaten einen Deckel abschneiden und aufbewahren. Das Innere mit einem Teelöffel herauskratzen und fein hacken. Die Tomaten innen leicht salzen und umgedreht abtropfen lassen.
+2. Die Zwiebel und {2} Knoblauchzehen hacken und in {2 EL} Olivenöl glasig dünsten. {150 g} Reis, das Tomatenfruchtfleisch, die gehackte Minze und Petersilie, eine Prise Zucker, Salz und Pfeffer zugeben und 5 Minuten köcheln lassen. Der Reis ist danach noch hart, er gart im Ofen fertig.
+3. Die Tomaten zu drei Vierteln mit der Reismischung füllen, der Reis quillt noch, und die Deckel aufsetzen.
+4. {500 g} Kartoffeln schälen und in Spalten schneiden. Die Tomaten in eine Auflaufform setzen und die Kartoffelspalten dazwischenlegen. Mit {1 TL} Oregano und Salz würzen, mit dem restlichen Olivenöl beträufeln und {100 ml} Wasser angießen.
+5. Etwa 60 Minuten backen, bis der Reis weich und die Tomaten an den Rändern leicht gebräunt sind. Werden die Deckel zu dunkel, mit Alufolie abdecken.
+6. Etwas abkühlen lassen und lauwarm servieren, so schmecken Gemista in Griechenland am besten.
+
+Tipp: Genauso lassen sich Paprika füllen, am besten gemischt mit den Tomaten in einer Form.
 
 Guten Appetit!', 'gemista-gefuellte-tomaten-mit-reis.jpg');
 
@@ -2630,12 +2942,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gemista (gefüllte Tomaten mit Reis)'), (SELECT id FROM ingredients WHERE name = 'Oregano'), 1, 'TL');
 
 -- Schweine-Souvlaki mit Pita
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schweine-Souvlaki mit Pita', 100, 4, 'Portionen', 'Sommer', '1. Fleisch in 3 cm große Würfel schneiden und mit Zitronensaft, Öl, Oregano, {1} gepressten Knoblauchzehe, Salz und Pfeffer mindestens 1 Stunde marinieren.
-2. Für einen schnellen Tzatziki die Gurke raspeln, gut ausdrücken und mit Joghurt, dem restlichen gepressten Knoblauch und Salz verrühren.
-3. Fleisch auf Spieße stecken und auf dem Grill oder in der Grillpfanne rundherum 8–10 Minuten grillen.
-4. Pitabrote kurz auf dem Grill erwärmen.
-5. Fleisch mit Tomatenscheiben, Zwiebelringen und Tzatziki im Pita servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schweine-Souvlaki mit Pita', 'Zarte, zitronig marinierte Fleischspieße mit Tzatziki, Tomaten und Zwiebeln im warmen Fladenbrot: Griechenland zum Reinbeißen.', 100, 4, 'Portionen', 'Sommer', '1. {600 g} Schweinenacken in 3 cm große Würfel schneiden. Den Saft der Zitrone, {4 EL} Olivenöl, {2 TL} Oregano, {1} gepresste Knoblauchzehe, Salz und Pfeffer verrühren und das Fleisch darin abgedeckt mindestens 1 Stunde im Kühlschrank marinieren.
+2. Für einen schnellen Tzatziki die halbe Gurke grob raspeln, mit etwas Salz mischen und kräftig ausdrücken. Mit {250 g} Joghurt und der restlichen gepressten Knoblauchzehe verrühren und mit Salz abschmecken.
+3. Das Fleisch auf Spieße stecken und auf dem heißen Grill oder in der Grillpfanne rundherum 8–10 Minuten grillen, bis es gebräunt und durchgegart ist.
+4. {4} Fladenbrote kurz auf dem Grill oder in der Pfanne erwärmen, bis sie weich und leicht geröstet sind.
+5. {2} Tomaten in Scheiben, die Zwiebel in Ringe schneiden. Das Fleisch von den Spießen streifen und mit Tomaten, Zwiebeln und Tzatziki in den Fladenbroten servieren.
+
+Tipp: Ein paar Pommes direkt mit ins Fladenbrot sind in Griechenland ganz normal.
 
 Guten Appetit!', 'schweine-souvlaki-mit-pita.jpg');
 
@@ -2653,12 +2967,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schweine-Souvlaki mit Pita'), (SELECT id FROM ingredients WHERE name = 'Rote Zwiebel'), 1, NULL);
 
 -- Cevapcici mit Ajvar
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Cevapcici mit Ajvar', 50, 4, 'Portionen', 'Sommer', '1. Zwiebel sehr fein reiben und den Knoblauch pressen.
-2. Hackfleisch mit Zwiebel, Knoblauch, Paprikapulver, Natron, {1 TL} Salz und Pfeffer kräftig verkneten und 30 Minuten kühlen. Das Natron macht die Röllchen schön locker.
-3. Mit feuchten Händen fingerlange, daumendicke Röllchen formen.
-4. Auf dem heißen Grill oder in einer leicht geölten Pfanne rundherum 8–10 Minuten braten.
-5. Mit Ajvar und fein gehackter roter Zwiebel servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Cevapcici mit Ajvar', 'Würzige Hackfleischröllchen vom Balkan, gegrillt und mit Ajvar und frischer Zwiebel serviert.', 50, 4, 'Portionen', 'Sommer', '1. Die Zwiebel schälen und auf der feinen Seite der Reibe reiben. {3} Knoblauchzehen schälen und pressen.
+2. {500 g} Rinderhackfleisch mit Zwiebel, Knoblauch, {1 TL} Paprikapulver, {0.5 TL} Natron, {1 TL} Salz und Pfeffer gründlich und kräftig verkneten, gern 3–4 Minuten. So wird die Masse bindig. Abgedeckt 30 Minuten kühlen. Das Natron macht die Röllchen locker und saftig.
+3. Mit feuchten Händen fingerlange, etwa daumendicke Röllchen formen.
+4. Auf dem heißen Grill oder in einer Pfanne mit {1 EL} Rapsöl rundherum 8–10 Minuten braten, bis sie gebräunt und durchgegart sind.
+5. Die rote Zwiebel fein hacken. Die Cevapcici mit {200 g} Ajvar und der rohen Zwiebel servieren.
+
+Tipp: Dazu passen Djuvec-Reis, Pommes oder einfach frisches Fladenbrot.
 
 Guten Appetit!', 'cevapcici-mit-ajvar.jpg');
 
@@ -2674,11 +2990,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Cevapcici mit Ajvar'), (SELECT id FROM ingredients WHERE name = 'Rote Zwiebel'), 1, NULL);
 
 -- Belugalinsen-Salat mit Paprika
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Belugalinsen-Salat mit Paprika', 35, 4, 'Portionen', 'Sommer', '1. Linsen mit dem Lorbeerblatt in ungesalzenem Wasser ca. 20 Minuten bissfest garen, abgießen und abkühlen lassen.
-2. Paprika würfeln, Frühlingszwiebeln in Ringe schneiden und Petersilie hacken.
-3. Essig, Senf, Ahornsirup, Salz und Pfeffer verrühren und das Öl unterschlagen.
-4. Linsen, Gemüse und Petersilie mit dem Dressing mischen und mindestens 10 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Belugalinsen-Salat mit Paprika', 'Glänzend schwarze Linsen, die beim Kochen ihre Form behalten, mit knackiger Paprika und einer würzigen Senfvinaigrette.', 35, 4, 'Portionen', 'Sommer', '1. {200 g} Belugalinsen in einem Sieb abspülen. Mit dem Lorbeerblatt in reichlich ungesalzenem Wasser etwa 20 Minuten bissfest garen. Salz im Kochwasser würde die Schale hart machen.
+2. Die Linsen abgießen, das Lorbeerblatt entfernen und abkühlen lassen.
+3. {2} Paprika entkernen und würfeln, {3} Frühlingszwiebeln in Ringe schneiden und die Petersilie hacken.
+4. {3 EL} Apfelessig, {1 TL} Senf, {1 TL} Ahornsirup, Salz und Pfeffer verrühren und {4 EL} Olivenöl unterschlagen.
+5. Linsen, Gemüse und Petersilie mit dem Dressing mischen und mindestens 10 Minuten ziehen lassen. Linsen schlucken viel Würze, deshalb vor dem Servieren noch einmal abschmecken.
+
+Tipp: Mit zerbröseltem Feta oder Ziegenkäse wird aus dem Salat ein Hauptgericht.
 
 Guten Appetit!', 'belugalinsen-salat-mit-paprika.jpg');
 
@@ -2695,11 +3014,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Belugalinsen-Salat mit Paprika'), (SELECT id FROM ingredients WHERE name = 'Olivenöl'), 4, 'EL');
 
 -- Quinoa-Salat mit Mango und Avocado
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Quinoa-Salat mit Mango und Avocado', 30, 4, 'Portionen', 'Sommer', '1. Quinoa in einem Sieb heiß abspülen und in der doppelten Menge Salzwasser 15 Minuten garen. Abkühlen lassen.
-2. Mango und Avocado würfeln, Zwiebel und Chili fein hacken, Bohnen abspülen.
-3. Limettensaft, Öl, Salz und Pfeffer verrühren.
-4. Alles vorsichtig mischen und mit gehacktem Koriander bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Quinoa-Salat mit Mango und Avocado', 'Bunt, frisch und sättigend: Quinoa mit süßer Mango, cremiger Avocado, schwarzen Bohnen und Limette.', 30, 4, 'Portionen', 'Sommer', '1. {200 g} Quinoa in einem feinen Sieb heiß abspülen, das entfernt die Bitterstoffe. In der doppelten Menge Salzwasser aufkochen und zugedeckt bei schwacher Hitze etwa 15 Minuten garen, bis das Wasser aufgesogen ist. Mit einer Gabel auflockern und abkühlen lassen.
+2. Die Mango schälen, das Fruchtfleisch vom Stein schneiden und würfeln. {2} Avocados halbieren, entkernen und würfeln. Die Zwiebel und die entkernte Chilischote fein hacken. {240 g} schwarze Bohnen abspülen und abtropfen lassen.
+3. Den Saft der {2} Limetten, {3 EL} Olivenöl, Salz und Pfeffer verrühren. Die Avocadowürfel gleich mit etwas Dressing beträufeln, damit sie nicht braun werden.
+4. Quinoa, Mango, Avocado, Bohnen, Zwiebel und Chili mit dem Dressing vorsichtig mischen und mit gehacktem Koriander bestreuen.
+
+Tipp: Ein paar geröstete Kürbiskerne obendrauf sorgen für Biss.
 
 Guten Appetit!', 'quinoa-salat-mit-mango-und-avocado.jpg');
 
@@ -2716,11 +3037,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Quinoa-Salat mit Mango und Avocado'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Guacamole
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Guacamole', 10, 4, 'Portionen', 'Sommer', '1. Avocados halbieren, entkernen, das Fruchtfleisch herauslöffeln und mit einer Gabel grob zerdrücken.
-2. Sofort mit dem Limettensaft mischen, damit die Avocado nicht braun wird.
-3. Tomate entkernen und fein würfeln, Zwiebel und Chili sehr fein hacken, Koriander hacken.
-4. Alles unter die Avocado mischen und mit Salz abschmecken. Dazu passen Tortillachips oder Gemüsesticks.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Guacamole', 'Cremig, frisch und mit einem Hauch Schärfe: Guacamole, wie man sie in Mexiko macht, grob zerdrückt statt püriert.', 10, 4, 'Portionen', 'Sommer', '1. {3} reife Avocados halbieren, entkernen und das Fruchtfleisch mit einem Löffel herauslösen. Mit einer Gabel grob zerdrücken, es dürfen ruhig Stückchen bleiben.
+2. Sofort den Saft der Limette untermischen, damit die Avocado nicht braun wird.
+3. Die Tomate entkernen und fein würfeln. Die Zwiebel und die Chilischote sehr fein hacken, den Koriander hacken.
+4. Alles unter die Avocado mischen und mit Salz abschmecken. Wer es schärfer mag, gibt mehr Chili dazu.
+5. Direkt servieren, dazu passen Tortillachips oder Gemüsesticks.
+
+Tipp: Reife Avocados geben auf leichten Druck nach. Harte Avocados reifen neben einem Apfel in ein bis zwei Tagen nach.
 
 Guten Appetit!', 'guacamole.jpg');
 
@@ -2733,11 +3057,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Guacamole'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Mexikanischer Maissalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mexikanischer Maissalat', 15, 4, 'Portionen', 'Sommer', '1. Mais und Bohnen abspülen und abtropfen lassen.
-2. Paprika würfeln, Zwiebel fein hacken und Tomaten halbieren.
-3. Limettensaft, Öl, Kreuzkümmel, Salz und Pfeffer verrühren.
-4. Alles mit dem Dressing und gehacktem Koriander mischen und kurz ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Mexikanischer Maissalat', 'Bunter Bohnen-Mais-Salat mit Limette und Kreuzkümmel: in 15 Minuten fertig und perfekt zum Grillen.', 15, 4, 'Portionen', 'Sommer', '1. {300 g} Mais und {240 g} Kidneybohnen in einem Sieb abspülen und gut abtropfen lassen.
+2. Die Paprika entkernen und würfeln, die Zwiebel fein hacken und {150 g} Kirschtomaten halbieren.
+3. Den Saft der Limette, {3 EL} Olivenöl, {0.5 TL} Kreuzkümmel, Salz und Pfeffer verrühren.
+4. Alles mit dem Dressing und dem gehackten Koriander mischen und kurz ziehen lassen. Der Salat schmeckt nach einer halben Stunde im Kühlschrank noch besser.
+
+Tipp: Mit gewürfelter Avocado oder etwas Feta wird der Salat zur vollwertigen Mahlzeit.
 
 Guten Appetit!', 'mexikanischer-maissalat.jpg');
 
@@ -2754,12 +3080,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Mexikanischer Maissalat'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Vitello tonnato
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vitello tonnato', 190, 4, 'Portionen', 'Sommer', '1. Karotte, Sellerie und Zwiebel grob schneiden und mit Lorbeer, Weißwein, {1 l} Wasser und Salz aufkochen.
-2. Kalbfleisch (Kalbsnuss) hineinlegen, bei kleiner Hitze ca. 50 Minuten sieden lassen und im Sud vollständig abkühlen lassen.
-3. Thunfisch, Sardellen, {1 EL} Kapern, Mayonnaise, Zitronensaft und {3-4 EL} Kochsud fein pürieren und mit Pfeffer abschmecken.
-4. Fleisch in hauchdünne Scheiben schneiden und auf einer Platte auslegen.
-5. Mit der Thunfischsoße überziehen, mit den restlichen Kapern bestreuen und mindestens 1 Stunde kühl durchziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Vitello tonnato', 'Der piemontesische Klassiker: zartes, kalt aufgeschnittenes Kalbfleisch unter einer cremigen Thunfischsoße.', 190, 4, 'Portionen', 'Sommer', '1. Karotte, Selleriestange und Zwiebel grob schneiden. Mit dem Lorbeerblatt, {200 ml} Weißwein, {1000 ml} Wasser und Salz in einem Topf aufkochen.
+2. {600 g} Kalbfleisch, am besten Kalbsnuss, hineinlegen. Das Fleisch soll bedeckt sein. Bei schwacher Hitze etwa 50 Minuten sieden lassen, nicht kochen, sonst wird es zäh. Dann im Sud vollständig abkühlen lassen, so bleibt es saftig.
+3. Für die Soße {150 g} abgetropften Thunfisch, {3} Sardellenfilets, {1 EL} Kapern, {150 g} Mayonnaise, den Saft der Zitrone und {3-4 EL} vom Kochsud fein pürieren, bis eine glatte, cremige Soße entsteht. Mit Pfeffer abschmecken.
+4. Das Fleisch aus dem Sud nehmen, trocken tupfen und mit einem scharfen Messer quer zur Faser in hauchdünne Scheiben schneiden. Leicht überlappend auf einer Platte auslegen.
+5. Mit der Thunfischsoße überziehen, mit den restlichen Kapern bestreuen und abgedeckt mindestens 1 Stunde im Kühlschrank durchziehen lassen.
+
+Tipp: Der Kochsud ist eine feine Brühe für Suppen oder Risotto, also nicht wegschütten.
 
 Guten Appetit!', 'vitello-tonnato.jpg');
 
@@ -2778,13 +3106,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Vitello tonnato'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Panna Cotta mit Beeren
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Panna Cotta mit Beeren', 270, 4, 'Portionen', 'Sommer', '1. Vanilleschote aufschneiden und das Mark herauskratzen.
-2. Sahne mit Zucker, Vanillemark und Schote aufkochen und die Schote entfernen.
-3. Agar-Agar einrühren und unter Rühren 2 Minuten sprudelnd kochen lassen. Mit Agar-Agar statt Gelatine bleibt die Panna cotta vegetarisch.
-4. In Förmchen oder Gläser füllen und mindestens 4 Stunden kühlen.
-5. Die Hälfte der Himbeeren mit Puderzucker und Zitronensaft pürieren und durch ein Sieb streichen.
-6. Panna cotta stürzen oder im Glas mit Himbeersoße, restlichen Himbeeren und Heidelbeeren servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Panna Cotta mit Beeren', 'Zart, cremig und mit Vanille: italienische Panna Cotta mit frischer Himbeersoße und Beeren.', 270, 4, 'Portionen', 'Sommer', '1. Die Vanilleschote längs aufschneiden und das Mark herauskratzen.
+2. {500 ml} Sahne mit {60 g} Zucker, dem Vanillemark und der Schote in einem Topf aufkochen. Die Schote herausnehmen.
+3. {1 TL} Agar-Agar einstreuen und unter Rühren 2 Minuten sprudelnd kochen lassen. Agar-Agar bindet nur, wenn es richtig kocht. Mit Agar-Agar statt Gelatine bleibt die Panna Cotta vegetarisch.
+4. In kalt ausgespülte Förmchen oder Gläser füllen und mindestens 4 Stunden kühl stellen, bis sie fest ist.
+5. Für die Soße die Hälfte von {200 g} Himbeeren mit {1 EL} Puderzucker und dem Saft der halben Zitrone pürieren und durch ein Sieb streichen, damit die Kerne zurückbleiben.
+6. Die Panna Cotta stürzen, dafür die Förmchen kurz in heißes Wasser tauchen, oder im Glas lassen. Mit der Himbeersoße, den restlichen Himbeeren und {100 g} Heidelbeeren servieren.
+
+Tipp: Die Panna Cotta lässt sich gut ein bis zwei Tage vorher zubereiten.
 
 Guten Appetit!', 'panna-cotta-mit-beeren.jpg');
 
@@ -2798,12 +3128,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Panna Cotta mit Beeren'), (SELECT id FROM ingredients WHERE name = 'Heidelbeeren'), 100, 'g');
 
 -- Pavlova mit Beeren
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pavlova mit Beeren', 180, 8, 'Portionen', 'Sommer', '1. Ofen auf 120 °C vorheizen. Eier trennen und die Eigelbe anderweitig verwenden.
-2. Eiweiße steif schlagen, den Zucker esslöffelweise einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht. Stärke und Essig unterheben.
-3. Masse als runden Boden (ca. 22 cm) mit erhöhtem Rand auf ein mit Backpapier belegtes Blech streichen.
-4. 90 Minuten backen und bei geschlossener Tür im Ofen auskühlen lassen.
-5. Sahne mit Vanillezucker steif schlagen und kurz vor dem Servieren auf das Baiser streichen. Mit Beeren und Minze belegen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pavlova mit Beeren', 'Außen knusprig, innen weich wie Marshmallow: ein Baiser-Nest mit Sahne und einem Berg frischer Beeren.', 180, 8, 'Portionen', 'Sommer', '1. Den Ofen auf 120 °C Ober-/Unterhitze vorheizen und ein Blech mit Backpapier belegen. Auf das Papier einen Kreis von etwa 22 cm zeichnen und das Papier umdrehen.
+2. {4} Eier sehr sauber trennen, schon ein Tropfen Eigelb verhindert, dass das Eiweiß steif wird. Die Eigelbe anderweitig verwenden.
+3. Die Eiweiße in einer fettfreien Schüssel steif schlagen. {220 g} Zucker esslöffelweise einrieseln lassen und nach jeder Zugabe gut weiterschlagen, bis eine feste, glänzende Masse entsteht, in der sich der Zucker vollständig gelöst hat. Zwischen den Fingern gerieben darf sie nicht mehr körnig sein. {1 TL} Speisestärke und {1 TL} Weißweinessig unterheben.
+4. Die Masse in den Kreis streichen und den Rand etwas höher formen, sodass ein Nest entsteht.
+5. 90 Minuten backen. Dann den Ofen ausschalten und die Pavlova bei geschlossener Tür vollständig im Ofen auskühlen lassen, so reißt sie nicht.
+6. Kurz vor dem Servieren {300 ml} Sahne mit dem Vanillezucker steif schlagen und in das Nest streichen. Mit {250 g} halbierten Erdbeeren, {150 g} Himbeeren, {150 g} Heidelbeeren und den Minzblättern belegen.
+
+Tipp: Das Baiser lässt sich in einer Dose zwei Tage vorher backen. Mit Sahne und Früchten nur kurz vor dem Servieren belegen, sonst weicht es auf.
 
 Guten Appetit!', 'pavlova-mit-beeren.jpg');
 
@@ -2819,12 +3152,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pavlova mit Beeren'), (SELECT id FROM ingredients WHERE name = 'Minze'), 4, 'Blatt');
 
 -- Ofen-Feta-Pasta
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Feta-Pasta', 35, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Kirschtomaten und geschälte Knoblauchzehen in eine Auflaufform geben und den Feta als Block in die Mitte legen.
-2. Mit Olivenöl beträufeln, mit Oregano, Chiliflocken, Salz und Pfeffer würzen und ca. 30 Minuten backen, bis die Tomaten aufplatzen.
-3. In der Zwischenzeit die Penne bissfest kochen.
-4. Feta, Tomaten und Knoblauch direkt in der Form zu einer cremigen Soße zerdrücken.
-5. Nudeln mit etwas Nudelwasser untermischen und mit Basilikum servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ofen-Feta-Pasta', 'Der Internet-Klassiker: Feta und Kirschtomaten schmelzen im Ofen zu einer cremigen Soße.', 35, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {500 g} Kirschtomaten und {3} geschälte Knoblauchzehen in eine Auflaufform geben und {200 g} Feta als Block in die Mitte legen.
+2. Mit {5 EL} Olivenöl beträufeln und mit {1 TL} Oregano, einer Prise Chiliflocken, Salz und Pfeffer würzen. Etwa 30 Minuten backen, bis die Tomaten aufplatzen und der Feta weich und an den Rändern leicht gebräunt ist.
+3. Inzwischen reichlich Salzwasser aufkochen und {400 g} Penne darin bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+4. Feta, Tomaten und Knoblauch direkt in der Form mit einer Gabel zu einer cremigen Soße zerdrücken.
+5. Die Nudeln mit einem Schuss Nudelwasser untermischen, bis alles cremig überzogen ist. Mit gezupftem Basilikum bestreut servieren.
+
+Tipp: Eine Handvoll Spinat, unter die heißen Nudeln gemischt, fällt sofort zusammen und bringt etwas Grün in die Pasta.
 
 Guten Appetit!', 'ofen-feta-pasta.jpg');
 
@@ -2840,12 +3175,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ofen-Feta-Pasta'), (SELECT id FROM ingredients WHERE name = 'Basilikum'), 0.5, 'Bund');
 
 -- Caesar Salad mit Hähnchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Caesar Salad mit Hähnchen', 35, 4, 'Portionen', 'Sommer', '1. Für das Dressing Sardellen und Knoblauch fein hacken und mit Mayonnaise, Zitronensaft, Senf, Worcestershiresauce, der Hälfte des fein geriebenen Parmesans und {1 EL} Öl verrühren. Mit Pfeffer abschmecken.
-2. Baguette würfeln und in {2 EL} Öl zu goldbraunen Croûtons rösten.
-3. Hähnchenbrust salzen, pfeffern und im restlichen Öl pro Seite 5–6 Minuten braten. Kurz ruhen lassen und in Streifen schneiden.
-4. Romanasalat waschen und in breite Streifen schneiden.
-5. Salat mit dem Dressing mischen und mit Hähnchen, Croûtons und dem restlichen, gehobelten Parmesan anrichten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Caesar Salad mit Hähnchen', 'Knackiger Romanasalat, cremiges Sardellendressing, knusprige Croûtons und saftiges Hähnchen: der Salatklassiker aus Kalifornien.', 35, 4, 'Portionen', 'Sommer', '1. Für das Dressing {2} Sardellenfilets und die Knoblauchzehe sehr fein hacken. Mit {4 EL} Mayonnaise, dem Saft der halben Zitrone, {1 TL} Senf, {1 TL} Worcestershiresauce, der Hälfte des fein geriebenen Parmesans und {1 EL} Olivenöl glatt rühren. Mit Pfeffer abschmecken. Die Sardellen schmeckt man nicht heraus, sie geben nur Würze.
+2. {150 g} Baguette in 2 cm große Würfel schneiden. {2 EL} Olivenöl in einer Pfanne erhitzen und die Brotwürfel darin unter Wenden 5 Minuten goldbraun rösten. Auf Küchenpapier abkühlen lassen.
+3. {400 g} Hähnchenbrust trocken tupfen, salzen und pfeffern. Im restlichen Öl bei mittlerer Hitze pro Seite 5–6 Minuten braten, bis sie durchgegart ist. 5 Minuten ruhen lassen und in Streifen schneiden.
+4. {2} Romanasalatköpfe waschen, trocken schleudern und in breite Streifen schneiden.
+5. Den Salat in einer großen Schüssel mit dem Dressing mischen, bis alle Blätter überzogen sind. Auf Tellern anrichten, Hähnchen und Croûtons darauf verteilen und den restlichen Parmesan darüberhobeln. Mit Zitronenspalten servieren.
+
+Tipp: Ein Sparschäler hobelt den Parmesan in schöne, dünne Späne.
 
 Guten Appetit!', 'caesar-salad-mit-haehnchen.jpg');
 
@@ -2864,12 +3201,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Caesar Salad mit Hähnchen'), (SELECT id FROM ingredients WHERE name = 'Romanasalat'), 2, NULL);
 
 -- Spareribs mit BBQ-Soße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spareribs mit BBQ-Soße', 210, 4, 'Portionen', 'Sommer', '1. Die Silberhaut auf der Knochenseite der Rippchen abziehen.
-2. Beide Paprikapulver, {1 EL} braunen Zucker, {2 TL} Salz und Pfeffer mischen und die Rippchen damit rundherum einreiben.
-3. In Alufolie wickeln und im Ofen bei 150 °C ca. 2,5 Stunden garen.
-4. Für die BBQ-Soße Ketchup, Honig, Essig, restlichen Zucker, Worcestershiresauce, Senf und gepressten Knoblauch 5 Minuten einköcheln.
-5. Rippchen auswickeln, mit Soße bestreichen und auf dem Grill oder unter dem Backofengrill 10–15 Minuten karamellisieren lassen. Dabei mehrmals bestreichen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spareribs mit BBQ-Soße', 'Zarte Rippchen, die vom Knochen fallen, mit rauchiger Würzmischung und klebrig-süßer BBQ-Soße.', 210, 4, 'Portionen', 'Sommer', '1. Die Silberhaut auf der Knochenseite der {2000 g} Spareribs mit einem Messer anheben, mit Küchenpapier greifen und in einem Stück abziehen. Sie würde beim Garen zäh werden.
+2. {2 TL} Paprikapulver, {1 TL} geräuchertes Paprikapulver, {1 EL} braunen Zucker, {2 TL} Salz und Pfeffer mischen. Die Rippchen damit rundherum kräftig einreiben.
+3. Den Ofen auf 150 °C Ober-/Unterhitze vorheizen. Die Rippchen fest in Alufolie wickeln und auf einem Blech etwa 2,5 Stunden garen, bis sich das Fleisch leicht vom Knochen löst.
+4. Für die BBQ-Soße {200 ml} Ketchup, {2 EL} Honig, {2 EL} Apfelessig, den restlichen braunen Zucker, {1 EL} Worcestershiresauce, {1 TL} Senf und {2} gepresste Knoblauchzehen in einem kleinen Topf verrühren und 5 Minuten einköcheln lassen, bis sie dicklich ist.
+5. Die Rippchen auswickeln, rundherum dick mit Soße bestreichen und auf dem Grill oder unter dem Backofengrill 10–15 Minuten karamellisieren lassen. Dabei mehrmals wenden und neu bestreichen, bis die Soße glänzt und an den Rändern leicht schwarz wird.
+6. Zwischen den Knochen in Portionen schneiden und mit der restlichen Soße servieren.
+
+Tipp: Dazu passen Krautsalat, Maiskolben und reichlich Servietten.
 
 Guten Appetit!', 'spareribs-mit-bbq-sosse.jpg');
 
@@ -2887,11 +3227,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spareribs mit BBQ-Soße'), (SELECT id FROM ingredients WHERE name = 'Knoblauchzehe'), 2, NULL);
 
 -- Bayerischer Krautsalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bayerischer Krautsalat', 80, 6, 'Portionen', 'Sommer', '1. Kohl vierteln, den Strunk entfernen und den Kohl in sehr feine Streifen hobeln.
-2. Mit Salz und Zucker bestreuen und 5 Minuten kräftig durchkneten, bis er weich wird.
-3. Zwiebel fein würfeln. Essig mit {100 ml} Wasser und Kümmel aufkochen und mit der Zwiebel heiß über den Kohl gießen.
-4. Öl unterheben, mit Pfeffer abschmecken und mindestens 1 Stunde durchziehen lassen. Schmeckt am nächsten Tag noch besser.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bayerischer Krautsalat', 'Fein gehobelter Weißkohl mit Kümmel und warmer Essigmarinade: der Salat zu Schweinsbraten, Haxe und Brotzeit.', 80, 6, 'Portionen', 'Sommer', '1. {800 g} Weißkohl vierteln, den harten Strunk herausschneiden und den Kohl mit einem Gemüsehobel oder scharfen Messer in sehr feine Streifen schneiden.
+2. Den Kohl in einer großen Schüssel mit {1 TL} Salz und {1 EL} Zucker bestreuen und 5 Minuten kräftig mit den Händen durchkneten, bis er Saft zieht und weicher wird. Das ist das Geheimnis eines guten Krautsalats.
+3. Die Zwiebel schälen und fein würfeln. {5 EL} Weißweinessig mit {100 ml} Wasser und {1 TL} Kümmel aufkochen und mit der Zwiebel heiß über den Kohl gießen. Gut mischen.
+4. {4 EL} Rapsöl unterheben und mit Pfeffer abschmecken.
+5. Abgedeckt mindestens 1 Stunde durchziehen lassen, gelegentlich umrühren und vor dem Servieren noch einmal abschmecken.
+
+Tipp: Am nächsten Tag schmeckt er noch besser. Im Kühlschrank hält er sich mehrere Tage.
 
 Guten Appetit!', 'bayerischer-krautsalat.jpg');
 
@@ -2905,10 +3248,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bayerischer Krautsalat'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Melone mit Parmaschinken
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Melone mit Parmaschinken', 10, 4, 'Portionen', 'Sommer', '1. Melone halbieren, entkernen, in schmale Spalten schneiden und die Schale entfernen.
-2. Melonenspalten mit dem Parmaschinken umwickeln oder die Schinkenscheiben locker darüberlegen.
-3. Mit frisch gemahlenem Pfeffer und ein paar Tropfen Olivenöl servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Melone mit Parmaschinken', 'Süß und salzig, zart und saftig: die einfachste und eleganteste Vorspeise Italiens.', 10, 4, 'Portionen', 'Sommer', '1. Die Honigmelone halbieren und die Kerne mit einem Löffel herausschaben. In schmale Spalten schneiden und die Schale mit einem scharfen Messer entfernen.
+2. Die Melonenspalten mit je einer Scheibe von {150 g} Parmaschinken umwickeln oder die Schinkenscheiben locker darüberlegen.
+3. Mit frisch gemahlenem Pfeffer bestreuen und mit {1 EL} Olivenöl beträufeln. Gut gekühlt servieren.
+
+Tipp: Die Melone ist reif, wenn sie am Stielansatz süß duftet und leicht nachgibt.
 
 Guten Appetit!', 'melone-mit-parmaschinken.jpg');
 
@@ -2918,11 +3263,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Melone mit Parmaschinken'), (SELECT id FROM ingredients WHERE name = 'Olivenöl'), 1, 'EL');
 
 -- Ofenkartoffeln mit Sour Cream
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofenkartoffeln mit Sour Cream', 60, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Große, mehligkochende Kartoffeln gründlich waschen, trocknen und mehrmals mit einer Gabel einstechen.
-2. Mit Öl einreiben, mit grobem Salz bestreuen und auf dem Rost ca. 50–60 Minuten backen, bis sie innen weich sind.
-3. Saure Sahne, Quark, gepressten Knoblauch und Zitronensaft verrühren, Schnittlauchröllchen unterrühren und mit Salz und Pfeffer abschmecken.
-4. Kartoffeln kreuzweise einschneiden, leicht aufdrücken und mit der Sour Cream füllen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ofenkartoffeln mit Sour Cream', 'Große Kartoffeln mit knuspriger Salzkruste und fluffigem Inneren, gefüllt mit kühler Schnittlauch-Sour-Cream.', 60, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {4} große, mehligkochende Kartoffeln gründlich waschen und abtrocknen. Mehrmals mit einer Gabel einstechen, damit der Dampf entweichen kann.
+2. Die Kartoffeln mit {1 EL} Olivenöl einreiben und mit grobem Salz bestreuen. Direkt auf den Rost legen, mit einem Blech darunter, und 50–60 Minuten backen, bis sie sich beim Hineinstechen ganz weich anfühlen und die Schale knusprig ist.
+3. Inzwischen {200 g} saure Sahne, {100 g} Quark, die gepresste Knoblauchzehe und den Saft der halben Zitrone verrühren. Den Schnittlauch in Röllchen schneiden und unterrühren. Mit Salz und Pfeffer abschmecken.
+4. Die Kartoffeln oben kreuzweise einschneiden und von unten leicht zusammendrücken, sodass sie sich öffnen. Etwas Salz und Pfeffer in die Öffnung streuen und großzügig mit der Sour Cream füllen.
+
+Tipp: Wer mag, streut knusprig gebratene Speckwürfel oder geriebenen Käse darüber.
 
 Guten Appetit!', 'ofenkartoffeln-mit-sour-cream.jpg');
 
@@ -2937,12 +3284,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ofenkartoffeln mit Sour Cream'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Salade Niçoise
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Salade Niçoise', 35, 4, 'Portionen', 'Sommer', '1. Kartoffeln in Salzwasser ca. 20 Minuten garen, abkühlen lassen und in Scheiben schneiden.
-2. Bohnen in Salzwasser 7 Minuten garen und abschrecken. Eier 8 Minuten kochen, abschrecken, pellen und vierteln.
-3. Tomaten in Spalten und Zwiebel in Ringe schneiden, Salat zerpflücken.
-4. Essig, Senf, Salz und Pfeffer verrühren und das Öl unterschlagen.
-5. Salat, Kartoffeln, Bohnen, Tomaten und Zwiebeln auf Tellern anrichten. Thunfisch, Eier, Oliven und Sardellen darauf verteilen und mit der Vinaigrette beträufeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Salade Niçoise', 'Der Salat aus Nizza ist eine ganze Mahlzeit: Kartoffeln, grüne Bohnen, Eier, Thunfisch, Oliven und Sardellen.', 35, 4, 'Portionen', 'Sommer', '1. {400 g} Kartoffeln in Salzwasser etwa 20 Minuten garen, abgießen, abkühlen lassen, pellen und in Scheiben schneiden.
+2. {200 g} grüne Bohnen putzen, in Salzwasser 7 Minuten garen und in Eiswasser abschrecken. {4} Eier 8 Minuten kochen, sodass das Eigelb noch leicht cremig ist, abschrecken, pellen und vierteln.
+3. {3} Tomaten in Spalten und die Zwiebel in dünne Ringe schneiden. Den Kopfsalat waschen, trocken schleudern und zerpflücken.
+4. {2 EL} Weißweinessig, {1 TL} Senf, Salz und Pfeffer verrühren und {5 EL} Olivenöl unterschlagen.
+5. Den Salat auf Teller verteilen und Kartoffeln, Bohnen, Tomaten und Zwiebeln darauf anrichten. {200 g} abgetropften Thunfisch in groben Stücken, die Eier, {60 g} Oliven und {6} Sardellenfilets darauf verteilen. Mit der Vinaigrette beträufeln.
+
+Tipp: Die Kartoffeln noch warm mit etwas Vinaigrette mischen, so nehmen sie den Geschmack besonders gut auf.
 
 Guten Appetit!', 'salade-nicoise.jpg');
 
@@ -2967,11 +3316,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 -- ======================================================================
 
 -- Ofenkürbis mit Feta und Walnüssen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofenkürbis mit Feta und Walnüssen', 40, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Kürbis waschen, halbieren, entkernen und mit Schale in Spalten schneiden. Zwiebeln in Spalten schneiden.
-2. Kürbis und Zwiebeln auf einem Blech mit Öl, Rosmarinnadeln, Chiliflocken, Salz und Pfeffer mischen.
-3. 25 Minuten rösten, dann mit Honig beträufeln, den Feta darüberbröseln und die grob gehackten Walnüsse darüberstreuen.
-4. Weitere 10 Minuten backen, bis der Feta leicht gebräunt ist.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ofenkürbis mit Feta und Walnüssen', 'Karamellisierte Kürbisspalten mit Honig, salzigem Feta und knackigen Walnüssen: ein Herbstessen vom Blech.', 40, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Den Hokkaido-Kürbis waschen, halbieren, die Kerne herauskratzen und mit Schale in etwa 2 cm breite Spalten schneiden. {2} rote Zwiebeln in Spalten schneiden.
+2. Kürbis und Zwiebeln auf einem Blech mit {4 EL} Olivenöl, den gehackten Nadeln von {2} Rosmarinzweigen, einer Prise Chiliflocken, Salz und Pfeffer mischen und nebeneinander verteilen.
+3. 25 Minuten rösten, bis der Kürbis weich ist und an den Rändern braun wird.
+4. Mit {2 EL} Honig beträufeln, {200 g} Feta darüberbröseln und {50 g} grob gehackte Walnüsse darüberstreuen.
+5. Weitere 10 Minuten backen, bis der Feta leicht gebräunt ist und die Walnüsse duften.
+
+Tipp: Mit etwas Rucola und einem Spritzer Balsamico wird daraus ein warmer Herbstsalat.
 
 Guten Appetit!', 'ofenkuerbis-mit-feta-und-walnuessen.jpg');
 
@@ -2987,12 +3339,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ofenkürbis mit Feta und Walnüssen'), (SELECT id FROM ingredients WHERE name = 'Walnüsse'), 50, 'g');
 
 -- Kürbis-Risotto mit Salbeibutter
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbis-Risotto mit Salbeibutter', 45, 4, 'Portionen', 'Herbst', '1. Kürbis schälen, entkernen und in 1 cm große Würfel schneiden. Brühe erhitzen.
-2. Schalotten würfeln und in der Hälfte der Butter andünsten. Kürbis und Reis zugeben und 2 Minuten mitdünsten.
-3. Mit Weißwein ablöschen und nach und nach die heiße Brühe angießen. Unter Rühren ca. 20 Minuten garen, bis der Reis cremig und bissfest ist und der Kürbis teilweise zerfällt.
-4. Restliche Butter in einer kleinen Pfanne aufschäumen lassen und die Salbeiblätter darin knusprig braten.
-5. Käse unter das Risotto rühren, mit Salz, Pfeffer und Muskat abschmecken und mit der Salbeibutter servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kürbis-Risotto mit Salbeibutter', 'Cremiges Risotto, das durch den Kürbis leuchtend orange wird, mit knusprigen Salbeiblättern in brauner Butter.', 45, 4, 'Portionen', 'Herbst', '1. {500 g} Butternut-Kürbis schälen, entkernen und in 1 cm große Würfel schneiden. {1000 ml} Gemüsebrühe erhitzen und heiß halten.
+2. {2} Schalotten fein würfeln. Die Hälfte der Butter in einem breiten Topf schmelzen und die Schalotten darin glasig dünsten. Kürbis und {300 g} Risottoreis zugeben und 2 Minuten unter Rühren mitdünsten.
+3. Mit {100 ml} Weißwein ablöschen und einkochen lassen. Dann nach und nach die heiße Brühe angießen, immer erst, wenn der Reis die vorige Kelle fast aufgenommen hat. Unter häufigem Rühren etwa 20 Minuten garen, bis der Reis cremig und bissfest ist und der Kürbis teilweise zerfällt.
+4. Kurz vor Ende die restliche Butter in einer kleinen Pfanne aufschäumen lassen. {6} Salbeiblätter darin bei mittlerer Hitze 1–2 Minuten braten, bis sie knusprig sind und die Butter nussig duftet.
+5. {60 g} Hartkäse reiben und unter das Risotto rühren. Mit Salz, Pfeffer und etwas Muskatnuss abschmecken.
+6. Auf Teller verteilen und mit der Salbeibutter und den knusprigen Blättern beträufeln.
+
+Tipp: Ein paar geröstete Kürbiskerne obendrauf bringen Biss.
 
 Guten Appetit!', 'kuerbis-risotto-mit-salbeibutter.jpg');
 
@@ -3009,12 +3364,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kürbis-Risotto mit Salbeibutter'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Kürbis-Kichererbsen-Curry
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbis-Kichererbsen-Curry', 40, 4, 'Portionen', 'Herbst', '1. Reis nach Packungsangabe garen.
-2. Kürbis entkernen und in 2 cm große Würfel schneiden. Zwiebel, Knoblauch und Ingwer fein hacken.
-3. Kokosöl erhitzen und Zwiebel, Knoblauch und Ingwer andünsten. Gewürze zugeben und 1 Minute mitrösten.
-4. Kürbis, abgetropfte Kichererbsen, Tomaten und Kokosmilch zugeben und ca. 20 Minuten köcheln, bis der Kürbis weich ist.
-5. Spinat unterrühren und zusammenfallen lassen. Mit Limettensaft und Salz abschmecken und mit Koriander zum Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kürbis-Kichererbsen-Curry', 'Wärmend, cremig und voller Gewürze: ein Herbstcurry mit Kürbis, Kichererbsen und Spinat in Kokosmilch.', 40, 4, 'Portionen', 'Herbst', '1. {250 g} Basmatireis waschen und nach Packungsangabe garen.
+2. {800 g} Hokkaido-Kürbis waschen, entkernen und mit Schale in 2 cm große Würfel schneiden. Die Zwiebel, {2} Knoblauchzehen und {20 g} Ingwer fein hacken.
+3. {1 EL} Kokosöl in einem großen Topf erhitzen. Zwiebel, Knoblauch und Ingwer darin 3 Minuten andünsten. {2 TL} Currypulver, {1 TL} Kurkuma und {1 TL} Kreuzkümmel zugeben und 1 Minute mitrösten, bis es duftet. Das Rösten weckt die Aromen der Gewürze.
+4. Kürbis, {240 g} abgetropfte Kichererbsen, {400 g} gehackte Tomaten und {400 ml} Kokosmilch zugeben, salzen und zugedeckt etwa 20 Minuten köcheln lassen, bis der Kürbis weich ist.
+5. {100 g} Spinat unterrühren und zusammenfallen lassen. Mit dem Saft der Limette und Salz abschmecken.
+6. Mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Das Curry schmeckt aufgewärmt am nächsten Tag noch besser und lässt sich gut einfrieren.
 
 Guten Appetit!', 'kuerbis-kichererbsen-curry.jpg');
 
@@ -3036,11 +3394,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kürbis-Kichererbsen-Curry'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Kürbis-Pommes mit Rosmarin
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbis-Pommes mit Rosmarin', 35, 4, 'Portionen', 'Herbst', '1. Ofen auf 220 °C vorheizen. Kürbis schälen, entkernen und in pommesdicke Stifte schneiden.
-2. Mit Stärke bestäuben und dann mit Öl, Paprikapulver, gehacktem Rosmarin und Pfeffer mischen.
-3. Mit Abstand nebeneinander auf {2} mit Backpapier belegten Blechen verteilen.
-4. 25–30 Minuten backen und nach der Hälfte der Zeit wenden. Erst nach dem Backen salzen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kürbis-Pommes mit Rosmarin', 'Süßlich, würzig und außen knusprig: Pommes aus Kürbis, im Ofen gebacken statt frittiert.', 35, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. {1000 g} Butternut-Kürbis schälen, entkernen und in etwa 1 cm dicke Stifte schneiden.
+2. Die Stifte in einer großen Schüssel mit {1 EL} Speisestärke bestäuben und durchschwenken. Die Stärke macht sie knuspriger. Dann mit {3 EL} Olivenöl, {1 TL} Paprikapulver, den gehackten Nadeln von {2} Rosmarinzweigen und Pfeffer mischen.
+3. Mit Abstand nebeneinander auf {2} mit Backpapier belegten Blechen verteilen. Liegen sie zu dicht, dämpfen sie, statt knusprig zu werden.
+4. 25–30 Minuten backen, nach der Hälfte der Zeit wenden. Erst nach dem Backen salzen, sonst ziehen sie Wasser.
+
+Tipp: Dazu passt ein Dip aus Joghurt, Knoblauch und etwas Zitrone.
 
 Guten Appetit!', 'kuerbis-pommes-mit-rosmarin.jpg');
 
@@ -3053,12 +3413,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kürbis-Pommes mit Rosmarin'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Pumpkin Pie (amerikanischer Kürbiskuchen)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pumpkin Pie (amerikanischer Kürbiskuchen)', 120, 1, 'Tarteform (26 cm)', 'Herbst', '1. Mehl, kalte Butterwürfel, Zucker, {1} Ei und Salz zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Kürbis schälen, würfeln und in wenig Wasser ca. 15 Minuten weich dämpfen. Gut abtropfen lassen und fein pürieren.
-3. Ofen auf 180 °C vorheizen. Teig ausrollen, eine gefettete Tarteform damit auslegen, mehrmals einstechen und 15 Minuten blind backen.
-4. Kürbispüree mit Sahne, braunem Zucker, den restlichen Eiern, Zimt, Lebkuchengewürz und einer Prise Muskat glatt verrühren.
-5. Füllung auf den Boden gießen und ca. 45 Minuten backen, bis sie gestockt ist. In der Form auskühlen lassen. Dazu passt geschlagene Sahne.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pumpkin Pie (amerikanischer Kürbiskuchen)', 'Der Star des amerikanischen Thanksgiving: cremige, würzige Kürbisfüllung auf knusprigem Mürbeteig.', 120, 1, 'Tarteform (26 cm)', 'Herbst', '1. {200 g} Mehl, {100 g} kalte Butter in Würfeln, {30 g} Zucker, {1} Ei und eine Prise Salz rasch zu einem glatten Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. {600 g} Butternut-Kürbis schälen, entkernen und würfeln. In einem Topf mit wenig Wasser zugedeckt etwa 15 Minuten weich dämpfen. Gut abtropfen lassen, etwas ausdampfen lassen und fein pürieren. Je trockener das Püree, desto besser schneidet sich der Kuchen.
+3. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Den Teig ausrollen und eine gefettete Tarteform (26 cm) damit auslegen. Mehrmals mit einer Gabel einstechen, mit Backpapier und getrockneten Hülsenfrüchten beschweren und 15 Minuten blind backen. Papier und Hülsenfrüchte entfernen.
+4. Das Kürbispüree mit {200 ml} Sahne, {100 g} braunem Zucker, den restlichen Eiern, {1 TL} Zimt, {1 TL} Lebkuchengewürz und einer Prise Muskatnuss glatt verrühren.
+5. Die Füllung auf den vorgebackenen Boden gießen und etwa 45 Minuten backen, bis sie gestockt ist und in der Mitte nur noch leicht wackelt.
+6. In der Form vollständig auskühlen lassen, so wird die Füllung schnittfest. Mit geschlagener Sahne servieren.
+
+Tipp: Die Hülsenfrüchte zum Blindbacken können immer wieder verwendet werden, nur nicht mehr zum Kochen.
 
 Guten Appetit!', 'pumpkin-pie-amerikanischer-kuerbiskuchen.jpg');
 
@@ -3075,12 +3438,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pumpkin Pie (amerikanischer Kürbiskuchen)'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Steinpilz-Risotto
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Steinpilz-Risotto', 45, 4, 'Portionen', 'Herbst', '1. Steinpilze trocken putzen und in Scheiben schneiden. Brühe erhitzen.
-2. Pilze in {20 g} Butter mit Thymian kräftig anbraten, salzen, pfeffern und herausnehmen.
-3. Schalotten und Knoblauch fein würfeln und in {15 g} Butter andünsten. Reis zugeben, glasig anschwitzen und mit Weißwein ablöschen.
-4. Nach und nach die heiße Brühe angießen und unter Rühren ca. 18 Minuten garen.
-5. Pilze (einige zum Garnieren beiseitelegen), restliche Butter und Käse unterrühren. Abschmecken und mit Petersilie und den restlichen Pilzen servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Steinpilz-Risotto', 'Der König der Pilze in cremigem Risotto: herbstlich, nussig und unglaublich aromatisch.', 45, 4, 'Portionen', 'Herbst', '1. {300 g} Steinpilze mit einem Pinsel oder Küchenpapier trocken putzen, nur nicht waschen. Madige Stellen großzügig wegschneiden. Die Pilze in Scheiben schneiden. {1000 ml} Gemüsebrühe erhitzen und heiß halten.
+2. {20 g} Butter in einer großen Pfanne stark erhitzen. Die Pilze mit den Thymianzweigen darin 4–5 Minuten kräftig anbraten, bis sie goldbraun sind. Salzen, pfeffern und herausnehmen. Ein paar schöne Scheiben zum Garnieren beiseitelegen.
+3. {2} Schalotten und den Knoblauch fein würfeln und in {15 g} Butter in einem breiten Topf glasig dünsten. {300 g} Risottoreis zugeben und 1–2 Minuten anschwitzen, bis er glasig schimmert. Mit {100 ml} Weißwein ablöschen und einkochen lassen.
+4. Nach und nach die heiße Brühe angießen und unter häufigem Rühren etwa 18 Minuten garen, bis der Reis cremig ist, aber noch Biss hat.
+5. Die Pilze, die restliche Butter und {60 g} geriebenen Hartkäse unterrühren. Mit Salz und Pfeffer abschmecken und 2 Minuten ruhen lassen.
+6. Mit gehackter Petersilie und den beiseitegelegten Pilzscheiben servieren.
+
+Tipp: Mit getrockneten Steinpilzen geht es das ganze Jahr: 30 g in warmem Wasser einweichen und das Einweichwasser mit der Brühe angießen.
 
 Guten Appetit!', 'steinpilz-risotto.jpg');
 
@@ -3098,12 +3464,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Steinpilz-Risotto'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Rahmchampignons mit Bandnudeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rahmchampignons mit Bandnudeln', 30, 4, 'Portionen', 'Herbst', '1. Bandnudeln in Salzwasser bissfest kochen.
-2. Champignons putzen und in Scheiben schneiden. Zwiebel und Knoblauch fein würfeln.
-3. Pilze in Butter bei starker Hitze portionsweise goldbraun braten. Zwiebel und Knoblauch zugeben und 2 Minuten mitbraten.
-4. Mit Weißwein ablöschen, die Sahne zugießen und 5 Minuten einkochen lassen.
-5. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken, Petersilie unterrühren und mit den Nudeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rahmchampignons mit Bandnudeln', 'Goldbraun gebratene Champignons in cremiger Weißwein-Sahnesoße auf breiten Bandnudeln: schnell, einfach, gut.', 30, 4, 'Portionen', 'Herbst', '1. Reichlich Salzwasser aufkochen und {400 g} Bandnudeln darin bissfest kochen.
+2. {500 g} Champignons mit Küchenpapier abreiben und in Scheiben schneiden. Die Zwiebel und den Knoblauch fein würfeln.
+3. Die Butter in einer großen Pfanne stark erhitzen und die Pilze portionsweise darin goldbraun braten. Erst wenden, wenn sie unten Farbe haben. In einer zu vollen Pfanne ziehen sie Wasser und werden grau. Zum Schluss alle Pilze zurück in die Pfanne geben, Zwiebel und Knoblauch zugeben und 2 Minuten mitbraten.
+4. Mit {100 ml} Weißwein ablöschen und fast vollständig einkochen lassen. {200 ml} Sahne zugießen und 5 Minuten sämig einkochen.
+5. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken. Die Petersilie hacken und unterrühren.
+6. Die Nudeln abgießen und mit den Rahmchampignons servieren.
+
+Tipp: Pilze erst am Ende salzen, sonst ziehen sie in der Pfanne Wasser.
 
 Guten Appetit!', 'rahmchampignons-mit-bandnudeln.jpg');
 
@@ -3120,12 +3489,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rahmchampignons mit Bandnudeln'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Waldpilz-Ragout mit Polenta
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Waldpilz-Ragout mit Polenta', 40, 4, 'Portionen', 'Herbst', '1. Brühe aufkochen, Polenta unter Rühren einrieseln lassen und bei kleiner Hitze unter gelegentlichem Rühren nach Packungsangabe quellen lassen.
-2. Pilze putzen und in mundgerechte Stücke schneiden, Schalotten würfeln.
-3. Pilze portionsweise in {30 g} Butter kräftig anbraten, Schalotten und Thymian zugeben und kurz mitbraten.
-4. Sahne angießen, 3 Minuten einköcheln lassen und mit Salz, Pfeffer und Petersilie abschmecken.
-5. Restliche Butter und Käse unter die Polenta rühren und mit dem Pilzragout servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Waldpilz-Ragout mit Polenta', 'Ein Herbstabend auf dem Teller: gemischte Pilze in Thymiansahne auf cremiger, goldgelber Polenta.', 40, 4, 'Portionen', 'Herbst', '1. {1000 ml} Gemüsebrühe aufkochen. {250 g} Polenta unter ständigem Rühren mit dem Schneebesen einrieseln lassen, damit keine Klümpchen entstehen. Bei schwacher Hitze unter gelegentlichem Rühren nach Packungsangabe quellen lassen. Vorsicht, die Polenta blubbert und spritzt.
+2. {250 g} Kräuterseitlinge, {250 g} Champignons und {150 g} Pfifferlinge trocken putzen und in mundgerechte Stücke schneiden. {2} Schalotten fein würfeln.
+3. Die Pilze portionsweise in {30 g} Butter bei hoher Hitze kräftig anbraten, bis sie gebräunt sind. Alle Pilze zurück in die Pfanne geben, Schalotten und die Blättchen von {3} Thymianzweigen zugeben und 2 Minuten mitbraten.
+4. {150 ml} Sahne angießen und 3 Minuten einköcheln lassen. Mit Salz, Pfeffer und gehackter Petersilie abschmecken.
+5. Die restliche Butter und {50 g} geriebenen Hartkäse unter die Polenta rühren. Ist sie zu fest, einen Schuss Brühe oder Wasser einrühren.
+6. Die Polenta auf Teller verteilen und das Pilzragout darauf anrichten.
+
+Tipp: Übrige Polenta auf einem Blech fest werden lassen, in Scheiben schneiden und am nächsten Tag knusprig braten.
 
 Guten Appetit!', 'waldpilz-ragout-mit-polenta.jpg');
 
@@ -3144,12 +3516,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Waldpilz-Ragout mit Polenta'), (SELECT id FROM ingredients WHERE name = 'Vegetarischer Hartkäse'), 50, 'g');
 
 -- Champignon-Cremesuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Champignon-Cremesuppe', 30, 4, 'Portionen', 'Herbst', '1. Champignons putzen und in Scheiben schneiden. Einige Scheiben zum Garnieren beiseitelegen.
-2. Zwiebel und Knoblauch würfeln und in Butter andünsten. Pilze und Thymian zugeben und 5 Minuten braten.
-3. Mit Brühe ablöschen und 15 Minuten köcheln lassen. Thymianzweige entfernen.
-4. Sahne zugeben, fein pürieren und mit Salz, Pfeffer und Muskat abschmecken.
-5. Die beiseitegelegten Pilzscheiben kurz anbraten und mit Petersilie auf der Suppe anrichten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Champignon-Cremesuppe', 'Samtig, aromatisch und ganz einfach: eine cremige Pilzsuppe mit Thymian, die nach Wald schmeckt.', 30, 4, 'Portionen', 'Herbst', '1. {500 g} Champignons mit Küchenpapier abreiben und in Scheiben schneiden. Ein paar schöne Scheiben zum Garnieren beiseitelegen.
+2. Die Zwiebel und den Knoblauch fein würfeln. {2 EL} Butter in einem Topf schmelzen und beides darin glasig dünsten. Die Pilze und {2} Thymianzweige zugeben und bei mittlerer bis hoher Hitze etwa 5 Minuten braten, bis die Pilze Farbe bekommen. Die Röstaromen machen die Suppe kräftig.
+3. Mit {700 ml} Gemüsebrühe ablöschen und zugedeckt 15 Minuten köcheln lassen. Die Thymianzweige herausnehmen.
+4. {200 ml} Sahne zugeben und die Suppe mit dem Stabmixer fein pürieren. Mit Salz, Pfeffer und etwas Muskatnuss abschmecken.
+5. Die beiseitegelegten Pilzscheiben in einer kleinen Pfanne ohne Fett kurz goldbraun anbraten. Die Suppe mit den Pilzscheiben und gehackter Petersilie servieren.
+
+Tipp: Ein Schuss Weißwein oder trockener Sherry, nach dem Anbraten zugegeben, macht die Suppe noch feiner.
 
 Guten Appetit!', 'champignon-cremesuppe.jpg');
 
@@ -3166,12 +3540,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Champignon-Cremesuppe'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Schwäbischer Zwiebelkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwäbischer Zwiebelkuchen', 120, 1, 'Blech', 'Herbst', '1. Mehl mit Hefe, Zucker und {1 TL} Salz mischen. Lauwarme Milch und {40 g} weiche Butter zugeben, zu einem glatten Teig kneten und 45 Minuten gehen lassen.
-2. Zwiebeln in feine Streifen schneiden. Speck würfeln und in der restlichen Butter auslassen, Zwiebeln zugeben und ca. 20 Minuten glasig dünsten. Etwas abkühlen lassen.
-3. Eier mit Schmand und Sahne verquirlen, mit Salz, Pfeffer, Muskat und Kümmel würzen und unter die Zwiebeln mischen.
-4. Ofen auf 200 °C vorheizen. Teig auf einem gefetteten Blech ausrollen, einen kleinen Rand formen und die Zwiebelmasse daraufstreichen.
-5. Ca. 35–40 Minuten goldbraun backen. Warm servieren – traditionell mit einem Glas Federweißer.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schwäbischer Zwiebelkuchen', 'Hefeteig, ein Berg weich gedünsteter Zwiebeln, Speck und eine würzige Eier-Schmand-Füllung: der Herbstklassiker zum Federweißen.', 120, 1, 'Blech', 'Herbst', '1. {400 g} Mehl, die Trockenhefe, {1 TL} Zucker und {1 TL} Salz mischen. {200 ml} Milch lauwarm erwärmen und mit {40 g} weicher Butter zugeben. Alles 5–8 Minuten zu einem glatten Teig kneten und zugedeckt an einem warmen Ort 45 Minuten gehen lassen.
+2. Inzwischen {1500 g} Zwiebeln schälen, halbieren und in feine Streifen schneiden. Das dauert eine Weile, eine Küchenmaschine hilft. {150 g} Speck würfeln und in einem großen Topf in der restlichen Butter auslassen. Die Zwiebeln zugeben und bei mittlerer Hitze etwa 20 Minuten glasig und weich dünsten, ohne dass sie braun werden. Etwas abkühlen lassen.
+3. {4} Eier mit {200 g} Schmand und {100 ml} Sahne verquirlen. Mit Salz, Pfeffer, Muskatnuss und {1 TL} Kümmel würzen und unter die Zwiebeln mischen.
+4. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Den Teig auf einem gefetteten Blech ausrollen und einen kleinen Rand hochdrücken. Die Zwiebelmasse gleichmäßig daraufstreichen.
+5. Etwa 35–40 Minuten backen, bis die Oberfläche goldbraun ist und die Füllung gestockt hat.
+6. Etwas abkühlen lassen und warm in Stücken servieren.
+
+Tipp: Traditionell gibt es dazu ein Glas Federweißer, und das erste Stück schmeckt immer am besten direkt vom Blech.
 
 Guten Appetit!', 'schwaebischer-zwiebelkuchen.jpg');
 
@@ -3191,12 +3568,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schwäbischer Zwiebelkuchen'), (SELECT id FROM ingredients WHERE name = 'Kümmel'), 1, 'TL');
 
 -- Französische Zwiebelsuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Französische Zwiebelsuppe', 75, 4, 'Portionen', 'Herbst', '1. Zwiebeln halbieren und in feine Streifen schneiden.
-2. Butter in einem großen Topf schmelzen, Zwiebeln und Zucker zugeben und bei mittlerer Hitze 30–40 Minuten unter häufigem Rühren goldbraun karamellisieren.
-3. Mit Weißwein ablöschen und einkochen lassen. Brühe, Thymian und Lorbeer zugeben, 20 Minuten köcheln und mit Salz und Pfeffer abschmecken.
-4. Baguette in Scheiben schneiden und rösten. Suppe in ofenfeste Schalen füllen, je zwei Brotscheiben auflegen und dick mit geriebenem Bergkäse bestreuen.
-5. Unter dem Backofengrill 3–5 Minuten goldbraun überbacken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Französische Zwiebelsuppe', 'Tief karamellisierte Zwiebeln in kräftiger Brühe, darauf geröstetes Brot unter einer Schicht geschmolzenem Käse.', 75, 4, 'Portionen', 'Herbst', '1. {1000 g} Zwiebeln schälen, halbieren und in feine Streifen schneiden.
+2. {40 g} Butter in einem großen Topf mit schwerem Boden schmelzen. Zwiebeln und {1 TL} Zucker zugeben und bei mittlerer Hitze 30–40 Minuten unter häufigem Rühren karamellisieren, bis sie tief goldbraun und weich sind. Das braucht Geduld, ist aber der Schlüssel zur Suppe. Setzen sie am Boden an, einen Schuss Wasser zugeben und den Bratensatz loskratzen.
+3. Mit {200 ml} Weißwein ablöschen und fast vollständig einkochen lassen. {1000 ml} Gemüsebrühe, die Thymianzweige und das Lorbeerblatt zugeben und 20 Minuten leise köcheln lassen. Kräuter herausnehmen und mit Salz und Pfeffer abschmecken.
+4. Das halbe Baguette in Scheiben schneiden und im Ofen oder Toaster rösten. {150 g} Bergkäse reiben. Den Backofengrill vorheizen.
+5. Die Suppe in ofenfeste Schalen füllen, je zwei Brotscheiben auflegen und dick mit Käse bestreuen.
+6. Die Schalen auf ein Blech stellen und unter dem Grill 3–5 Minuten überbacken, bis der Käse blubbert und goldbraun ist. Vorsicht, die Schalen sind sehr heiß.
+
+Tipp: Mit Rinderbrühe wird die Suppe noch kräftiger, so wie in Paris.
 
 Guten Appetit!', 'franzoesische-zwiebelsuppe.jpg');
 
@@ -3213,13 +3593,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Französische Zwiebelsuppe'), (SELECT id FROM ingredients WHERE name = 'Bergkäse'), 150, 'g');
 
 -- Apfelstrudel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelstrudel', 120, 8, 'Stück', 'Herbst', '1. Mehl, Öl, Salz und ca. {125 ml} lauwarmes Wasser 10 Minuten zu einem sehr geschmeidigen Teig kneten. Mit Öl bestreichen und abgedeckt 30 Minuten ruhen lassen.
-2. Rosinen in Rum einweichen. Äpfel schälen, vierteln, entkernen und in dünne Scheiben schneiden. Mit Zitronensaft, Zucker, Zimt, Rosinen und gehackten Walnüssen mischen.
-3. {40 g} Butter schmelzen und das Paniermehl darin goldbraun rösten. Die restliche Butter schmelzen.
-4. Teig auf einem bemehlten Tuch ausrollen und mit den Handrücken hauchdünn ausziehen. Mit flüssiger Butter bestreichen.
-5. Brösel auf zwei Dritteln des Teigs verteilen und die Äpfel daraufgeben. Mithilfe des Tuchs aufrollen und mit der Naht nach unten auf ein Blech legen.
-6. Mit Butter bestreichen und bei 190 °C ca. 40 Minuten goldbraun backen. Mit Puderzucker bestäuben und lauwarm servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Apfelstrudel', 'Hauchdünn ausgezogener Teig, saftige Äpfel, Rosinen, Walnüsse und Zimt: Wiens berühmtestes Gebäck.', 120, 8, 'Stück', 'Herbst', '1. {250 g} Mehl, {3 EL} Rapsöl, eine Prise Salz und etwa {125 ml} lauwarmes Wasser 10 Minuten zu einem sehr geschmeidigen, glatten Teig kneten. Je länger, desto dehnbarer wird er. Zu einer Kugel formen, mit etwas Öl bestreichen und abgedeckt 30 Minuten ruhen lassen.
+2. {50 g} Rosinen in {2 EL} Rum einweichen. {1200 g} Äpfel schälen, vierteln, entkernen und in dünne Scheiben schneiden. Sofort mit dem Saft der Zitrone, {80 g} Zucker, {1 TL} Zimt, den Rosinen und {50 g} grob gehackten Walnüssen mischen.
+3. {40 g} Butter in einer Pfanne schmelzen und {60 g} Paniermehl darin goldbraun rösten. Die restliche Butter in einem kleinen Topf schmelzen. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen.
+4. Ein großes Küchentuch mit Mehl bestäuben. Den Teig darauf ausrollen, dann mit beiden Handrücken von der Mitte aus vorsichtig nach außen ziehen, bis er hauchdünn ist. Man sollte die Muster des Tuchs hindurch sehen. Dicke Ränder abschneiden und den Teig mit etwas flüssiger Butter bestreichen.
+5. Die Butterbrösel auf zwei Drittel des Teigs streuen und die Äpfel darauf verteilen. Die Seiten einschlagen und den Strudel mithilfe des Tuchs aufrollen. Mit der Naht nach unten auf ein mit Backpapier belegtes Blech legen.
+6. Mit der restlichen Butter bestreichen und etwa 40 Minuten goldbraun backen. Zwischendurch noch einmal mit Butter bestreichen. Etwas abkühlen lassen, mit {1 EL} Puderzucker bestäuben und lauwarm servieren.
+
+Tipp: Reißt der Teig, die Löcher einfach mit Teigresten flicken, unter den Äpfeln sieht das niemand. Dazu Vanillesoße oder Schlagsahne.
 
 Guten Appetit!', 'apfelstrudel.jpg');
 
@@ -3238,12 +3620,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Apfelstrudel'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 1, 'EL');
 
 -- Versunkener Apfelkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Versunkener Apfelkuchen', 75, 1, 'Springform (26 cm)', 'Herbst', '1. Ofen auf 180 °C vorheizen und eine Springform fetten.
-2. Äpfel schälen, vierteln und entkernen. Die Rückseiten mehrfach längs einritzen und mit Zitronensaft beträufeln.
-3. Butter, Zucker, Vanillezucker und Salz schaumig rühren und die Eier einzeln unterrühren. Mehl mit Backpulver mischen und mit der Milch unterrühren.
-4. Teig in die Form streichen und die Apfelviertel mit der eingeritzten Seite nach oben leicht hineindrücken.
-5. Ca. 45 Minuten backen (Stäbchenprobe), abkühlen lassen und mit Puderzucker bestäuben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Versunkener Apfelkuchen', 'Saftiger Rührteig, in den Apfelviertel sanft versinken: der Kuchen, der in keiner Familie fehlen darf.', 75, 1, 'Springform (26 cm)', 'Herbst', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Springform (26 cm) fetten.
+2. {4} Äpfel schälen, vierteln und entkernen. Die gewölbten Rückseiten mit einem Messer mehrmals längs einritzen, so garen sie gleichmäßiger und sehen hübsch aus. Mit dem Saft der Zitrone beträufeln, damit sie nicht braun werden.
+3. {150 g} weiche Butter, {150 g} Zucker, den Vanillezucker und eine Prise Salz mit dem Handrührgerät 3 Minuten schaumig rühren. Die {3} Eier einzeln je eine halbe Minute unterrühren.
+4. {250 g} Mehl mit {2 TL} Backpulver mischen und abwechselnd mit {3 EL} Milch kurz unterrühren, bis ein glatter Teig entsteht.
+5. Den Teig in die Form streichen und die Apfelviertel mit der eingeritzten Seite nach oben kreisförmig leicht hineindrücken.
+6. Etwa 45 Minuten backen, bis der Kuchen goldbraun ist. Mit einem Holzstäbchen zwischen den Äpfeln in den Teig stechen: Bleibt nichts kleben, ist er fertig. In der Form abkühlen lassen und mit {1 EL} Puderzucker bestäuben.
+
+Tipp: Säuerliche Apfelsorten wie Boskoop oder Elstar schmecken im Kuchen am besten.
 
 Guten Appetit!', 'versunkener-apfelkuchen.jpg');
 
@@ -3260,11 +3645,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Versunkener Apfelkuchen'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 1, 'EL');
 
 -- Apfelmus selbst gemacht
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelmus selbst gemacht', 30, 4, 'Portionen', 'Herbst', '1. Äpfel schälen, vierteln, entkernen und klein schneiden.
-2. Mit {100 ml} Wasser, Zitronensaft, Zucker und Zimtstange in einen Topf geben und zugedeckt ca. 15 Minuten weich kochen.
-3. Zimtstange entfernen und die Äpfel mit dem Kartoffelstampfer oder Pürierstab zur gewünschten Konsistenz zerkleinern.
-4. Warm oder kalt servieren oder heiß in ausgekochte Gläser füllen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Apfelmus selbst gemacht', 'Fruchtig, leicht zimtig und viel besser als aus dem Glas: Apfelmus in einer halben Stunde.', 30, 4, 'Portionen', 'Herbst', '1. {1000 g} Äpfel schälen, vierteln, entkernen und in kleine Stücke schneiden. Je kleiner, desto schneller zerfallen sie.
+2. Die Äpfel mit {100 ml} Wasser, dem Saft der halben Zitrone, {2 EL} Zucker und der Zimtstange in einen Topf geben. Zugedeckt bei mittlerer Hitze etwa 15 Minuten weich kochen, dabei ab und zu umrühren.
+3. Die Zimtstange herausnehmen. Die Äpfel mit einem Kartoffelstampfer stückig oder mit dem Stabmixer ganz fein zerkleinern, ganz nach Geschmack. Abschmecken und bei Bedarf noch etwas Zucker zugeben.
+4. Warm oder kalt servieren, zu Kartoffelpuffern, Milchreis oder einfach pur. Zum Aufbewahren heiß in ausgekochte Gläser füllen und sofort verschließen.
+
+Tipp: Eine Mischung aus süßen und säuerlichen Sorten ergibt das aromatischste Mus.
 
 Guten Appetit!', 'apfelmus-selbst-gemacht.jpg');
 
@@ -3274,12 +3661,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Apfelmus selbst gemacht'), (SELECT id FROM ingredients WHERE name = 'Zimtstange'), 1, NULL);
 
 -- Apfelpfannkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelpfannkuchen', 30, 4, 'Portionen', 'Herbst', '1. Mehl, Milch, Eier, {1 EL} Zucker und Salz zu einem glatten Teig verrühren und 10 Minuten quellen lassen.
-2. Äpfel schälen, entkernen und in dünne Scheiben schneiden.
-3. Etwas Butter in einer Pfanne erhitzen, einige Apfelscheiben darin 1 Minute anbraten und mit einer Kelle Teig übergießen.
-4. Bei mittlerer Hitze goldbraun backen, wenden und fertig backen. Mit dem restlichen Teig ebenso verfahren.
-5. Restlichen Zucker mit Zimt mischen und über die Pfannkuchen streuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Apfelpfannkuchen', 'Goldbraune Pfannkuchen mit eingebackenen Apfelscheiben und Zimtzucker: ein süßes Mittagessen, das Kinder und Erwachsene lieben.', 30, 4, 'Portionen', 'Herbst', '1. {250 g} Mehl, {400 ml} Milch, {4} Eier, {1 EL} Zucker und eine Prise Salz mit dem Schneebesen zu einem glatten Teig verrühren. 10 Minuten quellen lassen, dann werden die Pfannkuchen zarter.
+2. {3} Äpfel schälen, vierteln, entkernen und in dünne Scheiben schneiden.
+3. Etwas Butter in einer beschichteten Pfanne bei mittlerer Hitze schmelzen. Eine Lage Apfelscheiben hineinlegen und 1 Minute anbraten, bis sie leicht weich werden. Dann mit einer Kelle Teig übergießen und die Pfanne schwenken, sodass der Boden bedeckt ist.
+4. Backen, bis die Unterseite goldbraun und die Oberfläche fast gestockt ist, etwa 3 Minuten. Mithilfe eines Tellers wenden und weitere 2 Minuten backen. Mit dem restlichen Teig, der restlichen Butter und den restlichen Äpfeln genauso verfahren. Fertige Pfannkuchen im Ofen bei 80 °C warm halten.
+5. Den restlichen Zucker mit {1 TL} Zimt mischen und über die heißen Pfannkuchen streuen.
+
+Tipp: Säuerliche Äpfel wie Boskoop passen am besten. Dazu schmeckt ein Klecks Apfelmus.
 
 Guten Appetit!', 'apfelpfannkuchen.jpg');
 
@@ -3293,11 +3682,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Apfelpfannkuchen'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 1, 'TL');
 
 -- Apfel-Zimt-Porridge
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfel-Zimt-Porridge', 15, 2, 'Portionen', 'Herbst', '1. Haferflocken mit Sojamilch, Salz und einer Prise Zimt aufkochen und unter Rühren 5 Minuten köcheln lassen.
-2. Apfel waschen und entkernen. Die Hälfte reiben und unter den Porridge rühren.
-3. Restlichen Apfel in Spalten schneiden und mit {1 EL} Ahornsirup und dem restlichen Zimt in einer Pfanne 3 Minuten karamellisieren.
-4. Porridge in Schalen füllen und mit Apfelspalten, gehackten Walnüssen und restlichem Ahornsirup servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Apfel-Zimt-Porridge', 'Cremiger Haferbrei mit karamellisierten Apfelspalten und gerösteten Walnüssen: wärmt an grauen Herbstmorgen.', 15, 2, 'Portionen', 'Herbst', '1. {100 g} Haferflocken, {400 ml} Sojamilch und eine Prise Salz in einen kleinen Topf geben. Bei mittlerer Hitze unter Rühren aufkochen, dann die Hitze herunterschalten und 5 Minuten leise köcheln lassen. Immer wieder umrühren, damit nichts am Boden ansetzt. Der Porridge ist fertig, wenn er cremig ist und die Flocken weich sind. Ist er zu fest, einfach einen Schuss Milch nachgießen.
+2. Währenddessen den Apfel waschen, vierteln und entkernen. Eine Hälfte grob reiben und mit der Hälfte des Zimts unter den Porridge rühren. Den Topf vom Herd nehmen und zugedeckt warm halten.
+3. {20 g} Walnüsse grob hacken und in einer Pfanne ohne Fett 2 Minuten rösten, bis sie duften. Nicht aus den Augen lassen, sie verbrennen schnell. Herausnehmen.
+4. Den restlichen Apfel in dünne Spalten schneiden und mit {1 EL} Ahornsirup und dem restlichen Zimt in dieselbe Pfanne geben. Bei mittlerer Hitze 3–4 Minuten karamellisieren, bis die Spalten goldbraun glänzen und leicht weich sind, dabei einmal wenden.
+5. Den Porridge auf Schalen verteilen, Apfelspalten und Walnüsse darauf anrichten und mit dem restlichen Ahornsirup beträufeln. Am besten sofort essen, er dickt beim Abkühlen nach.
+
+Tipp: Mit Hafermilch statt Sojamilch wird er von allein etwas süßer.
 
 Guten Appetit!', 'apfel-zimt-porridge.jpg');
 
@@ -3310,11 +3702,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Apfel-Zimt-Porridge'), (SELECT id FROM ingredients WHERE name = 'Walnüsse'), 20, 'g');
 
 -- Birne Helene
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Birne Helene', 40, 4, 'Portionen', 'Herbst', '1. Birnen schälen, halbieren und das Kerngehäuse entfernen.
-2. {500 ml} Wasser mit Zucker, Zitronensaft und der aufgeschlitzten Vanilleschote aufkochen. Birnen darin bei kleiner Hitze 10–15 Minuten pochieren, bis sie weich sind, und im Sud abkühlen lassen.
-3. Schokolade hacken. Sahne erhitzen, vom Herd nehmen und die Schokolade darin unter Rühren schmelzen.
-4. Birnenhälften mit je einer Kugel Vanilleeis anrichten und mit der warmen Schokoladensoße übergießen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Birne Helene', 'Zart pochierte Vanillebirnen, eine Kugel Eis und warme Schokoladensoße: ein Dessertklassiker, der nie aus der Mode kommt.', 40, 4, 'Portionen', 'Herbst', '1. {4} Birnen schälen, längs halbieren und das Kerngehäuse mit einem Teelöffel herauslösen. Sofort mit etwas Zitronensaft beträufeln, damit sie nicht braun werden.
+2. Die Vanilleschote längs aufschlitzen. {500 ml} Wasser mit {100 g} Zucker, dem restlichen Zitronensaft und der Vanilleschote aufkochen. Die Birnen hineinlegen und bei schwacher Hitze 10–15 Minuten pochieren, bis sie sich mit einem Messer leicht einstechen lassen. Im Sud abkühlen lassen, so werden sie besonders aromatisch.
+3. {100 g} Zartbitterschokolade grob hacken. {100 ml} Sahne in einem kleinen Topf erhitzen, bis sie dampft, vom Herd nehmen und die Schokolade darin unter Rühren schmelzen, bis die Soße glatt und glänzend ist.
+4. Die Birnenhälften gut abtropfen lassen und mit je einer Kugel Vanilleeis auf Tellern anrichten. Mit der warmen Schokoladensoße übergießen und sofort servieren.
+
+Tipp: Den Pochiersud mit etwas Zitrone aufkochen und als Sirup für Tee oder Schorle verwenden.
 
 Guten Appetit!', 'birne-helene.jpg');
 
@@ -3327,12 +3721,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Birne Helene'), (SELECT id FROM ingredients WHERE name = 'Vanilleeis'), 4, 'Kugel');
 
 -- Birnen, Bohnen und Speck
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Birnen, Bohnen und Speck', 60, 4, 'Portionen', 'Herbst', '1. Durchwachsenen Speck am Stück in {1 l} Wasser aufkochen und zugedeckt ca. 30 Minuten garen.
-2. Kartoffeln schälen und separat in Salzwasser garen.
-3. Bohnen putzen und in Stücke brechen. Mit Bohnenkraut zum Speck geben, die kleinen Kochbirnen ungeschält obenauf legen und 15–20 Minuten mitgaren.
-4. Speck in Scheiben schneiden. Die Brühe mit der angerührten Stärke leicht binden und mit Butter, Salz und Pfeffer abschmecken.
-5. Speck, Bohnen, Birnen und Kartoffeln mit etwas Soße anrichten und mit Petersilie bestreuen. Ein Klassiker aus Norddeutschland.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Birnen, Bohnen und Speck', 'Süße Birnen, grüne Bohnen und deftiger Speck in einem Topf: der Hamburger Sommerklassiker, der Gegensätze zusammenbringt.', 60, 4, 'Portionen', 'Herbst', '1. {400 g} durchwachsenen Speck am Stück mit {1000 ml} Wasser in einem großen Topf aufkochen und zugedeckt bei schwacher Hitze etwa 30 Minuten garen.
+2. Inzwischen {800 g} Kartoffeln schälen und in einem separaten Topf in Salzwasser etwa 20 Minuten garen.
+3. {750 g} grüne Bohnen waschen, die Enden abknipsen und in 4 cm lange Stücke brechen. Mit {3} Bohnenkrautzweigen zum Speck geben. {4} kleine Kochbirnen waschen und mit Schale und Stiel obenauf legen. Zugedeckt 15–20 Minuten mitgaren, bis Bohnen und Birnen weich sind.
+4. Den Speck herausnehmen und in Scheiben schneiden. Die Brühe aufkochen, {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Brühe damit leicht binden. Mit {1 EL} Butter, Salz und Pfeffer abschmecken.
+5. Speck, Bohnen, Birnen und Kartoffeln mit etwas Soße anrichten und mit gehackter Petersilie bestreuen.
+
+Tipp: Die kleinen, festen Kochbirnen gibt es im Spätsommer auf norddeutschen Märkten. Feste Tafelbirnen gehen auch, sie brauchen nur 10 Minuten.
 
 Guten Appetit!', 'birnen-bohnen-und-speck.jpg');
 
@@ -3348,12 +3744,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Birnen, Bohnen und Speck'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Zwetschgendatschi
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zwetschgendatschi', 120, 1, 'Blech', 'Herbst', '1. Mehl mit Hefe, {50 g} Zucker und Salz mischen. Lauwarme Milch, weiche Butter und Ei zugeben und zu einem glatten Hefeteig kneten. 1 Stunde gehen lassen.
-2. Zwetschgen waschen, entsteinen und an der Spitze leicht einschneiden, sodass sie sich auffächern lassen.
-3. Teig auf einem gefetteten Blech ausrollen und die Zwetschgen dicht an dicht wie Dachziegel daraufsetzen. 15 Minuten gehen lassen. Ofen auf 200 °C vorheizen.
-4. Ca. 30 Minuten backen.
-5. Restlichen Zucker mit Zimt mischen und über den heißen Kuchen streuen. Mit steif geschlagener Sahne servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zwetschgendatschi', 'Bayerns Spätsommerkuchen: ein Blech voller saftiger Zwetschgen auf lockerem Hefeteig, mit Zimtzucker und Sahne.', 120, 1, 'Blech', 'Herbst', '1. {500 g} Mehl, die Trockenhefe, {50 g} Zucker und eine Prise Salz mischen. {200 ml} Milch lauwarm erwärmen und mit {80 g} weicher Butter und {1} Ei zugeben. Alles 5–8 Minuten zu einem glatten, geschmeidigen Teig kneten und zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. Inzwischen {2000 g} Zwetschgen waschen, längs einschneiden und entsteinen. Die Hälften an der Spitze noch einmal leicht einschneiden, sodass sie sich auffächern lassen.
+3. Den Teig auf einem gefetteten Blech ausrollen. Die Zwetschgen mit der Schnittfläche nach oben dicht an dicht wie Dachziegel in Reihen daraufsetzen. Je dichter, desto saftiger. 15 Minuten gehen lassen und inzwischen den Ofen auf 200 °C Ober-/Unterhitze vorheizen.
+4. Etwa 30 Minuten backen, bis der Teig am Rand goldbraun ist und die Zwetschgen Saft ziehen.
+5. Den restlichen Zucker mit {1 TL} Zimt mischen und über den heißen Kuchen streuen.
+6. {200 ml} Sahne steif schlagen und zum lauwarmen Datschi servieren.
+
+Tipp: Echte Zwetschgen sind kleiner und fester als Pflaumen und zerlaufen beim Backen nicht. Die beste Zeit ist von August bis September.
 
 Guten Appetit!', 'zwetschgendatschi.jpg');
 
@@ -3369,12 +3768,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zwetschgendatschi'), (SELECT id FROM ingredients WHERE name = 'Sahne'), 200, 'ml');
 
 -- Quittengelee
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Quittengelee', 720, 6, 'Gläser', 'Herbst', '1. Quitten mit einem Tuch abreiben, um den Flaum zu entfernen. Stiel und Blütenansatz entfernen und die Früchte mit Schale und Kerngehäuse grob würfeln.
-2. Mit {2 l} Wasser aufkochen und zugedeckt ca. 45 Minuten weich kochen.
-3. Durch ein mit einem Tuch ausgelegtes Sieb geben und mehrere Stunden, am besten über Nacht, abtropfen lassen. Nicht ausdrücken, sonst wird das Gelee trüb.
-4. {1 l} Quittensaft mit Gelierzucker (2:1) und Zitronensaft aufkochen und 4 Minuten sprudelnd kochen lassen.
-5. Heiß in ausgekochte Gläser füllen und sofort verschließen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Quittengelee', 'Goldgelb, klar und mit unverwechselbarem Duft: Gelee aus der Frucht, die man nur gekocht genießen kann.', 720, 6, 'Gläser', 'Herbst', '1. {2000 g} Quitten mit einem trockenen Tuch kräftig abreiben, um den pelzigen Flaum zu entfernen, er schmeckt bitter. Stiel und Blütenansatz abschneiden und die Früchte mit Schale und Kerngehäuse grob würfeln. Die Kerne enthalten viel Pektin, das das Gelee später fest macht.
+2. Die Quitten mit {2000 ml} Wasser in einem großen Topf aufkochen und zugedeckt etwa 45 Minuten weich kochen.
+3. Ein Sieb mit einem sauberen Geschirrtuch auslegen, über einen Topf hängen und die Quitten mit dem Saft hineingießen. Mehrere Stunden, am besten über Nacht, abtropfen lassen. Nicht ausdrücken, sonst wird das Gelee trüb.
+4. Gläser mit Schraubdeckeln 10 Minuten in kochendes Wasser legen und auf einem sauberen Tuch abtropfen lassen.
+5. {1000 ml} Quittensaft abmessen und mit {500 g} Gelierzucker (2:1) und dem Saft der Zitrone in einem großen Topf unter Rühren aufkochen. 4 Minuten sprudelnd kochen lassen. Gelierprobe machen: Ein Teelöffel Gelee auf einem kalten Teller muss nach einer Minute fest werden.
+6. Das Gelee heiß bis knapp unter den Rand in die {6} Gläser füllen und sofort verschließen.
+
+Tipp: Aus dem übrig gebliebenen Fruchtmus lässt sich mit Zucker eingekocht noch Quittenbrot machen.
 
 Guten Appetit!', 'quittengelee.jpg');
 
@@ -3383,12 +3785,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Quittengelee'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 1, NULL);
 
 -- Maronensuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Maronensuppe', 40, 4, 'Portionen', 'Herbst', '1. Schalotten würfeln, Apfel schälen und würfeln. {50 g} der vorgegarten Maronen fürs Topping beiseitelegen.
-2. Schalotten und Apfel in {1 EL} Butter andünsten, die restlichen Maronen und Thymian zugeben und kurz mitdünsten.
-3. Mit Brühe aufgießen, 20 Minuten köcheln lassen und den Thymian entfernen.
-4. Sahne zugeben, sehr fein pürieren und mit Salz, Pfeffer und Muskat abschmecken.
-5. Beiseitegelegte Maronen grob hacken, in der restlichen Butter rösten und auf die Suppe geben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Maronensuppe', 'Samtig, nussig und ein bisschen süß: eine elegante Herbstsuppe aus Esskastanien mit einem Hauch Apfel.', 40, 4, 'Portionen', 'Herbst', '1. {2} Schalotten schälen und würfeln. Den Apfel schälen, entkernen und würfeln. Von {400 g} vorgegarten Maronen {50 g} für das Topping beiseitelegen.
+2. {1 EL} Butter in einem Topf schmelzen und Schalotten und Apfel darin 3 Minuten andünsten. Die restlichen Maronen und {2} Thymianzweige zugeben und 2 Minuten mitdünsten.
+3. Mit {800 ml} Gemüsebrühe aufgießen, aufkochen und zugedeckt 20 Minuten köcheln lassen. Den Thymian herausnehmen.
+4. {150 ml} Sahne zugeben und die Suppe mit dem Stabmixer sehr fein pürieren. Mit Salz, Pfeffer und Muskatnuss abschmecken. Ist sie zu dick, etwas Brühe oder Wasser zugeben.
+5. Die beiseitegelegten Maronen grob hacken und in der restlichen Butter in einer kleinen Pfanne goldbraun rösten. Die Suppe in Teller füllen und die Maronen darüberstreuen.
+
+Tipp: Vakuumierte, vorgegarte Maronen sparen das mühsame Schälen und schmecken genauso gut.
 
 Guten Appetit!', 'maronensuppe.jpg');
 
@@ -3404,11 +3808,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Maronensuppe'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Rote-Bete-Salat mit Apfel und Meerrettich
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote-Bete-Salat mit Apfel und Meerrettich', 70, 4, 'Portionen', 'Herbst', '1. Rote Bete waschen und in Salzwasser je nach Größe 40–60 Minuten garen. Abschrecken, mit Handschuhen schälen und in Würfel oder Stifte schneiden.
-2. Apfel entkernen und würfeln, Zwiebel fein würfeln.
-3. Essig, Zucker, Kümmel, Salz und Pfeffer verrühren und Öl und frisch geriebenen Meerrettich unterrühren.
-4. Alles mischen und mindestens 15 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rote-Bete-Salat mit Apfel und Meerrettich', 'Erdig, süß und mit scharfem Meerrettichkick: ein leuchtender Wintersalat, der zu Fisch und Braten passt.', 70, 4, 'Portionen', 'Herbst', '1. {600 g} Rote Bete waschen, die Blätter bis auf 2 cm abschneiden, die Wurzeln dranlassen, so blutet sie nicht aus. In Salzwasser je nach Größe 40–60 Minuten garen, bis sie sich leicht einstechen lässt.
+2. Abgießen, kalt abschrecken und mit Einmalhandschuhen schälen, die Schale lässt sich dann mit den Fingern abreiben. In kleine Würfel oder Stifte schneiden.
+3. Den Apfel waschen, entkernen und würfeln. Die Zwiebel fein würfeln.
+4. {3 EL} Apfelessig, {1 TL} Zucker, {0.5 TL} Kümmel, Salz und Pfeffer verrühren. {3 EL} Rapsöl und {1 EL} frisch geriebenen Meerrettich unterrühren.
+5. Rote Bete, Apfel und Zwiebel mit dem Dressing mischen und mindestens 15 Minuten ziehen lassen.
+
+Tipp: Vakuumierte, vorgegarte Rote Bete spart eine Stunde Kochzeit.
 
 Guten Appetit!', 'rote-bete-salat-mit-apfel-und-meerrettich.jpg');
 
@@ -3424,11 +3831,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rote-Bete-Salat mit Apfel und Meerrettich'), (SELECT id FROM ingredients WHERE name = 'Meerrettich'), 1, 'EL');
 
 -- Rote-Bete-Carpaccio mit Ziegenkäse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote-Bete-Carpaccio mit Ziegenkäse', 20, 4, 'Portionen', 'Herbst', '1. Vorgegarte Rote Bete in hauchdünne Scheiben hobeln und kreisförmig auf Tellern auslegen.
-2. Walnüsse grob hacken und ohne Fett rösten.
-3. Honig, Balsamico, Öl, Salz und Pfeffer verrühren.
-4. Rucola auf die Rote Bete geben, Ziegenkäse darüberbröseln und Walnüsse darüberstreuen. Mit dem Dressing beträufeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rote-Bete-Carpaccio mit Ziegenkäse', 'Hauchdünne, rubinrote Scheiben mit cremigem Ziegenkäse, Rucola, Walnüssen und Honig-Balsamico: eine Vorspeise wie im Restaurant.', 20, 4, 'Portionen', 'Herbst', '1. {4} vorgegarte Rote-Bete-Knollen mit einem Gemüsehobel oder sehr scharfen Messer in hauchdünne Scheiben schneiden. Kreisförmig und leicht überlappend auf Tellern auslegen. Handschuhe tragen, Rote Bete färbt stark.
+2. {40 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften.
+3. {1 EL} Honig, {2 EL} Balsamicoessig, {3 EL} Olivenöl, Salz und Pfeffer zu einem Dressing verrühren.
+4. {50 g} Rucola in die Mitte der Teller geben, {120 g} Ziegenkäse darüberbröseln und die Walnüsse darüberstreuen. Alles mit dem Dressing beträufeln und mit etwas frisch gemahlenem Pfeffer servieren.
+
+Tipp: Gemischt mit gelber oder Ringel-Bete sieht das Carpaccio noch farbenfroher aus.
 
 Guten Appetit!', 'rote-bete-carpaccio-mit-ziegenkaese.jpg');
 
@@ -3443,12 +3852,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rote-Bete-Carpaccio mit Ziegenkäse'), (SELECT id FROM ingredients WHERE name = 'Ziegenkäse'), 120, 'g');
 
 -- Borschtsch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Borschtsch', 90, 6, 'Portionen', 'Herbst', '1. Rote Bete, Karotten und Kartoffeln schälen. Rote Bete und Karotten in Stifte, Kartoffeln in Würfel schneiden. Kohl in feine Streifen schneiden, Zwiebel und Knoblauch hacken.
-2. Zwiebel in Öl andünsten, Rote Bete und Karotten zugeben und 5 Minuten mitdünsten. Tomatenmark, Essig und Zucker einrühren.
-3. Mit Brühe aufgießen, Lorbeer zugeben und 20 Minuten köcheln.
-4. Kartoffeln und Kohl zugeben und weitere 20 Minuten köcheln lassen. Knoblauch einrühren und mit Salz und Pfeffer abschmecken.
-5. Mit einem Klecks Schmand und reichlich Dill servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Borschtsch', 'Tiefrot, kräftig und säuerlich: die osteuropäische Rote-Bete-Suppe mit Kohl, Schmand und viel Dill.', 90, 6, 'Portionen', 'Herbst', '1. {500 g} Rote Bete, {2} Karotten und {300 g} Kartoffeln schälen. Rote Bete und Karotten in feine Stifte, Kartoffeln in Würfel schneiden. {300 g} Weißkohl in feine Streifen schneiden. Die Zwiebel und {2} Knoblauchzehen fein hacken.
+2. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebel darin glasig dünsten. Rote Bete und Karotten zugeben und 5 Minuten mitdünsten. {2 EL} Tomatenmark, {2 EL} Apfelessig und {1 TL} Zucker einrühren. Die Säure sorgt dafür, dass die Rote Bete ihre leuchtende Farbe behält.
+3. Mit {1500 ml} Gemüsebrühe aufgießen, {2} Lorbeerblätter zugeben und zugedeckt 20 Minuten köcheln lassen.
+4. Kartoffeln und Kohl zugeben und weitere 20 Minuten köcheln lassen, bis alles weich ist. Den Knoblauch einrühren, die Lorbeerblätter entfernen und mit Salz und Pfeffer kräftig abschmecken.
+5. In tiefe Teller füllen und mit je einem Klecks von {150 g} Schmand und reichlich gehacktem Dill servieren.
+
+Tipp: Wie viele Suppen schmeckt Borschtsch am nächsten Tag noch besser. Dazu passt dunkles Brot.
 
 Guten Appetit!', 'borschtsch.jpg');
 
@@ -3470,13 +3881,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Borschtsch'), (SELECT id FROM ingredients WHERE name = 'Dill'), 1, 'Bund');
 
 -- Wirsingrouladen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wirsingrouladen', 90, 4, 'Portionen', 'Herbst', '1. {8} große Wirsingblätter ablösen, in Salzwasser 3 Minuten blanchieren, abschrecken und die dicke Mittelrippe flach schneiden.
-2. Brötchen in Wasser einweichen und ausdrücken. Zwiebel fein würfeln.
-3. Hackfleisch mit Brötchen, Zwiebel, Ei, Senf, Majoran, Salz und Pfeffer verkneten.
-4. Je zwei Blätter überlappend auslegen, ein Viertel der Füllung daraufgeben, die Seiten einschlagen und aufrollen. Mit Küchengarn binden.
-5. Rouladen in Butterschmalz rundherum anbraten, mit Brühe ablöschen, Kümmel zugeben und zugedeckt 40 Minuten schmoren.
-6. Rouladen herausnehmen, Sahne zur Soße geben und mit angerührter Stärke leicht binden. Abschmecken und mit Salzkartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Wirsingrouladen', 'Zarte Wirsingblätter, gefüllt mit würzigem Hackfleisch und in cremiger Soße geschmort: Hausmannskost vom Feinsten.', 90, 4, 'Portionen', 'Herbst', '1. Vom Wirsing {8} große, schöne Außenblätter vorsichtig ablösen. In kochendem Salzwasser 3 Minuten blanchieren, in Eiswasser abschrecken und trocken tupfen. Die dicke Mittelrippe mit einem flachen Schnitt abtragen, damit sich die Blätter gut rollen lassen.
+2. Das Brötchen in Wasser einweichen und gut ausdrücken. Die Zwiebel fein würfeln.
+3. {500 g} Hackfleisch mit Brötchen, Zwiebel, {1} Ei, {1 TL} Senf, {1 TL} Majoran, Salz und Pfeffer gründlich verkneten.
+4. Je zwei Blätter überlappend auslegen, ein Viertel der Füllung daraufgeben, die Seiten einschlagen und von unten fest aufrollen. Mit Küchengarn oder Rouladennadeln fixieren.
+5. {2 EL} Butterschmalz in einem Schmortopf erhitzen und die Rouladen rundherum goldbraun anbraten. Mit {400 ml} Gemüsebrühe ablöschen, {0.5 TL} Kümmel zugeben und zugedeckt bei schwacher Hitze 40 Minuten schmoren.
+6. Die Rouladen herausnehmen und warm halten. {100 ml} Sahne zur Soße geben, {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit leicht binden. Abschmecken, die Rouladen vom Garn befreien und mit der Soße und Salzkartoffeln servieren.
+
+Tipp: Den übrigen Wirsing in feine Streifen schneiden und als Rahmwirsing dazu servieren.
 
 Guten Appetit!', 'wirsingrouladen.jpg');
 
@@ -3496,11 +3909,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Wirsingrouladen'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'TL');
 
 -- Lauch-Kartoffel-Suppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lauch-Kartoffel-Suppe', 35, 4, 'Portionen', 'Herbst', '1. Lauch putzen, längs halbieren, gründlich waschen und in Ringe schneiden. Kartoffeln und Zwiebel schälen und würfeln.
-2. Zwiebel und Lauch in Butter 5 Minuten andünsten und die Kartoffeln zugeben.
-3. Mit Brühe aufgießen und 20 Minuten köcheln lassen.
-4. Sahne zugeben und grob oder fein pürieren. Mit Salz, Pfeffer und Muskat abschmecken und mit Schnittlauch bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Lauch-Kartoffel-Suppe', 'Mild, cremig und wärmend: eine einfache Suppe aus Lauch und Kartoffeln, die an kalten Tagen guttut.', 35, 4, 'Portionen', 'Herbst', '1. {2} Lauchstangen putzen, die dunkelgrünen, harten Enden abschneiden, längs halbieren und unter fließendem Wasser gründlich waschen, zwischen den Schichten sitzt oft Erde. In Ringe schneiden. {500 g} Kartoffeln und die Zwiebel schälen und würfeln.
+2. {2 EL} Butter in einem großen Topf schmelzen. Zwiebel und Lauch darin bei mittlerer Hitze 5 Minuten andünsten, bis der Lauch zusammenfällt. Die Kartoffeln zugeben und kurz mitdünsten.
+3. Mit {1000 ml} Gemüsebrühe aufgießen, aufkochen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. {100 ml} Sahne zugeben und die Suppe je nach Geschmack grob stampfen oder fein pürieren. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+5. Den Schnittlauch in Röllchen schneiden und über die Suppe streuen.
+
+Tipp: Mit ein paar Scheiben gebratener Wurst oder knusprigem Speck wird sie zur kräftigen Mahlzeit.
 
 Guten Appetit!', 'lauch-kartoffel-suppe.jpg');
 
@@ -3516,12 +3932,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Lauch-Kartoffel-Suppe'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Käse-Lauch-Suppe mit Hackfleisch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käse-Lauch-Suppe mit Hackfleisch', 40, 6, 'Portionen', 'Herbst', '1. Lauch putzen, gründlich waschen und in feine Ringe schneiden. Zwiebel würfeln.
-2. Hackfleisch in Öl krümelig anbraten, Zwiebel zugeben und mit Salz, Pfeffer und Paprikapulver würzen.
-3. Lauch zugeben und 5 Minuten mitdünsten. Mit Brühe aufgießen und 15 Minuten köcheln lassen.
-4. Schmelzkäse und Sahne einrühren und schmelzen lassen, aber nicht mehr kochen.
-5. Mit Muskat abschmecken. Dazu passt frisches Baguette – ein echter Partyklassiker.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Käse-Lauch-Suppe mit Hackfleisch', 'Cremig, herzhaft und gemacht für viele Gäste: der Partyklassiker aus einem großen Topf.', 40, 6, 'Portionen', 'Herbst', '1. {3} Lauchstangen putzen, längs halbieren, gründlich waschen und in feine Ringe schneiden. Die Zwiebel würfeln.
+2. {1 EL} Rapsöl in einem großen Topf erhitzen. {500 g} Hackfleisch darin bei hoher Hitze krümelig anbraten, bis es gebräunt ist. Die Zwiebel zugeben und 2 Minuten mitbraten. Mit Salz, Pfeffer und {1 TL} Paprikapulver würzen.
+3. Den Lauch zugeben und 5 Minuten mitdünsten. Mit {1000 ml} Gemüsebrühe aufgießen und 15 Minuten köcheln lassen.
+4. Die Hitze reduzieren. {200 g} Schmelzkäse und {200 ml} Sahne einrühren und unter Rühren schmelzen lassen. Die Suppe soll jetzt nicht mehr kochen, sonst flockt der Käse aus.
+5. Mit Muskatnuss abschmecken und mit frischem Baguette servieren.
+
+Tipp: Die Suppe lässt sich gut am Vortag vorbereiten und vor der Party langsam erwärmen.
 
 Guten Appetit!', 'kaese-lauch-suppe-mit-hackfleisch.jpg');
 
@@ -3538,12 +3956,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Käse-Lauch-Suppe mit Hackfleisch'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Hirschgulasch mit Preiselbeeren
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hirschgulasch mit Preiselbeeren', 160, 4, 'Portionen', 'Herbst', '1. Fleisch trocken tupfen und in 3 cm große Würfel schneiden. Zwiebeln, Karotten und Sellerie würfeln.
-2. Fleisch portionsweise in Butterschmalz kräftig anbraten und herausnehmen.
-3. Gemüse im Bratfett anrösten, Tomatenmark zugeben und kurz mitrösten. Mit einem Drittel des Rotweins ablöschen und einkochen lassen; das zweimal wiederholen.
-4. Fleisch, Brühe, angedrückte Wacholderbeeren, Lorbeer, Piment und Thymian zugeben und zugedeckt ca. 2 Stunden schmoren.
-5. Preiselbeeren und Schokolade einrühren, die Soße mit angerührter Stärke binden und mit Salz und Pfeffer abschmecken. Dazu passen Spätzle oder Klöße.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hirschgulasch mit Preiselbeeren', 'Kräftiges Wildgulasch, lange geschmort mit Rotwein, Wacholder und einem Stück Schokolade: das Herz eines Winterabends.', 160, 4, 'Portionen', 'Herbst', '1. {1000 g} Hirschgulasch trocken tupfen und große Stücke auf 3 cm Größe zuschneiden. {2} Zwiebeln, {2} Karotten und {100 g} Knollensellerie schälen und würfeln.
+2. {2 EL} Butterschmalz in einem Schmortopf stark erhitzen. Das Fleisch portionsweise rundherum kräftig braun anbraten und herausnehmen. Nicht zu viel auf einmal, sonst kocht es, statt zu bräunen.
+3. Das Gemüse im Bratfett 5 Minuten anrösten. {2 EL} Tomatenmark zugeben und 1 Minute mitrösten. Mit einem Drittel von {400 ml} Rotwein ablöschen und fast vollständig einkochen lassen. Das noch zweimal mit dem restlichen Wein wiederholen. So entsteht eine tiefdunkle, kräftige Soße.
+4. Fleisch, {400 ml} Rinderbrühe, {6} angedrückte Wacholderbeeren, {2} Lorbeerblätter, {3} Pimentkörner und die Thymianzweige zugeben. Zugedeckt bei schwacher Hitze etwa 2 Stunden schmoren, bis das Fleisch zart ist.
+5. Lorbeer und Thymianzweige herausnehmen. {3 EL} Preiselbeeren und {20 g} Zartbitterschokolade einrühren. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit binden. Mit Salz und Pfeffer abschmecken.
+
+Tipp: Dazu passen Spätzle, Klöße oder Rotkohl. Am nächsten Tag schmeckt das Gulasch noch besser.
 
 Guten Appetit!', 'hirschgulasch-mit-preiselbeeren.jpg');
 
@@ -3566,12 +3986,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hirschgulasch mit Preiselbeeren'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Rehrücken mit Wacholderrahmsoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rehrücken mit Wacholderrahmsoße', 60, 4, 'Portionen', 'Herbst', '1. Ofen auf 100 °C vorheizen. Ausgelösten Rehrücken trocken tupfen, von Sehnen befreien, salzen und pfeffern.
-2. Wacholderbeeren im Mörser zerstoßen. Fleisch in Butterschmalz mit Thymian, Rosmarin und der Hälfte des Wacholders rundherum 3–4 Minuten scharf anbraten.
-3. Im Ofen ca. 20–25 Minuten garen, bis die Kerntemperatur 56 °C erreicht. In Alufolie ruhen lassen.
-4. Schalotten im Bratfett andünsten, mit Rotwein ablöschen und einkochen. Brühe, Sahne und restlichen Wacholder zugeben und sämig einkochen.
-5. Soße durch ein Sieb gießen, Preiselbeeren und kalte Butter einrühren und abschmecken. Rehrücken aufschneiden und mit der Soße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rehrücken mit Wacholderrahmsoße', 'Zartrosa gegarter Rehrücken mit cremiger Wacholdersoße und Preiselbeeren: das Festtagsessen für Wildliebhaber.', 60, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 100 °C Ober-/Unterhitze vorheizen und eine Platte zum Vorwärmen hineinstellen. {800 g} ausgelösten Rehrücken trocken tupfen, Sehnen und Silberhaut mit einem scharfen Messer entfernen. Salzen und pfeffern.
+2. {8} Wacholderbeeren im Mörser zerstoßen. {2 EL} Butterschmalz in einer Pfanne stark erhitzen. Das Fleisch mit Thymian, Rosmarin und der Hälfte des Wacholders darin rundherum 3–4 Minuten scharf anbraten.
+3. Den Rehrücken auf der vorgewärmten Platte im Ofen etwa 20–25 Minuten garen, bis er eine Kerntemperatur von 56 °C erreicht hat. Dann in Alufolie gewickelt 5 Minuten ruhen lassen. Ohne Thermometer: Das Fleisch soll auf Druck nachgeben wie ein angespannter Daumenballen.
+4. Für die Soße {2} Schalotten fein würfeln und im Bratfett der Pfanne glasig dünsten. Mit {150 ml} Rotwein ablöschen und auf die Hälfte einkochen. {200 ml} Rinderbrühe, {150 ml} Sahne und den restlichen Wacholder zugeben und sämig einkochen lassen.
+5. Die Soße durch ein Sieb gießen, {2 EL} Preiselbeeren unterrühren und {1 EL} kalte Butter in Stückchen einschwenken, das macht sie glänzend. Mit Salz und Pfeffer abschmecken.
+6. Den Rehrücken in Medaillons schneiden und mit der Soße servieren.
+
+Tipp: Dazu passen Spätzle, Rosenkohl oder Selleriepüree.
 
 Guten Appetit!', 'rehruecken-mit-wacholderrahmsosse.jpg');
 
@@ -3590,11 +4013,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rehrücken mit Wacholderrahmsoße'), (SELECT id FROM ingredients WHERE name = 'Butter'), 1, 'EL');
 
 -- Feigen mit Ziegenkäse und Honig
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Feigen mit Ziegenkäse und Honig', 20, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C (Grillfunktion) vorheizen.
-2. Feigen am Stielende kreuzweise einschneiden und leicht auseinanderdrücken.
-3. Je ein Stück Ziegenkäse hineinsetzen, mit Honig beträufeln und mit Thymianblättchen und Pfeffer würzen.
-4. 8–10 Minuten überbacken, bis der Käse leicht gebräunt ist. Mit gehackten Walnüssen bestreuen und warm servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Feigen mit Ziegenkäse und Honig', 'Warme Feigen, gefüllt mit schmelzendem Ziegenkäse, Honig und Thymian: süß, salzig und herrlich herbstlich.', 20, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C mit Grillfunktion vorheizen.
+2. {8} Feigen waschen und trocken tupfen. Am Stielende kreuzweise etwa zwei Drittel tief einschneiden und leicht auseinanderdrücken, sodass sie wie Blüten aussehen.
+3. {150 g} Ziegenkäse in {8} Stücke teilen und in die Feigen setzen. Mit {3 EL} Honig beträufeln und mit den Blättchen von {2} Thymianzweigen und Pfeffer würzen.
+4. Die Feigen in eine ofenfeste Form setzen und 8–10 Minuten überbacken, bis der Käse weich und leicht gebräunt ist.
+5. {40 g} Walnüsse grob hacken, darüberstreuen und die Feigen warm servieren.
+
+Tipp: Als Vorspeise mit etwas Rucola, als Dessert mit einer Kugel Vanilleeis.
 
 Guten Appetit!', 'feigen-mit-ziegenkaese-und-honig.jpg');
 
@@ -3606,12 +4032,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Feigen mit Ziegenkäse und Honig'), (SELECT id FROM ingredients WHERE name = 'Walnüsse'), 40, 'g');
 
 -- Schiacciata all'uva (Trauben-Focaccia)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schiacciata all''uva (Trauben-Focaccia)', 150, 1, 'Blech', 'Herbst', '1. Mehl, Hefe, {1 EL} Zucker und Salz mischen. {3 EL} Öl und ca. {320 ml} lauwarmes Wasser zugeben, 10 Minuten kneten und 1 Stunde gehen lassen.
-2. Dunkle Trauben waschen und abzupfen.
-3. Teig halbieren. Eine Hälfte auf einem geölten Blech ausbreiten und mit der Hälfte der Trauben und etwas Zucker belegen.
-4. Zweite Teighälfte ausrollen, darauflegen, die Ränder andrücken, mit den restlichen Trauben belegen und diese leicht eindrücken. 30 Minuten gehen lassen. Ofen auf 200 °C vorheizen.
-5. Mit restlichem Zucker, Rosmarinnadeln und dem restlichen Öl bestreuen und ca. 35 Minuten backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schiacciata all''uva (Trauben-Focaccia)', 'Toskanisches Erntegebäck: ein saftiges Fladenbrot voller süßer, dunkler Trauben mit Rosmarin und Zucker.', 150, 1, 'Blech', 'Herbst', '1. {500 g} Mehl, die Trockenhefe, {1 EL} Zucker und {1 TL} Salz mischen. {3 EL} Olivenöl und etwa {320 ml} lauwarmes Wasser zugeben und 10 Minuten zu einem weichen, glatten Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. {600 g} dunkle Weintrauben waschen, abzupfen und trocken tupfen.
+3. Ein Blech mit etwas Olivenöl einfetten. Den Teig halbieren und eine Hälfte mit den Fingern auf dem Blech zu einem etwa 1 cm dicken Rechteck ausbreiten. Die Hälfte der Trauben darauf verteilen und mit etwas Zucker bestreuen.
+4. Die zweite Teighälfte ebenso groß ausrollen, darauflegen und die Ränder gut andrücken. Die restlichen Trauben darauf verteilen und leicht eindrücken. Zugedeckt 30 Minuten gehen lassen. Inzwischen den Ofen auf 200 °C Ober-/Unterhitze vorheizen.
+5. Mit dem restlichen Zucker, den Nadeln von {2} Rosmarinzweigen und dem restlichen Olivenöl bestreuen. Etwa 35 Minuten backen, bis die Oberfläche goldbraun ist und die Trauben aufplatzen.
+6. Lauwarm oder abgekühlt in Stücke schneiden.
+
+Tipp: In der Toskana nimmt man die kleinen, dunklen Canaiolo-Trauben mit Kernen. Kernlose Trauben machen das Essen einfacher.
 
 Guten Appetit!', 'schiacciata-all-uva-trauben-focaccia.jpg');
 
@@ -3624,12 +4053,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schiacciata all''uva (Trauben-Focaccia)'), (SELECT id FROM ingredients WHERE name = 'Rosmarin'), 2, 'Zweig');
 
 -- Kartoffelpuffer mit Apfelmus
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelpuffer mit Apfelmus', 40, 4, 'Portionen', 'Herbst', '1. Kartoffeln und Zwiebel schälen und fein reiben. In einem Tuch kräftig ausdrücken, die Flüssigkeit kurz stehen lassen und abgießen – die abgesetzte Stärke zurück zu den Kartoffeln geben.
-2. Kartoffeln mit Eiern, Mehl, Salz und Muskat vermengen.
-3. Reichlich Öl in einer Pfanne erhitzen, je 2 EL Teig hineingeben und flach drücken.
-4. Pro Seite 3–4 Minuten knusprig goldbraun braten und auf Küchenpapier abtropfen lassen.
-5. Heiß mit Apfelmus servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kartoffelpuffer mit Apfelmus', 'Knusprige Reibekuchen, frisch aus der Pfanne, mit kühlem Apfelmus: der Duft von Weihnachtsmarkt und Kirmes.', 40, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln und die Zwiebel schälen und auf der feinen Seite der Reibe reiben.
+2. Die Masse in ein sauberes Geschirrtuch geben und über einer Schüssel kräftig ausdrücken. Die Flüssigkeit 5 Minuten stehen lassen, dann vorsichtig abgießen. Am Boden bleibt eine weiße Stärkeschicht, die zurück zu den Kartoffeln kommt. Sie hält die Puffer zusammen.
+3. Die Kartoffeln mit {2} Eiern, {2 EL} Mehl, Salz und etwas Muskatnuss vermengen.
+4. Reichlich Rapsöl in einer großen Pfanne stark erhitzen, der Boden soll gut bedeckt sein. Pro Puffer etwa 2 EL Teig hineingeben und mit dem Löffel flach drücken. Je dünner, desto knuspriger.
+5. Pro Seite 3–4 Minuten knusprig goldbraun braten und auf Küchenpapier abtropfen lassen. Zwischendurch Öl nachgießen. Fertige Puffer im Ofen bei 100 °C warm halten.
+6. Heiß mit {400 g} Apfelmus servieren.
+
+Tipp: Herzhaft schmecken sie mit Lachs und Kräuterquark.
 
 Guten Appetit!', 'kartoffelpuffer-mit-apfelmus.jpg');
 
@@ -3643,13 +4075,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kartoffelpuffer mit Apfelmus'), (SELECT id FROM ingredients WHERE name = 'Apfelmus'), 400, 'g');
 
 -- Himmel und Erde
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Himmel und Erde', 45, 4, 'Portionen', 'Herbst', '1. Kartoffeln schälen, würfeln und in Salzwasser 20 Minuten garen.
-2. Säuerliche Äpfel schälen, entkernen, in Spalten schneiden und mit Zucker, Zitronensaft und wenig Wasser 5 Minuten dünsten.
-3. Kartoffeln abgießen, mit Milch und {30 g} Butter zu Püree stampfen und mit Salz und Muskat würzen. Äpfel unterheben.
-4. Zwiebeln in Ringe schneiden und in der restlichen Butter goldbraun braten.
-5. Blutwurst in dicke Scheiben schneiden und in Butterschmalz pro Seite 2–3 Minuten braten.
-6. Himmel und Erde mit Blutwurst und Röstzwiebeln anrichten und pfeffern. Ein rheinischer Klassiker.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Himmel und Erde', 'Äpfel vom Himmel, Kartoffeln aus der Erde: ein rheinischer Klassiker mit gebratener Blutwurst und Röstzwiebeln.', 45, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser zugedeckt etwa 20 Minuten weich kochen.
+2. {4} säuerliche Äpfel schälen, entkernen und in Spalten schneiden. Mit {1 EL} Zucker, dem Saft der halben Zitrone und 3 EL Wasser in einem Topf zugedeckt 5 Minuten dünsten. Sie sollen weich sein, aber nicht zerfallen.
+3. Die Kartoffeln abgießen und kurz ausdampfen lassen. {100 ml} Milch erwärmen und mit {30 g} Butter zu den Kartoffeln geben. Alles zu einem Püree stampfen und mit Salz und Muskatnuss würzen. Die Äpfel vorsichtig unterheben.
+4. {2} Zwiebeln in Ringe schneiden und in der restlichen Butter bei mittlerer Hitze etwa 10 Minuten goldbraun braten.
+5. {400 g} Blutwurst in dicke Scheiben schneiden. {2 EL} Butterschmalz in einer zweiten Pfanne erhitzen und die Scheiben pro Seite 2–3 Minuten braten, bis sie außen knusprig sind. Vorsichtig wenden, sie sind weich.
+6. Himmel und Erde mit der Blutwurst und den Röstzwiebeln anrichten und pfeffern.
+
+Tipp: Wer keine Blutwurst mag, nimmt gebratene Leberwurst oder Bratwurst.
 
 Guten Appetit!', 'himmel-und-erde.jpg');
 
@@ -3667,11 +4101,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Himmel und Erde'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Obatzda
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Obatzda', 45, 4, 'Portionen', 'Herbst', '1. Gut gereiften Camembert mit einer Gabel zerdrücken.
-2. Weiche Butter und Frischkäse unterrühren.
-3. Zwiebel sehr fein würfeln und mit Paprikapulver, Kümmel und Bier untermischen. Mit Salz und Pfeffer abschmecken.
-4. 30 Minuten durchziehen lassen, mit Schnittlauch bestreuen und mit Radieschen und Brezeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Obatzda', 'Der bayerische Biergartenklassiker: würzig angemachter Camembert mit Paprika, Zwiebel und einem Schuss Bier.', 45, 4, 'Portionen', 'Herbst', '1. {250 g} gut gereiften Camembert in Stücke schneiden und mit einer Gabel zerdrücken. Die Rinde kann dranbleiben.
+2. {50 g} weiche Butter und {100 g} Frischkäse gründlich unterrühren, bis eine streichfähige Masse entsteht. Ein paar Stückchen Käse dürfen bleiben.
+3. Die halbe Zwiebel sehr fein würfeln. Mit {2 TL} Paprikapulver, {0.5 TL} Kümmel und {2 EL} Bier untermischen. Mit Salz und Pfeffer abschmecken.
+4. Abgedeckt 30 Minuten durchziehen lassen, damit sich die Aromen verbinden.
+5. Den Schnittlauch in Röllchen schneiden und darüberstreuen. Mit den gewaschenen Radieschen, Brezeln oder Bauernbrot servieren.
+
+Tipp: Je reifer der Camembert, desto würziger der Obatzda. Er darf ruhig schon etwas laufen.
 
 Guten Appetit!', 'obatzda.jpg');
 
@@ -3688,12 +4125,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Obatzda'), (SELECT id FROM ingredients WHERE name = 'Radieschen'), 1, 'Bund');
 
 -- Laugenbrezeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Laugenbrezeln', 120, 10, 'Stück', 'Herbst', '1. Mehl, Hefe, {1 TL} Salz, Zucker, weiche Butter und {280 ml} lauwarmes Wasser 10 Minuten zu einem festen, glatten Teig kneten. 30 Minuten gehen lassen.
-2. Teig in {10 Stücke} teilen, zu dünnen Strängen mit dickem Bauch rollen und zu Brezeln schlingen. Unabgedeckt im Kühlschrank 30 Minuten ruhen lassen, damit sich eine Haut bildet.
-3. Ofen auf 220 °C vorheizen. {1.5 l} Wasser mit dem Natron aufkochen – Vorsicht, das schäumt.
-4. Brezeln einzeln ca. 30 Sekunden in die siedende Natronlauge legen, mit einem Schaumlöffel herausheben und auf ein Blech mit Backpapier setzen.
-5. Den Bauch mit einem scharfen Messer einschneiden, mit dem restlichen, groben Salz bestreuen und ca. 15–18 Minuten backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Laugenbrezeln', 'Glänzend braun, außen knusprig und innen weich: Brezeln wie vom bayerischen Bäcker, mit Natronlauge aus der eigenen Küche.', 120, 10, 'Stück', 'Herbst', '1. {500 g} Mehl, die Trockenhefe, {1 TL} Salz, {1 TL} Zucker, {40 g} weiche Butter und {280 ml} lauwarmes Wasser 10 Minuten zu einem festen, glatten Teig kneten. Zugedeckt 30 Minuten gehen lassen.
+2. Den Teig in {10} gleich große Stücke teilen. Jedes zu einem etwa 50 cm langen Strang rollen, der in der Mitte dick ist und zu den Enden dünn ausläuft. Die Enden zweimal umeinanderschlingen und auf den dicken Bauch legen. Die Brezeln auf ein bemehltes Brett setzen und unabgedeckt 30 Minuten in den Kühlschrank stellen. So bildet sich eine Haut, und sie behalten in der Lauge ihre Form.
+3. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. {1500 ml} Wasser in einem breiten Topf aufkochen und {4 EL} Natron langsam einrühren. Vorsicht, das schäumt stark auf.
+4. Die Brezeln einzeln mit einem Schaumlöffel etwa 30 Sekunden in die leise siedende Lauge legen, herausheben, gut abtropfen lassen und auf ein Blech mit Backpapier setzen.
+5. Den dicken Bauch mit einem scharfen Messer waagerecht einschneiden und die Brezeln mit grobem Salz bestreuen.
+6. Etwa 15–18 Minuten backen, bis sie tief rotbraun glänzen. Auf einem Gitter abkühlen lassen.
+
+Tipp: Am besten frisch essen. Übrige Brezeln einfrieren und aufgebacken genießen. Dazu passt Obatzda.
 
 Guten Appetit!', 'laugenbrezeln.jpg');
 
@@ -3705,12 +4145,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Laugenbrezeln'), (SELECT id FROM ingredients WHERE name = 'Natron'), 4, 'EL');
 
 -- Wiesn-Hendl (Brathähnchen)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wiesn-Hendl (Brathähnchen)', 90, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Hähnchen innen und außen waschen und trocken tupfen. Innen salzen und je einen halben Bund Petersilie hineinstecken.
-2. Weiche Butter mit Paprikapulver, Salz und Pfeffer verrühren und die Hähnchen damit rundherum einreiben.
-3. Auf dem Rost – darunter ein Blech mit etwas Wasser – ca. 60–70 Minuten braten und dabei alle 15 Minuten mit dem Bratensaft bestreichen.
-4. In den letzten 10 Minuten die Temperatur auf 220 °C erhöhen, damit die Haut schön knusprig wird.
-5. Halbieren und mit Brezeln oder Kartoffelsalat servieren – wie auf dem Oktoberfest.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Wiesn-Hendl (Brathähnchen)', 'Knusprig braun, saftig und mit Petersilie im Bauch: das Brathähnchen, wie es auf dem Oktoberfest duftet.', 90, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {2} Hähnchen innen und außen kalt abspülen und gründlich trocken tupfen. Nur trockene Haut wird knusprig.
+2. Die Hähnchen innen salzen und je die Hälfte der Petersilie mit Stielen in die Bauchhöhle stecken.
+3. {60 g} weiche Butter mit {2 TL} Paprikapulver, Salz und Pfeffer verrühren und die Hähnchen damit rundherum einreiben. Die Keulen mit Küchengarn zusammenbinden, so garen sie gleichmäßig.
+4. Die Hähnchen mit der Brust nach oben direkt auf den Rost legen und darunter ein Blech mit etwas Wasser schieben, das den Saft auffängt. Etwa 60–70 Minuten braten und alle 15 Minuten mit dem Bratensaft vom Blech bestreichen.
+5. In den letzten 10 Minuten die Temperatur auf 220 °C erhöhen, damit die Haut richtig knusprig wird. Das Hendl ist gar, wenn beim Einstechen in die dickste Stelle der Keule klarer Saft austritt.
+6. Kurz ruhen lassen, mit einer Geflügelschere halbieren und servieren.
+
+Tipp: Wie auf der Wiesn mit Brezeln, Kartoffelsalat und einer Maß serviert.
 
 Guten Appetit!', 'wiesn-hendl-brathaehnchen.jpg');
 
@@ -3722,13 +4165,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Wiesn-Hendl (Brathähnchen)'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Krustenbraten mit Dunkelbiersoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Krustenbraten mit Dunkelbiersoße', 180, 6, 'Portionen', 'Herbst', '1. Schwarte mit einem scharfen Messer im Abstand von 1 cm rautenförmig einschneiden, ohne ins Fleisch zu schneiden.
-2. Die Fleischseite mit Salz, Pfeffer, Kümmel, Senf und gepresstem Knoblauch einreiben.
-3. Gemüse grob würfeln und in einen Bräter geben. Braten mit der Schwarte nach unten darauflegen, {250 ml} Wasser angießen und bei 180 °C 30 Minuten garen.
-4. Braten wenden und die Schwarte kräftig salzen. Dunkles Bier und Brühe angießen und weitere 2 Stunden garen, dabei regelmäßig das Fleisch (nicht die Schwarte) mit dem Bratensaft begießen.
-5. Für die Kruste in den letzten 15 Minuten den Grill einschalten, bis die Schwarte aufpoppt.
-6. Bratensaft durch ein Sieb gießen, mit angerührter Stärke binden und abschmecken. Dazu passen Knödel und Krautsalat.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Krustenbraten mit Dunkelbiersoße', 'Die Schwarte knackt, das Fleisch ist zart, und die Soße schmeckt nach dunklem Bier: Bayerns Sonntagsbraten.', 180, 6, 'Portionen', 'Herbst', '1. Die Schwarte der {2000 g} Schweineschulter mit einem sehr scharfen Messer oder Teppichmesser im Abstand von 1 cm rautenförmig einschneiden. Nur durch die Schwarte, nicht ins Fleisch, sonst tritt Saft aus.
+2. Die Fleischseite mit Salz, Pfeffer, {1 TL} Kümmel, {1 EL} Senf und {3} gepressten Knoblauchzehen einreiben. Die Schwarte bleibt erst einmal ungewürzt.
+3. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. {2} Zwiebeln, {2} Karotten und {150 g} Knollensellerie grob würfeln und in einen Bräter geben. Den Braten mit der Schwarte nach unten darauflegen und {250 ml} Wasser angießen. 30 Minuten garen, dabei weicht die Schwarte auf.
+4. Den Braten wenden und die Schwarte kräftig mit Salz einreiben. {500 ml} dunkles Bier und {250 ml} Rinderbrühe angießen. Weitere 2 Stunden garen und dabei regelmäßig nur das Fleisch, nicht die Schwarte, mit dem Bratensaft begießen.
+5. In den letzten 15 Minuten den Ofengrill zuschalten, bis die Schwarte Blasen wirft und aufpoppt. Dabeibleiben, sie verbrennt schnell.
+6. Den Braten 10 Minuten ruhen lassen. Den Bratensaft durch ein Sieb in einen Topf gießen, das Gemüse gut ausdrücken. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken.
+
+Tipp: Zum Aufschneiden den Braten mit der Kruste nach unten legen und mit einem Sägemesser schneiden. Dazu Knödel und Krautsalat.
 
 Guten Appetit!', 'krustenbraten-mit-dunkelbiersosse.jpg');
 
@@ -3746,11 +4191,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Krustenbraten mit Dunkelbiersoße'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'EL');
 
 -- Waldorfsalat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Waldorfsalat', 20, 4, 'Portionen', 'Herbst', '1. Sellerie schälen, in feine Stifte schneiden oder grob raspeln und sofort mit Zitronensaft mischen.
-2. Äpfel entkernen und in feine Stifte schneiden, Trauben halbieren und Walnüsse grob hacken.
-3. Mayonnaise und Joghurt verrühren und mit Zucker, Salz und Pfeffer abschmecken.
-4. Alles vermengen und 15 Minuten ziehen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Waldorfsalat', 'Ein Salat mit Geschichte aus dem New Yorker Waldorf-Astoria: Sellerie, Apfel, Trauben und Walnüsse in leichter Joghurt-Mayonnaise.', 20, 4, 'Portionen', 'Herbst', '1. {300 g} Knollensellerie schälen, in feine Stifte schneiden oder grob raspeln und sofort mit dem Saft der Zitrone mischen, sonst wird er braun.
+2. {2} Äpfel waschen, entkernen und in feine Stifte schneiden. Gleich unter den Sellerie mischen. {150 g} Weintrauben halbieren. {60 g} Walnüsse grob hacken und in einer Pfanne ohne Fett kurz rösten.
+3. {100 g} Mayonnaise und {100 g} Joghurt glatt rühren und mit einer Prise Zucker, Salz und Pfeffer abschmecken.
+4. Sellerie, Äpfel und Trauben mit dem Dressing vermengen und 15 Minuten ziehen lassen. Vor dem Servieren die Walnüsse darüberstreuen, damit sie knackig bleiben.
+
+Tipp: Mit gebratenen Hähnchenstreifen wird der Salat zum Hauptgericht.
 
 Guten Appetit!', 'waldorfsalat.jpg');
 
@@ -3766,12 +4213,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Waldorfsalat'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Gefüllte Champignons
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Champignons', 35, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Große Champignons putzen und die Stiele herausdrehen. Stiele und Schalotte fein hacken.
-2. Stiele, Schalotte und Knoblauch in {1 EL} Öl andünsten und abkühlen lassen.
-3. Mit Frischkäse, gehackter Petersilie, der Hälfte des Käses, Salz und Pfeffer verrühren.
-4. Füllung in die Pilzköpfe geben, diese in eine geölte Form setzen und mit dem restlichen Käse bestreuen.
-5. Ca. 15–20 Minuten goldbraun backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gefüllte Champignons', 'Kleine Pilzköpfe voller cremiger Frischkäse-Kräuterfüllung, goldbraun überbacken: perfekt als Vorspeise oder fürs Buffet.', 35, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {16} große Champignons mit Küchenpapier abreiben und die Stiele vorsichtig herausdrehen. Stiele und die Schalotte fein hacken.
+2. {1 EL} Olivenöl in einer Pfanne erhitzen. Stiele, Schalotte und die gehackte Knoblauchzehe darin 3 Minuten andünsten, bis die Flüssigkeit verdampft ist. Abkühlen lassen.
+3. Die Pilzmasse mit {150 g} Frischkäse, der gehackten Petersilie, der Hälfte des geriebenen Hartkäses, Salz und Pfeffer verrühren.
+4. Die Füllung mit einem Teelöffel in die Pilzköpfe geben und leicht andrücken. Die Pilze in eine mit dem restlichen Öl gefettete Form setzen und mit dem restlichen Käse bestreuen.
+5. Etwa 15–20 Minuten backen, bis die Füllung goldbraun ist und die Pilze weich sind. Warm servieren.
+
+Tipp: Mit etwas gebratenem Speck in der Füllung werden sie herzhafter.
 
 Guten Appetit!', 'gefuellte-champignons.jpg');
 
@@ -3786,12 +4235,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gefüllte Champignons'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Kartoffelsuppe mit Würstchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelsuppe mit Würstchen', 45, 4, 'Portionen', 'Herbst', '1. Kartoffeln, Karotten und Sellerie schälen und würfeln. Lauch in Ringe und Zwiebel in Würfel schneiden.
-2. Zwiebel und Lauch in Butter andünsten, das restliche Gemüse zugeben und kurz mitdünsten.
-3. Mit Brühe aufgießen, Majoran und Lorbeer zugeben und 20 Minuten köcheln.
-4. Lorbeer entfernen und einen Teil der Suppe grob zerstampfen, damit sie sämig wird. Sahne einrühren.
-5. Würstchen in Scheiben schneiden und in der Suppe 5 Minuten erhitzen. Mit Salz, Pfeffer und Muskat abschmecken und mit Petersilie bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kartoffelsuppe mit Würstchen', 'Sämige Kartoffelsuppe mit Gemüse, Majoran und Wiener Würstchen: das Seelenfutter für kalte Tage.', 45, 4, 'Portionen', 'Herbst', '1. {800 g} Kartoffeln, {2} Karotten und {150 g} Knollensellerie schälen und würfeln. Den Lauch längs halbieren, gründlich waschen und in Ringe schneiden. Die Zwiebel würfeln.
+2. {2 EL} Butter in einem großen Topf schmelzen. Zwiebel und Lauch darin 3 Minuten andünsten, das restliche Gemüse zugeben und kurz mitdünsten.
+3. Mit {1200 ml} Gemüsebrühe aufgießen, {1 TL} Majoran und das Lorbeerblatt zugeben. Aufkochen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Das Lorbeerblatt herausnehmen. Einen Teil der Suppe mit dem Kartoffelstampfer grob zerdrücken, so wird sie sämig, behält aber Stücke. {100 ml} Sahne einrühren.
+5. {4} Wiener Würstchen in Scheiben schneiden und in der Suppe 5 Minuten erhitzen, nicht kochen, sonst platzen sie. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+6. Die Petersilie hacken und darüberstreuen.
+
+Tipp: Am nächsten Tag ist die Suppe dicker. Beim Aufwärmen einfach etwas Brühe zugeben.
 
 Guten Appetit!', 'kartoffelsuppe-mit-wuerstchen.jpg');
 
@@ -3812,12 +4264,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kartoffelsuppe mit Würstchen'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Herbstliches Ofengemüse mit Tahini-Dressing
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Herbstliches Ofengemüse mit Tahini-Dressing', 50, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Kürbis entkernen und in Spalten schneiden. Rote Bete, Pastinaken und Karotten schälen und in Stücke schneiden, Zwiebeln achteln.
-2. Gemüse und abgetropfte Kichererbsen auf einem Blech mit Öl, Thymian, Salz und Pfeffer mischen.
-3. Ca. 35–40 Minuten rösten, bis alles weich und an den Rändern gebräunt ist.
-4. Tahini mit Zitronensaft, Ahornsirup, Salz und {3-4 EL} Wasser zu einem cremigen Dressing rühren.
-5. Gemüse anrichten, mit dem Dressing beträufeln und mit Granatapfelkernen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Herbstliches Ofengemüse mit Tahini-Dressing', 'Buntes Wurzelgemüse und Kürbis, im Ofen karamellisiert, mit cremigem Tahini-Dressing und funkelnden Granatapfelkernen.', 50, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {500 g} Hokkaido-Kürbis entkernen und mit Schale in Spalten schneiden. {2} Rote Bete, {2} Pastinaken und {2} Karotten schälen und in etwa gleich große Stücke schneiden. {2} rote Zwiebeln achteln.
+2. Das Gemüse und {240 g} abgetropfte Kichererbsen auf einem großen Blech mit {4 EL} Olivenöl, den Blättchen von {3} Thymianzweigen, Salz und Pfeffer mischen. Nebeneinander verteilen, bei Bedarf auf zwei Bleche, damit alles röstet und nicht dämpft.
+3. 35–40 Minuten rösten, nach der Hälfte der Zeit einmal wenden, bis alles weich und an den Rändern gebräunt ist.
+4. Inzwischen {3 EL} Tahini mit dem Saft der Zitrone, {1 TL} Ahornsirup, Salz und {3-4 EL} Wasser glatt rühren. Das Tahini wird zuerst fest, mit etwas mehr Wasser dann cremig.
+5. Das Gemüse auf einer Platte anrichten, mit dem Dressing beträufeln und mit den Kernen des halben Granatapfels bestreuen.
+
+Tipp: Die Rote Bete färbt das andere Gemüse rosa. Wer das nicht mag, legt sie an den Rand des Blechs.
 
 Guten Appetit!', 'herbstliches-ofengemuese-mit-tahini-dressing.jpg');
 
@@ -3837,12 +4291,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Herbstliches Ofengemüse mit Tahini-Dressing'), (SELECT id FROM ingredients WHERE name = 'Granatapfel'), 0.5, NULL);
 
 -- Gefüllte Süßkartoffeln mit Kichererbsen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Süßkartoffeln mit Kichererbsen', 60, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Süßkartoffeln waschen, mehrmals einstechen und auf einem Blech ca. 45–50 Minuten weich backen.
-2. Kichererbsen abtropfen lassen, trocken tupfen, mit Öl, Paprika, Kreuzkümmel und Salz mischen und die letzten 25 Minuten neben den Süßkartoffeln knusprig rösten.
-3. Sojajoghurt mit gepresstem Knoblauch, Zitronensaft, Salz und Pfeffer verrühren.
-4. Süßkartoffeln längs aufschneiden, das Innere etwas auflockern und mit den Kichererbsen füllen.
-5. Mit Knoblauch-Joghurt, Frühlingszwiebelringen und Koriander servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gefüllte Süßkartoffeln mit Kichererbsen', 'Weich gebackene Süßkartoffeln, gefüllt mit knusprig gerösteten Gewürz-Kichererbsen und kühlem Knoblauch-Joghurt.', 60, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {4} Süßkartoffeln gründlich waschen, mehrmals mit einer Gabel einstechen und auf einem Blech mit Backpapier 45–50 Minuten backen, bis sie ganz weich sind.
+2. {240 g} Kichererbsen abspülen, abtropfen lassen und gründlich trocken tupfen. Mit {2 EL} Olivenöl, {1 TL} Paprikapulver, {1 TL} Kreuzkümmel und Salz mischen. Die letzten 25 Minuten auf einem zweiten Blech neben den Süßkartoffeln knusprig rösten.
+3. {150 g} Sojajoghurt mit der gepressten Knoblauchzehe, dem Saft der halben Zitrone, Salz und Pfeffer verrühren.
+4. Die Süßkartoffeln längs aufschneiden, das Innere mit einer Gabel etwas auflockern und leicht salzen. Mit den Kichererbsen füllen.
+5. Mit dem Knoblauch-Joghurt, {2} in Ringe geschnittenen Frühlingszwiebeln und gezupftem Koriander servieren.
+
+Tipp: Ein Klecks Avocado oder etwas Chili machen die Süßkartoffeln noch besser.
 
 Guten Appetit!', 'gefuellte-suesskartoffeln-mit-kichererbsen.jpg');
 
@@ -3860,12 +4316,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gefüllte Süßkartoffeln mit Kichererbsen'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Süßkartoffel-Erdnuss-Eintopf
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Süßkartoffel-Erdnuss-Eintopf', 45, 4, 'Portionen', 'Herbst', '1. Zwiebel, Knoblauch, Ingwer und Chili fein hacken und in Öl andünsten. Kreuzkümmel und Koriander kurz mitrösten.
-2. Süßkartoffeln schälen, in 2 cm große Würfel schneiden und mit Tomaten und Brühe zugeben. 15 Minuten köcheln.
-3. Erdnussmus einrühren und die abgetropften Kichererbsen zugeben. Weitere 10 Minuten köcheln, bis die Süßkartoffeln weich sind.
-4. Spinat unterrühren und zusammenfallen lassen. Mit Limettensaft und Salz abschmecken.
-5. Mit gehackten Erdnüssen bestreut servieren. Dazu passt Reis.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Süßkartoffel-Erdnuss-Eintopf', 'Westafrikanisch inspiriert: Süßkartoffeln, Tomaten und Kichererbsen in einer cremigen, würzigen Erdnusssoße.', 45, 4, 'Portionen', 'Herbst', '1. Die Zwiebel, {2} Knoblauchzehen, {20 g} Ingwer und die Chilischote fein hacken. {2 EL} Rapsöl in einem großen Topf erhitzen und alles darin 3 Minuten andünsten. {1 TL} Kreuzkümmel und {1 TL} gemahlenen Koriander zugeben und 1 Minute mitrösten.
+2. {600 g} Süßkartoffeln schälen und in 2 cm große Würfel schneiden. Mit {400 g} gehackten Tomaten und {600 ml} Gemüsebrühe zugeben, aufkochen und 15 Minuten köcheln lassen.
+3. {4 EL} Erdnussmus einrühren, bis es sich aufgelöst hat. {240 g} abgetropfte Kichererbsen zugeben und weitere 10 Minuten köcheln lassen, bis die Süßkartoffeln weich sind.
+4. {150 g} Spinat unterrühren und zusammenfallen lassen. Mit dem Saft der Limette und Salz abschmecken.
+5. {30 g} Erdnüsse grob hacken, über den Eintopf streuen und mit Reis servieren.
+
+Tipp: Wer es schärfer mag, lässt die Kerne in der Chilischote.
 
 Guten Appetit!', 'suesskartoffel-erdnuss-eintopf.jpg');
 
@@ -3887,12 +4345,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Süßkartoffel-Erdnuss-Eintopf'), (SELECT id FROM ingredients WHERE name = 'Erdnüsse'), 30, 'g');
 
 -- Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)', 90, 4, 'Portionen', 'Herbst', '1. Kartoffeln schälen, in Salzwasser 20 Minuten garen und mit Milch und Butter zu Püree stampfen. Salzen.
-2. Zwiebel, Karotten und Sellerie fein würfeln. Hackfleisch in Öl krümelig anbraten, das Gemüse zugeben und 5 Minuten mitbraten.
-3. Tomatenmark kurz mitrösten. Worcestershiresauce, Brühe und Thymianblättchen zugeben und 15 Minuten einköcheln. Erbsen unterrühren und mit Salz und Pfeffer abschmecken.
-4. Ofen auf 200 °C vorheizen. Hackfleischmasse in eine Auflaufform geben, das Püree darauf verstreichen und mit einer Gabel Rillen ziehen.
-5. Mit geriebenem Cheddar bestreuen und ca. 25 Minuten goldbraun backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)', 'Britisches Wohlfühlessen: würziges Hackfleisch mit Gemüse unter einer goldbraunen Decke aus Kartoffelpüree und Cheddar.', 90, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen, ausdampfen lassen und mit {100 ml} warmer Milch und {40 g} Butter zu einem cremigen Püree stampfen. Salzen.
+2. Die Zwiebel, {2} Karotten und die Selleriestange fein würfeln. {1 EL} Rapsöl in einer großen Pfanne erhitzen und {500 g} Rinderhackfleisch darin bei hoher Hitze krümelig und braun anbraten. Das Gemüse zugeben und 5 Minuten mitbraten.
+3. {2 EL} Tomatenmark einrühren und 1 Minute mitrösten. {2 EL} Worcestershiresauce, {250 ml} Rinderbrühe und die Blättchen von {2} Thymianzweigen zugeben und 15 Minuten einköcheln lassen, bis die Soße dicklich ist. {150 g} Erbsen unterrühren und mit Salz und Pfeffer abschmecken.
+4. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Die Hackfleischmasse in eine Auflaufform geben, das Püree darauf verteilen und glatt streichen. Mit einer Gabel Rillen ziehen, die werden im Ofen schön knusprig.
+5. {80 g} Cheddar reiben und darüberstreuen. Etwa 25 Minuten backen, bis die Oberfläche goldbraun ist und am Rand blubbert. 5 Minuten ruhen lassen.
+
+Tipp: Mit Lammhack statt Rind heißt das Gericht Shepherd''s Pie.
 
 Guten Appetit!', 'cottage-pie-britischer-hackfleisch-kartoffel-auflauf.jpg');
 
@@ -3914,13 +4374,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)'), (SELECT id FROM ingredients WHERE name = 'Cheddar'), 80, 'g');
 
 -- Rinderrouladen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rinderrouladen', 150, 4, 'Portionen', 'Herbst', '1. Rouladen flach ausbreiten, salzen, pfeffern und dünn mit Senf bestreichen.
-2. Mit je zwei Scheiben Speck, Streifen von {1} Zwiebel und einem Gurkenviertel belegen. Seiten einschlagen, aufrollen und mit Rouladennadeln oder Küchengarn fixieren.
-3. Rouladen in Butterschmalz rundherum kräftig anbraten und herausnehmen.
-4. Die restliche Zwiebel, Karotte und Sellerie würfeln und im Bratfett anrösten. Tomatenmark kurz mitrösten und mit Rotwein ablöschen.
-5. Brühe und Lorbeer zugeben, die Rouladen einlegen und zugedeckt ca. 1,5–2 Stunden schmoren.
-6. Rouladen herausnehmen, Soße durch ein Sieb streichen, mit angerührter Stärke binden und abschmecken. Dazu passen Rotkohl und Klöße.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rinderrouladen', 'Zarte Rindfleischrollen mit Senf, Speck und Gurke, stundenlang in kräftiger Rotweinsoße geschmort: der Sonntagsbraten schlechthin.', 150, 4, 'Portionen', 'Herbst', '1. {4} Rinderrouladen flach ausbreiten und mit Küchenpapier trocken tupfen. Dünne Stellen leicht klopfen. Salzen, pfeffern und jeweils mit {1 TL} Senf dünn bestreichen.
+2. Eine Zwiebel in Streifen schneiden, {2} Gewürzgurken längs vierteln. Jede Roulade mit zwei Scheiben Speck, Zwiebelstreifen und einem Gurkenviertel belegen. Die Seiten einschlagen, von der schmalen Seite her fest aufrollen und mit Rouladennadeln oder Küchengarn fixieren.
+3. {2 EL} Butterschmalz in einem Schmortopf stark erhitzen. Die Rouladen darin rundherum kräftig braun anbraten und herausnehmen.
+4. Die zweite Zwiebel, die Karotte und {100 g} Knollensellerie würfeln und im Bratfett 5 Minuten anrösten. {1 EL} Tomatenmark kurz mitrösten und mit {250 ml} Rotwein ablöschen. Den Bratensatz vom Boden lösen und den Wein etwas einkochen lassen.
+5. {500 ml} Rinderbrühe und das Lorbeerblatt zugeben, die Rouladen einlegen und zugedeckt bei schwacher Hitze 1,5–2 Stunden schmoren, bis sie sich mit einer Gabel leicht einstechen lassen. Zwischendurch wenden.
+6. Die Rouladen herausnehmen und warm halten. Die Soße durch ein Sieb streichen, {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken. Die Rouladen vom Garn befreien und in der Soße servieren.
+
+Tipp: Dazu gehören Rotkohl und Klöße oder Kartoffelpüree.
 
 Guten Appetit!', 'rinderrouladen.jpg');
 
@@ -3941,11 +4403,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rinderrouladen'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'EL');
 
 -- Gebackener Camembert mit Preiselbeeren
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebackener Camembert mit Preiselbeeren', 25, 4, 'Portionen', 'Herbst', '1. Camemberts halbieren.
-2. Nacheinander in Mehl, verquirltem Ei und Paniermehl wenden. Für eine dichte Kruste Ei und Brösel einmal wiederholen.
-3. Butterschmalz erhitzen und die Stücke pro Seite 2–3 Minuten goldbraun backen, bis der Käse innen weich ist.
-4. Mit Preiselbeeren und Feldsalat servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gebackener Camembert mit Preiselbeeren', 'Außen knusprig paniert, innen zart schmelzend: gebackener Camembert mit fruchtigen Preiselbeeren, wie im Biergarten.', 25, 4, 'Portionen', 'Herbst', '1. {2} Camemberts quer halbieren, sodass vier Rundlinge entstehen, oder in Viertel schneiden. Gut gekühlt lassen sie sich leichter panieren.
+2. Drei tiefe Teller bereitstellen: {2 EL} Mehl, {1} verquirltes Ei und {60 g} Paniermehl. Die Käsestücke erst in Mehl, dann in Ei und zuletzt im Paniermehl wenden. Für eine dichte Kruste noch einmal durch Ei und Paniermehl ziehen, so läuft kein Käse aus.
+3. {4 EL} Butterschmalz in einer Pfanne bei mittlerer Hitze erhitzen. Die Stücke pro Seite 2–3 Minuten goldbraun backen, bis der Käse innen weich ist. Auf Küchenpapier kurz abtropfen lassen.
+4. Mit {4 EL} Preiselbeeren und {100 g} gewaschenem Feldsalat servieren.
+
+Tipp: Dazu passt geröstetes Bauernbrot.
 
 Guten Appetit!', 'gebackener-camembert-mit-preiselbeeren.jpg');
 
@@ -3958,11 +4422,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gebackener Camembert mit Preiselbeeren'), (SELECT id FROM ingredients WHERE name = 'Feldsalat'), 100, 'g');
 
 -- Apfel-Möhren-Rohkost
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfel-Möhren-Rohkost', 10, 4, 'Portionen', 'Herbst', '1. Karotten schälen, Äpfel waschen und entkernen. Beides grob raspeln.
-2. Sofort mit Zitronensaft mischen, damit die Äpfel hell bleiben.
-3. Öl, Ahornsirup und Salz unterrühren.
-4. Sonnenblumenkerne ohne Fett rösten und darüberstreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Apfel-Möhren-Rohkost', 'Knackig, süß und in zehn Minuten fertig: der Rohkostsalat, den schon die Großeltern kannten.', 10, 4, 'Portionen', 'Herbst', '1. {4} Karotten schälen, {2} Äpfel waschen und entkernen. Beides auf der groben Seite der Reibe raspeln.
+2. Sofort mit dem Saft der Zitrone mischen, damit die Äpfel hell bleiben.
+3. {1 EL} Rapsöl, {1 TL} Ahornsirup und eine Prise Salz unterrühren. Das Öl hilft dem Körper, das Vitamin A aus den Karotten aufzunehmen.
+4. {2 EL} Sonnenblumenkerne in einer Pfanne ohne Fett rösten, bis sie duften, und über den Salat streuen.
+
+Tipp: Mit ein paar Rosinen oder etwas frisch geriebenem Ingwer wird die Rohkost noch spannender.
 
 Guten Appetit!', 'apfel-moehren-rohkost.jpg');
 
@@ -3975,12 +4441,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Apfel-Möhren-Rohkost'), (SELECT id FROM ingredients WHERE name = 'Sonnenblumenkerne'), 2, 'EL');
 
 -- Miesmuscheln in Weißweinsud
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Miesmuscheln in Weißweinsud', 35, 4, 'Portionen', 'Herbst', '1. Muscheln gründlich waschen und die Bärte entfernen. Geöffnete Muscheln, die sich beim Antippen nicht schließen, aussortieren.
-2. Schalotten und Knoblauch fein würfeln, Karotte und Lauch in feine Streifen schneiden und in einem großen Topf in Butter andünsten.
-3. Weißwein und Thymian zugeben, aufkochen und die Muscheln hineingeben. Zugedeckt bei starker Hitze 5–7 Minuten garen und den Topf dabei zwei- bis dreimal schütteln.
-4. Muscheln, die sich nicht geöffnet haben, aussortieren.
-5. Sahne und gehackte Petersilie in den Sud rühren, mit wenig Salz und Pfeffer abschmecken und mit den Muscheln servieren. Saison haben Muscheln in den Monaten mit "r".
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Miesmuscheln in Weißweinsud', 'Ein großer Topf voller Muscheln in aromatischem Weißwein-Gemüsesud: zum Teilen, mit Brot zum Tunken.', 35, 4, 'Portionen', 'Herbst', '1. {2000 g} Miesmuscheln in kaltem Wasser gründlich waschen und die Bärte abziehen. Geöffnete Muscheln kurz auf die Arbeitsfläche klopfen: Schließen sie sich nicht, wegwerfen. Ebenso Muscheln mit zerbrochener Schale.
+2. {3} Schalotten und {2} Knoblauchzehen fein würfeln. Die Karotte und den Lauch in feine Streifen schneiden. {2 EL} Butter in einem großen Topf schmelzen und das Gemüse darin 3 Minuten andünsten.
+3. {300 ml} Weißwein und den Thymian zugeben und aufkochen. Die Muscheln hineingeben, den Deckel auflegen und bei starker Hitze 5–7 Minuten garen. Den Topf dabei zwei- bis dreimal mit aufgelegtem Deckel kräftig schütteln.
+4. Die Muscheln mit einer Schaumkelle in eine vorgewärmte Schüssel heben. Muscheln, die sich nicht geöffnet haben, wegwerfen.
+5. {100 ml} Sahne und die gehackte Petersilie in den Sud rühren, kurz aufkochen und mit wenig Salz und Pfeffer abschmecken. Die Muscheln bringen selbst Salz mit. Den Sud über die Muscheln gießen und sofort servieren.
+
+Tipp: Eine leere Muschelschale eignet sich prima als Zange, um die anderen herauszuholen. Saison haben Muscheln in den Monaten mit „r“.
 
 Guten Appetit!', 'miesmuscheln-in-weissweinsud.jpg');
 
@@ -3998,12 +4466,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Miesmuscheln in Weißweinsud'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Leber Berliner Art mit Apfel und Zwiebeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Leber Berliner Art mit Apfel und Zwiebeln', 45, 4, 'Portionen', 'Herbst', '1. Kartoffeln schälen, in Salzwasser 20 Minuten garen und mit Milch, {1 EL} Butter, Salz und Muskat zu Püree stampfen.
-2. Zwiebeln in Ringe schneiden und in etwas Butter goldbraun braten. Äpfel entkernen, in Ringe schneiden und in einer zweiten Pfanne in wenig Butter pro Seite 2 Minuten braten.
-3. Leber in Scheiben schneiden, trocken tupfen, Häutchen entfernen und in Mehl wenden.
-4. In der restlichen Butter pro Seite 2–3 Minuten braten, sodass sie innen noch leicht rosa ist. Erst nach dem Braten salzen, pfeffern und mit Majoran würzen.
-5. Leber mit Apfelringen, Röstzwiebeln und Kartoffelpüree servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Leber Berliner Art mit Apfel und Zwiebeln', 'Zarte Kalbsleber mit gebratenen Apfelringen, Röstzwiebeln und Kartoffelpüree: ein Berliner Klassiker.', 45, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen und mit {150 ml} warmer Milch, {1 EL} Butter, Salz und Muskatnuss zu Püree stampfen. Warm halten.
+2. {2} Zwiebeln in Ringe schneiden und in etwas Butter bei mittlerer Hitze etwa 10 Minuten goldbraun braten. {2} Äpfel waschen, das Kerngehäuse ausstechen und die Äpfel in 1 cm dicke Ringe schneiden. In einer zweiten Pfanne in wenig Butter pro Seite 2 Minuten braten, bis sie weich und leicht gebräunt sind.
+3. {600 g} Kalbsleber in etwa 1 cm dicke Scheiben schneiden, trocken tupfen und feine Häutchen und Adern entfernen. In {2 EL} Mehl wenden und abklopfen.
+4. Die restliche Butter in einer Pfanne erhitzen und die Leber pro Seite 2–3 Minuten braten, sodass sie innen noch leicht rosa ist. Erst nach dem Braten salzen, pfeffern und mit {1 TL} Majoran würzen. Salz macht Leber beim Braten zäh.
+5. Die Leber mit Apfelringen, Röstzwiebeln und Kartoffelpüree anrichten.
+
+Tipp: Leber am besten frisch vom Metzger kaufen und am selben Tag zubereiten.
 
 Guten Appetit!', 'leber-berliner-art-mit-apfel-und-zwiebeln.jpg');
 
@@ -4020,12 +4490,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Leber Berliner Art mit Apfel und Zwiebeln'), (SELECT id FROM ingredients WHERE name = 'Majoran'), 1, 'TL');
 
 -- Lauch-Quiche mit Bergkäse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lauch-Quiche mit Bergkäse', 90, 1, 'Quicheform (28 cm)', 'Herbst', '1. Mehl, {100 g} kalte Butter, {1} Ei, eine Prise Salz und {2 EL} kaltes Wasser rasch zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Ofen auf 190 °C vorheizen. Lauch putzen, waschen, in feine Ringe schneiden und in der restlichen Butter 5 Minuten andünsten.
-3. Teig ausrollen, eine gefettete Quicheform damit auslegen, mehrmals einstechen und 15 Minuten blind backen.
-4. Restliche Eier mit Sahne und Crème fraîche verquirlen, mit Salz, Pfeffer und Muskat würzen und den geriebenen Käse unterrühren.
-5. Lauch auf dem Boden verteilen, den Guss darübergießen und ca. 35 Minuten goldbraun backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Lauch-Quiche mit Bergkäse', 'Knuspriger Mürbeteig, weich gedünsteter Lauch und ein würziger Guss aus Eiern, Sahne und Bergkäse.', 90, 1, 'Quicheform (28 cm)', 'Herbst', '1. {200 g} Mehl, {100 g} kalte Butter in Würfeln, {1} Ei, eine Prise Salz und {2 EL} kaltes Wasser rasch zu einem glatten Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen. {3} Lauchstangen putzen, längs halbieren, gründlich waschen und in feine Ringe schneiden. In der restlichen Butter bei mittlerer Hitze 5 Minuten andünsten, bis er weich ist. Abkühlen lassen.
+3. Den Teig ausrollen und eine gefettete Quicheform (28 cm) damit auslegen, auch den Rand. Mehrmals mit einer Gabel einstechen, mit Backpapier und Hülsenfrüchten beschweren und 15 Minuten blind backen. Papier und Hülsenfrüchte entfernen.
+4. Die restlichen Eier mit {200 ml} Sahne und {100 g} Crème fraîche verquirlen. Mit Salz, Pfeffer und Muskatnuss würzen und {100 g} geriebenen Bergkäse unterrühren.
+5. Den Lauch auf dem Boden verteilen und den Guss darübergießen. Etwa 35 Minuten backen, bis die Quiche goldbraun und gestockt ist.
+6. 10 Minuten abkühlen lassen, dann lässt sie sich sauber schneiden. Warm oder lauwarm servieren.
+
+Tipp: Mit gewürfeltem Speck oder Schinken unter dem Lauch wird es eine Quiche Lorraine mit Lauch.
 
 Guten Appetit!', 'lauch-quiche-mit-bergkaese.jpg');
 
@@ -4041,12 +4514,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Lauch-Quiche mit Bergkäse'), (SELECT id FROM ingredients WHERE name = 'Bergkäse'), 100, 'g');
 
 -- Ofen-Blumenkohl mit Harissa und Tahini
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Blumenkohl mit Harissa und Tahini', 50, 4, 'Portionen', 'Herbst', '1. Ofen auf 220 °C vorheizen. Blumenkohl in große Röschen teilen, den Strunk in Scheiben schneiden.
-2. Harissa mit {3 EL} Olivenöl und Salz verrühren und den Blumenkohl darin wenden.
-3. Auf einem Blech verteilen und 30–35 Minuten rösten, bis die Ränder dunkel und knusprig sind.
-4. Tahini mit Zitronensaft, gepresstem Knoblauch, Salz und {3-4 EL} Wasser zu einer cremigen Soße rühren.
-5. Blumenkohl mit der Tahinisoße beträufeln und mit Granatapfelkernen, Petersilie und dem restlichen Öl servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ofen-Blumenkohl mit Harissa und Tahini', 'Scharf gerösteter Blumenkohl mit nordafrikanischer Harissa, cremiger Tahinisoße und Granatapfel: Gemüse, das Lust auf mehr macht.', 50, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. Den Blumenkohl in große Röschen teilen, den Strunk schälen und in Scheiben schneiden, er schmeckt geröstet besonders gut.
+2. {2 EL} Harissa mit {3 EL} Olivenöl und Salz verrühren. Den Blumenkohl darin wenden, bis er rundherum überzogen ist.
+3. Auf einem Blech mit Backpapier verteilen und 30–35 Minuten rösten, bis die Ränder dunkel und knusprig sind und die Röschen weich, aber noch bissfest.
+4. {3 EL} Tahini mit dem Saft der Zitrone, der gepressten Knoblauchzehe, Salz und {3-4 EL} Wasser zu einer cremigen Soße rühren.
+5. Den Blumenkohl auf einer Platte anrichten, mit der Tahinisoße beträufeln und mit den Kernen des halben Granatapfels, gehackter Petersilie und dem restlichen Olivenöl servieren.
+
+Tipp: Harissa ist unterschiedlich scharf, also erst mit wenig anfangen.
 
 Guten Appetit!', 'ofen-blumenkohl-mit-harissa-und-tahini.jpg');
 
@@ -4061,12 +4536,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ofen-Blumenkohl mit Harissa und Tahini'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Cremige Blumenkohlsuppe mit Cashews
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Cremige Blumenkohlsuppe mit Cashews', 35, 4, 'Portionen', 'Herbst', '1. Cashewkerne 15 Minuten in heißem Wasser einweichen und abgießen.
-2. Zwiebel würfeln und in Öl andünsten. Blumenkohl in Röschen teilen, zugeben und kurz mitdünsten. Einige kleine Röschen zum Garnieren beiseitelegen.
-3. Mit Brühe aufgießen und 20 Minuten weich köcheln.
-4. Cashewkerne zugeben und alles sehr fein und cremig pürieren. Mit Muskat, Zitronensaft, Salz und Pfeffer abschmecken.
-5. Beiseitegelegte Röschen in einer Pfanne goldbraun rösten und mit Schnittlauch auf der Suppe anrichten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Cremige Blumenkohlsuppe mit Cashews', 'Samtig und cremig ganz ohne Sahne: Die Cashews machen diese Blumenkohlsuppe herrlich weich und mild.', 35, 4, 'Portionen', 'Herbst', '1. {50 g} Cashewkerne mit heißem Wasser übergießen, 15 Minuten einweichen und abgießen. So werden sie beim Pürieren richtig cremig.
+2. Die Zwiebel würfeln. {2 EL} Rapsöl in einem Topf erhitzen und die Zwiebel darin glasig dünsten. Den Blumenkohl in Röschen teilen, ein paar kleine Röschen zum Garnieren beiseitelegen und den Rest zugeben. Kurz mitdünsten.
+3. Mit {1000 ml} Gemüsebrühe aufgießen und zugedeckt etwa 20 Minuten köcheln lassen, bis der Blumenkohl ganz weich ist.
+4. Die Cashewkerne zugeben und alles mit dem Stabmixer oder im Standmixer sehr fein und cremig pürieren. Mit Muskatnuss, dem Saft der halben Zitrone, Salz und Pfeffer abschmecken.
+5. Die beiseitegelegten Röschen in einer Pfanne mit etwas Öl goldbraun rösten. Die Suppe in Teller füllen und mit den Röschen und Schnittlauchröllchen anrichten.
+
+Tipp: Ein paar Tropfen geröstetes Sesamöl oder etwas Curry geben der Suppe eine neue Richtung.
 
 Guten Appetit!', 'cremige-blumenkohlsuppe-mit-cashews.jpg');
 
@@ -4087,12 +4564,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 -- ======================================================================
 
 -- Grünkohl mit Kohlwurst und Kassler
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünkohl mit Kohlwurst und Kassler', 150, 4, 'Portionen', 'Winter', '1. Grünkohl von den Stielen streifen, gründlich waschen und in kochendem Salzwasser 2 Minuten blanchieren. Abtropfen lassen und grob hacken.
-2. Zwiebeln würfeln und in Butterschmalz glasig dünsten. Grünkohl zugeben, mit Brühe aufgießen und zugedeckt 1 Stunde schmoren.
-3. Kohlwurst und Kassler auf den Kohl legen und weitere 45 Minuten mitgaren.
-4. Kartoffeln schälen und in Salzwasser garen.
-5. Grünkohl mit Senf, Zucker, Salz und Pfeffer kräftig abschmecken und mit Wurst, Kassler und Kartoffeln servieren. Am besten nach dem ersten Frost – dann ist der Kohl milder.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grünkohl mit Kohlwurst und Kassler', 'Norddeutsche Winterküche, wie sie sein muss: lange geschmorter Grünkohl mit Kohlwurst, Kassler und Salzkartoffeln.', 150, 4, 'Portionen', 'Winter', '1. {1500 g} Grünkohl von den dicken Stielen streifen und in mehreren Durchgängen in kaltem Wasser gründlich waschen, zwischen den krausen Blättern sitzt oft Sand. In kochendem Salzwasser 2 Minuten blanchieren, abtropfen lassen und grob hacken.
+2. {2} Zwiebeln würfeln. {2 EL} Butterschmalz in einem großen Topf erhitzen und die Zwiebeln darin glasig dünsten. Den Grünkohl zugeben, mit {500 ml} Gemüsebrühe aufgießen und zugedeckt bei schwacher Hitze 1 Stunde schmoren. Gelegentlich umrühren.
+3. {4} Kohlwürste und {400 g} Kassler auf den Kohl legen und weitere 45 Minuten mitgaren. Das Fett und die Würze der Wurst ziehen dabei in den Kohl.
+4. Inzwischen {1000 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+5. Das Fleisch herausnehmen und warm halten. Den Grünkohl mit {1 TL} Senf, {1 TL} Zucker, Salz und Pfeffer kräftig abschmecken.
+6. Den Kassler in Scheiben schneiden und mit Kohlwurst, Grünkohl und Kartoffeln servieren.
+
+Tipp: Am besten nach dem ersten Frost kaufen, dann ist der Kohl milder und süßer. Aufgewärmt schmeckt er noch besser.
 
 Guten Appetit!', 'gruenkohl-mit-kohlwurst-und-kassler.jpg');
 
@@ -4109,12 +4589,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grünkohl mit Kohlwurst und Kassler'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Grünkohl-Chips
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünkohl-Chips', 30, 4, 'Portionen', 'Winter', '1. Ofen auf 140 °C Umluft vorheizen.
-2. Grünkohlblätter von den harten Stielen zupfen, waschen und sehr gründlich trocken schleudern.
-3. Blätter in mundgerechte Stücke zupfen und mit Öl und Paprikapulver einmassieren.
-4. Ohne Überlappung auf {2} Bleche verteilen und 15–20 Minuten backen, bis sie knusprig sind. Die Ofentür ab und zu kurz öffnen, damit Feuchtigkeit entweicht.
-5. Mit Salz bestreuen und sofort genießen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grünkohl-Chips', 'Hauchdünn, knusprig und rauchig gewürzt: Grünkohl als Knabberei aus dem Ofen.', 30, 4, 'Portionen', 'Winter', '1. Den Ofen auf 140 °C Umluft vorheizen.
+2. {200 g} Grünkohl von den harten Stielen zupfen, waschen und sehr gründlich trocken schleudern. Am besten zusätzlich mit einem Küchentuch abtrocknen, nasse Blätter werden nicht knusprig.
+3. Die Blätter in mundgerechte Stücke zupfen. Mit {2 EL} Olivenöl und {0.5 TL} geräuchertem Paprikapulver in einer Schüssel mit den Händen einmassieren, bis alle Blätter dünn überzogen sind.
+4. Ohne Überlappung auf {2} Blechen mit Backpapier verteilen und 15–20 Minuten backen, bis sie knusprig sind. Die Ofentür zwischendurch kurz öffnen, damit die Feuchtigkeit entweicht. Ab 12 Minuten genau hinsehen, sie verbrennen schnell.
+5. Mit {1 TL} Salz bestreuen und sofort genießen. Sie werden schnell wieder weich.
+
+Tipp: Auch mit Knoblauchpulver oder etwas Hefeflocken als „Käse“-Variante lecker.
 
 Guten Appetit!', 'gruenkohl-chips.jpg');
 
@@ -4124,11 +4606,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grünkohl-Chips'), (SELECT id FROM ingredients WHERE name = 'Salz'), 1, 'TL');
 
 -- Ofen-Rosenkohl mit Balsamico
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Rosenkohl mit Balsamico', 35, 4, 'Portionen', 'Winter', '1. Ofen auf 220 °C vorheizen. Rosenkohl putzen und halbieren.
-2. Mit Öl, Salz und Pfeffer mischen und mit der Schnittfläche nach unten auf einem Blech verteilen.
-3. 20–25 Minuten rösten, bis die Schnittflächen tief goldbraun sind.
-4. Balsamico und Ahornsirup verrühren, über den heißen Rosenkohl träufeln und mit gerösteten Walnüssen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ofen-Rosenkohl mit Balsamico', 'Auch Rosenkohl-Skeptiker werden schwach: geröstet, bis die Schnittflächen karamellisieren, mit süßem Balsamico und Walnüssen.', 35, 4, 'Portionen', 'Winter', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. {600 g} Rosenkohl waschen, die Strünke knapp abschneiden, welke Außenblätter entfernen und die Röschen längs halbieren.
+2. Den Rosenkohl mit {3 EL} Olivenöl, Salz und Pfeffer mischen und mit der Schnittfläche nach unten auf einem Blech mit Backpapier verteilen. So bekommen die Schnittflächen den direkten Kontakt zur Hitze.
+3. 20–25 Minuten rösten, bis die Schnittflächen tief goldbraun und die Röschen gar, aber noch bissfest sind. Lose Blätter werden dabei knusprig wie Chips.
+4. Inzwischen {40 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten. {2 EL} Balsamicoessig mit {1 EL} Ahornsirup verrühren.
+5. Den heißen Rosenkohl mit der Balsamico-Mischung beträufeln, durchschwenken und mit den Walnüssen bestreuen.
+
+Tipp: Durch das Rösten verliert Rosenkohl seinen typischen Kohlgeschmack und wird nussig-süß.
 
 Guten Appetit!', 'ofen-rosenkohl-mit-balsamico.jpg');
 
@@ -4141,12 +4626,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ofen-Rosenkohl mit Balsamico'), (SELECT id FROM ingredients WHERE name = 'Walnüsse'), 40, 'g');
 
 -- Apfelrotkohl
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelrotkohl', 90, 6, 'Portionen', 'Winter', '1. Rotkohl vierteln, den Strunk entfernen, in feine Streifen hobeln und mit dem Essig und {1 TL} Salz mischen.
-2. Zwiebel würfeln, Äpfel schälen, entkernen und würfeln.
-3. Zucker im Öl leicht karamellisieren, Zwiebel und Äpfel zugeben und kurz andünsten.
-4. Rotkohl, Rotwein, Apfelsaft und die Gewürze (am besten in einem Gewürzsäckchen) zugeben und zugedeckt bei kleiner Hitze ca. 1 Stunde schmoren. Gelegentlich umrühren.
-5. Gewürze entfernen und mit Preiselbeeren, Salz, Pfeffer und eventuell etwas Zucker abschmecken. Aufgewärmt am nächsten Tag schmeckt er noch besser.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Apfelrotkohl', 'Süß-säuerlich, mit Äpfeln, Rotwein und Wintergewürzen geschmort: die Beilage, ohne die kein Festtagsbraten komplett ist.', 90, 6, 'Portionen', 'Winter', '1. {1000 g} Rotkohl vierteln, den Strunk herausschneiden und den Kohl in feine Streifen hobeln. In einer großen Schüssel mit {4 EL} Rotweinessig und {1 TL} Salz mischen und kurz durchkneten. Die Säure sorgt dafür, dass der Kohl schön rot bleibt.
+2. Die Zwiebel würfeln. {2} Äpfel schälen, entkernen und würfeln.
+3. {2 EL} Zucker mit {2 EL} Rapsöl in einem großen Topf bei mittlerer Hitze leicht karamellisieren lassen. Zwiebel und Äpfel zugeben und 2 Minuten andünsten.
+4. Den Rotkohl, {150 ml} Rotwein und {200 ml} Apfelsaft zugeben. {2} Lorbeerblätter, {3} Gewürznelken, die Zimtstange und {4} Wacholderbeeren am besten in ein Gewürzsäckchen oder Teeei füllen und dazugeben, dann lassen sie sich später leicht entfernen.
+5. Zugedeckt bei schwacher Hitze etwa 1 Stunde schmoren und gelegentlich umrühren. Ist zu viel Flüssigkeit verdampft, etwas Wasser oder Apfelsaft nachgießen.
+6. Die Gewürze herausnehmen. Mit {2 EL} Preiselbeeren, Salz, Pfeffer und eventuell etwas Zucker süß-säuerlich abschmecken.
+
+Tipp: Aufgewärmt am nächsten Tag schmeckt er noch besser. Er lässt sich auch gut einfrieren.
 
 Guten Appetit!', 'apfelrotkohl.jpg');
 
@@ -4167,12 +4655,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Apfelrotkohl'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Kartoffelklöße halb und halb
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelklöße halb und halb', 75, 4, 'Portionen', 'Winter', '1. {500 g} mehligkochende Kartoffeln schälen, in Salzwasser weich kochen, durch eine Kartoffelpresse drücken und abkühlen lassen.
-2. Die restlichen Kartoffeln schälen, fein reiben und in einem Tuch sehr kräftig auspressen. Die Flüssigkeit stehen lassen, bis sich die Stärke abgesetzt hat, das Wasser abgießen und die Stärke zurück zu den Kartoffeln geben.
-3. Rohe und gekochte Kartoffeln mit Speisestärke, Salz und etwas Muskat zu einem glatten Teig verkneten.
-4. Mit nassen Händen {8} Klöße formen.
-5. In reichlich siedendem, nicht sprudelnd kochendem Salzwasser ca. 20 Minuten gar ziehen lassen, bis sie oben schwimmen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kartoffelklöße halb und halb', 'Halb aus gekochten, halb aus rohen Kartoffeln: Klöße mit zarter, leicht körniger Struktur, wie in Thüringen und Franken.', 75, 4, 'Portionen', 'Winter', '1. {500 g} mehligkochende Kartoffeln schälen und in Salzwasser etwa 20 Minuten weich kochen. Abgießen, gut ausdampfen lassen, durch eine Kartoffelpresse drücken und abkühlen lassen.
+2. Die übrigen Kartoffeln schälen und auf der feinen Seite der Reibe reiben. In ein sauberes Geschirrtuch geben und über einer Schüssel so kräftig wie möglich auspressen. Die Flüssigkeit 10 Minuten stehen lassen, bis sich am Boden die Stärke abgesetzt hat. Das Wasser vorsichtig abgießen und die Stärke zu den rohen Kartoffeln geben.
+3. Rohe und gekochte Kartoffeln mit {2 EL} Speisestärke, {2 TL} Salz und etwas Muskatnuss zu einem glatten, formbaren Teig verkneten. Zügig arbeiten, sonst verfärben sich die rohen Kartoffeln grau.
+4. Mit nassen Händen {8} gleich große Klöße formen.
+5. Reichlich Salzwasser aufkochen, die Hitze reduzieren und die Klöße hineinlegen. Etwa 20 Minuten gar ziehen lassen, bis sie oben schwimmen. Das Wasser darf nicht sprudelnd kochen, sonst zerfallen sie.
+6. Mit einer Schaumkelle herausheben und sofort servieren.
+
+Tipp: Ein in Butter gerösteter Brotwürfel in der Mitte jedes Kloßes ist in Thüringen Tradition.
 
 Guten Appetit!', 'kartoffelkloesse-halb-und-halb.jpg');
 
@@ -4182,13 +4673,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kartoffelklöße halb und halb'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Rheinischer Sauerbraten
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rheinischer Sauerbraten', 4500, 6, 'Portionen', 'Winter', '1. Rotwein, Essig und {250 ml} Wasser mit dem grob geschnittenen Gemüse und den Gewürzen aufkochen und abkühlen lassen.
-2. Fleisch in ein enges Gefäß legen, vollständig mit der Marinade bedecken und zugedeckt 3 Tage im Kühlschrank ziehen lassen. Täglich wenden.
-3. Fleisch herausnehmen und trocken tupfen. Marinade durch ein Sieb gießen und Gemüse und Flüssigkeit getrennt aufbewahren.
-4. Fleisch in Butterschmalz rundherum kräftig anbraten und salzen. Gemüse mitrösten, mit der Marinade ablöschen und zugedeckt ca. 2,5 Stunden schmoren.
-5. Fleisch herausnehmen. Soße durch ein Sieb streichen, Rosinen und Rübensirup zugeben, 10 Minuten köcheln, mit angerührter Stärke binden und süß-sauer abschmecken.
-6. Braten in Scheiben schneiden und mit Soße, Rotkohl und Klößen servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rheinischer Sauerbraten', 'Drei Tage in Rotwein und Essig eingelegt, dann zart geschmort und mit Rosinen süß-sauer abgeschmeckt: rheinische Festtagsküche.', 4500, 6, 'Portionen', 'Winter', '1. {500 ml} Rotwein, {250 ml} Rotweinessig und {250 ml} Wasser mit den grob geschnittenen {2} Zwiebeln, {2} Karotten und {150 g} Knollensellerie, {3} Lorbeerblättern, {8} Wacholderbeeren, {4} Gewürznelken, {5} Pimentkörnern und etwas Pfeffer aufkochen. Vollständig abkühlen lassen.
+2. {1500 g} Rinderbraten in ein enges Gefäß aus Glas oder Porzellan legen und vollständig mit der Marinade bedecken. Zugedeckt 3 Tage im Kühlschrank ziehen lassen und einmal täglich wenden. Die Säure macht das Fleisch mürbe.
+3. Das Fleisch herausnehmen und gründlich trocken tupfen. Die Marinade durch ein Sieb gießen und Gemüse und Flüssigkeit getrennt aufbewahren.
+4. {2 EL} Butterschmalz in einem Bräter stark erhitzen und das Fleisch rundherum kräftig anbraten. Salzen. Das Gemüse zugeben und 5 Minuten mitrösten. Mit der Marinade ablöschen und zugedeckt bei schwacher Hitze etwa 2,5 Stunden schmoren, bis das Fleisch weich ist.
+5. Das Fleisch herausnehmen und warm halten. Die Soße durch ein Sieb streichen, {60 g} Rosinen und {2 EL} Zuckerrübensirup zugeben und 10 Minuten köcheln lassen. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und süß-sauer abschmecken.
+6. Den Braten quer zur Faser in Scheiben schneiden und mit der Soße, Rotkohl und Klößen servieren.
+
+Tipp: Im Rheinland wird die Soße oft zusätzlich mit zerbröseltem Aachener Printen oder Lebkuchen gebunden.
 
 Guten Appetit!', 'rheinischer-sauerbraten.jpg');
 
@@ -4210,12 +4703,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rheinischer Sauerbraten'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'EL');
 
 -- Gänsekeulen mit Beifuß
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gänsekeulen mit Beifuß', 150, 4, 'Portionen', 'Winter', '1. Ofen auf 160 °C vorheizen. Gänsekeulen waschen, trocken tupfen und rundherum mit Salz, Pfeffer, getrocknetem Beifuß und Majoran einreiben.
-2. Äpfel, Zwiebeln und Orange grob schneiden und in einen Bräter geben. Keulen mit der Hautseite nach oben darauflegen und {250 ml} Brühe angießen.
-3. Ca. 2 Stunden garen und regelmäßig mit dem Bratensaft begießen. Für knusprige Haut die letzten 15 Minuten auf 220 °C erhöhen.
-4. Keulen warm stellen. Bratfond durch ein Sieb gießen, das Fett abschöpfen, mit Rotwein und restlicher Brühe aufkochen und mit angerührter Stärke binden.
-5. Mit Rotkohl und Klößen servieren – das klassische Essen zu Sankt Martin und Weihnachten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gänsekeulen mit Beifuß', 'Knusprige Gänsekeulen mit Beifuß und Majoran, im eigenen Saft mit Äpfeln und Orange geschmort: das Essen zu Sankt Martin und Weihnachten.', 150, 4, 'Portionen', 'Winter', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {4} Gänsekeulen kalt abspülen, gründlich trocken tupfen und überstehendes Fett abschneiden. Rundherum mit Salz, Pfeffer, {1 TL} getrocknetem Beifuß und {1 TL} Majoran einreiben. Beifuß macht das fette Gänsefleisch bekömmlicher.
+2. {2} Äpfel, {2} Zwiebeln und die Orange grob schneiden und in einen Bräter geben. Die Keulen mit der Hautseite nach oben darauflegen und {250 ml} Hühnerbrühe angießen.
+3. Etwa 2 Stunden im Ofen garen und alle 20 Minuten mit dem Bratensaft begießen. Für knusprige Haut die letzten 15 Minuten die Temperatur auf 220 °C erhöhen und nicht mehr begießen.
+4. Die Keulen herausnehmen und im ausgeschalteten Ofen warm halten. Den Bratenfond durch ein Sieb in einen Topf gießen und das Obst gut ausdrücken. Das Fett mit einer Kelle abschöpfen und für Bratkartoffeln aufheben.
+5. {200 ml} Rotwein und die restliche Brühe zum Fond geben und aufkochen. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken.
+6. Die Keulen mit der Soße, Rotkohl und Klößen servieren.
+
+Tipp: Gänseschmalz hält sich im Kühlschrank wochenlang und ist herrlich auf Brot.
 
 Guten Appetit!', 'gaensekeulen-mit-beifuss.jpg');
 
@@ -4232,13 +4728,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gänsekeulen mit Beifuß'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 1, 'EL');
 
 -- Entenbrust mit Orangensoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Entenbrust mit Orangensoße', 45, 4, 'Portionen', 'Winter', '1. Ofen auf 120 °C vorheizen. Die Haut der Entenbrüste rautenförmig einschneiden, ohne das Fleisch zu verletzen. Salzen und pfeffern.
-2. Mit der Hautseite nach unten in eine kalte Pfanne legen und bei mittlerer Hitze 8–10 Minuten braten, bis die Haut knusprig ist. Wenden, 1 Minute braten und im Ofen mit Thymian 15–20 Minuten rosa garen.
-3. {1} Orange abreiben und den Saft von {2} Orangen auspressen. Die restliche Orange filetieren.
-4. Fett aus der Pfanne abgießen, die gewürfelte Schalotte darin andünsten, Zucker karamellisieren und mit Essig, Orangensaft und Brühe ablöschen. Auf die Hälfte einkochen.
-5. Mit angerührter Stärke binden, Orangenabrieb, Filets und kalte Butter einrühren und abschmecken.
-6. Entenbrust 5 Minuten ruhen lassen, aufschneiden und mit der Orangensoße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Entenbrust mit Orangensoße', 'Rosa gegarte Entenbrust mit knuspriger Haut in einer glänzenden Orangensoße: der französische Klassiker Canard à l''orange.', 45, 4, 'Portionen', 'Winter', '1. Den Ofen auf 120 °C Ober-/Unterhitze vorheizen. Die Haut von {2} Entenbrüsten mit einem scharfen Messer rautenförmig einschneiden, ohne ins Fleisch zu schneiden. Salzen und pfeffern.
+2. Die Entenbrüste mit der Hautseite nach unten in eine kalte Pfanne legen und bei mittlerer Hitze 8–10 Minuten braten. Dabei schmilzt das Fett langsam aus und die Haut wird knusprig. Wenden, 1 Minute braten und mit den Thymianzweigen in einer ofenfesten Form 15–20 Minuten im Ofen rosa garen.
+3. Inzwischen von {1} Orange die Schale fein abreiben und den Saft von {2} Orangen auspressen. Die dritte Orange mit einem Messer so schälen, dass auch die weiße Haut entfernt wird, und die Filets zwischen den Trennhäuten herausschneiden.
+4. Das Fett bis auf einen Esslöffel aus der Pfanne gießen. Die gewürfelte Schalotte darin andünsten. {1 EL} Zucker zugeben und hell karamellisieren lassen. Mit {1 EL} Weißweinessig, dem Orangensaft und {200 ml} Hühnerbrühe ablöschen und auf die Hälfte einkochen lassen.
+5. {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit binden. Orangenabrieb und Orangenfilets zugeben und zum Schluss {1 EL} kalte Butter einrühren. Abschmecken.
+6. Die Entenbrust 5 Minuten ruhen lassen, schräg in Scheiben schneiden und mit der Orangensoße servieren.
+
+Tipp: Das ausgelassene Entenfett nicht wegschütten: Darin gebratene Kartoffeln sind ein Gedicht.
 
 Guten Appetit!', 'entenbrust-mit-orangensosse.jpg');
 
@@ -4255,12 +4753,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Entenbrust mit Orangensoße'), (SELECT id FROM ingredients WHERE name = 'Butter'), 1, 'EL');
 
 -- Gulaschsuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gulaschsuppe', 120, 6, 'Portionen', 'Winter', '1. Fleisch in kleine Würfel (ca. 2 cm) schneiden und die Zwiebeln würfeln.
-2. Fleisch in Butterschmalz portionsweise kräftig anbraten. Zwiebeln zugeben und goldbraun mitbraten.
-3. Tomatenmark und Paprikapulver einrühren und kurz anrösten, ohne dass es verbrennt. Mit Brühe ablöschen, Kümmel, Majoran, gehackten Knoblauch und Lorbeer zugeben und zugedeckt 1 Stunde köcheln.
-4. Paprika und Kartoffeln würfeln, zugeben und weitere 25 Minuten köcheln.
-5. Mit Salz, Pfeffer und einem Spritzer Essig abschmecken. Dazu passt Brot.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gulaschsuppe', 'Kräftig, paprikarot und wärmend: die Suppe, die an kalten Abenden und nach langen Partynächten gleichermaßen gut tut.', 120, 6, 'Portionen', 'Winter', '1. {800 g} Rindergulasch in kleine Würfel von etwa 2 cm schneiden. {3} Zwiebeln würfeln.
+2. {2 EL} Butterschmalz in einem großen Topf stark erhitzen und das Fleisch portionsweise kräftig anbraten. Die Zwiebeln zugeben und goldbraun mitbraten.
+3. Die Hitze reduzieren. {2 EL} Tomatenmark und {2 EL} Paprikapulver einrühren und unter Rühren kurz anrösten. Paprikapulver verbrennt schnell und wird dann bitter, also nicht zu lange.
+4. Mit {1500 ml} Rinderbrühe ablöschen. {1 TL} Kümmel, {1 TL} Majoran, {2} gehackte Knoblauchzehen und das Lorbeerblatt zugeben und zugedeckt 1 Stunde köcheln lassen.
+5. {2} Paprika entkernen und würfeln, {500 g} Kartoffeln schälen und würfeln. Beides zugeben und weitere 25 Minuten köcheln, bis Fleisch und Kartoffeln weich sind.
+6. Das Lorbeerblatt entfernen, mit Salz, Pfeffer und {1 EL} Rotweinessig abschmecken. Mit frischem Brot servieren.
+
+Tipp: Wer es feurig mag, gibt eine Prise Chili oder scharfes Rosenpaprikapulver dazu.
 
 Guten Appetit!', 'gulaschsuppe.jpg');
 
@@ -4281,12 +4782,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gulaschsuppe'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Rindergulasch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rindergulasch', 180, 4, 'Portionen', 'Winter', '1. Zwiebeln in feine Streifen schneiden und in {2 EL} Butterschmalz bei mittlerer Hitze 20 Minuten goldbraun dünsten.
-2. Fleisch in 4 cm große Würfel schneiden, in einer zweiten Pfanne im restlichen Butterschmalz portionsweise scharf anbraten und zu den Zwiebeln geben.
-3. Tomatenmark und Paprikapulver unterrühren, kurz mitrösten und mit Rotwein ablöschen.
-4. Brühe, Kümmel, Majoran und Lorbeer zugeben und zugedeckt ca. 2,5 Stunden schmoren, bis das Fleisch zart ist. Die Zwiebeln binden die Soße von selbst.
-5. Gehackten Knoblauch und Zitronenabrieb einrühren, 5 Minuten ziehen lassen und mit Salz und Pfeffer abschmecken. Dazu passen Nudeln, Knödel oder Brot.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rindergulasch', 'Zartes Rindfleisch in einer sämigen, dunklen Paprikasoße, die allein durch die Zwiebeln bindet: Gulasch nach Wiener Art.', 180, 4, 'Portionen', 'Winter', '1. {1000 g} Zwiebeln schälen und in feine Streifen schneiden. Das klingt nach viel, ist aber das Geheimnis eines guten Gulaschs. {2 EL} Butterschmalz in einem Schmortopf erhitzen und die Zwiebeln darin bei mittlerer Hitze etwa 20 Minuten goldbraun dünsten.
+2. {1000 g} Rindergulasch in 4 cm große Würfel schneiden. In einer zweiten Pfanne im restlichen Butterschmalz portionsweise scharf anbraten und zu den Zwiebeln geben.
+3. {2 EL} Tomatenmark und {3 EL} Paprikapulver unterrühren und 1 Minute mitrösten. Sofort mit {250 ml} Rotwein ablöschen, damit der Paprika nicht verbrennt.
+4. {500 ml} Rinderbrühe, {1 TL} Kümmel, {1 TL} Majoran und das Lorbeerblatt zugeben. Zugedeckt bei schwacher Hitze etwa 2,5 Stunden schmoren, bis das Fleisch zart ist. Die Zwiebeln zerfallen dabei und binden die Soße von selbst.
+5. {2} Knoblauchzehen fein hacken, die Zitronenschale abreiben. Beides einrühren und 5 Minuten ziehen lassen. Das Lorbeerblatt entfernen und mit Salz und Pfeffer abschmecken.
+
+Tipp: Dazu passen Nudeln, Semmelknödel oder einfach Brot. Gulasch schmeckt aufgewärmt immer besser.
 
 Guten Appetit!', 'rindergulasch.jpg');
 
@@ -4306,12 +4809,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rindergulasch'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Erbsensuppe mit Würstchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erbsensuppe mit Würstchen', 120, 6, 'Portionen', 'Winter', '1. Speck würfeln und in einem großen Topf auslassen. Gewürfelte Zwiebel zugeben und glasig dünsten.
-2. Schälerbsen in einem Sieb abspülen – sie müssen nicht eingeweicht werden. Mit Brühe und Lorbeer zugeben und zugedeckt ca. 60 Minuten köcheln, dabei gelegentlich umrühren.
-3. Karotten, Sellerie und Kartoffeln würfeln, Lauch in Ringe schneiden, zugeben und weitere 30 Minuten köcheln.
-4. Mit Majoran, Salz und Pfeffer würzen.
-5. Würstchen in Scheiben schneiden und in der Suppe erhitzen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Erbsensuppe mit Würstchen', 'Dick, deftig und sättigend: die Erbsensuppe aus der Gulaschkanone, mit Speck, Gemüse und Würstchen.', 120, 6, 'Portionen', 'Winter', '1. {100 g} Speck würfeln und in einem großen Topf bei mittlerer Hitze auslassen. Die gewürfelte Zwiebel zugeben und glasig dünsten.
+2. {500 g} Schälerbsen in einem Sieb abspülen. Sie müssen nicht eingeweicht werden. Mit {2000 ml} Gemüsebrühe und dem Lorbeerblatt in den Topf geben, aufkochen und zugedeckt etwa 60 Minuten köcheln lassen. Gelegentlich umrühren, da die Erbsen leicht ansetzen.
+3. {2} Karotten, {150 g} Knollensellerie und {300 g} Kartoffeln schälen und würfeln, den Lauch in Ringe schneiden. Alles zugeben und weitere 30 Minuten köcheln lassen, bis die Erbsen zerfallen und die Suppe sämig ist.
+4. Das Lorbeerblatt entfernen. Mit {1 TL} Majoran, Salz und Pfeffer würzen. Ist die Suppe zu dick, mit etwas Brühe verdünnen.
+5. {6} Würstchen in Scheiben schneiden und in der Suppe 5 Minuten erhitzen.
+
+Tipp: Wer es noch kräftiger mag, lässt ein Stück Kassler oder Eisbein in der Suppe mitkochen.
 
 Guten Appetit!', 'erbsensuppe-mit-wuerstchen.jpg');
 
@@ -4330,13 +4835,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Erbsensuppe mit Würstchen'), (SELECT id FROM ingredients WHERE name = 'Wiener Würstchen'), 6, NULL);
 
 -- Linsen mit Spätzle und Saitenwürstle
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Linsen mit Spätzle und Saitenwürstle', 90, 4, 'Portionen', 'Winter', '1. Speck und Zwiebel würfeln und in einem Topf anbraten. Karotte und Sellerie fein würfeln und kurz mitdünsten.
-2. {1 EL} Mehl darüberstäuben, mit Brühe ablöschen, Linsen und Lorbeer zugeben und ca. 40 Minuten weich köcheln.
-3. Für die Spätzle das restliche Mehl mit Eiern, {1 TL} Salz und ca. {100 ml} Wasser zu einem zähen Teig schlagen, bis er Blasen wirft.
-4. Teig portionsweise ins siedende Salzwasser schaben oder pressen. Spätzle abschöpfen, sobald sie oben schwimmen, und in Butter schwenken.
-5. Linsen mit Essig, Zucker, Salz und Pfeffer kräftig süß-sauer abschmecken und die Würstchen darin heiß werden lassen.
-6. Linsen mit Spätzle und Saitenwürstle servieren – das schwäbische Leibgericht.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Linsen mit Spätzle und Saitenwürstle', 'Das schwäbische Leibgericht: süß-saure Linsen, handgemachte Spätzle und Saitenwürstle.', 90, 4, 'Portionen', 'Winter', '1. {100 g} Speck und die Zwiebel würfeln und in einem Topf anbraten. Die Karotte und {100 g} Knollensellerie fein würfeln und 2 Minuten mitdünsten.
+2. {1 EL} Mehl darüberstäuben und kurz anschwitzen. Mit {1000 ml} Gemüsebrühe ablöschen, {300 g} Tellerlinsen und das Lorbeerblatt zugeben und zugedeckt etwa 40 Minuten weich köcheln.
+3. Für die Spätzle das restliche Mehl mit {4} Eiern, {1 TL} Salz und etwa {100 ml} Wasser mit einem Kochlöffel zu einem zähen Teig schlagen, bis er Blasen wirft und sich vom Löffel zieht. 10 Minuten ruhen lassen.
+4. Reichlich Salzwasser aufkochen. Den Teig portionsweise vom Brett ins siedende Wasser schaben oder durch eine Spätzlepresse drücken. Sobald die Spätzle oben schwimmen, mit einer Schaumkelle herausheben und in {2 EL} Butter schwenken.
+5. Die Linsen mit {3 EL} Rotweinessig, {1 TL} Zucker, Salz und Pfeffer kräftig süß-sauer abschmecken. {4} Würstchen in den Linsen 5 Minuten heiß werden lassen.
+6. Linsen mit Spätzle und Saitenwürstle auf Tellern anrichten.
+
+Tipp: Am Tisch noch einen Schuss Essig über die Linsen geben, so machen es die Schwaben.
 
 Guten Appetit!', 'linsen-mit-spaetzle-und-saitenwuerstle.jpg');
 
@@ -4357,12 +4864,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Linsen mit Spätzle und Saitenwürstle'), (SELECT id FROM ingredients WHERE name = 'Wiener Würstchen'), 4, NULL);
 
 -- Türkische Linsensuppe (Mercimek Çorbası)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Türkische Linsensuppe (Mercimek Çorbası)', 40, 4, 'Portionen', 'Winter', '1. Zwiebel, Karotte, Kartoffel und Knoblauch schälen und klein würfeln.
-2. Gemüse in {2 EL} Öl andünsten, Tomatenmark und Kreuzkümmel kurz mitrösten.
-3. Linsen waschen, mit der Brühe zugeben und ca. 20 Minuten köcheln, bis alles weich ist.
-4. Fein pürieren und mit Salz abschmecken.
-5. Restliches Öl mit Paprikapulver, Chiliflocken und getrockneter Minze kurz erhitzen und über die Suppe träufeln. Mit Zitronenspalten servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Türkische Linsensuppe (Mercimek Çorbası)', 'Samtig, wärmend und schnell gemacht: die rote Linsensuppe aus der Türkei mit Minz-Paprika-Butter und Zitrone.', 40, 4, 'Portionen', 'Winter', '1. Die Zwiebel, die Karotte, {150 g} Kartoffeln und {2} Knoblauchzehen schälen und klein würfeln.
+2. {2 EL} Olivenöl in einem Topf erhitzen und das Gemüse darin 3 Minuten andünsten. {1 EL} Tomatenmark und {1 TL} Kreuzkümmel zugeben und 1 Minute mitrösten.
+3. {250 g} rote Linsen in einem Sieb waschen, bis das Wasser klar bleibt. Mit {1200 ml} Gemüsebrühe zugeben und etwa 20 Minuten köcheln lassen, bis Linsen und Gemüse ganz weich sind. Rote Linsen zerfallen dabei von selbst.
+4. Die Suppe fein pürieren und mit Salz abschmecken. Ist sie zu dick, etwas Wasser zugeben.
+5. Das restliche Olivenöl in einer kleinen Pfanne erhitzen, vom Herd nehmen und {1 TL} Paprikapulver, {0.5 TL} Chiliflocken und {1 TL} getrocknete Minze einrühren. Sofort über die Suppe träufeln.
+6. Mit Zitronenspalten servieren, der frische Saft gehört unbedingt dazu.
+
+Tipp: Dazu passt warmes Fladenbrot.
 
 Guten Appetit!', 'tuerkische-linsensuppe-mercimek-corbas.jpg');
 
@@ -4382,12 +4892,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Türkische Linsensuppe (Mercimek Çorbası)'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 1, NULL);
 
 -- Steckrübeneintopf
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Steckrübeneintopf', 70, 4, 'Portionen', 'Winter', '1. Steckrübe schälen und in 2 cm große Würfel schneiden. Kartoffeln und Karotten schälen und würfeln, Zwiebel hacken.
-2. Zwiebel in Öl andünsten, Steckrübe zugeben und 5 Minuten anbraten – die Röstaromen machen den Eintopf herzhaft.
-3. Kartoffeln, Karotten, Brühe, Majoran und Lorbeer zugeben und ca. 35 Minuten köcheln.
-4. Einen Teil des Eintopfs zerstampfen, damit er sämig wird.
-5. Mit Salz, Pfeffer und Muskat abschmecken und mit Petersilie bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Steckrübeneintopf', 'Ein norddeutscher Wintereintopf mit leicht süßlichen Steckrüben, Kartoffeln und Majoran: ehrlich, deftig und günstig.', 70, 4, 'Portionen', 'Winter', '1. {1000 g} Steckrübe schälen, die Schale ist dick, also großzügig, und in 2 cm große Würfel schneiden. {400 g} Kartoffeln und {2} Karotten schälen und würfeln. Die Zwiebel hacken.
+2. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebel darin glasig dünsten. Die Steckrübe zugeben und 5 Minuten anbraten, bis sie an den Kanten leicht bräunt. Die Röstaromen machen den Eintopf herzhaft.
+3. Kartoffeln, Karotten, {1200 ml} Gemüsebrühe, {1 TL} Majoran und das Lorbeerblatt zugeben. Aufkochen und zugedeckt etwa 35 Minuten köcheln lassen.
+4. Das Lorbeerblatt herausnehmen. Einen Teil des Eintopfs mit dem Kartoffelstampfer zerdrücken, damit er sämig wird.
+5. Mit Salz, Pfeffer und Muskatnuss abschmecken und mit gehackter Petersilie bestreuen.
+
+Tipp: Klassisch kommt noch ein Stück Kassler oder Mettwurst mit in den Topf.
 
 Guten Appetit!', 'steckruebeneintopf.jpg');
 
@@ -4405,12 +4917,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Steckrübeneintopf'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Pastinaken-Cremesuppe mit Birne
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pastinaken-Cremesuppe mit Birne', 35, 4, 'Portionen', 'Winter', '1. Pastinaken, Birne und Zwiebel schälen und würfeln.
-2. Zwiebel in Öl andünsten, Pastinaken und Birne zugeben und kurz mitdünsten.
-3. Mit Brühe aufgießen und 20 Minuten weich köcheln.
-4. Kokosmilch zugeben, fein pürieren und mit Zitronensaft, Muskat, Salz und Pfeffer abschmecken.
-5. Mit gerösteten Kürbiskernen und ein paar Tropfen Kürbiskernöl servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pastinaken-Cremesuppe mit Birne', 'Süßlich, nussig und mit einem Hauch Birne: eine samtige Wintersuppe mit gerösteten Kürbiskernen und Kürbiskernöl.', 35, 4, 'Portionen', 'Winter', '1. {600 g} Pastinaken, die Birne und die Zwiebel schälen und würfeln.
+2. {2 EL} Rapsöl in einem Topf erhitzen und die Zwiebel darin glasig dünsten. Pastinaken und Birne zugeben und 2 Minuten mitdünsten.
+3. Mit {900 ml} Gemüsebrühe aufgießen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Pastinaken weich sind.
+4. {200 ml} Kokosmilch zugeben und alles sehr fein pürieren. Mit dem Saft der halben Zitrone, Muskatnuss, Salz und Pfeffer abschmecken. Die Zitrone gleicht die Süße aus.
+5. {2 EL} Kürbiskerne in einer Pfanne ohne Fett rösten, bis sie knistern. Die Suppe in Teller füllen, mit den Kürbiskernen bestreuen und mit ein paar Tropfen von {1 EL} Kürbiskernöl beträufeln.
+
+Tipp: Pastinaken schmecken nach dem ersten Frost am süßesten.
 
 Guten Appetit!', 'pastinaken-cremesuppe-mit-birne.jpg');
 
@@ -4428,12 +4942,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pastinaken-Cremesuppe mit Birne'), (SELECT id FROM ingredients WHERE name = 'Kürbiskernöl'), 1, 'EL');
 
 -- Topinambur-Suppe mit Haselnüssen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Topinambur-Suppe mit Haselnüssen', 40, 4, 'Portionen', 'Winter', '1. Topinambur gründlich schrubben oder schälen, in Scheiben schneiden und sofort in Zitronenwasser legen.
-2. Schalotten und Kartoffel würfeln und mit Thymian in Butter andünsten. Abgetropften Topinambur zugeben.
-3. Mit Brühe aufgießen, 20 Minuten köcheln lassen und den Thymian entfernen.
-4. Sahne zugeben, fein pürieren und mit Salz, Pfeffer und dem restlichen Zitronensaft abschmecken.
-5. Haselnüsse grob hacken, ohne Fett rösten und über die Suppe streuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Topinambur-Suppe mit Haselnüssen', 'Die Knolle mit dem feinen Artischockenaroma als cremige Suppe mit gerösteten Haselnüssen.', 40, 4, 'Portionen', 'Winter', '1. {600 g} Topinambur gründlich schrubben oder schälen. Die Schale ist dünn und kann bei jungen Knollen dranbleiben. In Scheiben schneiden und sofort in eine Schüssel mit Wasser und dem Saft der halben Zitrone legen, sonst werden sie braun.
+2. {2} Schalotten und {150 g} Kartoffeln schälen und würfeln. {2 EL} Butter in einem Topf schmelzen und beides mit {2} Thymianzweigen darin 3 Minuten andünsten. Den abgetropften Topinambur zugeben und kurz mitdünsten.
+3. Mit {800 ml} Gemüsebrühe aufgießen und zugedeckt etwa 20 Minuten köcheln lassen, bis alles weich ist. Den Thymian herausnehmen.
+4. {150 ml} Sahne zugeben und die Suppe sehr fein pürieren. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken.
+5. {30 g} Haselnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften. Über die Suppe streuen.
+
+Tipp: Topinambur ist verwandt mit der Sonnenblume und wächst sogar im eigenen Garten ganz von selbst.
 
 Guten Appetit!', 'topinambur-suppe-mit-haselnuessen.jpg');
 
@@ -4450,11 +4966,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Topinambur-Suppe mit Haselnüssen'), (SELECT id FROM ingredients WHERE name = 'Haselnüsse'), 30, 'g');
 
 -- Schwarzwurzeln in Rahmsoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwarzwurzeln in Rahmsoße', 45, 4, 'Portionen', 'Winter', '1. Wasser mit der Hälfte des Zitronensafts und {1 EL} Mehl verrühren. Schwarzwurzeln mit Handschuhen schälen, in 4 cm lange Stücke schneiden und sofort ins Zitronenwasser legen.
-2. In Salzwasser ca. 15 Minuten bissfest garen und abgießen.
-3. Butter schmelzen, das restliche Mehl darin anschwitzen und unter Rühren mit Brühe und Sahne ablöschen. 5 Minuten köcheln lassen.
-4. Schwarzwurzeln in die Soße geben, mit Salz, Pfeffer, Muskat und restlichem Zitronensaft abschmecken und mit Petersilie bestreuen. Der "Winterspargel" passt gut zu Kartoffeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schwarzwurzeln in Rahmsoße', 'Der „Winterspargel“: zarte Schwarzwurzeln in heller Rahmsoße, mild und fein im Geschmack.', 45, 4, 'Portionen', 'Winter', '1. Eine große Schüssel mit kaltem Wasser füllen und den Saft der halben Zitrone und {1 EL} Mehl einrühren. Das Mehlwasser verhindert, dass die Schwarzwurzeln braun werden.
+2. {1000 g} Schwarzwurzeln mit Einmalhandschuhen unter fließendem Wasser abbürsten und mit einem Sparschäler schälen. Der Milchsaft klebt und färbt die Hände. Die Stangen in 4 cm lange Stücke schneiden und sofort ins Zitronenwasser legen.
+3. Die Schwarzwurzeln in Salzwasser etwa 15 Minuten bissfest garen und abgießen.
+4. {2 EL} Butter in einem Topf schmelzen, das restliche Mehl einrühren und 1 Minute anschwitzen. Unter Rühren mit {250 ml} Gemüsebrühe und {150 ml} Sahne ablöschen und 5 Minuten köcheln lassen, bis die Soße sämig ist.
+5. Die Schwarzwurzeln in die Soße geben und mit Salz, Pfeffer, Muskatnuss und dem restlichen Zitronensaft abschmecken. Mit gehackter Petersilie bestreuen.
+
+Tipp: Passt zu Salzkartoffeln, Kalbsschnitzel oder gebratenem Fisch.
 
 Guten Appetit!', 'schwarzwurzeln-in-rahmsosse.jpg');
 
@@ -4470,12 +4989,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schwarzwurzeln in Rahmsoße'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Feldsalat mit Kartoffeldressing und Speck
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Feldsalat mit Kartoffeldressing und Speck', 30, 4, 'Portionen', 'Winter', '1. Mehligkochende Kartoffel schälen, klein würfeln und in der Brühe weich kochen.
-2. Kartoffel mit der Brühe, Essig, Senf, Zucker, fein gewürfelter Zwiebel und Öl fein pürieren und mit Salz und Pfeffer abschmecken.
-3. Feldsalat gründlich waschen, die Wurzeln abknipsen und trocken schleudern.
-4. Speck würfeln und in einer Pfanne knusprig braten.
-5. Feldsalat mit dem lauwarmen Kartoffeldressing anrichten und mit Speck bestreuen – in Schwaben heißt er Ackersalat.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Feldsalat mit Kartoffeldressing und Speck', 'Zarter Feldsalat mit cremigem, lauwarmem Kartoffeldressing und knusprigem Speck: in Schwaben heißt er Ackersalat.', 30, 4, 'Portionen', 'Winter', '1. {150 g} mehligkochende Kartoffeln schälen, klein würfeln und in {150 ml} Gemüsebrühe etwa 12 Minuten weich kochen.
+2. Die Kartoffeln mit der Brühe, {3 EL} Weißweinessig, {1 TL} Senf, einer Prise Zucker, der fein gewürfelten Zwiebel und {4 EL} Rapsöl fein pürieren. Mit Salz und Pfeffer abschmecken. Das Dressing soll cremig und leicht säuerlich sein.
+3. {200 g} Feldsalat in reichlich kaltem Wasser gründlich waschen, zwischen den Rosetten sitzt oft Sand. Die Wurzelenden abknipsen, die Rosetten aber ganz lassen, und trocken schleudern.
+4. {100 g} Speck würfeln und in einer Pfanne ohne Fett knusprig braten.
+5. Den Feldsalat auf Teller verteilen, mit dem lauwarmen Dressing beträufeln und mit dem Speck bestreuen. Sofort servieren, sonst fällt der Salat zusammen.
+
+Tipp: Ein paar geröstete Brotwürfel machen den Salat noch knuspriger.
 
 Guten Appetit!', 'feldsalat-mit-kartoffeldressing-und-speck.jpg');
 
@@ -4492,12 +5013,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Feldsalat mit Kartoffeldressing und Speck'), (SELECT id FROM ingredients WHERE name = 'Speck'), 100, 'g');
 
 -- Fenchel-Orangen-Salat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Fenchel-Orangen-Salat', 15, 4, 'Portionen', 'Winter', '1. Fenchel putzen, das Grün beiseitelegen und die Knollen in hauchdünne Scheiben hobeln.
-2. Orangen so schälen, dass auch die weiße Haut entfernt wird, und in Scheiben schneiden. Den Saft dabei auffangen.
-3. Zwiebel in feine Ringe schneiden.
-4. Orangensaft, Essig, Öl, Salz und Pfeffer verrühren.
-5. Fenchel, Orangen, Zwiebeln und Oliven anrichten, mit dem Dressing beträufeln und mit Fenchelgrün garnieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Fenchel-Orangen-Salat', 'Frischer Anis, süße Orangen und salzige Oliven: ein sizilianischer Wintersalat voller Sonne.', 15, 4, 'Portionen', 'Winter', '1. {2} Fenchelknollen putzen, das zarte Grün abzupfen und beiseitelegen. Die Knollen halbieren, den harten Strunk herausschneiden und die Hälften mit einem Gemüsehobel in hauchdünne Scheiben hobeln.
+2. {3} Orangen mit einem scharfen Messer so schälen, dass auch die weiße Haut vollständig entfernt wird. Die Orangen quer in Scheiben schneiden und den austretenden Saft dabei auffangen.
+3. Die Zwiebel in feine Ringe schneiden.
+4. Den aufgefangenen Orangensaft mit {1 EL} Weißweinessig, {3 EL} Olivenöl, Salz und Pfeffer verrühren.
+5. Fenchel, Orangen, Zwiebelringe und {50 g} Oliven auf einer Platte anrichten, mit dem Dressing beträufeln und mit dem Fenchelgrün bestreuen. 10 Minuten ziehen lassen.
+
+Tipp: Mit Blutorangen sieht der Salat besonders spektakulär aus.
 
 Guten Appetit!', 'fenchel-orangen-salat.jpg');
 
@@ -4511,12 +5034,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Fenchel-Orangen-Salat'), (SELECT id FROM ingredients WHERE name = 'Oliven'), 50, 'g');
 
 -- Chicorée-Salat mit Mandarinen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chicorée-Salat mit Mandarinen', 15, 4, 'Portionen', 'Winter', '1. Chicorée putzen, den bitteren Strunk keilförmig herausschneiden und die Blätter in Streifen schneiden.
-2. Mandarinen schälen und in Spalten teilen.
-3. Walnüsse grob hacken und ohne Fett rösten.
-4. Essig, Senf, Ahornsirup, Salz und Pfeffer verrühren und das Öl unterschlagen.
-5. Chicorée und Mandarinen mit dem Dressing mischen und mit den Walnüssen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Chicorée-Salat mit Mandarinen', 'Leicht bitter, fruchtig süß und knackig: ein heller Wintersalat mit Mandarinen und gerösteten Walnüssen.', 15, 4, 'Portionen', 'Winter', '1. {3} Chicorée waschen, welke Außenblätter entfernen und den bitteren Strunk mit einem spitzen Messer keilförmig herausschneiden. Die Blätter in breite Streifen schneiden.
+2. {4} Mandarinen schälen, die weißen Fäden entfernen und in Spalten teilen.
+3. {40 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften.
+4. {2 EL} Apfelessig, {1 TL} Senf, {1 TL} Ahornsirup, Salz und Pfeffer verrühren und {3 EL} Rapsöl unterschlagen.
+5. Chicorée und Mandarinen mit dem Dressing mischen und mit den Walnüssen bestreuen. Sofort servieren.
+
+Tipp: Wem der Chicorée zu bitter ist, legt die Streifen 5 Minuten in lauwarmes Wasser.
 
 Guten Appetit!', 'chicoree-salat-mit-mandarinen.jpg');
 
@@ -4531,12 +5056,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Chicorée-Salat mit Mandarinen'), (SELECT id FROM ingredients WHERE name = 'Rapsöl'), 3, 'EL');
 
 -- Überbackener Chicorée mit Schinken
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Überbackener Chicorée mit Schinken', 45, 4, 'Portionen', 'Winter', '1. Ofen auf 200 °C vorheizen. Chicorée putzen und den bitteren Strunk keilförmig herausschneiden.
-2. Chicorée in Salzwasser mit Zitronensaft und einer Prise Zucker 5 Minuten blanchieren und gut abtropfen lassen.
-3. Jeden Kolben mit einer Scheibe Kochschinken umwickeln und in eine Auflaufform legen.
-4. Für die Béchamel die Butter schmelzen, das Mehl darin anschwitzen und unter Rühren die Milch zugießen. 5 Minuten köcheln und mit Salz, Pfeffer und Muskat würzen.
-5. Soße über den Chicorée gießen, mit geriebenem Gouda bestreuen und ca. 25 Minuten goldbraun überbacken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Überbackener Chicorée mit Schinken', 'Chicorée im Schinkenmantel, unter Béchamelsoße und Käse goldbraun überbacken: belgische Hausmannskost.', 45, 4, 'Portionen', 'Winter', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {4} Chicorée waschen und den bitteren Strunk keilförmig herausschneiden, die Kolben dabei ganz lassen.
+2. Reichlich Salzwasser mit dem Saft der halben Zitrone und einer Prise Zucker aufkochen. Den Chicorée darin 5 Minuten blanchieren, herausnehmen und sehr gut abtropfen lassen, am besten auf Küchenpapier ausdrücken. Sonst wird die Soße wässrig.
+3. Jeden Kolben mit einer Scheibe Kochschinken umwickeln und nebeneinander in eine gefettete Auflaufform legen.
+4. Für die Béchamel {30 g} Butter in einem Topf schmelzen, {2 EL} Mehl einrühren und 1 Minute anschwitzen. Unter ständigem Rühren mit dem Schneebesen {400 ml} Milch zugießen und 5 Minuten köcheln lassen, bis die Soße dicklich ist. Mit Salz, Pfeffer und Muskatnuss würzen.
+5. Die Soße über den Chicorée gießen und mit {100 g} geriebenem Gouda bestreuen. Etwa 25 Minuten überbacken, bis die Oberfläche goldbraun ist.
+
+Tipp: Dazu passen Salzkartoffeln oder Kartoffelpüree.
 
 Guten Appetit!', 'ueberbackener-chicoree-mit-schinken.jpg');
 
@@ -4553,12 +5080,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Überbackener Chicorée mit Schinken'), (SELECT id FROM ingredients WHERE name = 'Gouda'), 100, 'g');
 
 -- Rotkohlsalat mit Granatapfel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rotkohlsalat mit Granatapfel', 20, 4, 'Portionen', 'Winter', '1. Rotkohl in sehr feine Streifen hobeln und mit Salz und Essig 3 Minuten kräftig durchkneten.
-2. Apfel entkernen und in feine Stifte schneiden.
-3. Granatapfelkerne auslösen.
-4. Öl, Ahornsirup und Pfeffer unterrühren und Apfel und gehackte Petersilie unterheben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rotkohlsalat mit Granatapfel', 'Knackiger Rotkohl, roh mariniert mit Apfel und Granatapfel: leuchtend, frisch und voller Vitamine für den Winter.', 20, 4, 'Portionen', 'Winter', '1. {400 g} Rotkohl vierteln, den Strunk entfernen und in sehr feine Streifen hobeln. Mit {1 TL} Salz und {3 EL} Apfelessig in einer Schüssel 3 Minuten kräftig mit den Händen durchkneten, bis er weicher wird und Saft zieht.
+2. Den Apfel waschen, entkernen und in feine Stifte schneiden.
+3. Die Kerne aus dem halben Granatapfel lösen: mit der Schnittfläche nach unten über eine Schüssel halten und mit einem Kochlöffel kräftig auf die Schale klopfen.
+4. {3 EL} Rapsöl, {1 EL} Ahornsirup und Pfeffer unter den Rotkohl rühren. Apfel und gehackte Petersilie unterheben.
 5. 10 Minuten ziehen lassen und mit den Granatapfelkernen bestreuen.
+
+Tipp: Ein paar geröstete Walnüsse oder etwas Feta passen wunderbar dazu.
 
 Guten Appetit!', 'rotkohlsalat-mit-granatapfel.jpg');
 
@@ -4573,12 +5102,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rotkohlsalat mit Granatapfel'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Kartoffelgratin
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelgratin', 75, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Eine Auflaufform mit der halbierten Knoblauchzehe ausreiben und mit Butter fetten.
-2. Kartoffeln schälen und in 2–3 mm dünne Scheiben hobeln.
-3. Sahne und Milch mit Salz, Pfeffer und Muskat aufkochen. Kartoffelscheiben zugeben und 5 Minuten unter vorsichtigem Rühren köcheln – die Stärke bindet die Soße.
-4. Alles in die Form geben, glatt streichen und mit geriebenem Käse bestreuen.
-5. Ca. 50 Minuten goldbraun backen und vor dem Servieren 5 Minuten ruhen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kartoffelgratin', 'Hauchdünne Kartoffelscheiben in Knoblauchsahne, goldbraun überbacken: das Gratin Dauphinois, die schönste Beilage zu Braten und Fisch.', 75, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Knoblauchzehe halbieren und eine Auflaufform kräftig damit ausreiben. Die Form mit {1 EL} Butter fetten.
+2. {1000 g} festkochende Kartoffeln schälen und mit einem Gemüsehobel in 2–3 mm dünne Scheiben hobeln. Nicht waschen, die Stärke wird gebraucht.
+3. {200 ml} Sahne und {200 ml} Milch mit Salz, Pfeffer und Muskatnuss in einem großen Topf aufkochen. Die Kartoffelscheiben zugeben und unter vorsichtigem Rühren 5 Minuten köcheln lassen. Die Stärke bindet dabei die Soße, und das Gratin wird später sicher gar.
+4. Alles in die Form geben, die Scheiben glatt streichen und mit {80 g} geriebenem Bergkäse bestreuen.
+5. Etwa 50 Minuten backen, bis die Oberfläche goldbraun ist und sich die Kartoffeln mit einem Messer ganz leicht einstechen lassen. Wird es zu schnell braun, mit Alufolie abdecken.
+6. Vor dem Servieren 5 Minuten ruhen lassen, dann zieht die Soße noch etwas an.
+
+Tipp: Das Gratin lässt sich gut vorbereiten und vor dem Servieren noch einmal 15 Minuten aufwärmen.
 
 Guten Appetit!', 'kartoffelgratin.jpg');
 
@@ -4593,12 +5125,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kartoffelgratin'), (SELECT id FROM ingredients WHERE name = 'Bergkäse'), 80, 'g');
 
 -- Käsespätzle mit Röstzwiebeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käsespätzle mit Röstzwiebeln', 50, 4, 'Portionen', 'Winter', '1. Mehl, Eier, {1 TL} Salz und ca. {150 ml} Wasser mit einem Kochlöffel zu einem zähen Teig schlagen, bis er Blasen wirft. 10 Minuten ruhen lassen.
-2. Zwiebeln in feine Ringe schneiden und in {2 EL} Butter bei mittlerer Hitze langsam goldbraun und knusprig rösten.
-3. Käse reiben und mischen. Ofen auf 100 °C vorheizen.
-4. Teig portionsweise in siedendes Salzwasser schaben oder pressen. Spätzle abschöpfen, sobald sie oben schwimmen, und abwechselnd mit Käse, Pfeffer und etwas Muskat in eine gebutterte, vorgewärmte Form schichten. Zwischendurch im Ofen warm halten.
-5. Mit Röstzwiebeln und Schnittlauch servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Käsespätzle mit Röstzwiebeln', 'Allgäuer Seelenfutter: handgeschabte Spätzle, Schicht um Schicht mit würzigem Bergkäse, und obendrauf knusprige Röstzwiebeln.', 50, 4, 'Portionen', 'Winter', '1. {400 g} Mehl, {4} Eier, {1 TL} Salz und etwa {150 ml} Wasser in einer Schüssel mit einem Kochlöffel kräftig zu einem zähen, glatten Teig schlagen, bis er Blasen wirft und sich vom Löffel zieht. 10 Minuten ruhen lassen.
+2. Inzwischen {3} Zwiebeln in feine Ringe schneiden. In {2 EL} Butter bei mittlerer Hitze etwa 15 Minuten langsam goldbraun und knusprig rösten. Auf Küchenpapier abtropfen lassen.
+3. {200 g} Bergkäse und {100 g} Emmentaler reiben und mischen. Den Ofen auf 100 °C vorheizen und eine Auflaufform mit der restlichen Butter fetten und im Ofen vorwärmen.
+4. Reichlich Salzwasser aufkochen. Den Teig portionsweise vom nassen Brett ins siedende Wasser schaben oder durch eine Spätzlepresse drücken. Sobald die Spätzle oben schwimmen, mit einer Schaumkelle herausheben, kurz abtropfen lassen und in die Form geben.
+5. Jede Lage Spätzle sofort mit Käse bestreuen, etwas Pfeffer und Muskatnuss darüber, und die Form zwischendurch im Ofen warm halten, damit der Käse schmilzt. So weiter schichten, bis Teig und Käse aufgebraucht sind.
+6. Die Röstzwiebeln obenauf verteilen und mit Schnittlauchröllchen bestreuen. Direkt aus der Form servieren.
+
+Tipp: Dazu gehört ein grüner Salat mit kräftiger Vinaigrette.
 
 Guten Appetit!', 'kaesespaetzle-mit-roestzwiebeln.jpg');
 
@@ -4614,12 +5149,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Käsespätzle mit Röstzwiebeln'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Raclette mit Pellkartoffeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Raclette mit Pellkartoffeln', 45, 4, 'Portionen', 'Winter', '1. Kleine Kartoffeln mit Schale ca. 20 Minuten garen und warm halten.
-2. Champignons in Scheiben und Paprika in Streifen schneiden. Gurken abtropfen lassen.
-3. Raclettekäse in Scheiben schneiden.
-4. Am Tisch Käse und Gemüse in Pfännchen unter dem Raclettegrill schmelzen bzw. garen und über die Kartoffeln geben.
-5. Mit frisch gemahlenem Pfeffer und Paprikapulver würzen und mit den Gurken servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Raclette mit Pellkartoffeln', 'Geschmolzener Käse über heißen Kartoffeln, gemeinsam am Tisch: das gemütlichste Essen für lange Winterabende.', 45, 4, 'Portionen', 'Winter', '1. {1000 g} kleine Kartoffeln waschen und mit Schale in Salzwasser etwa 20 Minuten garen. In einer Schüssel mit einem Küchentuch abgedeckt oder auf dem Raclettegrill warm halten.
+2. {200 g} Champignons in Scheiben, die Paprika in Streifen schneiden. {200 g} Gewürzgurken abtropfen lassen und in Scheiben schneiden. Alles in kleinen Schalen auf den Tisch stellen.
+3. {800 g} Raclettekäse in Scheiben schneiden, die in die Pfännchen passen.
+4. Den Raclettegrill auf dem Tisch anheizen. Jeder belegt sein Pfännchen mit Käse und nach Belieben mit Gemüse und lässt alles unter dem Grill schmelzen, bis der Käse blubbert und leicht braun wird.
+5. Den Käse über die Kartoffeln schaben, mit frisch gemahlenem Pfeffer und etwas Paprikapulver würzen und mit den Gurken essen.
+
+Tipp: Raclettekäse eine halbe Stunde vor dem Essen aus dem Kühlschrank nehmen, dann schmilzt er gleichmäßiger.
 
 Guten Appetit!', 'raclette-mit-pellkartoffeln.jpg');
 
@@ -4632,12 +5169,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Raclette mit Pellkartoffeln'), (SELECT id FROM ingredients WHERE name = 'Paprikapulver'), 1, 'TL');
 
 -- Käsefondue
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käsefondue', 30, 4, 'Portionen', 'Winter', '1. Käse grob reiben. Den Fonduetopf (Caquelon) mit der halbierten Knoblauchzehe ausreiben.
-2. Weißwein und Zitronensaft im Topf erhitzen. Den Käse nach und nach unter ständigem Rühren in Form einer Acht schmelzen lassen, nicht kochen.
-3. Stärke mit dem Kirschwasser glatt rühren, einrühren und kurz aufwallen lassen, bis das Fondue cremig bindet.
-4. Mit Pfeffer und Muskat würzen und auf dem Rechaud am Tisch warm halten.
-5. Baguette mit Kruste in Würfel schneiden und auf Fonduegabeln in den Käse tunken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Käsefondue', 'Cremig geschmolzener Käse mit Weißwein und Kirschwasser, in den man Brot tunkt: das Schweizer Gemeinschaftsessen schlechthin.', 30, 4, 'Portionen', 'Winter', '1. {400 g} Bergkäse und {400 g} Emmentaler grob reiben. Den Fonduetopf (Caquelon) mit der halbierten Knoblauchzehe kräftig ausreiben.
+2. {300 ml} Weißwein und den Saft der halben Zitrone im Topf auf dem Herd erhitzen, bis er dampft. Die Säure verhindert, dass der Käse fädig wird.
+3. Den Käse handvollweise zugeben und bei mittlerer Hitze unter ständigem Rühren in Form einer Acht schmelzen lassen. Erst die nächste Portion zugeben, wenn die vorige geschmolzen ist. Das Fondue darf nicht kochen.
+4. {2 TL} Speisestärke mit {40 ml} Kirschwasser glatt rühren, einrühren und kurz aufwallen lassen, bis das Fondue cremig bindet. Mit Pfeffer und Muskatnuss würzen.
+5. Den Topf auf das Rechaud am Tisch stellen und bei kleiner Flamme warm halten.
+6. {2} Baguettes so in Würfel schneiden, dass jedes Stück etwas Kruste hat. Mit Fonduegabeln in den Käse tunken und dabei umrühren, damit sich nichts absetzt.
+
+Tipp: Wer sein Brot im Topf verliert, muss in der Schweiz traditionell eine Runde ausgeben. Die Kruste am Topfboden, „la religieuse“, ist das Beste zum Schluss.
 
 Guten Appetit!', 'kaesefondue.jpg');
 
@@ -4653,13 +5193,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Käsefondue'), (SELECT id FROM ingredients WHERE name = 'Baguette'), 2, NULL);
 
 -- Bratapfel mit Marzipan und Vanillesoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bratapfel mit Marzipan und Vanillesoße', 45, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Rosinen in Rum einweichen.
-2. Äpfel (am besten Boskop) waschen, das Kerngehäuse großzügig ausstechen und die Äpfel in eine gefettete Form setzen.
-3. Marzipan zerbröseln und mit Rosinen, gehackten Mandeln und Zimt verkneten. Äpfel damit füllen und je ein Butterflöckchen daraufsetzen.
-4. Ca. 30 Minuten backen, bis die Äpfel weich sind und die Schale aufplatzt.
-5. Für die Vanillesoße die Milch mit Vanillemark, Schote und Zucker aufkochen. Stärke mit dem Eigelb und etwas Milch glatt rühren, einrühren und unter Rühren aufkochen.
-6. Bratäpfel mit der warmen Vanillesoße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bratapfel mit Marzipan und Vanillesoße', 'Weiche, duftende Äpfel mit Marzipan-Rosinen-Füllung und warmer Vanillesoße: der Geschmack von Advent.', 45, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. {30 g} Rosinen in {2 EL} Rum einweichen.
+2. {4} säuerliche Äpfel, am besten Boskoop, waschen und das Kerngehäuse mit einem Apfelausstecher großzügig herausstechen. Die Äpfel in eine gefettete Auflaufform setzen.
+3. {80 g} Marzipanrohmasse zerbröseln. {30 g} Mandeln grob hacken. Marzipan, Rosinen, Mandeln und {1 TL} Zimt mit den Fingern verkneten und fest in die Äpfel drücken. Je ein Flöckchen von {20 g} Butter daraufsetzen.
+4. Etwa 30 Minuten backen, bis die Äpfel weich sind und die Schale aufplatzt.
+5. Für die Vanillesoße die Vanilleschote längs aufschneiden und das Mark herauskratzen. Von {400 ml} Milch 4 EL beiseitestellen, den Rest mit Vanillemark, Schote und {40 g} Zucker aufkochen. Die Schote herausnehmen.
+6. {1} Ei trennen. Das Eigelb mit {20 g} Speisestärke und der restlichen kalten Milch glatt rühren. In die heiße Milch rühren und unter Rühren einmal kurz aufkochen, bis die Soße bindet. Die Bratäpfel mit der warmen Vanillesoße servieren.
+
+Tipp: Statt Vanillesoße passt auch eine Kugel Vanilleeis, die auf dem heißen Apfel schmilzt.
 
 Guten Appetit!', 'bratapfel-mit-marzipan-und-vanillesosse.jpg');
 
@@ -4677,11 +5219,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bratapfel mit Marzipan und Vanillesoße'), (SELECT id FROM ingredients WHERE name = 'Ei'), 1, NULL);
 
 -- Glühwein
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Glühwein', 20, 6, 'Tassen', 'Winter', '1. Orange und Zitrone heiß waschen und in Scheiben schneiden.
-2. Rotwein mit Zucker, Zitrusscheiben und allen Gewürzen in einen Topf geben.
-3. Langsam erhitzen und bei kleinster Hitze 15 Minuten ziehen lassen. Nicht kochen, sonst verfliegt der Alkohol und der Wein wird bitter.
-4. Durch ein Sieb in Tassen gießen und heiß servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Glühwein', 'Heißer Rotwein mit Orange, Zimt und Sternanis: der Duft des Weihnachtsmarkts für die eigene Küche.', 20, 6, 'Tassen', 'Winter', '1. Die Orange und die halbe Zitrone heiß waschen und in Scheiben schneiden.
+2. {1000 ml} Rotwein mit {60 g} Zucker, den Zitrusscheiben, {2} Zimtstangen, {4} Gewürznelken, {2} Sternanis und {3} leicht angedrückten Kardamomkapseln in einen Topf geben.
+3. Langsam erhitzen und bei kleinster Hitze 15 Minuten ziehen lassen. Der Wein darf nicht kochen, sonst verfliegt der Alkohol und er wird bitter. Er sollte gerade dampfen.
+4. Abschmecken und nach Belieben nachsüßen. Durch ein Sieb in vorgewärmte Tassen gießen und heiß servieren.
+
+Tipp: Ein fruchtiger, nicht zu teurer Rotwein ist ideal. Mit einem Schuss Rum wird daraus Glühwein mit Schuss.
 
 Zum Wohl!', 'gluehwein.jpg');
 
@@ -4695,11 +5239,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Glühwein'), (SELECT id FROM ingredients WHERE name = 'Kardamom'), 3, 'Kapsel');
 
 -- Kinderpunsch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kinderpunsch', 20, 6, 'Tassen', 'Winter', '1. {500 ml} Wasser aufkochen, die Teebeutel darin 8 Minuten ziehen lassen und dann entfernen.
-2. Apfel- und Orangensaft, Orangenscheiben und Gewürze zugeben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kinderpunsch', 'Warm, fruchtig und weihnachtlich gewürzt: der Punsch, bei dem die ganze Familie mittrinken kann.', 20, 6, 'Tassen', 'Winter', '1. {500 ml} Wasser aufkochen und über {4} Beutel Früchtetee gießen. 8 Minuten ziehen lassen und die Beutel herausnehmen.
+2. Den Tee mit {500 ml} Apfelsaft und {500 ml} Orangensaft in einen Topf geben. Die Orange heiß waschen, in Scheiben schneiden und mit {2} Zimtstangen, {3} Gewürznelken und dem Sternanis zugeben.
 3. Bei kleiner Hitze 10 Minuten ziehen lassen, nicht kochen.
-4. Mit Agavendicksaft süßen und heiß servieren.
+4. Mit {3 EL} Agavendicksaft süßen, abschmecken und heiß in Tassen servieren.
+
+Tipp: Ein paar Apfelstücke oder ein Spritzer Zitrone machen den Punsch noch frischer.
 
 Zum Wohl!', 'kinderpunsch.jpg');
 
@@ -4713,13 +5259,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kinderpunsch'), (SELECT id FROM ingredients WHERE name = 'Agavendicksaft'), 3, 'EL');
 
 -- Christstollen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Christstollen', 360, 2, 'Stollen', 'Winter', '1. Rosinen, Orangeat und Zitronat mit Rum mischen und zugedeckt mindestens 2 Stunden, besser über Nacht, durchziehen lassen.
-2. Hefe in lauwarmer Milch mit {1 TL} Zucker auflösen, mit {200 g} Mehl verrühren und 20 Minuten gehen lassen.
-3. Restliches Mehl, Zucker, Salz, Zitronenabrieb, Lebkuchengewürz und {400 g} weiche Butter zum Vorteig geben und zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-4. Rumfrüchte und gehackte Mandeln rasch unterkneten. Teig in {2} Portionen teilen, jeweils zu einem Oval ausrollen, eine Längsseite überklappen und zur typischen Stollenform drücken. Nochmals 30 Minuten gehen lassen.
-5. Bei 180 °C ca. 60 Minuten backen. Restliche Butter schmelzen, die heißen Stollen großzügig damit bestreichen und dick mit Puderzucker und Vanillezucker bestreuen.
-6. Abgekühlt in Folie wickeln und kühl lagern. Nach 2–3 Wochen Ruhezeit schmeckt er am besten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Christstollen', 'Buttrig, voller Rumfrüchte und dick mit Puderzucker: der Weihnachtsstollen, der Wochen vor dem Fest gebacken wird.', 360, 2, 'Stollen', 'Winter', '1. {400 g} Rosinen, {100 g} Orangeat und {100 g} Zitronat mit {100 ml} Rum mischen und zugedeckt mindestens 2 Stunden, besser über Nacht, durchziehen lassen.
+2. {250 ml} Milch lauwarm erwärmen. {84 g} frische Hefe hineinbröckeln und mit {1 TL} Zucker auflösen. Mit {200 g} Mehl zu einem Vorteig verrühren und abgedeckt 20 Minuten gehen lassen, bis er Blasen wirft.
+3. Das restliche Mehl, den restlichen Zucker, {1 TL} Salz, die abgeriebene Schale der Zitrone, {1 TL} Lebkuchengewürz und {400 g} weiche Butter zum Vorteig geben. Alles 10 Minuten zu einem glatten, geschmeidigen Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+4. {150 g} Mandeln grob hacken. Rumfrüchte und Mandeln mit den Händen rasch unterkneten, nur so lange, bis sie verteilt sind, sonst wird der Teig grau. Den Teig in {2} Portionen teilen. Jede zu einem Oval von etwa 30 cm Länge ausrollen, in der Mitte mit dem Nudelholz eine Mulde eindrücken und eine Längsseite überklappen. Das gibt die typische Stollenform. Auf ein Blech mit Backpapier legen und noch einmal 30 Minuten gehen lassen.
+5. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Stollen etwa 60 Minuten backen. Herausstehende Rosinen vorher in den Teig drücken, sie verbrennen sonst.
+6. Die restliche Butter schmelzen. Die heißen Stollen großzügig damit bestreichen, bis die Butter aufgesogen ist. {150 g} Puderzucker mit dem Vanillezucker mischen und die Stollen dick damit bestreuen.
+7. Vollständig abkühlen lassen, in Frischhaltefolie und Alufolie wickeln und kühl lagern. Nach 2–3 Wochen hat sich das Aroma voll entfaltet.
+
+Tipp: Vor dem Anschneiden noch einmal mit Puderzucker bestäuben. Immer von der Mitte aus schneiden und die Hälften zusammenschieben, so bleibt er saftig.
 
 Guten Appetit!', 'christstollen.jpg');
 
@@ -4740,11 +5289,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Christstollen'), (SELECT id FROM ingredients WHERE name = 'Vanillezucker'), 2, 'Pck.');
 
 -- Vanillekipferl
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vanillekipferl', 120, 60, 'Stück', 'Winter', '1. Eier trennen. Mehl, Mandeln, Zucker, Salz, das Mark der Vanilleschote, kalte Butterwürfel und die Eigelbe rasch zu einem glatten Teig verkneten. In Folie 1 Stunde kühlen.
-2. Ofen auf 175 °C vorheizen. Teig portionsweise zu fingerdicken Rollen formen, in 3 cm lange Stücke schneiden und zu kleinen Hörnchen biegen.
-3. Auf Backbleche mit Backpapier legen und 10–12 Minuten hellgelb backen – sie sollen nicht braun werden.
-4. Puderzucker und Vanillezucker mischen und die noch warmen Kipferl vorsichtig darin wälzen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Vanillekipferl', 'Zarte, mürbe Hörnchen aus Mandelteig, in Vanillezucker gewälzt: die Königin der Weihnachtsplätzchen.', 120, 60, 'Stück', 'Winter', '1. {2} Eier trennen, die Eiweiße werden nicht gebraucht. {250 g} Mehl, {100 g} gemahlene Mandeln, {80 g} Zucker, eine Prise Salz und das Mark der Vanilleschote mischen. {200 g} kalte Butter in Würfeln und die Eigelbe zugeben und alles rasch zu einem glatten Teig verkneten. Zu lange kneten macht ihn brüchig. In Folie gewickelt 1 Stunde kühlen.
+2. Den Ofen auf 175 °C Ober-/Unterhitze vorheizen. Den Teig portionsweise zu fingerdicken Rollen formen und in 3 cm lange Stücke schneiden. Jedes Stück zwischen den Handflächen zu einer an den Enden dünneren Rolle formen und zu einem Hörnchen biegen.
+3. Die Kipferl mit etwas Abstand auf Bleche mit Backpapier legen und 10–12 Minuten backen. Sie sollen hellgelb bleiben und nur an den Spitzen leicht Farbe nehmen.
+4. {100 g} Puderzucker mit dem Vanillezucker in einem tiefen Teller mischen. Die Kipferl 2 Minuten abkühlen lassen und noch warm vorsichtig darin wälzen. Warm sind sie zerbrechlich, aber nur so haftet der Zucker.
+
+Tipp: In einer Blechdose halten sie sich mehrere Wochen und werden mit der Zeit noch zarter.
 
 Guten Appetit!', 'vanillekipferl.jpg');
 
@@ -4759,12 +5310,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Vanillekipferl'), (SELECT id FROM ingredients WHERE name = 'Vanillezucker'), 3, 'Pck.');
 
 -- Zimtsterne
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zimtsterne', 90, 40, 'Stück', 'Winter', '1. Eier trennen und die Eigelbe anderweitig verwenden. Eiweiße mit Salz steif schlagen, Puderzucker einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht.
-2. {5 EL} Eischnee für die Glasur abnehmen und beiseitestellen.
-3. Restlichen Eischnee mit Mandeln und Zimt zu einem formbaren Teig verkneten. Falls er klebt, noch etwas Mandeln zugeben. 30 Minuten kühlen.
-4. Teig zwischen Frischhaltefolie 1 cm dick ausrollen, Sterne ausstechen (den Ausstecher immer wieder in Wasser tauchen) und auf Backpapier legen. Ofen auf 140 °C vorheizen.
-5. Sterne mit dem beiseitegestellten Eischnee bestreichen und ca. 10–12 Minuten backen – die Glasur soll weiß bleiben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zimtsterne', 'Saftige Mandelsterne mit Zimt unter einer schneeweißen Glasur: ein Klassiker, der ganz ohne Mehl auskommt.', 90, 40, 'Stück', 'Winter', '1. {3} Eier sehr sauber trennen, die Eigelbe werden nicht gebraucht. Die Eiweiße mit einer Prise Salz steif schlagen. {250 g} Puderzucker nach und nach einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht.
+2. {5 EL} Eischnee für die Glasur abnehmen und abgedeckt beiseitestellen.
+3. Den restlichen Eischnee mit {300 g} gemahlenen Mandeln und {2 TL} Zimt zu einem formbaren Teig verkneten. Klebt er zu sehr, noch etwas Mandeln zugeben. In Folie 30 Minuten kühlen.
+4. Den Teig zwischen zwei Lagen Frischhaltefolie etwa 1 cm dick ausrollen. Sterne ausstechen und den Ausstecher dabei immer wieder in Wasser tauchen, dann klebt nichts. Auf Bleche mit Backpapier legen. Den Ofen auf 140 °C Ober-/Unterhitze vorheizen.
+5. Die Sterne mit einem Pinsel oder Messer dünn mit dem beiseitegestellten Eischnee bestreichen, auch bis in die Spitzen.
+6. 10–12 Minuten backen. Die Glasur soll weiß bleiben und die Sterne innen noch weich sein, sie werden beim Abkühlen fester.
+
+Tipp: In einer Dose mit einem Apfelschnitz bleiben Zimtsterne lange saftig.
 
 Guten Appetit!', 'zimtsterne.jpg');
 
@@ -4775,12 +5329,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zimtsterne'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 2, 'TL');
 
 -- Spritzgebäck
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spritzgebäck', 60, 60, 'Stück', 'Winter', '1. Weiche Butter mit Zucker, Vanillezucker und Salz cremig rühren und das Ei unterrühren.
-2. Mehl und Mandeln mischen und unterkneten.
-3. Teig portionsweise in einen Fleischwolf mit Spritzgebäckaufsatz oder einen stabilen Spritzbeutel mit Sterntülle füllen und Stangen, Ringe oder S-Formen auf Backbleche spritzen.
-4. Bei 180 °C ca. 10–12 Minuten goldgelb backen und abkühlen lassen.
-5. Schokolade schmelzen und die Enden des Gebäcks eintauchen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spritzgebäck', 'Buttrige Kringel und Stangen, mit dem Fleischwolf gespritzt und in Schokolade getaucht: Plätzchen wie aus Omas Dose.', 60, 60, 'Stück', 'Winter', '1. {250 g} weiche Butter mit {125 g} Zucker, dem Vanillezucker und einer Prise Salz mit dem Handrührgerät cremig rühren. Das Ei unterrühren.
+2. {375 g} Mehl und {125 g} gemahlene Mandeln mischen und mit den Knethaken oder den Händen unterkneten, bis ein glatter Teig entsteht. Er soll weich genug zum Spritzen, aber nicht klebrig sein.
+3. Den Teig portionsweise in einen Fleischwolf mit Spritzgebäckaufsatz oder in einen stabilen Spritzbeutel mit großer Sterntülle füllen. Stangen, Ringe oder S-Formen auf Bleche mit Backpapier spritzen.
+4. Im vorgeheizten Ofen bei 180 °C Ober-/Unterhitze 10–12 Minuten goldgelb backen und auf einem Gitter abkühlen lassen.
+5. {100 g} Zartbitterschokolade über einem Wasserbad schmelzen. Die Enden des Gebäcks hineintauchen, abstreifen und auf Backpapier fest werden lassen.
+
+Tipp: Ist der Teig zu fest zum Spritzen, ihn ein paar Minuten in der warmen Hand kneten.
 
 Guten Appetit!', 'spritzgebaeck.jpg');
 
@@ -4794,13 +5350,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spritzgebäck'), (SELECT id FROM ingredients WHERE name = 'Zartbitterschokolade'), 100, 'g');
 
 -- Elisenlebkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Elisenlebkuchen', 90, 25, 'Stück', 'Winter', '1. Ofen auf 160 °C vorheizen. Orangeat und Zitronat sehr fein hacken.
-2. Eier mit Zucker und Honig 5 Minuten dickcremig aufschlagen.
-3. Nüsse, Mandeln, Orangeat, Zitronat, Lebkuchengewürz, Backpulver, Zitronenabrieb und Salz unterheben.
-4. Masse ca. 1 cm hoch auf die Oblaten (Ø 7 cm) streichen, dabei einen schmalen Rand frei lassen, und auf Backbleche setzen.
-5. Ca. 20–25 Minuten backen – sie sollen innen noch saftig sein. Abkühlen lassen.
-6. Schokolade schmelzen und die Lebkuchen damit überziehen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Elisenlebkuchen', 'Die feinsten Lebkuchen aus Nürnberg: saftig, nussig und mit Schokolade überzogen, fast ganz ohne Mehl.', 90, 25, 'Stück', 'Winter', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {50 g} Orangeat und {50 g} Zitronat sehr fein hacken.
+2. {3} Eier mit {150 g} braunem Zucker und {50 g} Honig mit dem Handrührgerät 5 Minuten dickcremig aufschlagen.
+3. {200 g} gemahlene Haselnüsse, {200 g} gemahlene Mandeln, Orangeat, Zitronat, {2 TL} Lebkuchengewürz, {0.5 TL} Backpulver, die abgeriebene Schale der Zitrone und eine Prise Salz mit einem Teigschaber unterheben.
+4. Die Masse mit einem nassen Messer etwa 1 cm hoch auf {25} Backoblaten (7 cm) streichen und dabei einen schmalen Rand frei lassen. Auf Bleche mit Backpapier setzen.
+5. 20–25 Minuten backen. Sie sollen sich an der Oberfläche fest anfühlen, innen aber noch saftig sein. Auf einem Gitter abkühlen lassen.
+6. {150 g} Zartbitterschokolade über einem Wasserbad schmelzen und die Lebkuchen damit überziehen. Fest werden lassen.
+
+Tipp: In einer Blechdose mit einem Stück Apfel werden die Lebkuchen nach ein paar Tagen noch weicher.
 
 Guten Appetit!', 'elisenlebkuchen.jpg');
 
@@ -4819,12 +5377,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Elisenlebkuchen'), (SELECT id FROM ingredients WHERE name = 'Zartbitterschokolade'), 150, 'g');
 
 -- Butterplätzchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Butterplätzchen', 120, 60, 'Stück', 'Winter', '1. Mehl, kalte Butter, Zucker, Vanillezucker, {1} Ei und Salz rasch zu einem Mürbeteig verkneten und 1 Stunde kühlen.
-2. Ofen auf 180 °C vorheizen. Teig portionsweise auf wenig Mehl 3 mm dünn ausrollen und Motive ausstechen.
-3. Auf Backbleche mit Backpapier legen und nach Belieben mit dem verquirlten Eigelb des restlichen Eis bestreichen.
-4. 8–10 Minuten hellgoldbraun backen und auskühlen lassen.
-5. Puderzucker mit etwas Zitronensaft zu einem dicken Guss verrühren und die Plätzchen damit verzieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Butterplätzchen', 'Einfache, mürbe Ausstechplätzchen mit Zuckerguss: das Backvergnügen für die ganze Familie in der Adventszeit.', 120, 60, 'Stück', 'Winter', '1. {300 g} Mehl, {200 g} kalte Butter in Würfeln, {100 g} Zucker, den Vanillezucker, {1} Ei und eine Prise Salz rasch zu einem glatten Mürbeteig verkneten. Flach drücken, in Folie wickeln und 1 Stunde kühlen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Den Teig portionsweise auf wenig Mehl etwa 3 mm dünn ausrollen und Motive ausstechen. Den restlichen Teig dabei kühl halten, warm wird er klebrig.
+3. Die Plätzchen auf Bleche mit Backpapier legen. Das zweite Ei trennen, das Eigelb verquirlen und die Plätzchen nach Belieben damit bestreichen, dann glänzen sie goldgelb.
+4. 8–10 Minuten hellgoldbraun backen und auf einem Gitter auskühlen lassen.
+5. {150 g} Puderzucker mit wenig Zitronensaft zu einem dicken, glatten Guss verrühren und die Plätzchen damit verzieren.
+
+Tipp: Bunte Streusel oder Lebensmittelfarbe im Guss machen das Verzieren mit Kindern zum Fest.
 
 Guten Appetit!', 'butterplaetzchen.jpg');
 
@@ -4838,12 +5398,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Butterplätzchen'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 0.5, NULL);
 
 -- Kokosmakronen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kokosmakronen', 45, 30, 'Stück', 'Winter', '1. Ofen auf 150 °C vorheizen. Eier trennen und die Eigelbe anderweitig verwenden.
-2. Eiweiße mit Salz steif schlagen, Zucker und Vanillezucker einrieseln lassen und weiterschlagen, bis die Masse glänzt.
-3. Kokosraspeln vorsichtig unterheben.
-4. Mit zwei Teelöffeln kleine Häufchen auf ein mit Backpapier belegtes Blech setzen.
-5. Ca. 20–25 Minuten backen, bis die Spitzen leicht gebräunt sind, und auf dem Blech abkühlen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kokosmakronen', 'Außen leicht knusprig, innen weich und saftig: Kokosmakronen aus nur wenigen Zutaten.', 45, 30, 'Stück', 'Winter', '1. Den Ofen auf 150 °C Ober-/Unterhitze vorheizen. {3} Eier sehr sauber trennen, die Eigelbe werden nicht gebraucht.
+2. Die Eiweiße mit einer Prise Salz in einer fettfreien Schüssel steif schlagen. {200 g} Zucker und den Vanillezucker langsam einrieseln lassen und weiterschlagen, bis die Masse fest ist und glänzt.
+3. {200 g} Kokosraspeln mit einem Teigschaber vorsichtig unterheben.
+4. Mit zwei Teelöffeln kleine Häufchen mit etwas Abstand auf ein mit Backpapier belegtes Blech setzen. Wer mag, legt sie auf Backoblaten.
+5. Etwa 20–25 Minuten backen, bis die Spitzen leicht gebräunt sind. Auf dem Blech abkühlen lassen, warm sind sie noch weich.
+
+Tipp: Die Böden in geschmolzene Zartbitterschokolade tauchen, das schmeckt besonders gut.
 
 Guten Appetit!', 'kokosmakronen.jpg');
 
@@ -4854,11 +5416,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kokosmakronen'), (SELECT id FROM ingredients WHERE name = 'Kokosraspeln'), 200, 'g');
 
 -- Gebrannte Mandeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebrannte Mandeln', 25, 300, 'g', 'Winter', '1. Zucker, Vanillezucker, Zimt und {100 ml} Wasser in einer beschichteten Pfanne aufkochen.
-2. Mandeln zugeben und unter ständigem Rühren köcheln lassen, bis das Wasser verdampft ist und der Zucker trocken und krümelig an den Mandeln haftet.
-3. Hitze reduzieren und weiterrühren, bis der Zucker wieder schmilzt und die Mandeln glänzend überzieht.
-4. Sofort auf Backpapier geben, mit zwei Gabeln voneinander trennen und abkühlen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gebrannte Mandeln', 'Süß, knackig und nach Zimt duftend: Gebrannte Mandeln wie vom Weihnachtsmarkt, frisch aus der eigenen Pfanne.', 25, 300, 'g', 'Winter', '1. {125 g} Zucker, den Vanillezucker, {1 TL} Zimt und {100 ml} Wasser in einer beschichteten Pfanne aufkochen.
+2. {200 g} Mandeln zugeben und bei mittlerer Hitze unter ständigem Rühren köcheln lassen, bis das Wasser verdampft ist. Der Zucker wird dann trocken und krümelig und haftet als weiße Kruste an den Mandeln. Weiterrühren!
+3. Die Hitze etwas reduzieren und weiterrühren, bis der Zucker wieder schmilzt, karamellisiert und die Mandeln glänzend überzieht. Das dauert ein paar Minuten.
+4. Die Mandeln sofort auf ein Backpapier geben und mit zwei Gabeln voneinander trennen, bevor der Zucker fest wird. Abkühlen lassen.
+
+Tipp: Die Pfanne gleich danach mit heißem Wasser einweichen, dann löst sich der Zucker von allein.
 
 Guten Appetit!', 'gebrannte-mandeln.jpg');
 
@@ -4868,11 +5432,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gebrannte Mandeln'), (SELECT id FROM ingredients WHERE name = 'Mandeln'), 200, 'g');
 
 -- Bratwurst mit Sauerkraut und Kartoffelpüree
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bratwurst mit Sauerkraut und Kartoffelpüree', 50, 4, 'Portionen', 'Winter', '1. Zwiebel würfeln und in {1 EL} Butterschmalz glasig dünsten. Sauerkraut, geriebenen Apfel, Lorbeer, Wacholder, Zucker und Brühe zugeben und zugedeckt 30 Minuten schmoren.
-2. Kartoffeln schälen und in Salzwasser 20 Minuten garen. Abgießen und mit heißer Milch und Butter zu Püree stampfen. Mit Salz und Muskat würzen.
-3. Bratwürste im restlichen Butterschmalz bei mittlerer Hitze rundherum 10–12 Minuten braten.
-4. Sauerkraut mit Salz und Pfeffer abschmecken und mit Bratwurst und Püree servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bratwurst mit Sauerkraut und Kartoffelpüree', 'Ehrliche deutsche Küche: knusprige Bratwurst, mild geschmortes Sauerkraut mit Apfel und cremiges Kartoffelpüree.', 50, 4, 'Portionen', 'Winter', '1. Die Zwiebel würfeln. {1 EL} Butterschmalz in einem Topf erhitzen und die Zwiebel darin glasig dünsten. {800 g} Sauerkraut, den geriebenen Apfel, das Lorbeerblatt, {4} Wacholderbeeren, {1 TL} Zucker und {200 ml} Gemüsebrühe zugeben. Zugedeckt bei schwacher Hitze 30 Minuten schmoren. Der Apfel macht das Kraut milder.
+2. Inzwischen {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen, kurz ausdampfen lassen und mit {200 ml} heißer Milch und {50 g} Butter zu einem cremigen Püree stampfen. Mit Salz und Muskatnuss würzen.
+3. {8} Bratwürste im restlichen Butterschmalz bei mittlerer Hitze rundherum 10–12 Minuten braten, bis sie gleichmäßig gebräunt sind. Bei zu starker Hitze platzen sie.
+4. Das Sauerkraut mit Salz und Pfeffer abschmecken und mit Bratwurst und Püree servieren.
+
+Tipp: Ein Klecks mittelscharfer Senf gehört dazu.
 
 Guten Appetit!', 'bratwurst-mit-sauerkraut-und-kartoffelpueree.jpg');
 
@@ -4893,12 +5459,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bratwurst mit Sauerkraut und Kartoffelpüree'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Schupfnudeln mit Sauerkraut und Speck
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schupfnudeln mit Sauerkraut und Speck', 75, 4, 'Portionen', 'Winter', '1. Mehligkochende Kartoffeln mit Schale ca. 25 Minuten kochen, pellen, noch heiß durch eine Presse drücken und abkühlen lassen.
-2. Mit Mehl, Ei, Salz und Muskat rasch zu einem glatten Teig verkneten.
-3. Daraus fingerlange, an den Enden spitze Nudeln rollen (schupfen) und in siedendem Salzwasser ca. 3 Minuten garen, bis sie oben schwimmen. Abschöpfen und abtropfen lassen.
-4. Speck und Zwiebel würfeln und in Butterschmalz anbraten. Schupfnudeln zugeben und goldbraun braten.
-5. Abgetropftes Sauerkraut und Kümmel zugeben, 5 Minuten mitbraten und mit Salz und Pfeffer abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schupfnudeln mit Sauerkraut und Speck', 'Schwäbische Fingernudeln aus Kartoffelteig, goldbraun gebraten mit Sauerkraut und Speck.', 75, 4, 'Portionen', 'Winter', '1. {800 g} mehligkochende Kartoffeln mit Schale etwa 25 Minuten kochen. Pellen und noch heiß durch eine Kartoffelpresse drücken. Ausdampfen und abkühlen lassen.
+2. Die Kartoffeln mit {200 g} Mehl, {1} Ei, Salz und Muskatnuss rasch zu einem glatten Teig verkneten. Nicht zu lange kneten, sonst wird er klebrig.
+3. Aus dem Teig fingerdicke Rollen formen und in kleine Stücke schneiden. Jedes Stück auf der leicht bemehlten Arbeitsfläche mit den Handflächen zu einer etwa 6 cm langen Nudel mit spitzen Enden rollen, das nennt man schupfen.
+4. Die Schupfnudeln portionsweise in siedendes Salzwasser geben und etwa 3 Minuten garen, bis sie oben schwimmen. Mit einer Schaumkelle herausheben und gut abtropfen lassen.
+5. {150 g} Speck und die Zwiebel würfeln. {2 EL} Butterschmalz in einer großen Pfanne erhitzen und Speck und Zwiebel darin anbraten. Die Schupfnudeln zugeben und rundherum goldbraun braten.
+6. {500 g} abgetropftes Sauerkraut und {0.5 TL} Kümmel zugeben und 5 Minuten mitbraten. Mit Salz und Pfeffer abschmecken.
+
+Tipp: Fertige Schupfnudeln lassen sich gut einfrieren, am besten vor dem Braten.
 
 Guten Appetit!', 'schupfnudeln-mit-sauerkraut-und-speck.jpg');
 
@@ -4915,12 +5484,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schupfnudeln mit Sauerkraut und Speck'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Kassler auf Sauerkraut aus dem Ofen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kassler auf Sauerkraut aus dem Ofen', 60, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Zwiebel würfeln und in einem Bräter in Butterschmalz andünsten.
-2. Sauerkraut, geriebenen Apfel, Lorbeer, Wacholder, Kümmel und Brühe zugeben und aufkochen.
-3. Kassler am Stück auf das Kraut legen und zugedeckt im Ofen ca. 45 Minuten garen.
-4. Kartoffeln schälen und als Salzkartoffeln garen.
-5. Kassler in Scheiben schneiden, Kraut mit Salz und Pfeffer abschmecken und alles mit den Kartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kassler auf Sauerkraut aus dem Ofen', 'Saftiger Kassler, der auf würzigem Sauerkraut im Ofen gart: ein Wintergericht, das sich fast von allein macht.', 60, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Zwiebel würfeln und in einem Bräter in {1 EL} Butterschmalz glasig dünsten.
+2. {800 g} Sauerkraut, den geriebenen Apfel, das Lorbeerblatt, {5} Wacholderbeeren, {0.5 TL} Kümmel und {300 ml} Gemüsebrühe zugeben und aufkochen.
+3. {800 g} Kassler am Stück auf das Kraut legen. Den Bräter zudecken und alles im Ofen etwa 45 Minuten garen. Der Kassler ist schon gegart und soll nur heiß und saftig werden, er gibt dabei sein Aroma an das Kraut ab.
+4. Inzwischen {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+5. Den Kassler in Scheiben schneiden. Das Kraut mit Salz und Pfeffer abschmecken und alles mit den Kartoffeln servieren.
+
+Tipp: Statt Salzkartoffeln passt auch Kartoffelpüree.
 
 Guten Appetit!', 'kassler-auf-sauerkraut-aus-dem-ofen.jpg');
 
@@ -4938,12 +5509,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kassler auf Sauerkraut aus dem Ofen'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Szegediner Gulasch
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Szegediner Gulasch', 120, 4, 'Portionen', 'Winter', '1. Fleisch in 3 cm große Würfel schneiden, Zwiebeln und Knoblauch würfeln.
-2. Fleisch in Butterschmalz portionsweise anbraten, Zwiebeln zugeben und goldbraun braten.
-3. Paprikapulver, Tomatenmark und Kümmel kurz mitrösten, mit Brühe ablöschen und Lorbeer zugeben. Zugedeckt 45 Minuten schmoren.
-4. Sauerkraut, Paprikastreifen und Knoblauch zugeben und weitere 40 Minuten schmoren.
-5. Mit Salz und Pfeffer abschmecken und mit einem Klecks Schmand servieren. Dazu passen Salzkartoffeln.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Szegediner Gulasch', 'Schweinegulasch mit Sauerkraut und viel Paprika, mit Schmand verfeinert: deftig, würzig und herrlich wärmend.', 120, 4, 'Portionen', 'Winter', '1. {800 g} Schweinenacken in 3 cm große Würfel schneiden. {3} Zwiebeln und {2} Knoblauchzehen würfeln.
+2. {2 EL} Butterschmalz in einem Schmortopf erhitzen und das Fleisch portionsweise kräftig anbraten. Die Zwiebeln zugeben und goldbraun braten.
+3. {2 EL} Paprikapulver, {1 EL} Tomatenmark und {1 TL} Kümmel zugeben und kurz mitrösten. Mit {500 ml} Gemüsebrühe ablöschen, das Lorbeerblatt zugeben und zugedeckt 45 Minuten schmoren.
+4. {500 g} Sauerkraut abtropfen lassen und etwas auseinanderzupfen. Die Paprika in Streifen schneiden. Sauerkraut, Paprika und Knoblauch zum Fleisch geben und weitere 40 Minuten schmoren, bis das Fleisch zart ist.
+5. Das Lorbeerblatt entfernen, mit Salz und Pfeffer abschmecken und mit je einem Klecks von {200 g} Schmand servieren.
+
+Tipp: Dazu passen Salzkartoffeln oder Brot. Wie jedes Gulasch schmeckt es aufgewärmt noch besser.
 
 Guten Appetit!', 'szegediner-gulasch.jpg');
 
@@ -4963,12 +5536,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Szegediner Gulasch'), (SELECT id FROM ingredients WHERE name = 'Schmand'), 200, 'g');
 
 -- Hühnersuppe mit Nudeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hühnersuppe mit Nudeln', 150, 6, 'Portionen', 'Winter', '1. Suppenhuhn waschen und mit {3 l} kaltem Wasser, der halbierten Zwiebel mit Schale, Lorbeer, Piment, Pfefferkörnern und {1 EL} Salz aufsetzen.
-2. Langsam aufkochen, den Schaum abschöpfen und bei kleiner Hitze ca. 2 Stunden sieden lassen. Nach 1,5 Stunden die Hälfte des grob geschnittenen Gemüses zugeben.
-3. Huhn herausnehmen und die Brühe durch ein Sieb gießen. Fleisch von Haut und Knochen lösen und klein zupfen.
-4. Restliches Gemüse in kleine Würfel bzw. Ringe schneiden und in der Brühe 10 Minuten garen. Suppennudeln nach Packungsangabe mitgaren.
-5. Fleisch zurück in die Suppe geben, mit Salz und Muskat abschmecken und mit gehackter Petersilie servieren. Hilft bei jeder Erkältung.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hühnersuppe mit Nudeln', 'Die heilende Suppe: klare, kräftige Hühnerbrühe mit zartem Fleisch, Gemüse und Nudeln. Hilft bei jeder Erkältung.', 150, 6, 'Portionen', 'Winter', '1. Das Suppenhuhn kalt abspülen und mit {3000 ml} kaltem Wasser in einen großen Topf geben. Die Zwiebel mit Schale halbieren, sie färbt die Brühe goldgelb. Mit dem Lorbeerblatt, {3} Pimentkörnern, {1 TL} Pfefferkörnern und {1 EL} Salz zugeben.
+2. Langsam aufkochen und den grauen Schaum, der aufsteigt, mit einer Kelle abschöpfen. Dann bei schwacher Hitze etwa 2 Stunden leise sieden lassen. Die Brühe soll nicht sprudeln, sonst wird sie trüb.
+3. {3} Karotten, {200 g} Knollensellerie und die Petersilienwurzel schälen, den Lauch waschen. Die Hälfte davon grob schneiden und nach 1,5 Stunden in die Brühe geben.
+4. Das Huhn herausnehmen und etwas abkühlen lassen. Die Brühe durch ein Sieb in einen sauberen Topf gießen. Das Fleisch von Haut und Knochen lösen und in mundgerechte Stücke zupfen.
+5. Das restliche Gemüse in kleine Würfel bzw. Ringe schneiden und in der Brühe 10 Minuten garen. {150 g} Suppennudeln nach Packungsangabe mitgaren.
+6. Das Fleisch zurück in die Suppe geben, mit Salz und Muskatnuss abschmecken und mit gehackter Petersilie servieren.
+
+Tipp: Übrige Brühe lässt sich portionsweise einfrieren und ist die Grundlage für viele Soßen und Suppen.
 
 Guten Appetit!', 'huehnersuppe-mit-nudeln.jpg');
 
@@ -4987,13 +5563,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hühnersuppe mit Nudeln'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 1, 'Bund');
 
 -- Tafelspitz mit Apfelkren
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tafelspitz mit Apfelkren', 180, 4, 'Portionen', 'Winter', '1. Zwiebel halbieren und mit der Schnittfläche in einem großen Topf ohne Fett dunkelbraun rösten. {3 l} Wasser zugeben und aufkochen.
-2. Tafelspitz mit Lorbeer, Pfefferkörnern und Wacholder ins kochende Wasser legen und bei kleiner Hitze ca. 2,5 Stunden sieden lassen. Schaum abschöpfen.
-3. Nach 2 Stunden das grob geschnittene Gemüse und {1 EL} Salz zugeben.
-4. Für den Apfelkren die Äpfel schälen, fein reiben und sofort mit Zitronensaft und frisch geriebenem Meerrettich mischen. Leicht salzen.
-5. Kartoffeln als Salzkartoffeln garen.
-6. Fleisch quer zur Faser in Scheiben schneiden und mit etwas Brühe, Gemüse, Kartoffeln, Apfelkren und Schnittlauch servieren. Die Brühe ergibt eine wunderbare Suppe.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tafelspitz mit Apfelkren', 'Wiener Klassiker: zart gesottenes Rindfleisch in klarer Brühe, dazu frischer Apfelkren, Wurzelgemüse und Kartoffeln.', 180, 4, 'Portionen', 'Winter', '1. Die Zwiebel mit Schale halbieren und mit der Schnittfläche nach unten in einem großen Topf ohne Fett dunkelbraun rösten. Das gibt der Brühe Farbe und Aroma. {3000 ml} Wasser zugeben und aufkochen.
+2. {1500 g} Tafelspitz mit {2} Lorbeerblättern, {1 TL} Pfefferkörnern und {4} Wacholderbeeren ins kochende Wasser legen. Die Hitze reduzieren und das Fleisch etwa 2,5 Stunden ganz leise sieden lassen, nicht kochen. Den aufsteigenden Schaum regelmäßig abschöpfen.
+3. Nach 2 Stunden {2} Karotten, {200 g} Knollensellerie, den Lauch und die Petersilienwurzel grob schneiden und mit {1 EL} Salz zugeben.
+4. Für den Apfelkren {2} Äpfel schälen und fein reiben. Sofort mit dem Saft der halben Zitrone und {3 EL} frisch geriebenem Meerrettich mischen und leicht salzen.
+5. {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+6. Das Fleisch herausnehmen und quer zur Faser in fingerdicke Scheiben schneiden. Mit etwas heißer Brühe, dem Gemüse, den Kartoffeln und dem Apfelkren anrichten und mit Schnittlauchröllchen bestreuen.
+
+Tipp: In Wien serviert man zuerst die Brühe als Suppe, dann das Fleisch. Übrige Brühe lässt sich gut einfrieren.
 
 Guten Appetit!', 'tafelspitz-mit-apfelkren.jpg');
 
@@ -5014,12 +5592,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tafelspitz mit Apfelkren'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Ribollita (toskanischer Brot-Bohnen-Eintopf)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ribollita (toskanischer Brot-Bohnen-Eintopf)', 90, 6, 'Portionen', 'Winter', '1. Zwiebel, Karotten und Sellerie fein würfeln und den Knoblauch hacken. In {3 EL} Öl 10 Minuten andünsten.
-2. Tomaten, die Hälfte der Bohnen, Kartoffelwürfel, Thymian und Brühe zugeben.
-3. Grünkohl und Wirsing in Streifen schneiden, zugeben und alles ca. 45 Minuten köcheln lassen.
-4. Restliche Bohnen pürieren und unterrühren. Mit Salz, Pfeffer und Chili abschmecken.
-5. Altbackenes Brot in Stücke reißen, unter den Eintopf rühren und 10 Minuten ziehen lassen, bis er sehr dick ist. Mit dem restlichen Olivenöl beträufelt servieren. Aufgewärmt schmeckt sie am besten – "ribollita" heißt "wieder aufgekocht".
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ribollita (toskanischer Brot-Bohnen-Eintopf)', 'Der dicke toskanische Wintereintopf aus Bohnen, Kohl und altem Brot: Am besten schmeckt er wieder aufgekocht, daher der Name.', 90, 6, 'Portionen', 'Winter', '1. Die Zwiebel, {2} Karotten und {2} Selleriestangen fein würfeln und {3} Knoblauchzehen hacken. {3 EL} Olivenöl in einem großen Topf erhitzen und alles darin bei mittlerer Hitze 10 Minuten weich dünsten.
+2. {400 g} gehackte Tomaten, die Hälfte der abgetropften {480 g} weißen Bohnen, {300 g} gewürfelte Kartoffeln, {2} Thymianzweige und {1500 ml} Gemüsebrühe zugeben.
+3. {300 g} Grünkohl von den Stielen streifen, {300 g} Wirsing vom Strunk befreien und beides in Streifen schneiden. Zugeben und alles zugedeckt etwa 45 Minuten köcheln lassen.
+4. Die restlichen Bohnen mit einer Kelle Suppe pürieren und unterrühren, das macht den Eintopf sämig. Die Thymianzweige entfernen und mit Salz, Pfeffer und einer Prise Chiliflocken abschmecken.
+5. {200 g} altbackenes Bauernbrot in Stücke reißen, unter den Eintopf rühren und 10 Minuten ziehen lassen, bis er sehr dick ist. Mit dem restlichen Olivenöl beträufelt servieren.
+
+Tipp: Ribollita heißt „wieder aufgekocht“. Am zweiten Tag schmeckt sie am besten.
 
 Guten Appetit!', 'ribollita-toskanischer-brot-bohnen-eintopf.jpg');
 
@@ -5041,11 +5621,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ribollita (toskanischer Brot-Bohnen-Eintopf)'), (SELECT id FROM ingredients WHERE name = 'Bauernbrot'), 200, 'g');
 
 -- Blutorangen-Carpaccio mit Pistazien
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Blutorangen-Carpaccio mit Pistazien', 15, 4, 'Portionen', 'Winter', '1. Blutorangen so schälen, dass die weiße Haut vollständig entfernt ist, und in dünne Scheiben schneiden.
-2. Scheiben fächerartig auf Tellern anrichten und den austretenden Saft auffangen.
-3. Saft mit Agavendicksaft und Zimt verrühren und über die Orangen träufeln.
-4. Mit gehackten Pistazien und fein geschnittener Minze bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Blutorangen-Carpaccio mit Pistazien', 'Leuchtend rote Orangenscheiben mit Zimt, Minze und Pistazien: ein leichtes, farbenfrohes Dessert für graue Wintertage.', 15, 4, 'Portionen', 'Winter', '1. {4} Blutorangen mit einem scharfen Messer oben und unten kappen. Dann die Schale von oben nach unten so abschneiden, dass auch die weiße Haut vollständig entfernt wird. Sie schmeckt bitter.
+2. Die Orangen quer in dünne Scheiben schneiden. Fächerartig auf Tellern anrichten und den austretenden Saft auffangen.
+3. Den Saft mit {1 EL} Agavendicksaft und einer Prise Zimt verrühren und über die Orangen träufeln.
+4. {30 g} Pistazien grob hacken, {6} Minzblätter in feine Streifen schneiden und beides darüberstreuen. Kurz ziehen lassen und servieren.
+
+Tipp: Ein Klecks griechischer Joghurt oder eine Kugel Vanilleeis machen daraus ein gehaltvolleres Dessert.
 
 Guten Appetit!', 'blutorangen-carpaccio-mit-pistazien.jpg');
 
@@ -5056,12 +5638,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Blutorangen-Carpaccio mit Pistazien'), (SELECT id FROM ingredients WHERE name = 'Minze'), 6, 'Blatt');
 
 -- Käsekuchen mit Mandarinen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käsekuchen mit Mandarinen', 180, 1, 'Springform (26 cm)', 'Winter', '1. Mehl, Backpulver, {100 g} kalte Butter, {80 g} Zucker, {1} Ei und Salz zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Ofen auf 170 °C vorheizen. Teig ausrollen und eine gefettete Springform damit samt 3 cm hohem Rand auslegen.
-3. Quark, restlichen Zucker, Vanillezucker, Stärke, Zitronenabrieb, Milch, die restlichen Eier und {50 g} geschmolzene Butter glatt verrühren.
-4. Mandarinen schälen, in Spalten teilen und auf dem Boden verteilen. Die Quarkmasse darübergießen.
-5. Ca. 70 Minuten backen. Im ausgeschalteten Ofen bei leicht geöffneter Tür 30 Minuten abkühlen lassen, damit er nicht einreißt.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Käsekuchen mit Mandarinen', 'Ein großer, cremiger Käsekuchen auf Mürbeteig mit saftigen Mandarinen: so, wie er auf der Kaffeetafel bei Oma stand.', 180, 1, 'Springform (26 cm)', 'Winter', '1. {200 g} Mehl, {1 TL} Backpulver, {100 g} kalte Butter in Würfeln, {80 g} Zucker, {1} Ei und eine Prise Salz rasch zu einem Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. Den Ofen auf 170 °C Ober-/Unterhitze vorheizen. Den Teig ausrollen und eine gefettete Springform (26 cm) damit samt 3 cm hohem Rand auslegen.
+3. Die restliche Butter schmelzen. {1000 g} Quark, den restlichen Zucker, den Vanillezucker, {40 g} Speisestärke, die abgeriebene Schale der Zitrone, {200 ml} Milch, die restlichen Eier und die geschmolzene Butter mit dem Schneebesen glatt verrühren. Nicht zu lange rühren, zu viel Luft lässt den Kuchen beim Backen stark aufgehen und danach einfallen.
+4. {6} Mandarinen schälen, die weißen Fäden entfernen und in Spalten teilen. Auf dem Teigboden verteilen und die Quarkmasse darübergießen.
+5. Etwa 70 Minuten backen, bis die Oberfläche goldgelb und die Mitte nur noch leicht wackelig ist.
+6. Den Ofen ausschalten und den Kuchen bei leicht geöffneter Ofentür 30 Minuten darin abkühlen lassen, dann reißt er nicht ein. Vollständig auskühlen lassen, am besten über Nacht im Kühlschrank.
+
+Tipp: Mandarinen aus der Dose funktionieren genauso gut, dann gut abtropfen lassen.
 
 Guten Appetit!', 'kaesekuchen-mit-mandarinen.jpg');
 
@@ -5079,11 +5664,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Käsekuchen mit Mandarinen'), (SELECT id FROM ingredients WHERE name = 'Mandarine'), 6, NULL);
 
 -- Grießbrei mit Zimt und Zucker
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grießbrei mit Zimt und Zucker', 15, 4, 'Portionen', 'Winter', '1. Milch mit {2 EL} Zucker, Vanillezucker, Salz und Butter aufkochen.
-2. Grieß unter ständigem Rühren einrieseln lassen und bei kleiner Hitze 5 Minuten quellen lassen, dabei weiterrühren.
-3. Restlichen Zucker mit dem Zimt mischen.
-4. Grießbrei in Schalen füllen und mit Zimtzucker bestreuen. Dazu passt Kompott, zum Beispiel Kirschen oder Apfelmus.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grießbrei mit Zimt und Zucker', 'Warm, cremig und tröstlich: Grießbrei mit Zimtzucker, der schmeckt wie früher bei Oma.', 15, 4, 'Portionen', 'Winter', '1. {1000 ml} Milch mit {2 EL} Zucker, dem Vanillezucker, einer Prise Salz und {1 EL} Butter in einem Topf aufkochen. Dabei umrühren, damit die Milch nicht anbrennt.
+2. Den Topf vom Herd ziehen. {100 g} Grieß unter ständigem Rühren mit dem Schneebesen einrieseln lassen, damit keine Klümpchen entstehen.
+3. Zurück auf den Herd stellen und bei schwacher Hitze etwa 5 Minuten quellen lassen, dabei weiterrühren. Der Brei dickt beim Abkühlen noch nach. Ist er zu fest, einen Schuss Milch einrühren.
+4. Den restlichen Zucker mit {1 TL} Zimt mischen.
+5. Den Grießbrei in Schalen füllen und mit Zimtzucker bestreuen. Dazu passt Kompott, zum Beispiel Kirschen oder Apfelmus.
+
+Tipp: Wer ihn besonders fluffig mag, rührt zum Schluss ein steif geschlagenes Eiweiß unter.
 
 Guten Appetit!', 'griessbrei-mit-zimt-und-zucker.jpg');
 
@@ -5096,13 +5684,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grießbrei mit Zimt und Zucker'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 1, 'TL');
 
 -- Germknödel mit Mohn und Vanillesoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Germknödel mit Mohn und Vanillesoße', 120, 4, 'Portionen', 'Winter', '1. Mehl, Hefe, {40 g} Zucker und Salz mischen. {200 ml} lauwarme Milch, {40 g} weiche Butter und {1} Ei zugeben und zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-2. Teig in {4} Portionen teilen, flach drücken, je 1 EL Pflaumenmus in die Mitte geben und zu Knödeln verschließen. Mit der Naht nach unten auf ein bemehltes Brett setzen und 20 Minuten gehen lassen.
-3. In einem Topf mit Dämpfeinsatz über siedendem Wasser zugedeckt ca. 15 Minuten dämpfen. Den Deckel dabei nicht öffnen.
-4. Für die Vanillesoße {400 ml} Milch mit Vanillemark und {30 g} Zucker aufkochen. Stärke mit dem restlichen Ei und etwas Milch glatt rühren, einrühren und aufkochen.
-5. Restliche Butter schmelzen. Gemahlenen Mohn mit Puderzucker mischen.
-6. Germknödel mit der flüssigen Butter beträufeln, dick mit Mohnzucker bestreuen und mit Vanillesoße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Germknödel mit Mohn und Vanillesoße', 'Ein großer, fluffiger Hefeknödel mit Pflaumenmus im Herzen, dazu Mohnzucker, Butter und Vanillesoße: die Hüttenspezialität aus den Alpen.', 120, 4, 'Portionen', 'Winter', '1. {400 g} Mehl, die Trockenhefe, {40 g} Zucker und eine Prise Salz mischen. {200 ml} Milch lauwarm erwärmen und mit {40 g} weicher Butter und {1} Ei zugeben. Alles 8 Minuten zu einem glatten, weichen Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. Den Teig in {4} gleich große Portionen teilen und jede flach drücken. Je 1 EL Pflaumenmus in die Mitte geben, den Teig darüber zusammenziehen und gut verschließen. Die Knödel mit der Naht nach unten auf ein bemehltes Brett setzen und zugedeckt 20 Minuten gehen lassen.
+3. In einem großen Topf mit Dämpfeinsatz Wasser zum Sieden bringen. Die Knödel mit Abstand auf den gefetteten Einsatz setzen, sie gehen noch auf. Zugedeckt etwa 15 Minuten dämpfen und den Deckel dabei nicht öffnen, sonst fallen sie zusammen.
+4. Für die Vanillesoße die Vanilleschote aufschneiden und das Mark herauskratzen. Von {400 ml} Milch 4 EL beiseitestellen, den Rest mit Vanillemark, Schote und {30 g} Zucker aufkochen. Die Schote herausnehmen. Das zweite Ei trennen, das Eigelb mit {20 g} Speisestärke und der kalten Milch glatt rühren, in die heiße Milch rühren und einmal kurz aufkochen.
+5. Die restliche Butter schmelzen. {50 g} gemahlenen Mohn mit {2 EL} Puderzucker mischen.
+6. Die Germknödel auf Teller setzen, mit der flüssigen Butter beträufeln, dick mit Mohnzucker bestreuen und mit der Vanillesoße servieren.
+
+Tipp: Ohne Dämpfeinsatz geht es auch: ein Geschirrtuch straff über einen Topf mit siedendem Wasser spannen und mit Küchengarn festbinden.
 
 Guten Appetit!', 'germknoedel-mit-mohn-und-vanillesosse.jpg');
 
@@ -5120,12 +5710,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Germknödel mit Mohn und Vanillesoße'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 2, 'EL');
 
 -- Linzer Torte
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Linzer Torte', 120, 1, 'Tarteform (26 cm)', 'Winter', '1. Mehl, Haselnüsse, Zucker, Zimt, Kakao und Salz mischen. Kalte Butterwürfel und {1} Ei zugeben, rasch zu einem Teig verkneten und 1 Stunde kühlen.
-2. Ofen auf 180 °C vorheizen. Zwei Drittel des Teigs in eine gefettete Tarteform drücken und dabei einen kleinen Rand formen.
-3. Johannisbeergelee glatt rühren und auf dem Boden verstreichen.
-4. Restlichen Teig ausrollen, in Streifen schneiden und als Gitter auf das Gelee legen. Mit dem restlichen, verquirlten Ei bestreichen.
-5. Ca. 40 Minuten backen und vollständig auskühlen lassen. Am besten 1–2 Tage durchziehen lassen und mit Puderzucker bestäuben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Linzer Torte', 'Die älteste Torte der Welt: würziger Nussteig mit Zimt, ein Herz aus Johannisbeergelee und das typische Gitter obendrauf.', 120, 1, 'Tarteform (26 cm)', 'Winter', '1. {250 g} Mehl, {200 g} gemahlene Haselnüsse, {150 g} Zucker, {1 TL} Zimt, {1 TL} Backkakao und eine Prise Salz mischen. {250 g} kalte Butter in Würfeln und {1} Ei zugeben und rasch zu einem glatten Teig verkneten. In Folie gewickelt 1 Stunde kühlen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Zwei Drittel des Teigs in eine gefettete Tarteform (26 cm) drücken und dabei einen etwa 1 cm hohen Rand formen.
+3. {300 g} Johannisbeergelee glatt rühren und gleichmäßig auf dem Boden verstreichen.
+4. Den restlichen Teig zwischen Frischhaltefolie ausrollen, in 1 cm breite Streifen schneiden und als Gitter auf das Gelee legen. Ist der Teig zu weich, kurz in den Kühlschrank legen. Das zweite Ei verquirlen und das Gitter damit bestreichen.
+5. Etwa 40 Minuten backen, bis das Gitter goldbraun ist. In der Form vollständig auskühlen lassen.
+6. Am besten in Folie gewickelt 1–2 Tage durchziehen lassen, dann wird sie saftig und aromatisch. Vor dem Servieren mit {1 EL} Puderzucker bestäuben.
+
+Tipp: Gut verpackt hält sich die Linzer Torte bis zu zwei Wochen und eignet sich als Geschenk.
 
 Guten Appetit!', 'linzer-torte.jpg');
 
@@ -5141,12 +5734,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Linzer Torte'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 1, 'EL');
 
 -- Labskaus
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Labskaus', 60, 4, 'Portionen', 'Winter', '1. Kartoffeln schälen, in Salzwasser 20 Minuten garen und abgießen.
-2. Zwiebeln würfeln und in {1 EL} Butterschmalz glasig dünsten. Corned Beef zerpflücken und kurz mitbraten.
-3. Kartoffeln mit Zwiebeln, Corned Beef, der Hälfte der fein gewürfelten, vorgegarten Roten Bete und etwas Brühe zu einem groben Brei stampfen. Mit Salz, Pfeffer und Muskat kräftig abschmecken – er wird dabei schön rosa.
-4. Im restlichen Butterschmalz {4} Spiegeleier braten.
-5. Labskaus mit Spiegelei, Matjes, Gewürzgurken und der restlichen Roten Bete servieren. Ein Seemannsessen aus Norddeutschland.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Labskaus', 'Das rosarote Seemannsessen aus dem Norden: gestampfte Kartoffeln mit Corned Beef und Roter Bete, dazu Spiegelei, Matjes und Gurke.', 60, 4, 'Portionen', 'Winter', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen und kurz ausdampfen lassen.
+2. {2} Zwiebeln würfeln und in {1 EL} Butterschmalz glasig dünsten. {400 g} Corned Beef zerpflücken und 2 Minuten mitbraten.
+3. Die Hälfte von {300 g} vorgegarter Roter Bete fein würfeln. Kartoffeln, Zwiebeln, Corned Beef, die gewürfelte Rote Bete und etwas Gemüsebrühe in einen Topf geben und mit dem Kartoffelstampfer zu einem groben Brei stampfen. Der Labskaus wird dabei schön rosa. Mit Salz, Pfeffer und Muskatnuss kräftig abschmecken und warm halten.
+4. Im restlichen Butterschmalz {4} Spiegeleier braten, das Eigelb soll flüssig bleiben.
+5. Den Labskaus auf Teller verteilen, je ein Spiegelei daraufsetzen und mit {4} Matjesfilets, {4} Gewürzgurken und der restlichen Roten Bete in Scheiben servieren.
+
+Tipp: Ein Spritzer Gurkenwasser aus dem Glas im Labskaus macht ihn noch würziger.
 
 Guten Appetit!', 'labskaus.jpg');
 
@@ -5164,12 +5759,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Labskaus'), (SELECT id FROM ingredients WHERE name = 'Gewürzgurken'), 4, NULL);
 
 -- Pichelsteiner Eintopf
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pichelsteiner Eintopf', 120, 6, 'Portionen', 'Winter', '1. Fleisch in 2 cm große Würfel schneiden. Gemüse und Kartoffeln schälen bzw. putzen und in mundgerechte Stücke schneiden, Zwiebeln in Ringe.
-2. Fleisch in Butterschmalz portionsweise anbraten und mit Salz und Pfeffer würzen.
-3. In einem großen Topf Fleisch, Zwiebeln, Kartoffeln und Gemüse schichtweise einfüllen und jede Schicht leicht salzen und pfeffern.
-4. Heiße Brühe, Majoran und Lorbeer zugeben und zugedeckt bei kleiner Hitze ca. 1,5 Stunden garen. Nicht umrühren.
-5. Mit gehackter Petersilie bestreut servieren. Ein Eintopf aus dem Bayerischen Wald.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pichelsteiner Eintopf', 'Drei Sorten Fleisch, Kartoffeln und Gemüse, in Schichten im Topf gegart: der traditionelle Eintopf aus dem Bayerischen Wald.', 120, 6, 'Portionen', 'Winter', '1. {300 g} Rindergulasch, {300 g} Schweinenacken und {300 g} Lammschulter in 2 cm große Würfel schneiden. {800 g} Kartoffeln, {3} Karotten und {200 g} Knollensellerie schälen und in mundgerechte Stücke schneiden. Den Lauch putzen und in Ringe schneiden, {2} Zwiebeln in Ringe schneiden.
+2. {2 EL} Butterschmalz in einer großen Pfanne erhitzen und das Fleisch portionsweise kräftig anbraten. Mit Salz und Pfeffer würzen.
+3. In einem großen Topf Fleisch, Zwiebeln, Kartoffeln und Gemüse abwechselnd in Schichten einfüllen. Jede Schicht leicht salzen, pfeffern und mit Majoran bestreuen, insgesamt {1 TL}.
+4. {1000 ml} Rinderbrühe erhitzen, angießen und das Lorbeerblatt zugeben. Zugedeckt bei schwacher Hitze etwa 1,5 Stunden garen. Nicht umrühren, die Schichten sollen erhalten bleiben.
+5. Mit gehackter Petersilie bestreut direkt aus dem Topf servieren.
+
+Tipp: In Regen im Bayerischen Wald wird jedes Jahr ein Pichelsteinerfest gefeiert, angeblich seit 1874.
 
 Guten Appetit!', 'pichelsteiner-eintopf.jpg');
 
@@ -5190,11 +5787,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pichelsteiner Eintopf'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 1, 'Bund');
 
 -- Heiße Schokolade
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Heiße Schokolade', 10, 4, 'Tassen', 'Winter', '1. Schokolade fein hacken.
-2. Milch mit Kakao, Zucker, Zimt und Salz unter Rühren erhitzen.
-3. Schokolade zugeben und unter Rühren schmelzen lassen, nicht kochen.
-4. Sahne steif schlagen. Heiße Schokolade in Tassen füllen und mit einem Sahnehäubchen servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Heiße Schokolade', 'Dick, dunkel und samtig, mit echter Schokolade und einer Sahnehaube: das Gegenteil von Kakaopulver aus der Tüte.', 10, 4, 'Tassen', 'Winter', '1. {100 g} Zartbitterschokolade fein hacken.
+2. {800 ml} Milch mit {1 EL} Backkakao, {2 EL} Zucker, einer Prise Zimt und einer Prise Salz in einem Topf unter Rühren erhitzen, bis sie dampft. Das Salz hebt den Schokoladengeschmack.
+3. Den Topf vom Herd nehmen, die Schokolade zugeben und unter Rühren schmelzen lassen. Nicht mehr kochen. Für extra Schaum kurz mit dem Milchaufschäumer oder Schneebesen aufschlagen.
+4. {100 ml} Sahne halbsteif schlagen. Die heiße Schokolade in vorgewärmte Tassen füllen und mit einem Sahnehäubchen servieren.
+
+Tipp: Mit einer Prise Chili wird daraus eine aztekische Trinkschokolade.
 
 Zum Wohl!', 'heisse-schokolade.jpg');
 
@@ -5207,12 +5806,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Heiße Schokolade'), (SELECT id FROM ingredients WHERE name = 'Sahne'), 100, 'ml');
 
 -- Ganzer Ofen-Sellerie
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ganzer Ofen-Sellerie', 150, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Sellerie gründlich schrubben, die Wurzeln abschneiden, aber die Schale dranlassen.
-2. Mit {2 EL} Öl einreiben, mit grobem Salz bestreuen und mit Thymian und angedrücktem Knoblauch in Alufolie wickeln.
-3. Ca. 2 Stunden backen, bis er sich mit einem Messer ganz leicht durchstechen lässt.
-4. Folie öffnen und weitere 15 Minuten bei 220 °C rösten, bis die Schale gebräunt ist.
-5. In dicke Scheiben schneiden, mit Zitronensaft und dem restlichen Öl beträufeln, pfeffern und mit gerösteten, gehackten Haselnüssen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ganzer Ofen-Sellerie', 'Eine ganze Sellerieknolle, stundenlang im Ofen gegart: außen geröstet, innen butterweich, nussig und überraschend fein.', 150, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Sellerieknolle unter fließendem Wasser gründlich schrubben, die Wurzeln abschneiden, aber die Schale dranlassen.
+2. Die Knolle mit {2 EL} Olivenöl einreiben und rundherum mit grobem Salz bestreuen. Mit {4} Thymianzweigen und {3} angedrückten Knoblauchzehen auf ein großes Stück Alufolie setzen und fest einwickeln.
+3. Etwa 2 Stunden backen, bis sie sich mit einem Messer ganz leicht bis zur Mitte durchstechen lässt.
+4. Die Folie öffnen, den Ofen auf 220 °C hochschalten und den Sellerie weitere 15 Minuten rösten, bis die Schale gebräunt und leicht knusprig ist.
+5. Inzwischen {30 g} Haselnüsse in einer Pfanne ohne Fett rösten und grob hacken.
+6. Den Sellerie in dicke Scheiben oder Spalten schneiden, mit dem Saft der halben Zitrone und dem restlichen Olivenöl beträufeln, pfeffern und mit den Haselnüssen bestreuen.
+
+Tipp: Dazu passt ein Klecks Joghurt mit Kräutern oder eine Pilzrahmsoße.
 
 Guten Appetit!', 'ganzer-ofen-sellerie.jpg');
 
@@ -5226,12 +5828,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ganzer Ofen-Sellerie'), (SELECT id FROM ingredients WHERE name = 'Haselnüsse'), 30, 'g');
 
 -- Maronen-Rosenkohl-Pfanne
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Maronen-Rosenkohl-Pfanne', 25, 4, 'Portionen', 'Winter', '1. Rosenkohl putzen, halbieren, in Salzwasser 5 Minuten vorgaren und abschrecken.
-2. Schalotten in Streifen schneiden und die vorgegarten Maronen halbieren.
-3. Öl in einer Pfanne erhitzen und den Rosenkohl mit der Schnittfläche nach unten 5 Minuten goldbraun braten.
-4. Schalotten, Maronen und Thymian zugeben und 3 Minuten mitbraten.
-5. Mit Ahornsirup glasieren und mit Salz, Pfeffer und Muskat abschmecken. Passt prima zum Weihnachtsbraten.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Maronen-Rosenkohl-Pfanne', 'Goldbraun gebratener Rosenkohl mit süßen Maronen und einem Hauch Ahornsirup: das schnelle Wintergemüse für Festtage.', 25, 4, 'Portionen', 'Winter', '1. {500 g} Rosenkohl waschen, die Strünke knapp abschneiden, welke Blätter entfernen und die Röschen halbieren. In Salzwasser 5 Minuten vorgaren, in Eiswasser abschrecken und gut abtropfen lassen.
+2. {2} Schalotten in feine Streifen schneiden. {200 g} vorgegarte Maronen halbieren.
+3. {2 EL} Rapsöl in einer großen Pfanne erhitzen. Den Rosenkohl mit der Schnittfläche nach unten hineinlegen und bei mittlerer bis hoher Hitze 5 Minuten braten, ohne ihn zu bewegen, bis die Schnittflächen goldbraun sind.
+4. Schalotten, Maronen und die Blättchen von {2} Thymianzweigen zugeben und 3 Minuten mitbraten.
+5. Mit {1 EL} Ahornsirup glasieren und mit Salz, Pfeffer und etwas Muskatnuss abschmecken.
+
+Tipp: Passt hervorragend zu Gans, Ente oder einem Weihnachtsbraten, mit etwas Feta auch als vegetarisches Hauptgericht.
 
 Guten Appetit!', 'maronen-rosenkohl-pfanne.jpg');
 
@@ -5246,13 +5850,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Maronen-Rosenkohl-Pfanne'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Karpfen blau
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Karpfen blau', 50, 4, 'Portionen', 'Winter', '1. Küchenfertigen Karpfen vorsichtig waschen, ohne die Schleimhaut zu verletzen – nur so wird er blau. In {4} Portionsstücke teilen.
-2. {1.5 l} Wasser mit Wein, Zwiebel- und Karottenscheiben, Lorbeer, Wacholder, Pfefferkörnern und {1 EL} Salz aufkochen und 10 Minuten köcheln lassen.
-3. Essig erhitzen und über den Fisch gießen – dadurch färbt sich die Haut blau.
-4. Fisch in den siedenden Sud legen und bei kleiner Hitze 15–20 Minuten gar ziehen lassen.
-5. Kartoffeln garen und mit gehackter Petersilie bestreuen. Butter schmelzen.
-6. Karpfen mit zerlassener Butter, frisch geriebenem Meerrettich, Zitronenspalten und Kartoffeln servieren – traditionell an Heiligabend oder Silvester.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Karpfen blau', 'Der traditionelle Festtagsfisch zu Heiligabend und Silvester: in würzigem Sud gegarter Karpfen mit zerlassener Butter und Meerrettich.', 50, 4, 'Portionen', 'Winter', '1. Den küchenfertigen Karpfen nur ganz vorsichtig kalt abspülen und nicht abreiben. Die Schleimschicht auf der Haut muss erhalten bleiben, nur dann färbt sie sich blau. Den Fisch in {4} Portionsstücke teilen.
+2. {1500 ml} Wasser mit {250 ml} Weißwein, der in Scheiben geschnittenen Zwiebel und Karotte, {2} Lorbeerblättern, {5} Wacholderbeeren, {1 TL} Pfefferkörnern und {1 EL} Salz in einem breiten Topf aufkochen und 10 Minuten köcheln lassen.
+3. {250 ml} Weißweinessig erhitzen und über die Fischstücke in einer Schüssel gießen. Die Haut färbt sich dabei blau.
+4. Den Fisch in den siedenden Sud legen und bei schwacher Hitze 15–20 Minuten gar ziehen lassen. Der Sud darf nicht kochen. Der Karpfen ist gar, wenn sich die Rückenflosse leicht herausziehen lässt.
+5. Inzwischen {800 g} Kartoffeln schälen, in Salzwasser garen und mit gehackter Petersilie bestreuen. {80 g} Butter schmelzen.
+6. Den Karpfen mit zerlassener Butter, {2 EL} frisch geriebenem Meerrettich, Zitronenspalten und den Kartoffeln servieren.
+
+Tipp: Eine Karpfenschuppe im Portemonnaie soll im neuen Jahr Geld bringen, ein alter Silvesterbrauch.
 
 Guten Appetit!', 'karpfen-blau.jpg');
 
@@ -5272,12 +5878,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Karpfen blau'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 1, NULL);
 
 -- Heringssalat mit Roter Bete
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Heringssalat mit Roter Bete', 150, 6, 'Portionen', 'Winter', '1. Kartoffeln mit Schale garen, pellen und abkühlen lassen.
-2. Matjes, vorgegarte Rote Bete, Äpfel, Gewürzgurken, Kartoffeln und Zwiebel in kleine Würfel schneiden.
-3. Schmand, Mayonnaise, Senf, Zucker und {2 EL} Gurkenwasser verrühren und mit Salz und Pfeffer würzen.
-4. Alles vermengen und mindestens 2 Stunden durchziehen lassen – der Salat färbt sich dabei kräftig rot.
-5. Mit Dill garniert servieren. Ein Klassiker zu Silvester und Neujahr.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Heringssalat mit Roter Bete', 'Kräftig rot und würzig: der norddeutsche Heringssalat mit Matjes, Apfel und Roter Bete, unverzichtbar zu Silvester und Neujahr.', 150, 6, 'Portionen', 'Winter', '1. {300 g} Kartoffeln mit Schale in Salzwasser etwa 20 Minuten garen, pellen und abkühlen lassen.
+2. {6} Matjesfilets trocken tupfen. Die Matjesfilets, {300 g} vorgegarte Rote Bete, {2} entkernte Äpfel, {4} Gewürzgurken, die Kartoffeln und die Zwiebel in kleine, möglichst gleichmäßige Würfel schneiden.
+3. {200 g} Schmand, {2 EL} Mayonnaise, {1 TL} Senf, eine Prise Zucker und {2 EL} Gurkenwasser aus dem Glas verrühren und mit Salz und Pfeffer würzen.
+4. Alles vermengen und abgedeckt mindestens 2 Stunden im Kühlschrank durchziehen lassen. Der Salat färbt sich dabei kräftig rot.
+5. Vor dem Servieren noch einmal abschmecken und mit gehacktem Dill garnieren.
+
+Tipp: Am besten schon am Vortag zubereiten. Dazu passt dunkles Brot.
 
 Guten Appetit!', 'heringssalat-mit-roter-bete.jpg');
 
@@ -5296,13 +5904,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Heringssalat mit Roter Bete'), (SELECT id FROM ingredients WHERE name = 'Dill'), 0.5, 'Bund');
 
 -- Dampfnudeln mit Vanillesoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Dampfnudeln mit Vanillesoße', 120, 4, 'Portionen', 'Winter', '1. Mehl, Hefe, {40 g} Zucker und eine Prise Salz mischen. {250 ml} lauwarme Milch, {50 g} weiche Butter und {1} Ei zugeben und zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-2. Teig in {8 Stücke} teilen, zu runden Kugeln formen und abgedeckt nochmals 20 Minuten gehen lassen.
-3. In einem großen Topf mit gut schließendem Deckel {100 ml} Milch, restliche Butter, {1 EL} Zucker und das restliche Salz aufkochen. Die Dampfnudeln nebeneinander hineinsetzen.
-4. Zugedeckt bei mittlerer Hitze ca. 25 Minuten garen, bis die Flüssigkeit verdampft ist und sich unten eine knusprige Salzkruste bildet. Deckel nicht öffnen – wenn es knistert, sind sie fertig.
-5. Für die Vanillesoße {400 ml} Milch mit Vanillemark und dem restlichen Zucker aufkochen. Stärke mit dem restlichen Ei und etwas Milch glatt rühren, einrühren und kurz aufkochen.
-6. Dampfnudeln mit der Vanillesoße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Dampfnudeln mit Vanillesoße', 'Fluffige Hefenudeln, oben weich und unten mit einer karamellig-salzigen Kruste, dazu Vanillesoße: ein pfälzisches Leibgericht.', 120, 4, 'Portionen', 'Winter', '1. {500 g} Mehl, die Trockenhefe, {40 g} Zucker und eine Prise Salz mischen. {250 ml} Milch lauwarm erwärmen und mit {50 g} weicher Butter und {1} Ei zugeben. Alles 8 Minuten zu einem glatten, weichen Teig kneten und zugedeckt 1 Stunde gehen lassen.
+2. Den Teig in {8} gleich große Stücke teilen, mit bemehlten Händen zu glatten Kugeln formen und abgedeckt noch einmal 20 Minuten gehen lassen.
+3. In einem großen Topf oder einer tiefen Pfanne mit gut schließendem Deckel {100 ml} Milch, die restliche Butter, {1 EL} Zucker und das restliche Salz aufkochen. Die Dampfnudeln nebeneinander hineinsetzen.
+4. Den Deckel auflegen und bei mittlerer Hitze etwa 25 Minuten garen. Den Deckel dabei auf keinen Fall öffnen, sonst fallen sie zusammen. Wenn es im Topf knistert, ist die Flüssigkeit verdampft und unten hat sich eine goldbraune Salzkruste gebildet.
+5. Für die Vanillesoße die Vanilleschote aufschneiden und das Mark herauskratzen. Von {400 ml} Milch 4 EL beiseitestellen, den Rest mit Vanillemark, Schote und dem restlichen Zucker aufkochen. Die Schote entfernen. Das zweite Ei trennen, das Eigelb mit {20 g} Speisestärke und der kalten Milch glatt rühren, in die heiße Milch rühren und einmal kurz aufkochen.
+6. Die Dampfnudeln mit der Kruste nach oben auf Teller setzen und mit der Vanillesoße servieren.
+
+Tipp: In der Pfalz isst man Dampfnudeln auch herzhaft mit Kartoffelsuppe.
 
 Guten Appetit!', 'dampfnudeln-mit-vanillesosse.jpg');
 
@@ -5317,12 +5927,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Dampfnudeln mit Vanillesoße'), (SELECT id FROM ingredients WHERE name = 'Speisestärke'), 20, 'g');
 
 -- Radicchio-Birnen-Salat mit Walnüssen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Radicchio-Birnen-Salat mit Walnüssen', 15, 4, 'Portionen', 'Winter', '1. Radicchio in Streifen schneiden und mit dem gewaschenen Feldsalat mischen.
-2. Birnen entkernen und in dünne Spalten schneiden.
-3. Walnüsse grob hacken und ohne Fett rösten.
-4. Balsamico, Ahornsirup, Senf, Salz und Pfeffer verrühren und das Öl unterschlagen.
-5. Salat mit Birnen anrichten, mit dem Dressing beträufeln und mit Walnüssen bestreuen. Die leichte Bitterkeit des Radicchios passt wunderbar zur süßen Birne.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Radicchio-Birnen-Salat mit Walnüssen', 'Bitter, süß und nussig: Radicchio und Feldsalat mit saftigen Birnen und gerösteten Walnüssen.', 15, 4, 'Portionen', 'Winter', '1. Den Radicchio vierteln, den Strunk herausschneiden und die Blätter in Streifen schneiden. {100 g} Feldsalat waschen, die Wurzeln abknipsen und trocken schleudern. Beides mischen.
+2. {2} reife Birnen waschen, entkernen und in dünne Spalten schneiden.
+3. {50 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften.
+4. {2 EL} Balsamicoessig, {1 TL} Ahornsirup, {1 TL} Senf, Salz und Pfeffer verrühren und {4 EL} Olivenöl unterschlagen.
+5. Den Salat mit den Birnen auf Tellern anrichten, mit dem Dressing beträufeln und mit den Walnüssen bestreuen. Die leichte Bitterkeit des Radicchios passt wunderbar zur süßen Birne.
+
+Tipp: Zerbröselter Gorgonzola oder Ziegenkäse machen den Salat noch reichhaltiger.
 
 Guten Appetit!', 'radicchio-birnen-salat-mit-walnuessen.jpg');
 
@@ -5338,12 +5950,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Radicchio-Birnen-Salat mit Walnüssen'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Krustenschweinebauch mit Kümmel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Krustenschweinebauch mit Kümmel', 150, 4, 'Portionen', 'Winter', '1. Schwarte des Schweinebauchs mit einem scharfen Messer im Abstand von 1 cm einschneiden, ohne ins Fleisch zu schneiden.
-2. Fleischseite mit Salz, Pfeffer, Kümmel, Senf und gepresstem Knoblauch einreiben.
-3. Zwiebeln vierteln und in einen Bräter geben. Bauch mit der Schwarte nach oben darauflegen, Brühe angießen und die Schwarte kräftig salzen.
-4. Bei 160 °C ca. 2 Stunden garen, dabei bei Bedarf etwas Wasser nachgießen.
-5. Für die Kruste den Ofen in den letzten 15–20 Minuten auf 230 °C (Grill) stellen, bis die Schwarte aufpoppt. In Scheiben schneiden und mit Krautsalat oder Kartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Krustenschweinebauch mit Kümmel', 'Saftiger Schweinebauch mit einer Kruste, die beim Anschneiden knackt: einfach gemacht und unwiderstehlich.', 150, 4, 'Portionen', 'Winter', '1. Die Schwarte von {1200 g} Schweinebauch mit einem sehr scharfen Messer im Abstand von 1 cm einschneiden, nur durch die Schwarte, nicht ins Fleisch.
+2. Die Fleischseite mit Salz, Pfeffer, {2 TL} Kümmel, {1 EL} Senf und {3} gepressten Knoblauchzehen einreiben.
+3. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {2} Zwiebeln vierteln und in einen Bräter geben. Den Bauch mit der Schwarte nach oben darauflegen, {250 ml} Gemüsebrühe angießen und die Schwarte kräftig mit Salz einreiben. Die Brühe darf die Schwarte nicht berühren.
+4. Etwa 2 Stunden garen und bei Bedarf etwas Wasser nachgießen, damit der Bratensaft nicht anbrennt.
+5. In den letzten 15–20 Minuten den Ofengrill auf 230 °C einschalten, bis die Schwarte Blasen wirft und aufpoppt. Dabeibleiben, sie wird schnell schwarz.
+6. 5 Minuten ruhen lassen, mit einem Sägemesser in Scheiben schneiden und mit dem Bratensaft servieren.
+
+Tipp: Dazu passen Krautsalat, Kartoffeln oder Semmelknödel.
 
 Guten Appetit!', 'krustenschweinebauch-mit-kuemmel.jpg');
 
@@ -5362,12 +5977,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 -- ======================================================================
 
 -- Spaghetti Bolognese
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti Bolognese', 120, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel, Karotte und Sellerie sehr fein würfeln und den Knoblauch hacken.
-2. Gemüse in Olivenöl 5 Minuten andünsten. Hackfleisch zugeben und krümelig braten, bis die Flüssigkeit verdampft ist und es leicht bräunt.
-3. Tomatenmark kurz mitrösten, mit Rotwein ablöschen und einkochen lassen.
-4. Milch, passierte und gehackte Tomaten, Lorbeer, Oregano, Zucker, Salz und Pfeffer zugeben und zugedeckt bei kleinster Hitze mindestens 1,5 Stunden köcheln lassen. Gelegentlich umrühren.
-5. Spaghetti bissfest kochen, mit der Soße mischen und mit frisch geriebenem Parmesan servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spaghetti Bolognese', 'Das Ragù alla Bolognese, wie es sein soll: lange und langsam geschmort, mit Gemüse, Rotwein und einem Schuss Milch.', 120, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel, die Karotte und die Selleriestange sehr fein würfeln und {2} Knoblauchzehen hacken. Je feiner, desto besser verbinden sie sich mit der Soße.
+2. {2 EL} Olivenöl in einem großen, schweren Topf erhitzen und das Gemüse darin bei mittlerer Hitze 5 Minuten andünsten. {500 g} Rinderhackfleisch zugeben und unter Rühren krümelig braten, bis die Flüssigkeit verdampft ist und das Fleisch leicht bräunt.
+3. {2 EL} Tomatenmark einrühren und 1 Minute mitrösten. Mit {150 ml} Rotwein ablöschen und einkochen lassen, bis er fast verdampft ist.
+4. {100 ml} Milch zugeben und ebenfalls etwas einkochen lassen, sie macht das Fleisch zart. {500 ml} passierte und {400 g} gehackte Tomaten, das Lorbeerblatt, {1 TL} Oregano, eine Prise Zucker, Salz und Pfeffer zugeben.
+5. Zugedeckt bei kleinster Hitze mindestens 1,5 Stunden leise köcheln lassen und gelegentlich umrühren. Wird die Soße zu dick, einen Schuss Wasser zugeben. Das Lorbeerblatt entfernen und abschmecken.
+6. {400 g} Spaghetti in reichlich Salzwasser bissfest kochen, abgießen und mit der Soße mischen. Mit {50 g} frisch geriebenem Parmesan servieren.
+
+Tipp: In Bologna isst man das Ragù mit Tagliatelle. Es lohnt sich, gleich die doppelte Menge zu kochen und einzufrieren.
 
 Guten Appetit!', 'spaghetti-bolognese.jpg');
 
@@ -5391,12 +6009,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spaghetti Bolognese'), (SELECT id FROM ingredients WHERE name = 'Parmesan'), 50, 'g');
 
 -- Linsen-Bolognese
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Linsen-Bolognese', 45, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel, Karotten und Sellerie fein würfeln, Knoblauch hacken und alles in Olivenöl 8 Minuten andünsten.
-2. Tomatenmark kurz anrösten, mit Rotwein ablöschen und einkochen lassen.
-3. Linsen waschen und mit passierten Tomaten, Brühe und Oregano zugeben. Ca. 20 Minuten köcheln, bis die Linsen weich sind.
-4. Mit Balsamico, Salz und Pfeffer abschmecken.
-5. Spaghetti bissfest kochen und mit der Soße und Basilikum servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Linsen-Bolognese', 'Herzhaft, sättigend und schnell gemacht: eine Bolognese aus roten Linsen, die sich vor dem Original nicht verstecken muss.', 45, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel, {2} Karotten und die Selleriestange fein würfeln und {2} Knoblauchzehen hacken. {3 EL} Olivenöl in einem Topf erhitzen und das Gemüse darin 8 Minuten andünsten.
+2. {2 EL} Tomatenmark zugeben und 1 Minute anrösten. Mit {100 ml} Rotwein ablöschen und einkochen lassen.
+3. {150 g} rote Linsen in einem Sieb waschen. Mit {700 ml} passierten Tomaten, {300 ml} Gemüsebrühe und {1 TL} Oregano zugeben und etwa 20 Minuten köcheln lassen, bis die Linsen weich sind und die Soße eingedickt ist. Gelegentlich umrühren, Linsen setzen leicht an.
+4. Mit {1 EL} Balsamicoessig, Salz und Pfeffer abschmecken. Der Essig gibt die Tiefe, die sonst vom Fleisch kommt.
+5. {400 g} Spaghetti in reichlich Salzwasser bissfest kochen, abgießen und mit der Soße und gezupftem Basilikum servieren.
+
+Tipp: Geriebener Hartkäse oder Hefeflocken obendrauf machen die Linsen-Bolognese perfekt.
 
 Guten Appetit!', 'linsen-bolognese.jpg');
 
@@ -5418,12 +6038,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Linsen-Bolognese'), (SELECT id FROM ingredients WHERE name = 'Basilikum'), 0.5, 'Bund');
 
 -- Spaghetti Carbonara
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti Carbonara', 25, 4, 'Portionen', 'Ganzjährig', '1. Spaghetti in reichlich Salzwasser bissfest kochen.
-2. Speck (am besten Guanciale oder Pancetta) in Streifen schneiden, in einer großen Pfanne ohne Öl knusprig auslassen und die Pfanne vom Herd nehmen.
-3. Eier trennen, dabei ein Ei ganz lassen. Eigelbe und das ganze Ei mit dem fein geriebenen Pecorino und reichlich frisch gemahlenem Pfeffer verquirlen. Die Eiweiße anderweitig verwenden.
-4. Spaghetti abgießen und dabei eine Tasse Nudelwasser auffangen. Nudeln in die Pfanne zum Speck geben und durchschwenken.
-5. Eimasse und {3-4 EL} Nudelwasser zugeben und alles zügig vermengen, bis eine cremige Soße entsteht. Die Pfanne darf nicht zu heiß sein, sonst stockt das Ei. Sofort servieren – ganz ohne Sahne.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spaghetti Carbonara', 'Die echte römische Carbonara: knuspriger Speck, Eigelb, Pecorino und viel Pfeffer, ganz ohne Sahne.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin bissfest kochen.
+2. Inzwischen {150 g} Speck, am besten Guanciale oder Pancetta, in Streifen schneiden. In einer großen Pfanne ohne Öl bei mittlerer Hitze knusprig auslassen und die Pfanne vom Herd nehmen.
+3. {4} Eier trennen, dabei ein Ei ganz lassen. Die Eigelbe und das ganze Ei mit {80 g} fein geriebenem Pecorino und reichlich frisch gemahlenem Pfeffer zu einer dicken Creme verquirlen. Die Eiweiße anderweitig verwenden.
+4. Die Spaghetti abgießen und dabei eine Tasse Nudelwasser auffangen. Die Nudeln in die Pfanne zum Speck geben und gut durchschwenken. Die Pfanne soll warm, aber nicht mehr heiß sein.
+5. Die Eimasse und {3-4 EL} Nudelwasser zugeben und alles zügig vermengen, bis eine glänzende, cremige Soße entsteht. Wird die Pfanne zu heiß, stockt das Ei zu Rührei. Dann lieber noch etwas Nudelwasser zugeben.
+6. Sofort auf vorgewärmte Teller verteilen und mit etwas Pecorino und Pfeffer bestreuen.
+
+Tipp: Wichtig ist, dass alles gleichzeitig fertig ist. Die Eier also vorbereiten, bevor die Nudeln aus dem Wasser kommen.
 
 Guten Appetit!', 'spaghetti-carbonara.jpg');
 
@@ -5435,12 +6058,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spaghetti Carbonara'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Spaghetti Aglio e Olio
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti Aglio e Olio', 15, 4, 'Portionen', 'Ganzjährig', '1. Spaghetti in reichlich Salzwasser bissfest kochen.
-2. Knoblauch in feine Scheiben und Chili in Ringe schneiden, Petersilie hacken.
-3. Olivenöl in einer großen Pfanne bei mittlerer Hitze erwärmen und Knoblauch und Chili darin 2–3 Minuten hellgolden braten.
-4. Spaghetti mit etwas Nudelwasser in die Pfanne geben und kräftig schwenken, bis sich eine leichte Emulsion bildet.
-5. Petersilie unterheben, mit Salz abschmecken und sofort servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Spaghetti Aglio e Olio', 'Knoblauch, Öl, Chili und Petersilie, sonst nichts: das Nudelgericht für Mitternacht, in 15 Minuten fertig.', 15, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Wasser aufkochen, kräftig salzen und {400 g} Spaghetti darin bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. Inzwischen {6} Knoblauchzehen schälen und in feine Scheiben schneiden, die Chilischote in dünne Ringe schneiden und die Petersilie fein hacken.
+3. {100 ml} Olivenöl in einer großen Pfanne bei mittlerer Hitze erwärmen. Knoblauch und Chili darin 2–3 Minuten braten, bis der Knoblauch hellgolden ist. Er darf nicht braun werden, sonst wird das Öl bitter. Notfalls die Pfanne kurz vom Herd ziehen.
+4. Die abgetropften Spaghetti mit einer kleinen Kelle Nudelwasser in die Pfanne geben und kräftig schwenken, bis sich Öl und Nudelwasser zu einer leicht cremigen Emulsion verbinden.
+5. Die Petersilie unterheben, mit Salz abschmecken und sofort servieren.
+
+Tipp: In Italien kommt traditionell kein Käse darauf. Wer mag, darf trotzdem.
 
 Guten Appetit!', 'spaghetti-aglio-e-olio.jpg');
 
@@ -5452,12 +6077,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Spaghetti Aglio e Olio'), (SELECT id FROM ingredients WHERE name = 'Olivenöl'), 100, 'ml');
 
 -- Penne all'arrabbiata
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Penne all''arrabbiata', 25, 4, 'Portionen', 'Ganzjährig', '1. Knoblauch fein hacken und die Chilis in feine Ringe schneiden (für weniger Schärfe entkernen).
-2. Olivenöl erhitzen und Knoblauch und Chili 1 Minute andünsten.
-3. Tomaten zugeben, mit Salz und einer Prise Zucker würzen und 15 Minuten sämig einkochen.
-4. Penne bissfest kochen, abgießen und mit der Soße vermengen.
-5. Mit gehackter Petersilie bestreuen und servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Penne all''arrabbiata', '„Wütende“ Penne in einer scharfen Tomatensoße mit Knoblauch und Chili: einfach, feurig und schnell.', 25, 4, 'Portionen', 'Ganzjährig', '1. {3} Knoblauchzehen fein hacken und {2} Chilischoten in feine Ringe schneiden. Für weniger Schärfe die Kerne entfernen.
+2. {4 EL} Olivenöl in einer großen Pfanne erhitzen und Knoblauch und Chili darin bei mittlerer Hitze 1 Minute andünsten, bis es duftet.
+3. {800 g} gehackte Tomaten zugeben, mit Salz und einer Prise Zucker würzen und offen etwa 15 Minuten sämig einkochen lassen.
+4. Inzwischen reichlich Salzwasser aufkochen und {400 g} Penne darin bissfest kochen. Abgießen, dabei etwas Nudelwasser auffangen.
+5. Die Penne in die Soße geben und gut durchschwenken. Ist sie zu dick, einen Schuss Nudelwasser zugeben.
+6. Mit gehackter Petersilie bestreuen und servieren.
+
+Tipp: Wer es richtig scharf mag, lässt die Chilikerne drin oder gibt noch Chiliflocken dazu.
 
 Guten Appetit!', 'penne-all-arrabbiata.jpg');
 
@@ -5471,12 +6099,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Penne all''arrabbiata'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Lasagne Bolognese
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lasagne Bolognese', 150, 6, 'Portionen', 'Ganzjährig', '1. Zwiebel, Karotte und Knoblauch fein würfeln und in Öl andünsten. Hackfleisch zugeben und krümelig braten.
-2. Tomatenmark anrösten, mit Rotwein ablöschen, passierte Tomaten und Oregano zugeben, salzen, pfeffern und 30 Minuten köcheln.
-3. Für die Béchamel Butter schmelzen, Mehl anschwitzen und nach und nach die Milch einrühren. 5 Minuten köcheln und mit Salz, Pfeffer und Muskat würzen.
-4. Ofen auf 180 °C vorheizen. In eine Auflaufform abwechselnd Fleischsoße, Lasagneplatten, Béchamel und etwas Parmesan schichten und mit Béchamel abschließen.
-5. Mit zerzupftem Mozzarella und dem restlichen Parmesan bestreuen und ca. 40 Minuten goldbraun backen. Vor dem Anschneiden 10 Minuten ruhen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Lasagne Bolognese', 'Schicht um Schicht Fleischsoße, Béchamel und Pasta, goldbraun überbacken: das Sonntagsessen, auf das sich alle freuen.', 150, 6, 'Portionen', 'Ganzjährig', '1. Die Zwiebel, die Karotte und {2} Knoblauchzehen fein würfeln. {2 EL} Olivenöl in einem Topf erhitzen und das Gemüse darin 3 Minuten andünsten. {500 g} Rinderhackfleisch zugeben und krümelig braten, bis es leicht gebräunt ist.
+2. {2 EL} Tomatenmark einrühren und 1 Minute anrösten. Mit {100 ml} Rotwein ablöschen und einkochen lassen. {700 ml} passierte Tomaten und {1 TL} Oregano zugeben, salzen, pfeffern und offen 30 Minuten köcheln lassen.
+3. Für die Béchamel {60 g} Butter in einem Topf schmelzen, {60 g} Mehl einrühren und 1 Minute anschwitzen. {750 ml} Milch nach und nach mit dem Schneebesen einrühren, damit keine Klümpchen entstehen. 5 Minuten köcheln lassen, bis die Soße dicklich ist, und mit Salz, Pfeffer und Muskatnuss würzen.
+4. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und {60 g} Parmesan reiben. Den Boden einer Auflaufform mit etwas Fleischsoße bedecken. Dann abwechselnd {250 g} Lasagneplatten, Fleischsoße, Béchamel und etwas Parmesan schichten. Mit Lasagneplatten und Béchamel abschließen.
+5. {125 g} Mozzarella zerzupfen und mit dem restlichen Parmesan darüberstreuen. Etwa 40 Minuten backen, bis die Oberfläche goldbraun ist und blubbert.
+6. Vor dem Anschneiden 10 Minuten ruhen lassen, dann halten die Schichten zusammen.
+
+Tipp: Am Vortag zubereitet und aufgewärmt schmeckt die Lasagne noch besser.
 
 Guten Appetit!', 'lasagne-bolognese.jpg');
 
@@ -5500,12 +6131,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Lasagne Bolognese'), (SELECT id FROM ingredients WHERE name = 'Mozzarella'), 125, 'g');
 
 -- Gemüse-Lasagne mit Ricotta und Spinat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gemüse-Lasagne mit Ricotta und Spinat', 90, 6, 'Portionen', 'Ganzjährig', '1. Zucchini, Aubergine, Paprika und Zwiebel würfeln, Knoblauch hacken und alles in Olivenöl 10 Minuten anbraten.
-2. Tomaten und Oregano zugeben, salzen, pfeffern und 15 Minuten einköcheln. Basilikum unterrühren.
-3. Spinat blanchieren, gut ausdrücken, hacken und mit Ricotta, Salz, Pfeffer und Muskat verrühren.
-4. Ofen auf 180 °C vorheizen. Gemüsesoße, Lasagneplatten und Ricotta-Spinat abwechselnd in eine Auflaufform schichten und mit Gemüsesoße abschließen.
-5. Mit Mozzarella und geriebenem Hartkäse bestreuen und ca. 40 Minuten backen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gemüse-Lasagne mit Ricotta und Spinat', 'Bunte Sommergemüse in Tomatensoße, cremiger Ricotta mit Spinat und geschmolzener Mozzarella: eine Lasagne ohne Fleisch, die niemanden enttäuscht.', 90, 6, 'Portionen', 'Ganzjährig', '1. {2} Zucchini, die Aubergine, {2} Paprika und die Zwiebel in kleine Würfel schneiden, {2} Knoblauchzehen hacken. {3 EL} Olivenöl in einem großen Topf erhitzen und das Gemüse darin 10 Minuten anbraten, bis es leicht Farbe nimmt.
+2. {800 g} gehackte Tomaten und {1 TL} Oregano zugeben, salzen, pfeffern und 15 Minuten einköcheln lassen. Die Basilikumblätter zupfen und unterrühren.
+3. {200 g} Spinat in kochendem Wasser 1 Minute blanchieren, abschrecken, gut ausdrücken und hacken. Mit {250 g} Ricotta, Salz, Pfeffer und etwas Muskatnuss verrühren.
+4. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Etwas Gemüsesoße in eine Auflaufform geben. Dann abwechselnd {250 g} Lasagneplatten, Gemüsesoße und Ricotta-Spinat schichten. Mit Gemüsesoße abschließen.
+5. {250 g} Mozzarella in Scheiben oder Stücken darauf verteilen und {50 g} geriebenen Hartkäse darüberstreuen. Etwa 40 Minuten backen, bis die Oberfläche goldbraun ist.
+6. 10 Minuten ruhen lassen und in Stücke schneiden.
+
+Tipp: Die Gemüsesoße soll eher flüssig sein, die Lasagneplatten nehmen beim Backen viel davon auf.
 
 Guten Appetit!', 'gemuese-lasagne-mit-ricotta-und-spinat.jpg');
 
@@ -5528,12 +6162,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gemüse-Lasagne mit Ricotta und Spinat'), (SELECT id FROM ingredients WHERE name = 'Vegetarischer Hartkäse'), 50, 'g');
 
 -- Gnocchi mit Salbeibutter
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gnocchi mit Salbeibutter', 60, 4, 'Portionen', 'Ganzjährig', '1. Mehligkochende Kartoffeln mit Schale weich kochen, pellen, noch heiß durch eine Kartoffelpresse drücken und ausdampfen lassen.
-2. Mit Mehl, Ei, Salz und Muskat rasch zu einem weichen Teig verkneten – nicht zu lange kneten.
-3. Teig zu daumendicken Rollen formen, in 2 cm lange Stücke schneiden und mit einer Gabel Rillen eindrücken.
-4. Gnocchi portionsweise in siedendes Salzwasser geben und herausheben, sobald sie an der Oberfläche schwimmen.
-5. Butter mit Salbei in einer Pfanne aufschäumen lassen, die Gnocchi darin schwenken und mit Käse und Pfeffer servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gnocchi mit Salbeibutter', 'Selbst gemachte Kartoffelgnocchi, zart wie Wolken, in nussiger Salbeibutter geschwenkt.', 60, 4, 'Portionen', 'Ganzjährig', '1. {1000 g} mehligkochende Kartoffeln mit Schale in Salzwasser weich kochen, abgießen und kurz ausdampfen lassen. Noch heiß pellen und durch eine Kartoffelpresse auf die Arbeitsfläche drücken. Etwas abkühlen lassen.
+2. {250 g} Mehl, {1} Ei, Salz und etwas Muskatnuss zugeben und alles rasch zu einem weichen, glatten Teig verkneten. Nicht zu lange kneten, sonst werden die Gnocchi zäh. Klebt der Teig sehr, noch etwas Mehl zugeben.
+3. Den Teig portionsweise zu daumendicken Rollen formen und in 2 cm lange Stücke schneiden. Jedes Stück mit einer Gabel leicht eindrücken, so entstehen die typischen Rillen, in denen sich die Soße fängt.
+4. Reichlich Salzwasser aufkochen und die Hitze reduzieren, bis es nur noch siedet. Die Gnocchi portionsweise hineingeben und mit einer Schaumkelle herausheben, sobald sie an der Oberfläche schwimmen. Das dauert etwa 2 Minuten.
+5. {80 g} Butter in einer großen Pfanne schmelzen, {12} Salbeiblätter zugeben und aufschäumen lassen, bis die Butter leicht nussig duftet und die Blätter knusprig sind. Die Gnocchi darin schwenken.
+6. Mit {50 g} geriebenem Hartkäse und frisch gemahlenem Pfeffer servieren.
+
+Tipp: Zuerst einen Probe-Gnocco kochen. Zerfällt er, noch etwas Mehl in den Teig kneten.
 
 Guten Appetit!', 'gnocchi-mit-salbeibutter.jpg');
 
@@ -5548,12 +6185,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gnocchi mit Salbeibutter'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Chili con Carne
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chili con Carne', 90, 6, 'Portionen', 'Ganzjährig', '1. Zwiebeln, Knoblauch, Paprika und Chilis würfeln bzw. hacken.
-2. Hackfleisch in Öl krümelig und kräftig anbraten. Zwiebeln, Knoblauch und Chili zugeben und mitbraten.
-3. Tomatenmark und Gewürze 1 Minute mitrösten. Tomaten, Brühe und Paprika zugeben und zugedeckt 45 Minuten köcheln lassen.
-4. Abgespülte Bohnen und Mais zugeben und weitere 15 Minuten köcheln. Schokolade einrühren – sie rundet die Schärfe ab.
-5. Mit Salz und Pfeffer abschmecken und mit einem Klecks saurer Sahne servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Chili con Carne', 'Ein großer Topf voller Hackfleisch, Bohnen, Mais und Gewürzen, mit einem Stück Schokolade abgerundet: wärmend und perfekt für viele Gäste.', 90, 6, 'Portionen', 'Ganzjährig', '1. {2} Zwiebeln und {3} Knoblauchzehen fein hacken. {2} Paprika entkernen und würfeln. {2} Chilischoten entkernen und fein hacken.
+2. {2 EL} Rapsöl in einem großen Topf stark erhitzen. {600 g} Rinderhackfleisch darin krümelig und kräftig braun anbraten. Zwiebeln, Knoblauch und Chili zugeben und 3 Minuten mitbraten.
+3. {2 EL} Tomatenmark, {2 TL} Kreuzkümmel, {2 TL} Paprikapulver, {1 TL} Oregano und eine Prise Zimt einrühren und 1 Minute mitrösten. {800 g} gehackte Tomaten, {300 ml} Rinderbrühe und die Paprika zugeben und zugedeckt bei schwacher Hitze 45 Minuten köcheln lassen.
+4. {480 g} Kidneybohnen und {280 g} Mais abspülen, abtropfen lassen und zugeben. Weitere 15 Minuten köcheln. {20 g} Zartbitterschokolade einrühren, sie rundet die Schärfe ab und macht die Soße samtig.
+5. Mit Salz und Pfeffer abschmecken und mit je einem Klecks von {150 g} saurer Sahne servieren.
+
+Tipp: Dazu passen Reis, Tortillachips oder frisches Brot. Chili schmeckt am zweiten Tag noch besser.
 
 Guten Appetit!', 'chili-con-carne.jpg');
 
@@ -5578,12 +6217,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Chili con Carne'), (SELECT id FROM ingredients WHERE name = 'Saure Sahne'), 150, 'g');
 
 -- Chili sin Carne
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chili sin Carne', 60, 6, 'Portionen', 'Ganzjährig', '1. Zwiebeln, Knoblauch, Chili und Paprika würfeln bzw. hacken. Süßkartoffel schälen und in 1 cm große Würfel schneiden.
-2. Zwiebeln, Knoblauch und Chili in Öl andünsten und Tomatenmark und Gewürze 1 Minute mitrösten.
-3. Süßkartoffel, Paprika, Tomaten und Brühe zugeben und 25 Minuten köcheln.
-4. Abgespülte Bohnen und Mais zugeben und weitere 10 Minuten köcheln.
-5. Mit Limettensaft, Salz und Pfeffer abschmecken und mit Koriander und Avocadowürfeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Chili sin Carne', 'Rauchig, würzig und herzhaft ganz ohne Fleisch: Chili mit Süßkartoffeln, zwei Sorten Bohnen und frischer Avocado.', 60, 6, 'Portionen', 'Ganzjährig', '1. {2} Zwiebeln, {3} Knoblauchzehen und die Chilischote fein hacken. {2} Paprika entkernen und würfeln. {400 g} Süßkartoffeln schälen und in 1 cm große Würfel schneiden.
+2. {3 EL} Olivenöl in einem großen Topf erhitzen. Zwiebeln, Knoblauch und Chili darin 3 Minuten andünsten. {2 EL} Tomatenmark, {2 TL} Kreuzkümmel, {2 TL} geräuchertes Paprikapulver und {1 TL} Oregano zugeben und 1 Minute mitrösten. Das geräucherte Paprika bringt die Tiefe, die sonst das Fleisch liefert.
+3. Süßkartoffeln, Paprika, {800 g} gehackte Tomaten und {300 ml} Gemüsebrühe zugeben und zugedeckt etwa 25 Minuten köcheln lassen.
+4. {240 g} Kidneybohnen, {240 g} schwarze Bohnen und {280 g} Mais abspülen und zugeben. Weitere 10 Minuten köcheln lassen.
+5. Mit dem Saft der Limette, Salz und Pfeffer abschmecken.
+6. Die Avocado würfeln. Das Chili mit Avocadowürfeln und gezupftem Koriander servieren.
+
+Tipp: Mit Reis, Tortillachips oder in Tortillas gewickelt wird daraus eine vollwertige Mahlzeit.
 
 Guten Appetit!', 'chili-sin-carne.jpg');
 
@@ -5609,12 +6251,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Chili sin Carne'), (SELECT id FROM ingredients WHERE name = 'Avocado'), 1, NULL);
 
 -- Rote-Linsen-Dal
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote-Linsen-Dal', 35, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Zwiebel, Knoblauch und Ingwer fein hacken und in Kokosöl andünsten.
-3. Kurkuma, Kreuzkümmel, Garam Masala und Chili 1 Minute mitrösten.
-4. Gewaschene Linsen, Tomaten, Kokosmilch und Brühe zugeben und ca. 20 Minuten köcheln, bis die Linsen zerfallen. Gelegentlich umrühren.
-5. Mit Limettensaft und Salz abschmecken und mit Koriander zum Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rote-Linsen-Dal', 'Cremig, wärmend und voller Gewürze: indisches Linsencurry mit Kokosmilch, das in einer halben Stunde auf dem Tisch steht.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis waschen und nach Packungsangabe garen.
+2. Die Zwiebel, {3} Knoblauchzehen und {20 g} Ingwer fein hacken. {2 EL} Kokosöl in einem Topf erhitzen und alles darin 3 Minuten andünsten.
+3. {1 TL} Kurkuma, {1 TL} Kreuzkümmel, {1 TL} Garam Masala und {0.5 TL} Chiliflocken zugeben und 1 Minute mitrösten, bis es intensiv duftet.
+4. {250 g} rote Linsen in einem Sieb waschen, bis das Wasser klar bleibt. Mit {400 g} gehackten Tomaten, {400 ml} Kokosmilch und {400 ml} Gemüsebrühe zugeben. Etwa 20 Minuten köcheln lassen, bis die Linsen zerfallen und das Dal cremig ist. Gelegentlich umrühren, Linsen setzen leicht an.
+5. Mit dem Saft der Limette und Salz abschmecken. Mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Ist das Dal zu dick, mit etwas Wasser verdünnen. Es dickt beim Stehen nach.
 
 Guten Appetit!', 'rote-linsen-dal.jpg');
 
@@ -5636,12 +6280,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rote-Linsen-Dal'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Chana Masala
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chana Masala', 40, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Zwiebeln fein würfeln und in Öl ca. 10 Minuten goldbraun braten. Knoblauch, Ingwer und Chili fein hacken und 2 Minuten mitbraten.
-3. Kreuzkümmel, Koriander, Kurkuma und die Hälfte des Garam Masala 1 Minute mitrösten.
-4. Tomaten und abgetropfte Kichererbsen mit {150 ml} Wasser zugeben und 20 Minuten köcheln. Einige Kichererbsen am Topfrand zerdrücken, damit die Soße bindet.
-5. Mit dem restlichen Garam Masala, Zitronensaft und Salz abschmecken und mit Koriander zum Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Chana Masala', 'Kichererbsen in würziger Tomaten-Zwiebel-Soße: eines der beliebtesten Gerichte Nordindiens, einfach und voller Aroma.', 40, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis waschen und nach Packungsangabe garen.
+2. {2} Zwiebeln fein würfeln. {2 EL} Rapsöl in einem Topf erhitzen und die Zwiebeln darin bei mittlerer Hitze etwa 10 Minuten goldbraun braten. Diese Geduld bringt die Süße und Tiefe in die Soße. {3} Knoblauchzehen, {20 g} Ingwer und die Chilischote fein hacken und 2 Minuten mitbraten.
+3. {1 TL} Kreuzkümmel, {2 TL} gemahlenen Koriander, {1 TL} Kurkuma und die Hälfte von {2 TL} Garam Masala zugeben und 1 Minute mitrösten.
+4. {400 g} gehackte Tomaten, {480 g} abgetropfte Kichererbsen und {150 ml} Wasser zugeben und 20 Minuten köcheln lassen. Einige Kichererbsen am Topfrand mit dem Löffel zerdrücken, das macht die Soße sämig.
+5. Mit dem restlichen Garam Masala, dem Saft der halben Zitrone und Salz abschmecken. Mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Dazu passt warmes Naan-Brot und ein Klecks Joghurt.
 
 Guten Appetit!', 'chana-masala.jpg');
 
@@ -5662,12 +6308,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Chana Masala'), (SELECT id FROM ingredients WHERE name = 'Koriandergrün'), 0.5, 'Bund');
 
 -- Butter Chicken
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Butter Chicken', 120, 4, 'Portionen', 'Ganzjährig', '1. Entbeintes Hähnchen in mundgerechte Stücke schneiden. Mit Joghurt, je {1 TL} Garam Masala und Paprika, Kurkuma, der Hälfte von geriebenem Knoblauch und Ingwer, Zitronensaft und Salz mindestens 1 Stunde marinieren.
-2. Hähnchen in einer heißen Pfanne mit {1 EL} Butter portionsweise kräftig anbraten und herausnehmen.
-3. Zwiebel fein würfeln und in der restlichen Butter weich dünsten. Restlichen Knoblauch und Ingwer, Kreuzkümmel, restliches Garam Masala und Paprika 1 Minute mitrösten.
-4. Passierte Tomaten und Zucker zugeben, 10 Minuten köcheln und fein pürieren. Sahne einrühren.
-5. Hähnchen in die Soße geben und 10 Minuten sanft garen. Reis garen und alles mit Koriander bestreut servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Butter Chicken', 'Zartes, mariniertes Hähnchen in einer samtigen, leicht süßen Tomaten-Butter-Soße: Indiens beliebtestes Curry.', 120, 4, 'Portionen', 'Ganzjährig', '1. {700 g} entbeintes Hähnchenschenkelfleisch in mundgerechte Stücke schneiden. {3} Knoblauchzehen und {30 g} Ingwer fein reiben. {150 g} Joghurt mit {1 TL} Garam Masala, {1 TL} Paprikapulver, {1 TL} Kurkuma, der Hälfte von Knoblauch und Ingwer, dem Saft der halben Zitrone und Salz verrühren. Das Fleisch darin wenden und abgedeckt mindestens 1 Stunde im Kühlschrank marinieren.
+2. {1 EL} Butter in einer großen Pfanne stark erhitzen. Das Hähnchen portionsweise mit der anhaftenden Marinade kräftig anbraten, bis es leicht gebräunt ist, und herausnehmen.
+3. Die Zwiebel fein würfeln und in der restlichen Butter bei mittlerer Hitze 5 Minuten weich dünsten. Den restlichen Knoblauch und Ingwer, {1 TL} Kreuzkümmel sowie das restliche Garam Masala und Paprikapulver zugeben und 1 Minute mitrösten.
+4. {400 ml} passierte Tomaten und {1 TL} Zucker zugeben und 10 Minuten köcheln lassen. Die Soße mit dem Stabmixer fein pürieren und {150 ml} Sahne einrühren.
+5. Das Hähnchen in die Soße geben und bei schwacher Hitze 10 Minuten sanft garen, bis es durch ist.
+6. Inzwischen {300 g} Basmatireis nach Packungsangabe garen. Das Butter Chicken mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Die Marinade kann auch über Nacht einziehen, dann wird das Fleisch noch zarter.
 
 Guten Appetit!', 'butter-chicken.jpg');
 
@@ -5690,12 +6339,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Butter Chicken'), (SELECT id FROM ingredients WHERE name = 'Basmatireis'), 300, 'g');
 
 -- Palak Paneer
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Palak Paneer', 40, 4, 'Portionen', 'Ganzjährig', '1. Spinat waschen, 1 Minute blanchieren, in Eiswasser abschrecken und mit etwas Kochwasser fein pürieren.
-2. Paneer würfeln, in {1 EL} Butterschmalz rundherum goldbraun braten und herausnehmen.
-3. Zwiebel, Knoblauch, Ingwer und Chili fein hacken und mit dem Kreuzkümmel im restlichen Butterschmalz andünsten. Kurkuma und gewürfelte Tomaten zugeben und 5 Minuten köcheln.
-4. Spinatpüree und Sahne einrühren und 5 Minuten köcheln lassen.
-5. Paneer zugeben und mit Garam Masala, Zitronensaft und Salz abschmecken. Dazu passen Reis oder Naan.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Palak Paneer', 'Leuchtend grünes Spinatcurry mit goldbraun gebratenem indischem Frischkäse.', 40, 4, 'Portionen', 'Ganzjährig', '1. {600 g} Spinat waschen und in kochendem Wasser 1 Minute blanchieren. Sofort in Eiswasser abschrecken, so bleibt er leuchtend grün. Mit etwas Kochwasser im Mixer fein pürieren.
+2. {250 g} Paneer in 2 cm große Würfel schneiden. {1 EL} Butterschmalz in einer Pfanne erhitzen und die Würfel darin rundherum goldbraun braten. Herausnehmen.
+3. Die Zwiebel, {3} Knoblauchzehen, {20 g} Ingwer und die Chilischote fein hacken. Im restlichen Butterschmalz mit {1 TL} Kreuzkümmel 3 Minuten andünsten. {0.5 TL} Kurkuma und {2} gewürfelte Tomaten zugeben und 5 Minuten köcheln lassen, bis die Tomaten zerfallen.
+4. Das Spinatpüree und {100 ml} Sahne einrühren und 5 Minuten köcheln lassen. Nicht zu lange, sonst verliert der Spinat seine Farbe.
+5. Den Paneer zugeben und mit {1 TL} Garam Masala, dem Saft der halben Zitrone und Salz abschmecken. Mit Reis oder Naan servieren.
+
+Tipp: Paneer gibt es im Asialaden oder gut sortierten Supermarkt. Halloumi ist ein guter Ersatz.
 
 Guten Appetit!', 'palak-paneer.jpg');
 
@@ -5715,12 +6366,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Palak Paneer'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Rotes Thai-Curry mit Tofu und Gemüse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rotes Thai-Curry mit Tofu und Gemüse', 35, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Tofu trocken tupfen, würfeln, mit Stärke bestäuben und in {2 EL} Öl rundherum knusprig braten. Herausnehmen.
-2. Restliches Öl im Wok erhitzen und die Currypaste 1 Minute anrösten.
-3. Kokosmilch und Brühe zugießen und aufkochen. Brokkoliröschen und Paprikastreifen zugeben und 5 Minuten köcheln.
-4. Zuckerschoten und Tofu zugeben und 2 Minuten mitgaren.
-5. Mit Limettensaft, Zucker und Salz abschmecken und mit (am besten Thai-)Basilikum zum Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rotes Thai-Curry mit Tofu und Gemüse', 'Knuspriger Tofu und knackiges Gemüse in würziger roter Kokos-Currysoße mit Limette und Basilikum.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen.
+2. {400 g} Tofu in ein Küchentuch wickeln und mit einem schweren Topf beschwert 10 Minuten auspressen. In Würfel schneiden und mit {1 EL} Speisestärke bestäuben. {2 EL} Rapsöl in einer Pfanne erhitzen und den Tofu darin rundherum knusprig braten. Herausnehmen.
+3. Das restliche Öl im Wok erhitzen und {2 EL} rote Currypaste darin 1 Minute anrösten, bis sie duftet.
+4. {400 ml} Kokosmilch und {200 ml} Gemüsebrühe zugießen und aufkochen. {300 g} Brokkoli in Röschen und die Paprika in Streifen zugeben und 5 Minuten köcheln lassen.
+5. {150 g} Zuckerschoten und den Tofu zugeben und 2 Minuten mitgaren. Der Tofu soll nur kurz in der Soße liegen, damit er knusprig bleibt.
+6. Mit dem Saft der Limette, {1 TL} braunem Zucker und Salz abschmecken. Mit Basilikum, am besten Thai-Basilikum, bestreuen und mit dem Reis servieren.
+
+Tipp: Viele rote Currypasten enthalten Garnelenpaste. Für eine vegane Variante auf die Zutatenliste achten.
 
 Guten Appetit!', 'rotes-thai-curry-mit-tofu-und-gemuese.jpg');
 
@@ -5740,12 +6394,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rotes Thai-Curry mit Tofu und Gemüse'), (SELECT id FROM ingredients WHERE name = 'Basilikum'), 0.5, 'Bund');
 
 -- Grünes Thai-Curry mit Hähnchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünes Thai-Curry mit Hähnchen', 35, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Hähnchen in dünne Streifen schneiden und das Zitronengras andrücken.
-2. Kokosöl im Wok erhitzen und die Currypaste 1 Minute anrösten. Mit der Hälfte der Kokosmilch ablöschen und köcheln, bis sich das Öl absetzt.
-3. Hähnchen zugeben und 3 Minuten garen. Restliche Kokosmilch, Brühe und Zitronengras zugeben.
-4. Zucchini, Paprika und Bohnen in mundgerechten Stücken zugeben und 5 Minuten köcheln.
-5. Mit Fischsauce, Zucker und Limettensaft abschmecken, Zitronengras entfernen und mit Basilikum zum Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grünes Thai-Curry mit Hähnchen', 'Zartes Hähnchen und Gemüse in aromatischer grüner Kokos-Currysoße mit Zitronengras und Basilikum.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {500 g} Hähnchenbrust in dünne Streifen schneiden. Die Zitronengrasstange mit dem Messerrücken andrücken, so gibt sie mehr Aroma ab.
+2. {1 EL} Kokosöl im Wok erhitzen und {2 EL} grüne Currypaste darin 1 Minute anrösten. Mit der Hälfte von {400 ml} Kokosmilch ablöschen und köcheln lassen, bis sich am Rand das Öl absetzt. So entfaltet die Paste ihr volles Aroma.
+3. Das Hähnchen zugeben und 3 Minuten garen. Die restliche Kokosmilch, {200 ml} Hühnerbrühe und das Zitronengras zugeben.
+4. Die Zucchini und die Paprika in mundgerechte Stücke schneiden, {150 g} grüne Bohnen putzen und halbieren. Alles zugeben und 5 Minuten köcheln lassen.
+5. Mit {2 EL} Fischsauce, {1 TL} braunem Zucker und dem Saft der Limette abschmecken. Es soll scharf, salzig, süß und sauer zugleich schmecken. Das Zitronengras entfernen.
+6. Mit Basilikumblättern bestreuen und mit dem Reis servieren.
+
+Tipp: Die Schärfe hängt stark von der Currypaste ab. Lieber mit weniger beginnen und nachwürzen.
 
 Guten Appetit!', 'gruenes-thai-curry-mit-haehnchen.jpg');
 
@@ -5765,12 +6422,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grünes Thai-Curry mit Hähnchen'), (SELECT id FROM ingredients WHERE name = 'Basilikum'), 0.5, 'Bund');
 
 -- Pad Thai mit Garnelen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pad Thai mit Garnelen', 30, 4, 'Portionen', 'Ganzjährig', '1. Breite Reisnudeln nach Packungsangabe in warmem Wasser einweichen und abtropfen lassen.
-2. Tamarindenpaste, Fischsauce, Zucker und {3 EL} Wasser zu einer Soße verrühren.
-3. Öl im Wok stark erhitzen, gehackten Knoblauch und Garnelen 2 Minuten braten und an den Rand schieben. Eier hineinschlagen und unter Rühren stocken lassen.
-4. Nudeln und Soße zugeben und unter Wenden 2–3 Minuten braten, bis die Soße aufgesogen ist.
-5. Sojasprossen und Frühlingszwiebeln unterheben. Mit gehackten Erdnüssen, Chiliflocken, Koriander und Limettenspalten servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pad Thai mit Garnelen', 'Thailands berühmtestes Nudelgericht: gebratene Reisnudeln mit Garnelen, Ei, Sprossen und Erdnüssen in süß-saurer Tamarindensoße.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} breite Reisnudeln nach Packungsangabe in warmem Wasser einweichen, bis sie biegsam, aber noch fest sind. Abtropfen lassen.
+2. {2 EL} Tamarindenpaste, {3 EL} Fischsauce, {2 EL} braunen Zucker und {3 EL} Wasser zu einer Soße verrühren.
+3. {3 EL} Rapsöl im Wok stark erhitzen. {2} gehackte Knoblauchzehen und {300 g} Garnelen darin 2 Minuten braten, bis die Garnelen rosa sind. An den Rand schieben. {2} Eier in die Mitte schlagen und unter Rühren stocken lassen.
+4. Die Nudeln und die Soße zugeben und unter ständigem Wenden 2–3 Minuten braten, bis die Soße aufgesogen ist und die Nudeln weich sind. Sind sie noch zu fest, einen Schuss Wasser zugeben.
+5. {150 g} Sojasprossen und {4} Frühlingszwiebeln in Stücken unterheben.
+6. {50 g} Erdnüsse grob hacken. Das Pad Thai mit Erdnüssen, {0.5 TL} Chiliflocken, gezupftem Koriander und Limettenspalten servieren.
+
+Tipp: Alle Zutaten vor dem Braten bereitstellen, im Wok geht alles sehr schnell.
 
 Guten Appetit!', 'pad-thai-mit-garnelen.jpg');
 
@@ -5790,12 +6450,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pad Thai mit Garnelen'), (SELECT id FROM ingredients WHERE name = 'Limette'), 1, NULL);
 
 -- Gebratener Reis mit Ei
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebratener Reis mit Ei', 20, 2, 'Portionen', 'Ganzjährig', '1. Reis am besten am Vortag garen und abgedeckt im Kühlschrank auskühlen lassen.
-2. Karotte fein würfeln, Frühlingszwiebeln in Ringe schneiden und den Knoblauch hacken.
-3. {1 EL} Öl im Wok stark erhitzen, die verquirlten Eier darin unter Rühren stocken lassen und herausnehmen.
-4. Restliches Öl erhitzen und Karotte, Erbsen, Knoblauch und das Weiße der Frühlingszwiebeln 2 Minuten pfannenrühren.
-5. Reis zugeben und unter ständigem Wenden 4–5 Minuten braten. Sojasauce, Sesamöl, Ei und das Frühlingszwiebelgrün unterheben und mit Pfeffer abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gebratener Reis mit Ei', 'Resteessen deluxe: gebratener Reis vom Vortag mit Gemüse, Ei und Sojasauce, schneller als jeder Lieferdienst.', 20, 2, 'Portionen', 'Ganzjährig', '1. {200 g} Reis am besten schon am Vortag garen und abgedeckt im Kühlschrank auskühlen lassen. Frisch gekochter Reis klebt in der Pfanne, kalter Reis wird körnig und knusprig.
+2. Die Karotte fein würfeln, {3} Frühlingszwiebeln in Ringe schneiden und das Weiße vom Grün trennen. Den Knoblauch hacken.
+3. {1 EL} Rapsöl im Wok oder einer großen Pfanne stark erhitzen. {3} verquirlte Eier hineingießen, unter Rühren stocken lassen und herausnehmen.
+4. Das restliche Öl erhitzen. Karotte, {100 g} Erbsen, Knoblauch und das Weiße der Frühlingszwiebeln 2 Minuten unter Rühren braten.
+5. Den Reis zugeben, die Klumpen mit dem Pfannenwender zerdrücken und unter ständigem Wenden 4–5 Minuten braten, bis er heiß ist und leicht knistert.
+6. {3 EL} Sojasauce und {1 TL} Sesamöl zugeben, das Ei und das Frühlingszwiebelgrün unterheben und mit Pfeffer abschmecken.
+
+Tipp: Fast jedes Gemüse und jeder Fleischrest vom Vortag passt hinein.
 
 Guten Appetit!', 'gebratener-reis-mit-ei.jpg');
 
@@ -5811,12 +6474,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gebratener Reis mit Ei'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Teriyaki-Lachs mit Reis und Brokkoli
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Teriyaki-Lachs mit Reis und Brokkoli', 30, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Brokkoli in Röschen teilen und 4 Minuten dämpfen.
-2. Für die Teriyakisoße Sojasauce, Honig, Reisessig, geriebenen Ingwer, gepressten Knoblauch und {3 EL} Wasser verrühren. Stärke mit {1 EL} Wasser anrühren.
-3. Lachs in {4 Stücke} teilen und in Öl auf der Hautseite 4 Minuten braten, wenden und 2 Minuten weiterbraten.
-4. Soße angießen und aufkochen, Stärke einrühren und den Lachs unter Begießen glasieren, bis die Soße sirupartig ist.
-5. Lachs mit Reis und Brokkoli anrichten und mit Sesam und Frühlingszwiebelringen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Teriyaki-Lachs mit Reis und Brokkoli', 'Saftiger Lachs in glänzender, süß-salziger Teriyaki-Glasur mit Reis und Brokkoli: in einer halben Stunde fertig.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {400 g} Brokkoli in Röschen teilen und in einem Topf mit Dämpfeinsatz 4 Minuten dämpfen, bis er bissfest ist.
+2. Für die Teriyakisoße {4 EL} Sojasauce, {2 EL} Honig, {1 EL} Reisessig, {10 g} fein geriebenen Ingwer, die gepresste Knoblauchzehe und {3 EL} Wasser verrühren. {1 TL} Speisestärke mit {1 EL} kaltem Wasser glatt rühren.
+3. {600 g} Lachsfilet trocken tupfen und in {4} Stücke teilen. {1 EL} Rapsöl in einer Pfanne erhitzen und den Lachs auf der Hautseite 4 Minuten braten, bis die Haut knusprig ist. Wenden und 2 Minuten weiterbraten.
+4. Die Soße angießen und aufkochen. Die angerührte Stärke einrühren und den Lachs unter ständigem Begießen glasieren, bis die Soße sirupartig eingedickt ist. Das geht schnell, also dabeibleiben.
+5. Den Lachs mit Reis und Brokkoli anrichten, mit der restlichen Soße beträufeln und mit {1 EL} Sesam und Frühlingszwiebelringen bestreuen.
+
+Tipp: Statt Lachs schmeckt die Soße genauso gut zu Hähnchen oder Tofu.
 
 Guten Appetit!', 'teriyaki-lachs-mit-reis-und-brokkoli.jpg');
 
@@ -5834,12 +6499,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Teriyaki-Lachs mit Reis und Brokkoli'), (SELECT id FROM ingredients WHERE name = 'Frühlingszwiebel'), 2, NULL);
 
 -- Poke Bowl mit Lachs
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Poke Bowl mit Lachs', 40, 4, 'Portionen', 'Ganzjährig', '1. Sushireis waschen, bis das Wasser klar bleibt, und nach Packungsangabe garen. Reisessig, Zucker und Salz verrühren und unter den warmen Reis heben.
-2. Lachs in Sushiqualität in 1,5 cm große Würfel schneiden und mit Sojasauce, Sesamöl und Limettensaft 15 Minuten marinieren.
-3. Edamame 3 Minuten kochen und abschrecken. Avocado, Gurke und Mango würfeln.
-4. Reis auf Schalen verteilen und Lachs, Avocado, Gurke, Mango und Edamame darauf anrichten.
-5. Mit Frühlingszwiebeln, Sesam und Noristreifen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Poke Bowl mit Lachs', 'Hawaii in der Schüssel: marinierter roher Lachs auf Sushireis mit Avocado, Mango, Gurke und Edamame.', 40, 4, 'Portionen', 'Ganzjährig', '1. {300 g} Sushireis in einem Sieb waschen, bis das Wasser klar bleibt, und nach Packungsangabe garen. {3 EL} Reisessig, {1 EL} Zucker und {1 TL} Salz verrühren, bis sich alles gelöst hat, und vorsichtig unter den warmen Reis heben. Abkühlen lassen.
+2. {400 g} Lachsfilet in Sushi-Qualität in 1,5 cm große Würfel schneiden. Mit {4 EL} Sojasauce, {1 EL} Sesamöl und dem Saft der Limette mischen und 15 Minuten im Kühlschrank marinieren.
+3. {150 g} Edamame in kochendem Salzwasser 3 Minuten garen und kalt abschrecken. {2} Avocados, die Gurke und die Mango schälen bzw. entkernen und würfeln.
+4. Den Reis auf Schalen verteilen. Lachs, Avocado, Gurke, Mango und Edamame nebeneinander darauf anrichten und mit etwas Marinade beträufeln.
+5. {2} Frühlingszwiebeln in Ringe schneiden, das Noriblatt mit einer Schere in feine Streifen schneiden. Beides mit {1 EL} Sesam darüberstreuen.
+
+Tipp: Lachs für Poke Bowls unbedingt in Sushi-Qualität kaufen und am selben Tag verwenden. Alternativ geht auch marinierter Tofu.
 
 Guten Appetit!', 'poke-bowl-mit-lachs.jpg');
 
@@ -5860,12 +6527,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Poke Bowl mit Lachs'), (SELECT id FROM ingredients WHERE name = 'Nori'), 1, 'Blatt');
 
 -- Gebratene Udon-Nudeln mit Gemüse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebratene Udon-Nudeln mit Gemüse', 25, 4, 'Portionen', 'Ganzjährig', '1. Udon-Nudeln nach Packungsangabe kurz in heißem Wasser lockern und abtropfen lassen.
-2. Shiitake in Scheiben, Pak Choi in Streifen, Karotte und Paprika in feine Streifen schneiden. Knoblauch und Ingwer hacken.
-3. Öl im Wok stark erhitzen und Pilze, Karotte und Paprika 3 Minuten pfannenrühren. Knoblauch, Ingwer und Pak Choi zugeben und 2 Minuten mitbraten.
-4. Nudeln, Sojasauce und Ahornsirup zugeben und alles 2 Minuten durchschwenken.
-5. Mit Sesamöl, Frühlingszwiebelringen und Sesam servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Gebratene Udon-Nudeln mit Gemüse', 'Dicke, weiche Udon-Nudeln mit Shiitake, Pak Choi und buntem Gemüse aus dem Wok: in 25 Minuten fertig.', 25, 4, 'Portionen', 'Ganzjährig', '1. {600 g} Udon-Nudeln nach Packungsangabe kurz in heißem Wasser lockern, bis sie sich voneinander lösen. Abtropfen lassen.
+2. {150 g} Shiitake-Pilze in Scheiben schneiden, {2} Pak Choi in Streifen schneiden und dabei die Stiele von den Blättern trennen. Die Karotte und die Paprika in feine Streifen schneiden. {2} Knoblauchzehen und {15 g} Ingwer fein hacken.
+3. {2 EL} Rapsöl im Wok stark erhitzen. Pilze, Karotte, Paprika und die Pak-Choi-Stiele darin unter ständigem Rühren 3 Minuten braten. Knoblauch, Ingwer und die Pak-Choi-Blätter zugeben und 2 Minuten mitbraten.
+4. Die Nudeln, {4 EL} Sojasauce und {1 EL} Ahornsirup zugeben und alles 2 Minuten durchschwenken, bis die Nudeln heiß und mit Soße überzogen sind.
+5. Mit {1 TL} Sesamöl beträufeln und mit {3} in Ringe geschnittenen Frühlingszwiebeln und {1 EL} Sesam bestreuen.
+
+Tipp: Ein Spiegelei oder etwas gebratener Tofu obendrauf machen die Nudeln noch sättigender.
 
 Guten Appetit!', 'gebratene-udon-nudeln-mit-gemuese.jpg');
 
@@ -5884,12 +6553,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Gebratene Udon-Nudeln mit Gemüse'), (SELECT id FROM ingredients WHERE name = 'Sesam'), 1, 'EL');
 
 -- Bibimbap mit Tofu
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bibimbap mit Tofu', 50, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Tofu würfeln, in {1 EL} Rapsöl knusprig braten und mit {1 EL} Sojasauce ablöschen.
-3. Spinat und Sprossen kurz blanchieren, ausdrücken und mit {1 EL} Sesamöl, gepresstem Knoblauch und etwas Sojasauce anmachen. Karotten und Zucchini in Streifen und Pilze in Scheiben schneiden und nacheinander kurz im restlichen Rapsöl anbraten.
-4. Gochujang mit {1 EL} Sesamöl, {1 EL} Sojasauce, Zucker und {1 EL} Wasser zu einer Soße verrühren. Spiegeleier braten.
-5. Reis in Schalen füllen, Gemüse und Tofu kreisförmig darauf anrichten, je ein Spiegelei in die Mitte setzen, mit restlichem Sesamöl beträufeln und mit Sesam bestreuen. Mit der Soße servieren und am Tisch alles vermischen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bibimbap mit Tofu', 'Koreas bunte Reisschale: viele kleine Gemüsebeilagen, knuspriger Tofu, ein Spiegelei und scharfe Gochujang-Soße, am Tisch vermischt.', 50, 4, 'Portionen', 'Ganzjährig', '1. {300 g} Sushireis nach Packungsangabe garen und warm halten.
+2. {300 g} Tofu trocken tupfen und würfeln. In {1 EL} Rapsöl rundherum knusprig braten und mit {1 EL} Sojasauce ablöschen.
+3. {200 g} Spinat und {150 g} Sojasprossen nacheinander je 1 Minute blanchieren, kalt abschrecken und gut ausdrücken. Beides getrennt mit je etwas Sesamöl, gepresstem Knoblauch und einem Spritzer Sojasauce anmachen. {2} Karotten und die Zucchini in feine Streifen schneiden, {150 g} Shiitake in Scheiben. Alles nacheinander kurz im restlichen Rapsöl anbraten und leicht salzen.
+4. Für die Soße {3 EL} Gochujang mit {1 EL} Sesamöl, {1 EL} Sojasauce, {1 TL} Zucker und {1 EL} Wasser glatt rühren.
+5. {4} Spiegeleier braten, das Eigelb soll flüssig bleiben.
+6. Den Reis in Schalen füllen. Gemüse und Tofu in kleinen Häufchen kreisförmig darauf anrichten und je ein Spiegelei in die Mitte setzen. Mit dem restlichen Sesamöl beträufeln und mit {1 EL} Sesam bestreuen. Mit der Soße servieren und am Tisch alles kräftig vermischen.
+
+Tipp: Gochujang, die koreanische Chilipaste, gibt es im Asialaden. Sie hält sich im Kühlschrank monatelang.
 
 Guten Appetit!', 'bibimbap-mit-tofu.jpg');
 
@@ -5910,12 +6582,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bibimbap mit Tofu'), (SELECT id FROM ingredients WHERE name = 'Sesam'), 1, 'EL');
 
 -- Ofen-Falafel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Falafel', 45, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 200 °C vorheizen. Kichererbsen abspülen und sehr gut trocken tupfen.
-2. Mit Zwiebel, Knoblauch, Kräutern, Gewürzen, Zitronensaft, Salz und Pfeffer im Mixer grob zerkleinern – es soll keine glatte Paste werden.
-3. Stärke und Backpulver unterkneten und mit feuchten Händen {20} kleine Bällchen formen. Leicht flach drücken.
-4. Auf ein mit Backpapier belegtes Blech setzen, rundherum mit Olivenöl bepinseln und ca. 25 Minuten backen, nach der Hälfte der Zeit wenden.
-5. Mit Hummus und Salat im Fladenbrot oder als Bowl servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Ofen-Falafel', 'Würzige Kichererbsenbällchen voller Kräuter, im Ofen statt in der Fritteuse gebacken: außen knusprig, innen saftig.', 45, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {480 g} Kichererbsen abspülen und auf einem Küchentuch sehr gut trocken tupfen. Zu feuchte Kichererbsen machen die Falafel matschig.
+2. Kichererbsen, die grob geschnittene Zwiebel, {2} Knoblauchzehen, Petersilie, Koriandergrün, {2 TL} Kreuzkümmel, {1 TL} gemahlenen Koriander, den Saft der halben Zitrone, Salz und Pfeffer im Mixer grob zerkleinern. Es soll eine körnige Masse werden, keine glatte Paste.
+3. {3 EL} Speisestärke und {0.5 TL} Backpulver unterkneten. Mit feuchten Händen {20} kleine Bällchen formen und leicht flach drücken, so werden sie gleichmäßiger knusprig.
+4. Auf ein Blech mit Backpapier setzen und rundherum mit {4 EL} Olivenöl bepinseln. Etwa 25 Minuten backen, nach der Hälfte der Zeit wenden.
+5. Mit Hummus, Salat und Joghurtsoße im Fladenbrot oder als Bowl servieren.
+
+Tipp: Die Masse 30 Minuten im Kühlschrank ruhen lassen, dann lassen sich die Bällchen leichter formen.
 
 Guten Appetit!', 'ofen-falafel.jpg');
 
@@ -5934,11 +6608,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Ofen-Falafel'), (SELECT id FROM ingredients WHERE name = 'Olivenöl'), 4, 'EL');
 
 -- Hummus
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hummus', 10, 4, 'Portionen', 'Ganzjährig', '1. Kichererbsen abgießen und dabei etwas Flüssigkeit aus der Dose auffangen.
-2. Kichererbsen mit Tahini, Zitronensaft, Knoblauch, Kreuzkümmel, Salz und {3-4 EL} Eiswasser im Mixer mehrere Minuten sehr cremig pürieren.
-3. Bei Bedarf noch etwas Flüssigkeit zugeben und abschmecken.
-4. In eine Schale streichen, eine Mulde formen, mit Olivenöl beträufeln und mit Paprikapulver bestäuben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hummus', 'Samtig, nussig und mit viel Zitrone: Hummus, der so cremig wird wie im Lieblingsimbiss.', 10, 4, 'Portionen', 'Ganzjährig', '1. {480 g} Kichererbsen in einem Sieb abgießen und dabei etwas Flüssigkeit aus der Dose auffangen. Wer besonders cremigen Hummus möchte, drückt die Kichererbsen aus ihren dünnen Häutchen. Das dauert 10 Minuten, lohnt sich aber.
+2. Kichererbsen, {4 EL} Tahini, den Saft der Zitrone, die Knoblauchzehe, {0.5 TL} Kreuzkümmel, Salz und {3-4 EL} Eiswasser in den Mixer geben. Mehrere Minuten pürieren, bis der Hummus ganz glatt und cremig ist. Das Eiswasser macht ihn besonders luftig.
+3. Ist er zu fest, noch etwas Flüssigkeit aus der Dose zugeben. Mit Salz und Zitronensaft abschmecken.
+4. In eine flache Schale streichen und mit dem Löffelrücken eine Mulde formen. Mit {3 EL} Olivenöl beträufeln und mit einer Prise Paprikapulver bestäuben.
+
+Tipp: Mit warmem Fladenbrot, Gemüsesticks oder als Aufstrich in Wraps servieren. Im Kühlschrank hält er sich 4–5 Tage.
 
 Guten Appetit!', 'hummus.jpg');
 
@@ -5952,13 +6628,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hummus'), (SELECT id FROM ingredients WHERE name = 'Paprikapulver'), 1, 'Prise');
 
 -- Moussaka
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Moussaka', 120, 6, 'Portionen', 'Ganzjährig', '1. Auberginen in 1 cm dicke Scheiben schneiden, salzen, 20 Minuten ziehen lassen und trocken tupfen. Kartoffeln schälen und in Scheiben schneiden.
-2. Auberginen- und Kartoffelscheiben mit Öl bepinseln und bei 220 °C im Ofen 20 Minuten vorbacken.
-3. Zwiebel und Knoblauch hacken und mit dem Hackfleisch krümelig braten. Tomatenmark, Rotwein, Tomaten, Zimt und Oregano zugeben, salzen, pfeffern und 20 Minuten köcheln.
-4. Für die Béchamel Butter schmelzen, Mehl anschwitzen, Milch einrühren und 5 Minuten köcheln. Vom Herd nehmen, Eier und die Hälfte des Käses einrühren und mit Muskat würzen.
-5. Kartoffeln, Auberginen und Hackfleischsoße in einer Form schichten, mit der Béchamel abschließen und mit dem restlichen Käse bestreuen.
-6. Bei 180 °C ca. 45 Minuten backen und vor dem Servieren 15 Minuten ruhen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Moussaka', 'Griechenlands berühmtester Auflauf: Schichten aus Auberginen, Kartoffeln und zimtiger Hackfleischsoße unter einer dicken, goldenen Béchamel.', 120, 6, 'Portionen', 'Ganzjährig', '1. {3} Auberginen in 1 cm dicke Scheiben schneiden, von beiden Seiten salzen und 20 Minuten Wasser ziehen lassen. Gründlich trocken tupfen. {500 g} Kartoffeln schälen und in 5 mm dicke Scheiben schneiden.
+2. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. Auberginen- und Kartoffelscheiben auf zwei Bleche legen, mit {6 EL} Olivenöl bepinseln und 20 Minuten vorbacken, bis sie weich und leicht gebräunt sind.
+3. Inzwischen die Zwiebel und {2} Knoblauchzehen hacken und mit {500 g} Rinderhackfleisch in einer großen Pfanne krümelig braten. {2 EL} Tomatenmark kurz mitrösten, mit {100 ml} Rotwein ablöschen. {400 g} gehackte Tomaten, {1 TL} Zimt und {1 TL} Oregano zugeben, salzen, pfeffern und 20 Minuten köcheln lassen. Der Zimt ist typisch griechisch und macht die Soße warm und würzig.
+4. Für die Béchamel {60 g} Butter schmelzen, {60 g} Mehl einrühren und 1 Minute anschwitzen. {600 ml} Milch nach und nach einrühren und 5 Minuten köcheln lassen, bis die Soße dick ist. {60 g} Parmesan reiben. Die Soße vom Herd nehmen, {2} Eier und die Hälfte des Käses einrühren und mit Muskatnuss würzen.
+5. Den Ofen auf 180 °C herunterschalten. In einer Auflaufform zuerst die Kartoffeln, dann die Hälfte der Auberginen, die Hackfleischsoße und die restlichen Auberginen schichten. Mit der Béchamel abschließen und mit dem restlichen Käse bestreuen.
+6. Etwa 45 Minuten backen, bis die Oberfläche goldbraun ist. Vor dem Servieren mindestens 15 Minuten ruhen lassen, dann lässt sich die Moussaka sauber schneiden.
+
+Tipp: Moussaka schmeckt lauwarm am besten, so isst man sie auch in Griechenland.
 
 Guten Appetit!', 'moussaka.jpg');
 
@@ -5983,12 +6661,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Moussaka'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Wiener Schnitzel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wiener Schnitzel', 30, 4, 'Portionen', 'Ganzjährig', '1. Schnitzel zwischen Frischhaltefolie mit einem Plattiereisen oder Topf auf ca. 4 mm Dicke klopfen. Salzen und pfeffern.
-2. Eier in einem tiefen Teller verquirlen. Mehl und Paniermehl in zwei weitere Teller geben.
-3. Schnitzel erst in Mehl, dann im Ei und zuletzt im Paniermehl wenden. Die Panade nicht andrücken, damit sie später Wellen schlägt.
-4. Butterschmalz in einer großen Pfanne fingerhoch erhitzen. Schnitzel darin schwimmend pro Seite 2–3 Minuten goldbraun backen und die Pfanne dabei leicht schwenken.
-5. Auf Küchenpapier abtropfen lassen und mit Zitronenspalten und Preiselbeeren servieren. Dazu passt Kartoffelsalat.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Wiener Schnitzel', 'Hauchdünnes Kalbfleisch in einer goldenen, gewellten Panade, schwimmend in Butterschmalz gebacken: Österreichs Nationalgericht.', 30, 4, 'Portionen', 'Ganzjährig', '1. {4} Kalbsschnitzel zwischen zwei Lagen Frischhaltefolie mit einem Plattiereisen oder dem Boden eines Topfes gleichmäßig auf etwa 4 mm Dicke klopfen. Von beiden Seiten salzen und pfeffern.
+2. Drei tiefe Teller bereitstellen: {50 g} Mehl, {2} verquirlte Eier und {100 g} Paniermehl.
+3. Die Schnitzel erst in Mehl wenden und abklopfen, dann durch das Ei ziehen und abtropfen lassen und zuletzt locker im Paniermehl wenden. Die Panade nicht andrücken, nur so löst sie sich beim Backen und schlägt die typischen Wellen.
+4. {150 g} Butterschmalz in einer großen Pfanne etwa fingerhoch erhitzen. Es ist heiß genug, wenn ein Bröselchen sofort zischt. Die Schnitzel einzeln oder zu zweit hineinlegen und pro Seite 2–3 Minuten goldbraun backen. Dabei die Pfanne leicht schwenken, sodass das Fett über die Oberseite schwappt.
+5. Auf Küchenpapier abtropfen lassen und sofort mit Zitronenspalten und {4 EL} Preiselbeeren servieren.
+
+Tipp: Dazu gehört in Wien ein lauwarmer Erdäpfelsalat oder Petersilienkartoffeln.
 
 Guten Appetit!', 'wiener-schnitzel.jpg');
 
@@ -6003,12 +6683,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Wiener Schnitzel'), (SELECT id FROM ingredients WHERE name = 'Preiselbeeren'), 4, 'EL');
 
 -- Königsberger Klopse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Königsberger Klopse', 60, 4, 'Portionen', 'Ganzjährig', '1. Brötchen in Wasser einweichen und gut ausdrücken. Zwiebel und Sardellen sehr fein hacken.
-2. Hackfleisch mit Brötchen, Zwiebel, Sardellen, Ei, Senf, Salz und Pfeffer verkneten und {12} Klopse formen.
-3. Brühe mit Lorbeer und Piment aufkochen. Klopse hineinlegen und bei kleiner Hitze 15 Minuten gar ziehen lassen. Herausnehmen und die Brühe durch ein Sieb gießen.
-4. Butter schmelzen, Mehl anschwitzen und mit {500 ml} Brühe unter Rühren ablöschen. 5 Minuten köcheln, Sahne und Kapern zugeben und mit Zitronensaft, Salz und Pfeffer abschmecken.
-5. Kartoffeln als Salzkartoffeln garen. Klopse in der Soße erwärmen und mit den Kartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Königsberger Klopse', 'Zarte Fleischklößchen in heller, säuerlicher Kapernsoße: ein Klassiker aus Ostpreußen, der heute noch in vielen Familien gekocht wird.', 60, 4, 'Portionen', 'Ganzjährig', '1. Das Brötchen in Wasser einweichen und gut ausdrücken. Die Zwiebel und {2} Sardellenfilets sehr fein hacken. Die Sardellen schmeckt man nicht heraus, sie geben nur Würze.
+2. {600 g} Hackfleisch mit Brötchen, Zwiebel, Sardellen, {1} Ei, {1 TL} Senf, Salz und Pfeffer gründlich verkneten. Mit nassen Händen {12} gleich große Klopse formen.
+3. {1000 ml} Rinderbrühe mit dem Lorbeerblatt und {3} Pimentkörnern aufkochen. Die Hitze reduzieren, die Klopse hineinlegen und 15 Minuten gar ziehen lassen, die Brühe darf nicht kochen. Mit einer Schaumkelle herausnehmen und die Brühe durch ein Sieb gießen.
+4. Inzwischen {800 g} Kartoffeln schälen und in Salzwasser garen.
+5. {30 g} Butter in einem Topf schmelzen, {30 g} Mehl einrühren und 1 Minute anschwitzen. Mit {500 ml} der Brühe unter Rühren ablöschen und 5 Minuten köcheln lassen. {100 ml} Sahne und {3 EL} Kapern zugeben und mit dem Saft der Zitrone, Salz und Pfeffer säuerlich abschmecken.
+6. Die Klopse in der Soße 5 Minuten erwärmen und mit den Kartoffeln servieren.
+
+Tipp: Dazu passt Rote-Bete-Salat. Die übrige Brühe ergibt eine gute Suppe für den nächsten Tag.
 
 Guten Appetit!', 'koenigsberger-klopse.jpg');
 
@@ -6031,12 +6714,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Königsberger Klopse'), (SELECT id FROM ingredients WHERE name = 'Kartoffel'), 800, 'g');
 
 -- Frikadellen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Frikadellen', 40, 4, 'Portionen', 'Ganzjährig', '1. Brötchen in Wasser einweichen und gut ausdrücken. Zwiebel fein würfeln und Petersilie hacken.
-2. Hackfleisch mit Brötchen, Zwiebel, Ei, Senf, Petersilie, Majoran, Paprika, Salz und Pfeffer kräftig verkneten.
-3. Mit nassen Händen {8} flache Frikadellen formen.
-4. Butterschmalz erhitzen und die Frikadellen bei mittlerer Hitze pro Seite 5–6 Minuten braten, bis sie durchgegart sind.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Frikadellen', 'Saftig, würzig und außen schön knusprig: Frikadellen, die warm und kalt gleich gut schmecken.', 40, 4, 'Portionen', 'Ganzjährig', '1. Das Brötchen in Wasser einweichen und gut ausdrücken. Die Zwiebel fein würfeln und die Petersilie hacken.
+2. {600 g} Hackfleisch mit Brötchen, Zwiebel, {1} Ei, {1 EL} Senf, Petersilie, {1 TL} Majoran, {1 TL} Paprikapulver, Salz und Pfeffer in einer Schüssel mit den Händen kräftig verkneten, bis eine bindige Masse entsteht.
+3. Mit nassen Händen {8} gleich große, flache Frikadellen formen. Flache Frikadellen garen gleichmäßiger.
+4. {3 EL} Butterschmalz in einer großen Pfanne bei mittlerer Hitze erhitzen. Die Frikadellen darin pro Seite 5–6 Minuten braten, bis sie goldbraun und durchgegart sind. Zu große Hitze macht sie außen schwarz und innen roh.
 5. Warm mit Kartoffelsalat oder kalt mit Senf und Brot servieren.
+
+Tipp: Ein Löffel Senf direkt in die Masse und eine fein geriebene Kartoffel machen sie besonders saftig.
 
 Guten Appetit!', 'frikadellen.jpg');
 
@@ -6053,13 +6738,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Frikadellen'), (SELECT id FROM ingredients WHERE name = 'Butterschmalz'), 3, 'EL');
 
 -- Zürcher Geschnetzeltes mit Rösti
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zürcher Geschnetzeltes mit Rösti', 50, 4, 'Portionen', 'Ganzjährig', '1. Für die Rösti festkochende Kartoffeln schälen, grob raspeln, in einem Tuch gut ausdrücken und salzen.
-2. Butterschmalz in einer Pfanne erhitzen, die Kartoffeln hineingeben, flach drücken und bei mittlerer Hitze 12 Minuten goldbraun braten. Mithilfe eines Tellers wenden und weitere 10 Minuten braten.
-3. Kalbfleisch in feine Streifen und Champignons in Scheiben schneiden, Schalotten fein würfeln.
-4. Fleisch portionsweise in {2 EL} Butter scharf anbraten, salzen, pfeffern und herausnehmen.
-5. Pilze und Schalotten in der restlichen Butter anbraten, mit Wein ablöschen und einkochen. Brühe und Sahne zugeben, 5 Minuten einkochen und mit angerührter Stärke binden.
-6. Fleisch in der Soße nur noch erwärmen, mit Zitronensaft abschmecken, mit Petersilie bestreuen und mit der Rösti servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zürcher Geschnetzeltes mit Rösti', 'Zarte Kalbfleischstreifen in Champignon-Rahmsoße mit einer knusprigen, goldbraunen Rösti: Zürichs Stolz.', 50, 4, 'Portionen', 'Ganzjährig', '1. Für die Rösti {1000 g} festkochende Kartoffeln schälen und grob raspeln. In einem sauberen Geschirrtuch kräftig ausdrücken und salzen.
+2. {3 EL} Butterschmalz in einer großen, beschichteten Pfanne erhitzen. Die Kartoffeln hineingeben, zu einem Fladen flach drücken und bei mittlerer Hitze etwa 12 Minuten goldbraun braten. Einen Teller auflegen, die Pfanne umdrehen und die Rösti zurück in die Pfanne gleiten lassen. Weitere 10 Minuten braten und warm halten.
+3. {600 g} Kalbfleisch in feine Streifen schneiden. {250 g} Champignons in Scheiben schneiden und {2} Schalotten fein würfeln.
+4. {2 EL} Butter in einer Pfanne stark erhitzen und das Fleisch portionsweise jeweils nur 1–2 Minuten scharf anbraten. Salzen, pfeffern und herausnehmen. Es gart später in der Soße nicht mehr weiter, sonst wird es zäh.
+5. Pilze und Schalotten in der restlichen Butter 4 Minuten anbraten, mit {150 ml} Weißwein ablöschen und fast vollständig einkochen. {150 ml} Rinderbrühe und {200 ml} Sahne zugeben und 5 Minuten sämig einkochen. {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit binden.
+6. Das Fleisch mit dem ausgetretenen Saft in die Soße geben und nur noch erwärmen. Mit einem Spritzer Zitronensaft abschmecken, mit gehackter Petersilie bestreuen und mit der Rösti servieren.
+
+Tipp: Für die Rösti am besten Kartoffeln vom Vortag nehmen, die man in der Schale gekocht hat. Dann wird sie noch knuspriger.
 
 Guten Appetit!', 'zuercher-geschnetzeltes-mit-roesti.jpg');
 
@@ -6079,12 +6766,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zürcher Geschnetzeltes mit Rösti'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Boeuf Stroganoff
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Boeuf Stroganoff', 35, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Fleisch (am besten Hüfte oder Filet) in fingerdicke Streifen schneiden. Zwiebel in Streifen, Pilze in Scheiben und Gurken in Stifte schneiden.
-2. Fleisch portionsweise in {1 EL} Butter bei starker Hitze 1–2 Minuten scharf anbraten, salzen, pfeffern und herausnehmen.
-3. Restliche Butter erhitzen, Zwiebel und Pilze darin 5 Minuten braten. Paprikapulver und Senf einrühren und mit Brühe ablöschen.
-4. Schmand einrühren und kurz einköcheln lassen. Fleisch und Gurken zugeben und nur noch erwärmen.
-5. Mit Salz und Pfeffer abschmecken, mit Petersilie bestreuen und mit dem Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Boeuf Stroganoff', 'Zarte Rindfleischstreifen in einer cremigen Soße mit Pilzen, Gewürzgurke und Schmand: ein Klassiker aus dem alten Russland.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {600 g} Rindersteak, am besten Hüfte oder Filet, quer zur Faser in fingerdicke Streifen schneiden. Die Zwiebel in Streifen, {250 g} Champignons in Scheiben und {2} Gewürzgurken in feine Stifte schneiden.
+2. {1 EL} Butter in einer großen Pfanne sehr stark erhitzen. Das Fleisch portionsweise jeweils 1–2 Minuten scharf anbraten, es soll innen noch rosa sein. Salzen, pfeffern und herausnehmen.
+3. Die restliche Butter erhitzen und Zwiebel und Pilze darin 5 Minuten braten, bis sie Farbe nehmen. {1 TL} Paprikapulver und {1 TL} Senf einrühren und mit {150 ml} Rinderbrühe ablöschen.
+4. {150 g} Schmand einrühren und kurz einköcheln lassen, bis die Soße sämig ist.
+5. Fleisch, ausgetretenen Fleischsaft und Gurken zugeben und nur noch erwärmen. Mit Salz und Pfeffer abschmecken, mit gehackter Petersilie bestreuen und mit dem Reis servieren.
+
+Tipp: Statt Reis passen auch Bandnudeln oder Kartoffelpüree.
 
 Guten Appetit!', 'boeuf-stroganoff.jpg');
 
@@ -6103,12 +6792,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Boeuf Stroganoff'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Hühnerfrikassee
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hühnerfrikassee', 75, 4, 'Portionen', 'Ganzjährig', '1. Hähnchenbrust in der Brühe bei kleiner Hitze 20 Minuten gar ziehen lassen. Herausnehmen, in Würfel schneiden und die Brühe aufbewahren.
-2. Karotten in Scheiben und Champignons in Viertel schneiden und in der Brühe 5 Minuten garen, die Erbsen in den letzten 2 Minuten zugeben. Gemüse herausnehmen.
-3. Reis nach Packungsangabe garen.
-4. Butter schmelzen, Mehl anschwitzen und mit {500 ml} Brühe unter Rühren ablöschen. 5 Minuten köcheln und die Sahne einrühren.
-5. Fleisch, Gemüse und Kapern in die Soße geben und mit Zitronensaft, Muskat, Salz und Pfeffer abschmecken. Mit Petersilie und Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hühnerfrikassee', 'Zartes Hühnerfleisch und Gemüse in einer hellen, leicht säuerlichen Soße mit Kapern: Wohlfühlessen wie bei Oma.', 75, 4, 'Portionen', 'Ganzjährig', '1. {750 ml} Hühnerbrühe aufkochen. {600 g} Hähnchenbrust hineinlegen und bei schwacher Hitze 20 Minuten gar ziehen lassen, die Brühe soll nicht kochen. Herausnehmen, etwas abkühlen lassen und in Würfel schneiden. Die Brühe aufbewahren.
+2. {2} Karotten in Scheiben schneiden, {200 g} Champignons vierteln. Beides in der Brühe 5 Minuten garen, {150 g} Erbsen in den letzten 2 Minuten zugeben. Das Gemüse mit einer Schaumkelle herausnehmen.
+3. {250 g} Basmatireis nach Packungsangabe garen.
+4. {40 g} Butter in einem Topf schmelzen, {40 g} Mehl einrühren und 1 Minute anschwitzen. Mit {500 ml} der Brühe unter ständigem Rühren ablöschen und 5 Minuten köcheln lassen, bis die Soße sämig ist. {100 ml} Sahne einrühren.
+5. Fleisch, Gemüse und {1 EL} Kapern in die Soße geben. Mit dem Saft der halben Zitrone, Muskatnuss, Salz und Pfeffer abschmecken. Die Säure ist wichtig, sie macht das Frikassee frisch.
+6. Mit gehackter Petersilie bestreuen und mit dem Reis servieren.
+
+Tipp: Grüner Spargel ist im Frühjahr eine schöne Ergänzung, er gart zusammen mit den Karotten.
 
 Guten Appetit!', 'huehnerfrikassee.jpg');
 
@@ -6129,12 +6821,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hühnerfrikassee'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Coq au Vin
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Coq au Vin', 120, 4, 'Portionen', 'Ganzjährig', '1. Ganze Hähnchenkeulen im Gelenk teilen, salzen und pfeffern.
-2. Speck würfeln, in einem Schmortopf auslassen und herausnehmen. Hähnchen im Speckfett rundherum goldbraun anbraten und herausnehmen.
-3. Geschälte Schalotten, Karottenstücke und Knoblauch im Bratfett anrösten und das Tomatenmark kurz mitrösten.
-4. Mit Rotwein ablöschen, Brühe, Thymian, Lorbeer, Speck und Hähnchen zugeben und zugedeckt ca. 1 Stunde schmoren.
-5. Champignons in Butter goldbraun braten und zugeben. Die Soße mit angerührter Stärke binden, abschmecken und mit Petersilie servieren. Dazu passen Baguette oder Kartoffelpüree.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Coq au Vin', 'Hähnchen, langsam in Rotwein geschmort, mit Speck, Schalotten und Champignons: der Bistroklassiker aus Burgund.', 120, 4, 'Portionen', 'Ganzjährig', '1. {4} ganze Hähnchenschenkel im Gelenk in Ober- und Unterschenkel teilen. Trocken tupfen, salzen und pfeffern.
+2. {125 g} Speck würfeln und in einem Schmortopf bei mittlerer Hitze auslassen, bis er knusprig ist. Herausnehmen. Das Hähnchen im Speckfett rundherum goldbraun anbraten und herausnehmen.
+3. {12} kleine Schalotten schälen, {2} Karotten in Stücke schneiden und {2} Knoblauchzehen andrücken. Alles im Bratfett 5 Minuten anrösten. {1 EL} Tomatenmark einrühren und 1 Minute mitrösten.
+4. Mit {750 ml} Rotwein ablöschen und den Bratensatz vom Topfboden lösen. {200 ml} Hühnerbrühe, {3} Thymianzweige, {2} Lorbeerblätter, den Speck und das Hähnchen zugeben. Zugedeckt bei schwacher Hitze etwa 1 Stunde schmoren, bis sich das Fleisch leicht vom Knochen löst.
+5. {250 g} Champignons vierteln und in {2 EL} Butter goldbraun braten. Zum Hähnchen geben.
+6. Thymian und Lorbeer entfernen. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken. Mit gehackter Petersilie bestreuen und mit Baguette oder Kartoffelpüree servieren.
+
+Tipp: Einen Burgunder oder einen anderen kräftigen, trockenen Rotwein nehmen, den man auch selbst gern trinken würde.
 
 Guten Appetit!', 'coq-au-vin.jpg');
 
@@ -6156,12 +6851,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Coq au Vin'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Saltimbocca alla Romana
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Saltimbocca alla Romana', 25, 4, 'Portionen', 'Ganzjährig', '1. Dünne Kalbsschnitzel (à ca. 70 g) flach klopfen und leicht pfeffern.
-2. Je eine Scheibe Parmaschinken und ein Salbeiblatt auflegen und mit einem Zahnstocher feststecken.
-3. Nur die Unterseite leicht in Mehl tupfen.
-4. Öl und die Hälfte der Butter erhitzen. Schnitzel zuerst auf der Schinkenseite 1 Minute, dann auf der anderen Seite 1–2 Minuten braten. Herausnehmen und warm stellen.
-5. Bratensatz mit Weißwein ablöschen, etwas einkochen, die restliche Butter einschwenken und vorsichtig salzen. Soße über die Saltimbocca geben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Saltimbocca alla Romana', '„Spring in den Mund“: hauchdünne Kalbsschnitzel mit Parmaschinken und Salbei in Weißwein-Butter, in wenigen Minuten gebraten.', 25, 4, 'Portionen', 'Ganzjährig', '1. {8} dünne Kalbsschnitzel von je etwa 70 g zwischen Frischhaltefolie flach klopfen und leicht pfeffern. Nicht salzen, der Schinken ist salzig genug.
+2. Auf jedes Schnitzel eine Scheibe Parmaschinken und ein Salbeiblatt legen und mit einem Zahnstocher feststecken.
+3. Nur die Unterseite leicht in {2 EL} Mehl tupfen und überschüssiges Mehl abklopfen.
+4. {1 EL} Olivenöl und {20 g} Butter in einer großen Pfanne erhitzen. Die Schnitzel zuerst auf der Schinkenseite 1 Minute, dann auf der anderen Seite 1–2 Minuten braten. Herausnehmen und auf einer vorgewärmten Platte warm halten.
+5. Den Bratensatz mit {150 ml} Weißwein ablöschen, loskratzen und etwas einkochen lassen. Die restliche Butter in Stückchen einschwenken, bis die Soße leicht bindet, und vorsichtig salzen.
+6. Die Zahnstocher entfernen und die Soße über die Saltimbocca geben. Sofort servieren.
+
+Tipp: Dazu passen Rosmarinkartoffeln, Weißbrot oder grüne Bohnen.
 
 Guten Appetit!', 'saltimbocca-alla-romana.jpg');
 
@@ -6176,12 +6874,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Saltimbocca alla Romana'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Backfisch mit Remoulade
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Backfisch mit Remoulade', 40, 4, 'Portionen', 'Ganzjährig', '1. Für die Remoulade Gewürzgurken, Kapern und Petersilie fein hacken und mit Mayonnaise, Joghurt und Senf verrühren. Mit Salz, Pfeffer und etwas Zitronensaft abschmecken.
-2. Mehl, Backpulver und Salz mischen und mit kaltem Bier und Ei zu einem glatten, dickflüssigen Teig verrühren.
-3. Fisch in Portionsstücke schneiden, trocken tupfen, mit Zitronensaft beträufeln und salzen.
-4. Öl in einem Topf auf 175 °C erhitzen. Fischstücke durch den Teig ziehen, abtropfen lassen und portionsweise 4–5 Minuten goldbraun ausbacken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Backfisch mit Remoulade', 'Fisch im knusprigen Bierteig, wie auf dem Fischmarkt, mit selbst gemachter Remoulade.', 40, 4, 'Portionen', 'Ganzjährig', '1. Für die Remoulade {2} Gewürzgurken, {1 EL} Kapern und die Petersilie fein hacken. Mit {150 g} Mayonnaise, {100 g} Joghurt und {1 TL} Senf verrühren und mit Salz, Pfeffer und etwas Zitronensaft abschmecken. Kalt stellen.
+2. {150 g} Mehl, {1 TL} Backpulver und eine Prise Salz mischen. {200 ml} kaltes Bier und {1} Ei zugeben und zu einem glatten, dickflüssigen Teig verrühren. Die Kohlensäure macht den Teig luftig und knusprig.
+3. {600 g} Seelachsfilet in Portionsstücke schneiden, trocken tupfen, mit etwas Zitronensaft beträufeln und salzen.
+4. {1000 ml} Rapsöl in einem hohen Topf auf 175 °C erhitzen. Die Fischstücke durch den Teig ziehen, abtropfen lassen und portionsweise 4–5 Minuten goldbraun ausbacken. Nicht zu viele auf einmal, sonst kühlt das Öl ab und der Teig wird fettig.
 5. Auf Küchenpapier abtropfen lassen und mit Remoulade und Zitronenspalten servieren.
+
+Tipp: Ohne Thermometer: Das Öl ist heiß genug, wenn ein Tropfen Teig sofort aufsteigt und brutzelt.
 
 Guten Appetit!', 'backfisch-mit-remoulade.jpg');
 
@@ -6202,12 +6902,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Backfisch mit Remoulade'), (SELECT id FROM ingredients WHERE name = 'Rapsöl'), 1000, 'ml');
 
 -- Lachs-Spinat-Pasta
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lachs-Spinat-Pasta', 25, 4, 'Portionen', 'Ganzjährig', '1. Nudeln in Salzwasser bissfest kochen.
-2. Lachs in 2 cm große Würfel schneiden. Schalotte und Knoblauch fein würfeln.
-3. Schalotte und Knoblauch in Butter andünsten, mit Weißwein ablöschen und etwas einkochen. Sahne zugeben und 3 Minuten köcheln.
-4. Lachswürfel und Spinat zugeben und 3 Minuten ziehen lassen, bis der Lachs gar und der Spinat zusammengefallen ist.
-5. Mit Zitronenabrieb, Zitronensaft, Salz und Pfeffer abschmecken, Nudeln untermischen und mit Dill servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Lachs-Spinat-Pasta', 'Cremige Bandnudeln mit zarten Lachswürfeln, Spinat und Zitrone: elegant, aber in 25 Minuten fertig.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Bandnudeln darin bissfest kochen.
+2. {300 g} Lachsfilet in 2 cm große Würfel schneiden. Die Schalotte und die Knoblauchzehe fein würfeln.
+3. {1 EL} Butter in einer großen Pfanne schmelzen und Schalotte und Knoblauch darin glasig dünsten. Mit {100 ml} Weißwein ablöschen und etwas einkochen lassen. {200 ml} Sahne zugeben und 3 Minuten köcheln lassen.
+4. Die Lachswürfel und {200 g} Spinat zugeben und bei schwacher Hitze 3 Minuten ziehen lassen, bis der Lachs gerade gar und der Spinat zusammengefallen ist. Nicht mehr umrühren, sonst zerfällt der Lachs.
+5. Mit abgeriebener Zitronenschale, etwas Zitronensaft, Salz und Pfeffer abschmecken. Die abgetropften Nudeln vorsichtig unterheben und mit gehacktem Dill servieren.
+
+Tipp: Mit Räucherlachs geht es noch schneller, dann erst ganz zum Schluss unterheben.
 
 Guten Appetit!', 'lachs-spinat-pasta.jpg');
 
@@ -6225,12 +6927,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Lachs-Spinat-Pasta'), (SELECT id FROM ingredients WHERE name = 'Dill'), 0.5, 'Bund');
 
 -- Kabeljau in Senfsoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kabeljau in Senfsoße', 35, 4, 'Portionen', 'Ganzjährig', '1. Kartoffeln schälen und in Salzwasser garen.
-2. Fisch in {4 Stücke} teilen, mit Zitronensaft beträufeln und salzen.
-3. Butter schmelzen, Mehl anschwitzen, mit Brühe und Sahne unter Rühren ablöschen und 5 Minuten köcheln. Senf (gern mittelscharf und körnig gemischt) einrühren und mit Zucker, Salz und Pfeffer abschmecken.
-4. Fisch in die Soße legen und zugedeckt bei kleiner Hitze 8–10 Minuten gar ziehen lassen.
-5. Mit gehacktem Dill bestreuen und mit Salzkartoffeln servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kabeljau in Senfsoße', 'Zarter Kabeljau, sanft in würziger Senfsoße gegart, mit Salzkartoffeln und Dill: norddeutsch und schön einfach.', 35, 4, 'Portionen', 'Ganzjährig', '1. {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+2. {600 g} Kabeljaufilet in {4} Stücke teilen, mit dem Saft der halben Zitrone beträufeln und salzen.
+3. {30 g} Butter in einem breiten Topf schmelzen, {2 EL} Mehl einrühren und 1 Minute anschwitzen. Mit {300 ml} Gemüsebrühe und {150 ml} Sahne unter Rühren ablöschen und 5 Minuten köcheln lassen. {3 EL} Senf, gern mittelscharf und körnig gemischt, einrühren und mit einer Prise Zucker, Salz und Pfeffer abschmecken. Ab jetzt nicht mehr kochen lassen, Senf wird beim Kochen bitter.
+4. Den Fisch in die Soße legen und zugedeckt bei schwacher Hitze 8–10 Minuten gar ziehen lassen, bis er sich leicht in Lamellen teilen lässt.
+5. Mit gehacktem Dill bestreuen und mit den Salzkartoffeln servieren.
+
+Tipp: Dazu passt ein Gurkensalat.
 
 Guten Appetit!', 'kabeljau-in-senfsosse.jpg');
 
@@ -6248,13 +6952,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kabeljau in Senfsoße'), (SELECT id FROM ingredients WHERE name = 'Dill'), 0.5, 'Bund');
 
 -- Vegane Maki-Sushi
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vegane Maki-Sushi', 60, 4, 'Portionen', 'Ganzjährig', '1. Sushireis waschen, bis das Wasser klar bleibt, abtropfen lassen und mit {400 ml} Wasser aufkochen. Zugedeckt bei kleinster Hitze 12 Minuten quellen und dann 10 Minuten ruhen lassen.
-2. Reisessig, Zucker und Salz verrühren, unter den warmen Reis heben und abkühlen lassen.
-3. Gurke, Avocado und Karotte in lange, dünne Stifte schneiden.
-4. Ein halbes Noriblatt auf eine Bambusmatte legen, mit nassen Händen dünn mit Reis bestreichen (oben 1 cm frei lassen) und mittig mit Gemüse belegen.
-5. Mithilfe der Matte fest aufrollen, den freien Rand mit Wasser befeuchten und andrücken. Mit einem nassen, scharfen Messer in sechs Stücke schneiden.
-6. Mit Sesam bestreuen und mit Sojasauce servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Vegane Maki-Sushi', 'Selbst gerollte Sushi mit Gurke, Avocado und Karotte: Es braucht etwas Übung, aber es macht Spaß, besonders zu mehreren.', 60, 4, 'Portionen', 'Ganzjährig', '1. {300 g} Sushireis in einem Sieb waschen, bis das Wasser klar bleibt, und 15 Minuten abtropfen lassen. Mit {400 ml} Wasser in einem Topf aufkochen, dann zugedeckt bei kleinster Hitze 12 Minuten quellen lassen. Vom Herd nehmen und weitere 10 Minuten ruhen lassen, ohne den Deckel zu öffnen.
+2. {4 EL} Reisessig, {1 EL} Zucker und {1 TL} Salz verrühren, bis sich alles gelöst hat. Den Reis in eine große Schüssel geben, die Mischung darüberträufeln und mit einem Holzspatel vorsichtig unterheben. Abkühlen lassen, bis er lauwarm ist.
+3. Die Gurke, die Avocado und die Karotte in lange, dünne Stifte schneiden.
+4. Ein halbes Noriblatt mit der glatten Seite nach unten auf eine Bambusmatte legen. Mit nassen Händen eine dünne Schicht Reis darauf verteilen und oben 1 cm frei lassen. Gemüse in einer Linie mittig darauflegen.
+5. Mithilfe der Matte von unten fest aufrollen. Den freien Rand mit etwas Wasser befeuchten und andrücken. Die Rolle mit einem scharfen, nassen Messer in sechs Stücke schneiden. Mit den übrigen {5} Noriblättern genauso verfahren.
+6. Mit {1 EL} Sesam bestreuen und mit {4 EL} Sojasauce servieren.
+
+Tipp: Die Messerklinge vor jedem Schnitt in Wasser tauchen, dann klebt der Reis nicht daran.
 
 Guten Appetit!', 'vegane-maki-sushi.jpg');
 
@@ -6270,12 +6976,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Vegane Maki-Sushi'), (SELECT id FROM ingredients WHERE name = 'Sojasauce'), 4, 'EL');
 
 -- Tofu-Gemüse-Pfanne mit Erdnusssoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tofu-Gemüse-Pfanne mit Erdnusssoße', 30, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Tofu in Würfel schneiden, mit Stärke bestäuben und in {2 EL} Öl rundherum knusprig braten. Herausnehmen.
-2. Erdnussmus, Sojasauce, Limettensaft, Ahornsirup, geriebenen Ingwer, gepressten Knoblauch, Chili und {100 ml} warmes Wasser glatt rühren.
-3. Brokkoliröschen sowie Paprika und Karotten in Streifen im restlichen Öl 5 Minuten pfannenrühren.
-4. Soße und Tofu zugeben und 2 Minuten durchschwenken.
-5. Mit Frühlingszwiebeln und gehackten Erdnüssen bestreuen und mit dem Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tofu-Gemüse-Pfanne mit Erdnusssoße', 'Knuspriger Tofu und knackiges Gemüse in einer cremigen, würzigen Erdnusssoße: Feierabendessen mit Suchtpotenzial.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {400 g} Tofu trocken tupfen und in Würfel schneiden. Mit {1 EL} Speisestärke bestäuben und in {2 EL} Rapsöl rundherum knusprig braten. Herausnehmen.
+2. {4 EL} Erdnussmus, {3 EL} Sojasauce, den Saft der Limette, {1 EL} Ahornsirup, {15 g} geriebenen Ingwer, die gepresste Knoblauchzehe, {0.5 TL} Chiliflocken und {100 ml} warmes Wasser glatt rühren.
+3. {300 g} Brokkoli in kleine Röschen teilen, die Paprika und {2} Karotten in Streifen schneiden. Im restlichen Öl im Wok bei hoher Hitze 5 Minuten unter Rühren braten, bis das Gemüse bissfest ist.
+4. Die Soße und den Tofu zugeben und 2 Minuten durchschwenken, bis alles heiß und mit Soße überzogen ist. Ist die Soße zu dick, einen Schuss Wasser zugeben.
+5. {3} Frühlingszwiebeln in Ringe schneiden und {30 g} Erdnüsse grob hacken. Beides darüberstreuen und mit dem Reis servieren.
+
+Tipp: Tofu wird besonders knusprig, wenn man ihn vorher 10 Minuten zwischen Küchentüchern mit einem schweren Topf auspresst.
 
 Guten Appetit!', 'tofu-gemuese-pfanne-mit-erdnusssosse.jpg');
 
@@ -6297,12 +7005,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tofu-Gemüse-Pfanne mit Erdnusssoße'), (SELECT id FROM ingredients WHERE name = 'Erdnüsse'), 30, 'g');
 
 -- Buddha Bowl mit Tahini-Dressing
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Buddha Bowl mit Tahini-Dressing', 45, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 200 °C vorheizen. Süßkartoffel würfeln, mit abgetropften Kichererbsen, Öl, Paprika und Salz mischen und 25 Minuten rösten.
-2. Quinoa abspülen und in der doppelten Menge Salzwasser 15 Minuten garen.
-3. Rotkohl fein hobeln, Gurke in Scheiben und Avocado in Spalten schneiden.
-4. Tahini mit Zitronensaft, Ahornsirup, Salz, Pfeffer und {3-4 EL} Wasser zu einem cremigen Dressing verrühren.
-5. Quinoa, junge Spinatblätter, Gemüse, Süßkartoffeln und Kichererbsen in Schalen anrichten, mit Dressing beträufeln und mit Sesam bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Buddha Bowl mit Tahini-Dressing', 'Eine bunte Schale voller Gutem: geröstete Süßkartoffeln, knusprige Kichererbsen, Quinoa, Avocado und cremiges Tahini-Dressing.', 45, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {500 g} Süßkartoffeln schälen und würfeln. Mit {240 g} abgetropften Kichererbsen, {3 EL} Olivenöl, {1 TL} Paprikapulver und Salz mischen und auf einem Blech 25 Minuten rösten.
+2. {200 g} Quinoa in einem Sieb heiß abspülen und in der doppelten Menge Salzwasser etwa 15 Minuten garen. Auflockern.
+3. {200 g} Rotkohl fein hobeln und mit einer Prise Salz kurz durchkneten. Die Gurke in Scheiben und {2} Avocados in Spalten schneiden.
+4. {3 EL} Tahini mit dem Saft der Zitrone, {1 TL} Ahornsirup, Salz, Pfeffer und {3-4 EL} Wasser zu einem cremigen Dressing verrühren.
+5. Quinoa, {100 g} junge Spinatblätter, Rotkohl, Gurke, Avocado, Süßkartoffeln und Kichererbsen nebeneinander in Schalen anrichten. Mit dem Dressing beträufeln und mit {1 EL} Sesam bestreuen.
+
+Tipp: Alle Komponenten lassen sich vorbereiten. So hat man für mehrere Tage gesunde Mittagessen.
 
 Guten Appetit!', 'buddha-bowl-mit-tahini-dressing.jpg');
 
@@ -6323,12 +7033,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Buddha Bowl mit Tahini-Dressing'), (SELECT id FROM ingredients WHERE name = 'Sesam'), 1, 'EL');
 
 -- Quesadillas mit Bohnen und Käse
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Quesadillas mit Bohnen und Käse', 25, 4, 'Portionen', 'Ganzjährig', '1. Bohnen abspülen, mit einer Gabel grob zerdrücken und mit Kreuzkümmel, Paprikapulver und Salz würzen.
-2. Paprika fein würfeln, Frühlingszwiebeln in Ringe schneiden und mit dem abgetropften Mais mischen.
-3. {4} Tortillas mit dem Bohnenmus bestreichen, Gemüse und geriebenen Cheddar darauf verteilen und mit den restlichen Tortillas belegen.
-4. In einer leicht geölten Pfanne bei mittlerer Hitze pro Seite 2–3 Minuten braten, bis der Käse geschmolzen und die Tortilla knusprig ist.
-5. In Viertel schneiden und mit saurer Sahne servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Quesadillas mit Bohnen und Käse', 'Knusprige Tortillas mit würzigem Bohnenmus, Gemüse und geschmolzenem Cheddar: mexikanisches Streetfood aus der Pfanne.', 25, 4, 'Portionen', 'Ganzjährig', '1. {240 g} Kidneybohnen abspülen, abtropfen lassen und mit einer Gabel grob zerdrücken. Mit {1 TL} Kreuzkümmel, {1 TL} Paprikapulver und Salz würzen.
+2. Die Paprika fein würfeln, {2} Frühlingszwiebeln in Ringe schneiden und mit {150 g} abgetropftem Mais mischen. {200 g} Cheddar reiben.
+3. {4} Tortillas mit dem Bohnenmus bestreichen. Gemüse und Käse darauf verteilen und mit den restlichen Tortillas belegen. Leicht andrücken.
+4. Eine große Pfanne mit {1 EL} Rapsöl auspinseln und bei mittlerer Hitze erhitzen. Die Quesadillas einzeln pro Seite 2–3 Minuten braten, bis der Käse geschmolzen und die Tortilla goldbraun und knusprig ist. Zum Wenden einen Teller zu Hilfe nehmen.
+5. In Viertel schneiden und mit {150 g} saurer Sahne servieren.
+
+Tipp: Dazu passen Guacamole und eine scharfe Salsa.
 
 Guten Appetit!', 'quesadillas-mit-bohnen-und-kaese.jpg');
 
@@ -6345,12 +7057,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Quesadillas mit Bohnen und Käse'), (SELECT id FROM ingredients WHERE name = 'Saure Sahne'), 150, 'g');
 
 -- Schnelles Dinkelbrot
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schnelles Dinkelbrot', 75, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform fetten. Den Ofen nicht vorheizen.
-2. Mehl, Hefe, Salz, Sonnenblumen- und Kürbiskerne mischen. Je {1 EL} Kerne für die Oberfläche beiseitelegen.
-3. {500 ml} lauwarmes Wasser und Essig zugeben und mit einem Löffel zu einem klebrigen Teig verrühren – kneten ist nicht nötig.
-4. Teig in die Form füllen, glatt streichen und mit den restlichen Kernen bestreuen.
-5. In den kalten Ofen stellen und bei 200 °C Ober-/Unterhitze ca. 60 Minuten backen. Aus der Form lösen und auf einem Gitter auskühlen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schnelles Dinkelbrot', 'Ein saftiges Körnerbrot ohne Kneten, ohne Gehzeit und ohne Vorheizen: Abends gerührt, steht es nach einer Stunde duftend auf dem Tisch.', 75, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform (etwa 30 cm) gut fetten oder mit Backpapier auslegen. Den Ofen nicht vorheizen.
+2. {500 g} Dinkelmehl, die Trockenhefe, {2 TL} Salz, {50 g} Sonnenblumenkerne und {50 g} Kürbiskerne in einer Schüssel mischen. Je {1 EL} Sonnenblumen- und Kürbiskerne für die Oberfläche beiseitelegen.
+3. {500 ml} lauwarmes Wasser und {1 EL} Apfelessig zugeben und mit einem Löffel zu einem klebrigen, glatten Teig verrühren. Kneten ist nicht nötig, der Essig sorgt für Lockerheit.
+4. Den Teig in die Form füllen, glatt streichen und mit den restlichen Kernen bestreuen. Die Oberfläche mit einem nassen Messer etwa 1 cm tief längs einschneiden.
+5. In den kalten Ofen stellen und bei 200 °C Ober-/Unterhitze etwa 60 Minuten backen. Klingt es beim Klopfen auf die Unterseite hohl, ist es fertig. Aus der Form lösen und auf einem Gitter vollständig auskühlen lassen.
+
+Tipp: Eine Schale Wasser im Ofen sorgt für eine schöne, knusprige Kruste.
 
 Guten Appetit!', 'schnelles-dinkelbrot.jpg');
 
@@ -6362,12 +7076,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schnelles Dinkelbrot'), (SELECT id FROM ingredients WHERE name = 'Apfelessig'), 1, 'EL');
 
 -- Kartoffelpüree
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelpüree', 30, 4, 'Portionen', 'Ganzjährig', '1. Mehligkochende Kartoffeln schälen, vierteln und in Salzwasser ca. 20 Minuten weich kochen.
-2. Milch mit Butter erhitzen.
-3. Kartoffeln abgießen, kurz ausdampfen lassen und durch eine Presse drücken oder fein stampfen.
-4. Heiße Milch nach und nach unterrühren, bis das Püree cremig ist. Nicht mit dem Pürierstab arbeiten, sonst wird es zäh.
-5. Mit Salz und Muskat abschmecken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kartoffelpüree', 'Cremig, buttrig und mit einem Hauch Muskat: das perfekte Kartoffelpüree, Beilage und Trostessen zugleich.', 30, 4, 'Portionen', 'Ganzjährig', '1. {1000 g} mehligkochende Kartoffeln schälen, vierteln und in Salzwasser etwa 20 Minuten weich kochen.
+2. Inzwischen {250 ml} Milch mit {50 g} Butter in einem kleinen Topf erhitzen, bis die Butter geschmolzen ist.
+3. Die Kartoffeln abgießen und im Topf auf der warmen Herdplatte kurz ausdampfen lassen. Dann durch eine Kartoffelpresse drücken oder mit einem Kartoffelstampfer fein zerstampfen.
+4. Die heiße Milch nach und nach mit einem Kochlöffel unterrühren, bis das Püree cremig ist. Nicht mit dem Pürierstab arbeiten, sonst wird es zäh und kleisterig.
+5. Mit Salz und frisch geriebener Muskatnuss abschmecken.
+
+Tipp: Mit braun gerösteter Butter oder etwas geriebenem Käse wird das Püree zum Star auf dem Teller.
 
 Guten Appetit!', 'kartoffelpueree.jpg');
 
@@ -6378,11 +7094,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kartoffelpüree'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Bratkartoffeln mit Speck und Zwiebeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bratkartoffeln mit Speck und Zwiebeln', 40, 4, 'Portionen', 'Ganzjährig', '1. Festkochende Kartoffeln mit Schale kochen, pellen, vollständig auskühlen lassen (am besten am Vortag) und in Scheiben schneiden.
-2. Butterschmalz in einer großen Pfanne erhitzen und die Kartoffelscheiben in einer Lage hineingeben. Bei mittlerer Hitze ca. 10 Minuten braten, ohne zu rühren, dann wenden.
-3. Speck würfeln, Zwiebeln in Streifen schneiden und zugeben. Weitere 8–10 Minuten braten, bis alles goldbraun und knusprig ist.
-4. Mit Salz, Pfeffer, Majoran und Kümmel würzen und mit Schnittlauch bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bratkartoffeln mit Speck und Zwiebeln', 'Knusprige Bratkartoffeln aus der Pfanne mit Speck, Zwiebeln und Kümmel: deftiges Glück für jeden Tag.', 40, 4, 'Portionen', 'Ganzjährig', '1. {1000 g} festkochende Kartoffeln mit Schale in Salzwasser etwa 20 Minuten kochen. Pellen und vollständig auskühlen lassen, am besten schon am Vortag. Warme Kartoffeln zerfallen in der Pfanne. In etwa 5 mm dicke Scheiben schneiden.
+2. {3 EL} Butterschmalz in einer großen Pfanne erhitzen. Die Kartoffelscheiben in einer Lage hineingeben und bei mittlerer Hitze etwa 10 Minuten braten, ohne zu rühren, bis sie unten goldbraun sind. Dann wenden. Geduld ist das Wichtigste bei Bratkartoffeln.
+3. {100 g} Speck würfeln und {2} Zwiebeln in Streifen schneiden. Beides zugeben und weitere 8–10 Minuten braten, gelegentlich wenden, bis alles goldbraun und knusprig ist.
+4. Mit Salz, Pfeffer, {1 TL} Majoran und {0.5 TL} Kümmel würzen und mit Schnittlauchröllchen bestreuen.
+
+Tipp: Mit einem Spiegelei obendrauf wird daraus ein vollwertiges Abendessen.
 
 Guten Appetit!', 'bratkartoffeln-mit-speck-und-zwiebeln.jpg');
 
@@ -6397,11 +7115,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bratkartoffeln mit Speck und Zwiebeln'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Strammer Max
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Strammer Max', 15, 2, 'Portionen', 'Ganzjährig', '1. Brotscheiben mit {1 EL} Butter bestreichen und mit Schinken belegen.
-2. Restliche Butter in einer Pfanne erhitzen und {2} Spiegeleier braten, bis das Eiweiß gestockt und das Eigelb noch flüssig ist. Salzen und pfeffern.
-3. Spiegeleier auf die Schinkenbrote setzen.
-4. Mit Schnittlauch bestreuen und mit Gewürzgurken servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Strammer Max', 'Bauernbrot, Schinken und ein Spiegelei mit flüssigem Eigelb: die deftige Brotzeit, die in 15 Minuten satt macht.', 15, 2, 'Portionen', 'Ganzjährig', '1. {2} Scheiben Bauernbrot mit {1 EL} Butter bestreichen und mit {4} Scheiben Kochschinken belegen. Wer mag, röstet das Brot vorher kurz in der Pfanne an.
+2. Die restliche Butter in einer Pfanne bei mittlerer Hitze schmelzen. {2} Eier vorsichtig hineinschlagen und 3–4 Minuten braten, bis das Eiweiß gestockt und das Eigelb noch flüssig ist. Nur das Eiweiß salzen und pfeffern, auf dem Eigelb bilden sich sonst weiße Flecken.
+3. Die Spiegeleier mit einem Pfannenwender auf die Schinkenbrote setzen.
+4. Mit Schnittlauchröllchen bestreuen und mit {2} Gewürzgurken servieren.
+
+Tipp: In Berlin kommt manchmal noch eine Scheibe Käse zwischen Schinken und Ei.
 
 Guten Appetit!', 'strammer-max.jpg');
 
@@ -6415,11 +7135,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Strammer Max'), (SELECT id FROM ingredients WHERE name = 'Gewürzgurken'), 2, NULL);
 
 -- Toast Hawaii
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Toast Hawaii', 20, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 220 °C (Grillfunktion) vorheizen.
-2. Toastscheiben toasten und dünn mit Butter bestreichen.
-3. Mit je einer Scheibe Schinken und Ananas belegen und mit Käse abdecken.
-4. Ca. 8–10 Minuten überbacken, bis der Käse goldbraun ist. Mit Paprikapulver bestäuben – ein Klassiker der 1950er-Jahre.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Toast Hawaii', 'Schinken, Ananas und geschmolzener Käse auf Toast: der Kultsnack der 1950er-Jahre, so herrlich retro wie lecker.', 20, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 220 °C mit Grillfunktion vorheizen.
+2. {4} Scheiben Toastbrot toasten und dünn mit {1 EL} Butter bestreichen.
+3. Jede Scheibe mit einer Scheibe Kochschinken und einer gut abgetropften Scheibe Ananas belegen. Mit je einer Scheibe Gouda abdecken, so dass die Ananas ganz bedeckt ist.
+4. Auf einem Blech mit Backpapier 8–10 Minuten überbacken, bis der Käse geschmolzen und goldbraun ist.
+5. Mit einer Prise Paprikapulver bestäuben und heiß servieren.
+
+Tipp: Klassisch kommt eine Cocktailkirsche in die Mitte der Ananas.
 
 Guten Appetit!', 'toast-hawaii.jpg');
 
@@ -6431,11 +7154,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Toast Hawaii'), (SELECT id FROM ingredients WHERE name = 'Paprikapulver'), 1, 'Prise');
 
 -- Arme Ritter
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Arme Ritter', 20, 4, 'Portionen', 'Ganzjährig', '1. Milch, Eier, Vanillezucker und eine Prise Zimt verquirlen.
-2. Altbackene Toastscheiben darin von beiden Seiten kurz einweichen.
-3. Butter in einer Pfanne erhitzen und die Scheiben pro Seite 2–3 Minuten goldbraun braten.
-4. Zucker mit dem restlichen Zimt mischen und darüberstreuen. Mit Apfelmus servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Arme Ritter', 'Altes Brot, in Vanille-Eiermilch getaucht und goldbraun gebraten: die schönste Art, Reste zu verwerten.', 20, 4, 'Portionen', 'Ganzjährig', '1. {250 ml} Milch, {2} Eier, den Vanillezucker und eine Prise Zimt in einem tiefen Teller verquirlen.
+2. {8} Scheiben altbackenes Toastbrot nacheinander von beiden Seiten kurz in die Eiermilch tauchen, bis sie sich vollgesogen haben, aber nicht zerfallen. Etwas abtropfen lassen.
+3. Etwas Butter in einer Pfanne bei mittlerer Hitze schmelzen. Die Scheiben portionsweise pro Seite 2–3 Minuten goldbraun braten. Nach jeder Portion etwas Butter nachgeben.
+4. {2 EL} Zucker mit dem restlichen Zimt mischen und über die heißen Armen Ritter streuen.
+5. Mit {300 g} Apfelmus servieren.
+
+Tipp: Mit Brioche oder Hefezopf vom Vortag werden sie besonders fein.
 
 Guten Appetit!', 'arme-ritter.jpg');
 
@@ -6449,12 +7175,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Arme Ritter'), (SELECT id FROM ingredients WHERE name = 'Apfelmus'), 300, 'g');
 
 -- Eier in Senfsoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Eier in Senfsoße', 30, 4, 'Portionen', 'Ganzjährig', '1. Kartoffeln schälen und in Salzwasser garen.
-2. Eier 8–9 Minuten kochen, abschrecken und pellen.
-3. Butter schmelzen, Mehl anschwitzen und unter Rühren mit Brühe und Milch ablöschen. 5 Minuten köcheln.
-4. Senf einrühren und mit Zucker, Salz und Pfeffer kräftig abschmecken.
-5. Eier halbieren, in die Soße legen und mit Kartoffeln und Schnittlauch servieren. Ein Klassiker der Hausmannskost.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Eier in Senfsoße', 'Hart gekochte Eier in einer würzigen, cremigen Senfsoße mit Salzkartoffeln: einfache Hausmannskost, die Kindheitserinnerungen weckt.', 30, 4, 'Portionen', 'Ganzjährig', '1. {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+2. {8} Eier in kochendem Wasser 8–9 Minuten kochen, in kaltem Wasser abschrecken und pellen. So ist das Eigelb fest, aber noch saftig.
+3. {30 g} Butter in einem Topf schmelzen, {2 EL} Mehl einrühren und 1 Minute anschwitzen. Unter ständigem Rühren mit {300 ml} Gemüsebrühe und {200 ml} Milch ablöschen und 5 Minuten köcheln lassen, bis die Soße sämig ist.
+4. {3 EL} Senf einrühren und mit einer Prise Zucker, Salz und Pfeffer kräftig abschmecken. Ab jetzt nicht mehr kochen, Senf wird beim Kochen bitter.
+5. Die Eier halbieren und in die Soße legen, kurz erwärmen. Mit den Kartoffeln anrichten und mit Schnittlauchröllchen bestreuen.
+
+Tipp: Eine Mischung aus mittelscharfem und körnigem Senf gibt der Soße Charakter.
 
 Guten Appetit!', 'eier-in-senfsosse.jpg');
 
@@ -6471,12 +7199,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Eier in Senfsoße'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Soljanka
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Soljanka', 60, 6, 'Portionen', 'Ganzjährig', '1. Kassler, Würstchen, Zwiebeln, Paprika und Gewürzgurken in kleine Würfel bzw. Streifen schneiden.
-2. Zwiebeln in Öl andünsten, Fleisch und Wurst zugeben und kurz anbraten.
-3. Tomatenmark und Paprikapulver einrühren und mitrösten. Mit Brühe, passierten Tomaten und {100 ml} Gurkenwasser aufgießen und den Lorbeer zugeben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Soljanka', 'Säuerlich-pikante Suppe mit Wurst, Kassler, Gewürzgurken und Paprika, serviert mit Schmand und Zitrone: ein Klassiker der DDR-Küche.', 60, 6, 'Portionen', 'Ganzjährig', '1. {200 g} Kassler und {4} Wiener Würstchen in kleine Würfel schneiden. {2} Zwiebeln würfeln, die Paprika in Streifen und {4} Gewürzgurken in Stifte schneiden.
+2. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebeln darin glasig dünsten. Kassler und Wurst zugeben und 3 Minuten anbraten.
+3. {3 EL} Tomatenmark und {2 TL} Paprikapulver einrühren und 1 Minute mitrösten. Mit {1000 ml} Rinderbrühe, {400 ml} passierten Tomaten und {100 ml} Gurkenwasser aus dem Glas aufgießen und das Lorbeerblatt zugeben.
 4. Paprika und Gurken zugeben und 30 Minuten köcheln lassen.
-5. Mit Salz, Pfeffer und Zitronensaft säuerlich-pikant abschmecken. Mit einer Zitronenscheibe, einem Klecks Schmand und Dill servieren – ein Klassiker aus der DDR-Küche.
+5. Das Lorbeerblatt entfernen. Mit Salz, Pfeffer und dem Saft einer halben Zitrone säuerlich-pikant abschmecken.
+6. In Teller füllen und mit einer Zitronenscheibe, einem Klecks von {150 g} Schmand und gehacktem Dill servieren.
+
+Tipp: In die Soljanka kommen gern alle Wurstreste, die der Kühlschrank hergibt.
 
 Guten Appetit!', 'soljanka.jpg');
 
@@ -6498,12 +7229,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Soljanka'), (SELECT id FROM ingredients WHERE name = 'Dill'), 0.5, 'Bund');
 
 -- Schinkennudeln mit Ei
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schinkennudeln mit Ei', 25, 4, 'Portionen', 'Ganzjährig', '1. Nudeln in Salzwasser bissfest kochen und abtropfen lassen.
-2. Zwiebel und Schinken würfeln. Zwiebel in Butter glasig dünsten, Schinken zugeben und kurz anbraten.
-3. Nudeln zugeben und unter Wenden 5 Minuten anbraten, bis sie leicht knusprig werden.
-4. Eier mit Milch, Salz, Pfeffer und Muskat verquirlen, über die Nudeln gießen und unter Rühren stocken lassen.
-5. Mit Schnittlauch bestreut servieren. Dazu passt grüner Salat.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schinkennudeln mit Ei', 'Angebratene Nudeln mit Schinken und Ei: das Resteessen, für das man extra Nudeln übrig lassen möchte.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Fusilli darin bissfest kochen. Abgießen und gut abtropfen lassen. Nudeln vom Vortag funktionieren genauso.
+2. Die Zwiebel und {200 g} Kochschinken würfeln. {2 EL} Butter in einer großen Pfanne schmelzen, die Zwiebel darin glasig dünsten, den Schinken zugeben und kurz anbraten.
+3. Die Nudeln zugeben und unter gelegentlichem Wenden etwa 5 Minuten braten, bis sie an einigen Stellen goldbraun und leicht knusprig werden.
+4. {4} Eier mit {50 ml} Milch, Salz, Pfeffer und Muskatnuss verquirlen. Über die Nudeln gießen und unter Wenden stocken lassen, bis das Ei gerade fest, aber noch saftig ist.
+5. Mit Schnittlauchröllchen bestreuen und mit einem grünen Salat servieren.
+
+Tipp: Mit geriebenem Käse, kurz vor Schluss untergehoben, wird es noch herzhafter.
 
 Guten Appetit!', 'schinkennudeln-mit-ei.jpg');
 
@@ -6519,12 +7252,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schinkennudeln mit Ei'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Flädlesuppe
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Flädlesuppe', 30, 4, 'Portionen', 'Ganzjährig', '1. Mehl, Milch, Eier, eine Prise Salz und {2 EL} gehackten Schnittlauch zu einem glatten, dünnflüssigen Teig verrühren und 10 Minuten quellen lassen.
-2. Butter in einer Pfanne erhitzen und nacheinander dünne Pfannkuchen backen.
-3. Pfannkuchen aufrollen und in feine Streifen (Flädle) schneiden.
-4. Rinderbrühe aufkochen und mit Salz und Muskat abschmecken.
-5. Flädle auf Teller verteilen, mit der heißen Brühe übergießen und mit dem restlichen Schnittlauch bestreuen. Ein schwäbischer Suppenklassiker.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Flädlesuppe', 'Klare Rinderbrühe mit feinen Pfannkuchenstreifen und Schnittlauch: ein schwäbischer Suppenklassiker, ganz einfach und wohltuend.', 30, 4, 'Portionen', 'Ganzjährig', '1. {100 g} Mehl, {200 ml} Milch, {2} Eier, eine Prise Salz und {2 EL} fein geschnittenen Schnittlauch zu einem glatten, dünnflüssigen Teig verrühren. 10 Minuten quellen lassen.
+2. Etwas Butter in einer beschichteten Pfanne erhitzen. Eine kleine Kelle Teig hineingeben und durch Schwenken dünn verteilen. Bei mittlerer Hitze 1 Minute backen, wenden und kurz fertig backen. So weiter, bis der Teig verbraucht ist.
+3. Die Pfannkuchen etwas abkühlen lassen, eng aufrollen und in feine Streifen, die Flädle, schneiden.
+4. {1200 ml} Rinderbrühe aufkochen und mit Salz und Muskatnuss abschmecken.
+5. Die Flädle auf vorgewärmte Teller verteilen, mit der heißen Brühe übergießen und mit dem restlichen Schnittlauch bestreuen.
+
+Tipp: Die Flädle erst kurz vor dem Servieren in die Brühe geben, sonst werden sie weich.
 
 Guten Appetit!', 'flaedlesuppe.jpg');
 
@@ -6538,12 +7273,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Flädlesuppe'), (SELECT id FROM ingredients WHERE name = 'Muskatnuss'), NULL, NULL);
 
 -- Geschmälzte Maultaschen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Geschmälzte Maultaschen', 20, 4, 'Portionen', 'Ganzjährig', '1. Maultaschen in leicht siedendem Salzwasser 10 Minuten erwärmen, abtropfen lassen und in 2 cm breite Streifen schneiden.
-2. Zwiebeln in Ringe schneiden und in der Butter goldbraun braten.
-3. Maultaschenstreifen zugeben und von beiden Seiten anbraten.
-4. Verquirlte Eier darübergießen, salzen, pfeffern und unter Wenden stocken lassen.
-5. Mit Schnittlauch bestreuen und mit Kartoffelsalat servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Geschmälzte Maultaschen', 'Schwäbische Maultaschen in Streifen, mit Zwiebeln und Ei in Butter gebraten: das schnelle Mittagessen aus dem Ländle.', 20, 4, 'Portionen', 'Ganzjährig', '1. {8} Maultaschen in leicht siedendem Salzwasser etwa 10 Minuten erwärmen. Mit einer Schaumkelle herausheben, gut abtropfen lassen und in 2 cm breite Streifen schneiden.
+2. {2} Zwiebeln in Ringe schneiden. {3 EL} Butter in einer großen Pfanne schmelzen und die Zwiebeln darin bei mittlerer Hitze etwa 8 Minuten goldbraun braten.
+3. Die Maultaschenstreifen zugeben und von beiden Seiten goldbraun anbraten.
+4. {4} Eier verquirlen, über die Maultaschen gießen, salzen, pfeffern und unter vorsichtigem Wenden stocken lassen.
+5. Mit Schnittlauchröllchen bestreuen und mit Kartoffelsalat servieren.
+
+Tipp: Der Legende nach erfanden Mönche Maultaschen, um in der Fastenzeit das Fleisch vor dem Herrgott zu verstecken. Daher der Spitzname „Herrgottsbscheißerle“.
 
 Guten Appetit!', 'geschmaelzte-maultaschen.jpg');
 
@@ -6556,11 +7293,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Geschmälzte Maultaschen'), (SELECT id FROM ingredients WHERE name = 'Schnittlauch'), 0.5, 'Bund');
 
 -- Currywurst
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Currywurst', 30, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel fein würfeln und in Öl glasig dünsten. Tomatenmark und {2 TL} Currypulver kurz mitrösten.
-2. Passierte Tomaten, Paprikapulver, Zucker, Essig und Cayennepfeffer zugeben und 15 Minuten einköcheln. Fein pürieren und mit Salz abschmecken.
-3. Bratwürste in einer Pfanne rundherum ca. 10 Minuten braten.
-4. Würste in Scheiben schneiden, mit der heißen Soße übergießen und mit dem restlichen Currypulver bestäuben. Dazu gehören Pommes oder ein Brötchen – Berliner Kult.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Currywurst', 'Berliner Kult: gebratene Bratwurst in einer fruchtig-scharfen, selbst gekochten Currysoße.', 30, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel fein würfeln. {1 EL} Rapsöl in einem Topf erhitzen und die Zwiebel darin glasig dünsten. {2 EL} Tomatenmark und {2 TL} Currypulver zugeben und 1 Minute mitrösten, bis es duftet.
+2. {400 ml} passierte Tomaten, {1 TL} Paprikapulver, {2 EL} braunen Zucker, {1 EL} Apfelessig und eine Prise Cayennepfeffer zugeben. Offen etwa 15 Minuten einköcheln lassen, bis die Soße dicklich ist.
+3. Die Soße mit dem Stabmixer fein pürieren und mit Salz abschmecken. Sie soll süß, säuerlich und scharf zugleich sein.
+4. {4} Bratwürste in einer Pfanne bei mittlerer Hitze rundherum etwa 10 Minuten braten, bis sie gleichmäßig gebräunt sind.
+5. Die Würste in Scheiben schneiden, mit der heißen Soße übergießen und mit dem restlichen Currypulver bestäuben.
+
+Tipp: Dazu gehören Pommes oder ein Brötchen. Die Soße hält sich im Kühlschrank eine Woche.
 
 Guten Appetit!', 'currywurst.jpg');
 
@@ -6577,12 +7317,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Currywurst'), (SELECT id FROM ingredients WHERE name = 'Bratwurst'), 4, NULL);
 
 -- Schwäbischer Zwiebelrostbraten
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwäbischer Zwiebelrostbraten', 45, 4, 'Portionen', 'Ganzjährig', '1. Zwiebeln in sehr feine Ringe schneiden und mit {2 EL} Mehl und dem Paprikapulver bestäuben. In heißem Öl portionsweise goldbraun und knusprig frittieren und auf Küchenpapier abtropfen lassen.
-2. Den Fettrand der Steaks (am besten Roastbeef, à ca. 200 g) mehrmals einschneiden, damit sie sich nicht wölben. Fleisch leicht klopfen, pfeffern, eine Seite dünn mit Senf bestreichen und im restlichen Mehl wenden.
-3. Butterschmalz stark erhitzen und die Steaks pro Seite 2–3 Minuten braten. Salzen und warm stellen.
-4. Bratensatz mit Rotwein und Brühe ablöschen, sämig einkochen und die kalte Butter einschwenken.
-5. Rostbraten mit Soße und reichlich Röstzwiebeln servieren. Dazu gehören Spätzle.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schwäbischer Zwiebelrostbraten', 'Zartes Rostbratenstück mit kräftiger Bratensoße und einem Berg knuspriger Röstzwiebeln: schwäbisches Sonntagsessen.', 45, 4, 'Portionen', 'Ganzjährig', '1. {4} Zwiebeln schälen und in sehr feine Ringe schneiden oder hobeln. Mit {2 EL} Mehl und {1 TL} Paprikapulver bestäuben und gut durchmischen.
+2. {100 ml} Rapsöl in einer Pfanne stark erhitzen. Die Zwiebeln portionsweise darin goldbraun und knusprig frittieren, mit einer Schaumkelle herausheben und auf Küchenpapier abtropfen lassen. Leicht salzen.
+3. Den Fettrand der {4} Rindersteaks, am besten Roastbeef von je etwa 200 g, mehrmals einschneiden, damit sie sich beim Braten nicht wölben. Das Fleisch leicht flach klopfen, pfeffern, eine Seite dünn mit {1 TL} Senf bestreichen und im restlichen Mehl wenden.
+4. {2 EL} Butterschmalz in einer großen Pfanne stark erhitzen. Die Steaks pro Seite 2–3 Minuten braten, sie sollen innen rosa bleiben. Salzen und im Ofen bei 80 °C warm halten.
+5. Den Bratensatz mit {100 ml} Rotwein ablöschen und loskratzen. {250 ml} Rinderbrühe zugeben und sämig einkochen lassen. {1 EL} kalte Butter in Stückchen einschwenken.
+6. Die Rostbraten mit der Soße übergießen und mit reichlich Röstzwiebeln belegen.
+
+Tipp: Dazu gehören handgeschabte Spätzle.
 
 Guten Appetit!', 'schwaebischer-zwiebelrostbraten.jpg');
 
@@ -6600,12 +7343,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schwäbischer Zwiebelrostbraten'), (SELECT id FROM ingredients WHERE name = 'Butter'), 1, 'EL');
 
 -- Rindersteak mit Pfeffersoße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rindersteak mit Pfeffersoße', 40, 4, 'Portionen', 'Ganzjährig', '1. Steaks (z. B. Rumpsteak à ca. 200 g) 30 Minuten vor dem Braten aus dem Kühlschrank nehmen und trocken tupfen. Pfefferkörner grob zerstoßen.
-2. Butterschmalz in einer schweren Pfanne stark erhitzen und die Steaks pro Seite 2–3 Minuten scharf anbraten. Im Ofen bei 100 °C 8–10 Minuten nachziehen lassen (medium).
-3. Fett abgießen, Butter in der Pfanne schmelzen und die gehackte Schalotte mit dem Pfeffer andünsten.
-4. Mit Weißwein ablöschen, Brühe und Sahne zugeben und sämig einkochen lassen. Mit Salz abschmecken.
-5. Steaks salzen und mit der Pfeffersoße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Rindersteak mit Pfeffersoße', 'Saftiges Steak, perfekt rosa gebraten, mit einer cremigen Pfefferrahmsoße wie im Steakhaus.', 40, 4, 'Portionen', 'Ganzjährig', '1. {4} Rindersteaks, etwa Rumpsteak von je 200 g, 30 Minuten vor dem Braten aus dem Kühlschrank nehmen und trocken tupfen. {2 TL} Pfefferkörner im Mörser grob zerstoßen. Den Ofen auf 100 °C vorheizen.
+2. {2 EL} Butterschmalz in einer schweren Pfanne sehr stark erhitzen. Die Steaks pro Seite 2–3 Minuten scharf anbraten, ohne sie zu bewegen, bis sich eine Kruste bildet. Dann auf einem Gitter im Ofen 8–10 Minuten nachziehen lassen. So werden sie medium.
+3. Das Fett aus der Pfanne gießen und {1 EL} Butter darin schmelzen. Die gehackte Schalotte und den Pfeffer darin 1 Minute andünsten.
+4. Mit {50 ml} Weißwein ablöschen und den Bratensatz loskratzen. {150 ml} Rinderbrühe und {150 ml} Sahne zugeben und sämig einkochen lassen, bis die Soße einen Löffel überzieht. Mit Salz abschmecken.
+5. Die Steaks erst jetzt salzen und mit der Pfeffersoße servieren.
+
+Tipp: Ohne Thermometer hilft der Drucktest: Ein medium Steak gibt auf Druck etwa so nach wie der Daumenballen, wenn man Daumen und Mittelfinger zusammenführt.
 
 Guten Appetit!', 'rindersteak-mit-pfeffersosse.jpg');
 
@@ -6620,12 +7365,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Rindersteak mit Pfeffersoße'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Schweinefilet im Speckmantel
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schweinefilet im Speckmantel', 40, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 160 °C vorheizen. Filets parieren, pfeffern und dünn mit Senf bestreichen. Mit Thymianblättchen bestreuen.
-2. Speckscheiben überlappend auslegen, die Filets darauflegen und straff einwickeln.
-3. In Öl rundherum 5 Minuten anbraten, bis der Speck Farbe hat.
-4. Im Ofen ca. 15–20 Minuten garen (Kerntemperatur 62 °C) und 5 Minuten ruhen lassen.
-5. Bratensatz mit Weißwein ablöschen, Sahne zugeben, einkochen und mit Salz und Pfeffer abschmecken. Filet in Scheiben schneiden und mit der Soße servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Schweinefilet im Speckmantel', 'Zartes Schweinefilet mit Senf und Thymian, in knusprigen Speck gewickelt, mit einer cremigen Weißweinsoße.', 40, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {800 g} Schweinefilet von Sehnen und Silberhaut befreien, pfeffern und dünn mit {1 EL} Senf bestreichen. Mit den Blättchen von {4} Thymianzweigen bestreuen. Nicht salzen, der Speck bringt genug Salz mit.
+2. {12} Scheiben Speck leicht überlappend nebeneinander auslegen. Das Filet darauflegen und straff in den Speck einwickeln.
+3. {1 EL} Rapsöl in einer ofenfesten Pfanne erhitzen. Das Filet mit der Speck-Nahtseite nach unten hineinlegen und rundherum etwa 5 Minuten anbraten, bis der Speck Farbe hat.
+4. Im Ofen 15–20 Minuten garen, bis die Kerntemperatur 62 °C erreicht hat. Dann ist das Fleisch innen noch leicht rosa und saftig. Herausnehmen und in Alufolie 5 Minuten ruhen lassen.
+5. Den Bratensatz in der Pfanne mit {100 ml} Weißwein ablöschen, {150 ml} Sahne zugeben und sämig einkochen. Mit Salz und Pfeffer abschmecken.
+6. Das Filet in dicke Scheiben schneiden und mit der Soße servieren.
+
+Tipp: Dazu passen Kartoffelgratin, Bandnudeln oder grüne Bohnen.
 
 Guten Appetit!', 'schweinefilet-im-speckmantel.jpg');
 
@@ -6640,12 +7388,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Schweinefilet im Speckmantel'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Kaiserschmarrn
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kaiserschmarrn', 30, 4, 'Portionen', 'Ganzjährig', '1. Rosinen in Rum einweichen. Eier trennen.
-2. Eigelbe mit Milch, Mehl, Vanillezucker und Salz glatt rühren. Eiweiße mit dem Zucker steif schlagen und locker unterheben.
-3. Die Hälfte der Butter in einer großen Pfanne erhitzen, den Teig hineingießen und die Rosinen darüberstreuen. Bei mittlerer Hitze 4–5 Minuten backen, bis die Unterseite goldbraun ist.
-4. Teig vierteln, wenden und mit zwei Gabeln in Stücke reißen. Restliche Butter und {1 EL} Puderzucker zugeben und unter Wenden 3 Minuten karamellisieren.
-5. Mit Puderzucker bestäuben und mit Apfelmus servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kaiserschmarrn', 'Fluffig, karamellisiert und mit Rosinen: der zerrupfte Pfannkuchen, den Kaiser Franz Joseph angeblich so liebte.', 30, 4, 'Portionen', 'Ganzjährig', '1. {40 g} Rosinen in {2 EL} Rum einweichen. {4} Eier trennen.
+2. Die Eigelbe mit {250 ml} Milch, {150 g} Mehl, dem Vanillezucker und einer Prise Salz glatt rühren. Die Eiweiße mit {40 g} Zucker zu steifem, glänzendem Schnee schlagen und locker unter den Teig heben. Der Eischnee macht den Schmarrn luftig.
+3. {20 g} Butter in einer großen Pfanne erhitzen. Den Teig hineingießen und die abgetropften Rosinen darüberstreuen. Bei mittlerer Hitze 4–5 Minuten backen, bis die Unterseite goldbraun ist und die Oberfläche zu stocken beginnt.
+4. Den Teig mit dem Pfannenwender vierteln, die Viertel wenden und mit zwei Gabeln in mundgerechte Stücke reißen. Die restliche Butter und {1 EL} Puderzucker zugeben und unter Wenden 3 Minuten karamellisieren lassen.
+5. Mit dem restlichen Puderzucker bestäuben und mit {300 g} Apfelmus servieren.
+
+Tipp: Statt Apfelmus passt Zwetschgenröster, das österreichische Pflaumenkompott.
 
 Guten Appetit!', 'kaiserschmarrn.jpg');
 
@@ -6662,12 +7412,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kaiserschmarrn'), (SELECT id FROM ingredients WHERE name = 'Apfelmus'), 300, 'g');
 
 -- Pfannkuchen (Eierkuchen)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pfannkuchen (Eierkuchen)', 25, 4, 'Portionen', 'Ganzjährig', '1. Mehl, Milch, Eier, {1 EL} Zucker und Salz zu einem glatten Teig verrühren und 15 Minuten quellen lassen.
-2. Etwas Butter in einer beschichteten Pfanne erhitzen, eine Kelle Teig hineingeben und durch Schwenken dünn verteilen.
-3. Bei mittlerer Hitze 1–2 Minuten backen, bis die Unterseite goldbraun ist, wenden und fertig backen.
-4. Mit dem restlichen Teig ebenso verfahren und die Pfannkuchen warm halten.
-5. Restlichen Zucker mit Zimt mischen und darüberstreuen – oder mit Marmelade oder Apfelmus servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Pfannkuchen (Eierkuchen)', 'Dünne, goldene Pfannkuchen mit Zimt und Zucker: das Lieblingsessen vieler Kindheiten, schnell gemacht und immer gut.', 25, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Mehl, {500 ml} Milch, {3} Eier, {1 EL} Zucker und eine Prise Salz mit dem Schneebesen zu einem glatten Teig verrühren. 15 Minuten quellen lassen, dann werden die Pfannkuchen zarter.
+2. Etwas Butter in einer beschichteten Pfanne bei mittlerer Hitze schmelzen. Eine Kelle Teig hineingeben und die Pfanne sofort schwenken, sodass sich der Teig dünn verteilt.
+3. 1–2 Minuten backen, bis die Ränder sich lösen und die Unterseite goldbraun ist. Wenden und kurz fertig backen.
+4. Mit dem restlichen Teig genauso verfahren und vor jedem Pfannkuchen etwas Butter in die Pfanne geben. Fertige Pfannkuchen auf einem Teller im Ofen bei 80 °C warm halten.
+5. Den restlichen Zucker mit {1 TL} Zimt mischen und darüberstreuen. Oder mit Marmelade oder Apfelmus servieren.
+
+Tipp: Der erste Pfannkuchen misslingt fast immer. Das ist Tradition und gehört dem Koch.
 
 Guten Appetit!', 'pfannkuchen-eierkuchen.jpg');
 
@@ -6680,12 +7432,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Pfannkuchen (Eierkuchen)'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 1, 'TL');
 
 -- Waffeln
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Waffeln', 30, 8, 'Stück', 'Ganzjährig', '1. Weiche Butter mit Zucker, Vanillezucker und Salz schaumig rühren. Eier einzeln unterrühren.
-2. Mehl mit Backpulver mischen und abwechselnd mit der Milch unterrühren.
-3. Waffeleisen vorheizen und leicht mit Öl einfetten.
-4. Je 2–3 EL Teig einfüllen und in 2–3 Minuten goldbraun backen.
-5. Mit Puderzucker bestäuben und warm servieren, zum Beispiel mit heißen Kirschen oder Sahne.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Waffeln', 'Goldbraun, außen knusprig und innen fluffig, frisch aus dem Waffeleisen: Sonntagnachmittag in seiner schönsten Form.', 30, 8, 'Stück', 'Ganzjährig', '1. {125 g} weiche Butter mit {75 g} Zucker, dem Vanillezucker und einer Prise Salz mit dem Handrührgerät cremig rühren. {3} Eier einzeln unterrühren.
+2. {250 g} Mehl mit {1 TL} Backpulver mischen und abwechselnd mit {250 ml} Milch kurz unterrühren, bis ein glatter, dickflüssiger Teig entsteht. 10 Minuten ruhen lassen.
+3. Das Waffeleisen vorheizen und leicht mit {1 EL} Rapsöl einpinseln.
+4. Pro Waffel 2–3 EL Teig in die Mitte geben und das Eisen schließen. In 2–3 Minuten goldbraun backen. Erst öffnen, wenn kaum noch Dampf austritt.
+5. Die Waffeln auf einem Gitter kurz abkühlen lassen, damit sie knusprig bleiben. Mit {2 EL} Puderzucker bestäuben und warm servieren.
+
+Tipp: Klassisch dazu: heiße Kirschen und Schlagsahne.
 
 Guten Appetit!', 'waffeln.jpg');
 
@@ -6701,11 +7455,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Waffeln'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 2, 'EL');
 
 -- Bircher Müsli
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bircher Müsli', 75, 4, 'Portionen', 'Ganzjährig', '1. Haferflocken mit Milch mischen und abgedeckt mindestens 1 Stunde, am besten über Nacht, im Kühlschrank quellen lassen.
-2. Äpfel mit Schale grob raspeln und sofort mit Zitronensaft mischen.
-3. Joghurt, Äpfel und Honig unter die Haferflocken rühren.
-4. Haselnüsse grob hacken und mit den Beeren über das Müsli geben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Bircher Müsli', 'Das Original aus der Schweiz: über Nacht eingeweichte Haferflocken mit frisch geriebenem Apfel, Joghurt und Nüssen.', 75, 4, 'Portionen', 'Ganzjährig', '1. {150 g} Haferflocken mit {250 ml} Milch mischen und abgedeckt mindestens 1 Stunde, am besten über Nacht, im Kühlschrank quellen lassen.
+2. {2} Äpfel waschen, mit Schale grob raspeln und sofort mit dem Saft der halben Zitrone mischen, damit sie nicht braun werden.
+3. {200 g} Joghurt, die Äpfel und {2 EL} Honig unter die Haferflocken rühren. Ist das Müsli zu fest, einen Schuss Milch zugeben.
+4. {40 g} Haselnüsse grob hacken und kurz in einer Pfanne ohne Fett rösten. Mit {100 g} Heidelbeeren über das Müsli geben.
+
+Tipp: Im Kühlschrank hält es sich zwei Tage. Die Äpfel und Nüsse dann aber erst frisch zugeben.
 
 Guten Appetit!', 'bircher-muesli.jpg');
 
@@ -6719,12 +7475,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Bircher Müsli'), (SELECT id FROM ingredients WHERE name = 'Heidelbeeren'), 100, 'g');
 
 -- Knuspermüsli (Granola)
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Knuspermüsli (Granola)', 40, 1, 'großes Glas', 'Ganzjährig', '1. Ofen auf 160 °C vorheizen.
-2. Haferflocken, grob gehackte Nüsse, Kerne, Kokosraspeln, Zimt und Salz mischen.
-3. Kokosöl schmelzen, mit Ahornsirup verrühren, über die Mischung gießen und alles gut vermengen.
-4. Auf einem mit Backpapier belegten Blech verteilen und ca. 25 Minuten goldbraun backen. Nach der Hälfte der Zeit vorsichtig wenden.
-5. Auf dem Blech vollständig abkühlen lassen – dabei wird es knusprig. Rosinen untermischen und luftdicht aufbewahren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Knuspermüsli (Granola)', 'Selbst geröstetes Knuspermüsli mit Nüssen, Kokos und Ahornsirup: viel besser und günstiger als gekauftes.', 40, 1, 'großes Glas', 'Ganzjährig', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen.
+2. {300 g} Haferflocken, {80 g} grob gehackte Mandeln, {50 g} grob gehackte Haselnüsse, {50 g} Sonnenblumenkerne, {30 g} Kokosraspeln, {1 TL} Zimt und eine Prise Salz in einer großen Schüssel mischen.
+3. {50 g} Kokosöl schmelzen, mit {80 ml} Ahornsirup verrühren, über die Mischung gießen und alles gründlich vermengen, bis alles leicht feucht glänzt.
+4. Auf einem mit Backpapier belegten Blech gleichmäßig verteilen und leicht andrücken, so entstehen beim Abkühlen schöne Cluster. Etwa 25 Minuten goldbraun backen, nach der Hälfte der Zeit vorsichtig wenden. Gegen Ende genau hinschauen, es wird schnell zu dunkel.
+5. Auf dem Blech vollständig abkühlen lassen, erst dabei wird es knusprig. In Stücke brechen, {50 g} Rosinen untermischen und luftdicht aufbewahren.
+
+Tipp: Im Schraubglas hält es sich mehrere Wochen und ist ein schönes Mitbringsel.
 
 Guten Appetit!', 'knuspermuesli-granola.jpg');
 
@@ -6740,12 +7498,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Knuspermüsli (Granola)'), (SELECT id FROM ingredients WHERE name = 'Rosinen'), 50, 'g');
 
 -- Veganes Bananenbrot
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Veganes Bananenbrot', 70, 1, 'Kastenform', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und eine Kastenform mit Backpapier auslegen.
-2. Sehr reife Bananen mit einer Gabel zerdrücken und mit Zucker, Öl und Sojamilch verrühren.
-3. Mehl, Backpulver, Natron, Zimt und Salz mischen und kurz unterrühren.
-4. Gehackte Walnüsse und Schokolade unterheben.
-5. Teig in die Form füllen und ca. 50 Minuten backen (Stäbchenprobe). In der Form abkühlen lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Veganes Bananenbrot', 'Saftig, süß und mit Schokostückchen: Bananenbrot ganz ohne Ei und Butter, die beste Rettung für überreife Bananen.', 70, 1, 'Kastenform', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Kastenform mit Backpapier auslegen.
+2. {3} sehr reife Bananen schälen und in einer Schüssel mit einer Gabel zerdrücken. Je brauner die Schale, desto süßer das Brot. Mit {80 g} braunem Zucker, {80 ml} Rapsöl und {100 ml} Sojamilch verrühren.
+3. {250 g} Dinkelmehl, {2 TL} Backpulver, {0.5 TL} Natron, {1 TL} Zimt und eine Prise Salz mischen und nur kurz unter die Bananenmasse rühren, bis kein trockenes Mehl mehr zu sehen ist.
+4. {50 g} Walnüsse und {50 g} Zartbitterschokolade grob hacken und unterheben.
+5. Den Teig in die Form füllen und etwa 50 Minuten backen. Mit einem Holzstäbchen hineinstechen: Kleben nur noch geschmolzene Schokolade, aber kein Teig daran, ist es fertig. In der Form abkühlen lassen.
+
+Tipp: Eine längs halbierte Banane obendrauf sieht schön aus und karamellisiert beim Backen.
 
 Guten Appetit!', 'veganes-bananenbrot.jpg');
 
@@ -6762,13 +7522,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Veganes Bananenbrot'), (SELECT id FROM ingredients WHERE name = 'Zartbitterschokolade'), 50, 'g');
 
 -- Marmorkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Marmorkuchen', 80, 1, 'Gugelhupfform', 'Ganzjährig', '1. Ofen auf 175 °C vorheizen und eine Gugelhupfform fetten und mit Mehl ausstäuben.
-2. Weiche Butter mit Zucker, Vanillezucker und Salz schaumig rühren. Eier einzeln je 30 Sekunden unterrühren.
-3. Mehl mit Backpulver mischen und abwechselnd mit {100 ml} Milch unterrühren.
-4. Die Hälfte des Teigs in die Form füllen. Kakao und restliche Milch unter den übrigen Teig rühren und auf den hellen Teig geben.
-5. Mit einer Gabel spiralförmig durch beide Teige ziehen, damit das Marmormuster entsteht.
-6. Ca. 55 Minuten backen (Stäbchenprobe), 10 Minuten in der Form ruhen lassen, stürzen und mit Puderzucker bestäuben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Marmorkuchen', 'Hell und dunkel ineinander verwirbelt, saftig und buttrig: der Rührkuchen-Klassiker aus der Gugelhupfform.', 80, 1, 'Gugelhupfform', 'Ganzjährig', '1. Den Ofen auf 175 °C Ober-/Unterhitze vorheizen. Eine Gugelhupfform gründlich fetten und mit Mehl ausstäuben, auch in alle Rillen.
+2. {250 g} weiche Butter mit {250 g} Zucker, dem Vanillezucker und einer Prise Salz mit dem Handrührgerät 3–4 Minuten hell und cremig rühren. {5} Eier einzeln je 30 Sekunden unterrühren.
+3. {375 g} Mehl mit dem Backpulver mischen und abwechselnd mit {100 ml} Milch kurz unterrühren.
+4. Die Hälfte des Teigs in die Form füllen. {3 EL} Backkakao und die restliche Milch unter den übrigen Teig rühren und auf den hellen Teig geben.
+5. Mit einer Gabel spiralförmig einmal durch beide Teigschichten ziehen. Nicht zu oft, sonst vermischen sie sich und es entsteht kein Muster.
+6. Etwa 55 Minuten backen, bis ein Holzstäbchen sauber herauskommt. 10 Minuten in der Form ruhen lassen, dann auf ein Gitter stürzen und auskühlen lassen. Mit {1 EL} Puderzucker bestäuben.
+
+Tipp: Mit einem Schokoladenguss statt Puderzucker wird er noch saftiger.
 
 Guten Appetit!', 'marmorkuchen.jpg');
 
@@ -6784,12 +7546,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Marmorkuchen'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 1, 'EL');
 
 -- Zitronenkuchen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zitronenkuchen', 75, 1, 'Kastenform', 'Ganzjährig', '1. Ofen auf 175 °C vorheizen und eine Kastenform mit Backpapier auslegen.
-2. Weiche Butter mit Zucker und Salz cremig rühren und die Eier einzeln unterrühren. Abrieb von {2} Zitronen und den Saft von {1} Zitrone zugeben.
-3. Mehl und Backpulver mischen und kurz unterrühren.
-4. Teig in die Form füllen und ca. 50 Minuten backen (Stäbchenprobe).
-5. Kuchen noch warm mehrfach mit einem Holzstäbchen einstechen. Puderzucker mit dem Saft der übrigen Zitronen zu einem Guss verrühren und über den Kuchen gießen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zitronenkuchen', 'Saftiger Rührkuchen mit viel Zitrone, getränkt mit einem süß-sauren Guss, der bis in die Mitte zieht.', 75, 1, 'Kastenform', 'Ganzjährig', '1. Den Ofen auf 175 °C Ober-/Unterhitze vorheizen und eine Kastenform mit Backpapier auslegen.
+2. {200 g} weiche Butter mit {200 g} Zucker und einer Prise Salz cremig rühren. {4} Eier einzeln unterrühren. Die Schale von {2} Zitronen fein abreiben und den Saft von {1} Zitrone auspressen. Beides unterrühren.
+3. {250 g} Mehl und {2 TL} Backpulver mischen und kurz unterrühren, bis ein glatter Teig entsteht.
+4. Den Teig in die Form füllen, glatt streichen und etwa 50 Minuten backen, bis ein Holzstäbchen sauber herauskommt.
+5. Den Kuchen noch warm in der Form mehrmals tief mit einem Holzstäbchen einstechen. {150 g} Puderzucker mit dem Saft der übrigen Zitronen zu einem flüssigen Guss verrühren und langsam über den Kuchen gießen, damit er einziehen kann.
+6. In der Form vollständig abkühlen lassen.
+
+Tipp: In Folie gewickelt bleibt der Kuchen mehrere Tage saftig und schmeckt am zweiten Tag am besten.
 
 Guten Appetit!', 'zitronenkuchen.jpg');
 
@@ -6803,12 +7568,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zitronenkuchen'), (SELECT id FROM ingredients WHERE name = 'Puderzucker'), 150, 'g');
 
 -- Brownies
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Brownies', 45, 16, 'Stück', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und eine eckige Form (ca. 20 × 20 cm) mit Backpapier auslegen.
-2. Schokolade und Butter über einem Wasserbad schmelzen und etwas abkühlen lassen.
-3. Eier mit Zucker 3 Minuten schaumig schlagen und die Schokoladenbutter unterrühren.
-4. Mehl, Kakao und Salz darübersieben und kurz unterheben. Gehackte Walnüsse untermischen.
-5. Teig in die Form streichen und ca. 22–25 Minuten backen – innen dürfen sie noch feucht sein. Abkühlen lassen und in Stücke schneiden.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Brownies', 'Außen eine zarte Kruste, innen schokoladig und fast flüssig: Brownies mit Walnüssen, wie sie sein sollen.', 45, 16, 'Stück', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine eckige Form (etwa 20 × 20 cm) mit Backpapier auslegen.
+2. {200 g} Zartbitterschokolade grob hacken und mit {150 g} Butter in einer Schüssel über einem leise siedenden Wasserbad unter Rühren schmelzen. Etwas abkühlen lassen.
+3. {3} Eier mit {200 g} Zucker mit dem Handrührgerät 3 Minuten hell und schaumig schlagen. Die Schokoladenbutter unterrühren.
+4. {100 g} Mehl, {2 EL} Backkakao und eine Prise Salz darübersieben und mit einem Teigschaber nur kurz unterheben, bis kein Mehl mehr zu sehen ist. {80 g} Walnüsse grob hacken und untermischen.
+5. Den Teig in die Form streichen und 22–25 Minuten backen. Mit einem Holzstäbchen hineinstechen: Es sollen noch feuchte Krümel daran haften, dann sind sie innen schön fudgy. Lieber zu kurz als zu lang backen.
+6. In der Form vollständig abkühlen lassen, dann in {16} Stücke schneiden.
+
+Tipp: Über Nacht im Kühlschrank werden sie noch dichter und lassen sich ganz sauber schneiden.
 
 Guten Appetit!', 'brownies.jpg');
 
@@ -6822,12 +7590,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Brownies'), (SELECT id FROM ingredients WHERE name = 'Walnüsse'), 80, 'g');
 
 -- Mousse au Chocolat
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mousse au Chocolat', 270, 6, 'Portionen', 'Ganzjährig', '1. Schokolade grob hacken, über einem warmen Wasserbad schmelzen und etwas abkühlen lassen.
-2. Eier trennen. Eigelbe mit der Hälfte des Zuckers cremig schlagen und mit dem Espresso unter die Schokolade rühren.
-3. Sahne steif schlagen und unterheben.
-4. Eiweiße mit Salz steif schlagen, den restlichen Zucker einrieseln lassen und den Eischnee vorsichtig in zwei Portionen unterheben.
-5. In Gläser füllen und mindestens 4 Stunden kühlen. Da die Eier roh verwendet werden, nur ganz frische Eier nehmen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Mousse au Chocolat', 'Luftig, tiefdunkel und mit einem Hauch Espresso: die klassische französische Schokoladenmousse.', 270, 6, 'Portionen', 'Ganzjährig', '1. {200 g} Zartbitterschokolade grob hacken und über einem warmen, nicht kochenden Wasserbad schmelzen. Etwas abkühlen lassen, bis sie nur noch lauwarm ist.
+2. {4} sehr frische Eier trennen. Die Eigelbe mit {20 g} Zucker cremig schlagen. Mit {2 EL} Espresso unter die Schokolade rühren.
+3. {200 ml} Sahne steif schlagen und mit einem Teigschaber unter die Schokoladenmasse heben.
+4. Die Eiweiße mit einer Prise Salz steif schlagen, dabei den restlichen Zucker einrieseln lassen. Den Eischnee in zwei Portionen vorsichtig unterheben, nicht rühren, sonst geht die Luft verloren.
+5. In Gläser oder eine Schüssel füllen und abgedeckt mindestens 4 Stunden kühlen, bis die Mousse fest ist.
+
+Tipp: Da die Eier roh verwendet werden, nur ganz frische Eier nehmen und die Mousse innerhalb eines Tages essen.
 
 Guten Appetit!', 'mousse-au-chocolat.jpg');
 
@@ -6839,12 +7609,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Mousse au Chocolat'), (SELECT id FROM ingredients WHERE name = 'Salz'), 1, 'Prise');
 
 -- Tiramisu
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tiramisu', 270, 6, 'Portionen', 'Ganzjährig', '1. Espresso kochen, abkühlen lassen und mit dem Rum mischen.
-2. Eier trennen. Eigelbe mit Zucker sehr cremig schlagen und die Mascarpone unterrühren.
-3. Eiweiße mit Salz steif schlagen und vorsichtig unter die Creme heben.
-4. Löffelbiskuits kurz in den Espresso tauchen und eine Form damit auslegen. Die Hälfte der Creme daraufstreichen und mit einer zweiten Lage Biskuits und Creme wiederholen.
-5. Mindestens 4 Stunden, besser über Nacht, kühlen und vor dem Servieren dick mit Kakao bestäuben.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Tiramisu', 'Kaffeegetränkte Löffelbiskuits, luftige Mascarponecreme und Kakao: Italiens berühmtestes Dessert.', 270, 6, 'Portionen', 'Ganzjährig', '1. {300 ml} Espresso kochen, in einen tiefen Teller gießen, abkühlen lassen und mit {2 EL} Rum mischen.
+2. {4} sehr frische Eier trennen. Die Eigelbe mit {80 g} Zucker mit dem Handrührgerät 5 Minuten sehr hell und cremig schlagen. {500 g} Mascarpone löffelweise unterrühren, nur kurz, sonst wird sie flüssig.
+3. Die Eiweiße mit einer Prise Salz steif schlagen und vorsichtig unter die Creme heben.
+4. Die Hälfte von {200 g} Löffelbiskuits nacheinander kurz in den Espresso tauchen, eine Sekunde pro Seite genügt, und eine Form (etwa 20 × 30 cm) damit auslegen. Die Hälfte der Creme daraufstreichen. Mit den restlichen Biskuits und der restlichen Creme eine zweite Schicht bilden.
+5. Abgedeckt mindestens 4 Stunden, besser über Nacht, im Kühlschrank durchziehen lassen.
+6. Kurz vor dem Servieren {2 EL} Backkakao durch ein feines Sieb dick darüberstäuben.
+
+Tipp: Wer keinen Alkohol möchte, lässt den Rum einfach weg. Nur ganz frische Eier verwenden.
 
 Guten Appetit!', 'tiramisu.jpg');
 
@@ -6858,12 +7631,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Tiramisu'), (SELECT id FROM ingredients WHERE name = 'Backkakao'), 2, 'EL');
 
 -- Milchreis mit Zimt und Kirschen
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Milchreis mit Zimt und Kirschen', 45, 4, 'Portionen', 'Ganzjährig', '1. Milch mit {2 EL} Zucker, Vanillemark, Schote, Salz und Butter aufkochen.
-2. Reis einrühren und bei kleinster Hitze zugedeckt ca. 30 Minuten quellen lassen. Regelmäßig umrühren, damit nichts ansetzt.
-3. Kirschen aus dem Glas abtropfen lassen und den Saft auffangen. {150 ml} Saft aufkochen, mit der angerührten Stärke binden und die Kirschen unterheben.
-4. Restlichen Zucker mit Zimt mischen.
-5. Vanilleschote entfernen und den Milchreis mit Zimtzucker und warmen Kirschen servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Milchreis mit Zimt und Kirschen', 'Cremiger Vanille-Milchreis mit warmen Kirschen und Zimtzucker: ein süßes Mittagessen wie aus Kindertagen.', 45, 4, 'Portionen', 'Ganzjährig', '1. Die Vanilleschote längs aufschneiden und das Mark herauskratzen. {1000 ml} Milch mit {2 EL} Zucker, Vanillemark, Schote, einer Prise Salz und {1 EL} Butter in einem großen Topf aufkochen. Dabei rühren, damit die Milch nicht anbrennt.
+2. {250 g} Milchreis einrühren und bei kleinster Hitze zugedeckt etwa 30 Minuten quellen lassen. Alle 5 Minuten umrühren, damit nichts am Boden ansetzt. Er ist fertig, wenn die Körner weich sind und der Reis cremig, aber nicht trocken ist.
+3. Inzwischen {300 g} Kirschen aus dem Glas abtropfen lassen und den Saft auffangen. {150 ml} Saft aufkochen. {1 TL} Speisestärke mit etwas kaltem Saft glatt rühren, einrühren und kurz aufkochen, bis er bindet. Die Kirschen unterheben und warm halten.
+4. Den restlichen Zucker mit {1 TL} Zimt mischen.
+5. Die Vanilleschote entfernen und den Milchreis mit Zimtzucker und den warmen Kirschen servieren.
+
+Tipp: Auch kalt aus dem Kühlschrank ist Milchreis ein Genuss. Dann vor dem Servieren einen Schuss Milch unterrühren.
 
 Guten Appetit!', 'milchreis-mit-zimt-und-kirschen.jpg');
 
@@ -6878,13 +7653,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Milchreis mit Zimt und Kirschen'), (SELECT id FROM ingredients WHERE name = 'Zimt'), 1, 'TL');
 
 -- Zimtschnecken
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zimtschnecken', 150, 12, 'Stück', 'Ganzjährig', '1. Mehl, Hefe, Zucker, Salz und Kardamom mischen. Lauwarme Milch, {50 g} weiche Butter und das Ei zugeben und 8 Minuten zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-2. Restliche Butter weich rühren und mit braunem Zucker und Zimt mischen.
-3. Teig zu einem Rechteck (ca. 40 × 30 cm) ausrollen, mit der Zimtbutter bestreichen und von der langen Seite her aufrollen.
-4. In {12 Scheiben} schneiden, in eine gefettete Form setzen und 30 Minuten gehen lassen. Ofen auf 180 °C vorheizen.
-5. Ca. 25 Minuten goldbraun backen.
-6. Puderzucker mit Frischkäse und {1-2 EL} Wasser verrühren und auf die noch warmen Schnecken streichen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Zimtschnecken', 'Fluffige Hefeschnecken mit einer klebrigen Zimt-Zucker-Füllung und Frischkäseguss: schwedisches Fika-Glück.', 150, 12, 'Stück', 'Ganzjährig', '1. {500 g} Mehl, die Trockenhefe, {100 g} Zucker, eine Prise Salz und {0.5 TL} Kardamom mischen. {250 ml} Milch lauwarm erwärmen und mit {50 g} weicher Butter und {1} Ei zugeben. Alles 8 Minuten zu einem glatten, weichen Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. Die restliche Butter weich rühren und mit {80 g} braunem Zucker und {2 EL} Zimt zu einer streichfähigen Paste mischen.
+3. Den Teig auf einer leicht bemehlten Fläche zu einem Rechteck von etwa 40 × 30 cm ausrollen. Mit der Zimtbutter bis an die Ränder bestreichen und von der langen Seite her fest aufrollen.
+4. Die Rolle mit einem scharfen Messer oder einem Zahnseidenfaden in {12} Scheiben schneiden. Mit der Schnittfläche nach oben in eine gefettete Auflaufform setzen und zugedeckt 30 Minuten gehen lassen. Inzwischen den Ofen auf 180 °C Ober-/Unterhitze vorheizen.
+5. Etwa 25 Minuten goldbraun backen.
+6. {100 g} Puderzucker mit {50 g} Frischkäse und {1-2 EL} Wasser glatt rühren und auf die noch warmen Schnecken streichen.
+
+Tipp: Mit Zahnseide geschnitten werden die Schnecken nicht zerdrückt: Faden unter die Rolle legen, die Enden kreuzen und fest ziehen.
 
 Guten Appetit!', 'zimtschnecken.jpg');
 
@@ -6902,11 +7679,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Zimtschnecken'), (SELECT id FROM ingredients WHERE name = 'Frischkäse'), 50, 'g');
 
 -- Avocado-Toast
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Avocado-Toast', 10, 2, 'Portionen', 'Ganzjährig', '1. Brotscheiben toasten oder in einer Pfanne rösten und mit etwas Olivenöl beträufeln.
-2. Avocado halbieren, entkernen und das Fruchtfleisch mit Limettensaft, Salz und Pfeffer grob zerdrücken.
-3. Avocadocreme auf das Brot streichen.
-4. Mit halbierten Kirschtomaten, Kresse und Chiliflocken belegen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Avocado-Toast', 'Knuspriges Bauernbrot, cremige Avocado, Tomaten und Kresse: das Frühstück, das in zehn Minuten richtig gute Laune macht.', 10, 2, 'Portionen', 'Ganzjährig', '1. {2} Scheiben Bauernbrot im Toaster oder in einer Pfanne goldbraun rösten und mit {1 EL} Olivenöl beträufeln.
+2. Die Avocado halbieren, den Kern entfernen und das Fruchtfleisch mit einem Löffel herausholen. Mit dem Saft der halben Limette, Salz und Pfeffer grob mit der Gabel zerdrücken, es dürfen ruhig Stückchen bleiben.
+3. Die Avocadocreme großzügig auf die Brotscheiben streichen.
+4. {6} Kirschtomaten halbieren und darauf verteilen. Die Kresse abschneiden, darüberstreuen und mit einer Prise Chiliflocken würzen.
+
+Tipp: Mit einem pochierten oder gebratenen Ei obendrauf wird daraus ein richtiges Brunch-Gericht.
 
 Guten Appetit!', 'avocado-toast.jpg');
 
@@ -6921,11 +7700,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Avocado-Toast'), (SELECT id FROM ingredients WHERE name = 'Chiliflocken'), 1, 'Prise');
 
 -- Chia-Pudding mit Mango
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chia-Pudding mit Mango', 250, 2, 'Portionen', 'Ganzjährig', '1. Chiasamen mit Sojamilch, Ahornsirup und Vanillezucker verrühren. Nach 5 Minuten nochmals umrühren, damit keine Klümpchen entstehen.
-2. Abgedeckt mindestens 4 Stunden oder über Nacht im Kühlschrank quellen lassen.
-3. Mango schälen, die Hälfte mit Limettensaft pürieren und den Rest würfeln.
-4. Chia-Pudding in Gläser füllen, mit Mangopüree und Mangowürfeln schichten und mit Kokosraspeln bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Chia-Pudding mit Mango', 'Cremiger Chia-Pudding über Nacht, geschichtet mit Mangopüree und frischen Mangowürfeln: ein Frühstück, das schon fertig ist, wenn man aufwacht.', 250, 2, 'Portionen', 'Ganzjährig', '1. {4 EL} Chiasamen mit {250 ml} Sojamilch, {1 EL} Ahornsirup und {1 TL} Vanillezucker in einer Schüssel verrühren. Nach 5 Minuten noch einmal kräftig umrühren, sonst bilden sich Klümpchen.
+2. Abgedeckt mindestens 4 Stunden oder über Nacht im Kühlschrank quellen lassen, bis der Pudding fest und cremig ist.
+3. Die Mango schälen und das Fruchtfleisch vom Stein schneiden. Die Hälfte mit dem Saft der halben Limette fein pürieren, den Rest in kleine Würfel schneiden.
+4. Den Chia-Pudding in Gläser füllen, mit Mangopüree und Mangowürfeln schichten und mit {1 EL} Kokosraspeln bestreuen.
+
+Tipp: Im Kühlschrank hält sich der Pudding drei Tage. Gut zum Vorbereiten für die Woche.
 
 Guten Appetit!', 'chia-pudding-mit-mango.jpg');
 
@@ -6938,12 +7719,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Chia-Pudding mit Mango'), (SELECT id FROM ingredients WHERE name = 'Kokosraspeln'), 1, 'EL');
 
 -- Energy Balls mit Datteln und Kakao
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Energy Balls mit Datteln und Kakao', 50, 20, 'Stück', 'Ganzjährig', '1. Entsteinte Datteln 10 Minuten in warmem Wasser einweichen, falls sie nicht sehr weich sind, und abtropfen lassen.
-2. Haselnüsse und Mandeln im Mixer fein hacken.
-3. Datteln, Kakao, Kokosöl und Salz zugeben und zu einer klebrigen Masse mixen.
-4. Mit feuchten Händen walnussgroße Kugeln formen und in Kokosraspeln wälzen.
-5. Im Kühlschrank mindestens 30 Minuten fest werden lassen. Dort halten sie sich etwa eine Woche.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Energy Balls mit Datteln und Kakao', 'Kleine Schokokugeln aus Datteln und Nüssen, ganz ohne Zucker und Backen: der Snack für zwischendurch und unterwegs.', 50, 20, 'Stück', 'Ganzjährig', '1. {200 g} entsteinte Datteln, falls sie nicht sehr weich sind, 10 Minuten in warmem Wasser einweichen und gut abtropfen lassen.
+2. {100 g} Haselnüsse und {50 g} Mandeln im Mixer fein hacken, aber nicht zu Mehl mahlen.
+3. Datteln, {2 EL} Backkakao, {1 EL} Kokosöl und eine Prise Salz zugeben und alles zu einer klebrigen Masse mixen, die beim Zusammendrücken zusammenhält.
+4. Mit leicht feuchten Händen {20} walnussgroße Kugeln formen und in {3 EL} Kokosraspeln wälzen.
+5. Im Kühlschrank mindestens 30 Minuten fest werden lassen. Dort halten sie sich in einer Dose etwa eine Woche.
+
+Tipp: Ein Teelöffel Erdnussmus oder etwas Orangenabrieb in der Masse geben neue Geschmacksrichtungen.
 
 Guten Appetit!', 'energy-balls-mit-datteln-und-kakao.jpg');
 
@@ -6956,14 +7739,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Energy Balls mit Datteln und Kakao'), (SELECT id FROM ingredients WHERE name = 'Kokosraspeln'), 3, 'EL');
 
 -- Donauwelle
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Donauwelle', 240, 1, 'Blech', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und ein tiefes Blech mit Backpapier auslegen.
-2. {250 g} weiche Butter mit {250 g} Zucker, Vanillezucker und Salz schaumig rühren und die Eier einzeln unterrühren. Mehl und Backpulver mit {100 ml} Milch unterrühren.
-3. Die Hälfte des Teigs auf das Blech streichen. Kakao unter den restlichen Teig rühren und auf dem hellen Teig verteilen. Abgetropfte Kirschen aus dem Glas darauf verteilen und leicht eindrücken.
-4. Ca. 30 Minuten backen und vollständig auskühlen lassen.
-5. Für die Creme {500 ml} Milch mit Vanillemark aufkochen. Stärke mit {100 g} Zucker und etwas Milch anrühren, einrühren und zu einem dicken Pudding kochen. Mit Frischhaltefolie abdecken und auf Zimmertemperatur abkühlen lassen.
-6. {200 g} zimmerwarme Butter cremig schlagen und den ebenfalls zimmerwarmen Pudding löffelweise unterschlagen. Auf den Kuchen streichen und 1 Stunde kühlen.
-7. Schokolade mit Kokosöl schmelzen, auf der Creme verteilen, mit einer Gabel Wellen ziehen und fest werden lassen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Donauwelle', 'Hell und dunkel, mit Kirschen, Buttercreme und Schokoladenwellen: der Blechkuchen, der auf keiner Familienfeier fehlen darf.', 240, 1, 'Blech', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und ein tiefes Backblech mit Backpapier auslegen. {700 g} Kirschen aus dem Glas gut abtropfen lassen.
+2. {250 g} weiche Butter mit {250 g} Zucker, dem Vanillezucker und einer Prise Salz schaumig rühren. {5} Eier einzeln unterrühren. {375 g} Mehl mit dem Backpulver mischen und mit {100 ml} Milch kurz unterrühren.
+3. Die Hälfte des Teigs auf das Blech streichen. {2 EL} Backkakao unter den restlichen Teig rühren und gleichmäßig auf dem hellen Teig verteilen. Die Kirschen darauf verteilen und leicht eindrücken, beim Backen sinken sie ein und erzeugen die Wellen.
+4. Etwa 30 Minuten backen und vollständig auskühlen lassen.
+5. Für die Creme die Vanilleschote aufschneiden und das Mark herauskratzen. Von {500 ml} Milch etwas abnehmen, den Rest mit dem Vanillemark aufkochen. {40 g} Speisestärke mit {100 g} Zucker und der kalten Milch glatt rühren, einrühren und unter Rühren zu einem dicken Pudding kochen. Frischhaltefolie direkt auf die Oberfläche legen und auf Zimmertemperatur abkühlen lassen.
+6. {200 g} zimmerwarme Butter cremig schlagen und den ebenfalls zimmerwarmen Pudding löffelweise unterschlagen. Beide müssen die gleiche Temperatur haben, sonst gerinnt die Creme. Auf den Kuchen streichen und 1 Stunde kühlen.
+7. {200 g} Zartbitterschokolade mit {20 g} Kokosöl schmelzen, auf der Creme verstreichen und mit einer Gabel oder einem Tortenkamm Wellen hineinziehen. Fest werden lassen und mit einem heißen Messer in Stücke schneiden.
+
+Tipp: Das Kokosöl verhindert, dass die Schokolade beim Schneiden splittert.
 
 Guten Appetit!', 'donauwelle.jpg');
 
@@ -6983,12 +7768,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Donauwelle'), (SELECT id FROM ingredients WHERE name = 'Kokosöl'), 20, 'g');
 
 -- Vanillepudding
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vanillepudding', 140, 4, 'Portionen', 'Ganzjährig', '1. Vanilleschote längs aufschneiden und das Mark herauskratzen.
-2. {400 ml} Milch mit Vanillemark, Schote, Zucker und Salz aufkochen und die Schote entfernen.
-3. Restliche Milch mit Stärke und den Eigelben glatt rühren.
-4. Mischung unter ständigem Rühren in die kochende Milch geben und 1 Minute köcheln lassen, bis der Pudding eindickt.
-5. Butter unterrühren und den Pudding in Schälchen füllen. Abgedeckt mindestens 2 Stunden kühlen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Vanillepudding', 'Selbst gekochter Pudding mit echter Vanille: so viel cremiger und feiner als aus der Tüte.', 140, 4, 'Portionen', 'Ganzjährig', '1. Die Vanilleschote längs aufschneiden und das Mark mit dem Messerrücken herauskratzen.
+2. {400 ml} Milch mit Vanillemark, Schote, {50 g} Zucker und einer Prise Salz in einem Topf aufkochen. Die Schote herausnehmen.
+3. {2} Eier trennen, die Eiweiße werden nicht gebraucht. Die restliche Milch mit {40 g} Speisestärke und den Eigelben glatt rühren.
+4. Die Mischung unter ständigem Rühren mit dem Schneebesen in die kochende Milch gießen und 1 Minute köcheln lassen, bis der Pudding dick wird. Dabei immer weiterrühren, sonst brennt er an.
+5. Vom Herd nehmen und {1 EL} Butter unterrühren, sie macht den Pudding glänzend. In Schälchen füllen.
+6. Frischhaltefolie direkt auf die Oberfläche legen, damit sich keine Haut bildet, und mindestens 2 Stunden kühlen.
+
+Tipp: Dazu passen frische Beeren, Rote Grütze oder heiße Kirschen.
 
 Guten Appetit!', 'vanillepudding.jpg');
 
@@ -7001,13 +7789,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Vanillepudding'), (SELECT id FROM ingredients WHERE name = 'Butter'), 1, 'EL');
 
 -- Crème brûlée
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Crème brûlée', 300, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 150 °C vorheizen.
-2. Sahne und Milch mit Vanillemark und Schote erhitzen, aber nicht kochen. Schote entfernen.
-3. Eier trennen. Eigelbe mit Zucker verrühren (nicht schaumig schlagen) und die warme Sahne langsam unterrühren.
-4. Masse in {4} flache, ofenfeste Förmchen füllen, in ein tiefes Blech stellen und heißes Wasser bis zur halben Höhe angießen. Ca. 35–40 Minuten stocken lassen.
-5. Abkühlen lassen und mindestens 4 Stunden kühlen.
-6. Vor dem Servieren mit braunem Zucker bestreuen und mit einem Küchenbrenner karamellisieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Crème brûlée', 'Zarte Vanillecreme unter einer gläsernen Karamellkruste, die beim Löffeln knackt.', 300, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 150 °C Ober-/Unterhitze vorheizen.
+2. Die Vanilleschote längs aufschneiden und das Mark herauskratzen. {400 ml} Sahne und {100 ml} Milch mit Vanillemark und Schote erhitzen, bis es dampft, aber nicht kocht. Die Schote entfernen.
+3. {5} Eier trennen. Die Eigelbe mit {60 g} Zucker nur verrühren, nicht schaumig schlagen, sonst bilden sich Bläschen. Die warme Sahne langsam unter Rühren zugießen.
+4. Die Masse durch ein feines Sieb in {4} flache, ofenfeste Förmchen füllen. Die Förmchen in ein tiefes Blech stellen und heißes Wasser bis zur halben Höhe angießen. Etwa 35–40 Minuten im Ofen stocken lassen. Die Creme soll am Rand fest sein und in der Mitte noch leicht wackeln.
+5. Aus dem Wasserbad nehmen, abkühlen lassen und abgedeckt mindestens 4 Stunden kühlen.
+6. Kurz vor dem Servieren gleichmäßig mit {4 EL} braunem Zucker bestreuen und mit einem Küchenbrenner karamellisieren, bis der Zucker schmilzt und goldbraun wird. 1 Minute fest werden lassen.
+
+Tipp: Ohne Brenner geht es unter dem sehr heißen Backofengrill. Dann aber dabeibleiben, der Zucker verbrennt schnell.
 
 Guten Appetit!', 'creme-brulee.jpg');
 
@@ -7019,12 +7809,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Crème brûlée'), (SELECT id FROM ingredients WHERE name = 'Brauner Zucker'), 4, 'EL');
 
 -- Kalte Hundeschnauze
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kalte Hundeschnauze', 390, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform mit Backpapier oder Frischhaltefolie auslegen.
-2. Kokosöl bei kleiner Hitze schmelzen und die gehackte Schokolade darin auflösen. Etwas abkühlen lassen, bis es nur noch lauwarm ist.
-3. Kakao, Puderzucker und Vanillezucker darübersieben und mit der Milch glatt rühren.
-4. Abwechselnd eine dünne Schicht Schokoladenmasse und eine Lage Butterkekse in die Form schichten und mit Schokolade abschließen.
-5. Mindestens 6 Stunden, besser über Nacht, im Kühlschrank fest werden lassen. Stürzen und in dünne Scheiben schneiden – der Kindergeburtstagsklassiker.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Kalte Hundeschnauze', 'Schicht um Schicht Butterkekse und Schokolade, ohne Backen: der Kindergeburtstagsklassiker, den jeder kennt.', 390, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform (etwa 25 cm) mit Backpapier oder Frischhaltefolie auslegen, so lässt sich der Kuchen später leicht herausheben.
+2. {250 g} Kokosöl bei kleiner Hitze schmelzen. {100 g} Zartbitterschokolade hacken und darin unter Rühren auflösen. Etwas abkühlen lassen, bis die Masse nur noch lauwarm ist.
+3. {50 g} Backkakao, {125 g} Puderzucker und den Vanillezucker darübersieben und mit {4 EL} Milch glatt rühren.
+4. Eine dünne Schicht Schokoladenmasse in die Form streichen und mit einer Lage von {300 g} Butterkeksen belegen. Abwechselnd weiter schichten und mit Schokolade abschließen.
+5. Mindestens 6 Stunden, besser über Nacht, im Kühlschrank fest werden lassen. Stürzen, das Papier abziehen und mit einem in heißes Wasser getauchten Messer in dünne Scheiben schneiden.
+
+Tipp: Im Kühlschrank aufbewahren und erst kurz vor dem Servieren herausnehmen, bei Zimmertemperatur wird sie schnell weich.
 
 Guten Appetit!', 'kalte-hundeschnauze.jpg');
 
@@ -7037,10 +7829,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Kalte Hundeschnauze'), (SELECT id FROM ingredients WHERE name = 'Butterkekse'), 300, 'g');
 
 -- Grüner Smoothie
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüner Smoothie', 10, 2, 'Gläser', 'Ganzjährig', '1. Spinat waschen. Banane schälen, Apfel entkernen und grob schneiden, Ingwer schälen.
-2. Alles mit Zitronensaft und {250 ml} kaltem Wasser im Mixer sehr fein pürieren.
-3. In Gläser füllen und sofort trinken.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Grüner Smoothie', 'Spinat, Banane, Apfel und Ingwer im Glas: frisch, fruchtig und voller Vitamine, man schmeckt den Spinat kaum.', 10, 2, 'Gläser', 'Ganzjährig', '1. {50 g} Spinat waschen. Die Banane schälen, den Apfel entkernen und grob schneiden. {10 g} Ingwer schälen.
+2. Alles mit dem Saft der halben Zitrone und {250 ml} kaltem Wasser im Mixer etwa 1 Minute sehr fein pürieren, bis keine Spinatstücke mehr zu sehen sind.
+3. Abschmecken und bei Bedarf noch etwas Wasser zugeben. In Gläser füllen und sofort trinken, dann sind die Vitamine am frischesten.
+
+Tipp: Mit einer gefrorenen Banane wird der Smoothie eiskalt und cremig.
 
 Zum Wohl!', 'gruener-smoothie.jpg');
 
@@ -7051,12 +7845,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Grüner Smoothie'), (SELECT id FROM ingredients WHERE name = 'Zitrone'), 0.5, NULL);
 
 -- Marokkanischer Gemüse-Couscous
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Marokkanischer Gemüse-Couscous', 40, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel würfeln und in {2 EL} Öl andünsten. Ras el Hanout und Harissa 1 Minute mitrösten.
-2. Karotten, Zucchini und Paprika in mundgerechte Stücke schneiden und zugeben.
-3. Tomaten, abgetropfte Kichererbsen, Rosinen und {300 ml} Brühe zugeben und 20 Minuten köcheln. Mit Salz abschmecken.
-4. Restliche Brühe aufkochen, über den Couscous gießen, abdecken und 5 Minuten quellen lassen. Mit dem restlichen Öl auflockern.
-5. Couscous mit dem Gemüse anrichten und mit Petersilie bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Marokkanischer Gemüse-Couscous', 'Duftendes Gemüse mit Ras el Hanout, Kichererbsen und Rosinen auf lockerem Couscous: Marokko in einer halben Stunde.', 40, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel würfeln. {2 EL} Olivenöl in einem Topf erhitzen und die Zwiebel darin 3 Minuten andünsten. {2 TL} Ras el Hanout und {1 TL} Harissa zugeben und 1 Minute mitrösten, bis es duftet.
+2. {2} Karotten, die Zucchini und die Paprika in mundgerechte Stücke schneiden und zugeben.
+3. {400 g} gehackte Tomaten, {240 g} abgetropfte Kichererbsen, {30 g} Rosinen und {300 ml} Gemüsebrühe zugeben. Zugedeckt etwa 20 Minuten köcheln lassen, bis das Gemüse weich ist. Mit Salz abschmecken.
+4. Die restliche Brühe aufkochen und über {250 g} Couscous in einer Schüssel gießen. Abdecken und 5 Minuten quellen lassen. Das restliche Olivenöl zugeben und den Couscous mit einer Gabel auflockern.
+5. Den Couscous auf Tellern anrichten, das Gemüse darauf verteilen und mit gehackter Petersilie bestreuen.
+
+Tipp: Ein Klecks Joghurt mit Minze oder ein paar geröstete Mandeln passen wunderbar dazu.
 
 Guten Appetit!', 'marokkanischer-gemuese-couscous.jpg');
 
@@ -7076,12 +7872,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Marokkanischer Gemüse-Couscous'), (SELECT id FROM ingredients WHERE name = 'Salz'), NULL, NULL);
 
 -- Vegane Carbonara mit Räuchertofu
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vegane Carbonara mit Räuchertofu', 25, 4, 'Portionen', 'Ganzjährig', '1. Spaghetti in Salzwasser bissfest kochen.
-2. Cashewkerne mit Sojamilch, Knoblauch, Kurkuma (für die Farbe) und einer Prise Salz im Mixer sehr cremig pürieren.
-3. Räuchertofu in kleine Würfel schneiden und in Olivenöl knusprig braten.
-4. Spaghetti abgießen, etwas Nudelwasser auffangen und die Nudeln mit der Cashewsoße und etwas Nudelwasser in der Pfanne kurz erhitzen, bis die Soße bindet.
-5. Tofuwürfel unterheben, kräftig pfeffern und mit Petersilie servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Vegane Carbonara mit Räuchertofu', 'Cremig, rauchig und pfeffrig: eine Carbonara ohne Ei und Speck, die mit Cashewsoße und Räuchertofu überrascht.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin bissfest kochen.
+2. {80 g} Cashewkerne mit {250 ml} Sojamilch, der Knoblauchzehe, einer Prise Kurkuma für die gelbe Farbe und einer Prise Salz im Mixer sehr cremig pürieren. Je länger, desto glatter wird die Soße.
+3. {200 g} Räuchertofu in kleine Würfel schneiden. {2 EL} Olivenöl in einer großen Pfanne erhitzen und den Tofu darin rundherum knusprig braten, er übernimmt die Rolle des Specks.
+4. Die Spaghetti abgießen und dabei eine Tasse Nudelwasser auffangen. Nudeln, Cashewsoße und einen Schuss Nudelwasser in die Pfanne geben und bei mittlerer Hitze unter Schwenken kurz erhitzen, bis die Soße bindet und cremig glänzt.
+5. Den Tofu unterheben, kräftig pfeffern und mit gehackter Petersilie servieren.
+
+Tipp: Ein Esslöffel Hefeflocken in der Soße gibt eine käsige Note.
 
 Guten Appetit!', 'vegane-carbonara-mit-raeuchertofu.jpg');
 
@@ -7097,12 +7895,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Vegane Carbonara mit Räuchertofu'), (SELECT id FROM ingredients WHERE name = 'Petersilie'), 0.5, 'Bund');
 
 -- Penne mit getrockneten Tomaten und Rucola
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Penne mit getrockneten Tomaten und Rucola', 20, 4, 'Portionen', 'Ganzjährig', '1. Penne in Salzwasser bissfest kochen.
-2. Getrocknete Tomaten in Streifen schneiden. Pinienkerne ohne Fett goldbraun rösten.
-3. Knoblauch in Scheiben schneiden und in Olivenöl mit den Chiliflocken kurz anbraten. Tomaten zugeben und 2 Minuten mitbraten.
-4. Penne mit etwas Nudelwasser zugeben und durchschwenken.
-5. Rucola unterheben, mit Salz und Pfeffer abschmecken und mit Pinienkernen bestreuen.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Penne mit getrockneten Tomaten und Rucola', 'Fruchtig-intensive getrocknete Tomaten, Knoblauch, Pinienkerne und frischer Rucola: mediterrane Pasta in 20 Minuten.', 20, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Penne darin bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. {100 g} getrocknete Tomaten in Streifen schneiden. {40 g} Pinienkerne in einer Pfanne ohne Fett goldbraun rösten und herausnehmen.
+3. {2} Knoblauchzehen in dünne Scheiben schneiden. {4 EL} Olivenöl in der Pfanne erhitzen und Knoblauch und eine Prise Chiliflocken darin kurz anbraten, bis der Knoblauch hellgolden ist. Die Tomaten zugeben und 2 Minuten mitbraten.
+4. Die abgetropften Penne mit einem Schuss Nudelwasser zugeben und gut durchschwenken.
+5. {80 g} Rucola unterheben, er soll nur leicht zusammenfallen. Mit Salz und Pfeffer abschmecken und mit den Pinienkernen bestreuen.
+
+Tipp: In Öl eingelegte Tomaten verwenden und einen Löffel vom Öl mit in die Pfanne geben.
 
 Guten Appetit!', 'penne-mit-getrockneten-tomaten-und-rucola.jpg');
 
@@ -7117,12 +7917,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Penne mit getrockneten Tomaten und Rucola'), (SELECT id FROM ingredients WHERE name = 'Pfeffer'), NULL, NULL);
 
 -- Hähnchen in Estragon-Senf-Soße
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hähnchen in Estragon-Senf-Soße', 30, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Hähnchenbrust salzen, pfeffern und in {1 EL} Butter pro Seite 5–6 Minuten goldbraun braten. Herausnehmen und warm halten.
-3. Schalotten fein würfeln und in der restlichen Butter andünsten. Mit Weißwein ablöschen und etwas einkochen.
-4. Sahne und Senf einrühren und 3 Minuten sämig köcheln. Gehackten Estragon unterrühren und abschmecken.
-5. Hähnchen in Scheiben schneiden, in die Soße legen und mit dem Reis servieren.
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Hähnchen in Estragon-Senf-Soße', 'Saftige Hähnchenbrust in einer cremigen Soße mit Dijon-Senf und frischem Estragon: französische Bistroküche für zu Hause.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen.
+2. {600 g} Hähnchenbrust trocken tupfen, salzen und pfeffern. {1 EL} Butter in einer Pfanne bei mittlerer Hitze erhitzen und das Fleisch darin pro Seite 5–6 Minuten goldbraun braten, bis es durchgegart ist. Herausnehmen und warm halten.
+3. {2} Schalotten fein würfeln und in der restlichen Butter glasig dünsten. Mit {100 ml} Weißwein ablöschen, den Bratensatz loskratzen und etwas einkochen lassen.
+4. {200 ml} Sahne und {2 EL} Senf einrühren und 3 Minuten sämig köcheln lassen. Die Estragonblätter hacken, unterrühren und mit Salz und Pfeffer abschmecken. Estragon ist intensiv, also lieber erst wenig nehmen.
+5. Das Hähnchen in Scheiben schneiden, in die Soße legen und mit dem Reis servieren.
+
+Tipp: Statt Reis passen auch Bandnudeln oder grüne Bohnen.
 
 Guten Appetit!', 'haehnchen-in-estragon-senf-sosse.jpg');
 
@@ -7138,12 +7940,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES ((SELECT id FROM recipes WHERE name = 'Hähnchen in Estragon-Senf-Soße'), (SELECT id FROM ingredients WHERE name = 'Basmatireis'), 250, 'g');
 
 -- Vegane Schoko-Muffins
-INSERT INTO recipes (name, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vegane Schoko-Muffins', 35, 12, 'Stück', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und ein Muffinblech mit Papierförmchen auslegen.
-2. Sojamilch mit Essig verrühren und 5 Minuten stehen lassen, damit sie leicht andickt.
-3. Mehl, Zucker, Kakao, Backpulver, Natron, Salz und Vanillezucker mischen.
-4. Geschmolzene Margarine und Sojamilch zugeben und nur kurz verrühren. Gehackte Schokolade unterheben.
-5. Teig in die Förmchen füllen und ca. 20 Minuten backen (Stäbchenprobe).
+INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
+VALUES ('Vegane Schoko-Muffins', 'Saftig, schokoladig und ganz ohne Ei und Butter: Muffins, bei denen niemand etwas vermisst.', 35, 12, 'Stück', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und ein Muffinblech mit {12} Papierförmchen auslegen.
+2. {250 ml} Sojamilch mit {1 EL} Apfelessig verrühren und 5 Minuten stehen lassen, bis sie leicht andickt. Das ersetzt die Buttermilch und macht die Muffins locker.
+3. {250 g} Mehl, {150 g} Zucker, {40 g} Backkakao, {2 TL} Backpulver, {0.5 TL} Natron, eine Prise Salz und den Vanillezucker in einer großen Schüssel mischen.
+4. {100 g} Margarine schmelzen. Mit der Sojamilch zu den trockenen Zutaten geben und nur kurz verrühren, bis alles gerade verbunden ist. Zu langes Rühren macht die Muffins zäh. {80 g} Zartbitterschokolade hacken und unterheben.
+5. Den Teig in die Förmchen füllen und etwa 20 Minuten backen, bis ein Holzstäbchen sauber herauskommt. Im Blech kurz abkühlen lassen, dann herausnehmen.
+
+Tipp: Mit einer Himbeere in jedem Muffin werden sie fruchtig.
 
 Guten Appetit!', 'vegane-schoko-muffins.jpg');
 

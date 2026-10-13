@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Kontakt
+{% endblock %}
+
+{% block main %}
+    <p class="back-link"><a href="/#rezepte">← Zurück zum Rezeptbuch</a></p>
+
+    <section class="glass legal">
+        <h1>Kontakt</h1>
+
+        {% if sent %}
+            <p class="contact-sent">Danke für deine Nachricht! Ich melde mich, so bald ich kann.</p>
+        {% else %}
+            <p>Ein Rezept, das fehlt? Ein Fehler, ein Foto, das nicht passt? Schreib mir.</p>
+
+            {% if error %}
+                <p class="contact-error" role="alert">{{ error }}</p>
+            {% endif %}
+
+            <form action="/kontakt" method="post" class="contact-form">
+                <label for="contact-name">Name <span class="optional">(freiwillig)</span></label>
+                <input id="contact-name" name="name" class="form-control" maxlength="100" autocomplete="name"
+                       value="{{ form.name }}">
+
+                <label for="contact-email">E-Mail, damit ich dir antworten kann</label>
+                <input id="contact-email" name="email" type="email" class="form-control" maxlength="200" required
+                       autocomplete="email" value="{{ form.email }}">
+
+                <label for="contact-message">Nachricht</label>
+                <textarea id="contact-message" name="message" class="form-control" rows="7" minlength="10"
+                          maxlength="5000" required>{{ form.message }}</textarea>
+
+                <!-- Hidden from people; spam bots fill it in -->
+                <div class="contact-trap" aria-hidden="true">
+                    <label for="contact-website">Website</label>
+                    <input id="contact-website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+
+                <p class="contact-note">
+                    Deine Nachricht geht über FormSubmit per E-Mail an mich. Mehr dazu steht in der
+                    <a href="/datenschutz#kontakt">Datenschutzerklärung</a>.
+                </p>
+                <button type="submit" class="btn btn-amber">Absenden</button>
+            </form>
+        {% endif %}
+    </section>
+{% endblock %}

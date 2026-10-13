@@ -3,7 +3,7 @@
 Run:   python tools/fetch_images.py [path/to/bildauswahl.json]
 
 Without a path the file is taken from your Downloads folder. Every chosen photo is saved to static/images/ in web
-size, and its author, licence and source go into images.sql (the credits of all photos) and into recipes.db.
+size, and its author, licence and source go into images.sql (the credits of all photos).
 "Kein Bild" removes a recipe's photo and credit. Photos that are already in place are skipped, so the script can
 simply be run again after an interruption.
 """
@@ -16,7 +16,6 @@ import sys
 import time
 import urllib.request
 
-from contextlib import closing
 from PIL import Image, ImageOps
 
 from find_images import (PIXABAY_LICENSE, ROOT, USER_AGENT, author, commons, free_license, pixabay, pixabay_key,
@@ -96,10 +95,10 @@ def quote(value):
 
 
 def save_credits(db):
-    """Write the credits of all photos to images.sql and copy them into recipes.db."""
+    """Write the credits of all photos to images.sql (the app rebuilds recipes.db from it on its next request)."""
     rows = db.execute(f"SELECT name, {', '.join(FIELDS)} FROM recipes WHERE image_author IS NOT NULL ORDER BY name")
     lines = [
-        "-- Photo credits, written by tools/fetch_images.py. The photos are from Wikimedia Commons and live in",
+        "-- Photo credits, written by tools/fetch_images.py. The photos are from Wikimedia Commons and Pixabay and live in",
         "-- static/images/; get_db() runs this file after seed.sql when it builds recipes.db.",
         "",
         "BEGIN TRANSACTION;",
@@ -110,17 +109,6 @@ def save_credits(db):
     lines.append("COMMIT;")
     with open(CREDITS, "w", encoding="utf-8", newline="\n") as file:
         file.write("\n".join(lines) + "\n")
-
-    database = os.path.join(ROOT, "recipes.db")
-    if os.path.exists(database):
-        with closing(sqlite3.connect(database)) as live:
-            columns = {row[1] for row in live.execute("PRAGMA table_info(recipes)")}
-            for field in FIELDS:
-                if field not in columns:  # built from an older schema.sql
-                    live.execute(f"ALTER TABLE recipes ADD COLUMN {field} TEXT")
-            live.execute(f"UPDATE recipes SET {', '.join(field + ' = NULL' for field in FIELDS)}")
-            with open(CREDITS, encoding="utf-8") as file:
-                live.executescript(file.read())
 
 
 def main():

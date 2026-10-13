@@ -1,0 +1,18 @@
+# systemd service that runs the app with gunicorn and restarts it when needed.
+# Install: sudo cp deploy/recipe-search.service /etc/systemd/system/
+#          sudo systemctl enable --now recipe-search
+# Adjust User and the paths if the project lives somewhere else than /home/pi/recipe-search.
+[Unit]
+Description=Was koche ich heute?
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/recipe-search
+# No --access-logfile: no log of visitors' IP addresses
+ExecStart=/home/pi/recipe-search/.venv/bin/gunicorn --workers 2 --bind 127.0.0.1:8000 app:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

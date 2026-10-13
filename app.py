@@ -1,12 +1,26 @@
 # Idea brainstorming, pseudocode and databank layout from Claude
 
-from datetime import datetime
+import os
 from urllib.parse import urlencode
 
-from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, get_image_credits, return_error, get_weather_data, describe_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS, LATITUDE
+from dotenv import load_dotenv
+from flask import Flask, jsonify, redirect, render_template, request
+from werkzeug.middleware.proxy_fix import ProxyFix
+
+import contact
+from helpers import (DIETS, LATITUDE, MAIN_GROUPS, describe_weather, get_dish_of_the_day, get_image_credits,
+                     get_ingredient_names, get_ip_location, get_moon_phase, get_moon_phase_index, get_pantry_names,
+                     get_place, get_recipe, get_season, get_weather_data, local_now, return_error, search_recipes,
+                     shorten_ip)
+
+load_dotenv()  # settings like the mail account from .env (see README), if there is one
 
 app = Flask(__name__)
+
+# Behind a reverse proxy (Caddy, nginx, a hosting service) every request seems to come from the proxy; trust its
+# X-Forwarded-For/-Proto headers for that many proxies, so request.remote_addr is the visitor again
+if proxies := int(os.environ.get("PROXY_COUNT") or 0):
+    app.wsgi_app = ProxyFix(app.wsgi_app, x_for=proxies, x_proto=proxies, x_host=proxies)
 
 PAGE_SIZE = 12  # recipes per batch; scrolling to the end of the results loads the next ones
 MAX_SHOWN = 400
@@ -104,7 +118,7 @@ def index():
     moon_phase = get_moon_phase()
     moon_phase_index = get_moon_phase_index()
     season = get_season()
-    dish_of_the_day = get_dish_of_the_day(datetime.now())
+    dish_of_the_day = get_dish_of_the_day(local_now())
 
     # ?n= keeps the results loaded further down the list when coming back from a recipe
     filters = read_filters()
@@ -158,7 +172,7 @@ def weather():
     if place is None:
         place = get_place(latitude, longitude) if longitude is not None else get_place()
 
-    now = datetime.now()
+    now = local_now()
     hour = request.args.get("stunde", type=int)
     if hour is not None and 0 <= hour <= 23:
         now = now.replace(hour=hour)
@@ -178,6 +192,49 @@ def image_credits():
     """Who took the photos, and under which licence."""
 
     return render_template("credits.html", credits=get_image_credits())
+
+
+@app.route("/impressum")
+def imprint():
+    return render_template("imprint.html")
+
+
+@app.route("/datenschutz")
+def privacy():
+    return render_template("privacy.html")
+
+
+@app.route("/kontakt", methods=["GET", "POST"])
+def contact_form():
+    """A form that sends a message to the site's owner by email, through FormSubmit (see contact.py)."""
+
+    if request.method == "GET":
+        return render_template("contact.html", sent="gesendet" in request.args, form={})
+
+    form = {
+        "name": " ".join(request.form.get("name", "").split()),  # one line, it goes into the subject
+        "email": request.form.get("email", "").strip(),
+        "message": request.form.get("message", "").strip(),
+    }
+    if request.form.get("website"):
+        return redirect("/kontakt?gesendet")  # a field only bots fill in: pretend it worked
+
+    def again(error, code):
+        return render_template("contact.html", error=error, form=form), code
+
+    error = contact.check(form["name"], form["email"], form["message"])
+    if error:
+        return again(error, 400)
+    visitor = shorten_ip(request.remote_addr)
+    if not contact.allowed(visitor):
+        return again("Gerade kamen sehr viele Nachrichten an. Bitte versuch es später noch einmal.", 429)
+    try:
+        contact.send(form["name"], form["email"], form["message"], visitor, request.url_root)
+    except (OSError, ValueError) as error:
+        app.logger.error("Contact message could not be sent: %s", error)
+        return again("Die Nachricht konnte leider nicht gesendet werden. Bitte versuch es später noch einmal "
+                     "oder schreib mir direkt an " + contact.OWNER + ".", 502)
+    return redirect("/kontakt?gesendet")
 
 
 @app.route("/recipe/<int:recipe_id>")

@@ -1,0 +1,6 @@
+# Caddy in front of the app: gets an HTTPS certificate by itself and passes requests on to gunicorn.
+# Replace the address with your own (e.g. from DuckDNS). Caddy keeps no access logs unless told to.
+waskocheichheute.duckdns.org {
+    encode gzip
+    reverse_proxy 127.0.0.1:8000
+}
