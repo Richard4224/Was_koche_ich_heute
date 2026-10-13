@@ -399,14 +399,16 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Maultasc
 
 -- Kürbissuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbissuppe', NULL, 30, 4, 'Portionen', 'Herbst', '1. Kürbis waschen, halbieren, entkernen und in Würfel schneiden. Hokkaido muss nicht geschält werden.
-2. Zwiebel, Knoblauch und Ingwer schälen und fein hacken.
-3. Olivenöl in einem Topf erhitzen und Zwiebel, Knoblauch und Ingwer darin 3 Minuten andünsten.
-4. Kürbiswürfel dazugeben und 2 Minuten mitbraten.
-5. Mit der Gemüsebrühe ablöschen und ca. 20 Minuten köcheln lassen, bis der Kürbis weich ist.
-6. Kokosmilch hinzufügen und alles fein pürieren.
-7. Mit Salz, Pfeffer und Muskatnuss abschmecken.
-8. In Schüsseln füllen und mit gerösteten Kürbiskernen garnieren.
+VALUES ('Kürbissuppe', 'Samtig, leuchtend orange und mit einem Hauch Ingwer: die Suppe, die den Herbst in die Schüssel holt.', 30, 4, 'Portionen', 'Herbst', '1. Den Hokkaido-Kürbis gründlich waschen, halbieren und die Kerne mit einem Esslöffel herauskratzen. Die Schale darf dranbleiben, sie wird beim Kochen weich und färbt die Suppe kräftig orange. Das Fruchtfleisch in etwa 2 cm große Würfel schneiden.
+2. Zwiebel, {2} Knoblauchzehen und Ingwer schälen und fein hacken. Den Ingwer schält man am leichtesten, indem man die Haut mit einem Teelöffel abschabt.
+3. {2 EL} Olivenöl in einem großen Topf bei mittlerer Hitze erhitzen. Zwiebel, Knoblauch und Ingwer darin etwa 3 Minuten andünsten, bis die Zwiebel glasig ist. Sie soll dabei nicht braun werden.
+4. Die Kürbiswürfel dazugeben und unter Rühren 2 Minuten mitbraten, damit sie etwas Röstaroma bekommen.
+5. Mit {800 ml} Gemüsebrühe ablöschen, aufkochen und zugedeckt bei schwacher Hitze etwa 20 Minuten köcheln lassen, bis sich der Kürbis mit einer Gabel ganz leicht zerdrücken lässt.
+6. Inzwischen die Kürbiskerne in einer Pfanne ohne Fett bei mittlerer Hitze rösten, bis sie duften und leise knistern.
+7. {200 ml} Kokosmilch in die Suppe geben und alles mit dem Stabmixer sehr fein pürieren. Ist die Suppe zu dick, einen Schuss Wasser oder Brühe dazugeben.
+8. Mit Salz, Pfeffer und frisch geriebener Muskatnuss abschmecken. In vorgewärmte Schüsseln füllen und mit den gerösteten Kürbiskernen bestreuen.
+
+Tipp: Die Suppe lässt sich gut einfrieren. Beim Aufwärmen noch einmal kurz durchmixen, dann wird sie wieder schön sämig.
 
 Guten Appetit!', 'kuerbissuppe.jpg');
 
@@ -429,12 +431,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bärlauchsuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bärlauchsuppe', NULL, 30, 4, 'Portionen', 'Frühling', '1. Zwiebel und Kartoffeln schälen und klein würfeln.
-2. Butter in einem Topf erhitzen und die Zwiebel darin glasig dünsten. Kartoffeln kurz mitdünsten.
-3. Mit der Gemüsebrühe ablöschen und ca. 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
-4. Bärlauch waschen, trocken schütteln und grob hacken.
-5. Bärlauch und Sahne zugeben und alles fein pürieren. Nicht mehr kochen lassen, damit der Bärlauch schön grün bleibt.
-6. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+VALUES ('Bärlauchsuppe', 'Der erste grüne Gruß des Frühlings: eine cremige Kartoffelsuppe, die nach frischem Bärlauch duftet.', 30, 4, 'Portionen', 'Frühling', '1. Zwiebel schälen und fein würfeln. {300 g} Kartoffeln schälen und in etwa 1 cm große Würfel schneiden. Je kleiner sie sind, desto schneller werden sie weich.
+2. {1 EL} Butter in einem Topf bei mittlerer Hitze schmelzen. Die Zwiebel darin 2–3 Minuten glasig dünsten, dann die Kartoffeln zugeben und 1 Minute mitdünsten.
+3. Mit {800 ml} Gemüsebrühe ablöschen, aufkochen und zugedeckt etwa 15 Minuten leise köcheln lassen, bis die Kartoffeln weich sind.
+4. Währenddessen {100 g} Bärlauch in kaltem Wasser waschen, gut trocken schütteln und die Stiele abschneiden. Die Blätter grob hacken, ein paar feine Streifen zum Bestreuen beiseitelegen.
+5. Den Topf vom Herd nehmen. Bärlauch und {100 ml} Sahne zugeben und alles mit dem Stabmixer fein pürieren. Die Suppe danach nicht mehr kochen lassen, sonst wird der Bärlauch graugrün und verliert sein Aroma.
+6. Mit Salz, Pfeffer und etwas Muskatnuss abschmecken, auf Teller verteilen und mit den Bärlauchstreifen bestreuen.
+
+Tipp: Wer Bärlauch selbst im Wald sammelt, sollte jedes Blatt zwischen den Fingern zerreiben: Nur Bärlauch riecht deutlich nach Knoblauch, seine giftigen Doppelgänger Maiglöckchen und Herbstzeitlose nicht.
 
 Guten Appetit!', 'baerlauchsuppe.jpg');
 
@@ -450,11 +454,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spaghetti mit Bärlauchpesto
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti mit Bärlauchpesto', NULL, 20, 4, 'Portionen', 'Frühling', '1. Spaghetti in reichlich Salzwasser nach Packungsangabe bissfest kochen.
-2. Pinienkerne in einer Pfanne ohne Fett goldbraun rösten und abkühlen lassen.
-3. Bärlauch waschen, trocken tupfen und grob schneiden.
-4. Bärlauch, Pinienkerne, Olivenöl und einen Spritzer Zitronensaft im Mixer zu einem Pesto pürieren. Mit Salz und Pfeffer abschmecken.
-5. Spaghetti abgießen, dabei etwas Nudelwasser auffangen. Pesto mit {2-3 EL} Nudelwasser unter die Nudeln mischen und sofort servieren.
+VALUES ('Spaghetti mit Bärlauchpesto', 'Wild, würzig und in 20 Minuten auf dem Tisch: selbst gemachtes Pesto aus frischem Bärlauch.', 20, 4, 'Portionen', 'Frühling', '1. Reichlich Wasser in einem großen Topf aufkochen und kräftig salzen. {400 g} Spaghetti darin nach Packungsangabe bissfest kochen.
+2. Währenddessen {40 g} Pinienkerne in einer Pfanne ohne Fett bei mittlerer Hitze unter Schwenken goldbraun rösten. Gut aufpassen, sie werden schnell zu dunkel. Auf einem Teller abkühlen lassen.
+3. {100 g} Bärlauch waschen, gründlich trocken tupfen und grob schneiden. Nasse Blätter verwässern das Pesto.
+4. Bärlauch, Pinienkerne, {100 ml} Olivenöl und einen Spritzer Zitronensaft im Mixer oder mit dem Stabmixer zu einem cremigen Pesto pürieren. Nicht zu lange mixen, sonst wird es warm und bitter. Mit Salz und Pfeffer abschmecken.
+5. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen. Die Spaghetti abgießen, zurück in den Topf geben und das Pesto mit {2-3 EL} Nudelwasser untermischen, bis alles cremig glänzt. Sofort servieren.
+
+Tipp: Übriges Pesto in ein sauberes Glas füllen und mit etwas Olivenöl bedecken. So hält es im Kühlschrank etwa eine Woche.
 
 Guten Appetit!', 'spaghetti-mit-baerlauchpesto.jpg');
 
@@ -468,10 +474,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rührei mit Bärlauch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rührei mit Bärlauch', NULL, 10, 2, 'Portionen', 'Frühling', '1. Bärlauch waschen und in feine Streifen schneiden.
-2. Eier mit Milch, Salz und Pfeffer verquirlen.
-3. Butter in einer Pfanne bei mittlerer Hitze schmelzen, die Eimasse hineingeben und mit einem Pfannenwender langsam zu cremigem Rührei schieben.
-4. Kurz bevor das Ei ganz gestockt ist, den Bärlauch unterheben. Sofort servieren.
+VALUES ('Rührei mit Bärlauch', 'Weiches, cremiges Rührei mit frischen Bärlauchstreifen: ein Frühlingsfrühstück in zehn Minuten.', 10, 2, 'Portionen', 'Frühling', '1. Den Bärlauch waschen, trocken schütteln und in feine Streifen schneiden.
+2. {4} Eier mit {2 EL} Milch, einer Prise Salz und etwas Pfeffer in einer Schüssel mit der Gabel verquirlen, bis keine Eiweißschlieren mehr zu sehen sind.
+3. {1 EL} Butter in einer beschichteten Pfanne bei mittlerer bis schwacher Hitze schmelzen. Sie soll schäumen, aber nicht braun werden.
+4. Die Eimasse hineingießen und kurz warten, bis sie am Rand zu stocken beginnt. Dann mit einem Pfannenwender langsam vom Rand zur Mitte schieben, sodass große, weiche Flocken entstehen. Nicht rühren, sonst wird das Rührei krümelig.
+5. Wenn das Ei fast gestockt ist, aber noch glänzt, den Bärlauch unterheben und die Pfanne vom Herd ziehen. Die Resthitze gart es fertig. Sofort servieren.
+
+Tipp: Dazu passt eine Scheibe frisches Bauernbrot mit Butter.
 
 Guten Appetit!', 'ruehrei-mit-baerlauch.jpg');
 
@@ -484,12 +493,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spargel mit Sauce Hollandaise
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargel mit Sauce Hollandaise', NULL, 45, 4, 'Portionen', 'Frühling', '1. Kartoffeln schälen und in Salzwasser ca. 20 Minuten garen.
-2. Spargel schälen und die holzigen Enden abschneiden. Reichlich Wasser mit Salz, einer Prise Zucker und einem Stückchen Butter aufkochen und den Spargel darin 12–15 Minuten garen.
-3. Für die Hollandaise {200 g} Butter schmelzen. Eier trennen und die Eigelbe mit Weißwein und {1 EL} Zitronensaft über einem heißen Wasserbad dickcremig aufschlagen.
-4. Die flüssige Butter erst tropfenweise, dann in dünnem Strahl unterschlagen. Mit Salz, Pfeffer und Zitronensaft abschmecken.
-5. Kartoffeln in der restlichen Butter schwenken und mit gehackter Petersilie bestreuen.
-6. Spargel abtropfen lassen und mit Kartoffeln und Hollandaise servieren.
+VALUES ('Spargel mit Sauce Hollandaise', 'Der Klassiker der Spargelzeit: zarte weiße Stangen, Salzkartoffeln und eine selbst aufgeschlagene Hollandaise.', 45, 4, 'Portionen', 'Frühling', '1. {800 g} Kartoffeln schälen, größere halbieren und in Salzwasser zugedeckt etwa 20 Minuten garen, bis sie weich sind.
+2. Den Spargel mit einem Sparschäler vom Kopf abwärts gründlich schälen und die holzigen Enden 1–2 cm breit abschneiden. Einen großen Topf mit reichlich Wasser, Salz, einer Prise Zucker und einem kleinen Stück Butter aufkochen. Den Spargel hineinlegen und bei schwacher Hitze je nach Dicke 12–15 Minuten ziehen lassen. Er ist gar, wenn er sich beim Anheben leicht biegt.
+3. Für die Hollandaise {200 g} Butter in einem kleinen Topf schmelzen und etwas abkühlen lassen. Die Zitrone auspressen. {3} Eier trennen, die Eiweiße werden nicht gebraucht. Die Eigelbe mit {2 EL} Weißwein und {1 EL} Zitronensaft in einer Metallschüssel verrühren.
+4. Die Schüssel über ein Wasserbad setzen, das nur leise siedet. Das Wasser darf die Schüssel nicht berühren. Die Eigelbe mit dem Schneebesen 3–4 Minuten kräftig aufschlagen, bis sie hell, dickcremig und lauwarm sind. Werden sie zu heiß, gerinnen sie: dann die Schüssel kurz vom Wasserbad nehmen und weiterschlagen.
+5. Die flüssige Butter erst tropfenweise, dann in einem dünnen Strahl unterschlagen, bis eine glänzende, cremige Soße entsteht. Mit Salz, Pfeffer und etwas Zitronensaft abschmecken.
+6. Die Kartoffeln abgießen und in der restlichen Butter schwenken. Die Petersilie hacken und darüberstreuen.
+7. Den Spargel mit einer Schaumkelle herausheben, gut abtropfen lassen und mit Kartoffeln und Hollandaise auf vorgewärmten Tellern anrichten.
+
+Tipp: Die Spargelschalen nicht wegwerfen: In Wasser ausgekocht ergeben sie einen feinen Fond für eine Spargelsuppe am nächsten Tag.
 
 Guten Appetit!', 'spargel-mit-sauce-hollandaise.jpg');
 
@@ -506,12 +518,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spargelcremesuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargelcremesuppe', NULL, 45, 4, 'Portionen', 'Frühling', '1. Spargel schälen. Schalen und Enden in der Gemüsebrühe 15 Minuten auskochen und abseihen.
-2. Spargelstangen in Stücke schneiden, die Spitzen beiseitelegen.
-3. Schalotte würfeln und in Butter andünsten, Spargelstücke zugeben und kurz mitdünsten.
-4. Mit dem Spargelfond ablöschen und 15 Minuten köcheln. Die Spitzen in den letzten 5 Minuten mitgaren und wieder herausnehmen.
-5. Sahne zugeben, fein pürieren und mit Salz, Zucker, Muskat und Zitronensaft abschmecken.
-6. Mit Spargelspitzen und Schnittlauchröllchen servieren.
+VALUES ('Spargelcremesuppe', 'Fein, mild und samtig. Hier wandert der ganze Spargel in die Suppe, sogar die Schalen geben ihr Aroma ab.', 45, 4, 'Portionen', 'Frühling', '1. {500 g} Spargel schälen und die holzigen Enden abschneiden. Schalen und Enden mit {750 ml} Gemüsebrühe in einen Topf geben, aufkochen und 15 Minuten leise auskochen. Dann durch ein Sieb gießen, den Fond auffangen und die Schalen wegwerfen.
+2. Währenddessen die Spargelstangen in 2–3 cm lange Stücke schneiden. Die Spitzen beiseitelegen.
+3. Die Schalotte schälen und fein würfeln. {2 EL} Butter in einem Topf bei mittlerer Hitze schmelzen und die Schalotte darin 2 Minuten glasig dünsten. Die Spargelstücke ohne die Spitzen zugeben und 2 Minuten mitdünsten, ohne dass sie Farbe nehmen.
+4. Mit dem Spargelfond ablöschen und zugedeckt 15 Minuten köcheln lassen. Die Spitzen in den letzten 5 Minuten mitgaren, dann mit einer Schaumkelle herausheben und beiseitelegen.
+5. {200 ml} Sahne zugeben und die Suppe mit dem Stabmixer sehr fein pürieren. Wer sie besonders samtig mag, streicht sie zusätzlich durch ein feines Sieb.
+6. Mit Salz, einer Prise Zucker, etwas Muskatnuss und einem Spritzer Zitronensaft abschmecken. Der Zucker nimmt dem Spargel die leichte Bitterkeit.
+7. Den Schnittlauch in feine Röllchen schneiden. Die Suppe in Teller füllen, die Spargelspitzen hineinlegen und mit Schnittlauch bestreuen.
 
 Guten Appetit!', 'spargelcremesuppe.jpg');
 
@@ -528,11 +541,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grüner Spargel aus dem Ofen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüner Spargel aus dem Ofen', NULL, 25, 4, 'Portionen', 'Frühling', '1. Ofen auf 220 °C Ober-/Unterhitze vorheizen.
-2. Vom grünen Spargel nur das untere Drittel schälen und die holzigen Enden abschneiden.
-3. Spargel auf ein Backblech legen und mit Olivenöl, gehacktem Knoblauch, Salz, Pfeffer und Chiliflocken vermengen.
-4. 12–15 Minuten im Ofen rösten, bis die Spitzen leicht gebräunt sind.
-5. Mit Zitronenabrieb und etwas Zitronensaft beträufeln und sofort servieren.
+VALUES ('Grüner Spargel aus dem Ofen', 'Im heißen Ofen geröstet, bis die Spitzen knusprig werden: grüner Spargel mit Knoblauch, Chili und viel Zitrone.', 25, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen.
+2. Den Spargel waschen, die holzigen Enden abschneiden und nur das untere Drittel schälen. Grüner Spargel hat eine dünne Schale, oben braucht er nichts.
+3. {2} Knoblauchzehen schälen und fein hacken. Den Spargel auf ein Backblech legen, mit {3 EL} Olivenöl, Knoblauch, Salz, Pfeffer und einer Prise Chiliflocken vermengen, bis alle Stangen glänzen. Nebeneinander verteilen, nicht übereinander, sonst dämpft er, statt zu rösten.
+4. Im Ofen auf mittlerer Schiene 12–15 Minuten rösten, bis die Stangen bissfest und die Spitzen leicht gebräunt sind. Dünne Stangen brauchen eher 10 Minuten.
+5. Inzwischen die Zitrone heiß waschen, die Schale fein abreiben und die Zitrone halbieren.
+6. Den Spargel mit dem Zitronenabrieb bestreuen, mit etwas Zitronensaft beträufeln und sofort servieren.
+
+Tipp: Als Hauptgericht mit frischem Baguette servieren, als Beilage passt er zu Fisch und Steak.
 
 Guten Appetit!', 'gruener-spargel-aus-dem-ofen.jpg');
 
@@ -546,11 +562,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spargel-Risotto
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargel-Risotto', NULL, 40, 4, 'Portionen', 'Frühling', '1. Spargel putzen, die Spitzen abschneiden und die Stangen in 2 cm lange Stücke schneiden. Brühe erhitzen.
-2. Schalotten fein würfeln und in der Hälfte der Butter glasig dünsten. Reis zugeben und unter Rühren glasig anschwitzen.
-3. Mit Weißwein ablöschen. Nach und nach heiße Brühe angießen und unter Rühren ca. 18 Minuten garen.
-4. Nach 10 Minuten die Spargelstücke, nach 14 Minuten die Spitzen zugeben.
-5. Restliche Butter, geriebenen Käse und etwas Zitronenabrieb unterrühren. Mit Salz und Pfeffer abschmecken und 2 Minuten ruhen lassen.
+VALUES ('Spargel-Risotto', 'Cremig, frisch und voller Frühling: Risotto mit grünem Spargel, Zitrone und Hartkäse.', 40, 4, 'Portionen', 'Frühling', '1. Den Spargel waschen, die holzigen Enden abschneiden und das untere Drittel schälen. Die Spitzen etwa 4 cm lang abschneiden und beiseitelegen, die Stangen in 2 cm lange Stücke schneiden.
+2. {1000 ml} Gemüsebrühe in einem Topf erhitzen und auf kleinster Stufe heiß halten. Kalte Brühe würde das Garen jedes Mal unterbrechen.
+3. {2} Schalotten schälen und fein würfeln. Die Hälfte der Butter in einem breiten Topf bei mittlerer Hitze schmelzen und die Schalotten darin 2 Minuten glasig dünsten. {300 g} Risottoreis zugeben und unter Rühren 1–2 Minuten anschwitzen, bis die Körner glasig schimmern.
+4. Mit {100 ml} Weißwein ablöschen und rühren, bis er fast verkocht ist. Dann eine Kelle heiße Brühe angießen und unter häufigem Rühren einkochen lassen. Erst wenn der Reis die Flüssigkeit fast aufgenommen hat, die nächste Kelle zugeben. So insgesamt etwa 18 Minuten garen.
+5. Nach 10 Minuten die Spargelstücke, nach 14 Minuten die Spitzen unterrühren.
+6. Inzwischen {60 g} Hartkäse reiben und die Zitronenschale fein abreiben. Wenn der Reis cremig ist, innen aber noch leichten Biss hat, den Topf vom Herd nehmen. Die restliche Butter, den Käse und etwas Zitronenabrieb unterrühren. Mit Salz und Pfeffer abschmecken.
+7. Zugedeckt 2 Minuten ruhen lassen und sofort servieren. Ein gutes Risotto fließt auf dem Teller langsam auseinander.
+
+Tipp: Nicht immer wird die ganze Brühe gebraucht, manchmal etwas mehr. Entscheidend ist der Biss des Reises, nicht die Menge.
 
 Guten Appetit!', 'spargel-risotto.jpg');
 
@@ -567,11 +587,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spargelsalat mit Erdbeeren
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargelsalat mit Erdbeeren', NULL, 30, 4, 'Portionen', 'Frühling', '1. Weißen Spargel ganz, grünen Spargel nur im unteren Drittel schälen. Holzige Enden entfernen.
-2. Spargel in 4 cm lange Stücke schneiden, in Salzwasser 5–8 Minuten bissfest garen und kalt abschrecken.
-3. Erdbeeren waschen, putzen und vierteln. Rucola waschen und trocken schleudern.
-4. Aus Essig, Öl, Ahornsirup, Salz und Pfeffer ein Dressing rühren.
-5. Spargel, Erdbeeren und Rucola mit dem Dressing vermengen und kurz durchziehen lassen.
+VALUES ('Spargelsalat mit Erdbeeren', 'Süß, säuerlich und ein bisschen pfeffrig: Spargel und Erdbeeren sind das Traumpaar des Frühsommers.', 30, 4, 'Portionen', 'Frühling', '1. Den weißen Spargel ganz schälen, den grünen nur im unteren Drittel. Bei beiden die holzigen Enden abschneiden.
+2. Den Spargel schräg in 4 cm lange Stücke schneiden. Reichlich Salzwasser aufkochen, den weißen Spargel darin 8 Minuten garen und den grünen nach 3 Minuten dazugeben. Er soll noch deutlich Biss haben.
+3. Den Spargel in ein Sieb gießen und sofort in eiskaltem Wasser abschrecken, damit er nicht nachgart und der grüne seine Farbe behält. Gut abtropfen lassen.
+4. {250 g} Erdbeeren waschen, erst danach die Kelchblätter entfernen, sonst saugen sie sich mit Wasser voll, und die Beeren vierteln. {50 g} Rucola waschen und trocken schleudern.
+5. Für das Dressing {3 EL} Balsamicoessig, {4 EL} Olivenöl, {1 TL} Ahornsirup, Salz und Pfeffer in einem Schraubglas kräftig schütteln.
+6. Spargel und Erdbeeren mit dem Dressing mischen und 10 Minuten durchziehen lassen. Erst kurz vor dem Servieren den Rucola unterheben, damit er nicht zusammenfällt.
+
+Tipp: Frisch gemahlener Pfeffer direkt auf den Erdbeeren klingt seltsam, schmeckt aber großartig.
 
 Guten Appetit!', 'spargelsalat-mit-erdbeeren.jpg');
 
@@ -587,11 +610,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spargel mit Kochschinken und Kratzede
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spargel mit Kochschinken und Kratzede', NULL, 50, 4, 'Portionen', 'Frühling', '1. Spargel schälen und in Salzwasser mit Zucker und etwas Butter 12–15 Minuten garen.
-2. Für die Kratzede Mehl, Milch, Eier und eine Prise Salz glatt verrühren und 10 Minuten quellen lassen.
-3. Etwas Butter in einer Pfanne erhitzen, eine Kelle Teig hineingeben und leicht stocken lassen. Den Pfannkuchen mit zwei Gabeln in Stücke reißen und rundherum goldbraun braten. Mit dem restlichen Teig ebenso verfahren.
-4. Restliche Butter in einem kleinen Topf hellbraun aufschäumen lassen.
-5. Spargel mit Kochschinken und Kratzede anrichten, mit der braunen Butter beträufeln und mit Schnittlauch bestreuen.
+VALUES ('Spargel mit Kochschinken und Kratzede', 'Badisches Spargelessen, wie es sein soll: zerrupfte, goldbraune Pfannkuchen, Schinken und braune Butter.', 50, 4, 'Portionen', 'Frühling', '1. Für die Kratzede {200 g} Mehl, {300 ml} Milch, {4} Eier und eine Prise Salz mit dem Schneebesen zu einem glatten Teig verrühren und 10 Minuten quellen lassen.
+2. Den Spargel vom Kopf abwärts gründlich schälen und die holzigen Enden abschneiden. Reichlich Wasser mit Salz, einer Prise Zucker und einem Stückchen Butter aufkochen. Den Spargel darin bei schwacher Hitze 12–15 Minuten ziehen lassen.
+3. Inzwischen etwas Butter in einer großen Pfanne bei mittlerer Hitze erhitzen. Eine Kelle Teig hineingeben und stocken lassen, bis die Unterseite goldbraun ist. Den Pfannkuchen wenden, kurz weiterbraten und dann mit zwei Pfannenwendern oder Gabeln in mundgerechte Stücke reißen. Die Stücke rundherum knusprig braten. Mit dem restlichen Teig genauso verfahren und die fertige Kratzede im Ofen bei 80 °C warm halten.
+4. Den Schnittlauch in feine Röllchen schneiden. {300 g} Kochschinken auf einer Platte anrichten.
+5. Die restliche Butter in einem kleinen Topf bei mittlerer Hitze schmelzen und weiter erhitzen, bis sie schäumt, nussig duftet und am Boden hellbraun wird. Sofort vom Herd nehmen, sie verbrennt schnell.
+6. Den Spargel abtropfen lassen und mit Kochschinken und Kratzede anrichten. Mit der braunen Butter beträufeln und mit Schnittlauch bestreuen.
+
+Tipp: Für besonders lockere Kratzede die Eier trennen und das Eiweiß steif geschlagen zuletzt unter den Teig heben.
 
 Guten Appetit!', 'spargel-mit-kochschinken-und-kratzede.jpg');
 
@@ -607,11 +633,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Lachs mit grünem Spargel aus dem Ofen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lachs mit grünem Spargel aus dem Ofen', NULL, 30, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Spargel putzen, Tomaten halbieren.
-2. Spargel und Tomaten auf einem Blech mit {2 EL} Öl, gehacktem Knoblauch, Salz und Pfeffer mischen und 8 Minuten vorgaren.
-3. Lachs in {4 Stücke} teilen, salzen, pfeffern, mit Zitronenscheiben belegen und zwischen das Gemüse legen. Mit restlichem Öl beträufeln.
-4. Weitere 12–15 Minuten garen, bis der Lachs innen gerade noch zart-glasig ist.
-5. Mit gehacktem Dill und einem Spritzer Zitronensaft servieren.
+VALUES ('Lachs mit grünem Spargel aus dem Ofen', 'Alles auf ein Blech: saftiger Lachs, knackiger Spargel und Kirschtomaten, die im Ofen süß werden.', 30, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Den Spargel waschen, die holzigen Enden abschneiden und das untere Drittel schälen. {200 g} Kirschtomaten halbieren. Den Knoblauch schälen und fein hacken.
+2. Spargel und Tomaten auf einem Backblech mit {2 EL} Olivenöl, Knoblauch, Salz und Pfeffer mischen und gleichmäßig verteilen. 8 Minuten im Ofen vorgaren.
+3. Inzwischen {600 g} Lachsfilet mit Küchenpapier trocken tupfen und in {4} gleich große Stücke schneiden. Von beiden Seiten salzen und pfeffern. Die Zitrone halbieren und eine Hälfte in dünne Scheiben schneiden.
+4. Das Blech herausnehmen, das Gemüse etwas zur Seite schieben und die Lachsstücke mit der Hautseite nach unten dazwischenlegen. Mit je einer Zitronenscheibe belegen und mit dem restlichen Öl beträufeln.
+5. Weitere 12–15 Minuten garen, bis sich der Lachs an der dicksten Stelle leicht auseinanderzupfen lässt, innen aber noch zart glasig ist. Zu lange gegart wird er trocken.
+6. Den Dill fein hacken und darüberstreuen. Mit einem Spritzer Saft von der zweiten Zitronenhälfte servieren.
+
+Tipp: Dazu passt Reis oder frisches Baguette, das die Säfte vom Blech aufnimmt.
 
 Guten Appetit!', 'lachs-mit-gruenem-spargel-aus-dem-ofen.jpg');
 
@@ -627,11 +656,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Frankfurter Grüne Soße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Frankfurter Grüne Soße', NULL, 60, 4, 'Portionen', 'Frühling', '1. Kartoffeln als Pellkartoffeln ca. 20 Minuten kochen. Eier 10 Minuten hart kochen, abschrecken und pellen.
-2. Die sieben Kräuter waschen, trocken schütteln, grobe Stiele entfernen und sehr fein hacken oder mit etwas Joghurt pürieren.
-3. Schmand, Joghurt, Senf und Zitronensaft verrühren und die Kräuter unterziehen. {2} Eier fein hacken und untermischen.
-4. Mit Salz und Pfeffer abschmecken und mindestens 30 Minuten ziehen lassen.
-5. Mit den restlichen halbierten Eiern und den Kartoffeln servieren.
+VALUES ('Frankfurter Grüne Soße', 'Sieben Kräuter, kalt und cremig: Frankfurts berühmteste Soße, traditionell am Gründonnerstag mit Eiern und Pellkartoffeln.', 60, 4, 'Portionen', 'Frühling', '1. {1000 g} Kartoffeln waschen und in Salzwasser zugedeckt etwa 20 Minuten als Pellkartoffeln garen.
+2. {8} Eier in kochendem Wasser 10 Minuten hart kochen, kalt abschrecken und pellen.
+3. Die sieben Kräuter waschen und gründlich trocken schütteln: Borretsch, Kerbel, Kresse, Petersilie, Pimpinelle, Sauerampfer und Schnittlauch. Grobe Stiele entfernen. Die Kräuter mit einem großen Messer sehr fein hacken oder mit etwas Joghurt im Mixer pürieren. In Frankfurt ist die Soße eher fein und kräftig grün.
+4. {200 g} Schmand, {200 g} Joghurt, {1 TL} Senf und den Saft der halben Zitrone glatt rühren und die Kräuter unterziehen.
+5. {2} Eier sehr fein hacken und untermischen. Mit Salz und Pfeffer kräftig abschmecken.
+6. Die Soße abgedeckt mindestens 30 Minuten im Kühlschrank ziehen lassen, damit sich die Aromen verbinden.
+7. Die Kartoffeln pellen, die restlichen Eier halbieren und alles mit der Grünen Soße anrichten.
+
+Tipp: Auf dem Wochenmarkt gibt es die sieben Kräuter im Frühjahr oft fertig gebündelt, in Hessen klassisch in weißes Papier gewickelt.
 
 Guten Appetit!', 'frankfurter-gruene-sosse.jpg');
 
@@ -653,10 +686,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pellkartoffeln mit Kräuterquark und Leinöl
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pellkartoffeln mit Kräuterquark und Leinöl', NULL, 30, 4, 'Portionen', 'Frühling', '1. Kartoffeln gründlich waschen und mit Kümmel in Salzwasser ca. 20 Minuten garen.
-2. Quark mit Milch glatt rühren. Kräuter fein hacken, Radieschen in feine Würfel schneiden und beides unterrühren.
-3. Mit Salz und Pfeffer kräftig abschmecken.
-4. Kartoffeln pellen, mit dem Kräuterquark anrichten und den Quark großzügig mit Leinöl beträufeln.
+VALUES ('Pellkartoffeln mit Kräuterquark und Leinöl', 'Einfach und ehrlich: Pellkartoffeln mit kühlem Kräuterquark und einem Schuss nussigem Leinöl, wie man es aus dem Spreewald kennt.', 30, 4, 'Portionen', 'Frühling', '1. {1000 g} möglichst gleich große Kartoffeln gründlich waschen. Mit {1 TL} Kümmel in einen Topf geben, mit Wasser bedecken, salzen und zugedeckt etwa 20 Minuten kochen, bis ein Messer leicht hineingleitet.
+2. Inzwischen {500 g} Quark mit {100 ml} Milch glatt rühren. Er soll cremig, aber nicht flüssig sein.
+3. Den Schnittlauch in feine Röllchen schneiden und die Petersilie fein hacken. Die Radieschen waschen, putzen und in kleine Würfel schneiden. Alles unter den Quark rühren.
+4. Mit Salz und Pfeffer kräftig abschmecken. Kalter Quark schmeckt schnell fade, also ruhig großzügig würzen.
+5. Die Kartoffeln abgießen, kurz ausdampfen lassen und pellen oder mit Schale servieren. Den Kräuterquark daneben anrichten, eine kleine Mulde hineindrücken und mit {4 EL} Leinöl füllen.
+
+Tipp: Leinöl schmeckt nur frisch. Es gehört in den Kühlschrank und sollte nach dem Öffnen innerhalb weniger Wochen aufgebraucht werden.
 
 Guten Appetit!', 'pellkartoffeln-mit-kraeuterquark-und-leinoel.jpg');
 
@@ -673,11 +709,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rhabarberkuchen mit Streuseln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rhabarberkuchen mit Streuseln', NULL, 80, 1, 'Springform (26 cm)', 'Frühling', '1. Rhabarber waschen, putzen und in 2 cm lange Stücke schneiden. Mit {2 EL} Zucker mischen und 15 Minuten ziehen lassen. Ofen auf 180 °C vorheizen.
-2. Für den Rührteig {100 g} Butter, {100 g} Zucker, Vanillezucker und Eier schaumig schlagen. {200 g} Mehl mit Backpulver und Salz mischen und abwechselnd mit der Milch unterrühren.
-3. Teig in eine gefettete Springform streichen und den abgetropften Rhabarber darauf verteilen.
-4. Für die Streusel restliches Mehl, restlichen Zucker, restliche Butter und Zimt mit den Fingern zu Streuseln verkneten und über den Rhabarber streuen.
-5. Ca. 45 Minuten goldbraun backen und in der Form abkühlen lassen.
+VALUES ('Rhabarberkuchen mit Streuseln', 'Saurer Rhabarber, saftiger Rührteig und dicke, buttrige Streusel: der Kuchen, auf den man sich das ganze Frühjahr freut.', 80, 1, 'Springform (26 cm)', 'Frühling', '1. Den Rhabarber waschen, die Enden abschneiden und faserige Haut abziehen. In 2 cm lange Stücke schneiden, mit {2 EL} Zucker mischen und 15 Minuten ziehen lassen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Springform (26 cm) fetten.
+3. Für den Rührteig {100 g} weiche Butter, {100 g} Zucker und den Vanillezucker mit dem Handrührgerät 3 Minuten hell und cremig schlagen. Die {2} Eier einzeln je eine halbe Minute unterrühren.
+4. {200 g} Mehl mit {2 TL} Backpulver und einer Prise Salz mischen und abwechselnd mit {50 ml} Milch kurz unterrühren, nur bis alles verbunden ist.
+5. Den Teig in die Form streichen. Den Rhabarber in einem Sieb abtropfen lassen, damit der Saft den Teig nicht durchweicht, und gleichmäßig darauf verteilen.
+6. Für die Streusel das restliche Mehl, den restlichen Zucker, die restliche Butter in Stücken und eine Prise Zimt mit den Fingern zu groben Streuseln verkneten und über den Rhabarber streuen.
+7. Im Ofen auf mittlerer Schiene etwa 45 Minuten backen, bis die Streusel goldbraun sind. Mit einem Holzstäbchen in den Teig stechen: Bleibt nichts daran kleben, ist er fertig. In der Form vollständig abkühlen lassen.
+
+Tipp: Am besten schmeckt er am Backtag, mit einem Klecks geschlagener Sahne.
 
 Guten Appetit!', 'rhabarberkuchen-mit-streuseln.jpg');
 
@@ -694,11 +734,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rhabarberkompott mit Vanille
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rhabarberkompott mit Vanille', NULL, 20, 4, 'Portionen', 'Frühling', '1. Rhabarber putzen und in 2 cm lange Stücke schneiden.
-2. Vanilleschote längs aufschneiden und das Mark herauskratzen.
-3. Orangensaft mit Zucker, Vanillemark und Schote aufkochen, Rhabarber zugeben und 5 Minuten sanft köcheln, bis er weich ist, aber nicht zerfällt.
-4. Speisestärke mit wenig kaltem Wasser anrühren, einrühren und kurz aufkochen. Vanilleschote entfernen.
-5. Warm oder kalt servieren, zum Beispiel zu Grießbrei oder Joghurt.
+VALUES ('Rhabarberkompott mit Vanille', 'Rosa, fruchtig und duftend nach Vanille: ein schnelles Kompott für Grießbrei, Joghurt oder Eis.', 20, 4, 'Portionen', 'Frühling', '1. {500 g} Rhabarber waschen, die Enden abschneiden und faserige Haut abziehen. In 2 cm lange Stücke schneiden.
+2. Die Vanilleschote mit einem spitzen Messer längs aufschneiden und das Mark mit dem Messerrücken herauskratzen.
+3. {100 ml} Orangensaft mit {80 g} Zucker, dem Vanillemark und der ausgekratzten Schote in einem Topf aufkochen, bis sich der Zucker gelöst hat.
+4. Den Rhabarber zugeben und zugedeckt bei schwacher Hitze etwa 5 Minuten sanft köcheln lassen. Er soll weich sein, aber noch seine Form behalten. Nicht umrühren, den Topf nur ab und zu schwenken.
+5. {1 TL} Speisestärke mit 2 EL kaltem Wasser glatt rühren, unter das Kompott ziehen und einmal kurz aufkochen, bis der Saft leicht bindet. Die Vanilleschote herausnehmen.
+6. Warm oder abgekühlt servieren, zum Beispiel zu Grießbrei, Joghurt oder Vanilleeis.
+
+Tipp: Je röter die Stangen, desto milder ist der Rhabarber und desto schöner wird die Farbe.
 
 Guten Appetit!', 'rhabarberkompott-mit-vanille.jpg');
 
@@ -710,10 +753,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rhabarber-Crumble
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rhabarber-Crumble', NULL, 45, 4, 'Portionen', 'Frühling', '1. Ofen auf 190 °C vorheizen. Rhabarber putzen und in Stücke schneiden, Erdbeeren halbieren.
-2. Obst mit {50 g} Zucker und dem Vanillezucker in einer Auflaufform mischen.
-3. Mehl, Haferflocken, restlichen Zucker, Zimt und kalte Butterwürfel zu Streuseln verreiben und über das Obst geben.
-4. 30 Minuten backen, bis die Streusel goldbraun sind und das Obst blubbert. Lauwarm servieren.
+VALUES ('Rhabarber-Crumble', 'Blubberndes Obst unter knusprigen Haferstreuseln, lauwarm aus dem Ofen: das gemütlichste Dessert, das es gibt.', 45, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen.
+2. {500 g} Rhabarber waschen, putzen und in 2 cm lange Stücke schneiden. {200 g} Erdbeeren waschen, entkelchen und halbieren.
+3. Das Obst mit {50 g} Zucker und dem Vanillezucker in einer Auflaufform mischen.
+4. Für die Streusel {100 g} Mehl, {50 g} Haferflocken, den restlichen Zucker und {1 TL} Zimt in einer Schüssel mischen. {80 g} kalte Butter in kleinen Würfeln dazugeben und alles mit den Fingerspitzen rasch zu Streuseln verreiben. Die Butter soll dabei nicht schmelzen, sonst werden die Streusel teigig statt knusprig.
+5. Die Streusel locker über dem Obst verteilen, nicht andrücken.
+6. Im Ofen etwa 30 Minuten backen, bis die Streusel goldbraun sind und das Obst am Rand Blasen wirft. 10 Minuten abkühlen lassen und lauwarm servieren.
+
+Tipp: Dazu eine Kugel Vanilleeis, die langsam auf dem warmen Crumble schmilzt.
 
 Guten Appetit!', 'rhabarber-crumble.jpg');
 
@@ -728,12 +775,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Erdbeerkuchen mit Biskuitboden
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeerkuchen mit Biskuitboden', NULL, 120, 1, 'Springform (26 cm)', 'Frühling', '1. Ofen auf 180 °C vorheizen und den Boden einer Springform mit Backpapier auslegen.
-2. Eier mit {3 EL} warmem Wasser und {80 g} Zucker 8 Minuten sehr schaumig schlagen. Mehl, {20 g} Speisestärke und Backpulver darübersieben und vorsichtig unterheben.
-3. Teig in die Form füllen, 20 Minuten backen, auskühlen lassen und aus der Form lösen.
-4. Erdbeeren waschen, putzen, halbieren und dicht auf den Boden setzen. Einen Tortenring darumlegen.
-5. Apfelsaft mit dem restlichen Zucker aufkochen. Restliche Stärke mit wenig Wasser anrühren, einrühren, 1 Minute köcheln und sofort über die Erdbeeren gießen.
-6. Kuchen 1 Stunde kühlen. Sahne mit Vanillezucker steif schlagen und dazu servieren.
+VALUES ('Erdbeerkuchen mit Biskuitboden', 'Luftiger Biskuit, ein Berg frischer Erdbeeren und glänzender Guss: der Sommerkuchen schlechthin.', 120, 1, 'Springform (26 cm)', 'Frühling', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Nur den Boden einer Springform (26 cm) mit Backpapier auslegen und den Rand nicht fetten, so kann der Biskuit beim Backen daran hochklettern.
+2. {3} Eier mit {3 EL} warmem Wasser und {80 g} Zucker mit dem Handrührgerät 8 Minuten sehr hell und schaumig schlagen. Die Masse sollte ihr Volumen etwa verdreifachen.
+3. {80 g} Mehl, {20 g} Speisestärke und {1 TL} Backpulver mischen, über die Eimasse sieben und mit einem Teigschaber vorsichtig unterheben. Nicht rühren, sonst fällt der Schaum zusammen.
+4. Den Teig in die Form füllen, glatt streichen und etwa 20 Minuten backen, bis er goldgelb ist und auf leichten Fingerdruck zurückfedert. Mit einem Messer vom Rand lösen, auskühlen lassen und aus der Form nehmen.
+5. {750 g} Erdbeeren waschen, trocken tupfen, entkelchen und halbieren. Mit der Schnittfläche nach unten dicht an dicht auf den Boden setzen. Einen Tortenring oder den gesäuberten Springformrand um den Boden legen.
+6. {250 ml} Apfelsaft mit dem restlichen Zucker aufkochen. Die restliche Speisestärke mit 3 EL kaltem Wasser glatt rühren, in den kochenden Saft rühren und 1 Minute köcheln lassen, bis er klar und dick wird. Sofort mit einem Löffel gleichmäßig über die Erdbeeren verteilen.
+7. Den Kuchen mindestens 1 Stunde kühl stellen, bis der Guss fest ist. {200 ml} Sahne mit dem Vanillezucker steif schlagen und dazu servieren.
+
+Tipp: Wer mag, bestreicht den Boden vor dem Belegen dünn mit Erdbeerkonfitüre, dann weicht er nicht durch.
 
 Guten Appetit!', 'erdbeerkuchen-mit-biskuitboden.jpg');
 
@@ -749,10 +799,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Erdbeer-Quark-Creme
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeer-Quark-Creme', NULL, 15, 4, 'Portionen', 'Frühling', '1. Erdbeeren waschen und putzen. Die Hälfte mit {1 EL} Zucker pürieren, den Rest klein schneiden.
-2. Quark mit restlichem Zucker, Vanillezucker und Zitronensaft glatt rühren.
-3. Sahne steif schlagen und unter den Quark heben.
-4. Creme, Erdbeerpüree und Erdbeerstücke abwechselnd in Gläser schichten, mit Minze garnieren und gekühlt servieren.
+VALUES ('Erdbeer-Quark-Creme', 'Fruchtig, cremig und schnell geschichtet: ein Dessert im Glas, das nach Sommer schmeckt.', 15, 4, 'Portionen', 'Frühling', '1. {500 g} Erdbeeren waschen, trocken tupfen und entkelchen. Die Hälfte mit {1 EL} Zucker fein pürieren, die andere Hälfte in kleine Stücke schneiden.
+2. {500 g} Quark mit dem restlichen Zucker, dem Vanillezucker und dem Saft der halben Zitrone glatt rühren.
+3. {200 ml} gut gekühlte Sahne steif schlagen und mit einem Teigschaber locker unter den Quark heben, damit die Creme luftig bleibt.
+4. In {4} Gläser abwechselnd Quarkcreme, Erdbeerpüree und Erdbeerstücke schichten und mit Erdbeerstücken abschließen.
+5. Mindestens 15 Minuten kalt stellen. Vor dem Servieren mit je einem Minzblatt garnieren.
+
+Tipp: Mit Magerquark wird die Creme leichter, mit Sahnequark noch cremiger.
 
 Guten Appetit!', 'erdbeer-quark-creme.jpg');
 
@@ -766,10 +819,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Radieschensalat mit Schnittlauch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Radieschensalat mit Schnittlauch', NULL, 15, 4, 'Portionen', 'Frühling', '1. Radieschen waschen, putzen und in dünne Scheiben hobeln.
-2. Schnittlauch in feine Röllchen schneiden.
-3. Essig, Öl, Senf, Zucker, Salz und Pfeffer zu einer Vinaigrette verrühren.
-4. Radieschen und Schnittlauch mit der Vinaigrette mischen und 10 Minuten ziehen lassen.
+VALUES ('Radieschensalat mit Schnittlauch', 'Knackig, scharf und ganz schnell gemacht: Radieschen in feinen Scheiben mit einer frischen Senf-Vinaigrette.', 15, 4, 'Portionen', 'Frühling', '1. {2 Bund} Radieschen waschen, Blätter und Wurzelenden abschneiden. Mit einem Gemüsehobel oder einem scharfen Messer in dünne Scheiben schneiden.
+2. Den Schnittlauch waschen, trocken schütteln und in feine Röllchen schneiden.
+3. {2 EL} Apfelessig, {1 TL} Senf, eine Prise Zucker, Salz und Pfeffer verrühren. {3 EL} Rapsöl langsam unterschlagen, bis die Vinaigrette leicht cremig wird.
+4. Radieschen und Schnittlauch mit der Vinaigrette mischen und etwa 10 Minuten ziehen lassen. Die Radieschen geben dabei etwas Saft ab und werden milder. Vor dem Servieren noch einmal abschmecken.
+
+Tipp: Die zarten Radieschenblätter nicht wegwerfen. Fein gehackt passen sie in den Salat oder in Kräuterquark.
 
 Guten Appetit!', 'radieschensalat-mit-schnittlauch.jpg');
 
@@ -784,11 +839,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kohlrabi-Schnitzel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kohlrabi-Schnitzel', NULL, 30, 4, 'Portionen', 'Frühling', '1. Kohlrabi schälen und in 1 cm dicke Scheiben schneiden. In Salzwasser 5 Minuten vorgaren, abschrecken und trocken tupfen.
-2. Scheiben mit Salz, Pfeffer und etwas Muskat würzen.
-3. Nacheinander in Mehl, verquirltem Ei und Paniermehl wenden.
-4. Butterschmalz in einer Pfanne erhitzen und die Schnitzel pro Seite ca. 3 Minuten goldbraun braten.
-5. Mit Zitronenspalten servieren. Dazu passt Kartoffelsalat.
+VALUES ('Kohlrabi-Schnitzel', 'Außen knusprig, innen zart und mild: Kohlrabi, paniert wie ein Wiener Schnitzel. Da greifen auch Fleischfans gern zu.', 30, 4, 'Portionen', 'Frühling', '1. {2} Kohlrabi schälen, holzige Stellen großzügig wegschneiden und die Knollen in 1 cm dicke Scheiben schneiden.
+2. Die Scheiben in kochendem Salzwasser 5 Minuten vorgaren, in kaltem Wasser abschrecken und auf Küchenpapier gründlich trocken tupfen. Nur trockene Scheiben halten die Panade.
+3. Die Scheiben von beiden Seiten mit Salz, Pfeffer und etwas Muskatnuss würzen.
+4. Drei tiefe Teller bereitstellen: {50 g} Mehl, {2} mit einer Prise Salz verquirlte Eier und {100 g} Paniermehl. Jede Scheibe erst in Mehl wenden und abklopfen, dann durch das Ei ziehen und zuletzt im Paniermehl wenden. Die Panade nur leicht andrücken.
+5. {4 EL} Butterschmalz in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen. Es ist heiß genug, wenn an einem hineingehaltenen Holzlöffelstiel kleine Bläschen aufsteigen. Die Schnitzel portionsweise pro Seite etwa 3 Minuten goldbraun braten und auf Küchenpapier abtropfen lassen.
+6. Die Zitrone in Spalten schneiden und mit den Schnitzeln servieren.
+
+Tipp: Dazu passen Kartoffelsalat oder ein grüner Salat mit Joghurtdressing.
 
 Guten Appetit!', 'kohlrabi-schnitzel.jpg');
 
@@ -804,10 +862,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kohlrabigemüse in Rahmsoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kohlrabigemüse in Rahmsoße', NULL, 25, 4, 'Portionen', 'Frühling', '1. Kohlrabi schälen und in Stifte schneiden. Zarte Blätter fein hacken.
-2. Kohlrabi in der Brühe zugedeckt 8–10 Minuten bissfest garen, dabei die Brühe auffangen.
-3. Butter schmelzen, Mehl darin anschwitzen und unter Rühren mit der Kochbrühe und der Sahne ablöschen. 5 Minuten köcheln lassen.
-4. Kohlrabi und Blätter unterheben, mit Salz, Pfeffer und Muskat abschmecken und mit Petersilie bestreuen.
+VALUES ('Kohlrabigemüse in Rahmsoße', 'Zarte Kohlrabistifte in einer hellen, cremigen Soße mit einem Hauch Muskat: die Beilage wie bei Oma.', 25, 4, 'Portionen', 'Frühling', '1. {3} Kohlrabi schälen, holzige Stellen wegschneiden und die Knollen in etwa 1 cm dicke Stifte schneiden. Die zarten inneren Blätter nicht wegwerfen, sondern fein hacken.
+2. Die Kohlrabistifte mit {200 ml} Gemüsebrühe in einen Topf geben, aufkochen und zugedeckt bei mittlerer Hitze 8–10 Minuten bissfest garen. In ein Sieb abgießen und die Kochbrühe dabei in einer Schüssel auffangen.
+3. Im selben Topf {2 EL} Butter schmelzen. {1 EL} Mehl einstreuen und unter Rühren 1 Minute hell anschwitzen, es soll keine Farbe annehmen.
+4. Erst die aufgefangene Brühe, dann {150 ml} Sahne nach und nach mit dem Schneebesen einrühren, damit keine Klümpchen entstehen. Die Soße 5 Minuten leise köcheln lassen, bis sie sämig ist.
+5. Kohlrabi und gehackte Blätter in die Soße geben und kurz erwärmen. Mit Salz, Pfeffer und frisch geriebener Muskatnuss abschmecken.
+6. Die Petersilie fein hacken und darüberstreuen.
+
+Tipp: Passt besonders gut zu Frikadellen, Schnitzel oder einfach zu Salzkartoffeln.
 
 Guten Appetit!', 'kohlrabigemuese-in-rahmsosse.jpg');
 
@@ -823,11 +885,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Erbsen-Minz-Suppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erbsen-Minz-Suppe', NULL, 20, 4, 'Portionen', 'Frühling', '1. Zwiebel würfeln und in Olivenöl glasig dünsten.
-2. Erbsen (tiefgekühlt) zugeben, mit Brühe auffüllen und 5–8 Minuten köcheln.
-3. Minzblätter abzupfen, einige zum Garnieren beiseitelegen und den Rest mit der Sojasahne in die Suppe geben.
-4. Fein pürieren und mit Salz, Pfeffer und Zitronensaft abschmecken.
-5. Mit den Minzblättern garniert servieren.
+VALUES ('Erbsen-Minz-Suppe', 'Leuchtend grün, frisch und in 20 Minuten fertig: Erbsen und Minze sind wie füreinander gemacht.', 20, 4, 'Portionen', 'Frühling', '1. Die Zwiebel schälen und fein würfeln. {2 EL} Olivenöl in einem Topf bei mittlerer Hitze erhitzen und die Zwiebel darin 3 Minuten glasig dünsten.
+2. {600 g} Erbsen zugeben, tiefgekühlte müssen nicht aufgetaut werden. Mit {800 ml} Gemüsebrühe auffüllen, aufkochen und 5–8 Minuten köcheln lassen, bis die Erbsen weich sind. Länger sollten sie nicht kochen, sonst verlieren sie ihre leuchtende Farbe.
+3. Die Minzblätter von den Stielen zupfen. Ein paar schöne Blätter zum Garnieren beiseitelegen, den Rest mit {100 ml} Sojasahne in die Suppe geben.
+4. Alles mit dem Stabmixer sehr fein pürieren. Mit Salz, Pfeffer und dem Saft der halben Zitrone abschmecken. Erst die Säure macht die Suppe richtig frisch.
+5. In Teller füllen und mit den Minzblättern garniert servieren.
+
+Tipp: Im Sommer schmeckt die Suppe auch kalt. Dann etwas kräftiger würzen, Kälte dämpft den Geschmack.
 
 Guten Appetit!', 'erbsen-minz-suppe.jpg');
 
@@ -843,11 +907,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Risi e Bisi
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Risi e Bisi', NULL, 35, 4, 'Portionen', 'Frühling', '1. Brühe erhitzen. Zwiebel fein würfeln und in der Hälfte der Butter glasig dünsten.
-2. Reis zugeben, kurz mitdünsten und mit einem Teil der Brühe ablöschen.
-3. Nach und nach Brühe angießen und unter gelegentlichem Rühren 15 Minuten garen.
-4. Erbsen zugeben und weitere 5 Minuten garen. Risi e Bisi darf etwas suppiger sein als ein Risotto.
-5. Restliche Butter, geriebenen Käse und gehackte Petersilie unterrühren und abschmecken.
+VALUES ('Risi e Bisi', 'Reis und Erbsen auf venezianische Art: etwas suppiger als ein Risotto und herrlich einfach.', 35, 4, 'Portionen', 'Frühling', '1. {1200 ml} Gemüsebrühe in einem Topf aufkochen und auf kleiner Stufe heiß halten.
+2. Die Zwiebel schälen und fein würfeln. Die Hälfte der Butter in einem breiten Topf bei mittlerer Hitze schmelzen und die Zwiebel darin 2–3 Minuten glasig dünsten.
+3. {300 g} Risottoreis zugeben und unter Rühren 1 Minute anschwitzen, bis die Körner glasig schimmern. Mit zwei Kellen heißer Brühe ablöschen.
+4. Immer wieder eine Kelle Brühe angießen, sobald der Reis die Flüssigkeit fast aufgenommen hat, und dabei gelegentlich umrühren. So etwa 15 Minuten garen.
+5. {400 g} Erbsen zugeben und weitere 5 Minuten garen. Risi e Bisi darf ruhig suppiger sein als ein Risotto: Wenn man den Topf schwenkt, soll der Reis in der Flüssigkeit schwimmen.
+6. Inzwischen {60 g} Hartkäse reiben und die Petersilie fein hacken. Den Topf vom Herd nehmen, die restliche Butter, den Käse und die Petersilie unterrühren. Mit Salz und Pfeffer abschmecken und sofort in tiefen Tellern servieren.
+
+Tipp: In Venedig kocht man die leeren Schoten frischer Erbsen in der Brühe mit. Das gibt ein besonders intensives Erbsenaroma.
 
 Guten Appetit!', 'risi-e-bisi.jpg');
 
@@ -863,11 +930,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Lammkeule mit Rosmarin und Knoblauch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lammkeule mit Rosmarin und Knoblauch', NULL, 180, 6, 'Portionen', 'Frühling', '1. Ofen auf 170 °C Ober-/Unterhitze vorheizen. Lammkeule trocken tupfen und mit einem spitzen Messer rundherum einstechen.
-2. Knoblauch in Stifte schneiden und mit kleinen Rosmarinzweigen in die Einschnitte stecken. Keule mit Öl, Zitronenabrieb, Salz und Pfeffer einreiben.
-3. In einem Bräter rundherum scharf anbraten, mit Rotwein und Brühe ablöschen und den Thymian dazulegen.
-4. Im Ofen ca. 2 Stunden garen und regelmäßig mit dem Bratensaft begießen. Nach einer Stunde die geviertelten Kartoffeln um die Keule legen.
-5. Keule 10 Minuten ruhen lassen, aufschneiden und mit Kartoffeln und Bratensaft servieren.
+VALUES ('Lammkeule mit Rosmarin und Knoblauch', 'Der Festtagsbraten zu Ostern: zarte Lammkeule, gespickt mit Knoblauch und Rosmarin, dazu Kartoffeln aus dem Bräter.', 180, 6, 'Portionen', 'Frühling', '1. Die Lammkeule etwa 1 Stunde vor dem Garen aus dem Kühlschrank nehmen, damit sie Zimmertemperatur annimmt. Den Ofen auf 170 °C Ober-/Unterhitze vorheizen.
+2. Die Keule trocken tupfen und grobe Fettstücke und Sehnen abschneiden. Mit einem spitzen Messer rundherum etwa 15 kleine, 2 cm tiefe Taschen einstechen.
+3. {6} Knoblauchzehen schälen und in Stifte schneiden. Von {2} Rosmarinzweigen kleine Spitzen abzupfen und mit den Knoblauchstiften in die Taschen stecken. Die Zitrone heiß waschen und die Schale abreiben. Die Keule mit {2 EL} Olivenöl, Zitronenabrieb, Salz und Pfeffer rundherum einreiben.
+4. Das restliche Öl in einem Bräter auf dem Herd stark erhitzen und die Keule darin von allen Seiten je 2–3 Minuten kräftig anbraten. Mit {250 ml} Rotwein und {250 ml} Gemüsebrühe ablöschen, den Thymian und den restlichen Rosmarin dazulegen.
+5. Im Ofen offen etwa 2 Stunden garen und alle 20 Minuten mit dem Bratensaft begießen. Inzwischen {1000 g} Kartoffeln schälen und vierteln. Nach einer Stunde die Kartoffeln um die Keule im Bratensaft verteilen und leicht salzen.
+6. Die Keule herausnehmen, in Alufolie wickeln und 10 Minuten ruhen lassen, damit sich der Fleischsaft verteilt. Die Kartoffeln so lange im Ofen weiterbräunen lassen.
+7. Das Fleisch quer zur Faser in Scheiben schneiden und mit den Kartoffeln und dem Bratensaft servieren.
+
+Tipp: Mit einem Bratenthermometer gelingt die Keule sicher: Bei 60 °C Kerntemperatur ist sie rosa, bei 70 °C durchgegart. Dann einfach früher herausnehmen.
 
 Guten Appetit!', 'lammkeule-mit-rosmarin-und-knoblauch.jpg');
 
@@ -885,11 +956,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Navarin d'agneau (Lammragout mit Frühlingsgemüse)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Navarin d''agneau (Lammragout mit Frühlingsgemüse)', NULL, 120, 4, 'Portionen', 'Frühling', '1. Lammschulter in 3 cm große Würfel schneiden, salzen und pfeffern.
-2. Öl in einem Schmortopf erhitzen und das Fleisch portionsweise kräftig anbraten. Geschälte Schalotten zugeben und kurz mitbraten.
-3. Tomatenmark einrühren und anrösten, mit Weißwein ablöschen und mit Brühe auffüllen. Thymian und Lorbeer zugeben und zugedeckt 1 Stunde schmoren.
-4. Karotten und Kartoffeln schälen, in mundgerechte Stücke schneiden und zum Fleisch geben. 20 Minuten weiterschmoren.
-5. Bohnen und Erbsen zugeben und 10 Minuten mitgaren. Abschmecken und servieren.
+VALUES ('Navarin d''agneau (Lammragout mit Frühlingsgemüse)', 'Französisches Frühlingsragout: lange geschmortes Lamm mit jungem Gemüse, das erst zum Schluss dazukommt und knackig bleibt.', 120, 4, 'Portionen', 'Frühling', '1. {1000 g} Lammschulter von groben Sehnen befreien, in 3 cm große Würfel schneiden, trocken tupfen und mit Salz und Pfeffer würzen. {4} Schalotten schälen und ganz lassen.
+2. {2 EL} Rapsöl in einem Schmortopf stark erhitzen. Das Fleisch in zwei bis drei Portionen rundherum kräftig braun anbraten. Nicht zu viel auf einmal in den Topf geben, sonst kocht es im eigenen Saft, statt zu bräunen. Dann alles Fleisch zurück in den Topf geben und die Schalotten 2 Minuten mitbraten.
+3. {2 EL} Tomatenmark einrühren und 1 Minute anrösten. Mit {200 ml} Weißwein ablöschen und den Bratensatz vom Topfboden lösen. {500 ml} Gemüsebrühe angießen, Thymian und das Lorbeerblatt zugeben und zugedeckt bei schwacher Hitze 1 Stunde schmoren.
+4. Inzwischen {4} Karotten und {400 g} Kartoffeln schälen und in mundgerechte Stücke schneiden. Zum Fleisch geben und weitere 20 Minuten schmoren.
+5. {200 g} grüne Bohnen putzen und halbieren. Mit {200 g} Erbsen zugeben und ohne Deckel 10 Minuten mitgaren, bis die Bohnen bissfest sind und die Soße etwas eingekocht ist.
+6. Thymianzweige und Lorbeerblatt herausnehmen, mit Salz und Pfeffer abschmecken und im Topf servieren.
+
+Tipp: Dazu passt frisches Baguette, mit dem man die Soße auftunken kann.
 
 Guten Appetit!', 'navarin-d-agneau-lammragout-mit-fruehlingsgemuese.jpg');
 
@@ -910,11 +984,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rahmspinat mit Spiegelei und Salzkartoffeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rahmspinat mit Spiegelei und Salzkartoffeln', NULL, 35, 4, 'Portionen', 'Frühling', '1. Kartoffeln schälen, vierteln und in Salzwasser ca. 20 Minuten garen.
-2. Spinat waschen, in kochendem Wasser 1 Minute blanchieren, abschrecken, gut ausdrücken und grob hacken.
-3. Zwiebel und Knoblauch fein würfeln und in {1 EL} Butter glasig dünsten. Spinat und Sahne zugeben, kurz einköcheln lassen und mit Salz, Pfeffer und Muskat würzen.
-4. In der restlichen Butter {4} Spiegeleier braten.
-5. Kartoffeln mit Rahmspinat und Spiegelei servieren.
+VALUES ('Rahmspinat mit Spiegelei und Salzkartoffeln', 'Ein Teller Kindheit: cremiger Rahmspinat, ein Spiegelei mit flüssigem Eigelb und Salzkartoffeln.', 35, 4, 'Portionen', 'Frühling', '1. {1000 g} Kartoffeln schälen, vierteln und in Salzwasser zugedeckt etwa 20 Minuten garen.
+2. {1000 g} Spinat gründlich waschen und grobe Stiele entfernen. In einem großen Topf mit kochendem Salzwasser 1 Minute blanchieren, bis er zusammenfällt. In eiskaltem Wasser abschrecken, damit er grün bleibt, dann mit den Händen kräftig ausdrücken und grob hacken.
+3. Zwiebel und Knoblauch schälen und fein würfeln. {1 EL} Butter in einem Topf bei mittlerer Hitze schmelzen und beides darin 2–3 Minuten glasig dünsten.
+4. Den Spinat und {150 ml} Sahne zugeben und unter Rühren 3–4 Minuten einköcheln lassen, bis der Spinat cremig ist. Mit Salz, Pfeffer und reichlich Muskatnuss abschmecken. Wer ihn feiner mag, püriert ihn kurz mit dem Stabmixer.
+5. Die restliche Butter in einer großen Pfanne bei mittlerer Hitze schmelzen. {4} Eier vorsichtig hineinschlagen und 3–4 Minuten braten, bis das Eiweiß fest, das Eigelb aber noch flüssig ist. Das Eiweiß leicht salzen.
+6. Die Kartoffeln abgießen und mit Rahmspinat und je einem Spiegelei auf Tellern anrichten.
+
+Tipp: Mit tiefgekühltem Blattspinat geht es schneller: Etwa 600 g auftauen lassen, gut ausdrücken und mit Schritt 3 weitermachen.
 
 Guten Appetit!', 'rahmspinat-mit-spiegelei-und-salzkartoffeln.jpg');
 
@@ -931,12 +1008,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spinatknödel mit brauner Butter
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spinatknödel mit brauner Butter', NULL, 50, 4, 'Portionen', 'Frühling', '1. Altbackene Brötchen in kleine Würfel schneiden, mit warmer Milch übergießen und 10 Minuten einweichen.
-2. Spinat blanchieren, gut ausdrücken und fein hacken. Zwiebel würfeln und in {1 EL} Butter glasig dünsten.
-3. Spinat, Zwiebel, Eier, Mehl, die Hälfte des Käses, Salz, Pfeffer und Muskat zu den Brötchen geben, zu einem formbaren Teig verkneten und 15 Minuten ruhen lassen.
-4. Mit nassen Händen {8} Knödel formen und in siedendem Salzwasser ca. 15 Minuten gar ziehen lassen.
-5. Restliche Butter in einer Pfanne hellbraun aufschäumen lassen.
-6. Knödel mit der braunen Butter beträufeln und mit dem restlichen Käse bestreuen.
+VALUES ('Spinatknödel mit brauner Butter', 'Südtiroler Spinatknödel: würzig, saftig und in nussiger brauner Butter geschwenkt.', 50, 4, 'Portionen', 'Frühling', '1. {250 g} altbackene Brötchen in kleine Würfel schneiden. {200 ml} Milch lauwarm erwärmen, darübergießen, mischen und 10 Minuten einweichen lassen.
+2. {300 g} Spinat waschen und in kochendem Wasser 1 Minute blanchieren. Kalt abschrecken, sehr gut ausdrücken und fein hacken. Je trockener der Spinat ist, desto besser halten die Knödel.
+3. Die Zwiebel schälen und fein würfeln. {1 EL} Butter in einer Pfanne schmelzen und die Zwiebel darin glasig dünsten.
+4. {60 g} Hartkäse reiben. Spinat, Zwiebel, {2} Eier, {2 EL} Mehl und die Hälfte des Käses zu den Brötchen geben. Mit Salz, Pfeffer und Muskatnuss würzen und alles mit den Händen zu einem formbaren Teig verkneten. 15 Minuten ruhen lassen.
+5. In einem großen Topf reichlich Salzwasser aufkochen und die Hitze reduzieren, bis es nur noch siedet. Mit nassen Händen {8} gleich große Knödel formen und ins Wasser gleiten lassen. Etwa 15 Minuten gar ziehen lassen. Das Wasser darf dabei nicht sprudelnd kochen, sonst zerfallen sie.
+6. Kurz vor Ende die restliche Butter in einer Pfanne bei mittlerer Hitze aufschäumen lassen, bis sie hellbraun ist und nussig duftet.
+7. Die Knödel mit einer Schaumkelle herausheben, gut abtropfen lassen und auf Teller setzen. Mit der braunen Butter beträufeln und mit dem restlichen Käse bestreuen.
+
+Tipp: Zuerst einen Probeknödel kochen. Zerfällt er, noch etwas Mehl in den Teig kneten.
 
 Guten Appetit!', 'spinatknoedel-mit-brauner-butter.jpg');
 
@@ -954,11 +1034,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Mangoldgemüse mit Pinienkernen und Rosinen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mangoldgemüse mit Pinienkernen und Rosinen', NULL, 20, 4, 'Portionen', 'Frühling', '1. Rosinen in warmem Wasser einweichen. Pinienkerne in einer Pfanne ohne Fett rösten.
-2. Mangold waschen, die Stiele in schmale und die Blätter in breite Streifen schneiden.
-3. Öl erhitzen und gehackten Knoblauch mit den Mangoldstielen 3 Minuten dünsten.
-4. Blätter und abgetropfte Rosinen zugeben und zusammenfallen lassen.
-5. Mit Salz, Pfeffer und Zitronensaft abschmecken und die Pinienkerne darüberstreuen.
+VALUES ('Mangoldgemüse mit Pinienkernen und Rosinen', 'Mangold auf sizilianische Art: süße Rosinen, geröstete Pinienkerne und ein Spritzer Zitrone.', 20, 4, 'Portionen', 'Frühling', '1. {30 g} Rosinen in einer kleinen Schüssel mit warmem Wasser bedecken und 10 Minuten einweichen, damit sie saftig werden.
+2. {30 g} Pinienkerne in einer großen Pfanne ohne Fett bei mittlerer Hitze unter Schwenken goldbraun rösten und herausnehmen.
+3. {800 g} Mangold waschen. Die Stiele von den Blättern schneiden, die Stiele in schmale, die Blätter in breite Streifen schneiden. Die Stiele brauchen länger und kommen deshalb zuerst in die Pfanne.
+4. {2} Knoblauchzehen schälen und fein hacken. {3 EL} Olivenöl in der Pfanne erhitzen, Knoblauch und Mangoldstiele darin 3 Minuten dünsten, bis die Stiele etwas weicher sind.
+5. Die Rosinen abtropfen lassen und mit den Mangoldblättern in die Pfanne geben. Unter Wenden 2–3 Minuten zusammenfallen lassen.
+6. Mit Salz, Pfeffer und dem Saft der halben Zitrone abschmecken und mit den Pinienkernen bestreut servieren.
+
+Tipp: Bunter Mangold mit roten oder gelben Stielen sieht auf dem Teller besonders schön aus.
 
 Guten Appetit!', 'mangoldgemuese-mit-pinienkernen-und-rosinen.jpg');
 
@@ -973,12 +1056,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Finkenwerder Scholle
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Finkenwerder Scholle', NULL, 35, 4, 'Portionen', 'Frühling', '1. Kartoffeln schälen und in Salzwasser ca. 20 Minuten garen.
-2. Speck fein würfeln, in einer großen Pfanne knusprig auslassen und herausnehmen.
-3. Küchenfertige Schollen waschen, trocken tupfen, mit Zitronensaft beträufeln, salzen, pfeffern und in Mehl wenden.
-4. Butterschmalz im Speckfett erhitzen und die Schollen nacheinander pro Seite ca. 4 Minuten goldbraun braten.
-5. Speck und Krabben kurz in der Pfanne erwärmen und über die Schollen geben.
-6. Kartoffeln in Butter schwenken, mit Petersilie bestreuen und zur Scholle servieren.
+VALUES ('Finkenwerder Scholle', 'Hamburgs Fischklassiker: goldbraun gebratene Scholle mit knusprigem Speck und Nordseekrabben.', 35, 4, 'Portionen', 'Frühling', '1. {1000 g} Kartoffeln schälen und in Salzwasser zugedeckt etwa 20 Minuten garen.
+2. {150 g} Speck fein würfeln und in einer großen Pfanne ohne Fett bei mittlerer Hitze knusprig auslassen. Mit einer Schaumkelle herausnehmen und das Fett in der Pfanne lassen.
+3. {4} küchenfertige Schollen kalt abspülen und gründlich trocken tupfen. Mit etwas Zitronensaft beträufeln, salzen und pfeffern. In {4 EL} Mehl wenden und überschüssiges Mehl abklopfen.
+4. {4 EL} Butterschmalz zum Speckfett geben und erhitzen. Die Schollen nacheinander, mit der dunklen Seite zuerst, bei mittlerer Hitze pro Seite etwa 4 Minuten goldbraun braten und im Ofen bei 80 °C warm halten. Sie sind gar, wenn sich das Fleisch an der Mittelgräte leicht lösen lässt.
+5. Speck und {150 g} Nordseekrabben in der Pfanne nur kurz erwärmen. Die Krabben sollen nicht braten, sonst werden sie zäh. Über die Schollen verteilen.
+6. Die Petersilie hacken. Die Kartoffeln abgießen, in {2 EL} Butter schwenken und mit Petersilie bestreuen. Mit der Scholle und Zitronenspalten servieren.
+
+Tipp: Am besten schmeckt das Gericht im Mai und Juni, wenn die Maischollen besonders zart sind.
 
 Guten Appetit!', 'finkenwerder-scholle.jpg');
 
@@ -996,11 +1081,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Forelle Müllerin Art
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Forelle Müllerin Art', NULL, 30, 4, 'Portionen', 'Frühling', '1. Küchenfertige Forellen innen und außen waschen und trocken tupfen. Innen und außen salzen, pfeffern und mit Zitronensaft beträufeln.
-2. In Mehl wenden und überschüssiges Mehl abklopfen.
-3. {50 g} Butter in einer großen Pfanne erhitzen und die Forellen pro Seite 5–6 Minuten braten.
-4. Fische warm stellen. Restliche Butter in die Pfanne geben, aufschäumen lassen und gehackte Petersilie sowie etwas Zitronensaft zugeben.
-5. Forellen mit der Petersilienbutter beträufeln und mit Zitronenspalten servieren.
+VALUES ('Forelle Müllerin Art', 'Ganze Forelle in Butter gebraten, mit Petersilie und Zitrone: einfach, klassisch und unschlagbar.', 30, 4, 'Portionen', 'Frühling', '1. {4} küchenfertige Forellen innen und außen kalt abspülen und gründlich trocken tupfen. Eine Zitrone auspressen, die andere in Spalten schneiden. Die Fische innen und außen salzen, pfeffern und mit etwas Zitronensaft beträufeln.
+2. Die Forellen in {4 EL} Mehl wenden und überschüssiges Mehl gut abklopfen. Die dünne Mehlschicht sorgt für eine goldene, leicht knusprige Haut.
+3. {50 g} Butter in einer großen Pfanne bei mittlerer Hitze schmelzen, bis sie schäumt. Die Forellen hineinlegen, bei Bedarf in zwei Pfannen, und pro Seite 5–6 Minuten braten. Erst wenden, wenn die Haut goldbraun ist. Die Forelle ist gar, wenn sich die Rückenflosse leicht herausziehen lässt.
+4. Die Fische auf vorgewärmte Teller legen und im Ofen bei 80 °C warm halten. Die Petersilie fein hacken.
+5. Die restliche Butter in die Pfanne geben und aufschäumen lassen, bis sie leicht nussig duftet. Petersilie und einen Schuss Zitronensaft zugeben und kurz durchschwenken.
+6. Die Forellen mit der Petersilienbutter beträufeln und mit Zitronenspalten servieren.
+
+Tipp: Dazu gehören Salzkartoffeln und ein grüner Salat.
 
 Guten Appetit!', 'forelle-muellerin-art.jpg');
 
@@ -1014,11 +1102,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Graved Lachs mit Honig-Senf-Soße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Graved Lachs mit Honig-Senf-Soße', NULL, 2900, 6, 'Portionen', 'Frühling', '1. Lachs (mit Haut, entgrätet) waschen und trocken tupfen. Salz, Zucker und grob zerstoßenen Pfeffer mischen.
-2. Die Hälfte des gehackten Dills in eine Form streuen, den Lachs mit der Hautseite nach unten darauflegen, mit der Salz-Zucker-Mischung einreiben und mit dem restlichen Dill bis auf {2 EL} bedecken.
-3. Mit Frischhaltefolie abdecken, mit einem Brett beschweren und 48 Stunden im Kühlschrank beizen. Dabei zweimal wenden.
-4. Für die Soße Senf, Honig und Essig verrühren, das Öl langsam unterschlagen und den restlichen Dill unterrühren.
-5. Beize abstreifen und den Lachs schräg in hauchdünne Scheiben schneiden. Mit der Soße servieren.
+VALUES ('Graved Lachs mit Honig-Senf-Soße', 'Skandinavisch gebeizter Lachs mit Dill und süßem Senf: Er braucht etwas Geduld, aber kaum Arbeit.', 2900, 6, 'Portionen', 'Frühling', '1. {800 g} Lachsfilet mit Haut kaufen und mit den Fingern prüfen, ob noch Gräten darin stecken. Diese mit einer Pinzette ziehen. Den Lachs kalt abspülen und trocken tupfen.
+2. {1 TL} Pfefferkörner im Mörser grob zerstoßen und mit {50 g} Salz und {50 g} Zucker mischen. Den Dill fein hacken und {2 EL} davon für die Soße beiseitestellen.
+3. Die Hälfte des übrigen Dills in eine Form streuen, die knapp größer ist als der Lachs. Den Lachs mit der Hautseite nach unten darauflegen, die Fleischseite gleichmäßig mit der Salz-Zucker-Mischung einreiben und mit dem restlichen Dill bedecken.
+4. Mit Frischhaltefolie abdecken, mit einem Brettchen und ein paar Konservendosen beschweren und 48 Stunden im Kühlschrank beizen. Dabei zweimal wenden und mit der entstandenen Lake begießen.
+5. Für die Soße {3 EL} Senf, {2 EL} Honig und {1 EL} Weißweinessig verrühren. {4 EL} Rapsöl langsam unterschlagen, bis die Soße cremig wird, dann den beiseitegestellten Dill unterrühren.
+6. Die Beize mit einem Messerrücken vom Lachs abstreifen. Den Lachs mit einem langen, scharfen Messer schräg in hauchdünne Scheiben von der Haut schneiden und mit der Honig-Senf-Soße servieren.
+
+Tipp: Nur sehr frischen Fisch verwenden, am besten in Sushi-Qualität. Gut eingewickelt hält sich der fertige Lachs im Kühlschrank 4–5 Tage.
 
 Guten Appetit!', 'graved-lachs-mit-honig-senf-sosse.jpg');
 
@@ -1034,10 +1125,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Eiersalat mit Schnittlauch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Eiersalat mit Schnittlauch', NULL, 25, 4, 'Portionen', 'Frühling', '1. Eier 10 Minuten hart kochen, kalt abschrecken, pellen und abkühlen lassen.
-2. Eier würfeln, Gewürzgurken fein würfeln und Schnittlauch in Röllchen schneiden.
-3. Mayonnaise, Joghurt und Senf verrühren und mit Salz, Pfeffer und Paprika würzen.
-4. Eier, Gurken und Schnittlauch vorsichtig unterheben und 10 Minuten durchziehen lassen. Passt aufs Brot oder zu Blattsalat.
+VALUES ('Eiersalat mit Schnittlauch', 'Cremig, aber nicht schwer: Eiersalat mit Joghurt, knackigen Gewürzgurken und viel Schnittlauch.', 25, 4, 'Portionen', 'Frühling', '1. {8} Eier in kochendes Wasser legen und 10 Minuten hart kochen. Sofort in kaltem Wasser abschrecken, damit sich kein grauer Rand um das Eigelb bildet. Pellen und vollständig abkühlen lassen.
+2. Die Eier mit einem Messer oder Eierschneider in kleine Würfel schneiden. {2} Gewürzgurken fein würfeln und den Schnittlauch in feine Röllchen schneiden.
+3. {3 EL} Mayonnaise, {100 g} Joghurt und {1 TL} Senf glatt rühren und mit Salz, Pfeffer und einer Prise Paprikapulver würzen. Der Joghurt macht den Salat leichter und frischer als reine Mayonnaise.
+4. Eier, Gurken und Schnittlauch mit einem Teigschaber vorsichtig unterheben, damit die Eigelbe nicht zerdrückt werden.
+5. Abgedeckt mindestens 10 Minuten im Kühlschrank durchziehen lassen und noch einmal abschmecken. Passt aufs Brot, zu Blattsalat oder einfach so.
+
+Tipp: Ein Schuss Gurkenwasser aus dem Glas macht das Dressing würziger.
 
 Guten Appetit!', 'eiersalat-mit-schnittlauch.jpg');
 
@@ -1053,10 +1147,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gefüllte Eier
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Eier', NULL, 25, 4, 'Portionen', 'Frühling', '1. Eier 10 Minuten hart kochen, abschrecken, pellen und längs halbieren.
-2. Eigelbe herauslösen und mit Mayonnaise, Senf, Salz und Pfeffer cremig rühren.
-3. Creme in einen Spritzbeutel mit Sterntülle füllen und in die Eiweißhälften spritzen.
-4. Mit Paprikapulver bestäuben und mit Kresse garnieren.
+VALUES ('Gefüllte Eier', 'Der Partyklassiker: halbe Eier mit cremiger Senffüllung, Paprika und frischer Kresse.', 25, 4, 'Portionen', 'Frühling', '1. {8} Eier 10 Minuten hart kochen, kalt abschrecken und pellen. Ganz frische Eier lassen sich schwer pellen, ein paar Tage alte gehen leichter.
+2. Die Eier längs halbieren. Die Eigelbe vorsichtig mit einem Teelöffel herauslösen und in eine Schüssel geben, die Eiweißhälften auf eine Platte legen.
+3. Die Eigelbe mit einer Gabel fein zerdrücken. {2 EL} Mayonnaise und {1 TL} Senf zugeben und alles glatt und cremig rühren. Mit Salz und Pfeffer abschmecken.
+4. Die Creme in einen Spritzbeutel mit Sterntülle füllen und in die Eiweißhälften spritzen. Ohne Spritzbeutel geht es auch mit zwei Teelöffeln.
+5. Mit Paprikapulver bestäuben, die Kresse abschneiden und darüberstreuen. Bis zum Servieren kühl stellen.
+
+Tipp: Für eine feurige Variante eine Prise Cayennepfeffer in die Creme rühren.
 
 Guten Appetit!', 'gefuellte-eier.jpg');
 
@@ -1070,11 +1167,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hefezopf
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hefezopf', NULL, 150, 1, 'Zopf', 'Frühling', '1. Milch lauwarm erwärmen und Hefe mit {1 TL} Zucker darin auflösen.
-2. Mehl, restlichen Zucker, Salz und Zitronenabrieb mischen. Hefemilch, weiche Butter und {1} Ei zugeben und 8–10 Minuten zu einem glatten Teig kneten.
-3. Zugedeckt an einem warmen Ort ca. 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
-4. Pro Zopf drei Teigstränge formen, zu einem Zopf flechten und auf ein Backblech legen. Weitere 30 Minuten gehen lassen. Ofen auf 180 °C vorheizen.
-5. Zopf mit dem restlichen, verquirlten Ei bestreichen, mit gehobelten Mandeln bestreuen und ca. 30 Minuten goldbraun backen.
+VALUES ('Hefezopf', 'Fluffig, leicht süß und goldglänzend: Hefezopf für den Sonntagsfrühstückstisch und das Osterfest.', 150, 1, 'Zopf', 'Frühling', '1. {250 ml} Milch in einem Topf lauwarm erwärmen. Sie darf höchstens handwarm sein, sonst stirbt die Hefe. Die Hefe hineinbröckeln und mit {1 TL} Zucker verrühren, bis sie sich aufgelöst hat. 5 Minuten stehen lassen.
+2. {500 g} Mehl, den restlichen Zucker, eine Prise Salz und die abgeriebene Schale der Zitrone in einer großen Schüssel mischen. Die Hefemilch, {80 g} weiche Butter und {1} Ei zugeben.
+3. Alles mit den Knethaken oder den Händen 8–10 Minuten zu einem glatten, geschmeidigen Teig kneten, der sich vom Schüsselrand löst. Zugedeckt an einem warmen Ort etwa 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
+4. Den Teig auf der leicht bemehlten Arbeitsfläche kurz durchkneten. Pro Zopf drei gleich große Stücke abteilen und jedes zu einem etwa 40 cm langen Strang rollen. Die Stränge oben zusammendrücken, locker zu einem Zopf flechten und die Enden unterschlagen.
+5. Auf ein mit Backpapier belegtes Blech legen und zugedeckt weitere 30 Minuten gehen lassen. Inzwischen den Ofen auf 180 °C Ober-/Unterhitze vorheizen.
+6. Das restliche Ei verquirlen, den Zopf damit bestreichen und mit {2 EL} gehobelten Mandeln bestreuen. Etwa 30 Minuten goldbraun backen. Klingt er beim Klopfen auf die Unterseite hohl, ist er fertig. Auf einem Gitter abkühlen lassen.
+
+Tipp: Frisch schmeckt er mit Butter und Marmelade, am nächsten Tag getoastet.
 
 Guten Appetit!', 'hefezopf.jpg');
 
@@ -1090,12 +1190,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Aargauer Rüblitorte
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Aargauer Rüblitorte', NULL, 90, 1, 'Springform (26 cm)', 'Frühling', '1. Ofen auf 180 °C vorheizen und eine Springform einfetten. Karotten schälen und fein raspeln.
-2. Eier trennen. Eigelbe mit Zucker, Zitronenabrieb und Kirschwasser cremig schlagen.
-3. Mandeln, Stärke, Backpulver und Zimt mischen und mit den Karotten unter die Eigelbmasse rühren.
-4. Eiweiße mit einer Prise Salz steif schlagen und vorsichtig unterheben.
-5. Teig in die Form füllen, ca. 50 Minuten backen und auskühlen lassen.
-6. Puderzucker mit {2-3 EL} Zitronensaft zu einem dicken Guss rühren und die Torte damit glasieren.
+VALUES ('Aargauer Rüblitorte', 'Die saftige Karottentorte aus der Schweiz: ganz ohne Mehl, mit viel Mandeln und einem Zitronenguss.', 90, 1, 'Springform (26 cm)', 'Frühling', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Eine Springform (26 cm) fetten und den Boden mit Backpapier auslegen. {300 g} Karotten schälen und auf der feinen Seite der Reibe raspeln.
+2. {5} Eier trennen. Die Zitrone heiß waschen, die Schale abreiben und den Saft auspressen.
+3. Die Eigelbe mit {200 g} Zucker, dem Zitronenabrieb und {1 EL} Kirschwasser mit dem Handrührgerät etwa 5 Minuten hell und cremig schlagen.
+4. {300 g} gemahlene Mandeln, {50 g} Speisestärke, {1 TL} Backpulver und {1 TL} Zimt mischen und zusammen mit den Karotten unter die Eigelbmasse rühren.
+5. Die Eiweiße mit einer Prise Salz in einer fettfreien Schüssel steif schlagen. Erst ein Drittel unter den Teig rühren, um ihn zu lockern, dann den Rest vorsichtig unterheben.
+6. Den Teig in die Form füllen und etwa 50 Minuten backen. Wird die Oberfläche zu dunkel, nach 30 Minuten mit Alufolie abdecken. Stäbchenprobe machen, die Torte 10 Minuten in der Form abkühlen lassen, dann herauslösen und ganz auskühlen lassen.
+7. {150 g} Puderzucker mit {2-3 EL} Zitronensaft zu einem dicken, glatten Guss rühren und auf der Torte verstreichen. Fest werden lassen.
+
+Tipp: Am zweiten Tag schmeckt die Torte am besten, wenn sie gut durchgezogen ist. Traditionell wird sie mit kleinen Marzipan-Rüebli verziert.
 
 Guten Appetit!', 'aargauer-rueblitorte.jpg');
 
@@ -1113,9 +1216,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Honig-Karotten aus dem Ofen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Honig-Karotten aus dem Ofen', NULL, 35, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Junge Karotten schälen und das Grün bis auf 1 cm abschneiden. Dicke Karotten längs halbieren.
-2. Öl, Honig, Thymianblättchen, Salz und Pfeffer verrühren und die Karotten darin wenden.
-3. Auf einem Backblech verteilen und ca. 25 Minuten rösten, bis sie weich und leicht karamellisiert sind. Zwischendurch einmal wenden.
+VALUES ('Honig-Karotten aus dem Ofen', 'Süß, würzig und leicht karamellisiert: junge Karotten aus dem Ofen mit Honig und Thymian.', 35, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen und ein Backblech mit Backpapier auslegen.
+2. {800 g} junge Karotten schälen oder nur gründlich abbürsten und das Grün bis auf 1 cm abschneiden. Dicke Karotten längs halbieren, damit alle gleichzeitig gar werden.
+3. Die Blättchen von {4} Thymianzweigen abzupfen. {2 EL} Olivenöl, {2 EL} Honig, Thymian, Salz und Pfeffer in einer großen Schüssel verrühren und die Karotten darin wenden, bis sie rundum überzogen sind.
+4. Die Karotten nebeneinander auf dem Blech verteilen und etwa 25 Minuten rösten, bis sie weich sind und an den Rändern karamellisieren. Nach der Hälfte der Zeit einmal wenden.
+5. Mit dem Honig vom Blech beträufeln und noch warm servieren.
+
+Tipp: Bunte Karotten in Gelb, Lila und Orange machen aus der Beilage einen echten Hingucker.
 
 Guten Appetit!', 'honig-karotten-aus-dem-ofen.jpg');
 
@@ -1128,11 +1235,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Sauerampfersuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Sauerampfersuppe', NULL, 30, 4, 'Portionen', 'Frühling', '1. Schalotten und Kartoffeln schälen und würfeln.
-2. In Butter andünsten, mit Brühe auffüllen und 15 Minuten köcheln lassen.
-3. Sauerampfer waschen, grobe Stiele entfernen und die Blätter grob schneiden.
-4. Sauerampfer und Sahne in die Suppe geben, kurz aufkochen und fein pürieren.
-5. Mit Salz, Pfeffer und Muskat abschmecken. Dazu passt frisches Brot.
+VALUES ('Sauerampfersuppe', 'Frisch und angenehm säuerlich: eine fast vergessene Frühlingssuppe aus wilden Blättern.', 30, 4, 'Portionen', 'Frühling', '1. {2} Schalotten und {300 g} Kartoffeln schälen und in kleine Würfel schneiden.
+2. {2 EL} Butter in einem Topf bei mittlerer Hitze schmelzen. Schalotten und Kartoffeln darin 3 Minuten andünsten, ohne dass sie braun werden.
+3. Mit {800 ml} Gemüsebrühe auffüllen, aufkochen und zugedeckt etwa 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Inzwischen {150 g} Sauerampfer waschen, grobe Stiele entfernen und die Blätter grob schneiden. Ein paar Blätter in feine Streifen schneiden und zum Garnieren beiseitelegen.
+5. Den Sauerampfer und {150 ml} Sahne in die Suppe geben, einmal kurz aufkochen und sofort fein pürieren. Sauerampfer verliert beim Kochen schnell seine grüne Farbe, deshalb nur kurz erhitzen.
+6. Mit Salz, Pfeffer und Muskatnuss abschmecken und mit den Sauerampferstreifen bestreuen. Dazu passt frisches Brot.
+
+Tipp: Sauerampfer wächst im Frühjahr auf fast jeder Wiese. Junge Blätter vor der Blüte schmecken am mildesten.
 
 Guten Appetit!', 'sauerampfersuppe.jpg');
 
@@ -1148,11 +1258,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Brennnesselsuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Brennnesselsuppe', NULL, 35, 4, 'Portionen', 'Frühling', '1. Junge Brennnesselspitzen mit Handschuhen pflücken, waschen und abtropfen lassen.
-2. Zwiebel, Knoblauch und Kartoffeln schälen, würfeln und in Öl andünsten.
-3. Mit Brühe aufgießen und 15 Minuten köcheln lassen.
-4. Brennnesseln zugeben und 5 Minuten mitkochen – danach brennen sie nicht mehr.
-5. Sojasahne zugeben, fein pürieren und mit Salz, Pfeffer und Muskat abschmecken.
+VALUES ('Brennnesselsuppe', 'Wildkräuterküche zum Selbersammeln: Junge Brennnesseln schmecken mild, ein bisschen wie Spinat.', 35, 4, 'Portionen', 'Frühling', '1. {200 g} junge Brennnesselspitzen, also die obersten vier bis sechs Blätter, mit Handschuhen pflücken. In einer Schüssel mit kaltem Wasser waschen und in einem Sieb abtropfen lassen. Die Handschuhe dabei anbehalten.
+2. Zwiebel, Knoblauch und {300 g} Kartoffeln schälen und würfeln. {2 EL} Rapsöl in einem Topf erhitzen und alles darin 3 Minuten andünsten.
+3. Mit {1000 ml} Gemüsebrühe aufgießen, aufkochen und zugedeckt 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Die Brennnesseln zugeben und 5 Minuten mitkochen. Danach brennen sie nicht mehr.
+5. {100 ml} Sojasahne zugeben und die Suppe mit dem Stabmixer fein pürieren. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+
+Tipp: Am besten abseits von Straßen und Hundewegen sammeln, und nur bis zur Blüte im Frühsommer.
 
 Guten Appetit!', 'brennnesselsuppe.jpg');
 
@@ -1169,11 +1281,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hollerküchle (gebackene Holunderblüten)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hollerküchle (gebackene Holunderblüten)', NULL, 30, 4, 'Portionen', 'Frühling', '1. Holunderblüten gut ausschütteln, aber nicht waschen, damit das Aroma erhalten bleibt.
-2. Mehl, Milch, Eier, Zucker und Salz zu einem dickflüssigen Pfannkuchenteig verrühren.
-3. Öl in einem Topf auf ca. 170 °C erhitzen.
-4. Blütendolden am Stiel fassen, in den Teig tauchen, abtropfen lassen und im Öl goldgelb ausbacken.
-5. Auf Küchenpapier abtropfen lassen, dicke Stiele abschneiden und mit Puderzucker und Zimt bestäuben.
+VALUES ('Hollerküchle (gebackene Holunderblüten)', 'Holunderblüten in Pfannkuchenteig, knusprig ausgebacken: ein duftender Schatz, den es nur ein paar Wochen im Jahr gibt.', 30, 4, 'Portionen', 'Frühling', '1. {12} Holunderblütendolden kurz kräftig ausschütteln, um kleine Insekten zu entfernen. Nicht waschen, sonst gehen der Blütenstaub und damit das Aroma verloren.
+2. {150 g} Mehl, {200 ml} Milch, {2} Eier, {1 EL} Zucker und eine Prise Salz mit dem Schneebesen zu einem glatten, dickflüssigen Teig verrühren, etwa wie Pfannkuchenteig. 10 Minuten quellen lassen.
+3. {1000 ml} Rapsöl in einem hohen Topf auf etwa 170 °C erhitzen. Das Öl hat die richtige Temperatur, wenn an einem hineingehaltenen Holzlöffelstiel kleine Bläschen aufsteigen.
+4. Die Dolden am Stiel fassen, in den Teig tauchen, kurz abtropfen lassen und mit den Blüten nach unten ins heiße Öl legen. In 1–2 Minuten goldgelb ausbacken, dabei einmal wenden. Nicht zu viele auf einmal backen, sonst kühlt das Öl ab.
+5. Auf Küchenpapier abtropfen lassen und die dicken Stiele abschneiden. {2 EL} Puderzucker mit {1 TL} Zimt mischen und darüberstäuben. Noch warm servieren.
+
+Tipp: Die Dolden am besten an einem sonnigen Vormittag pflücken, dann duften sie am stärksten.
 
 Guten Appetit!', 'hollerkuechle-gebackene-holunderblueten.jpg');
 
@@ -1189,11 +1303,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Holunderblütensirup
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Holunderblütensirup', NULL, 2910, 3, 'Flaschen (à 0,5 l)', 'Frühling', '1. {1 Liter} Wasser mit dem Zucker aufkochen, bis sich der Zucker gelöst hat, und abkühlen lassen.
-2. Holunderblüten ausschütteln und grobe Stiele entfernen. Zitronen in Scheiben schneiden.
-3. Blüten und Zitronenscheiben in ein großes Gefäß geben und mit dem abgekühlten Zuckersirup übergießen.
-4. Abgedeckt 2 Tage an einem kühlen Ort ziehen lassen und täglich umrühren.
-5. Durch ein mit einem Tuch ausgelegtes Sieb abseihen, nochmals aufkochen und heiß in sterile Flaschen füllen. Mit Wasser oder Sekt verdünnt genießen.
+VALUES ('Holunderblütensirup', 'Der Duft des Frühsommers in Flaschen: Holunderblütensirup für Schorle, Limonade und Hugo.', 2910, 3, 'Flaschen (à 0,5 l)', 'Frühling', '1. {1000 ml} Wasser mit {1000 g} Zucker in einem Topf aufkochen und rühren, bis sich der Zucker vollständig gelöst hat. Den Sirup ganz abkühlen lassen, heiß würde er die feinen Blüten kochen.
+2. {20} Holunderblütendolden ausschütteln, nicht waschen, und grobe Stiele abschneiden. {2} Zitronen heiß waschen und in Scheiben schneiden.
+3. Blüten und Zitronenscheiben in ein großes Glas- oder Porzellangefäß geben und mit dem abgekühlten Zuckersirup übergießen. Die Blüten sollen vollständig bedeckt sein.
+4. Abgedeckt 2 Tage an einem kühlen Ort ziehen lassen und einmal täglich umrühren.
+5. Ein Sieb mit einem sauberen Geschirrtuch auslegen, den Sirup hindurchgießen und die Blüten gut ausdrücken. Den Sirup noch einmal aufkochen.
+6. Heiß in sterilisierte Flaschen füllen und sofort verschließen. Kühl und dunkel gelagert hält er mindestens ein halbes Jahr, geöffnet im Kühlschrank einige Wochen.
+
+Tipp: Zum Sterilisieren die Flaschen 10 Minuten in kochendes Wasser legen. Den Sirup etwa 1 zu 8 mit Wasser verdünnen.
 
 Zum Wohl!', 'holunderbluetensirup.jpg');
 
@@ -1203,11 +1320,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)', NULL, 30, 4, 'Portionen', 'Frühling', '1. Frühlingszwiebeln waschen und in 6–8 cm lange Stücke schneiden, dicke Stücke längs halbieren.
-2. Mehl, Stärke, Ei, Salz und {250 ml} eiskaltes Wasser zu einem glatten, flüssigen Teig verrühren.
-3. {2 EL} Öl in einer Pfanne erhitzen, die Hälfte der Frühlingszwiebeln hineinlegen und mit der Hälfte des Teigs übergießen.
-4. Bei mittlerer Hitze 4 Minuten braten, wenden und weitere 3–4 Minuten knusprig braten. Mit dem Rest ebenso verfahren.
-5. Für den Dip Sojasauce, Reisessig, Sesam und Chiliflocken verrühren. Pfannkuchen in Stücke schneiden und mit dem Dip servieren.
+VALUES ('Koreanische Frühlingszwiebel-Pfannkuchen (Pajeon)', 'Knusprige Pfannkuchen voller Frühlingszwiebeln mit einem würzigen Soja-Dip: Koreas liebster Snack für Regentage.', 30, 4, 'Portionen', 'Frühling', '1. {2 Bund} Frühlingszwiebeln waschen, die Wurzelenden abschneiden und die Stangen in 6–8 cm lange Stücke schneiden. Dicke weiße Teile längs halbieren, damit alles gleichmäßig gart.
+2. {200 g} Mehl, {2 EL} Speisestärke, {1} Ei, eine Prise Salz und {250 ml} eiskaltes Wasser mit dem Schneebesen zu einem glatten, eher flüssigen Teig verrühren. Das kalte Wasser macht die Pfannkuchen besonders knusprig. Nur so lange rühren, bis keine Klümpchen mehr da sind.
+3. Für den Dip {3 EL} Sojasauce, {1 EL} Reisessig, {1 TL} Sesam und eine Prise Chiliflocken verrühren.
+4. Etwas Rapsöl in einer großen beschichteten Pfanne bei mittlerer bis hoher Hitze erhitzen. Einen Teil der Frühlingszwiebeln nebeneinander hineinlegen und so viel Teig darübergießen, dass alle Zwiebeln bedeckt sind.
+5. 4 Minuten braten, bis die Unterseite goldbraun und knusprig ist. Mit einem großen Pfannenwender oder mithilfe eines Tellers wenden und weitere 3–4 Minuten braten, dabei leicht flach drücken. Mit dem restlichen Öl, den übrigen Zwiebeln und dem übrigen Teig weitere Pfannkuchen backen.
+6. Die Pfannkuchen in Stücke schneiden und heiß mit dem Dip servieren.
+
+Tipp: In Korea isst man Pajeon gern an Regentagen, angeblich weil das Brutzeln in der Pfanne wie Regen klingt.
 
 Guten Appetit!', 'koreanische-fruehlingszwiebel-pfannkuchen-pajeon.jpg');
 
@@ -1224,11 +1344,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pasta Primavera
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pasta Primavera', NULL, 25, 4, 'Portionen', 'Frühling', '1. Penne in Salzwasser bissfest kochen.
-2. Spargel putzen und schräg in Stücke schneiden, Zucchini würfeln, Zuckerschoten halbieren und Frühlingszwiebeln in Ringe schneiden.
-3. Öl in einer großen Pfanne erhitzen und Knoblauch mit dem Spargel 3 Minuten braten. Zucchini und Zuckerschoten zugeben und 3 Minuten mitbraten.
-4. Erbsen und Frühlingszwiebeln zugeben und 2 Minuten mitgaren.
-5. Nudeln mit etwas Nudelwasser zum Gemüse geben, mit Zitronenabrieb, Zitronensaft, Salz und Pfeffer abschmecken und mit Basilikum servieren.
+VALUES ('Pasta Primavera', 'Ein Frühlingsgarten auf dem Teller: Penne mit knackigem grünem Gemüse, Zitrone und Basilikum.', 25, 4, 'Portionen', 'Frühling', '1. Reichlich Salzwasser aufkochen und {400 g} Penne darin nach Packungsangabe bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. Inzwischen das Gemüse vorbereiten: {250 g} Spargel waschen, die holzigen Enden abschneiden und schräg in 3 cm lange Stücke schneiden. Die Zucchini längs vierteln und in Scheiben schneiden. {150 g} Zuckerschoten schräg halbieren. {3} Frühlingszwiebeln in Ringe schneiden und {2} Knoblauchzehen fein hacken.
+3. {4 EL} Olivenöl in einer großen Pfanne bei mittlerer bis hoher Hitze erhitzen. Knoblauch und Spargel darin 3 Minuten braten. Zucchini und Zuckerschoten zugeben und weitere 3 Minuten braten, bis das Gemüse leicht Farbe nimmt, aber noch Biss hat.
+4. {150 g} Erbsen und die Frühlingszwiebeln zugeben und 2 Minuten mitgaren.
+5. Die Zitrone heiß waschen, die Schale abreiben und den Saft auspressen. Die abgetropften Nudeln mit einem Schuss Nudelwasser zum Gemüse geben und gut durchschwenken. Mit Zitronenabrieb, Zitronensaft, Salz und Pfeffer abschmecken.
+6. Die Basilikumblätter grob zupfen, darüberstreuen und sofort servieren.
+
+Tipp: Frisch geriebener Hartkäse oder ein paar Löffel Ricotta machen die Pasta noch cremiger.
 
 Guten Appetit!', 'pasta-primavera.jpg');
 
@@ -1247,11 +1370,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spinat-Feta-Börek
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spinat-Feta-Börek', NULL, 60, 6, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Zwiebel würfeln und in {1 EL} Öl andünsten, Spinat zugeben und zusammenfallen lassen. Gut ausdrücken und abkühlen lassen.
-2. Spinat mit zerbröseltem Feta, Salz und Pfeffer mischen.
-3. {1} Ei mit Joghurt, Milch und dem restlichen Öl verquirlen.
-4. Yufkablätter einzeln mit der Joghurtmischung bestreichen, die Füllung darauf verteilen, aufrollen und schneckenförmig in eine gefettete Form legen.
-5. Mit dem restlichen, verquirlten Ei bestreichen, mit Sesam bestreuen und ca. 35 Minuten goldbraun backen.
+VALUES ('Spinat-Feta-Börek', 'Knusprige Teigschnecke mit würziger Spinat-Feta-Füllung, wie vom türkischen Lieblingsbäcker.', 60, 6, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen und eine runde Auflaufform oder Springform (etwa 28 cm) fetten.
+2. Die Zwiebel schälen und fein würfeln. {1 EL} Olivenöl in einer großen Pfanne erhitzen und die Zwiebel darin glasig dünsten. {500 g} Spinat zugeben und unter Wenden zusammenfallen lassen. In ein Sieb geben, gut ausdrücken und abkühlen lassen. Überschüssige Flüssigkeit würde den Teig durchweichen.
+3. Den Spinat grob hacken und mit {200 g} zerbröseltem Feta mischen. Mit Pfeffer und nur wenig Salz würzen, der Feta ist schon salzig.
+4. {1} Ei mit {150 g} Joghurt, {100 ml} Milch und dem restlichen Olivenöl verquirlen.
+5. Ein Yufkablatt ausbreiten und dünn mit der Joghurtmischung bestreichen. Einen Streifen Füllung an die lange Seite legen, locker aufrollen und die Rolle schneckenförmig in die Form legen. Mit den übrigen Blättern genauso verfahren und die Rollen jeweils außen ansetzen, bis die Form gefüllt ist. Die restliche Joghurtmischung darübergießen.
+6. Das zweite Ei verquirlen, die Oberfläche damit bestreichen und mit {1 EL} Sesam bestreuen. Etwa 35 Minuten backen, bis der Börek goldbraun und knusprig ist. Kurz abkühlen lassen und in Stücke schneiden.
+
+Tipp: Schmeckt warm wie kalt und ist ideal fürs Picknick. Dazu passt ein Glas Ayran.
 
 Guten Appetit!', 'spinat-feta-boerek.jpg');
 
@@ -1269,11 +1395,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zitronen-Hähnchen mit Frühlingsgemüse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zitronen-Hähnchen mit Frühlingsgemüse', NULL, 50, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen. Kleine Kartoffeln halbieren, Karotten schälen und in Stücke schneiden.
-2. Abrieb und Saft von {1} Zitrone, Öl, gepressten Knoblauch, Salz und Pfeffer verrühren.
-3. Hähnchenschenkel und Gemüse auf einem Blech mit der Marinade vermengen, Thymian und Scheiben der restlichen Zitrone dazulegen.
-4. Ca. 40 Minuten backen, bis die Haut knusprig ist.
-5. Nach 30 Minuten Erbsen und Frühlingszwiebelstücke zugeben und mitgaren.
+VALUES ('Zitronen-Hähnchen mit Frühlingsgemüse', 'Knusprige Hähnchenschenkel und Gemüse vom Blech, mit viel Zitrone, Knoblauch und Thymian.', 50, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {600 g} kleine Kartoffeln waschen und halbieren. {4} Karotten schälen und in 3 cm lange Stücke schneiden.
+2. {1} Zitrone heiß waschen, die Schale abreiben und den Saft auspressen. {4} Knoblauchzehen schälen und pressen. Zitronenabrieb und -saft, {4 EL} Olivenöl, Knoblauch, Salz und Pfeffer zu einer Marinade verrühren.
+3. {4} Hähnchenschenkel trocken tupfen und mit Kartoffeln und Karotten auf einem tiefen Backblech mit der Marinade vermengen. Die Schenkel mit der Hautseite nach oben obenauf legen, damit die Haut knusprig wird. Die zweite Zitrone in Scheiben schneiden und mit dem Thymian dazwischenlegen.
+4. Im Ofen etwa 30 Minuten backen.
+5. Inzwischen die Frühlingszwiebeln in 3 cm lange Stücke schneiden. Mit {150 g} Erbsen auf dem Blech verteilen und weitere 10 Minuten backen, bis die Haut goldbraun und knusprig ist und beim Einstechen an der dicksten Stelle klarer Saft austritt.
+6. Mit dem Bratensaft vom Blech beträufeln und servieren.
+
+Tipp: Für extra knusprige Haut in den letzten 3 Minuten den Ofengrill einschalten.
 
 Guten Appetit!', 'zitronen-haehnchen-mit-fruehlingsgemuese.jpg');
 
@@ -1291,11 +1420,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kerbelsuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kerbelsuppe', NULL, 30, 4, 'Portionen', 'Frühling', '1. Schalotten und Kartoffeln schälen, würfeln und in Butter andünsten.
-2. Mit Brühe auffüllen und ca. 15 Minuten köcheln lassen.
-3. Kerbel waschen und grobe Stiele entfernen. Einige Blättchen zum Garnieren beiseitelegen.
-4. Kerbel und Sahne in die Suppe geben und sofort fein pürieren.
-5. Mit Salz, Pfeffer und Muskat abschmecken und mit Kerbelblättchen servieren. Traditionell gibt es sie am Gründonnerstag.
+VALUES ('Kerbelsuppe', 'Zartgrün, fein und mit leichtem Anisduft: die traditionelle Suppe zum Gründonnerstag.', 30, 4, 'Portionen', 'Frühling', '1. {2} Schalotten und {250 g} Kartoffeln schälen und in kleine Würfel schneiden.
+2. {2 EL} Butter in einem Topf bei mittlerer Hitze schmelzen und Schalotten und Kartoffeln darin 3 Minuten andünsten, ohne dass sie Farbe nehmen.
+3. Mit {800 ml} Gemüsebrühe auffüllen, aufkochen und zugedeckt etwa 15 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Inzwischen {2 Bund} Kerbel waschen, trocken schütteln und grobe Stiele entfernen. Ein paar schöne Blättchen zum Garnieren beiseitelegen.
+5. Den Topf vom Herd nehmen. Kerbel und {100 ml} Sahne zugeben und sofort fein pürieren. Kerbel ist sehr zart, Hitze nimmt ihm schnell Farbe und Aroma.
+6. Mit Salz, Pfeffer und Muskatnuss abschmecken und mit den Kerbelblättchen servieren.
+
+Tipp: Gekaufter Kerbel welkt schnell. In ein feuchtes Küchentuch gewickelt hält er sich im Kühlschrank ein bis zwei Tage.
 
 Guten Appetit!', 'kerbelsuppe.jpg');
 
@@ -1311,10 +1443,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Omas Kopfsalat mit Sahnedressing
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Omas Kopfsalat mit Sahnedressing', NULL, 10, 4, 'Portionen', 'Frühling', '1. Kopfsalat in einzelne Blätter teilen, waschen und trocken schleudern. Große Blätter zerpflücken.
-2. Sahne mit Zitronensaft, Zucker und Salz verrühren, bis sie leicht andickt.
-3. Schnittlauch und Dill fein schneiden und unterrühren.
-4. Dressing erst kurz vor dem Servieren über den Salat geben und vorsichtig mischen.
+VALUES ('Omas Kopfsalat mit Sahnedressing', 'Zarte Salatblätter in einem süß-säuerlichen Sahnedressing: So schmeckte der Sommer bei Oma.', 10, 4, 'Portionen', 'Frühling', '1. Den Kopfsalat in einzelne Blätter teilen und die äußeren welken Blätter entfernen. Die Blätter in reichlich kaltem Wasser waschen und in einer Salatschleuder gründlich trocken schleudern. Nasse Blätter verwässern das Dressing.
+2. Große Blätter mit den Händen in mundgerechte Stücke zupfen. Nicht schneiden, sonst werden die Schnittkanten schnell braun.
+3. {100 ml} Sahne mit dem Saft der halben Zitrone, {1 TL} Zucker und einer Prise Salz verrühren. Die Säure lässt die Sahne nach kurzer Zeit leicht andicken.
+4. Den Schnittlauch in feine Röllchen schneiden, den Dill fein hacken und beides unter das Dressing rühren. Abschmecken: Es soll deutlich süß-säuerlich sein.
+5. Das Dressing erst direkt vor dem Servieren über den Salat geben und vorsichtig mit den Händen mischen, damit die zarten Blätter nicht zusammenfallen.
+
+Tipp: Klassisch dazu: neue Kartoffeln mit Butter oder ein Stück gebratener Fisch.
 
 Guten Appetit!', 'omas-kopfsalat-mit-sahnedressing.jpg');
 
@@ -1328,11 +1463,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Möhren-Ingwer-Suppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Möhren-Ingwer-Suppe', NULL, 30, 4, 'Portionen', 'Frühling', '1. Karotten, Kartoffel, Zwiebel und Ingwer schälen und klein schneiden.
-2. Zwiebel und Ingwer in Öl andünsten, Karotten und Kartoffel zugeben und kurz mitdünsten.
-3. Mit Brühe auffüllen und 20 Minuten weich köcheln.
-4. Kokosmilch und Orangensaft zugeben und fein pürieren.
-5. Mit Salz und Pfeffer abschmecken und mit Koriandergrün servieren.
+VALUES ('Möhren-Ingwer-Suppe', 'Wärmend, sonnig und ein bisschen scharf: Möhren, Ingwer, Kokos und ein Schuss Orange.', 30, 4, 'Portionen', 'Frühling', '1. {600 g} Karotten, {150 g} Kartoffeln, die Zwiebel und {20 g} Ingwer schälen. Karotten in Scheiben und Kartoffeln in Würfel schneiden, Zwiebel und Ingwer fein hacken.
+2. {2 EL} Rapsöl in einem Topf bei mittlerer Hitze erhitzen. Zwiebel und Ingwer darin 2 Minuten andünsten, bis es duftet. Karotten und Kartoffeln zugeben und 2 Minuten mitdünsten.
+3. Mit {900 ml} Gemüsebrühe auffüllen, aufkochen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Karotten ganz weich sind.
+4. {200 ml} Kokosmilch und {100 ml} Orangensaft zugeben und alles mit dem Stabmixer sehr fein pürieren.
+5. Mit Salz und Pfeffer abschmecken. Wer es schärfer mag, reibt noch etwas frischen Ingwer hinein.
+6. Das Koriandergrün grob zupfen und die Suppe damit bestreut servieren.
+
+Tipp: Wer keinen Koriander mag, nimmt glatte Petersilie oder geröstete Kürbiskerne.
 
 Guten Appetit!', 'moehren-ingwer-suppe.jpg');
 
@@ -1350,11 +1488,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spinat-Feta-Frittata
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spinat-Feta-Frittata', NULL, 25, 4, 'Portionen', 'Frühling', '1. Ofen auf 200 °C vorheizen.
-2. Frühlingszwiebeln in Ringe schneiden und in einer ofenfesten Pfanne in Öl andünsten. Spinat zugeben und zusammenfallen lassen.
-3. Eier mit Milch, Salz, Pfeffer und Muskat verquirlen und über das Gemüse gießen. Feta darüberbröseln.
-4. Bei kleiner Hitze 5 Minuten stocken lassen und anschließend im Ofen 8–10 Minuten fertig garen.
-5. In Stücke schneiden und warm oder kalt servieren.
+VALUES ('Spinat-Feta-Frittata', 'Die italienische Antwort aufs Omelett: dick, saftig, mit Spinat und Feta, und warm wie kalt ein Genuss.', 25, 4, 'Portionen', 'Frühling', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen.
+2. {3} Frühlingszwiebeln in feine Ringe schneiden. {2 EL} Olivenöl in einer ofenfesten Pfanne (etwa 26 cm) bei mittlerer Hitze erhitzen und die Frühlingszwiebeln darin 2 Minuten andünsten. {200 g} Spinat zugeben und unter Wenden zusammenfallen lassen. Überschüssige Flüssigkeit abgießen.
+3. {8} Eier mit {50 ml} Milch, Salz, Pfeffer und etwas Muskatnuss kräftig verquirlen. Über das Gemüse in der Pfanne gießen und gleichmäßig verteilen. {150 g} Feta darüberbröseln.
+4. Bei schwacher Hitze etwa 5 Minuten stocken lassen, bis der Rand fest wird, die Mitte aber noch flüssig ist. Nicht rühren.
+5. Die Pfanne in den Ofen stellen und die Frittata 8–10 Minuten fertig garen, bis sie in der Mitte gestockt und leicht gebräunt ist. Vorsicht, der Pfannengriff wird heiß.
+6. Kurz ruhen lassen, auf ein Brett gleiten lassen und in Stücke schneiden. Warm oder kalt servieren.
+
+Tipp: Reste in Stücke schneiden und am nächsten Tag als Pausenbrot mitnehmen.
 
 Guten Appetit!', 'spinat-feta-frittata.jpg');
 
@@ -1370,10 +1511,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Erdbeer-Rhabarber-Marmelade
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeer-Rhabarber-Marmelade', NULL, 100, 5, 'Gläser', 'Frühling', '1. Rhabarber putzen und in kleine Stücke schneiden. Erdbeeren waschen, putzen und klein schneiden.
-2. Früchte mit Gelierzucker (2:1), Zitronensaft und Vanillemark in einem großen Topf mischen und 1 Stunde ziehen lassen.
-3. Unter Rühren aufkochen und 4 Minuten sprudelnd kochen lassen. Eine Gelierprobe machen.
-4. Heiß in saubere, ausgekochte Gläser füllen, sofort verschließen und 5 Minuten auf den Kopf stellen.
+VALUES ('Erdbeer-Rhabarber-Marmelade', 'Fruchtig, leicht säuerlich und mit einem Hauch Vanille: der Frühsommer im Glas.', 100, 5, 'Gläser', 'Frühling', '1. {5} Gläser mit Schraubdeckeln heiß ausspülen, 10 Minuten in kochendes Wasser legen und kopfüber auf einem sauberen Tuch abtropfen lassen.
+2. {400 g} Rhabarber waschen, putzen, faserige Haut abziehen und in kleine Stücke schneiden. {600 g} Erdbeeren waschen, entkelchen und klein schneiden.
+3. Die Vanilleschote längs aufschneiden und das Mark herauskratzen. Die Zitrone auspressen.
+4. Die Früchte mit {500 g} Gelierzucker (2:1), dem Zitronensaft, dem Vanillemark und der Schote in einem großen Topf mischen und zugedeckt 1 Stunde ziehen lassen, bis sie Saft gezogen haben.
+5. Unter Rühren zum Kochen bringen und 4 Minuten sprudelnd kochen lassen. Für die Gelierprobe einen Teelöffel Marmelade auf einen kalten Teller geben: Wird sie nach einer Minute fest, ist sie fertig. Sonst noch 1 Minute weiterkochen.
+6. Die Vanilleschote entfernen. Die Marmelade heiß bis knapp unter den Rand in die Gläser füllen, sofort verschließen und 5 Minuten auf den Deckel stellen. Dann umdrehen und abkühlen lassen.
+
+Tipp: Wer die Marmelade ohne Stücke mag, püriert die Früchte vor dem Kochen kurz an.
 
 Guten Appetit!', 'erdbeer-rhabarber-marmelade.jpg');
 
@@ -1385,11 +1530,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Omelett mit Frühlingskräutern
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Omelett mit Frühlingskräutern', NULL, 15, 2, 'Portionen', 'Frühling', '1. Kräuter waschen, trocken schütteln und fein hacken.
-2. Eier mit Milch, Salz, Pfeffer und der Hälfte der Kräuter verquirlen.
-3. Etwas Butter in einer beschichteten Pfanne erhitzen und Eimasse für ein Omelett (aus 2 Eiern) hineingeben. Bei mittlerer Hitze stocken lassen und die Pfanne dabei leicht schwenken.
-4. Mit etwas Ziegenkäse belegen, zusammenklappen und auf einen Teller gleiten lassen. Aus der restlichen Eimasse weitere Omeletts zubereiten.
-5. Mit den restlichen Kräutern bestreuen.
+VALUES ('Omelett mit Frühlingskräutern', 'Ein zartes, goldgelbes Omelett voller frischer Kräuter mit cremigem Ziegenkäse: Frühstück, wie es sein soll.', 15, 2, 'Portionen', 'Frühling', '1. Schnittlauch, Petersilie und Kerbel waschen, trocken schütteln und fein hacken.
+2. {4} Eier mit {2 EL} Milch, Salz, Pfeffer und der Hälfte der Kräuter verquirlen.
+3. Etwas Butter in einer beschichteten Pfanne (etwa 20 cm) bei mittlerer Hitze schmelzen. Die Eimasse für ein Omelett, also aus 2 Eiern, hineingießen. Die Pfanne leicht schwenken und die gestockten Ränder mit einem Pfannenwender immer wieder zur Mitte schieben, damit flüssiges Ei nachläuft.
+4. Wenn das Omelett unten gestockt, oben aber noch leicht feucht ist, etwas Ziegenkäse darauf zerbröseln. Eine Hälfte über die andere klappen und auf einen vorgewärmten Teller gleiten lassen.
+5. Mit der übrigen Butter, Eimasse und dem übrigen Ziegenkäse genauso weitere Omeletts backen.
+6. Mit den restlichen Kräutern bestreuen und sofort servieren.
+
+Tipp: Ein gutes Omelett ist innen noch cremig. Lieber zu früh als zu spät aus der Pfanne nehmen.
 
 Guten Appetit!', 'omelett-mit-fruehlingskraeutern.jpg');
 
@@ -1405,11 +1553,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grünes Frühlingscurry mit Spargel und Zuckerschoten
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünes Frühlingscurry mit Spargel und Zuckerschoten', NULL, 30, 4, 'Portionen', 'Frühling', '1. Reis nach Packungsangabe garen.
-2. Spargel putzen und schräg in Stücke schneiden. Karotten in dünne Scheiben und Frühlingszwiebeln in Ringe schneiden.
-3. Kokosöl im Wok erhitzen und die Currypaste 1 Minute anrösten. Kokosmilch und Brühe zugießen und aufkochen.
-4. Karotten 4 Minuten darin garen, dann Spargel und Zuckerschoten zugeben und weitere 4 Minuten garen.
-5. Mit Limettensaft und Salz abschmecken, Frühlingszwiebeln und Koriander darüberstreuen und mit dem Reis servieren.
+VALUES ('Grünes Frühlingscurry mit Spargel und Zuckerschoten', 'Thailändisch und aromatisch: grünes Curry mit Spargel und Zuckerschoten in cremiger Kokosmilch.', 30, 4, 'Portionen', 'Frühling', '1. {250 g} Basmatireis in einem Sieb waschen, bis das Wasser klar bleibt, und nach Packungsangabe garen.
+2. {400 g} Spargel waschen, die holzigen Enden abschneiden und schräg in 3–4 cm lange Stücke schneiden. {2} Karotten schälen und in dünne Scheiben schneiden. {3} Frühlingszwiebeln in Ringe schneiden.
+3. {1 EL} Kokosöl im Wok oder einer großen Pfanne erhitzen. {2 EL} grüne Currypaste darin unter Rühren 1 Minute anrösten, bis es intensiv duftet. Mit {400 ml} Kokosmilch und {150 ml} Gemüsebrühe ablöschen und aufkochen.
+4. Die Karotten hineingeben und 4 Minuten köcheln lassen. Dann Spargel und {200 g} Zuckerschoten zugeben und weitere 4 Minuten garen. Das Gemüse soll knackig bleiben.
+5. Mit dem Saft der Limette und Salz abschmecken. Currypasten sind unterschiedlich scharf, bei Bedarf noch etwas Paste unterrühren.
+6. Frühlingszwiebeln und gezupften Koriander darüberstreuen und mit dem Reis servieren.
+
+Tipp: Viele grüne Currypasten enthalten Garnelenpaste. Wer es vegetarisch oder vegan möchte, sollte auf die Zutatenliste schauen.
 
 Guten Appetit!', 'gruenes-fruehlingscurry-mit-spargel-und-zuckerschoten.jpg');
 
@@ -1433,10 +1584,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gazpacho
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gazpacho', NULL, 140, 4, 'Portionen', 'Sommer', '1. Tomaten kreuzweise einritzen, kurz überbrühen, häuten und grob würfeln. Gurke schälen, Paprika entkernen und beides grob würfeln.
-2. Zwiebel und Knoblauch schälen und grob hacken. Baguette in Wasser einweichen und ausdrücken.
-3. Gemüse, Brot, Öl und Essig im Mixer sehr fein pürieren und mit Salz und Pfeffer abschmecken.
-4. Mindestens 2 Stunden kalt stellen. Mit etwas fein gewürfeltem Gemüse und einem Schuss Olivenöl servieren.
+VALUES ('Gazpacho', 'Andalusiens kalte Gemüsesuppe: erfrischend, samtig und genau richtig für heiße Tage.', 140, 4, 'Portionen', 'Sommer', '1. {1000 g} Tomaten am Boden kreuzweise einritzen, 30 Sekunden in kochendes Wasser legen und in Eiswasser abschrecken. Die Haut abziehen, den Stielansatz entfernen und die Tomaten grob würfeln.
+2. Die Gurke schälen und die Paprika entkernen. Von beiden ein kleines Stück fein würfeln und zum Garnieren beiseitelegen, den Rest grob würfeln.
+3. Die Zwiebel und den Knoblauch schälen und grob hacken. {50 g} Baguette in Stücke reißen, kurz in Wasser einweichen und ausdrücken. Das Brot macht die Suppe sämig.
+4. Gemüse, Brot, {80 ml} Olivenöl und {2 EL} Rotweinessig im Standmixer sehr fein pürieren, eventuell in zwei Portionen. Wer es ganz glatt mag, streicht die Suppe durch ein Sieb. Mit Salz und Pfeffer kräftig abschmecken.
+5. Mindestens 2 Stunden kalt stellen, gern auch über Nacht. Kälte dämpft den Geschmack, deshalb vor dem Servieren noch einmal abschmecken.
+6. In Schalen oder Gläsern servieren, mit dem gewürfelten Gemüse bestreuen und mit einem Schuss Olivenöl beträufeln.
+
+Tipp: An heißen Tagen halten ein paar Eiswürfel in den Schalen die Suppe schön kühl.
 
 Guten Appetit!', 'gazpacho.jpg');
 
@@ -1453,10 +1608,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tomatensalat mit Zwiebeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tomatensalat mit Zwiebeln', NULL, 15, 4, 'Portionen', 'Sommer', '1. Tomaten waschen, den Strunk entfernen, in Scheiben schneiden und auf einer Platte anrichten.
-2. Zwiebel in feine Würfel schneiden und über die Tomaten geben.
-3. Essig mit Zucker, Salz und Pfeffer verrühren, das Öl unterschlagen und über den Salat träufeln.
-4. Mit Schnittlauchröllchen bestreuen und 10 Minuten ziehen lassen.
+VALUES ('Tomatensalat mit Zwiebeln', 'So einfach und so gut: reife Tomaten, feine Zwiebelwürfel und eine schlichte Vinaigrette.', 15, 4, 'Portionen', 'Sommer', '1. {6} reife Tomaten waschen, den Strunk keilförmig herausschneiden und die Tomaten mit einem scharfen Messer in Scheiben schneiden. Auf einer Platte leicht überlappend anrichten.
+2. Die Zwiebel schälen, sehr fein würfeln und über die Tomaten streuen.
+3. {2 EL} Weißweinessig mit einer Prise Zucker, Salz und Pfeffer verrühren, bis sich Salz und Zucker gelöst haben. {3 EL} Olivenöl unterschlagen und die Vinaigrette gleichmäßig über die Tomaten träufeln.
+4. Den Schnittlauch in feine Röllchen schneiden und darüberstreuen. Etwa 10 Minuten ziehen lassen, damit die Tomaten Saft abgeben. Der ist das Beste am Salat, also unbedingt mit Brot auftunken.
+
+Tipp: Tomaten nie im Kühlschrank lagern, dort verlieren sie ihr Aroma. Zimmerwarm schmecken sie am besten.
 
 Guten Appetit!', 'tomatensalat-mit-zwiebeln.jpg');
 
@@ -1471,9 +1628,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Caprese (Tomate-Mozzarella)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Caprese (Tomate-Mozzarella)', NULL, 10, 4, 'Portionen', 'Sommer', '1. Tomaten und Mozzarella in gleich dicke Scheiben schneiden.
-2. Abwechselnd mit Basilikumblättern dachziegelartig auf einer Platte anrichten.
-3. Mit Salz und frisch gemahlenem Pfeffer würzen, mit Olivenöl und nach Belieben mit etwas Balsamico beträufeln.
+VALUES ('Caprese (Tomate-Mozzarella)', 'Rot, weiß und grün wie die italienische Flagge: Tomaten, Mozzarella und Basilikum. Mehr braucht es nicht.', 10, 4, 'Portionen', 'Sommer', '1. {4} reife Tomaten waschen, den Stielansatz entfernen und in etwa 1 cm dicke Scheiben schneiden.
+2. {250 g} Mozzarella abtropfen lassen, mit Küchenpapier trocken tupfen und in gleich dicke Scheiben schneiden.
+3. Tomaten, Mozzarella und Basilikumblätter abwechselnd dachziegelartig auf einer Platte anrichten.
+4. Mit Salz und frisch gemahlenem Pfeffer würzen, mit {3 EL} gutem Olivenöl und nach Belieben mit {1 EL} Balsamicoessig beträufeln. Sofort servieren.
+
+Tipp: Den Mozzarella 20 Minuten vorher aus dem Kühlschrank nehmen. Büffelmozzarella ist noch cremiger und aromatischer.
 
 Guten Appetit!', 'caprese-tomate-mozzarella.jpg');
 
@@ -1487,11 +1647,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Panzanella (toskanischer Brotsalat)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Panzanella (toskanischer Brotsalat)', NULL, 25, 4, 'Portionen', 'Sommer', '1. Altbackenes Brot in 2 cm große Würfel schneiden und in {2 EL} Olivenöl mit dem angedrückten Knoblauch goldbraun rösten.
-2. Tomaten grob würfeln, salzen und in einem Sieb 10 Minuten abtropfen lassen. Den Saft auffangen.
-3. Gurke würfeln und die Zwiebel in feine Streifen schneiden.
-4. Tomatensaft mit Essig, restlichem Öl, Salz und Pfeffer verrühren.
-5. Brot, Tomaten, Gurke, Zwiebel, Kapern und Basilikum mit dem Dressing mischen und 10 Minuten durchziehen lassen, damit das Brot den Saft aufsaugt.
+VALUES ('Panzanella (toskanischer Brotsalat)', 'Toskanische Resteküche vom Feinsten: geröstetes Brot, das sich mit Tomatensaft vollsaugt.', 25, 4, 'Portionen', 'Sommer', '1. {250 g} altbackenes Baguette in 2 cm große Würfel schneiden. Die Knoblauchzehe schälen und mit dem Messerrücken andrücken.
+2. {2 EL} Olivenöl in einer großen Pfanne erhitzen. Knoblauch und Brotwürfel darin bei mittlerer Hitze unter Wenden etwa 5 Minuten goldbraun rösten. Den Knoblauch herausnehmen.
+3. {600 g} Tomaten grob würfeln, in ein Sieb über einer Schüssel geben, salzen und 10 Minuten abtropfen lassen. Den Saft auffangen, aus ihm wird das Dressing.
+4. Die Gurke längs halbieren, mit einem Löffel entkernen und in Scheiben schneiden. Die Zwiebel in feine Streifen schneiden.
+5. Den aufgefangenen Tomatensaft mit {3 EL} Rotweinessig, dem restlichen Öl, Salz und Pfeffer verrühren.
+6. Brot, Tomaten, Gurke, Zwiebel, {1 EL} Kapern und die gezupften Basilikumblätter mit dem Dressing mischen. 10 Minuten durchziehen lassen, damit das Brot den Saft aufsaugt, außen aber noch etwas knusprig ist.
+
+Tipp: Je reifer und aromatischer die Tomaten, desto besser der Salat. Am schönsten gelingt er im Spätsommer.
 
 Guten Appetit!', 'panzanella-toskanischer-brotsalat.jpg');
 
@@ -1509,10 +1672,11 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bruschetta
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bruschetta', NULL, 15, 4, 'Portionen', 'Sommer', '1. Tomaten entkernen und fein würfeln. Mit gehacktem Basilikum, {2 EL} Öl, Salz und Pfeffer mischen.
-2. Baguette schräg in Scheiben schneiden, mit dem restlichen Öl beträufeln und im Ofen oder in der Grillpfanne goldbraun rösten.
-3. Brotscheiben noch warm mit einer halbierten Knoblauchzehe einreiben.
-4. Tomatenmischung auf den Brotscheiben verteilen und sofort servieren.
+VALUES ('Bruschetta', 'Knuspriges Röstbrot mit Knoblauch, saftigen Tomaten und Basilikum: Italiens schönste Vorspeise.', 15, 4, 'Portionen', 'Sommer', '1. {4} Tomaten halbieren, die Kerne mit einem Teelöffel herauskratzen und das Fruchtfleisch fein würfeln. Ohne die Kerne weicht das Brot nicht durch.
+2. Das Basilikum in feine Streifen schneiden. Mit den Tomaten, {2 EL} Olivenöl, Salz und Pfeffer mischen und kurz ziehen lassen.
+3. Den Ofengrill vorheizen oder eine Grillpfanne erhitzen. {1} Baguette schräg in etwa 1 cm dicke Scheiben schneiden, mit dem restlichen Öl beträufeln und von beiden Seiten goldbraun rösten. Unter dem Grill dauert das nur 1–2 Minuten pro Seite, also dabeibleiben.
+4. {2} Knoblauchzehen halbieren und die noch warmen Brotscheiben damit einreiben. Die raue Oberfläche wirkt wie eine Reibe.
+5. Die Tomatenmischung erst direkt vor dem Servieren auf die Brote verteilen und sofort servieren.
 
 Guten Appetit!', 'bruschetta.jpg');
 
@@ -1526,10 +1690,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Griechischer Bauernsalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Griechischer Bauernsalat', NULL, 15, 4, 'Portionen', 'Sommer', '1. Tomaten in Spalten, Gurke in dicke Halbmonde, Paprika in Streifen und Zwiebel in Ringe schneiden.
-2. Gemüse mit den Oliven in einer Schüssel mischen.
-3. Essig, Öl, Salz und Pfeffer verrühren und über den Salat geben.
-4. Feta als ganzes Stück obenauf legen, mit Oregano bestreuen und mit etwas Olivenöl beträufeln.
+VALUES ('Griechischer Bauernsalat', 'Horiatiki wie in jeder griechischen Taverne: grobes Gemüse, Oliven und ein ganzes Stück Feta obendrauf.', 15, 4, 'Portionen', 'Sommer', '1. {4} Tomaten in grobe Spalten schneiden. Die Gurke schälen, längs halbieren und in dicke Halbmonde schneiden. Die Paprika entkernen und in Streifen schneiden. Die Zwiebel in dünne Ringe schneiden.
+2. Das Gemüse mit {100 g} Oliven in einer großen Schüssel mischen. In Griechenland bleibt alles schön grob.
+3. {2 EL} Rotweinessig mit Salz und Pfeffer verrühren und {4 EL} Olivenöl unterschlagen. Über den Salat geben und vorsichtig mischen.
+4. {200 g} Feta als ganzes Stück obenauf legen, mit {1 TL} Oregano bestreuen und mit dem restlichen Olivenöl beträufeln. Am Tisch zerteilt jeder seinen Feta selbst.
+
+Tipp: Unbedingt frisches Weißbrot dazu servieren, um die Mischung aus Tomatensaft und Olivenöl am Schüsselboden aufzutunken.
 
 Guten Appetit!', 'griechischer-bauernsalat.jpg');
 
@@ -1547,10 +1713,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tzatziki
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tzatziki', NULL, 45, 4, 'Portionen', 'Sommer', '1. Gurke grob raspeln, salzen und 10 Minuten ziehen lassen. Dann in einem Tuch kräftig ausdrücken.
-2. Joghurt (am besten griechischer mit 10 % Fett) mit gepresstem Knoblauch, Öl und Essig verrühren.
-3. Gurke und gehackten Dill unterrühren und mit Salz und Pfeffer abschmecken.
-4. Mindestens 30 Minuten kalt stellen, damit sich das Aroma entfaltet.
+VALUES ('Tzatziki', 'Kühl, cremig und mit ordentlich Knoblauch: der griechische Joghurtdip zu Gegrilltem, Gyros oder einfach zu Brot.', 45, 4, 'Portionen', 'Sommer', '1. Die Gurke waschen und mit Schale grob raspeln. Mit einer Prise Salz mischen und 10 Minuten ziehen lassen.
+2. Die geraspelte Gurke in ein sauberes Geschirrtuch geben und kräftig ausdrücken, bis kaum noch Flüssigkeit kommt. Das ist der wichtigste Schritt, sonst wird das Tzatziki wässrig.
+3. {500 g} Joghurt, am besten griechischen mit 10 % Fett, in eine Schüssel geben. {2} Knoblauchzehen schälen und dazupressen. {2 EL} Olivenöl und {1 TL} Weißweinessig unterrühren.
+4. Den Dill fein hacken. Gurke und Dill unter den Joghurt rühren und mit Salz und Pfeffer abschmecken.
+5. Abgedeckt mindestens 30 Minuten kalt stellen, damit sich das Knoblaucharoma entfaltet. Vor dem Servieren mit einem Schuss Olivenöl beträufeln.
+
+Tipp: Am nächsten Tag schmeckt der Knoblauch noch kräftiger. Für Knoblauchfans ein Vorteil.
 
 Guten Appetit!', 'tzatziki.jpg');
 
@@ -1565,10 +1734,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gurkensalat mit Dill
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gurkensalat mit Dill', NULL, 15, 4, 'Portionen', 'Sommer', '1. Gurken waschen, nach Belieben schälen und in sehr dünne Scheiben hobeln.
-2. Leicht salzen, 10 Minuten ziehen lassen und das Wasser abgießen.
-3. Essig, Zucker, Öl und Pfeffer verrühren. Dill fein hacken und unterrühren.
-4. Dressing mit den Gurken mischen und kurz durchziehen lassen.
+VALUES ('Gurkensalat mit Dill', 'Hauchdünne Gurkenscheiben in süß-saurer Marinade mit viel Dill: die erfrischendste Beilage des Sommers.', 15, 4, 'Portionen', 'Sommer', '1. {2} Gurken waschen, nach Belieben schälen und mit einem Gurkenhobel in sehr dünne Scheiben hobeln.
+2. Die Scheiben in einer Schüssel leicht salzen, mischen und 10 Minuten ziehen lassen. Das Salz zieht Wasser aus der Gurke. Das Wasser abgießen und die Gurken leicht ausdrücken, so wird der Salat nicht wässrig.
+3. {3 EL} Weißweinessig, {1 TL} Zucker, {2 EL} Rapsöl und Pfeffer verrühren, bis sich der Zucker gelöst hat.
+4. Den Dill fein hacken und unterrühren.
+5. Das Dressing mit den Gurken mischen und 5–10 Minuten durchziehen lassen. Erst danach abschmecken und nur wenn nötig nachsalzen.
+
+Tipp: Ein Löffel saure Sahne oder Schmand im Dressing macht daraus die cremige Variante.
 
 Guten Appetit!', 'gurkensalat-mit-dill.jpg');
 
@@ -1582,10 +1754,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schwäbischer Kartoffelsalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwäbischer Kartoffelsalat', NULL, 60, 4, 'Portionen', 'Sommer', '1. Festkochende Kartoffeln ca. 20 Minuten kochen, pellen und noch warm in dünne Scheiben schneiden.
-2. Zwiebel sehr fein würfeln und in der Brühe 2 Minuten aufkochen. Essig, Senf, Zucker, Salz und Pfeffer einrühren.
-3. Die heiße Marinade über die warmen Kartoffeln gießen, vorsichtig mischen und 30 Minuten ziehen lassen.
-4. Öl unterheben und nochmals abschmecken – der Salat soll schön "schlonzig" sein. Mit Schnittlauch bestreuen.
+VALUES ('Schwäbischer Kartoffelsalat', 'Lauwarm, saftig und ganz ohne Mayonnaise: der Kartoffelsalat aus dem Süden, der schön „schlonzig“ sein muss.', 60, 4, 'Portionen', 'Sommer', '1. {1000 g} festkochende Kartoffeln waschen und mit Schale in Salzwasser etwa 20 Minuten kochen, bis sie gerade gar sind. Sie sollen nicht zerfallen.
+2. Die Kartoffeln abgießen, kurz ausdampfen lassen und noch warm pellen. In dünne Scheiben schneiden und in eine große Schüssel geben. Nur warme Kartoffeln nehmen die Marinade richtig auf.
+3. Die Zwiebel schälen und sehr fein würfeln. Mit {250 ml} Gemüsebrühe aufkochen und 2 Minuten köcheln lassen. {4 EL} Weißweinessig, {1 TL} Senf, eine Prise Zucker, Salz und Pfeffer einrühren.
+4. Die heiße Marinade über die warmen Kartoffeln gießen und vorsichtig mit den Händen oder einem Teigschaber mischen. Zugedeckt mindestens 30 Minuten ziehen lassen und ab und zu umheben.
+5. Erst dann {4 EL} Rapsöl unterheben. Das Öl kommt zuletzt, damit die Kartoffeln vorher die Brühe aufsaugen. Noch einmal kräftig abschmecken. Der Salat soll saftig glänzen und leicht sämig sein, auf Schwäbisch „schlonzig“.
+6. Den Schnittlauch in Röllchen schneiden und darüberstreuen. Lauwarm oder zimmerwarm servieren, nie kalt aus dem Kühlschrank.
+
+Tipp: Klassisch dazu: Maultaschen, Leberkäse oder Wiener Würstchen.
 
 Guten Appetit!', 'schwaebischer-kartoffelsalat.jpg');
 
