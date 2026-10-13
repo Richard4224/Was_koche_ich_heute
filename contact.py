@@ -1,20 +1,19 @@
-"""The contact form: checks a message and sends it by email (e.g. through Gmail) to the site's owner.
+"""The contact form: checks a message and passes it on to FormSubmit (https://formsubmit.co), which emails it to the
+site's owner. The server sends it, not the visitor's browser, so FormSubmit never sees the visitor's IP address.
 
-Configured by environment variables (or a .env file next to app.py, see README):
-    MAIL_USERNAME   the account that sends, e.g. name@gmail.com
-    MAIL_PASSWORD   its password; for Gmail an app password (https://myaccount.google.com/apppasswords)
-    CONTACT_TO      where messages go (default: MAIL_USERNAME)
-    MAIL_SERVER     default smtp.gmail.com, MAIL_PORT default 465 (SSL)
-
-Without MAIL_USERNAME and MAIL_PASSWORD the form says it is unavailable and points to the email address in the
-Impressum instead.
+The first message ever sent makes FormSubmit email an "Activate Form" link to the owner; until that is clicked,
+messages are not delivered. After activating, FormSubmit also sends a random alias for the address, which can be
+put into FORMSUBMIT_TO (in .env) so the address itself isn't sent along.
 """
 
+import json
 import os
 import re
-import smtplib
 import time
-from email.message import EmailMessage
+import urllib.request
+
+OWNER = "brickwellbenedikt@gmail.com"  # as in the Impressum
+FORMSUBMIT = "https://formsubmit.co/ajax/"
 
 MAX_NAME = 100
 MAX_EMAIL = 200
@@ -29,8 +28,8 @@ _sent = {}  # shortened IP address -> times of the messages sent from it (only i
 EMAIL = re.compile(r"[^@\s]+@[^@\s]+\.[^@\s]+")
 
 
-def is_configured():
-    return bool(os.environ.get("MAIL_USERNAME") and os.environ.get("MAIL_PASSWORD"))
+class NotSent(OSError):
+    """FormSubmit didn't take the message (e.g. the form isn't activated yet)."""
 
 
 def check(name, email, message):
@@ -60,20 +59,27 @@ def allowed(visitor):
     return len(recent) < PER_VISITOR[0] and total < IN_ALL[0]
 
 
-def send(name, email, message, visitor):
-    """Send a checked message to the owner, with Reply-To set to the visitor. Raises OSError if that fails."""
+def send(name, email, message, visitor, site):
+    """Pass a checked message on to FormSubmit; site is this site's address (e.g. "https://example.org/"), which
+    FormSubmit wants to know. Raises OSError (NotSent if FormSubmit refused it) if that fails."""
 
-    username, password = os.environ["MAIL_USERNAME"], os.environ["MAIL_PASSWORD"]
-    mail = EmailMessage()
-    mail["From"] = username
-    mail["To"] = os.environ.get("CONTACT_TO") or username
-    mail["Reply-To"] = email
-    mail["Subject"] = f"Was koche ich heute? Nachricht von {name or email}"
-    mail.set_content(f"{message}\n\n--\n{name or '(kein Name)'} <{email}>\nÜber das Kontaktformular von „Was koche ich heute?“")
-
-    server = os.environ.get("MAIL_SERVER", "smtp.gmail.com")
-    port = int(os.environ.get("MAIL_PORT", 465))
-    with smtplib.SMTP_SSL(server, port, timeout=15) as smtp:
-        smtp.login(username, password)
-        smtp.send_message(mail)
+    target = os.environ.get("FORMSUBMIT_TO") or OWNER
+    data = json.dumps({
+        "name": name or "(kein Name)",
+        "email": email,  # FormSubmit makes this the Reply-To
+        "message": message,
+        "_subject": f"Was koche ich heute? Nachricht von {name or email}",
+        "_template": "box",
+    }).encode()
+    request = urllib.request.Request(FORMSUBMIT + target, data=data, headers={
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        # FormSubmit only takes messages from forms on a website, which it tells by these
+        "Origin": site.rstrip("/"),
+        "Referer": site + "kontakt",
+    })
+    with urllib.request.urlopen(request, timeout=15) as response:
+        answer = json.load(response)
+    if str(answer.get("success")).lower() != "true":
+        raise NotSent(answer.get("message", "no reason given"))
     _sent.setdefault(visitor, []).append(time.time())

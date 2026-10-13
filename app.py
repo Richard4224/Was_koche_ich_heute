@@ -206,11 +206,10 @@ def privacy():
 
 @app.route("/kontakt", methods=["GET", "POST"])
 def contact_form():
-    """A form that sends a message to the site's owner by email (see contact.py)."""
+    """A form that sends a message to the site's owner by email, through FormSubmit (see contact.py)."""
 
     if request.method == "GET":
-        return render_template("contact.html", sent="gesendet" in request.args, available=contact.is_configured(),
-                               form={})
+        return render_template("contact.html", sent="gesendet" in request.args, form={})
 
     form = {
         "name": " ".join(request.form.get("name", "").split()),  # one line, it goes into the subject
@@ -221,10 +220,8 @@ def contact_form():
         return redirect("/kontakt?gesendet")  # a field only bots fill in: pretend it worked
 
     def again(error, code):
-        return render_template("contact.html", error=error, available=contact.is_configured(), form=form), code
+        return render_template("contact.html", error=error, form=form), code
 
-    if not contact.is_configured():
-        return again("Das Kontaktformular ist gerade nicht verfügbar.", 503)
     error = contact.check(form["name"], form["email"], form["message"])
     if error:
         return again(error, 400)
@@ -232,10 +229,11 @@ def contact_form():
     if not contact.allowed(visitor):
         return again("Gerade kamen sehr viele Nachrichten an. Bitte versuch es später noch einmal.", 429)
     try:
-        contact.send(form["name"], form["email"], form["message"], visitor)
-    except (OSError, ValueError):
-        app.logger.exception("Contact message could not be sent")
-        return again("Die Nachricht konnte leider nicht gesendet werden. Bitte versuch es später noch einmal.", 502)
+        contact.send(form["name"], form["email"], form["message"], visitor, request.url_root)
+    except (OSError, ValueError) as error:
+        app.logger.error("Contact message could not be sent: %s", error)
+        return again("Die Nachricht konnte leider nicht gesendet werden. Bitte versuch es später noch einmal "
+                     "oder schreib mir direkt an " + contact.OWNER + ".", 502)
     return redirect("/kontakt?gesendet")
 
 
