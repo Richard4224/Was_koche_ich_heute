@@ -9,6 +9,7 @@ import urllib.request
 from contextlib import closing
 from flask import render_template
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 from scaling import format_amount, format_duration, scale_text, servings_unit_name
 
@@ -42,6 +43,9 @@ MAIN_GROUPS = {
     "reis": "Reis",
 }
 
+# The site is German, so meal times and days follow German time, whatever clock the server runs on
+TIMEZONE = ZoneInfo("Europe/Berlin")
+
 # Fallback location for the weather when neither the browser nor the IP address reveal one
 LATITUDE = 52.52
 LONGITUDE = 13.41
@@ -49,7 +53,7 @@ PLACE = "Berlin"
 WEATHER_CACHE_SECONDS = 15 * 60
 _weather_cache = {}  # (latitude, longitude) -> (timestamp, weather data)
 _place_cache = {}  # (latitude, longitude) -> place name or None
-_ip_location_cache = {}  # IP address -> (latitude, longitude, city) or None
+_ip_location_cache = {}  # shortened IP address -> (latitude, longitude, city) or None
 
 # Nominatim (OpenStreetMap) requires an identifying User-Agent
 USER_AGENT = "WasKocheIchHeute/1.0 (https://github.com/Richard4224/recipe-search)"
@@ -85,6 +89,12 @@ WEATHER_CODES = {
     96: "Gewitter mit Hagel",
     99: "Gewitter mit starkem Hagel",
 }
+
+def local_now():
+    """The current date and time in Germany (without time zone, like datetime.now())."""
+
+    return datetime.now(TIMEZONE).replace(tzinfo=None)
+
 
 SECONDS_IN_A_DAY = 86400
 SYNODIC_MONTH = 29.530588853  # days from one new moon to the next
@@ -127,7 +137,7 @@ def get_season(date=None, latitude=LATITUDE):
     """Return the astronomical season for date (default: today) at latitude."""
 
     if date is None:
-        date = datetime.now()
+        date = local_now()
 
     # Equinoxes and solstices shift by a day or two between years; these dates are close enough
     day = (date.month, date.day)
@@ -153,7 +163,7 @@ def get_dish_of_the_day(now=None, latitude=LATITUDE, weather=None):
 
     import daily_dish  # imported here because daily_dish itself uses helpers
 
-    recipe_id, reason = daily_dish.choose(now or datetime.now(), latitude, weather)
+    recipe_id, reason = daily_dish.choose(now or local_now(), latitude, weather)
     dish = get_recipe(recipe_id)
     dish["reason"] = reason
     return dish
@@ -474,19 +484,30 @@ def get_place(latitude=LATITUDE, longitude=LONGITUDE):
     return place
 
 
-def get_ip_location(ip):
-    """Return (latitude, longitude, city) roughly locating an IP address, or None if unknown."""
+def shorten_ip(ip):
+    """Cut an IP address down to its network, e.g. 203.0.113.42 to 203.0.113.0 (IPv6: the first 48 bits).
+    That still tells the city, but no longer the visitor. Returns None for an invalid address."""
 
-    if ip in _ip_location_cache:
-        return _ip_location_cache[ip]
+    try:
+        address = ipaddress.ip_address(ip)
+    except ValueError:
+        return None
+    prefix = 24 if address.version == 4 else 48
+    return str(ipaddress.ip_network(f"{address}/{prefix}", strict=False).network_address)
+
+
+def get_ip_location(ip):
+    """Return (latitude, longitude, city) roughly locating an IP address, or None if unknown.
+    Only the shortened address (see shorten_ip) is looked up and remembered."""
+
+    short = shorten_ip(ip)
+    if short in _ip_location_cache:
+        return _ip_location_cache[short]
 
     # A local address (e.g. 127.0.0.1 while developing) means the visitor is on this machine,
     # so ask about this machine's own public IP instead
-    try:
-        is_public = ipaddress.ip_address(ip).is_global
-    except ValueError:
-        is_public = False
-    url = f"https://ipinfo.io/{ip}/json" if is_public else "https://ipinfo.io/json"
+    is_public = short is not None and ipaddress.ip_address(ip).is_global
+    url = f"https://ipinfo.io/{short}/json" if is_public else "https://ipinfo.io/json"
 
     try:
         request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
@@ -497,7 +518,7 @@ def get_ip_location(ip):
     except (OSError, ValueError, KeyError):
         return None
 
-    _ip_location_cache[ip] = location
+    _ip_location_cache[short] = location
     return location
 
 

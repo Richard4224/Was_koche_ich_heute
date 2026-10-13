@@ -31,6 +31,9 @@
 
 {% block main_class %}journey-main{% endblock %}
 
+{# The links sit under the recipes instead, the page ends with the cottage #}
+{% block footer %}{% endblock %}
+
 {% block main %}
     <!-- 1. Space: the moon and the stars -->
     <section class="space">
@@ -172,7 +175,9 @@
                         </a>
                     </div>
 
-                    <a href="/bildnachweise" class="credits-link">Bildnachweise</a>
+                    <div class="forest-links">
+                        {% include "footer_links.html" %}
+                    </div>
                 </section>
             </div>
 
@@ -215,7 +220,8 @@
 
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(
-                (position) => showWeather(`?lat=${position.coords.latitude}&lon=${position.coords.longitude}`),
+                // Rounded to about a kilometre: enough for the weather, and the exact spot stays here
+                (position) => showWeather(`?lat=${position.coords.latitude.toFixed(2)}&lon=${position.coords.longitude.toFixed(2)}`),
                 (error) => {
                     // 1 = permission denied, 2 = position unavailable, 3 = timeout
                     console.warn("Standort nicht verfügbar:", error.code, error.message);

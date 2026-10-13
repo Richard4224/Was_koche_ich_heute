@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..600,100&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5.3.8 and the fonts are served from here, so no visitor data goes to a CDN or Google -->
+    <link href="/static/vendor/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/fonts/fonts.css" rel="stylesheet">
     <link href="/static/styles.css" rel="stylesheet">
     <title>{% block title %}{% endblock %} · Was koche ich heute?</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
@@ -101,7 +100,12 @@
         {% block main %}{% endblock %}
     </main>
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    {% block footer %}
+        <footer class="site-footer">
+            <div class="container">
+                {% include "footer_links.html" %}
+            </div>
+        </footer>
+    {% endblock %}
 </body>
 </html>
