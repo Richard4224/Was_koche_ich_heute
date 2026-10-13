@@ -5564,12 +5564,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tafelspitz mit Apfelkren
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tafelspitz mit Apfelkren', NULL, 180, 4, 'Portionen', 'Winter', '1. Zwiebel halbieren und mit der Schnittfläche in einem großen Topf ohne Fett dunkelbraun rösten. {3 l} Wasser zugeben und aufkochen.
-2. Tafelspitz mit Lorbeer, Pfefferkörnern und Wacholder ins kochende Wasser legen und bei kleiner Hitze ca. 2,5 Stunden sieden lassen. Schaum abschöpfen.
-3. Nach 2 Stunden das grob geschnittene Gemüse und {1 EL} Salz zugeben.
-4. Für den Apfelkren die Äpfel schälen, fein reiben und sofort mit Zitronensaft und frisch geriebenem Meerrettich mischen. Leicht salzen.
-5. Kartoffeln als Salzkartoffeln garen.
-6. Fleisch quer zur Faser in Scheiben schneiden und mit etwas Brühe, Gemüse, Kartoffeln, Apfelkren und Schnittlauch servieren. Die Brühe ergibt eine wunderbare Suppe.
+VALUES ('Tafelspitz mit Apfelkren', 'Wiener Klassiker: zart gesottenes Rindfleisch in klarer Brühe, dazu frischer Apfelkren, Wurzelgemüse und Kartoffeln.', 180, 4, 'Portionen', 'Winter', '1. Die Zwiebel mit Schale halbieren und mit der Schnittfläche nach unten in einem großen Topf ohne Fett dunkelbraun rösten. Das gibt der Brühe Farbe und Aroma. {3000 ml} Wasser zugeben und aufkochen.
+2. {1500 g} Tafelspitz mit {2} Lorbeerblättern, {1 TL} Pfefferkörnern und {4} Wacholderbeeren ins kochende Wasser legen. Die Hitze reduzieren und das Fleisch etwa 2,5 Stunden ganz leise sieden lassen, nicht kochen. Den aufsteigenden Schaum regelmäßig abschöpfen.
+3. Nach 2 Stunden {2} Karotten, {200 g} Knollensellerie, den Lauch und die Petersilienwurzel grob schneiden und mit {1 EL} Salz zugeben.
+4. Für den Apfelkren {2} Äpfel schälen und fein reiben. Sofort mit dem Saft der halben Zitrone und {3 EL} frisch geriebenem Meerrettich mischen und leicht salzen.
+5. {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+6. Das Fleisch herausnehmen und quer zur Faser in fingerdicke Scheiben schneiden. Mit etwas heißer Brühe, dem Gemüse, den Kartoffeln und dem Apfelkren anrichten und mit Schnittlauchröllchen bestreuen.
+
+Tipp: In Wien serviert man zuerst die Brühe als Suppe, dann das Fleisch. Übrige Brühe lässt sich gut einfrieren.
 
 Guten Appetit!', 'tafelspitz-mit-apfelkren.jpg');
 
@@ -5591,11 +5593,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ribollita (toskanischer Brot-Bohnen-Eintopf)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ribollita (toskanischer Brot-Bohnen-Eintopf)', NULL, 90, 6, 'Portionen', 'Winter', '1. Zwiebel, Karotten und Sellerie fein würfeln und den Knoblauch hacken. In {3 EL} Öl 10 Minuten andünsten.
-2. Tomaten, die Hälfte der Bohnen, Kartoffelwürfel, Thymian und Brühe zugeben.
-3. Grünkohl und Wirsing in Streifen schneiden, zugeben und alles ca. 45 Minuten köcheln lassen.
-4. Restliche Bohnen pürieren und unterrühren. Mit Salz, Pfeffer und Chili abschmecken.
-5. Altbackenes Brot in Stücke reißen, unter den Eintopf rühren und 10 Minuten ziehen lassen, bis er sehr dick ist. Mit dem restlichen Olivenöl beträufelt servieren. Aufgewärmt schmeckt sie am besten – "ribollita" heißt "wieder aufgekocht".
+VALUES ('Ribollita (toskanischer Brot-Bohnen-Eintopf)', 'Der dicke toskanische Wintereintopf aus Bohnen, Kohl und altem Brot: Am besten schmeckt er wieder aufgekocht, daher der Name.', 90, 6, 'Portionen', 'Winter', '1. Die Zwiebel, {2} Karotten und {2} Selleriestangen fein würfeln und {3} Knoblauchzehen hacken. {3 EL} Olivenöl in einem großen Topf erhitzen und alles darin bei mittlerer Hitze 10 Minuten weich dünsten.
+2. {400 g} gehackte Tomaten, die Hälfte der abgetropften {480 g} weißen Bohnen, {300 g} gewürfelte Kartoffeln, {2} Thymianzweige und {1500 ml} Gemüsebrühe zugeben.
+3. {300 g} Grünkohl von den Stielen streifen, {300 g} Wirsing vom Strunk befreien und beides in Streifen schneiden. Zugeben und alles zugedeckt etwa 45 Minuten köcheln lassen.
+4. Die restlichen Bohnen mit einer Kelle Suppe pürieren und unterrühren, das macht den Eintopf sämig. Die Thymianzweige entfernen und mit Salz, Pfeffer und einer Prise Chiliflocken abschmecken.
+5. {200 g} altbackenes Bauernbrot in Stücke reißen, unter den Eintopf rühren und 10 Minuten ziehen lassen, bis er sehr dick ist. Mit dem restlichen Olivenöl beträufelt servieren.
+
+Tipp: Ribollita heißt „wieder aufgekocht“. Am zweiten Tag schmeckt sie am besten.
 
 Guten Appetit!', 'ribollita-toskanischer-brot-bohnen-eintopf.jpg');
 
@@ -5618,10 +5622,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Blutorangen-Carpaccio mit Pistazien
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Blutorangen-Carpaccio mit Pistazien', NULL, 15, 4, 'Portionen', 'Winter', '1. Blutorangen so schälen, dass die weiße Haut vollständig entfernt ist, und in dünne Scheiben schneiden.
-2. Scheiben fächerartig auf Tellern anrichten und den austretenden Saft auffangen.
-3. Saft mit Agavendicksaft und Zimt verrühren und über die Orangen träufeln.
-4. Mit gehackten Pistazien und fein geschnittener Minze bestreuen.
+VALUES ('Blutorangen-Carpaccio mit Pistazien', 'Leuchtend rote Orangenscheiben mit Zimt, Minze und Pistazien: ein leichtes, farbenfrohes Dessert für graue Wintertage.', 15, 4, 'Portionen', 'Winter', '1. {4} Blutorangen mit einem scharfen Messer oben und unten kappen. Dann die Schale von oben nach unten so abschneiden, dass auch die weiße Haut vollständig entfernt wird. Sie schmeckt bitter.
+2. Die Orangen quer in dünne Scheiben schneiden. Fächerartig auf Tellern anrichten und den austretenden Saft auffangen.
+3. Den Saft mit {1 EL} Agavendicksaft und einer Prise Zimt verrühren und über die Orangen träufeln.
+4. {30 g} Pistazien grob hacken, {6} Minzblätter in feine Streifen schneiden und beides darüberstreuen. Kurz ziehen lassen und servieren.
+
+Tipp: Ein Klecks griechischer Joghurt oder eine Kugel Vanilleeis machen daraus ein gehaltvolleres Dessert.
 
 Guten Appetit!', 'blutorangen-carpaccio-mit-pistazien.jpg');
 
@@ -5633,11 +5639,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Käsekuchen mit Mandarinen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käsekuchen mit Mandarinen', NULL, 180, 1, 'Springform (26 cm)', 'Winter', '1. Mehl, Backpulver, {100 g} kalte Butter, {80 g} Zucker, {1} Ei und Salz zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Ofen auf 170 °C vorheizen. Teig ausrollen und eine gefettete Springform damit samt 3 cm hohem Rand auslegen.
-3. Quark, restlichen Zucker, Vanillezucker, Stärke, Zitronenabrieb, Milch, die restlichen Eier und {50 g} geschmolzene Butter glatt verrühren.
-4. Mandarinen schälen, in Spalten teilen und auf dem Boden verteilen. Die Quarkmasse darübergießen.
-5. Ca. 70 Minuten backen. Im ausgeschalteten Ofen bei leicht geöffneter Tür 30 Minuten abkühlen lassen, damit er nicht einreißt.
+VALUES ('Käsekuchen mit Mandarinen', 'Ein großer, cremiger Käsekuchen auf Mürbeteig mit saftigen Mandarinen: so, wie er auf der Kaffeetafel bei Oma stand.', 180, 1, 'Springform (26 cm)', 'Winter', '1. {200 g} Mehl, {1 TL} Backpulver, {100 g} kalte Butter in Würfeln, {80 g} Zucker, {1} Ei und eine Prise Salz rasch zu einem Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. Den Ofen auf 170 °C Ober-/Unterhitze vorheizen. Den Teig ausrollen und eine gefettete Springform (26 cm) damit samt 3 cm hohem Rand auslegen.
+3. Die restliche Butter schmelzen. {1000 g} Quark, den restlichen Zucker, den Vanillezucker, {40 g} Speisestärke, die abgeriebene Schale der Zitrone, {200 ml} Milch, die restlichen Eier und die geschmolzene Butter mit dem Schneebesen glatt verrühren. Nicht zu lange rühren, zu viel Luft lässt den Kuchen beim Backen stark aufgehen und danach einfallen.
+4. {6} Mandarinen schälen, die weißen Fäden entfernen und in Spalten teilen. Auf dem Teigboden verteilen und die Quarkmasse darübergießen.
+5. Etwa 70 Minuten backen, bis die Oberfläche goldgelb und die Mitte nur noch leicht wackelig ist.
+6. Den Ofen ausschalten und den Kuchen bei leicht geöffneter Ofentür 30 Minuten darin abkühlen lassen, dann reißt er nicht ein. Vollständig auskühlen lassen, am besten über Nacht im Kühlschrank.
+
+Tipp: Mandarinen aus der Dose funktionieren genauso gut, dann gut abtropfen lassen.
 
 Guten Appetit!', 'kaesekuchen-mit-mandarinen.jpg');
 
@@ -5656,10 +5665,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grießbrei mit Zimt und Zucker
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grießbrei mit Zimt und Zucker', NULL, 15, 4, 'Portionen', 'Winter', '1. Milch mit {2 EL} Zucker, Vanillezucker, Salz und Butter aufkochen.
-2. Grieß unter ständigem Rühren einrieseln lassen und bei kleiner Hitze 5 Minuten quellen lassen, dabei weiterrühren.
-3. Restlichen Zucker mit dem Zimt mischen.
-4. Grießbrei in Schalen füllen und mit Zimtzucker bestreuen. Dazu passt Kompott, zum Beispiel Kirschen oder Apfelmus.
+VALUES ('Grießbrei mit Zimt und Zucker', 'Warm, cremig und tröstlich: Grießbrei mit Zimtzucker, der schmeckt wie früher bei Oma.', 15, 4, 'Portionen', 'Winter', '1. {1000 ml} Milch mit {2 EL} Zucker, dem Vanillezucker, einer Prise Salz und {1 EL} Butter in einem Topf aufkochen. Dabei umrühren, damit die Milch nicht anbrennt.
+2. Den Topf vom Herd ziehen. {100 g} Grieß unter ständigem Rühren mit dem Schneebesen einrieseln lassen, damit keine Klümpchen entstehen.
+3. Zurück auf den Herd stellen und bei schwacher Hitze etwa 5 Minuten quellen lassen, dabei weiterrühren. Der Brei dickt beim Abkühlen noch nach. Ist er zu fest, einen Schuss Milch einrühren.
+4. Den restlichen Zucker mit {1 TL} Zimt mischen.
+5. Den Grießbrei in Schalen füllen und mit Zimtzucker bestreuen. Dazu passt Kompott, zum Beispiel Kirschen oder Apfelmus.
+
+Tipp: Wer ihn besonders fluffig mag, rührt zum Schluss ein steif geschlagenes Eiweiß unter.
 
 Guten Appetit!', 'griessbrei-mit-zimt-und-zucker.jpg');
 
@@ -5673,12 +5685,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Germknödel mit Mohn und Vanillesoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Germknödel mit Mohn und Vanillesoße', NULL, 120, 4, 'Portionen', 'Winter', '1. Mehl, Hefe, {40 g} Zucker und Salz mischen. {200 ml} lauwarme Milch, {40 g} weiche Butter und {1} Ei zugeben und zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-2. Teig in {4} Portionen teilen, flach drücken, je 1 EL Pflaumenmus in die Mitte geben und zu Knödeln verschließen. Mit der Naht nach unten auf ein bemehltes Brett setzen und 20 Minuten gehen lassen.
-3. In einem Topf mit Dämpfeinsatz über siedendem Wasser zugedeckt ca. 15 Minuten dämpfen. Den Deckel dabei nicht öffnen.
-4. Für die Vanillesoße {400 ml} Milch mit Vanillemark und {30 g} Zucker aufkochen. Stärke mit dem restlichen Ei und etwas Milch glatt rühren, einrühren und aufkochen.
-5. Restliche Butter schmelzen. Gemahlenen Mohn mit Puderzucker mischen.
-6. Germknödel mit der flüssigen Butter beträufeln, dick mit Mohnzucker bestreuen und mit Vanillesoße servieren.
+VALUES ('Germknödel mit Mohn und Vanillesoße', 'Ein großer, fluffiger Hefeknödel mit Pflaumenmus im Herzen, dazu Mohnzucker, Butter und Vanillesoße: die Hüttenspezialität aus den Alpen.', 120, 4, 'Portionen', 'Winter', '1. {400 g} Mehl, die Trockenhefe, {40 g} Zucker und eine Prise Salz mischen. {200 ml} Milch lauwarm erwärmen und mit {40 g} weicher Butter und {1} Ei zugeben. Alles 8 Minuten zu einem glatten, weichen Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. Den Teig in {4} gleich große Portionen teilen und jede flach drücken. Je 1 EL Pflaumenmus in die Mitte geben, den Teig darüber zusammenziehen und gut verschließen. Die Knödel mit der Naht nach unten auf ein bemehltes Brett setzen und zugedeckt 20 Minuten gehen lassen.
+3. In einem großen Topf mit Dämpfeinsatz Wasser zum Sieden bringen. Die Knödel mit Abstand auf den gefetteten Einsatz setzen, sie gehen noch auf. Zugedeckt etwa 15 Minuten dämpfen und den Deckel dabei nicht öffnen, sonst fallen sie zusammen.
+4. Für die Vanillesoße die Vanilleschote aufschneiden und das Mark herauskratzen. Von {400 ml} Milch 4 EL beiseitestellen, den Rest mit Vanillemark, Schote und {30 g} Zucker aufkochen. Die Schote herausnehmen. Das zweite Ei trennen, das Eigelb mit {20 g} Speisestärke und der kalten Milch glatt rühren, in die heiße Milch rühren und einmal kurz aufkochen.
+5. Die restliche Butter schmelzen. {50 g} gemahlenen Mohn mit {2 EL} Puderzucker mischen.
+6. Die Germknödel auf Teller setzen, mit der flüssigen Butter beträufeln, dick mit Mohnzucker bestreuen und mit der Vanillesoße servieren.
+
+Tipp: Ohne Dämpfeinsatz geht es auch: ein Geschirrtuch straff über einen Topf mit siedendem Wasser spannen und mit Küchengarn festbinden.
 
 Guten Appetit!', 'germknoedel-mit-mohn-und-vanillesosse.jpg');
 
@@ -5697,11 +5711,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Linzer Torte
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Linzer Torte', NULL, 120, 1, 'Tarteform (26 cm)', 'Winter', '1. Mehl, Haselnüsse, Zucker, Zimt, Kakao und Salz mischen. Kalte Butterwürfel und {1} Ei zugeben, rasch zu einem Teig verkneten und 1 Stunde kühlen.
-2. Ofen auf 180 °C vorheizen. Zwei Drittel des Teigs in eine gefettete Tarteform drücken und dabei einen kleinen Rand formen.
-3. Johannisbeergelee glatt rühren und auf dem Boden verstreichen.
-4. Restlichen Teig ausrollen, in Streifen schneiden und als Gitter auf das Gelee legen. Mit dem restlichen, verquirlten Ei bestreichen.
-5. Ca. 40 Minuten backen und vollständig auskühlen lassen. Am besten 1–2 Tage durchziehen lassen und mit Puderzucker bestäuben.
+VALUES ('Linzer Torte', 'Die älteste Torte der Welt: würziger Nussteig mit Zimt, ein Herz aus Johannisbeergelee und das typische Gitter obendrauf.', 120, 1, 'Tarteform (26 cm)', 'Winter', '1. {250 g} Mehl, {200 g} gemahlene Haselnüsse, {150 g} Zucker, {1 TL} Zimt, {1 TL} Backkakao und eine Prise Salz mischen. {250 g} kalte Butter in Würfeln und {1} Ei zugeben und rasch zu einem glatten Teig verkneten. In Folie gewickelt 1 Stunde kühlen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Zwei Drittel des Teigs in eine gefettete Tarteform (26 cm) drücken und dabei einen etwa 1 cm hohen Rand formen.
+3. {300 g} Johannisbeergelee glatt rühren und gleichmäßig auf dem Boden verstreichen.
+4. Den restlichen Teig zwischen Frischhaltefolie ausrollen, in 1 cm breite Streifen schneiden und als Gitter auf das Gelee legen. Ist der Teig zu weich, kurz in den Kühlschrank legen. Das zweite Ei verquirlen und das Gitter damit bestreichen.
+5. Etwa 40 Minuten backen, bis das Gitter goldbraun ist. In der Form vollständig auskühlen lassen.
+6. Am besten in Folie gewickelt 1–2 Tage durchziehen lassen, dann wird sie saftig und aromatisch. Vor dem Servieren mit {1 EL} Puderzucker bestäuben.
+
+Tipp: Gut verpackt hält sich die Linzer Torte bis zu zwei Wochen und eignet sich als Geschenk.
 
 Guten Appetit!', 'linzer-torte.jpg');
 
@@ -5718,11 +5735,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Labskaus
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Labskaus', NULL, 60, 4, 'Portionen', 'Winter', '1. Kartoffeln schälen, in Salzwasser 20 Minuten garen und abgießen.
-2. Zwiebeln würfeln und in {1 EL} Butterschmalz glasig dünsten. Corned Beef zerpflücken und kurz mitbraten.
-3. Kartoffeln mit Zwiebeln, Corned Beef, der Hälfte der fein gewürfelten, vorgegarten Roten Bete und etwas Brühe zu einem groben Brei stampfen. Mit Salz, Pfeffer und Muskat kräftig abschmecken – er wird dabei schön rosa.
-4. Im restlichen Butterschmalz {4} Spiegeleier braten.
-5. Labskaus mit Spiegelei, Matjes, Gewürzgurken und der restlichen Roten Bete servieren. Ein Seemannsessen aus Norddeutschland.
+VALUES ('Labskaus', 'Das rosarote Seemannsessen aus dem Norden: gestampfte Kartoffeln mit Corned Beef und Roter Bete, dazu Spiegelei, Matjes und Gurke.', 60, 4, 'Portionen', 'Winter', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen und kurz ausdampfen lassen.
+2. {2} Zwiebeln würfeln und in {1 EL} Butterschmalz glasig dünsten. {400 g} Corned Beef zerpflücken und 2 Minuten mitbraten.
+3. Die Hälfte von {300 g} vorgegarter Roter Bete fein würfeln. Kartoffeln, Zwiebeln, Corned Beef, die gewürfelte Rote Bete und etwas Gemüsebrühe in einen Topf geben und mit dem Kartoffelstampfer zu einem groben Brei stampfen. Der Labskaus wird dabei schön rosa. Mit Salz, Pfeffer und Muskatnuss kräftig abschmecken und warm halten.
+4. Im restlichen Butterschmalz {4} Spiegeleier braten, das Eigelb soll flüssig bleiben.
+5. Den Labskaus auf Teller verteilen, je ein Spiegelei daraufsetzen und mit {4} Matjesfilets, {4} Gewürzgurken und der restlichen Roten Bete in Scheiben servieren.
+
+Tipp: Ein Spritzer Gurkenwasser aus dem Glas im Labskaus macht ihn noch würziger.
 
 Guten Appetit!', 'labskaus.jpg');
 
@@ -5741,11 +5760,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pichelsteiner Eintopf
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pichelsteiner Eintopf', NULL, 120, 6, 'Portionen', 'Winter', '1. Fleisch in 2 cm große Würfel schneiden. Gemüse und Kartoffeln schälen bzw. putzen und in mundgerechte Stücke schneiden, Zwiebeln in Ringe.
-2. Fleisch in Butterschmalz portionsweise anbraten und mit Salz und Pfeffer würzen.
-3. In einem großen Topf Fleisch, Zwiebeln, Kartoffeln und Gemüse schichtweise einfüllen und jede Schicht leicht salzen und pfeffern.
-4. Heiße Brühe, Majoran und Lorbeer zugeben und zugedeckt bei kleiner Hitze ca. 1,5 Stunden garen. Nicht umrühren.
-5. Mit gehackter Petersilie bestreut servieren. Ein Eintopf aus dem Bayerischen Wald.
+VALUES ('Pichelsteiner Eintopf', 'Drei Sorten Fleisch, Kartoffeln und Gemüse, in Schichten im Topf gegart: der traditionelle Eintopf aus dem Bayerischen Wald.', 120, 6, 'Portionen', 'Winter', '1. {300 g} Rindergulasch, {300 g} Schweinenacken und {300 g} Lammschulter in 2 cm große Würfel schneiden. {800 g} Kartoffeln, {3} Karotten und {200 g} Knollensellerie schälen und in mundgerechte Stücke schneiden. Den Lauch putzen und in Ringe schneiden, {2} Zwiebeln in Ringe schneiden.
+2. {2 EL} Butterschmalz in einer großen Pfanne erhitzen und das Fleisch portionsweise kräftig anbraten. Mit Salz und Pfeffer würzen.
+3. In einem großen Topf Fleisch, Zwiebeln, Kartoffeln und Gemüse abwechselnd in Schichten einfüllen. Jede Schicht leicht salzen, pfeffern und mit Majoran bestreuen, insgesamt {1 TL}.
+4. {1000 ml} Rinderbrühe erhitzen, angießen und das Lorbeerblatt zugeben. Zugedeckt bei schwacher Hitze etwa 1,5 Stunden garen. Nicht umrühren, die Schichten sollen erhalten bleiben.
+5. Mit gehackter Petersilie bestreut direkt aus dem Topf servieren.
+
+Tipp: In Regen im Bayerischen Wald wird jedes Jahr ein Pichelsteinerfest gefeiert, angeblich seit 1874.
 
 Guten Appetit!', 'pichelsteiner-eintopf.jpg');
 
@@ -5767,10 +5788,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Heiße Schokolade
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Heiße Schokolade', NULL, 10, 4, 'Tassen', 'Winter', '1. Schokolade fein hacken.
-2. Milch mit Kakao, Zucker, Zimt und Salz unter Rühren erhitzen.
-3. Schokolade zugeben und unter Rühren schmelzen lassen, nicht kochen.
-4. Sahne steif schlagen. Heiße Schokolade in Tassen füllen und mit einem Sahnehäubchen servieren.
+VALUES ('Heiße Schokolade', 'Dick, dunkel und samtig, mit echter Schokolade und einer Sahnehaube: das Gegenteil von Kakaopulver aus der Tüte.', 10, 4, 'Tassen', 'Winter', '1. {100 g} Zartbitterschokolade fein hacken.
+2. {800 ml} Milch mit {1 EL} Backkakao, {2 EL} Zucker, einer Prise Zimt und einer Prise Salz in einem Topf unter Rühren erhitzen, bis sie dampft. Das Salz hebt den Schokoladengeschmack.
+3. Den Topf vom Herd nehmen, die Schokolade zugeben und unter Rühren schmelzen lassen. Nicht mehr kochen. Für extra Schaum kurz mit dem Milchaufschäumer oder Schneebesen aufschlagen.
+4. {100 ml} Sahne halbsteif schlagen. Die heiße Schokolade in vorgewärmte Tassen füllen und mit einem Sahnehäubchen servieren.
+
+Tipp: Mit einer Prise Chili wird daraus eine aztekische Trinkschokolade.
 
 Zum Wohl!', 'heisse-schokolade.jpg');
 
@@ -5784,11 +5807,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ganzer Ofen-Sellerie
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ganzer Ofen-Sellerie', NULL, 150, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Sellerie gründlich schrubben, die Wurzeln abschneiden, aber die Schale dranlassen.
-2. Mit {2 EL} Öl einreiben, mit grobem Salz bestreuen und mit Thymian und angedrücktem Knoblauch in Alufolie wickeln.
-3. Ca. 2 Stunden backen, bis er sich mit einem Messer ganz leicht durchstechen lässt.
-4. Folie öffnen und weitere 15 Minuten bei 220 °C rösten, bis die Schale gebräunt ist.
-5. In dicke Scheiben schneiden, mit Zitronensaft und dem restlichen Öl beträufeln, pfeffern und mit gerösteten, gehackten Haselnüssen bestreuen.
+VALUES ('Ganzer Ofen-Sellerie', 'Eine ganze Sellerieknolle, stundenlang im Ofen gegart: außen geröstet, innen butterweich, nussig und überraschend fein.', 150, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Sellerieknolle unter fließendem Wasser gründlich schrubben, die Wurzeln abschneiden, aber die Schale dranlassen.
+2. Die Knolle mit {2 EL} Olivenöl einreiben und rundherum mit grobem Salz bestreuen. Mit {4} Thymianzweigen und {3} angedrückten Knoblauchzehen auf ein großes Stück Alufolie setzen und fest einwickeln.
+3. Etwa 2 Stunden backen, bis sie sich mit einem Messer ganz leicht bis zur Mitte durchstechen lässt.
+4. Die Folie öffnen, den Ofen auf 220 °C hochschalten und den Sellerie weitere 15 Minuten rösten, bis die Schale gebräunt und leicht knusprig ist.
+5. Inzwischen {30 g} Haselnüsse in einer Pfanne ohne Fett rösten und grob hacken.
+6. Den Sellerie in dicke Scheiben oder Spalten schneiden, mit dem Saft der halben Zitrone und dem restlichen Olivenöl beträufeln, pfeffern und mit den Haselnüssen bestreuen.
+
+Tipp: Dazu passt ein Klecks Joghurt mit Kräutern oder eine Pilzrahmsoße.
 
 Guten Appetit!', 'ganzer-ofen-sellerie.jpg');
 
@@ -5803,11 +5829,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Maronen-Rosenkohl-Pfanne
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Maronen-Rosenkohl-Pfanne', NULL, 25, 4, 'Portionen', 'Winter', '1. Rosenkohl putzen, halbieren, in Salzwasser 5 Minuten vorgaren und abschrecken.
-2. Schalotten in Streifen schneiden und die vorgegarten Maronen halbieren.
-3. Öl in einer Pfanne erhitzen und den Rosenkohl mit der Schnittfläche nach unten 5 Minuten goldbraun braten.
-4. Schalotten, Maronen und Thymian zugeben und 3 Minuten mitbraten.
-5. Mit Ahornsirup glasieren und mit Salz, Pfeffer und Muskat abschmecken. Passt prima zum Weihnachtsbraten.
+VALUES ('Maronen-Rosenkohl-Pfanne', 'Goldbraun gebratener Rosenkohl mit süßen Maronen und einem Hauch Ahornsirup: das schnelle Wintergemüse für Festtage.', 25, 4, 'Portionen', 'Winter', '1. {500 g} Rosenkohl waschen, die Strünke knapp abschneiden, welke Blätter entfernen und die Röschen halbieren. In Salzwasser 5 Minuten vorgaren, in Eiswasser abschrecken und gut abtropfen lassen.
+2. {2} Schalotten in feine Streifen schneiden. {200 g} vorgegarte Maronen halbieren.
+3. {2 EL} Rapsöl in einer großen Pfanne erhitzen. Den Rosenkohl mit der Schnittfläche nach unten hineinlegen und bei mittlerer bis hoher Hitze 5 Minuten braten, ohne ihn zu bewegen, bis die Schnittflächen goldbraun sind.
+4. Schalotten, Maronen und die Blättchen von {2} Thymianzweigen zugeben und 3 Minuten mitbraten.
+5. Mit {1 EL} Ahornsirup glasieren und mit Salz, Pfeffer und etwas Muskatnuss abschmecken.
+
+Tipp: Passt hervorragend zu Gans, Ente oder einem Weihnachtsbraten, mit etwas Feta auch als vegetarisches Hauptgericht.
 
 Guten Appetit!', 'maronen-rosenkohl-pfanne.jpg');
 
@@ -5823,12 +5851,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Karpfen blau
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Karpfen blau', NULL, 50, 4, 'Portionen', 'Winter', '1. Küchenfertigen Karpfen vorsichtig waschen, ohne die Schleimhaut zu verletzen – nur so wird er blau. In {4} Portionsstücke teilen.
-2. {1.5 l} Wasser mit Wein, Zwiebel- und Karottenscheiben, Lorbeer, Wacholder, Pfefferkörnern und {1 EL} Salz aufkochen und 10 Minuten köcheln lassen.
-3. Essig erhitzen und über den Fisch gießen – dadurch färbt sich die Haut blau.
-4. Fisch in den siedenden Sud legen und bei kleiner Hitze 15–20 Minuten gar ziehen lassen.
-5. Kartoffeln garen und mit gehackter Petersilie bestreuen. Butter schmelzen.
-6. Karpfen mit zerlassener Butter, frisch geriebenem Meerrettich, Zitronenspalten und Kartoffeln servieren – traditionell an Heiligabend oder Silvester.
+VALUES ('Karpfen blau', 'Der traditionelle Festtagsfisch zu Heiligabend und Silvester: in würzigem Sud gegarter Karpfen mit zerlassener Butter und Meerrettich.', 50, 4, 'Portionen', 'Winter', '1. Den küchenfertigen Karpfen nur ganz vorsichtig kalt abspülen und nicht abreiben. Die Schleimschicht auf der Haut muss erhalten bleiben, nur dann färbt sie sich blau. Den Fisch in {4} Portionsstücke teilen.
+2. {1500 ml} Wasser mit {250 ml} Weißwein, der in Scheiben geschnittenen Zwiebel und Karotte, {2} Lorbeerblättern, {5} Wacholderbeeren, {1 TL} Pfefferkörnern und {1 EL} Salz in einem breiten Topf aufkochen und 10 Minuten köcheln lassen.
+3. {250 ml} Weißweinessig erhitzen und über die Fischstücke in einer Schüssel gießen. Die Haut färbt sich dabei blau.
+4. Den Fisch in den siedenden Sud legen und bei schwacher Hitze 15–20 Minuten gar ziehen lassen. Der Sud darf nicht kochen. Der Karpfen ist gar, wenn sich die Rückenflosse leicht herausziehen lässt.
+5. Inzwischen {800 g} Kartoffeln schälen, in Salzwasser garen und mit gehackter Petersilie bestreuen. {80 g} Butter schmelzen.
+6. Den Karpfen mit zerlassener Butter, {2 EL} frisch geriebenem Meerrettich, Zitronenspalten und den Kartoffeln servieren.
+
+Tipp: Eine Karpfenschuppe im Portemonnaie soll im neuen Jahr Geld bringen, ein alter Silvesterbrauch.
 
 Guten Appetit!', 'karpfen-blau.jpg');
 
@@ -5849,11 +5879,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Heringssalat mit Roter Bete
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Heringssalat mit Roter Bete', NULL, 150, 6, 'Portionen', 'Winter', '1. Kartoffeln mit Schale garen, pellen und abkühlen lassen.
-2. Matjes, vorgegarte Rote Bete, Äpfel, Gewürzgurken, Kartoffeln und Zwiebel in kleine Würfel schneiden.
-3. Schmand, Mayonnaise, Senf, Zucker und {2 EL} Gurkenwasser verrühren und mit Salz und Pfeffer würzen.
-4. Alles vermengen und mindestens 2 Stunden durchziehen lassen – der Salat färbt sich dabei kräftig rot.
-5. Mit Dill garniert servieren. Ein Klassiker zu Silvester und Neujahr.
+VALUES ('Heringssalat mit Roter Bete', 'Kräftig rot und würzig: der norddeutsche Heringssalat mit Matjes, Apfel und Roter Bete, unverzichtbar zu Silvester und Neujahr.', 150, 6, 'Portionen', 'Winter', '1. {300 g} Kartoffeln mit Schale in Salzwasser etwa 20 Minuten garen, pellen und abkühlen lassen.
+2. {6} Matjesfilets trocken tupfen. Die Matjesfilets, {300 g} vorgegarte Rote Bete, {2} entkernte Äpfel, {4} Gewürzgurken, die Kartoffeln und die Zwiebel in kleine, möglichst gleichmäßige Würfel schneiden.
+3. {200 g} Schmand, {2 EL} Mayonnaise, {1 TL} Senf, eine Prise Zucker und {2 EL} Gurkenwasser aus dem Glas verrühren und mit Salz und Pfeffer würzen.
+4. Alles vermengen und abgedeckt mindestens 2 Stunden im Kühlschrank durchziehen lassen. Der Salat färbt sich dabei kräftig rot.
+5. Vor dem Servieren noch einmal abschmecken und mit gehacktem Dill garnieren.
+
+Tipp: Am besten schon am Vortag zubereiten. Dazu passt dunkles Brot.
 
 Guten Appetit!', 'heringssalat-mit-roter-bete.jpg');
 
@@ -5873,12 +5905,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Dampfnudeln mit Vanillesoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Dampfnudeln mit Vanillesoße', NULL, 120, 4, 'Portionen', 'Winter', '1. Mehl, Hefe, {40 g} Zucker und eine Prise Salz mischen. {250 ml} lauwarme Milch, {50 g} weiche Butter und {1} Ei zugeben und zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-2. Teig in {8 Stücke} teilen, zu runden Kugeln formen und abgedeckt nochmals 20 Minuten gehen lassen.
-3. In einem großen Topf mit gut schließendem Deckel {100 ml} Milch, restliche Butter, {1 EL} Zucker und das restliche Salz aufkochen. Die Dampfnudeln nebeneinander hineinsetzen.
-4. Zugedeckt bei mittlerer Hitze ca. 25 Minuten garen, bis die Flüssigkeit verdampft ist und sich unten eine knusprige Salzkruste bildet. Deckel nicht öffnen – wenn es knistert, sind sie fertig.
-5. Für die Vanillesoße {400 ml} Milch mit Vanillemark und dem restlichen Zucker aufkochen. Stärke mit dem restlichen Ei und etwas Milch glatt rühren, einrühren und kurz aufkochen.
-6. Dampfnudeln mit der Vanillesoße servieren.
+VALUES ('Dampfnudeln mit Vanillesoße', 'Fluffige Hefenudeln, oben weich und unten mit einer karamellig-salzigen Kruste, dazu Vanillesoße: ein pfälzisches Leibgericht.', 120, 4, 'Portionen', 'Winter', '1. {500 g} Mehl, die Trockenhefe, {40 g} Zucker und eine Prise Salz mischen. {250 ml} Milch lauwarm erwärmen und mit {50 g} weicher Butter und {1} Ei zugeben. Alles 8 Minuten zu einem glatten, weichen Teig kneten und zugedeckt 1 Stunde gehen lassen.
+2. Den Teig in {8} gleich große Stücke teilen, mit bemehlten Händen zu glatten Kugeln formen und abgedeckt noch einmal 20 Minuten gehen lassen.
+3. In einem großen Topf oder einer tiefen Pfanne mit gut schließendem Deckel {100 ml} Milch, die restliche Butter, {1 EL} Zucker und das restliche Salz aufkochen. Die Dampfnudeln nebeneinander hineinsetzen.
+4. Den Deckel auflegen und bei mittlerer Hitze etwa 25 Minuten garen. Den Deckel dabei auf keinen Fall öffnen, sonst fallen sie zusammen. Wenn es im Topf knistert, ist die Flüssigkeit verdampft und unten hat sich eine goldbraune Salzkruste gebildet.
+5. Für die Vanillesoße die Vanilleschote aufschneiden und das Mark herauskratzen. Von {400 ml} Milch 4 EL beiseitestellen, den Rest mit Vanillemark, Schote und dem restlichen Zucker aufkochen. Die Schote entfernen. Das zweite Ei trennen, das Eigelb mit {20 g} Speisestärke und der kalten Milch glatt rühren, in die heiße Milch rühren und einmal kurz aufkochen.
+6. Die Dampfnudeln mit der Kruste nach oben auf Teller setzen und mit der Vanillesoße servieren.
+
+Tipp: In der Pfalz isst man Dampfnudeln auch herzhaft mit Kartoffelsuppe.
 
 Guten Appetit!', 'dampfnudeln-mit-vanillesosse.jpg');
 
@@ -5894,11 +5928,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Radicchio-Birnen-Salat mit Walnüssen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Radicchio-Birnen-Salat mit Walnüssen', NULL, 15, 4, 'Portionen', 'Winter', '1. Radicchio in Streifen schneiden und mit dem gewaschenen Feldsalat mischen.
-2. Birnen entkernen und in dünne Spalten schneiden.
-3. Walnüsse grob hacken und ohne Fett rösten.
-4. Balsamico, Ahornsirup, Senf, Salz und Pfeffer verrühren und das Öl unterschlagen.
-5. Salat mit Birnen anrichten, mit dem Dressing beträufeln und mit Walnüssen bestreuen. Die leichte Bitterkeit des Radicchios passt wunderbar zur süßen Birne.
+VALUES ('Radicchio-Birnen-Salat mit Walnüssen', 'Bitter, süß und nussig: Radicchio und Feldsalat mit saftigen Birnen und gerösteten Walnüssen.', 15, 4, 'Portionen', 'Winter', '1. Den Radicchio vierteln, den Strunk herausschneiden und die Blätter in Streifen schneiden. {100 g} Feldsalat waschen, die Wurzeln abknipsen und trocken schleudern. Beides mischen.
+2. {2} reife Birnen waschen, entkernen und in dünne Spalten schneiden.
+3. {50 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften.
+4. {2 EL} Balsamicoessig, {1 TL} Ahornsirup, {1 TL} Senf, Salz und Pfeffer verrühren und {4 EL} Olivenöl unterschlagen.
+5. Den Salat mit den Birnen auf Tellern anrichten, mit dem Dressing beträufeln und mit den Walnüssen bestreuen. Die leichte Bitterkeit des Radicchios passt wunderbar zur süßen Birne.
+
+Tipp: Zerbröselter Gorgonzola oder Ziegenkäse machen den Salat noch reichhaltiger.
 
 Guten Appetit!', 'radicchio-birnen-salat-mit-walnuessen.jpg');
 
@@ -5915,11 +5951,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Krustenschweinebauch mit Kümmel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Krustenschweinebauch mit Kümmel', NULL, 150, 4, 'Portionen', 'Winter', '1. Schwarte des Schweinebauchs mit einem scharfen Messer im Abstand von 1 cm einschneiden, ohne ins Fleisch zu schneiden.
-2. Fleischseite mit Salz, Pfeffer, Kümmel, Senf und gepresstem Knoblauch einreiben.
-3. Zwiebeln vierteln und in einen Bräter geben. Bauch mit der Schwarte nach oben darauflegen, Brühe angießen und die Schwarte kräftig salzen.
-4. Bei 160 °C ca. 2 Stunden garen, dabei bei Bedarf etwas Wasser nachgießen.
-5. Für die Kruste den Ofen in den letzten 15–20 Minuten auf 230 °C (Grill) stellen, bis die Schwarte aufpoppt. In Scheiben schneiden und mit Krautsalat oder Kartoffeln servieren.
+VALUES ('Krustenschweinebauch mit Kümmel', 'Saftiger Schweinebauch mit einer Kruste, die beim Anschneiden knackt: einfach gemacht und unwiderstehlich.', 150, 4, 'Portionen', 'Winter', '1. Die Schwarte von {1200 g} Schweinebauch mit einem sehr scharfen Messer im Abstand von 1 cm einschneiden, nur durch die Schwarte, nicht ins Fleisch.
+2. Die Fleischseite mit Salz, Pfeffer, {2 TL} Kümmel, {1 EL} Senf und {3} gepressten Knoblauchzehen einreiben.
+3. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {2} Zwiebeln vierteln und in einen Bräter geben. Den Bauch mit der Schwarte nach oben darauflegen, {250 ml} Gemüsebrühe angießen und die Schwarte kräftig mit Salz einreiben. Die Brühe darf die Schwarte nicht berühren.
+4. Etwa 2 Stunden garen und bei Bedarf etwas Wasser nachgießen, damit der Bratensaft nicht anbrennt.
+5. In den letzten 15–20 Minuten den Ofengrill auf 230 °C einschalten, bis die Schwarte Blasen wirft und aufpoppt. Dabeibleiben, sie wird schnell schwarz.
+6. 5 Minuten ruhen lassen, mit einem Sägemesser in Scheiben schneiden und mit dem Bratensaft servieren.
+
+Tipp: Dazu passen Krautsalat, Kartoffeln oder Semmelknödel.
 
 Guten Appetit!', 'krustenschweinebauch-mit-kuemmel.jpg');
 
@@ -5939,11 +5978,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spaghetti Bolognese
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti Bolognese', NULL, 120, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel, Karotte und Sellerie sehr fein würfeln und den Knoblauch hacken.
-2. Gemüse in Olivenöl 5 Minuten andünsten. Hackfleisch zugeben und krümelig braten, bis die Flüssigkeit verdampft ist und es leicht bräunt.
-3. Tomatenmark kurz mitrösten, mit Rotwein ablöschen und einkochen lassen.
-4. Milch, passierte und gehackte Tomaten, Lorbeer, Oregano, Zucker, Salz und Pfeffer zugeben und zugedeckt bei kleinster Hitze mindestens 1,5 Stunden köcheln lassen. Gelegentlich umrühren.
-5. Spaghetti bissfest kochen, mit der Soße mischen und mit frisch geriebenem Parmesan servieren.
+VALUES ('Spaghetti Bolognese', 'Das Ragù alla Bolognese, wie es sein soll: lange und langsam geschmort, mit Gemüse, Rotwein und einem Schuss Milch.', 120, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel, die Karotte und die Selleriestange sehr fein würfeln und {2} Knoblauchzehen hacken. Je feiner, desto besser verbinden sie sich mit der Soße.
+2. {2 EL} Olivenöl in einem großen, schweren Topf erhitzen und das Gemüse darin bei mittlerer Hitze 5 Minuten andünsten. {500 g} Rinderhackfleisch zugeben und unter Rühren krümelig braten, bis die Flüssigkeit verdampft ist und das Fleisch leicht bräunt.
+3. {2 EL} Tomatenmark einrühren und 1 Minute mitrösten. Mit {150 ml} Rotwein ablöschen und einkochen lassen, bis er fast verdampft ist.
+4. {100 ml} Milch zugeben und ebenfalls etwas einkochen lassen, sie macht das Fleisch zart. {500 ml} passierte und {400 g} gehackte Tomaten, das Lorbeerblatt, {1 TL} Oregano, eine Prise Zucker, Salz und Pfeffer zugeben.
+5. Zugedeckt bei kleinster Hitze mindestens 1,5 Stunden leise köcheln lassen und gelegentlich umrühren. Wird die Soße zu dick, einen Schuss Wasser zugeben. Das Lorbeerblatt entfernen und abschmecken.
+6. {400 g} Spaghetti in reichlich Salzwasser bissfest kochen, abgießen und mit der Soße mischen. Mit {50 g} frisch geriebenem Parmesan servieren.
+
+Tipp: In Bologna isst man das Ragù mit Tagliatelle. Es lohnt sich, gleich die doppelte Menge zu kochen und einzufrieren.
 
 Guten Appetit!', 'spaghetti-bolognese.jpg');
 
@@ -5968,11 +6010,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Linsen-Bolognese
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Linsen-Bolognese', NULL, 45, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel, Karotten und Sellerie fein würfeln, Knoblauch hacken und alles in Olivenöl 8 Minuten andünsten.
-2. Tomatenmark kurz anrösten, mit Rotwein ablöschen und einkochen lassen.
-3. Linsen waschen und mit passierten Tomaten, Brühe und Oregano zugeben. Ca. 20 Minuten köcheln, bis die Linsen weich sind.
-4. Mit Balsamico, Salz und Pfeffer abschmecken.
-5. Spaghetti bissfest kochen und mit der Soße und Basilikum servieren.
+VALUES ('Linsen-Bolognese', 'Herzhaft, sättigend und schnell gemacht: eine Bolognese aus roten Linsen, die sich vor dem Original nicht verstecken muss.', 45, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel, {2} Karotten und die Selleriestange fein würfeln und {2} Knoblauchzehen hacken. {3 EL} Olivenöl in einem Topf erhitzen und das Gemüse darin 8 Minuten andünsten.
+2. {2 EL} Tomatenmark zugeben und 1 Minute anrösten. Mit {100 ml} Rotwein ablöschen und einkochen lassen.
+3. {150 g} rote Linsen in einem Sieb waschen. Mit {700 ml} passierten Tomaten, {300 ml} Gemüsebrühe und {1 TL} Oregano zugeben und etwa 20 Minuten köcheln lassen, bis die Linsen weich sind und die Soße eingedickt ist. Gelegentlich umrühren, Linsen setzen leicht an.
+4. Mit {1 EL} Balsamicoessig, Salz und Pfeffer abschmecken. Der Essig gibt die Tiefe, die sonst vom Fleisch kommt.
+5. {400 g} Spaghetti in reichlich Salzwasser bissfest kochen, abgießen und mit der Soße und gezupftem Basilikum servieren.
+
+Tipp: Geriebener Hartkäse oder Hefeflocken obendrauf machen die Linsen-Bolognese perfekt.
 
 Guten Appetit!', 'linsen-bolognese.jpg');
 
@@ -5995,11 +6039,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spaghetti Carbonara
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti Carbonara', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Spaghetti in reichlich Salzwasser bissfest kochen.
-2. Speck (am besten Guanciale oder Pancetta) in Streifen schneiden, in einer großen Pfanne ohne Öl knusprig auslassen und die Pfanne vom Herd nehmen.
-3. Eier trennen, dabei ein Ei ganz lassen. Eigelbe und das ganze Ei mit dem fein geriebenen Pecorino und reichlich frisch gemahlenem Pfeffer verquirlen. Die Eiweiße anderweitig verwenden.
-4. Spaghetti abgießen und dabei eine Tasse Nudelwasser auffangen. Nudeln in die Pfanne zum Speck geben und durchschwenken.
-5. Eimasse und {3-4 EL} Nudelwasser zugeben und alles zügig vermengen, bis eine cremige Soße entsteht. Die Pfanne darf nicht zu heiß sein, sonst stockt das Ei. Sofort servieren – ganz ohne Sahne.
+VALUES ('Spaghetti Carbonara', 'Die echte römische Carbonara: knuspriger Speck, Eigelb, Pecorino und viel Pfeffer, ganz ohne Sahne.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin bissfest kochen.
+2. Inzwischen {150 g} Speck, am besten Guanciale oder Pancetta, in Streifen schneiden. In einer großen Pfanne ohne Öl bei mittlerer Hitze knusprig auslassen und die Pfanne vom Herd nehmen.
+3. {4} Eier trennen, dabei ein Ei ganz lassen. Die Eigelbe und das ganze Ei mit {80 g} fein geriebenem Pecorino und reichlich frisch gemahlenem Pfeffer zu einer dicken Creme verquirlen. Die Eiweiße anderweitig verwenden.
+4. Die Spaghetti abgießen und dabei eine Tasse Nudelwasser auffangen. Die Nudeln in die Pfanne zum Speck geben und gut durchschwenken. Die Pfanne soll warm, aber nicht mehr heiß sein.
+5. Die Eimasse und {3-4 EL} Nudelwasser zugeben und alles zügig vermengen, bis eine glänzende, cremige Soße entsteht. Wird die Pfanne zu heiß, stockt das Ei zu Rührei. Dann lieber noch etwas Nudelwasser zugeben.
+6. Sofort auf vorgewärmte Teller verteilen und mit etwas Pecorino und Pfeffer bestreuen.
+
+Tipp: Wichtig ist, dass alles gleichzeitig fertig ist. Die Eier also vorbereiten, bevor die Nudeln aus dem Wasser kommen.
 
 Guten Appetit!', 'spaghetti-carbonara.jpg');
 
@@ -6012,11 +6059,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spaghetti Aglio e Olio
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti Aglio e Olio', NULL, 15, 4, 'Portionen', 'Ganzjährig', '1. Spaghetti in reichlich Salzwasser bissfest kochen.
-2. Knoblauch in feine Scheiben und Chili in Ringe schneiden, Petersilie hacken.
-3. Olivenöl in einer großen Pfanne bei mittlerer Hitze erwärmen und Knoblauch und Chili darin 2–3 Minuten hellgolden braten.
-4. Spaghetti mit etwas Nudelwasser in die Pfanne geben und kräftig schwenken, bis sich eine leichte Emulsion bildet.
-5. Petersilie unterheben, mit Salz abschmecken und sofort servieren.
+VALUES ('Spaghetti Aglio e Olio', 'Knoblauch, Öl, Chili und Petersilie, sonst nichts: das Nudelgericht für Mitternacht, in 15 Minuten fertig.', 15, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Wasser aufkochen, kräftig salzen und {400 g} Spaghetti darin bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. Inzwischen {6} Knoblauchzehen schälen und in feine Scheiben schneiden, die Chilischote in dünne Ringe schneiden und die Petersilie fein hacken.
+3. {100 ml} Olivenöl in einer großen Pfanne bei mittlerer Hitze erwärmen. Knoblauch und Chili darin 2–3 Minuten braten, bis der Knoblauch hellgolden ist. Er darf nicht braun werden, sonst wird das Öl bitter. Notfalls die Pfanne kurz vom Herd ziehen.
+4. Die abgetropften Spaghetti mit einer kleinen Kelle Nudelwasser in die Pfanne geben und kräftig schwenken, bis sich Öl und Nudelwasser zu einer leicht cremigen Emulsion verbinden.
+5. Die Petersilie unterheben, mit Salz abschmecken und sofort servieren.
+
+Tipp: In Italien kommt traditionell kein Käse darauf. Wer mag, darf trotzdem.
 
 Guten Appetit!', 'spaghetti-aglio-e-olio.jpg');
 
@@ -6029,11 +6078,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Penne all'arrabbiata
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Penne all''arrabbiata', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Knoblauch fein hacken und die Chilis in feine Ringe schneiden (für weniger Schärfe entkernen).
-2. Olivenöl erhitzen und Knoblauch und Chili 1 Minute andünsten.
-3. Tomaten zugeben, mit Salz und einer Prise Zucker würzen und 15 Minuten sämig einkochen.
-4. Penne bissfest kochen, abgießen und mit der Soße vermengen.
-5. Mit gehackter Petersilie bestreuen und servieren.
+VALUES ('Penne all''arrabbiata', '„Wütende“ Penne in einer scharfen Tomatensoße mit Knoblauch und Chili: einfach, feurig und schnell.', 25, 4, 'Portionen', 'Ganzjährig', '1. {3} Knoblauchzehen fein hacken und {2} Chilischoten in feine Ringe schneiden. Für weniger Schärfe die Kerne entfernen.
+2. {4 EL} Olivenöl in einer großen Pfanne erhitzen und Knoblauch und Chili darin bei mittlerer Hitze 1 Minute andünsten, bis es duftet.
+3. {800 g} gehackte Tomaten zugeben, mit Salz und einer Prise Zucker würzen und offen etwa 15 Minuten sämig einkochen lassen.
+4. Inzwischen reichlich Salzwasser aufkochen und {400 g} Penne darin bissfest kochen. Abgießen, dabei etwas Nudelwasser auffangen.
+5. Die Penne in die Soße geben und gut durchschwenken. Ist sie zu dick, einen Schuss Nudelwasser zugeben.
+6. Mit gehackter Petersilie bestreuen und servieren.
+
+Tipp: Wer es richtig scharf mag, lässt die Chilikerne drin oder gibt noch Chiliflocken dazu.
 
 Guten Appetit!', 'penne-all-arrabbiata.jpg');
 
@@ -6048,11 +6100,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Lasagne Bolognese
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lasagne Bolognese', NULL, 150, 6, 'Portionen', 'Ganzjährig', '1. Zwiebel, Karotte und Knoblauch fein würfeln und in Öl andünsten. Hackfleisch zugeben und krümelig braten.
-2. Tomatenmark anrösten, mit Rotwein ablöschen, passierte Tomaten und Oregano zugeben, salzen, pfeffern und 30 Minuten köcheln.
-3. Für die Béchamel Butter schmelzen, Mehl anschwitzen und nach und nach die Milch einrühren. 5 Minuten köcheln und mit Salz, Pfeffer und Muskat würzen.
-4. Ofen auf 180 °C vorheizen. In eine Auflaufform abwechselnd Fleischsoße, Lasagneplatten, Béchamel und etwas Parmesan schichten und mit Béchamel abschließen.
-5. Mit zerzupftem Mozzarella und dem restlichen Parmesan bestreuen und ca. 40 Minuten goldbraun backen. Vor dem Anschneiden 10 Minuten ruhen lassen.
+VALUES ('Lasagne Bolognese', 'Schicht um Schicht Fleischsoße, Béchamel und Pasta, goldbraun überbacken: das Sonntagsessen, auf das sich alle freuen.', 150, 6, 'Portionen', 'Ganzjährig', '1. Die Zwiebel, die Karotte und {2} Knoblauchzehen fein würfeln. {2 EL} Olivenöl in einem Topf erhitzen und das Gemüse darin 3 Minuten andünsten. {500 g} Rinderhackfleisch zugeben und krümelig braten, bis es leicht gebräunt ist.
+2. {2 EL} Tomatenmark einrühren und 1 Minute anrösten. Mit {100 ml} Rotwein ablöschen und einkochen lassen. {700 ml} passierte Tomaten und {1 TL} Oregano zugeben, salzen, pfeffern und offen 30 Minuten köcheln lassen.
+3. Für die Béchamel {60 g} Butter in einem Topf schmelzen, {60 g} Mehl einrühren und 1 Minute anschwitzen. {750 ml} Milch nach und nach mit dem Schneebesen einrühren, damit keine Klümpchen entstehen. 5 Minuten köcheln lassen, bis die Soße dicklich ist, und mit Salz, Pfeffer und Muskatnuss würzen.
+4. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und {60 g} Parmesan reiben. Den Boden einer Auflaufform mit etwas Fleischsoße bedecken. Dann abwechselnd {250 g} Lasagneplatten, Fleischsoße, Béchamel und etwas Parmesan schichten. Mit Lasagneplatten und Béchamel abschließen.
+5. {125 g} Mozzarella zerzupfen und mit dem restlichen Parmesan darüberstreuen. Etwa 40 Minuten backen, bis die Oberfläche goldbraun ist und blubbert.
+6. Vor dem Anschneiden 10 Minuten ruhen lassen, dann halten die Schichten zusammen.
+
+Tipp: Am Vortag zubereitet und aufgewärmt schmeckt die Lasagne noch besser.
 
 Guten Appetit!', 'lasagne-bolognese.jpg');
 
@@ -6077,11 +6132,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gemüse-Lasagne mit Ricotta und Spinat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gemüse-Lasagne mit Ricotta und Spinat', NULL, 90, 6, 'Portionen', 'Ganzjährig', '1. Zucchini, Aubergine, Paprika und Zwiebel würfeln, Knoblauch hacken und alles in Olivenöl 10 Minuten anbraten.
-2. Tomaten und Oregano zugeben, salzen, pfeffern und 15 Minuten einköcheln. Basilikum unterrühren.
-3. Spinat blanchieren, gut ausdrücken, hacken und mit Ricotta, Salz, Pfeffer und Muskat verrühren.
-4. Ofen auf 180 °C vorheizen. Gemüsesoße, Lasagneplatten und Ricotta-Spinat abwechselnd in eine Auflaufform schichten und mit Gemüsesoße abschließen.
-5. Mit Mozzarella und geriebenem Hartkäse bestreuen und ca. 40 Minuten backen.
+VALUES ('Gemüse-Lasagne mit Ricotta und Spinat', 'Bunte Sommergemüse in Tomatensoße, cremiger Ricotta mit Spinat und geschmolzener Mozzarella: eine Lasagne ohne Fleisch, die niemanden enttäuscht.', 90, 6, 'Portionen', 'Ganzjährig', '1. {2} Zucchini, die Aubergine, {2} Paprika und die Zwiebel in kleine Würfel schneiden, {2} Knoblauchzehen hacken. {3 EL} Olivenöl in einem großen Topf erhitzen und das Gemüse darin 10 Minuten anbraten, bis es leicht Farbe nimmt.
+2. {800 g} gehackte Tomaten und {1 TL} Oregano zugeben, salzen, pfeffern und 15 Minuten einköcheln lassen. Die Basilikumblätter zupfen und unterrühren.
+3. {200 g} Spinat in kochendem Wasser 1 Minute blanchieren, abschrecken, gut ausdrücken und hacken. Mit {250 g} Ricotta, Salz, Pfeffer und etwas Muskatnuss verrühren.
+4. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Etwas Gemüsesoße in eine Auflaufform geben. Dann abwechselnd {250 g} Lasagneplatten, Gemüsesoße und Ricotta-Spinat schichten. Mit Gemüsesoße abschließen.
+5. {250 g} Mozzarella in Scheiben oder Stücken darauf verteilen und {50 g} geriebenen Hartkäse darüberstreuen. Etwa 40 Minuten backen, bis die Oberfläche goldbraun ist.
+6. 10 Minuten ruhen lassen und in Stücke schneiden.
+
+Tipp: Die Gemüsesoße soll eher flüssig sein, die Lasagneplatten nehmen beim Backen viel davon auf.
 
 Guten Appetit!', 'gemuese-lasagne-mit-ricotta-und-spinat.jpg');
 
@@ -6105,11 +6163,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gnocchi mit Salbeibutter
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gnocchi mit Salbeibutter', NULL, 60, 4, 'Portionen', 'Ganzjährig', '1. Mehligkochende Kartoffeln mit Schale weich kochen, pellen, noch heiß durch eine Kartoffelpresse drücken und ausdampfen lassen.
-2. Mit Mehl, Ei, Salz und Muskat rasch zu einem weichen Teig verkneten – nicht zu lange kneten.
-3. Teig zu daumendicken Rollen formen, in 2 cm lange Stücke schneiden und mit einer Gabel Rillen eindrücken.
-4. Gnocchi portionsweise in siedendes Salzwasser geben und herausheben, sobald sie an der Oberfläche schwimmen.
-5. Butter mit Salbei in einer Pfanne aufschäumen lassen, die Gnocchi darin schwenken und mit Käse und Pfeffer servieren.
+VALUES ('Gnocchi mit Salbeibutter', 'Selbst gemachte Kartoffelgnocchi, zart wie Wolken, in nussiger Salbeibutter geschwenkt.', 60, 4, 'Portionen', 'Ganzjährig', '1. {1000 g} mehligkochende Kartoffeln mit Schale in Salzwasser weich kochen, abgießen und kurz ausdampfen lassen. Noch heiß pellen und durch eine Kartoffelpresse auf die Arbeitsfläche drücken. Etwas abkühlen lassen.
+2. {250 g} Mehl, {1} Ei, Salz und etwas Muskatnuss zugeben und alles rasch zu einem weichen, glatten Teig verkneten. Nicht zu lange kneten, sonst werden die Gnocchi zäh. Klebt der Teig sehr, noch etwas Mehl zugeben.
+3. Den Teig portionsweise zu daumendicken Rollen formen und in 2 cm lange Stücke schneiden. Jedes Stück mit einer Gabel leicht eindrücken, so entstehen die typischen Rillen, in denen sich die Soße fängt.
+4. Reichlich Salzwasser aufkochen und die Hitze reduzieren, bis es nur noch siedet. Die Gnocchi portionsweise hineingeben und mit einer Schaumkelle herausheben, sobald sie an der Oberfläche schwimmen. Das dauert etwa 2 Minuten.
+5. {80 g} Butter in einer großen Pfanne schmelzen, {12} Salbeiblätter zugeben und aufschäumen lassen, bis die Butter leicht nussig duftet und die Blätter knusprig sind. Die Gnocchi darin schwenken.
+6. Mit {50 g} geriebenem Hartkäse und frisch gemahlenem Pfeffer servieren.
+
+Tipp: Zuerst einen Probe-Gnocco kochen. Zerfällt er, noch etwas Mehl in den Teig kneten.
 
 Guten Appetit!', 'gnocchi-mit-salbeibutter.jpg');
 
@@ -6125,11 +6186,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Chili con Carne
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chili con Carne', NULL, 90, 6, 'Portionen', 'Ganzjährig', '1. Zwiebeln, Knoblauch, Paprika und Chilis würfeln bzw. hacken.
-2. Hackfleisch in Öl krümelig und kräftig anbraten. Zwiebeln, Knoblauch und Chili zugeben und mitbraten.
-3. Tomatenmark und Gewürze 1 Minute mitrösten. Tomaten, Brühe und Paprika zugeben und zugedeckt 45 Minuten köcheln lassen.
-4. Abgespülte Bohnen und Mais zugeben und weitere 15 Minuten köcheln. Schokolade einrühren – sie rundet die Schärfe ab.
-5. Mit Salz und Pfeffer abschmecken und mit einem Klecks saurer Sahne servieren.
+VALUES ('Chili con Carne', 'Ein großer Topf voller Hackfleisch, Bohnen, Mais und Gewürzen, mit einem Stück Schokolade abgerundet: wärmend und perfekt für viele Gäste.', 90, 6, 'Portionen', 'Ganzjährig', '1. {2} Zwiebeln und {3} Knoblauchzehen fein hacken. {2} Paprika entkernen und würfeln. {2} Chilischoten entkernen und fein hacken.
+2. {2 EL} Rapsöl in einem großen Topf stark erhitzen. {600 g} Rinderhackfleisch darin krümelig und kräftig braun anbraten. Zwiebeln, Knoblauch und Chili zugeben und 3 Minuten mitbraten.
+3. {2 EL} Tomatenmark, {2 TL} Kreuzkümmel, {2 TL} Paprikapulver, {1 TL} Oregano und eine Prise Zimt einrühren und 1 Minute mitrösten. {800 g} gehackte Tomaten, {300 ml} Rinderbrühe und die Paprika zugeben und zugedeckt bei schwacher Hitze 45 Minuten köcheln lassen.
+4. {480 g} Kidneybohnen und {280 g} Mais abspülen, abtropfen lassen und zugeben. Weitere 15 Minuten köcheln. {20 g} Zartbitterschokolade einrühren, sie rundet die Schärfe ab und macht die Soße samtig.
+5. Mit Salz und Pfeffer abschmecken und mit je einem Klecks von {150 g} saurer Sahne servieren.
+
+Tipp: Dazu passen Reis, Tortillachips oder frisches Brot. Chili schmeckt am zweiten Tag noch besser.
 
 Guten Appetit!', 'chili-con-carne.jpg');
 
@@ -6155,11 +6218,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Chili sin Carne
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chili sin Carne', NULL, 60, 6, 'Portionen', 'Ganzjährig', '1. Zwiebeln, Knoblauch, Chili und Paprika würfeln bzw. hacken. Süßkartoffel schälen und in 1 cm große Würfel schneiden.
-2. Zwiebeln, Knoblauch und Chili in Öl andünsten und Tomatenmark und Gewürze 1 Minute mitrösten.
-3. Süßkartoffel, Paprika, Tomaten und Brühe zugeben und 25 Minuten köcheln.
-4. Abgespülte Bohnen und Mais zugeben und weitere 10 Minuten köcheln.
-5. Mit Limettensaft, Salz und Pfeffer abschmecken und mit Koriander und Avocadowürfeln servieren.
+VALUES ('Chili sin Carne', 'Rauchig, würzig und herzhaft ganz ohne Fleisch: Chili mit Süßkartoffeln, zwei Sorten Bohnen und frischer Avocado.', 60, 6, 'Portionen', 'Ganzjährig', '1. {2} Zwiebeln, {3} Knoblauchzehen und die Chilischote fein hacken. {2} Paprika entkernen und würfeln. {400 g} Süßkartoffeln schälen und in 1 cm große Würfel schneiden.
+2. {3 EL} Olivenöl in einem großen Topf erhitzen. Zwiebeln, Knoblauch und Chili darin 3 Minuten andünsten. {2 EL} Tomatenmark, {2 TL} Kreuzkümmel, {2 TL} geräuchertes Paprikapulver und {1 TL} Oregano zugeben und 1 Minute mitrösten. Das geräucherte Paprika bringt die Tiefe, die sonst das Fleisch liefert.
+3. Süßkartoffeln, Paprika, {800 g} gehackte Tomaten und {300 ml} Gemüsebrühe zugeben und zugedeckt etwa 25 Minuten köcheln lassen.
+4. {240 g} Kidneybohnen, {240 g} schwarze Bohnen und {280 g} Mais abspülen und zugeben. Weitere 10 Minuten köcheln lassen.
+5. Mit dem Saft der Limette, Salz und Pfeffer abschmecken.
+6. Die Avocado würfeln. Das Chili mit Avocadowürfeln und gezupftem Koriander servieren.
+
+Tipp: Mit Reis, Tortillachips oder in Tortillas gewickelt wird daraus eine vollwertige Mahlzeit.
 
 Guten Appetit!', 'chili-sin-carne.jpg');
 
@@ -6186,11 +6252,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rote-Linsen-Dal
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote-Linsen-Dal', NULL, 35, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Zwiebel, Knoblauch und Ingwer fein hacken und in Kokosöl andünsten.
-3. Kurkuma, Kreuzkümmel, Garam Masala und Chili 1 Minute mitrösten.
-4. Gewaschene Linsen, Tomaten, Kokosmilch und Brühe zugeben und ca. 20 Minuten köcheln, bis die Linsen zerfallen. Gelegentlich umrühren.
-5. Mit Limettensaft und Salz abschmecken und mit Koriander zum Reis servieren.
+VALUES ('Rote-Linsen-Dal', 'Cremig, wärmend und voller Gewürze: indisches Linsencurry mit Kokosmilch, das in einer halben Stunde auf dem Tisch steht.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis waschen und nach Packungsangabe garen.
+2. Die Zwiebel, {3} Knoblauchzehen und {20 g} Ingwer fein hacken. {2 EL} Kokosöl in einem Topf erhitzen und alles darin 3 Minuten andünsten.
+3. {1 TL} Kurkuma, {1 TL} Kreuzkümmel, {1 TL} Garam Masala und {0.5 TL} Chiliflocken zugeben und 1 Minute mitrösten, bis es intensiv duftet.
+4. {250 g} rote Linsen in einem Sieb waschen, bis das Wasser klar bleibt. Mit {400 g} gehackten Tomaten, {400 ml} Kokosmilch und {400 ml} Gemüsebrühe zugeben. Etwa 20 Minuten köcheln lassen, bis die Linsen zerfallen und das Dal cremig ist. Gelegentlich umrühren, Linsen setzen leicht an.
+5. Mit dem Saft der Limette und Salz abschmecken. Mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Ist das Dal zu dick, mit etwas Wasser verdünnen. Es dickt beim Stehen nach.
 
 Guten Appetit!', 'rote-linsen-dal.jpg');
 
@@ -6213,11 +6281,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Chana Masala
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chana Masala', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Zwiebeln fein würfeln und in Öl ca. 10 Minuten goldbraun braten. Knoblauch, Ingwer und Chili fein hacken und 2 Minuten mitbraten.
-3. Kreuzkümmel, Koriander, Kurkuma und die Hälfte des Garam Masala 1 Minute mitrösten.
-4. Tomaten und abgetropfte Kichererbsen mit {150 ml} Wasser zugeben und 20 Minuten köcheln. Einige Kichererbsen am Topfrand zerdrücken, damit die Soße bindet.
-5. Mit dem restlichen Garam Masala, Zitronensaft und Salz abschmecken und mit Koriander zum Reis servieren.
+VALUES ('Chana Masala', 'Kichererbsen in würziger Tomaten-Zwiebel-Soße: eines der beliebtesten Gerichte Nordindiens, einfach und voller Aroma.', 40, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis waschen und nach Packungsangabe garen.
+2. {2} Zwiebeln fein würfeln. {2 EL} Rapsöl in einem Topf erhitzen und die Zwiebeln darin bei mittlerer Hitze etwa 10 Minuten goldbraun braten. Diese Geduld bringt die Süße und Tiefe in die Soße. {3} Knoblauchzehen, {20 g} Ingwer und die Chilischote fein hacken und 2 Minuten mitbraten.
+3. {1 TL} Kreuzkümmel, {2 TL} gemahlenen Koriander, {1 TL} Kurkuma und die Hälfte von {2 TL} Garam Masala zugeben und 1 Minute mitrösten.
+4. {400 g} gehackte Tomaten, {480 g} abgetropfte Kichererbsen und {150 ml} Wasser zugeben und 20 Minuten köcheln lassen. Einige Kichererbsen am Topfrand mit dem Löffel zerdrücken, das macht die Soße sämig.
+5. Mit dem restlichen Garam Masala, dem Saft der halben Zitrone und Salz abschmecken. Mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Dazu passt warmes Naan-Brot und ein Klecks Joghurt.
 
 Guten Appetit!', 'chana-masala.jpg');
 
@@ -6239,11 +6309,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Butter Chicken
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Butter Chicken', NULL, 120, 4, 'Portionen', 'Ganzjährig', '1. Entbeintes Hähnchen in mundgerechte Stücke schneiden. Mit Joghurt, je {1 TL} Garam Masala und Paprika, Kurkuma, der Hälfte von geriebenem Knoblauch und Ingwer, Zitronensaft und Salz mindestens 1 Stunde marinieren.
-2. Hähnchen in einer heißen Pfanne mit {1 EL} Butter portionsweise kräftig anbraten und herausnehmen.
-3. Zwiebel fein würfeln und in der restlichen Butter weich dünsten. Restlichen Knoblauch und Ingwer, Kreuzkümmel, restliches Garam Masala und Paprika 1 Minute mitrösten.
-4. Passierte Tomaten und Zucker zugeben, 10 Minuten köcheln und fein pürieren. Sahne einrühren.
-5. Hähnchen in die Soße geben und 10 Minuten sanft garen. Reis garen und alles mit Koriander bestreut servieren.
+VALUES ('Butter Chicken', 'Zartes, mariniertes Hähnchen in einer samtigen, leicht süßen Tomaten-Butter-Soße: Indiens beliebtestes Curry.', 120, 4, 'Portionen', 'Ganzjährig', '1. {700 g} entbeintes Hähnchenschenkelfleisch in mundgerechte Stücke schneiden. {3} Knoblauchzehen und {30 g} Ingwer fein reiben. {150 g} Joghurt mit {1 TL} Garam Masala, {1 TL} Paprikapulver, {1 TL} Kurkuma, der Hälfte von Knoblauch und Ingwer, dem Saft der halben Zitrone und Salz verrühren. Das Fleisch darin wenden und abgedeckt mindestens 1 Stunde im Kühlschrank marinieren.
+2. {1 EL} Butter in einer großen Pfanne stark erhitzen. Das Hähnchen portionsweise mit der anhaftenden Marinade kräftig anbraten, bis es leicht gebräunt ist, und herausnehmen.
+3. Die Zwiebel fein würfeln und in der restlichen Butter bei mittlerer Hitze 5 Minuten weich dünsten. Den restlichen Knoblauch und Ingwer, {1 TL} Kreuzkümmel sowie das restliche Garam Masala und Paprikapulver zugeben und 1 Minute mitrösten.
+4. {400 ml} passierte Tomaten und {1 TL} Zucker zugeben und 10 Minuten köcheln lassen. Die Soße mit dem Stabmixer fein pürieren und {150 ml} Sahne einrühren.
+5. Das Hähnchen in die Soße geben und bei schwacher Hitze 10 Minuten sanft garen, bis es durch ist.
+6. Inzwischen {300 g} Basmatireis nach Packungsangabe garen. Das Butter Chicken mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Die Marinade kann auch über Nacht einziehen, dann wird das Fleisch noch zarter.
 
 Guten Appetit!', 'butter-chicken.jpg');
 
@@ -6267,11 +6340,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Palak Paneer
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Palak Paneer', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Spinat waschen, 1 Minute blanchieren, in Eiswasser abschrecken und mit etwas Kochwasser fein pürieren.
-2. Paneer würfeln, in {1 EL} Butterschmalz rundherum goldbraun braten und herausnehmen.
-3. Zwiebel, Knoblauch, Ingwer und Chili fein hacken und mit dem Kreuzkümmel im restlichen Butterschmalz andünsten. Kurkuma und gewürfelte Tomaten zugeben und 5 Minuten köcheln.
-4. Spinatpüree und Sahne einrühren und 5 Minuten köcheln lassen.
-5. Paneer zugeben und mit Garam Masala, Zitronensaft und Salz abschmecken. Dazu passen Reis oder Naan.
+VALUES ('Palak Paneer', 'Leuchtend grünes Spinatcurry mit goldbraun gebratenem indischem Frischkäse.', 40, 4, 'Portionen', 'Ganzjährig', '1. {600 g} Spinat waschen und in kochendem Wasser 1 Minute blanchieren. Sofort in Eiswasser abschrecken, so bleibt er leuchtend grün. Mit etwas Kochwasser im Mixer fein pürieren.
+2. {250 g} Paneer in 2 cm große Würfel schneiden. {1 EL} Butterschmalz in einer Pfanne erhitzen und die Würfel darin rundherum goldbraun braten. Herausnehmen.
+3. Die Zwiebel, {3} Knoblauchzehen, {20 g} Ingwer und die Chilischote fein hacken. Im restlichen Butterschmalz mit {1 TL} Kreuzkümmel 3 Minuten andünsten. {0.5 TL} Kurkuma und {2} gewürfelte Tomaten zugeben und 5 Minuten köcheln lassen, bis die Tomaten zerfallen.
+4. Das Spinatpüree und {100 ml} Sahne einrühren und 5 Minuten köcheln lassen. Nicht zu lange, sonst verliert der Spinat seine Farbe.
+5. Den Paneer zugeben und mit {1 TL} Garam Masala, dem Saft der halben Zitrone und Salz abschmecken. Mit Reis oder Naan servieren.
+
+Tipp: Paneer gibt es im Asialaden oder gut sortierten Supermarkt. Halloumi ist ein guter Ersatz.
 
 Guten Appetit!', 'palak-paneer.jpg');
 
@@ -6292,11 +6367,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rotes Thai-Curry mit Tofu und Gemüse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rotes Thai-Curry mit Tofu und Gemüse', NULL, 35, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Tofu trocken tupfen, würfeln, mit Stärke bestäuben und in {2 EL} Öl rundherum knusprig braten. Herausnehmen.
-2. Restliches Öl im Wok erhitzen und die Currypaste 1 Minute anrösten.
-3. Kokosmilch und Brühe zugießen und aufkochen. Brokkoliröschen und Paprikastreifen zugeben und 5 Minuten köcheln.
-4. Zuckerschoten und Tofu zugeben und 2 Minuten mitgaren.
-5. Mit Limettensaft, Zucker und Salz abschmecken und mit (am besten Thai-)Basilikum zum Reis servieren.
+VALUES ('Rotes Thai-Curry mit Tofu und Gemüse', 'Knuspriger Tofu und knackiges Gemüse in würziger roter Kokos-Currysoße mit Limette und Basilikum.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen.
+2. {400 g} Tofu in ein Küchentuch wickeln und mit einem schweren Topf beschwert 10 Minuten auspressen. In Würfel schneiden und mit {1 EL} Speisestärke bestäuben. {2 EL} Rapsöl in einer Pfanne erhitzen und den Tofu darin rundherum knusprig braten. Herausnehmen.
+3. Das restliche Öl im Wok erhitzen und {2 EL} rote Currypaste darin 1 Minute anrösten, bis sie duftet.
+4. {400 ml} Kokosmilch und {200 ml} Gemüsebrühe zugießen und aufkochen. {300 g} Brokkoli in Röschen und die Paprika in Streifen zugeben und 5 Minuten köcheln lassen.
+5. {150 g} Zuckerschoten und den Tofu zugeben und 2 Minuten mitgaren. Der Tofu soll nur kurz in der Soße liegen, damit er knusprig bleibt.
+6. Mit dem Saft der Limette, {1 TL} braunem Zucker und Salz abschmecken. Mit Basilikum, am besten Thai-Basilikum, bestreuen und mit dem Reis servieren.
+
+Tipp: Viele rote Currypasten enthalten Garnelenpaste. Für eine vegane Variante auf die Zutatenliste achten.
 
 Guten Appetit!', 'rotes-thai-curry-mit-tofu-und-gemuese.jpg');
 
@@ -6317,11 +6395,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grünes Thai-Curry mit Hähnchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünes Thai-Curry mit Hähnchen', NULL, 35, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Hähnchen in dünne Streifen schneiden und das Zitronengras andrücken.
-2. Kokosöl im Wok erhitzen und die Currypaste 1 Minute anrösten. Mit der Hälfte der Kokosmilch ablöschen und köcheln, bis sich das Öl absetzt.
-3. Hähnchen zugeben und 3 Minuten garen. Restliche Kokosmilch, Brühe und Zitronengras zugeben.
-4. Zucchini, Paprika und Bohnen in mundgerechten Stücken zugeben und 5 Minuten köcheln.
-5. Mit Fischsauce, Zucker und Limettensaft abschmecken, Zitronengras entfernen und mit Basilikum zum Reis servieren.
+VALUES ('Grünes Thai-Curry mit Hähnchen', 'Zartes Hähnchen und Gemüse in aromatischer grüner Kokos-Currysoße mit Zitronengras und Basilikum.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {500 g} Hähnchenbrust in dünne Streifen schneiden. Die Zitronengrasstange mit dem Messerrücken andrücken, so gibt sie mehr Aroma ab.
+2. {1 EL} Kokosöl im Wok erhitzen und {2 EL} grüne Currypaste darin 1 Minute anrösten. Mit der Hälfte von {400 ml} Kokosmilch ablöschen und köcheln lassen, bis sich am Rand das Öl absetzt. So entfaltet die Paste ihr volles Aroma.
+3. Das Hähnchen zugeben und 3 Minuten garen. Die restliche Kokosmilch, {200 ml} Hühnerbrühe und das Zitronengras zugeben.
+4. Die Zucchini und die Paprika in mundgerechte Stücke schneiden, {150 g} grüne Bohnen putzen und halbieren. Alles zugeben und 5 Minuten köcheln lassen.
+5. Mit {2 EL} Fischsauce, {1 TL} braunem Zucker und dem Saft der Limette abschmecken. Es soll scharf, salzig, süß und sauer zugleich schmecken. Das Zitronengras entfernen.
+6. Mit Basilikumblättern bestreuen und mit dem Reis servieren.
+
+Tipp: Die Schärfe hängt stark von der Currypaste ab. Lieber mit weniger beginnen und nachwürzen.
 
 Guten Appetit!', 'gruenes-thai-curry-mit-haehnchen.jpg');
 
@@ -6342,11 +6423,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pad Thai mit Garnelen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pad Thai mit Garnelen', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Breite Reisnudeln nach Packungsangabe in warmem Wasser einweichen und abtropfen lassen.
-2. Tamarindenpaste, Fischsauce, Zucker und {3 EL} Wasser zu einer Soße verrühren.
-3. Öl im Wok stark erhitzen, gehackten Knoblauch und Garnelen 2 Minuten braten und an den Rand schieben. Eier hineinschlagen und unter Rühren stocken lassen.
-4. Nudeln und Soße zugeben und unter Wenden 2–3 Minuten braten, bis die Soße aufgesogen ist.
-5. Sojasprossen und Frühlingszwiebeln unterheben. Mit gehackten Erdnüssen, Chiliflocken, Koriander und Limettenspalten servieren.
+VALUES ('Pad Thai mit Garnelen', 'Thailands berühmtestes Nudelgericht: gebratene Reisnudeln mit Garnelen, Ei, Sprossen und Erdnüssen in süß-saurer Tamarindensoße.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} breite Reisnudeln nach Packungsangabe in warmem Wasser einweichen, bis sie biegsam, aber noch fest sind. Abtropfen lassen.
+2. {2 EL} Tamarindenpaste, {3 EL} Fischsauce, {2 EL} braunen Zucker und {3 EL} Wasser zu einer Soße verrühren.
+3. {3 EL} Rapsöl im Wok stark erhitzen. {2} gehackte Knoblauchzehen und {300 g} Garnelen darin 2 Minuten braten, bis die Garnelen rosa sind. An den Rand schieben. {2} Eier in die Mitte schlagen und unter Rühren stocken lassen.
+4. Die Nudeln und die Soße zugeben und unter ständigem Wenden 2–3 Minuten braten, bis die Soße aufgesogen ist und die Nudeln weich sind. Sind sie noch zu fest, einen Schuss Wasser zugeben.
+5. {150 g} Sojasprossen und {4} Frühlingszwiebeln in Stücken unterheben.
+6. {50 g} Erdnüsse grob hacken. Das Pad Thai mit Erdnüssen, {0.5 TL} Chiliflocken, gezupftem Koriander und Limettenspalten servieren.
+
+Tipp: Alle Zutaten vor dem Braten bereitstellen, im Wok geht alles sehr schnell.
 
 Guten Appetit!', 'pad-thai-mit-garnelen.jpg');
 
@@ -6367,11 +6451,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gebratener Reis mit Ei
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebratener Reis mit Ei', NULL, 20, 2, 'Portionen', 'Ganzjährig', '1. Reis am besten am Vortag garen und abgedeckt im Kühlschrank auskühlen lassen.
-2. Karotte fein würfeln, Frühlingszwiebeln in Ringe schneiden und den Knoblauch hacken.
-3. {1 EL} Öl im Wok stark erhitzen, die verquirlten Eier darin unter Rühren stocken lassen und herausnehmen.
-4. Restliches Öl erhitzen und Karotte, Erbsen, Knoblauch und das Weiße der Frühlingszwiebeln 2 Minuten pfannenrühren.
-5. Reis zugeben und unter ständigem Wenden 4–5 Minuten braten. Sojasauce, Sesamöl, Ei und das Frühlingszwiebelgrün unterheben und mit Pfeffer abschmecken.
+VALUES ('Gebratener Reis mit Ei', 'Resteessen deluxe: gebratener Reis vom Vortag mit Gemüse, Ei und Sojasauce, schneller als jeder Lieferdienst.', 20, 2, 'Portionen', 'Ganzjährig', '1. {200 g} Reis am besten schon am Vortag garen und abgedeckt im Kühlschrank auskühlen lassen. Frisch gekochter Reis klebt in der Pfanne, kalter Reis wird körnig und knusprig.
+2. Die Karotte fein würfeln, {3} Frühlingszwiebeln in Ringe schneiden und das Weiße vom Grün trennen. Den Knoblauch hacken.
+3. {1 EL} Rapsöl im Wok oder einer großen Pfanne stark erhitzen. {3} verquirlte Eier hineingießen, unter Rühren stocken lassen und herausnehmen.
+4. Das restliche Öl erhitzen. Karotte, {100 g} Erbsen, Knoblauch und das Weiße der Frühlingszwiebeln 2 Minuten unter Rühren braten.
+5. Den Reis zugeben, die Klumpen mit dem Pfannenwender zerdrücken und unter ständigem Wenden 4–5 Minuten braten, bis er heiß ist und leicht knistert.
+6. {3 EL} Sojasauce und {1 TL} Sesamöl zugeben, das Ei und das Frühlingszwiebelgrün unterheben und mit Pfeffer abschmecken.
+
+Tipp: Fast jedes Gemüse und jeder Fleischrest vom Vortag passt hinein.
 
 Guten Appetit!', 'gebratener-reis-mit-ei.jpg');
 
@@ -6388,11 +6475,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Teriyaki-Lachs mit Reis und Brokkoli
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Teriyaki-Lachs mit Reis und Brokkoli', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Brokkoli in Röschen teilen und 4 Minuten dämpfen.
-2. Für die Teriyakisoße Sojasauce, Honig, Reisessig, geriebenen Ingwer, gepressten Knoblauch und {3 EL} Wasser verrühren. Stärke mit {1 EL} Wasser anrühren.
-3. Lachs in {4 Stücke} teilen und in Öl auf der Hautseite 4 Minuten braten, wenden und 2 Minuten weiterbraten.
-4. Soße angießen und aufkochen, Stärke einrühren und den Lachs unter Begießen glasieren, bis die Soße sirupartig ist.
-5. Lachs mit Reis und Brokkoli anrichten und mit Sesam und Frühlingszwiebelringen bestreuen.
+VALUES ('Teriyaki-Lachs mit Reis und Brokkoli', 'Saftiger Lachs in glänzender, süß-salziger Teriyaki-Glasur mit Reis und Brokkoli: in einer halben Stunde fertig.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {400 g} Brokkoli in Röschen teilen und in einem Topf mit Dämpfeinsatz 4 Minuten dämpfen, bis er bissfest ist.
+2. Für die Teriyakisoße {4 EL} Sojasauce, {2 EL} Honig, {1 EL} Reisessig, {10 g} fein geriebenen Ingwer, die gepresste Knoblauchzehe und {3 EL} Wasser verrühren. {1 TL} Speisestärke mit {1 EL} kaltem Wasser glatt rühren.
+3. {600 g} Lachsfilet trocken tupfen und in {4} Stücke teilen. {1 EL} Rapsöl in einer Pfanne erhitzen und den Lachs auf der Hautseite 4 Minuten braten, bis die Haut knusprig ist. Wenden und 2 Minuten weiterbraten.
+4. Die Soße angießen und aufkochen. Die angerührte Stärke einrühren und den Lachs unter ständigem Begießen glasieren, bis die Soße sirupartig eingedickt ist. Das geht schnell, also dabeibleiben.
+5. Den Lachs mit Reis und Brokkoli anrichten, mit der restlichen Soße beträufeln und mit {1 EL} Sesam und Frühlingszwiebelringen bestreuen.
+
+Tipp: Statt Lachs schmeckt die Soße genauso gut zu Hähnchen oder Tofu.
 
 Guten Appetit!', 'teriyaki-lachs-mit-reis-und-brokkoli.jpg');
 
@@ -6411,11 +6500,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Poke Bowl mit Lachs
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Poke Bowl mit Lachs', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Sushireis waschen, bis das Wasser klar bleibt, und nach Packungsangabe garen. Reisessig, Zucker und Salz verrühren und unter den warmen Reis heben.
-2. Lachs in Sushiqualität in 1,5 cm große Würfel schneiden und mit Sojasauce, Sesamöl und Limettensaft 15 Minuten marinieren.
-3. Edamame 3 Minuten kochen und abschrecken. Avocado, Gurke und Mango würfeln.
-4. Reis auf Schalen verteilen und Lachs, Avocado, Gurke, Mango und Edamame darauf anrichten.
-5. Mit Frühlingszwiebeln, Sesam und Noristreifen bestreuen.
+VALUES ('Poke Bowl mit Lachs', 'Hawaii in der Schüssel: marinierter roher Lachs auf Sushireis mit Avocado, Mango, Gurke und Edamame.', 40, 4, 'Portionen', 'Ganzjährig', '1. {300 g} Sushireis in einem Sieb waschen, bis das Wasser klar bleibt, und nach Packungsangabe garen. {3 EL} Reisessig, {1 EL} Zucker und {1 TL} Salz verrühren, bis sich alles gelöst hat, und vorsichtig unter den warmen Reis heben. Abkühlen lassen.
+2. {400 g} Lachsfilet in Sushi-Qualität in 1,5 cm große Würfel schneiden. Mit {4 EL} Sojasauce, {1 EL} Sesamöl und dem Saft der Limette mischen und 15 Minuten im Kühlschrank marinieren.
+3. {150 g} Edamame in kochendem Salzwasser 3 Minuten garen und kalt abschrecken. {2} Avocados, die Gurke und die Mango schälen bzw. entkernen und würfeln.
+4. Den Reis auf Schalen verteilen. Lachs, Avocado, Gurke, Mango und Edamame nebeneinander darauf anrichten und mit etwas Marinade beträufeln.
+5. {2} Frühlingszwiebeln in Ringe schneiden, das Noriblatt mit einer Schere in feine Streifen schneiden. Beides mit {1 EL} Sesam darüberstreuen.
+
+Tipp: Lachs für Poke Bowls unbedingt in Sushi-Qualität kaufen und am selben Tag verwenden. Alternativ geht auch marinierter Tofu.
 
 Guten Appetit!', 'poke-bowl-mit-lachs.jpg');
 
@@ -6437,11 +6528,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gebratene Udon-Nudeln mit Gemüse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebratene Udon-Nudeln mit Gemüse', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Udon-Nudeln nach Packungsangabe kurz in heißem Wasser lockern und abtropfen lassen.
-2. Shiitake in Scheiben, Pak Choi in Streifen, Karotte und Paprika in feine Streifen schneiden. Knoblauch und Ingwer hacken.
-3. Öl im Wok stark erhitzen und Pilze, Karotte und Paprika 3 Minuten pfannenrühren. Knoblauch, Ingwer und Pak Choi zugeben und 2 Minuten mitbraten.
-4. Nudeln, Sojasauce und Ahornsirup zugeben und alles 2 Minuten durchschwenken.
-5. Mit Sesamöl, Frühlingszwiebelringen und Sesam servieren.
+VALUES ('Gebratene Udon-Nudeln mit Gemüse', 'Dicke, weiche Udon-Nudeln mit Shiitake, Pak Choi und buntem Gemüse aus dem Wok: in 25 Minuten fertig.', 25, 4, 'Portionen', 'Ganzjährig', '1. {600 g} Udon-Nudeln nach Packungsangabe kurz in heißem Wasser lockern, bis sie sich voneinander lösen. Abtropfen lassen.
+2. {150 g} Shiitake-Pilze in Scheiben schneiden, {2} Pak Choi in Streifen schneiden und dabei die Stiele von den Blättern trennen. Die Karotte und die Paprika in feine Streifen schneiden. {2} Knoblauchzehen und {15 g} Ingwer fein hacken.
+3. {2 EL} Rapsöl im Wok stark erhitzen. Pilze, Karotte, Paprika und die Pak-Choi-Stiele darin unter ständigem Rühren 3 Minuten braten. Knoblauch, Ingwer und die Pak-Choi-Blätter zugeben und 2 Minuten mitbraten.
+4. Die Nudeln, {4 EL} Sojasauce und {1 EL} Ahornsirup zugeben und alles 2 Minuten durchschwenken, bis die Nudeln heiß und mit Soße überzogen sind.
+5. Mit {1 TL} Sesamöl beträufeln und mit {3} in Ringe geschnittenen Frühlingszwiebeln und {1 EL} Sesam bestreuen.
+
+Tipp: Ein Spiegelei oder etwas gebratener Tofu obendrauf machen die Nudeln noch sättigender.
 
 Guten Appetit!', 'gebratene-udon-nudeln-mit-gemuese.jpg');
 
@@ -6461,11 +6554,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bibimbap mit Tofu
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bibimbap mit Tofu', NULL, 50, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Tofu würfeln, in {1 EL} Rapsöl knusprig braten und mit {1 EL} Sojasauce ablöschen.
-3. Spinat und Sprossen kurz blanchieren, ausdrücken und mit {1 EL} Sesamöl, gepresstem Knoblauch und etwas Sojasauce anmachen. Karotten und Zucchini in Streifen und Pilze in Scheiben schneiden und nacheinander kurz im restlichen Rapsöl anbraten.
-4. Gochujang mit {1 EL} Sesamöl, {1 EL} Sojasauce, Zucker und {1 EL} Wasser zu einer Soße verrühren. Spiegeleier braten.
-5. Reis in Schalen füllen, Gemüse und Tofu kreisförmig darauf anrichten, je ein Spiegelei in die Mitte setzen, mit restlichem Sesamöl beträufeln und mit Sesam bestreuen. Mit der Soße servieren und am Tisch alles vermischen.
+VALUES ('Bibimbap mit Tofu', 'Koreas bunte Reisschale: viele kleine Gemüsebeilagen, knuspriger Tofu, ein Spiegelei und scharfe Gochujang-Soße, am Tisch vermischt.', 50, 4, 'Portionen', 'Ganzjährig', '1. {300 g} Sushireis nach Packungsangabe garen und warm halten.
+2. {300 g} Tofu trocken tupfen und würfeln. In {1 EL} Rapsöl rundherum knusprig braten und mit {1 EL} Sojasauce ablöschen.
+3. {200 g} Spinat und {150 g} Sojasprossen nacheinander je 1 Minute blanchieren, kalt abschrecken und gut ausdrücken. Beides getrennt mit je etwas Sesamöl, gepresstem Knoblauch und einem Spritzer Sojasauce anmachen. {2} Karotten und die Zucchini in feine Streifen schneiden, {150 g} Shiitake in Scheiben. Alles nacheinander kurz im restlichen Rapsöl anbraten und leicht salzen.
+4. Für die Soße {3 EL} Gochujang mit {1 EL} Sesamöl, {1 EL} Sojasauce, {1 TL} Zucker und {1 EL} Wasser glatt rühren.
+5. {4} Spiegeleier braten, das Eigelb soll flüssig bleiben.
+6. Den Reis in Schalen füllen. Gemüse und Tofu in kleinen Häufchen kreisförmig darauf anrichten und je ein Spiegelei in die Mitte setzen. Mit dem restlichen Sesamöl beträufeln und mit {1 EL} Sesam bestreuen. Mit der Soße servieren und am Tisch alles kräftig vermischen.
+
+Tipp: Gochujang, die koreanische Chilipaste, gibt es im Asialaden. Sie hält sich im Kühlschrank monatelang.
 
 Guten Appetit!', 'bibimbap-mit-tofu.jpg');
 
@@ -6487,11 +6583,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ofen-Falafel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Falafel', NULL, 45, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 200 °C vorheizen. Kichererbsen abspülen und sehr gut trocken tupfen.
-2. Mit Zwiebel, Knoblauch, Kräutern, Gewürzen, Zitronensaft, Salz und Pfeffer im Mixer grob zerkleinern – es soll keine glatte Paste werden.
-3. Stärke und Backpulver unterkneten und mit feuchten Händen {20} kleine Bällchen formen. Leicht flach drücken.
-4. Auf ein mit Backpapier belegtes Blech setzen, rundherum mit Olivenöl bepinseln und ca. 25 Minuten backen, nach der Hälfte der Zeit wenden.
-5. Mit Hummus und Salat im Fladenbrot oder als Bowl servieren.
+VALUES ('Ofen-Falafel', 'Würzige Kichererbsenbällchen voller Kräuter, im Ofen statt in der Fritteuse gebacken: außen knusprig, innen saftig.', 45, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {480 g} Kichererbsen abspülen und auf einem Küchentuch sehr gut trocken tupfen. Zu feuchte Kichererbsen machen die Falafel matschig.
+2. Kichererbsen, die grob geschnittene Zwiebel, {2} Knoblauchzehen, Petersilie, Koriandergrün, {2 TL} Kreuzkümmel, {1 TL} gemahlenen Koriander, den Saft der halben Zitrone, Salz und Pfeffer im Mixer grob zerkleinern. Es soll eine körnige Masse werden, keine glatte Paste.
+3. {3 EL} Speisestärke und {0.5 TL} Backpulver unterkneten. Mit feuchten Händen {20} kleine Bällchen formen und leicht flach drücken, so werden sie gleichmäßiger knusprig.
+4. Auf ein Blech mit Backpapier setzen und rundherum mit {4 EL} Olivenöl bepinseln. Etwa 25 Minuten backen, nach der Hälfte der Zeit wenden.
+5. Mit Hummus, Salat und Joghurtsoße im Fladenbrot oder als Bowl servieren.
+
+Tipp: Die Masse 30 Minuten im Kühlschrank ruhen lassen, dann lassen sich die Bällchen leichter formen.
 
 Guten Appetit!', 'ofen-falafel.jpg');
 
