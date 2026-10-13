@@ -1,9 +1,9 @@
 CREATE TABLE recipes (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
-    preparation_time INTEGER NOT NULL,                     -- Gesamtzeit in Minuten
-    servings INTEGER NOT NULL CHECK (servings > 0),        -- Grundmenge, auf die sich alle amounts beziehen
-    servings_unit TEXT NOT NULL DEFAULT 'Portionen',       -- z. B. 'Portionen', 'Stück', 'Springform (26 cm)'
+    preparation_time INTEGER NOT NULL,                     -- total time in minutes
+    servings INTEGER NOT NULL CHECK (servings > 0),        -- the amounts are for this many
+    servings_unit TEXT NOT NULL DEFAULT 'Portionen',       -- e.g. 'Portionen', 'Stück', 'Springform (26 cm)'
     season TEXT NOT NULL CHECK (season IN ('Frühling', 'Sommer', 'Herbst', 'Winter', 'Ganzjährig')),
     meal TEXT NOT NULL DEFAULT 'hauptgericht',             -- 'frühstück', 'suppe', 'kuchen', 'dessert', …; see seed.sql
     warm INTEGER NOT NULL DEFAULT 1,                       -- 1 = eaten warm, 0 = cold
@@ -13,7 +13,7 @@ CREATE TABLE recipes (
     image_author TEXT,                                     -- photo credit, set in images.sql
     image_license TEXT,                                    -- e.g. 'CC BY-SA 4.0'
     image_license_url TEXT,                                -- the licence text, NULL for public domain
-    image_source TEXT                                      -- page of the photo on Wikimedia Commons
+    image_source TEXT                                      -- page of the photo on Wikimedia Commons or Pixabay
 );
 
 CREATE TABLE ingredients (
@@ -28,7 +28,7 @@ CREATE TABLE ingredients (
 CREATE TABLE recipe_ingredients (
     recipe_id INTEGER NOT NULL,
     ingredient_id INTEGER NOT NULL,
-    amount REAL CHECK (amount IS NULL OR amount > 0),      -- Menge für recipes.servings; NULL = nach Geschmack
+    amount REAL CHECK (amount IS NULL OR amount > 0),      -- for recipes.servings; NULL = to taste
     unit TEXT,                                             -- g, ml, EL, TL, Prise, Bund, Zweig, Scheibe, ...
     FOREIGN KEY (recipe_id) REFERENCES recipes(id),
     FOREIGN KEY (ingredient_id) REFERENCES ingredients(id),

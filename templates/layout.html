@@ -97,14 +97,6 @@
         </div>
     </header>
 
-    {% if get_flashed_messages() %}
-        <div class="container mt-3">
-            <div class="alert glass mb-0 text-center" role="alert">
-                {{ get_flashed_messages() | join(" ") }}
-            </div>
-        </div>
-    {% endif %}
-
     <main class="{% block main_class %}container pb-5{% endblock %}">
         {% block main %}{% endblock %}
     </main>

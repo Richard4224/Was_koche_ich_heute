@@ -1,4 +1,4 @@
--- Photo credits, written by tools/fetch_images.py. The photos are from Wikimedia Commons and live in
+-- Photo credits, written by tools/fetch_images.py. The photos are from Wikimedia Commons and Pixabay and live in
 -- static/images/; get_db() runs this file after seed.sql when it builds recipes.db.
 
 BEGIN TRANSACTION;

@@ -4,7 +4,9 @@ from datetime import datetime
 from urllib.parse import urlencode
 
 from flask import Flask, jsonify, render_template, request
-from helpers import get_moon_phase, get_moon_phase_index, get_season, get_dish_of_the_day, search_recipes, get_ingredient_names, get_pantry_names, get_recipe, get_image_credits, return_error, get_weather_data, describe_weather, get_place, get_ip_location, DIETS, MAIN_GROUPS, LATITUDE
+from helpers import (DIETS, LATITUDE, MAIN_GROUPS, describe_weather, get_dish_of_the_day, get_image_credits,
+                     get_ingredient_names, get_ip_location, get_moon_phase, get_moon_phase_index, get_pantry_names,
+                     get_place, get_recipe, get_season, get_weather_data, return_error, search_recipes)
 
 app = Flask(__name__)
 
