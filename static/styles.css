@@ -1107,18 +1107,10 @@ a {
     text-align: right;
 }
 
-/* Spices without an amount: name first, a quiet note on the right */
-.ingredient-list li.to-taste {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.75rem;
-}
-
-.to-taste-label {
-    font-size: 0.85rem;
-    font-style: italic;
-    color: var(--text-muted);
+/* "n. G." (nach Geschmack) for salt, pepper & co.: the full words show on hover */
+.amount abbr {
+    text-decoration: none;
+    cursor: help;
 }
 
 .step-list {

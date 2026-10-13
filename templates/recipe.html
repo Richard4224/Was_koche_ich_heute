@@ -78,17 +78,14 @@
 
             <ul class="ingredient-list">
                 {% for ingredient in recipe.ingredients %}
-                    {% if ingredient.amount %}
-                        <li>
+                    <li>
+                        {% if ingredient.amount %}
                             <span class="amount">{{ ingredient.amount }}</span>
-                            <span>{{ ingredient.name }}</span>
-                        </li>
-                    {% else %}
-                        <li class="to-taste">
-                            <span>{{ ingredient.name }}</span>
-                            <span class="to-taste-label">nach Geschmack</span>
-                        </li>
-                    {% endif %}
+                        {% else %}
+                            <span class="amount"><abbr title="nach Geschmack">n. G.</abbr></span>
+                        {% endif %}
+                        <span>{{ ingredient.name }}</span>
+                    </li>
                 {% endfor %}
             </ul>
         </aside>
