@@ -3662,11 +3662,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Apfelpfannkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelpfannkuchen', NULL, 30, 4, 'Portionen', 'Herbst', '1. Mehl, Milch, Eier, {1 EL} Zucker und Salz zu einem glatten Teig verrühren und 10 Minuten quellen lassen.
-2. Äpfel schälen, entkernen und in dünne Scheiben schneiden.
-3. Etwas Butter in einer Pfanne erhitzen, einige Apfelscheiben darin 1 Minute anbraten und mit einer Kelle Teig übergießen.
-4. Bei mittlerer Hitze goldbraun backen, wenden und fertig backen. Mit dem restlichen Teig ebenso verfahren.
-5. Restlichen Zucker mit Zimt mischen und über die Pfannkuchen streuen.
+VALUES ('Apfelpfannkuchen', 'Goldbraune Pfannkuchen mit eingebackenen Apfelscheiben und Zimtzucker: ein süßes Mittagessen, das Kinder und Erwachsene lieben.', 30, 4, 'Portionen', 'Herbst', '1. {250 g} Mehl, {400 ml} Milch, {4} Eier, {1 EL} Zucker und eine Prise Salz mit dem Schneebesen zu einem glatten Teig verrühren. 10 Minuten quellen lassen, dann werden die Pfannkuchen zarter.
+2. {3} Äpfel schälen, vierteln, entkernen und in dünne Scheiben schneiden.
+3. Etwas Butter in einer beschichteten Pfanne bei mittlerer Hitze schmelzen. Eine Lage Apfelscheiben hineinlegen und 1 Minute anbraten, bis sie leicht weich werden. Dann mit einer Kelle Teig übergießen und die Pfanne schwenken, sodass der Boden bedeckt ist.
+4. Backen, bis die Unterseite goldbraun und die Oberfläche fast gestockt ist, etwa 3 Minuten. Mithilfe eines Tellers wenden und weitere 2 Minuten backen. Mit dem restlichen Teig, der restlichen Butter und den restlichen Äpfeln genauso verfahren. Fertige Pfannkuchen im Ofen bei 80 °C warm halten.
+5. Den restlichen Zucker mit {1 TL} Zimt mischen und über die heißen Pfannkuchen streuen.
+
+Tipp: Säuerliche Äpfel wie Boskoop passen am besten. Dazu schmeckt ein Klecks Apfelmus.
 
 Guten Appetit!', 'apfelpfannkuchen.jpg');
 
@@ -3681,10 +3683,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Apfel-Zimt-Porridge
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfel-Zimt-Porridge', NULL, 15, 2, 'Portionen', 'Herbst', '1. Haferflocken mit Sojamilch, Salz und einer Prise Zimt aufkochen und unter Rühren 5 Minuten köcheln lassen.
-2. Apfel waschen und entkernen. Die Hälfte reiben und unter den Porridge rühren.
-3. Restlichen Apfel in Spalten schneiden und mit {1 EL} Ahornsirup und dem restlichen Zimt in einer Pfanne 3 Minuten karamellisieren.
-4. Porridge in Schalen füllen und mit Apfelspalten, gehackten Walnüssen und restlichem Ahornsirup servieren.
+VALUES ('Apfel-Zimt-Porridge', 'Cremiger Haferbrei mit karamellisierten Apfelspalten und gerösteten Walnüssen: wärmt an grauen Herbstmorgen.', 15, 2, 'Portionen', 'Herbst', '1. {100 g} Haferflocken, {400 ml} Sojamilch und eine Prise Salz in einen kleinen Topf geben. Bei mittlerer Hitze unter Rühren aufkochen, dann die Hitze herunterschalten und 5 Minuten leise köcheln lassen. Immer wieder umrühren, damit nichts am Boden ansetzt. Der Porridge ist fertig, wenn er cremig ist und die Flocken weich sind. Ist er zu fest, einfach einen Schuss Milch nachgießen.
+2. Währenddessen den Apfel waschen, vierteln und entkernen. Eine Hälfte grob reiben und mit der Hälfte des Zimts unter den Porridge rühren. Den Topf vom Herd nehmen und zugedeckt warm halten.
+3. {20 g} Walnüsse grob hacken und in einer Pfanne ohne Fett 2 Minuten rösten, bis sie duften. Nicht aus den Augen lassen, sie verbrennen schnell. Herausnehmen.
+4. Den restlichen Apfel in dünne Spalten schneiden und mit {1 EL} Ahornsirup und dem restlichen Zimt in dieselbe Pfanne geben. Bei mittlerer Hitze 3–4 Minuten karamellisieren, bis die Spalten goldbraun glänzen und leicht weich sind, dabei einmal wenden.
+5. Den Porridge auf Schalen verteilen, Apfelspalten und Walnüsse darauf anrichten und mit dem restlichen Ahornsirup beträufeln. Am besten sofort essen, er dickt beim Abkühlen nach.
+
+Tipp: Mit Hafermilch statt Sojamilch wird er von allein etwas süßer.
 
 Guten Appetit!', 'apfel-zimt-porridge.jpg');
 
@@ -3698,10 +3703,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Birne Helene
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Birne Helene', NULL, 40, 4, 'Portionen', 'Herbst', '1. Birnen schälen, halbieren und das Kerngehäuse entfernen.
-2. {500 ml} Wasser mit Zucker, Zitronensaft und der aufgeschlitzten Vanilleschote aufkochen. Birnen darin bei kleiner Hitze 10–15 Minuten pochieren, bis sie weich sind, und im Sud abkühlen lassen.
-3. Schokolade hacken. Sahne erhitzen, vom Herd nehmen und die Schokolade darin unter Rühren schmelzen.
-4. Birnenhälften mit je einer Kugel Vanilleeis anrichten und mit der warmen Schokoladensoße übergießen.
+VALUES ('Birne Helene', 'Zart pochierte Vanillebirnen, eine Kugel Eis und warme Schokoladensoße: ein Dessertklassiker, der nie aus der Mode kommt.', 40, 4, 'Portionen', 'Herbst', '1. {4} Birnen schälen, längs halbieren und das Kerngehäuse mit einem Teelöffel herauslösen. Sofort mit etwas Zitronensaft beträufeln, damit sie nicht braun werden.
+2. Die Vanilleschote längs aufschlitzen. {500 ml} Wasser mit {100 g} Zucker, dem restlichen Zitronensaft und der Vanilleschote aufkochen. Die Birnen hineinlegen und bei schwacher Hitze 10–15 Minuten pochieren, bis sie sich mit einem Messer leicht einstechen lassen. Im Sud abkühlen lassen, so werden sie besonders aromatisch.
+3. {100 g} Zartbitterschokolade grob hacken. {100 ml} Sahne in einem kleinen Topf erhitzen, bis sie dampft, vom Herd nehmen und die Schokolade darin unter Rühren schmelzen, bis die Soße glatt und glänzend ist.
+4. Die Birnenhälften gut abtropfen lassen und mit je einer Kugel Vanilleeis auf Tellern anrichten. Mit der warmen Schokoladensoße übergießen und sofort servieren.
+
+Tipp: Den Pochiersud mit etwas Zitrone aufkochen und als Sirup für Tee oder Schorle verwenden.
 
 Guten Appetit!', 'birne-helene.jpg');
 
@@ -3715,11 +3722,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Birnen, Bohnen und Speck
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Birnen, Bohnen und Speck', NULL, 60, 4, 'Portionen', 'Herbst', '1. Durchwachsenen Speck am Stück in {1 l} Wasser aufkochen und zugedeckt ca. 30 Minuten garen.
-2. Kartoffeln schälen und separat in Salzwasser garen.
-3. Bohnen putzen und in Stücke brechen. Mit Bohnenkraut zum Speck geben, die kleinen Kochbirnen ungeschält obenauf legen und 15–20 Minuten mitgaren.
-4. Speck in Scheiben schneiden. Die Brühe mit der angerührten Stärke leicht binden und mit Butter, Salz und Pfeffer abschmecken.
-5. Speck, Bohnen, Birnen und Kartoffeln mit etwas Soße anrichten und mit Petersilie bestreuen. Ein Klassiker aus Norddeutschland.
+VALUES ('Birnen, Bohnen und Speck', 'Süße Birnen, grüne Bohnen und deftiger Speck in einem Topf: der Hamburger Sommerklassiker, der Gegensätze zusammenbringt.', 60, 4, 'Portionen', 'Herbst', '1. {400 g} durchwachsenen Speck am Stück mit {1000 ml} Wasser in einem großen Topf aufkochen und zugedeckt bei schwacher Hitze etwa 30 Minuten garen.
+2. Inzwischen {800 g} Kartoffeln schälen und in einem separaten Topf in Salzwasser etwa 20 Minuten garen.
+3. {750 g} grüne Bohnen waschen, die Enden abknipsen und in 4 cm lange Stücke brechen. Mit {3} Bohnenkrautzweigen zum Speck geben. {4} kleine Kochbirnen waschen und mit Schale und Stiel obenauf legen. Zugedeckt 15–20 Minuten mitgaren, bis Bohnen und Birnen weich sind.
+4. Den Speck herausnehmen und in Scheiben schneiden. Die Brühe aufkochen, {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Brühe damit leicht binden. Mit {1 EL} Butter, Salz und Pfeffer abschmecken.
+5. Speck, Bohnen, Birnen und Kartoffeln mit etwas Soße anrichten und mit gehackter Petersilie bestreuen.
+
+Tipp: Die kleinen, festen Kochbirnen gibt es im Spätsommer auf norddeutschen Märkten. Feste Tafelbirnen gehen auch, sie brauchen nur 10 Minuten.
 
 Guten Appetit!', 'birnen-bohnen-und-speck.jpg');
 
@@ -3736,11 +3745,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zwetschgendatschi
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zwetschgendatschi', NULL, 120, 1, 'Blech', 'Herbst', '1. Mehl mit Hefe, {50 g} Zucker und Salz mischen. Lauwarme Milch, weiche Butter und Ei zugeben und zu einem glatten Hefeteig kneten. 1 Stunde gehen lassen.
-2. Zwetschgen waschen, entsteinen und an der Spitze leicht einschneiden, sodass sie sich auffächern lassen.
-3. Teig auf einem gefetteten Blech ausrollen und die Zwetschgen dicht an dicht wie Dachziegel daraufsetzen. 15 Minuten gehen lassen. Ofen auf 200 °C vorheizen.
-4. Ca. 30 Minuten backen.
-5. Restlichen Zucker mit Zimt mischen und über den heißen Kuchen streuen. Mit steif geschlagener Sahne servieren.
+VALUES ('Zwetschgendatschi', 'Bayerns Spätsommerkuchen: ein Blech voller saftiger Zwetschgen auf lockerem Hefeteig, mit Zimtzucker und Sahne.', 120, 1, 'Blech', 'Herbst', '1. {500 g} Mehl, die Trockenhefe, {50 g} Zucker und eine Prise Salz mischen. {200 ml} Milch lauwarm erwärmen und mit {80 g} weicher Butter und {1} Ei zugeben. Alles 5–8 Minuten zu einem glatten, geschmeidigen Teig kneten und zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. Inzwischen {2000 g} Zwetschgen waschen, längs einschneiden und entsteinen. Die Hälften an der Spitze noch einmal leicht einschneiden, sodass sie sich auffächern lassen.
+3. Den Teig auf einem gefetteten Blech ausrollen. Die Zwetschgen mit der Schnittfläche nach oben dicht an dicht wie Dachziegel in Reihen daraufsetzen. Je dichter, desto saftiger. 15 Minuten gehen lassen und inzwischen den Ofen auf 200 °C Ober-/Unterhitze vorheizen.
+4. Etwa 30 Minuten backen, bis der Teig am Rand goldbraun ist und die Zwetschgen Saft ziehen.
+5. Den restlichen Zucker mit {1 TL} Zimt mischen und über den heißen Kuchen streuen.
+6. {200 ml} Sahne steif schlagen und zum lauwarmen Datschi servieren.
+
+Tipp: Echte Zwetschgen sind kleiner und fester als Pflaumen und zerlaufen beim Backen nicht. Die beste Zeit ist von August bis September.
 
 Guten Appetit!', 'zwetschgendatschi.jpg');
 
@@ -3757,11 +3769,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Quittengelee
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Quittengelee', NULL, 720, 6, 'Gläser', 'Herbst', '1. Quitten mit einem Tuch abreiben, um den Flaum zu entfernen. Stiel und Blütenansatz entfernen und die Früchte mit Schale und Kerngehäuse grob würfeln.
-2. Mit {2 l} Wasser aufkochen und zugedeckt ca. 45 Minuten weich kochen.
-3. Durch ein mit einem Tuch ausgelegtes Sieb geben und mehrere Stunden, am besten über Nacht, abtropfen lassen. Nicht ausdrücken, sonst wird das Gelee trüb.
-4. {1 l} Quittensaft mit Gelierzucker (2:1) und Zitronensaft aufkochen und 4 Minuten sprudelnd kochen lassen.
-5. Heiß in ausgekochte Gläser füllen und sofort verschließen.
+VALUES ('Quittengelee', 'Goldgelb, klar und mit unverwechselbarem Duft: Gelee aus der Frucht, die man nur gekocht genießen kann.', 720, 6, 'Gläser', 'Herbst', '1. {2000 g} Quitten mit einem trockenen Tuch kräftig abreiben, um den pelzigen Flaum zu entfernen, er schmeckt bitter. Stiel und Blütenansatz abschneiden und die Früchte mit Schale und Kerngehäuse grob würfeln. Die Kerne enthalten viel Pektin, das das Gelee später fest macht.
+2. Die Quitten mit {2000 ml} Wasser in einem großen Topf aufkochen und zugedeckt etwa 45 Minuten weich kochen.
+3. Ein Sieb mit einem sauberen Geschirrtuch auslegen, über einen Topf hängen und die Quitten mit dem Saft hineingießen. Mehrere Stunden, am besten über Nacht, abtropfen lassen. Nicht ausdrücken, sonst wird das Gelee trüb.
+4. Gläser mit Schraubdeckeln 10 Minuten in kochendes Wasser legen und auf einem sauberen Tuch abtropfen lassen.
+5. {1000 ml} Quittensaft abmessen und mit {500 g} Gelierzucker (2:1) und dem Saft der Zitrone in einem großen Topf unter Rühren aufkochen. 4 Minuten sprudelnd kochen lassen. Gelierprobe machen: Ein Teelöffel Gelee auf einem kalten Teller muss nach einer Minute fest werden.
+6. Das Gelee heiß bis knapp unter den Rand in die {6} Gläser füllen und sofort verschließen.
+
+Tipp: Aus dem übrig gebliebenen Fruchtmus lässt sich mit Zucker eingekocht noch Quittenbrot machen.
 
 Guten Appetit!', 'quittengelee.jpg');
 
@@ -3771,11 +3786,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Maronensuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Maronensuppe', NULL, 40, 4, 'Portionen', 'Herbst', '1. Schalotten würfeln, Apfel schälen und würfeln. {50 g} der vorgegarten Maronen fürs Topping beiseitelegen.
-2. Schalotten und Apfel in {1 EL} Butter andünsten, die restlichen Maronen und Thymian zugeben und kurz mitdünsten.
-3. Mit Brühe aufgießen, 20 Minuten köcheln lassen und den Thymian entfernen.
-4. Sahne zugeben, sehr fein pürieren und mit Salz, Pfeffer und Muskat abschmecken.
-5. Beiseitegelegte Maronen grob hacken, in der restlichen Butter rösten und auf die Suppe geben.
+VALUES ('Maronensuppe', 'Samtig, nussig und ein bisschen süß: eine elegante Herbstsuppe aus Esskastanien mit einem Hauch Apfel.', 40, 4, 'Portionen', 'Herbst', '1. {2} Schalotten schälen und würfeln. Den Apfel schälen, entkernen und würfeln. Von {400 g} vorgegarten Maronen {50 g} für das Topping beiseitelegen.
+2. {1 EL} Butter in einem Topf schmelzen und Schalotten und Apfel darin 3 Minuten andünsten. Die restlichen Maronen und {2} Thymianzweige zugeben und 2 Minuten mitdünsten.
+3. Mit {800 ml} Gemüsebrühe aufgießen, aufkochen und zugedeckt 20 Minuten köcheln lassen. Den Thymian herausnehmen.
+4. {150 ml} Sahne zugeben und die Suppe mit dem Stabmixer sehr fein pürieren. Mit Salz, Pfeffer und Muskatnuss abschmecken. Ist sie zu dick, etwas Brühe oder Wasser zugeben.
+5. Die beiseitegelegten Maronen grob hacken und in der restlichen Butter in einer kleinen Pfanne goldbraun rösten. Die Suppe in Teller füllen und die Maronen darüberstreuen.
+
+Tipp: Vakuumierte, vorgegarte Maronen sparen das mühsame Schälen und schmecken genauso gut.
 
 Guten Appetit!', 'maronensuppe.jpg');
 
@@ -3792,10 +3809,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rote-Bete-Salat mit Apfel und Meerrettich
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote-Bete-Salat mit Apfel und Meerrettich', NULL, 70, 4, 'Portionen', 'Herbst', '1. Rote Bete waschen und in Salzwasser je nach Größe 40–60 Minuten garen. Abschrecken, mit Handschuhen schälen und in Würfel oder Stifte schneiden.
-2. Apfel entkernen und würfeln, Zwiebel fein würfeln.
-3. Essig, Zucker, Kümmel, Salz und Pfeffer verrühren und Öl und frisch geriebenen Meerrettich unterrühren.
-4. Alles mischen und mindestens 15 Minuten ziehen lassen.
+VALUES ('Rote-Bete-Salat mit Apfel und Meerrettich', 'Erdig, süß und mit scharfem Meerrettichkick: ein leuchtender Wintersalat, der zu Fisch und Braten passt.', 70, 4, 'Portionen', 'Herbst', '1. {600 g} Rote Bete waschen, die Blätter bis auf 2 cm abschneiden, die Wurzeln dranlassen, so blutet sie nicht aus. In Salzwasser je nach Größe 40–60 Minuten garen, bis sie sich leicht einstechen lässt.
+2. Abgießen, kalt abschrecken und mit Einmalhandschuhen schälen, die Schale lässt sich dann mit den Fingern abreiben. In kleine Würfel oder Stifte schneiden.
+3. Den Apfel waschen, entkernen und würfeln. Die Zwiebel fein würfeln.
+4. {3 EL} Apfelessig, {1 TL} Zucker, {0.5 TL} Kümmel, Salz und Pfeffer verrühren. {3 EL} Rapsöl und {1 EL} frisch geriebenen Meerrettich unterrühren.
+5. Rote Bete, Apfel und Zwiebel mit dem Dressing mischen und mindestens 15 Minuten ziehen lassen.
+
+Tipp: Vakuumierte, vorgegarte Rote Bete spart eine Stunde Kochzeit.
 
 Guten Appetit!', 'rote-bete-salat-mit-apfel-und-meerrettich.jpg');
 
@@ -3812,10 +3832,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rote-Bete-Carpaccio mit Ziegenkäse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote-Bete-Carpaccio mit Ziegenkäse', NULL, 20, 4, 'Portionen', 'Herbst', '1. Vorgegarte Rote Bete in hauchdünne Scheiben hobeln und kreisförmig auf Tellern auslegen.
-2. Walnüsse grob hacken und ohne Fett rösten.
-3. Honig, Balsamico, Öl, Salz und Pfeffer verrühren.
-4. Rucola auf die Rote Bete geben, Ziegenkäse darüberbröseln und Walnüsse darüberstreuen. Mit dem Dressing beträufeln.
+VALUES ('Rote-Bete-Carpaccio mit Ziegenkäse', 'Hauchdünne, rubinrote Scheiben mit cremigem Ziegenkäse, Rucola, Walnüssen und Honig-Balsamico: eine Vorspeise wie im Restaurant.', 20, 4, 'Portionen', 'Herbst', '1. {4} vorgegarte Rote-Bete-Knollen mit einem Gemüsehobel oder sehr scharfen Messer in hauchdünne Scheiben schneiden. Kreisförmig und leicht überlappend auf Tellern auslegen. Handschuhe tragen, Rote Bete färbt stark.
+2. {40 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften.
+3. {1 EL} Honig, {2 EL} Balsamicoessig, {3 EL} Olivenöl, Salz und Pfeffer zu einem Dressing verrühren.
+4. {50 g} Rucola in die Mitte der Teller geben, {120 g} Ziegenkäse darüberbröseln und die Walnüsse darüberstreuen. Alles mit dem Dressing beträufeln und mit etwas frisch gemahlenem Pfeffer servieren.
+
+Tipp: Gemischt mit gelber oder Ringel-Bete sieht das Carpaccio noch farbenfroher aus.
 
 Guten Appetit!', 'rote-bete-carpaccio-mit-ziegenkaese.jpg');
 
@@ -3831,11 +3853,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Borschtsch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Borschtsch', NULL, 90, 6, 'Portionen', 'Herbst', '1. Rote Bete, Karotten und Kartoffeln schälen. Rote Bete und Karotten in Stifte, Kartoffeln in Würfel schneiden. Kohl in feine Streifen schneiden, Zwiebel und Knoblauch hacken.
-2. Zwiebel in Öl andünsten, Rote Bete und Karotten zugeben und 5 Minuten mitdünsten. Tomatenmark, Essig und Zucker einrühren.
-3. Mit Brühe aufgießen, Lorbeer zugeben und 20 Minuten köcheln.
-4. Kartoffeln und Kohl zugeben und weitere 20 Minuten köcheln lassen. Knoblauch einrühren und mit Salz und Pfeffer abschmecken.
-5. Mit einem Klecks Schmand und reichlich Dill servieren.
+VALUES ('Borschtsch', 'Tiefrot, kräftig und säuerlich: die osteuropäische Rote-Bete-Suppe mit Kohl, Schmand und viel Dill.', 90, 6, 'Portionen', 'Herbst', '1. {500 g} Rote Bete, {2} Karotten und {300 g} Kartoffeln schälen. Rote Bete und Karotten in feine Stifte, Kartoffeln in Würfel schneiden. {300 g} Weißkohl in feine Streifen schneiden. Die Zwiebel und {2} Knoblauchzehen fein hacken.
+2. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebel darin glasig dünsten. Rote Bete und Karotten zugeben und 5 Minuten mitdünsten. {2 EL} Tomatenmark, {2 EL} Apfelessig und {1 TL} Zucker einrühren. Die Säure sorgt dafür, dass die Rote Bete ihre leuchtende Farbe behält.
+3. Mit {1500 ml} Gemüsebrühe aufgießen, {2} Lorbeerblätter zugeben und zugedeckt 20 Minuten köcheln lassen.
+4. Kartoffeln und Kohl zugeben und weitere 20 Minuten köcheln lassen, bis alles weich ist. Den Knoblauch einrühren, die Lorbeerblätter entfernen und mit Salz und Pfeffer kräftig abschmecken.
+5. In tiefe Teller füllen und mit je einem Klecks von {150 g} Schmand und reichlich gehacktem Dill servieren.
+
+Tipp: Wie viele Suppen schmeckt Borschtsch am nächsten Tag noch besser. Dazu passt dunkles Brot.
 
 Guten Appetit!', 'borschtsch.jpg');
 
@@ -3858,12 +3882,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Wirsingrouladen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wirsingrouladen', NULL, 90, 4, 'Portionen', 'Herbst', '1. {8} große Wirsingblätter ablösen, in Salzwasser 3 Minuten blanchieren, abschrecken und die dicke Mittelrippe flach schneiden.
-2. Brötchen in Wasser einweichen und ausdrücken. Zwiebel fein würfeln.
-3. Hackfleisch mit Brötchen, Zwiebel, Ei, Senf, Majoran, Salz und Pfeffer verkneten.
-4. Je zwei Blätter überlappend auslegen, ein Viertel der Füllung daraufgeben, die Seiten einschlagen und aufrollen. Mit Küchengarn binden.
-5. Rouladen in Butterschmalz rundherum anbraten, mit Brühe ablöschen, Kümmel zugeben und zugedeckt 40 Minuten schmoren.
-6. Rouladen herausnehmen, Sahne zur Soße geben und mit angerührter Stärke leicht binden. Abschmecken und mit Salzkartoffeln servieren.
+VALUES ('Wirsingrouladen', 'Zarte Wirsingblätter, gefüllt mit würzigem Hackfleisch und in cremiger Soße geschmort: Hausmannskost vom Feinsten.', 90, 4, 'Portionen', 'Herbst', '1. Vom Wirsing {8} große, schöne Außenblätter vorsichtig ablösen. In kochendem Salzwasser 3 Minuten blanchieren, in Eiswasser abschrecken und trocken tupfen. Die dicke Mittelrippe mit einem flachen Schnitt abtragen, damit sich die Blätter gut rollen lassen.
+2. Das Brötchen in Wasser einweichen und gut ausdrücken. Die Zwiebel fein würfeln.
+3. {500 g} Hackfleisch mit Brötchen, Zwiebel, {1} Ei, {1 TL} Senf, {1 TL} Majoran, Salz und Pfeffer gründlich verkneten.
+4. Je zwei Blätter überlappend auslegen, ein Viertel der Füllung daraufgeben, die Seiten einschlagen und von unten fest aufrollen. Mit Küchengarn oder Rouladennadeln fixieren.
+5. {2 EL} Butterschmalz in einem Schmortopf erhitzen und die Rouladen rundherum goldbraun anbraten. Mit {400 ml} Gemüsebrühe ablöschen, {0.5 TL} Kümmel zugeben und zugedeckt bei schwacher Hitze 40 Minuten schmoren.
+6. Die Rouladen herausnehmen und warm halten. {100 ml} Sahne zur Soße geben, {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit leicht binden. Abschmecken, die Rouladen vom Garn befreien und mit der Soße und Salzkartoffeln servieren.
+
+Tipp: Den übrigen Wirsing in feine Streifen schneiden und als Rahmwirsing dazu servieren.
 
 Guten Appetit!', 'wirsingrouladen.jpg');
 
@@ -3884,10 +3910,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Lauch-Kartoffel-Suppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lauch-Kartoffel-Suppe', NULL, 35, 4, 'Portionen', 'Herbst', '1. Lauch putzen, längs halbieren, gründlich waschen und in Ringe schneiden. Kartoffeln und Zwiebel schälen und würfeln.
-2. Zwiebel und Lauch in Butter 5 Minuten andünsten und die Kartoffeln zugeben.
-3. Mit Brühe aufgießen und 20 Minuten köcheln lassen.
-4. Sahne zugeben und grob oder fein pürieren. Mit Salz, Pfeffer und Muskat abschmecken und mit Schnittlauch bestreuen.
+VALUES ('Lauch-Kartoffel-Suppe', 'Mild, cremig und wärmend: eine einfache Suppe aus Lauch und Kartoffeln, die an kalten Tagen guttut.', 35, 4, 'Portionen', 'Herbst', '1. {2} Lauchstangen putzen, die dunkelgrünen, harten Enden abschneiden, längs halbieren und unter fließendem Wasser gründlich waschen, zwischen den Schichten sitzt oft Erde. In Ringe schneiden. {500 g} Kartoffeln und die Zwiebel schälen und würfeln.
+2. {2 EL} Butter in einem großen Topf schmelzen. Zwiebel und Lauch darin bei mittlerer Hitze 5 Minuten andünsten, bis der Lauch zusammenfällt. Die Kartoffeln zugeben und kurz mitdünsten.
+3. Mit {1000 ml} Gemüsebrühe aufgießen, aufkochen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. {100 ml} Sahne zugeben und die Suppe je nach Geschmack grob stampfen oder fein pürieren. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+5. Den Schnittlauch in Röllchen schneiden und über die Suppe streuen.
+
+Tipp: Mit ein paar Scheiben gebratener Wurst oder knusprigem Speck wird sie zur kräftigen Mahlzeit.
 
 Guten Appetit!', 'lauch-kartoffel-suppe.jpg');
 
@@ -3904,11 +3933,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Käse-Lauch-Suppe mit Hackfleisch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käse-Lauch-Suppe mit Hackfleisch', NULL, 40, 6, 'Portionen', 'Herbst', '1. Lauch putzen, gründlich waschen und in feine Ringe schneiden. Zwiebel würfeln.
-2. Hackfleisch in Öl krümelig anbraten, Zwiebel zugeben und mit Salz, Pfeffer und Paprikapulver würzen.
-3. Lauch zugeben und 5 Minuten mitdünsten. Mit Brühe aufgießen und 15 Minuten köcheln lassen.
-4. Schmelzkäse und Sahne einrühren und schmelzen lassen, aber nicht mehr kochen.
-5. Mit Muskat abschmecken. Dazu passt frisches Baguette – ein echter Partyklassiker.
+VALUES ('Käse-Lauch-Suppe mit Hackfleisch', 'Cremig, herzhaft und gemacht für viele Gäste: der Partyklassiker aus einem großen Topf.', 40, 6, 'Portionen', 'Herbst', '1. {3} Lauchstangen putzen, längs halbieren, gründlich waschen und in feine Ringe schneiden. Die Zwiebel würfeln.
+2. {1 EL} Rapsöl in einem großen Topf erhitzen. {500 g} Hackfleisch darin bei hoher Hitze krümelig anbraten, bis es gebräunt ist. Die Zwiebel zugeben und 2 Minuten mitbraten. Mit Salz, Pfeffer und {1 TL} Paprikapulver würzen.
+3. Den Lauch zugeben und 5 Minuten mitdünsten. Mit {1000 ml} Gemüsebrühe aufgießen und 15 Minuten köcheln lassen.
+4. Die Hitze reduzieren. {200 g} Schmelzkäse und {200 ml} Sahne einrühren und unter Rühren schmelzen lassen. Die Suppe soll jetzt nicht mehr kochen, sonst flockt der Käse aus.
+5. Mit Muskatnuss abschmecken und mit frischem Baguette servieren.
+
+Tipp: Die Suppe lässt sich gut am Vortag vorbereiten und vor der Party langsam erwärmen.
 
 Guten Appetit!', 'kaese-lauch-suppe-mit-hackfleisch.jpg');
 
@@ -3926,11 +3957,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hirschgulasch mit Preiselbeeren
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hirschgulasch mit Preiselbeeren', NULL, 160, 4, 'Portionen', 'Herbst', '1. Fleisch trocken tupfen und in 3 cm große Würfel schneiden. Zwiebeln, Karotten und Sellerie würfeln.
-2. Fleisch portionsweise in Butterschmalz kräftig anbraten und herausnehmen.
-3. Gemüse im Bratfett anrösten, Tomatenmark zugeben und kurz mitrösten. Mit einem Drittel des Rotweins ablöschen und einkochen lassen; das zweimal wiederholen.
-4. Fleisch, Brühe, angedrückte Wacholderbeeren, Lorbeer, Piment und Thymian zugeben und zugedeckt ca. 2 Stunden schmoren.
-5. Preiselbeeren und Schokolade einrühren, die Soße mit angerührter Stärke binden und mit Salz und Pfeffer abschmecken. Dazu passen Spätzle oder Klöße.
+VALUES ('Hirschgulasch mit Preiselbeeren', 'Kräftiges Wildgulasch, lange geschmort mit Rotwein, Wacholder und einem Stück Schokolade: das Herz eines Winterabends.', 160, 4, 'Portionen', 'Herbst', '1. {1000 g} Hirschgulasch trocken tupfen und große Stücke auf 3 cm Größe zuschneiden. {2} Zwiebeln, {2} Karotten und {100 g} Knollensellerie schälen und würfeln.
+2. {2 EL} Butterschmalz in einem Schmortopf stark erhitzen. Das Fleisch portionsweise rundherum kräftig braun anbraten und herausnehmen. Nicht zu viel auf einmal, sonst kocht es, statt zu bräunen.
+3. Das Gemüse im Bratfett 5 Minuten anrösten. {2 EL} Tomatenmark zugeben und 1 Minute mitrösten. Mit einem Drittel von {400 ml} Rotwein ablöschen und fast vollständig einkochen lassen. Das noch zweimal mit dem restlichen Wein wiederholen. So entsteht eine tiefdunkle, kräftige Soße.
+4. Fleisch, {400 ml} Rinderbrühe, {6} angedrückte Wacholderbeeren, {2} Lorbeerblätter, {3} Pimentkörner und die Thymianzweige zugeben. Zugedeckt bei schwacher Hitze etwa 2 Stunden schmoren, bis das Fleisch zart ist.
+5. Lorbeer und Thymianzweige herausnehmen. {3 EL} Preiselbeeren und {20 g} Zartbitterschokolade einrühren. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit binden. Mit Salz und Pfeffer abschmecken.
+
+Tipp: Dazu passen Spätzle, Klöße oder Rotkohl. Am nächsten Tag schmeckt das Gulasch noch besser.
 
 Guten Appetit!', 'hirschgulasch-mit-preiselbeeren.jpg');
 
@@ -3954,11 +3987,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rehrücken mit Wacholderrahmsoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rehrücken mit Wacholderrahmsoße', NULL, 60, 4, 'Portionen', 'Herbst', '1. Ofen auf 100 °C vorheizen. Ausgelösten Rehrücken trocken tupfen, von Sehnen befreien, salzen und pfeffern.
-2. Wacholderbeeren im Mörser zerstoßen. Fleisch in Butterschmalz mit Thymian, Rosmarin und der Hälfte des Wacholders rundherum 3–4 Minuten scharf anbraten.
-3. Im Ofen ca. 20–25 Minuten garen, bis die Kerntemperatur 56 °C erreicht. In Alufolie ruhen lassen.
-4. Schalotten im Bratfett andünsten, mit Rotwein ablöschen und einkochen. Brühe, Sahne und restlichen Wacholder zugeben und sämig einkochen.
-5. Soße durch ein Sieb gießen, Preiselbeeren und kalte Butter einrühren und abschmecken. Rehrücken aufschneiden und mit der Soße servieren.
+VALUES ('Rehrücken mit Wacholderrahmsoße', 'Zartrosa gegarter Rehrücken mit cremiger Wacholdersoße und Preiselbeeren: das Festtagsessen für Wildliebhaber.', 60, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 100 °C Ober-/Unterhitze vorheizen und eine Platte zum Vorwärmen hineinstellen. {800 g} ausgelösten Rehrücken trocken tupfen, Sehnen und Silberhaut mit einem scharfen Messer entfernen. Salzen und pfeffern.
+2. {8} Wacholderbeeren im Mörser zerstoßen. {2 EL} Butterschmalz in einer Pfanne stark erhitzen. Das Fleisch mit Thymian, Rosmarin und der Hälfte des Wacholders darin rundherum 3–4 Minuten scharf anbraten.
+3. Den Rehrücken auf der vorgewärmten Platte im Ofen etwa 20–25 Minuten garen, bis er eine Kerntemperatur von 56 °C erreicht hat. Dann in Alufolie gewickelt 5 Minuten ruhen lassen. Ohne Thermometer: Das Fleisch soll auf Druck nachgeben wie ein angespannter Daumenballen.
+4. Für die Soße {2} Schalotten fein würfeln und im Bratfett der Pfanne glasig dünsten. Mit {150 ml} Rotwein ablöschen und auf die Hälfte einkochen. {200 ml} Rinderbrühe, {150 ml} Sahne und den restlichen Wacholder zugeben und sämig einkochen lassen.
+5. Die Soße durch ein Sieb gießen, {2 EL} Preiselbeeren unterrühren und {1 EL} kalte Butter in Stückchen einschwenken, das macht sie glänzend. Mit Salz und Pfeffer abschmecken.
+6. Den Rehrücken in Medaillons schneiden und mit der Soße servieren.
+
+Tipp: Dazu passen Spätzle, Rosenkohl oder Selleriepüree.
 
 Guten Appetit!', 'rehruecken-mit-wacholderrahmsosse.jpg');
 
@@ -3978,10 +4014,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Feigen mit Ziegenkäse und Honig
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Feigen mit Ziegenkäse und Honig', NULL, 20, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C (Grillfunktion) vorheizen.
-2. Feigen am Stielende kreuzweise einschneiden und leicht auseinanderdrücken.
-3. Je ein Stück Ziegenkäse hineinsetzen, mit Honig beträufeln und mit Thymianblättchen und Pfeffer würzen.
-4. 8–10 Minuten überbacken, bis der Käse leicht gebräunt ist. Mit gehackten Walnüssen bestreuen und warm servieren.
+VALUES ('Feigen mit Ziegenkäse und Honig', 'Warme Feigen, gefüllt mit schmelzendem Ziegenkäse, Honig und Thymian: süß, salzig und herrlich herbstlich.', 20, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C mit Grillfunktion vorheizen.
+2. {8} Feigen waschen und trocken tupfen. Am Stielende kreuzweise etwa zwei Drittel tief einschneiden und leicht auseinanderdrücken, sodass sie wie Blüten aussehen.
+3. {150 g} Ziegenkäse in {8} Stücke teilen und in die Feigen setzen. Mit {3 EL} Honig beträufeln und mit den Blättchen von {2} Thymianzweigen und Pfeffer würzen.
+4. Die Feigen in eine ofenfeste Form setzen und 8–10 Minuten überbacken, bis der Käse weich und leicht gebräunt ist.
+5. {40 g} Walnüsse grob hacken, darüberstreuen und die Feigen warm servieren.
+
+Tipp: Als Vorspeise mit etwas Rucola, als Dessert mit einer Kugel Vanilleeis.
 
 Guten Appetit!', 'feigen-mit-ziegenkaese-und-honig.jpg');
 
@@ -3994,11 +4033,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schiacciata all'uva (Trauben-Focaccia)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schiacciata all''uva (Trauben-Focaccia)', NULL, 150, 1, 'Blech', 'Herbst', '1. Mehl, Hefe, {1 EL} Zucker und Salz mischen. {3 EL} Öl und ca. {320 ml} lauwarmes Wasser zugeben, 10 Minuten kneten und 1 Stunde gehen lassen.
-2. Dunkle Trauben waschen und abzupfen.
-3. Teig halbieren. Eine Hälfte auf einem geölten Blech ausbreiten und mit der Hälfte der Trauben und etwas Zucker belegen.
-4. Zweite Teighälfte ausrollen, darauflegen, die Ränder andrücken, mit den restlichen Trauben belegen und diese leicht eindrücken. 30 Minuten gehen lassen. Ofen auf 200 °C vorheizen.
-5. Mit restlichem Zucker, Rosmarinnadeln und dem restlichen Öl bestreuen und ca. 35 Minuten backen.
+VALUES ('Schiacciata all''uva (Trauben-Focaccia)', 'Toskanisches Erntegebäck: ein saftiges Fladenbrot voller süßer, dunkler Trauben mit Rosmarin und Zucker.', 150, 1, 'Blech', 'Herbst', '1. {500 g} Mehl, die Trockenhefe, {1 EL} Zucker und {1 TL} Salz mischen. {3 EL} Olivenöl und etwa {320 ml} lauwarmes Wasser zugeben und 10 Minuten zu einem weichen, glatten Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. {600 g} dunkle Weintrauben waschen, abzupfen und trocken tupfen.
+3. Ein Blech mit etwas Olivenöl einfetten. Den Teig halbieren und eine Hälfte mit den Fingern auf dem Blech zu einem etwa 1 cm dicken Rechteck ausbreiten. Die Hälfte der Trauben darauf verteilen und mit etwas Zucker bestreuen.
+4. Die zweite Teighälfte ebenso groß ausrollen, darauflegen und die Ränder gut andrücken. Die restlichen Trauben darauf verteilen und leicht eindrücken. Zugedeckt 30 Minuten gehen lassen. Inzwischen den Ofen auf 200 °C Ober-/Unterhitze vorheizen.
+5. Mit dem restlichen Zucker, den Nadeln von {2} Rosmarinzweigen und dem restlichen Olivenöl bestreuen. Etwa 35 Minuten backen, bis die Oberfläche goldbraun ist und die Trauben aufplatzen.
+6. Lauwarm oder abgekühlt in Stücke schneiden.
+
+Tipp: In der Toskana nimmt man die kleinen, dunklen Canaiolo-Trauben mit Kernen. Kernlose Trauben machen das Essen einfacher.
 
 Guten Appetit!', 'schiacciata-all-uva-trauben-focaccia.jpg');
 
@@ -4012,11 +4054,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kartoffelpuffer mit Apfelmus
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelpuffer mit Apfelmus', NULL, 40, 4, 'Portionen', 'Herbst', '1. Kartoffeln und Zwiebel schälen und fein reiben. In einem Tuch kräftig ausdrücken, die Flüssigkeit kurz stehen lassen und abgießen – die abgesetzte Stärke zurück zu den Kartoffeln geben.
-2. Kartoffeln mit Eiern, Mehl, Salz und Muskat vermengen.
-3. Reichlich Öl in einer Pfanne erhitzen, je 2 EL Teig hineingeben und flach drücken.
-4. Pro Seite 3–4 Minuten knusprig goldbraun braten und auf Küchenpapier abtropfen lassen.
-5. Heiß mit Apfelmus servieren.
+VALUES ('Kartoffelpuffer mit Apfelmus', 'Knusprige Reibekuchen, frisch aus der Pfanne, mit kühlem Apfelmus: der Duft von Weihnachtsmarkt und Kirmes.', 40, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln und die Zwiebel schälen und auf der feinen Seite der Reibe reiben.
+2. Die Masse in ein sauberes Geschirrtuch geben und über einer Schüssel kräftig ausdrücken. Die Flüssigkeit 5 Minuten stehen lassen, dann vorsichtig abgießen. Am Boden bleibt eine weiße Stärkeschicht, die zurück zu den Kartoffeln kommt. Sie hält die Puffer zusammen.
+3. Die Kartoffeln mit {2} Eiern, {2 EL} Mehl, Salz und etwas Muskatnuss vermengen.
+4. Reichlich Rapsöl in einer großen Pfanne stark erhitzen, der Boden soll gut bedeckt sein. Pro Puffer etwa 2 EL Teig hineingeben und mit dem Löffel flach drücken. Je dünner, desto knuspriger.
+5. Pro Seite 3–4 Minuten knusprig goldbraun braten und auf Küchenpapier abtropfen lassen. Zwischendurch Öl nachgießen. Fertige Puffer im Ofen bei 100 °C warm halten.
+6. Heiß mit {400 g} Apfelmus servieren.
+
+Tipp: Herzhaft schmecken sie mit Lachs und Kräuterquark.
 
 Guten Appetit!', 'kartoffelpuffer-mit-apfelmus.jpg');
 
@@ -4031,12 +4076,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Himmel und Erde
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Himmel und Erde', NULL, 45, 4, 'Portionen', 'Herbst', '1. Kartoffeln schälen, würfeln und in Salzwasser 20 Minuten garen.
-2. Säuerliche Äpfel schälen, entkernen, in Spalten schneiden und mit Zucker, Zitronensaft und wenig Wasser 5 Minuten dünsten.
-3. Kartoffeln abgießen, mit Milch und {30 g} Butter zu Püree stampfen und mit Salz und Muskat würzen. Äpfel unterheben.
-4. Zwiebeln in Ringe schneiden und in der restlichen Butter goldbraun braten.
-5. Blutwurst in dicke Scheiben schneiden und in Butterschmalz pro Seite 2–3 Minuten braten.
-6. Himmel und Erde mit Blutwurst und Röstzwiebeln anrichten und pfeffern. Ein rheinischer Klassiker.
+VALUES ('Himmel und Erde', 'Äpfel vom Himmel, Kartoffeln aus der Erde: ein rheinischer Klassiker mit gebratener Blutwurst und Röstzwiebeln.', 45, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser zugedeckt etwa 20 Minuten weich kochen.
+2. {4} säuerliche Äpfel schälen, entkernen und in Spalten schneiden. Mit {1 EL} Zucker, dem Saft der halben Zitrone und 3 EL Wasser in einem Topf zugedeckt 5 Minuten dünsten. Sie sollen weich sein, aber nicht zerfallen.
+3. Die Kartoffeln abgießen und kurz ausdampfen lassen. {100 ml} Milch erwärmen und mit {30 g} Butter zu den Kartoffeln geben. Alles zu einem Püree stampfen und mit Salz und Muskatnuss würzen. Die Äpfel vorsichtig unterheben.
+4. {2} Zwiebeln in Ringe schneiden und in der restlichen Butter bei mittlerer Hitze etwa 10 Minuten goldbraun braten.
+5. {400 g} Blutwurst in dicke Scheiben schneiden. {2 EL} Butterschmalz in einer zweiten Pfanne erhitzen und die Scheiben pro Seite 2–3 Minuten braten, bis sie außen knusprig sind. Vorsichtig wenden, sie sind weich.
+6. Himmel und Erde mit der Blutwurst und den Röstzwiebeln anrichten und pfeffern.
+
+Tipp: Wer keine Blutwurst mag, nimmt gebratene Leberwurst oder Bratwurst.
 
 Guten Appetit!', 'himmel-und-erde.jpg');
 
@@ -4055,10 +4102,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Obatzda
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Obatzda', NULL, 45, 4, 'Portionen', 'Herbst', '1. Gut gereiften Camembert mit einer Gabel zerdrücken.
-2. Weiche Butter und Frischkäse unterrühren.
-3. Zwiebel sehr fein würfeln und mit Paprikapulver, Kümmel und Bier untermischen. Mit Salz und Pfeffer abschmecken.
-4. 30 Minuten durchziehen lassen, mit Schnittlauch bestreuen und mit Radieschen und Brezeln servieren.
+VALUES ('Obatzda', 'Der bayerische Biergartenklassiker: würzig angemachter Camembert mit Paprika, Zwiebel und einem Schuss Bier.', 45, 4, 'Portionen', 'Herbst', '1. {250 g} gut gereiften Camembert in Stücke schneiden und mit einer Gabel zerdrücken. Die Rinde kann dranbleiben.
+2. {50 g} weiche Butter und {100 g} Frischkäse gründlich unterrühren, bis eine streichfähige Masse entsteht. Ein paar Stückchen Käse dürfen bleiben.
+3. Die halbe Zwiebel sehr fein würfeln. Mit {2 TL} Paprikapulver, {0.5 TL} Kümmel und {2 EL} Bier untermischen. Mit Salz und Pfeffer abschmecken.
+4. Abgedeckt 30 Minuten durchziehen lassen, damit sich die Aromen verbinden.
+5. Den Schnittlauch in Röllchen schneiden und darüberstreuen. Mit den gewaschenen Radieschen, Brezeln oder Bauernbrot servieren.
+
+Tipp: Je reifer der Camembert, desto würziger der Obatzda. Er darf ruhig schon etwas laufen.
 
 Guten Appetit!', 'obatzda.jpg');
 
@@ -4076,11 +4126,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Laugenbrezeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Laugenbrezeln', NULL, 120, 10, 'Stück', 'Herbst', '1. Mehl, Hefe, {1 TL} Salz, Zucker, weiche Butter und {280 ml} lauwarmes Wasser 10 Minuten zu einem festen, glatten Teig kneten. 30 Minuten gehen lassen.
-2. Teig in {10 Stücke} teilen, zu dünnen Strängen mit dickem Bauch rollen und zu Brezeln schlingen. Unabgedeckt im Kühlschrank 30 Minuten ruhen lassen, damit sich eine Haut bildet.
-3. Ofen auf 220 °C vorheizen. {1.5 l} Wasser mit dem Natron aufkochen – Vorsicht, das schäumt.
-4. Brezeln einzeln ca. 30 Sekunden in die siedende Natronlauge legen, mit einem Schaumlöffel herausheben und auf ein Blech mit Backpapier setzen.
-5. Den Bauch mit einem scharfen Messer einschneiden, mit dem restlichen, groben Salz bestreuen und ca. 15–18 Minuten backen.
+VALUES ('Laugenbrezeln', 'Glänzend braun, außen knusprig und innen weich: Brezeln wie vom bayerischen Bäcker, mit Natronlauge aus der eigenen Küche.', 120, 10, 'Stück', 'Herbst', '1. {500 g} Mehl, die Trockenhefe, {1 TL} Salz, {1 TL} Zucker, {40 g} weiche Butter und {280 ml} lauwarmes Wasser 10 Minuten zu einem festen, glatten Teig kneten. Zugedeckt 30 Minuten gehen lassen.
+2. Den Teig in {10} gleich große Stücke teilen. Jedes zu einem etwa 50 cm langen Strang rollen, der in der Mitte dick ist und zu den Enden dünn ausläuft. Die Enden zweimal umeinanderschlingen und auf den dicken Bauch legen. Die Brezeln auf ein bemehltes Brett setzen und unabgedeckt 30 Minuten in den Kühlschrank stellen. So bildet sich eine Haut, und sie behalten in der Lauge ihre Form.
+3. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. {1500 ml} Wasser in einem breiten Topf aufkochen und {4 EL} Natron langsam einrühren. Vorsicht, das schäumt stark auf.
+4. Die Brezeln einzeln mit einem Schaumlöffel etwa 30 Sekunden in die leise siedende Lauge legen, herausheben, gut abtropfen lassen und auf ein Blech mit Backpapier setzen.
+5. Den dicken Bauch mit einem scharfen Messer waagerecht einschneiden und die Brezeln mit grobem Salz bestreuen.
+6. Etwa 15–18 Minuten backen, bis sie tief rotbraun glänzen. Auf einem Gitter abkühlen lassen.
+
+Tipp: Am besten frisch essen. Übrige Brezeln einfrieren und aufgebacken genießen. Dazu passt Obatzda.
 
 Guten Appetit!', 'laugenbrezeln.jpg');
 
@@ -4093,11 +4146,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Wiesn-Hendl (Brathähnchen)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wiesn-Hendl (Brathähnchen)', NULL, 90, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Hähnchen innen und außen waschen und trocken tupfen. Innen salzen und je einen halben Bund Petersilie hineinstecken.
-2. Weiche Butter mit Paprikapulver, Salz und Pfeffer verrühren und die Hähnchen damit rundherum einreiben.
-3. Auf dem Rost – darunter ein Blech mit etwas Wasser – ca. 60–70 Minuten braten und dabei alle 15 Minuten mit dem Bratensaft bestreichen.
-4. In den letzten 10 Minuten die Temperatur auf 220 °C erhöhen, damit die Haut schön knusprig wird.
-5. Halbieren und mit Brezeln oder Kartoffelsalat servieren – wie auf dem Oktoberfest.
+VALUES ('Wiesn-Hendl (Brathähnchen)', 'Knusprig braun, saftig und mit Petersilie im Bauch: das Brathähnchen, wie es auf dem Oktoberfest duftet.', 90, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {2} Hähnchen innen und außen kalt abspülen und gründlich trocken tupfen. Nur trockene Haut wird knusprig.
+2. Die Hähnchen innen salzen und je die Hälfte der Petersilie mit Stielen in die Bauchhöhle stecken.
+3. {60 g} weiche Butter mit {2 TL} Paprikapulver, Salz und Pfeffer verrühren und die Hähnchen damit rundherum einreiben. Die Keulen mit Küchengarn zusammenbinden, so garen sie gleichmäßig.
+4. Die Hähnchen mit der Brust nach oben direkt auf den Rost legen und darunter ein Blech mit etwas Wasser schieben, das den Saft auffängt. Etwa 60–70 Minuten braten und alle 15 Minuten mit dem Bratensaft vom Blech bestreichen.
+5. In den letzten 10 Minuten die Temperatur auf 220 °C erhöhen, damit die Haut richtig knusprig wird. Das Hendl ist gar, wenn beim Einstechen in die dickste Stelle der Keule klarer Saft austritt.
+6. Kurz ruhen lassen, mit einer Geflügelschere halbieren und servieren.
+
+Tipp: Wie auf der Wiesn mit Brezeln, Kartoffelsalat und einer Maß serviert.
 
 Guten Appetit!', 'wiesn-hendl-brathaehnchen.jpg');
 
@@ -4110,12 +4166,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Krustenbraten mit Dunkelbiersoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Krustenbraten mit Dunkelbiersoße', NULL, 180, 6, 'Portionen', 'Herbst', '1. Schwarte mit einem scharfen Messer im Abstand von 1 cm rautenförmig einschneiden, ohne ins Fleisch zu schneiden.
-2. Die Fleischseite mit Salz, Pfeffer, Kümmel, Senf und gepresstem Knoblauch einreiben.
-3. Gemüse grob würfeln und in einen Bräter geben. Braten mit der Schwarte nach unten darauflegen, {250 ml} Wasser angießen und bei 180 °C 30 Minuten garen.
-4. Braten wenden und die Schwarte kräftig salzen. Dunkles Bier und Brühe angießen und weitere 2 Stunden garen, dabei regelmäßig das Fleisch (nicht die Schwarte) mit dem Bratensaft begießen.
-5. Für die Kruste in den letzten 15 Minuten den Grill einschalten, bis die Schwarte aufpoppt.
-6. Bratensaft durch ein Sieb gießen, mit angerührter Stärke binden und abschmecken. Dazu passen Knödel und Krautsalat.
+VALUES ('Krustenbraten mit Dunkelbiersoße', 'Die Schwarte knackt, das Fleisch ist zart, und die Soße schmeckt nach dunklem Bier: Bayerns Sonntagsbraten.', 180, 6, 'Portionen', 'Herbst', '1. Die Schwarte der {2000 g} Schweineschulter mit einem sehr scharfen Messer oder Teppichmesser im Abstand von 1 cm rautenförmig einschneiden. Nur durch die Schwarte, nicht ins Fleisch, sonst tritt Saft aus.
+2. Die Fleischseite mit Salz, Pfeffer, {1 TL} Kümmel, {1 EL} Senf und {3} gepressten Knoblauchzehen einreiben. Die Schwarte bleibt erst einmal ungewürzt.
+3. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. {2} Zwiebeln, {2} Karotten und {150 g} Knollensellerie grob würfeln und in einen Bräter geben. Den Braten mit der Schwarte nach unten darauflegen und {250 ml} Wasser angießen. 30 Minuten garen, dabei weicht die Schwarte auf.
+4. Den Braten wenden und die Schwarte kräftig mit Salz einreiben. {500 ml} dunkles Bier und {250 ml} Rinderbrühe angießen. Weitere 2 Stunden garen und dabei regelmäßig nur das Fleisch, nicht die Schwarte, mit dem Bratensaft begießen.
+5. In den letzten 15 Minuten den Ofengrill zuschalten, bis die Schwarte Blasen wirft und aufpoppt. Dabeibleiben, sie verbrennt schnell.
+6. Den Braten 10 Minuten ruhen lassen. Den Bratensaft durch ein Sieb in einen Topf gießen, das Gemüse gut ausdrücken. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken.
+
+Tipp: Zum Aufschneiden den Braten mit der Kruste nach unten legen und mit einem Sägemesser schneiden. Dazu Knödel und Krautsalat.
 
 Guten Appetit!', 'krustenbraten-mit-dunkelbiersosse.jpg');
 
@@ -4134,10 +4192,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Waldorfsalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Waldorfsalat', NULL, 20, 4, 'Portionen', 'Herbst', '1. Sellerie schälen, in feine Stifte schneiden oder grob raspeln und sofort mit Zitronensaft mischen.
-2. Äpfel entkernen und in feine Stifte schneiden, Trauben halbieren und Walnüsse grob hacken.
-3. Mayonnaise und Joghurt verrühren und mit Zucker, Salz und Pfeffer abschmecken.
-4. Alles vermengen und 15 Minuten ziehen lassen.
+VALUES ('Waldorfsalat', 'Ein Salat mit Geschichte aus dem New Yorker Waldorf-Astoria: Sellerie, Apfel, Trauben und Walnüsse in leichter Joghurt-Mayonnaise.', 20, 4, 'Portionen', 'Herbst', '1. {300 g} Knollensellerie schälen, in feine Stifte schneiden oder grob raspeln und sofort mit dem Saft der Zitrone mischen, sonst wird er braun.
+2. {2} Äpfel waschen, entkernen und in feine Stifte schneiden. Gleich unter den Sellerie mischen. {150 g} Weintrauben halbieren. {60 g} Walnüsse grob hacken und in einer Pfanne ohne Fett kurz rösten.
+3. {100 g} Mayonnaise und {100 g} Joghurt glatt rühren und mit einer Prise Zucker, Salz und Pfeffer abschmecken.
+4. Sellerie, Äpfel und Trauben mit dem Dressing vermengen und 15 Minuten ziehen lassen. Vor dem Servieren die Walnüsse darüberstreuen, damit sie knackig bleiben.
+
+Tipp: Mit gebratenen Hähnchenstreifen wird der Salat zum Hauptgericht.
 
 Guten Appetit!', 'waldorfsalat.jpg');
 
@@ -4154,11 +4214,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gefüllte Champignons
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Champignons', NULL, 35, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Große Champignons putzen und die Stiele herausdrehen. Stiele und Schalotte fein hacken.
-2. Stiele, Schalotte und Knoblauch in {1 EL} Öl andünsten und abkühlen lassen.
-3. Mit Frischkäse, gehackter Petersilie, der Hälfte des Käses, Salz und Pfeffer verrühren.
-4. Füllung in die Pilzköpfe geben, diese in eine geölte Form setzen und mit dem restlichen Käse bestreuen.
-5. Ca. 15–20 Minuten goldbraun backen.
+VALUES ('Gefüllte Champignons', 'Kleine Pilzköpfe voller cremiger Frischkäse-Kräuterfüllung, goldbraun überbacken: perfekt als Vorspeise oder fürs Buffet.', 35, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {16} große Champignons mit Küchenpapier abreiben und die Stiele vorsichtig herausdrehen. Stiele und die Schalotte fein hacken.
+2. {1 EL} Olivenöl in einer Pfanne erhitzen. Stiele, Schalotte und die gehackte Knoblauchzehe darin 3 Minuten andünsten, bis die Flüssigkeit verdampft ist. Abkühlen lassen.
+3. Die Pilzmasse mit {150 g} Frischkäse, der gehackten Petersilie, der Hälfte des geriebenen Hartkäses, Salz und Pfeffer verrühren.
+4. Die Füllung mit einem Teelöffel in die Pilzköpfe geben und leicht andrücken. Die Pilze in eine mit dem restlichen Öl gefettete Form setzen und mit dem restlichen Käse bestreuen.
+5. Etwa 15–20 Minuten backen, bis die Füllung goldbraun ist und die Pilze weich sind. Warm servieren.
+
+Tipp: Mit etwas gebratenem Speck in der Füllung werden sie herzhafter.
 
 Guten Appetit!', 'gefuellte-champignons.jpg');
 
@@ -4174,11 +4236,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kartoffelsuppe mit Würstchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelsuppe mit Würstchen', NULL, 45, 4, 'Portionen', 'Herbst', '1. Kartoffeln, Karotten und Sellerie schälen und würfeln. Lauch in Ringe und Zwiebel in Würfel schneiden.
-2. Zwiebel und Lauch in Butter andünsten, das restliche Gemüse zugeben und kurz mitdünsten.
-3. Mit Brühe aufgießen, Majoran und Lorbeer zugeben und 20 Minuten köcheln.
-4. Lorbeer entfernen und einen Teil der Suppe grob zerstampfen, damit sie sämig wird. Sahne einrühren.
-5. Würstchen in Scheiben schneiden und in der Suppe 5 Minuten erhitzen. Mit Salz, Pfeffer und Muskat abschmecken und mit Petersilie bestreuen.
+VALUES ('Kartoffelsuppe mit Würstchen', 'Sämige Kartoffelsuppe mit Gemüse, Majoran und Wiener Würstchen: das Seelenfutter für kalte Tage.', 45, 4, 'Portionen', 'Herbst', '1. {800 g} Kartoffeln, {2} Karotten und {150 g} Knollensellerie schälen und würfeln. Den Lauch längs halbieren, gründlich waschen und in Ringe schneiden. Die Zwiebel würfeln.
+2. {2 EL} Butter in einem großen Topf schmelzen. Zwiebel und Lauch darin 3 Minuten andünsten, das restliche Gemüse zugeben und kurz mitdünsten.
+3. Mit {1200 ml} Gemüsebrühe aufgießen, {1 TL} Majoran und das Lorbeerblatt zugeben. Aufkochen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Kartoffeln weich sind.
+4. Das Lorbeerblatt herausnehmen. Einen Teil der Suppe mit dem Kartoffelstampfer grob zerdrücken, so wird sie sämig, behält aber Stücke. {100 ml} Sahne einrühren.
+5. {4} Wiener Würstchen in Scheiben schneiden und in der Suppe 5 Minuten erhitzen, nicht kochen, sonst platzen sie. Mit Salz, Pfeffer und Muskatnuss abschmecken.
+6. Die Petersilie hacken und darüberstreuen.
+
+Tipp: Am nächsten Tag ist die Suppe dicker. Beim Aufwärmen einfach etwas Brühe zugeben.
 
 Guten Appetit!', 'kartoffelsuppe-mit-wuerstchen.jpg');
 
@@ -4200,11 +4265,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Herbstliches Ofengemüse mit Tahini-Dressing
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Herbstliches Ofengemüse mit Tahini-Dressing', NULL, 50, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Kürbis entkernen und in Spalten schneiden. Rote Bete, Pastinaken und Karotten schälen und in Stücke schneiden, Zwiebeln achteln.
-2. Gemüse und abgetropfte Kichererbsen auf einem Blech mit Öl, Thymian, Salz und Pfeffer mischen.
-3. Ca. 35–40 Minuten rösten, bis alles weich und an den Rändern gebräunt ist.
-4. Tahini mit Zitronensaft, Ahornsirup, Salz und {3-4 EL} Wasser zu einem cremigen Dressing rühren.
-5. Gemüse anrichten, mit dem Dressing beträufeln und mit Granatapfelkernen bestreuen.
+VALUES ('Herbstliches Ofengemüse mit Tahini-Dressing', 'Buntes Wurzelgemüse und Kürbis, im Ofen karamellisiert, mit cremigem Tahini-Dressing und funkelnden Granatapfelkernen.', 50, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {500 g} Hokkaido-Kürbis entkernen und mit Schale in Spalten schneiden. {2} Rote Bete, {2} Pastinaken und {2} Karotten schälen und in etwa gleich große Stücke schneiden. {2} rote Zwiebeln achteln.
+2. Das Gemüse und {240 g} abgetropfte Kichererbsen auf einem großen Blech mit {4 EL} Olivenöl, den Blättchen von {3} Thymianzweigen, Salz und Pfeffer mischen. Nebeneinander verteilen, bei Bedarf auf zwei Bleche, damit alles röstet und nicht dämpft.
+3. 35–40 Minuten rösten, nach der Hälfte der Zeit einmal wenden, bis alles weich und an den Rändern gebräunt ist.
+4. Inzwischen {3 EL} Tahini mit dem Saft der Zitrone, {1 TL} Ahornsirup, Salz und {3-4 EL} Wasser glatt rühren. Das Tahini wird zuerst fest, mit etwas mehr Wasser dann cremig.
+5. Das Gemüse auf einer Platte anrichten, mit dem Dressing beträufeln und mit den Kernen des halben Granatapfels bestreuen.
+
+Tipp: Die Rote Bete färbt das andere Gemüse rosa. Wer das nicht mag, legt sie an den Rand des Blechs.
 
 Guten Appetit!', 'herbstliches-ofengemuese-mit-tahini-dressing.jpg');
 
@@ -4225,11 +4292,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gefüllte Süßkartoffeln mit Kichererbsen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Süßkartoffeln mit Kichererbsen', NULL, 60, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Süßkartoffeln waschen, mehrmals einstechen und auf einem Blech ca. 45–50 Minuten weich backen.
-2. Kichererbsen abtropfen lassen, trocken tupfen, mit Öl, Paprika, Kreuzkümmel und Salz mischen und die letzten 25 Minuten neben den Süßkartoffeln knusprig rösten.
-3. Sojajoghurt mit gepresstem Knoblauch, Zitronensaft, Salz und Pfeffer verrühren.
-4. Süßkartoffeln längs aufschneiden, das Innere etwas auflockern und mit den Kichererbsen füllen.
-5. Mit Knoblauch-Joghurt, Frühlingszwiebelringen und Koriander servieren.
+VALUES ('Gefüllte Süßkartoffeln mit Kichererbsen', 'Weich gebackene Süßkartoffeln, gefüllt mit knusprig gerösteten Gewürz-Kichererbsen und kühlem Knoblauch-Joghurt.', 60, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {4} Süßkartoffeln gründlich waschen, mehrmals mit einer Gabel einstechen und auf einem Blech mit Backpapier 45–50 Minuten backen, bis sie ganz weich sind.
+2. {240 g} Kichererbsen abspülen, abtropfen lassen und gründlich trocken tupfen. Mit {2 EL} Olivenöl, {1 TL} Paprikapulver, {1 TL} Kreuzkümmel und Salz mischen. Die letzten 25 Minuten auf einem zweiten Blech neben den Süßkartoffeln knusprig rösten.
+3. {150 g} Sojajoghurt mit der gepressten Knoblauchzehe, dem Saft der halben Zitrone, Salz und Pfeffer verrühren.
+4. Die Süßkartoffeln längs aufschneiden, das Innere mit einer Gabel etwas auflockern und leicht salzen. Mit den Kichererbsen füllen.
+5. Mit dem Knoblauch-Joghurt, {2} in Ringe geschnittenen Frühlingszwiebeln und gezupftem Koriander servieren.
+
+Tipp: Ein Klecks Avocado oder etwas Chili machen die Süßkartoffeln noch besser.
 
 Guten Appetit!', 'gefuellte-suesskartoffeln-mit-kichererbsen.jpg');
 
@@ -4248,11 +4317,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Süßkartoffel-Erdnuss-Eintopf
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Süßkartoffel-Erdnuss-Eintopf', NULL, 45, 4, 'Portionen', 'Herbst', '1. Zwiebel, Knoblauch, Ingwer und Chili fein hacken und in Öl andünsten. Kreuzkümmel und Koriander kurz mitrösten.
-2. Süßkartoffeln schälen, in 2 cm große Würfel schneiden und mit Tomaten und Brühe zugeben. 15 Minuten köcheln.
-3. Erdnussmus einrühren und die abgetropften Kichererbsen zugeben. Weitere 10 Minuten köcheln, bis die Süßkartoffeln weich sind.
-4. Spinat unterrühren und zusammenfallen lassen. Mit Limettensaft und Salz abschmecken.
-5. Mit gehackten Erdnüssen bestreut servieren. Dazu passt Reis.
+VALUES ('Süßkartoffel-Erdnuss-Eintopf', 'Westafrikanisch inspiriert: Süßkartoffeln, Tomaten und Kichererbsen in einer cremigen, würzigen Erdnusssoße.', 45, 4, 'Portionen', 'Herbst', '1. Die Zwiebel, {2} Knoblauchzehen, {20 g} Ingwer und die Chilischote fein hacken. {2 EL} Rapsöl in einem großen Topf erhitzen und alles darin 3 Minuten andünsten. {1 TL} Kreuzkümmel und {1 TL} gemahlenen Koriander zugeben und 1 Minute mitrösten.
+2. {600 g} Süßkartoffeln schälen und in 2 cm große Würfel schneiden. Mit {400 g} gehackten Tomaten und {600 ml} Gemüsebrühe zugeben, aufkochen und 15 Minuten köcheln lassen.
+3. {4 EL} Erdnussmus einrühren, bis es sich aufgelöst hat. {240 g} abgetropfte Kichererbsen zugeben und weitere 10 Minuten köcheln lassen, bis die Süßkartoffeln weich sind.
+4. {150 g} Spinat unterrühren und zusammenfallen lassen. Mit dem Saft der Limette und Salz abschmecken.
+5. {30 g} Erdnüsse grob hacken, über den Eintopf streuen und mit Reis servieren.
+
+Tipp: Wer es schärfer mag, lässt die Kerne in der Chilischote.
 
 Guten Appetit!', 'suesskartoffel-erdnuss-eintopf.jpg');
 
@@ -4275,11 +4346,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)', NULL, 90, 4, 'Portionen', 'Herbst', '1. Kartoffeln schälen, in Salzwasser 20 Minuten garen und mit Milch und Butter zu Püree stampfen. Salzen.
-2. Zwiebel, Karotten und Sellerie fein würfeln. Hackfleisch in Öl krümelig anbraten, das Gemüse zugeben und 5 Minuten mitbraten.
-3. Tomatenmark kurz mitrösten. Worcestershiresauce, Brühe und Thymianblättchen zugeben und 15 Minuten einköcheln. Erbsen unterrühren und mit Salz und Pfeffer abschmecken.
-4. Ofen auf 200 °C vorheizen. Hackfleischmasse in eine Auflaufform geben, das Püree darauf verstreichen und mit einer Gabel Rillen ziehen.
-5. Mit geriebenem Cheddar bestreuen und ca. 25 Minuten goldbraun backen.
+VALUES ('Cottage Pie (britischer Hackfleisch-Kartoffel-Auflauf)', 'Britisches Wohlfühlessen: würziges Hackfleisch mit Gemüse unter einer goldbraunen Decke aus Kartoffelpüree und Cheddar.', 90, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen, ausdampfen lassen und mit {100 ml} warmer Milch und {40 g} Butter zu einem cremigen Püree stampfen. Salzen.
+2. Die Zwiebel, {2} Karotten und die Selleriestange fein würfeln. {1 EL} Rapsöl in einer großen Pfanne erhitzen und {500 g} Rinderhackfleisch darin bei hoher Hitze krümelig und braun anbraten. Das Gemüse zugeben und 5 Minuten mitbraten.
+3. {2 EL} Tomatenmark einrühren und 1 Minute mitrösten. {2 EL} Worcestershiresauce, {250 ml} Rinderbrühe und die Blättchen von {2} Thymianzweigen zugeben und 15 Minuten einköcheln lassen, bis die Soße dicklich ist. {150 g} Erbsen unterrühren und mit Salz und Pfeffer abschmecken.
+4. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Die Hackfleischmasse in eine Auflaufform geben, das Püree darauf verteilen und glatt streichen. Mit einer Gabel Rillen ziehen, die werden im Ofen schön knusprig.
+5. {80 g} Cheddar reiben und darüberstreuen. Etwa 25 Minuten backen, bis die Oberfläche goldbraun ist und am Rand blubbert. 5 Minuten ruhen lassen.
+
+Tipp: Mit Lammhack statt Rind heißt das Gericht Shepherd''s Pie.
 
 Guten Appetit!', 'cottage-pie-britischer-hackfleisch-kartoffel-auflauf.jpg');
 
@@ -4302,12 +4375,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rinderrouladen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rinderrouladen', NULL, 150, 4, 'Portionen', 'Herbst', '1. Rouladen flach ausbreiten, salzen, pfeffern und dünn mit Senf bestreichen.
-2. Mit je zwei Scheiben Speck, Streifen von {1} Zwiebel und einem Gurkenviertel belegen. Seiten einschlagen, aufrollen und mit Rouladennadeln oder Küchengarn fixieren.
-3. Rouladen in Butterschmalz rundherum kräftig anbraten und herausnehmen.
-4. Die restliche Zwiebel, Karotte und Sellerie würfeln und im Bratfett anrösten. Tomatenmark kurz mitrösten und mit Rotwein ablöschen.
-5. Brühe und Lorbeer zugeben, die Rouladen einlegen und zugedeckt ca. 1,5–2 Stunden schmoren.
-6. Rouladen herausnehmen, Soße durch ein Sieb streichen, mit angerührter Stärke binden und abschmecken. Dazu passen Rotkohl und Klöße.
+VALUES ('Rinderrouladen', 'Zarte Rindfleischrollen mit Senf, Speck und Gurke, stundenlang in kräftiger Rotweinsoße geschmort: der Sonntagsbraten schlechthin.', 150, 4, 'Portionen', 'Herbst', '1. {4} Rinderrouladen flach ausbreiten und mit Küchenpapier trocken tupfen. Dünne Stellen leicht klopfen. Salzen, pfeffern und jeweils mit {1 TL} Senf dünn bestreichen.
+2. Eine Zwiebel in Streifen schneiden, {2} Gewürzgurken längs vierteln. Jede Roulade mit zwei Scheiben Speck, Zwiebelstreifen und einem Gurkenviertel belegen. Die Seiten einschlagen, von der schmalen Seite her fest aufrollen und mit Rouladennadeln oder Küchengarn fixieren.
+3. {2 EL} Butterschmalz in einem Schmortopf stark erhitzen. Die Rouladen darin rundherum kräftig braun anbraten und herausnehmen.
+4. Die zweite Zwiebel, die Karotte und {100 g} Knollensellerie würfeln und im Bratfett 5 Minuten anrösten. {1 EL} Tomatenmark kurz mitrösten und mit {250 ml} Rotwein ablöschen. Den Bratensatz vom Boden lösen und den Wein etwas einkochen lassen.
+5. {500 ml} Rinderbrühe und das Lorbeerblatt zugeben, die Rouladen einlegen und zugedeckt bei schwacher Hitze 1,5–2 Stunden schmoren, bis sie sich mit einer Gabel leicht einstechen lassen. Zwischendurch wenden.
+6. Die Rouladen herausnehmen und warm halten. Die Soße durch ein Sieb streichen, {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken. Die Rouladen vom Garn befreien und in der Soße servieren.
+
+Tipp: Dazu gehören Rotkohl und Klöße oder Kartoffelpüree.
 
 Guten Appetit!', 'rinderrouladen.jpg');
 
@@ -4329,10 +4404,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gebackener Camembert mit Preiselbeeren
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebackener Camembert mit Preiselbeeren', NULL, 25, 4, 'Portionen', 'Herbst', '1. Camemberts halbieren.
-2. Nacheinander in Mehl, verquirltem Ei und Paniermehl wenden. Für eine dichte Kruste Ei und Brösel einmal wiederholen.
-3. Butterschmalz erhitzen und die Stücke pro Seite 2–3 Minuten goldbraun backen, bis der Käse innen weich ist.
-4. Mit Preiselbeeren und Feldsalat servieren.
+VALUES ('Gebackener Camembert mit Preiselbeeren', 'Außen knusprig paniert, innen zart schmelzend: gebackener Camembert mit fruchtigen Preiselbeeren, wie im Biergarten.', 25, 4, 'Portionen', 'Herbst', '1. {2} Camemberts quer halbieren, sodass vier Rundlinge entstehen, oder in Viertel schneiden. Gut gekühlt lassen sie sich leichter panieren.
+2. Drei tiefe Teller bereitstellen: {2 EL} Mehl, {1} verquirltes Ei und {60 g} Paniermehl. Die Käsestücke erst in Mehl, dann in Ei und zuletzt im Paniermehl wenden. Für eine dichte Kruste noch einmal durch Ei und Paniermehl ziehen, so läuft kein Käse aus.
+3. {4 EL} Butterschmalz in einer Pfanne bei mittlerer Hitze erhitzen. Die Stücke pro Seite 2–3 Minuten goldbraun backen, bis der Käse innen weich ist. Auf Küchenpapier kurz abtropfen lassen.
+4. Mit {4 EL} Preiselbeeren und {100 g} gewaschenem Feldsalat servieren.
+
+Tipp: Dazu passt geröstetes Bauernbrot.
 
 Guten Appetit!', 'gebackener-camembert-mit-preiselbeeren.jpg');
 
@@ -4346,10 +4423,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Apfel-Möhren-Rohkost
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfel-Möhren-Rohkost', NULL, 10, 4, 'Portionen', 'Herbst', '1. Karotten schälen, Äpfel waschen und entkernen. Beides grob raspeln.
-2. Sofort mit Zitronensaft mischen, damit die Äpfel hell bleiben.
-3. Öl, Ahornsirup und Salz unterrühren.
-4. Sonnenblumenkerne ohne Fett rösten und darüberstreuen.
+VALUES ('Apfel-Möhren-Rohkost', 'Knackig, süß und in zehn Minuten fertig: der Rohkostsalat, den schon die Großeltern kannten.', 10, 4, 'Portionen', 'Herbst', '1. {4} Karotten schälen, {2} Äpfel waschen und entkernen. Beides auf der groben Seite der Reibe raspeln.
+2. Sofort mit dem Saft der Zitrone mischen, damit die Äpfel hell bleiben.
+3. {1 EL} Rapsöl, {1 TL} Ahornsirup und eine Prise Salz unterrühren. Das Öl hilft dem Körper, das Vitamin A aus den Karotten aufzunehmen.
+4. {2 EL} Sonnenblumenkerne in einer Pfanne ohne Fett rösten, bis sie duften, und über den Salat streuen.
+
+Tipp: Mit ein paar Rosinen oder etwas frisch geriebenem Ingwer wird die Rohkost noch spannender.
 
 Guten Appetit!', 'apfel-moehren-rohkost.jpg');
 
@@ -4363,11 +4442,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Miesmuscheln in Weißweinsud
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Miesmuscheln in Weißweinsud', NULL, 35, 4, 'Portionen', 'Herbst', '1. Muscheln gründlich waschen und die Bärte entfernen. Geöffnete Muscheln, die sich beim Antippen nicht schließen, aussortieren.
-2. Schalotten und Knoblauch fein würfeln, Karotte und Lauch in feine Streifen schneiden und in einem großen Topf in Butter andünsten.
-3. Weißwein und Thymian zugeben, aufkochen und die Muscheln hineingeben. Zugedeckt bei starker Hitze 5–7 Minuten garen und den Topf dabei zwei- bis dreimal schütteln.
-4. Muscheln, die sich nicht geöffnet haben, aussortieren.
-5. Sahne und gehackte Petersilie in den Sud rühren, mit wenig Salz und Pfeffer abschmecken und mit den Muscheln servieren. Saison haben Muscheln in den Monaten mit "r".
+VALUES ('Miesmuscheln in Weißweinsud', 'Ein großer Topf voller Muscheln in aromatischem Weißwein-Gemüsesud: zum Teilen, mit Brot zum Tunken.', 35, 4, 'Portionen', 'Herbst', '1. {2000 g} Miesmuscheln in kaltem Wasser gründlich waschen und die Bärte abziehen. Geöffnete Muscheln kurz auf die Arbeitsfläche klopfen: Schließen sie sich nicht, wegwerfen. Ebenso Muscheln mit zerbrochener Schale.
+2. {3} Schalotten und {2} Knoblauchzehen fein würfeln. Die Karotte und den Lauch in feine Streifen schneiden. {2 EL} Butter in einem großen Topf schmelzen und das Gemüse darin 3 Minuten andünsten.
+3. {300 ml} Weißwein und den Thymian zugeben und aufkochen. Die Muscheln hineingeben, den Deckel auflegen und bei starker Hitze 5–7 Minuten garen. Den Topf dabei zwei- bis dreimal mit aufgelegtem Deckel kräftig schütteln.
+4. Die Muscheln mit einer Schaumkelle in eine vorgewärmte Schüssel heben. Muscheln, die sich nicht geöffnet haben, wegwerfen.
+5. {100 ml} Sahne und die gehackte Petersilie in den Sud rühren, kurz aufkochen und mit wenig Salz und Pfeffer abschmecken. Die Muscheln bringen selbst Salz mit. Den Sud über die Muscheln gießen und sofort servieren.
+
+Tipp: Eine leere Muschelschale eignet sich prima als Zange, um die anderen herauszuholen. Saison haben Muscheln in den Monaten mit „r“.
 
 Guten Appetit!', 'miesmuscheln-in-weissweinsud.jpg');
 
@@ -4386,11 +4467,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Leber Berliner Art mit Apfel und Zwiebeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Leber Berliner Art mit Apfel und Zwiebeln', NULL, 45, 4, 'Portionen', 'Herbst', '1. Kartoffeln schälen, in Salzwasser 20 Minuten garen und mit Milch, {1 EL} Butter, Salz und Muskat zu Püree stampfen.
-2. Zwiebeln in Ringe schneiden und in etwas Butter goldbraun braten. Äpfel entkernen, in Ringe schneiden und in einer zweiten Pfanne in wenig Butter pro Seite 2 Minuten braten.
-3. Leber in Scheiben schneiden, trocken tupfen, Häutchen entfernen und in Mehl wenden.
-4. In der restlichen Butter pro Seite 2–3 Minuten braten, sodass sie innen noch leicht rosa ist. Erst nach dem Braten salzen, pfeffern und mit Majoran würzen.
-5. Leber mit Apfelringen, Röstzwiebeln und Kartoffelpüree servieren.
+VALUES ('Leber Berliner Art mit Apfel und Zwiebeln', 'Zarte Kalbsleber mit gebratenen Apfelringen, Röstzwiebeln und Kartoffelpüree: ein Berliner Klassiker.', 45, 4, 'Portionen', 'Herbst', '1. {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen und mit {150 ml} warmer Milch, {1 EL} Butter, Salz und Muskatnuss zu Püree stampfen. Warm halten.
+2. {2} Zwiebeln in Ringe schneiden und in etwas Butter bei mittlerer Hitze etwa 10 Minuten goldbraun braten. {2} Äpfel waschen, das Kerngehäuse ausstechen und die Äpfel in 1 cm dicke Ringe schneiden. In einer zweiten Pfanne in wenig Butter pro Seite 2 Minuten braten, bis sie weich und leicht gebräunt sind.
+3. {600 g} Kalbsleber in etwa 1 cm dicke Scheiben schneiden, trocken tupfen und feine Häutchen und Adern entfernen. In {2 EL} Mehl wenden und abklopfen.
+4. Die restliche Butter in einer Pfanne erhitzen und die Leber pro Seite 2–3 Minuten braten, sodass sie innen noch leicht rosa ist. Erst nach dem Braten salzen, pfeffern und mit {1 TL} Majoran würzen. Salz macht Leber beim Braten zäh.
+5. Die Leber mit Apfelringen, Röstzwiebeln und Kartoffelpüree anrichten.
+
+Tipp: Leber am besten frisch vom Metzger kaufen und am selben Tag zubereiten.
 
 Guten Appetit!', 'leber-berliner-art-mit-apfel-und-zwiebeln.jpg');
 
@@ -4408,11 +4491,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Lauch-Quiche mit Bergkäse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lauch-Quiche mit Bergkäse', NULL, 90, 1, 'Quicheform (28 cm)', 'Herbst', '1. Mehl, {100 g} kalte Butter, {1} Ei, eine Prise Salz und {2 EL} kaltes Wasser rasch zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Ofen auf 190 °C vorheizen. Lauch putzen, waschen, in feine Ringe schneiden und in der restlichen Butter 5 Minuten andünsten.
-3. Teig ausrollen, eine gefettete Quicheform damit auslegen, mehrmals einstechen und 15 Minuten blind backen.
-4. Restliche Eier mit Sahne und Crème fraîche verquirlen, mit Salz, Pfeffer und Muskat würzen und den geriebenen Käse unterrühren.
-5. Lauch auf dem Boden verteilen, den Guss darübergießen und ca. 35 Minuten goldbraun backen.
+VALUES ('Lauch-Quiche mit Bergkäse', 'Knuspriger Mürbeteig, weich gedünsteter Lauch und ein würziger Guss aus Eiern, Sahne und Bergkäse.', 90, 1, 'Quicheform (28 cm)', 'Herbst', '1. {200 g} Mehl, {100 g} kalte Butter in Würfeln, {1} Ei, eine Prise Salz und {2 EL} kaltes Wasser rasch zu einem glatten Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen. {3} Lauchstangen putzen, längs halbieren, gründlich waschen und in feine Ringe schneiden. In der restlichen Butter bei mittlerer Hitze 5 Minuten andünsten, bis er weich ist. Abkühlen lassen.
+3. Den Teig ausrollen und eine gefettete Quicheform (28 cm) damit auslegen, auch den Rand. Mehrmals mit einer Gabel einstechen, mit Backpapier und Hülsenfrüchten beschweren und 15 Minuten blind backen. Papier und Hülsenfrüchte entfernen.
+4. Die restlichen Eier mit {200 ml} Sahne und {100 g} Crème fraîche verquirlen. Mit Salz, Pfeffer und Muskatnuss würzen und {100 g} geriebenen Bergkäse unterrühren.
+5. Den Lauch auf dem Boden verteilen und den Guss darübergießen. Etwa 35 Minuten backen, bis die Quiche goldbraun und gestockt ist.
+6. 10 Minuten abkühlen lassen, dann lässt sie sich sauber schneiden. Warm oder lauwarm servieren.
+
+Tipp: Mit gewürfeltem Speck oder Schinken unter dem Lauch wird es eine Quiche Lorraine mit Lauch.
 
 Guten Appetit!', 'lauch-quiche-mit-bergkaese.jpg');
 
@@ -4429,11 +4515,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ofen-Blumenkohl mit Harissa und Tahini
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Blumenkohl mit Harissa und Tahini', NULL, 50, 4, 'Portionen', 'Herbst', '1. Ofen auf 220 °C vorheizen. Blumenkohl in große Röschen teilen, den Strunk in Scheiben schneiden.
-2. Harissa mit {3 EL} Olivenöl und Salz verrühren und den Blumenkohl darin wenden.
-3. Auf einem Blech verteilen und 30–35 Minuten rösten, bis die Ränder dunkel und knusprig sind.
-4. Tahini mit Zitronensaft, gepresstem Knoblauch, Salz und {3-4 EL} Wasser zu einer cremigen Soße rühren.
-5. Blumenkohl mit der Tahinisoße beträufeln und mit Granatapfelkernen, Petersilie und dem restlichen Öl servieren.
+VALUES ('Ofen-Blumenkohl mit Harissa und Tahini', 'Scharf gerösteter Blumenkohl mit nordafrikanischer Harissa, cremiger Tahinisoße und Granatapfel: Gemüse, das Lust auf mehr macht.', 50, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. Den Blumenkohl in große Röschen teilen, den Strunk schälen und in Scheiben schneiden, er schmeckt geröstet besonders gut.
+2. {2 EL} Harissa mit {3 EL} Olivenöl und Salz verrühren. Den Blumenkohl darin wenden, bis er rundherum überzogen ist.
+3. Auf einem Blech mit Backpapier verteilen und 30–35 Minuten rösten, bis die Ränder dunkel und knusprig sind und die Röschen weich, aber noch bissfest.
+4. {3 EL} Tahini mit dem Saft der Zitrone, der gepressten Knoblauchzehe, Salz und {3-4 EL} Wasser zu einer cremigen Soße rühren.
+5. Den Blumenkohl auf einer Platte anrichten, mit der Tahinisoße beträufeln und mit den Kernen des halben Granatapfels, gehackter Petersilie und dem restlichen Olivenöl servieren.
+
+Tipp: Harissa ist unterschiedlich scharf, also erst mit wenig anfangen.
 
 Guten Appetit!', 'ofen-blumenkohl-mit-harissa-und-tahini.jpg');
 
@@ -4449,11 +4537,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Cremige Blumenkohlsuppe mit Cashews
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Cremige Blumenkohlsuppe mit Cashews', NULL, 35, 4, 'Portionen', 'Herbst', '1. Cashewkerne 15 Minuten in heißem Wasser einweichen und abgießen.
-2. Zwiebel würfeln und in Öl andünsten. Blumenkohl in Röschen teilen, zugeben und kurz mitdünsten. Einige kleine Röschen zum Garnieren beiseitelegen.
-3. Mit Brühe aufgießen und 20 Minuten weich köcheln.
-4. Cashewkerne zugeben und alles sehr fein und cremig pürieren. Mit Muskat, Zitronensaft, Salz und Pfeffer abschmecken.
-5. Beiseitegelegte Röschen in einer Pfanne goldbraun rösten und mit Schnittlauch auf der Suppe anrichten.
+VALUES ('Cremige Blumenkohlsuppe mit Cashews', 'Samtig und cremig ganz ohne Sahne: Die Cashews machen diese Blumenkohlsuppe herrlich weich und mild.', 35, 4, 'Portionen', 'Herbst', '1. {50 g} Cashewkerne mit heißem Wasser übergießen, 15 Minuten einweichen und abgießen. So werden sie beim Pürieren richtig cremig.
+2. Die Zwiebel würfeln. {2 EL} Rapsöl in einem Topf erhitzen und die Zwiebel darin glasig dünsten. Den Blumenkohl in Röschen teilen, ein paar kleine Röschen zum Garnieren beiseitelegen und den Rest zugeben. Kurz mitdünsten.
+3. Mit {1000 ml} Gemüsebrühe aufgießen und zugedeckt etwa 20 Minuten köcheln lassen, bis der Blumenkohl ganz weich ist.
+4. Die Cashewkerne zugeben und alles mit dem Stabmixer oder im Standmixer sehr fein und cremig pürieren. Mit Muskatnuss, dem Saft der halben Zitrone, Salz und Pfeffer abschmecken.
+5. Die beiseitegelegten Röschen in einer Pfanne mit etwas Öl goldbraun rösten. Die Suppe in Teller füllen und mit den Röschen und Schnittlauchröllchen anrichten.
+
+Tipp: Ein paar Tropfen geröstetes Sesamöl oder etwas Curry geben der Suppe eine neue Richtung.
 
 Guten Appetit!', 'cremige-blumenkohlsuppe-mit-cashews.jpg');
 
@@ -4475,11 +4565,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grünkohl mit Kohlwurst und Kassler
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünkohl mit Kohlwurst und Kassler', NULL, 150, 4, 'Portionen', 'Winter', '1. Grünkohl von den Stielen streifen, gründlich waschen und in kochendem Salzwasser 2 Minuten blanchieren. Abtropfen lassen und grob hacken.
-2. Zwiebeln würfeln und in Butterschmalz glasig dünsten. Grünkohl zugeben, mit Brühe aufgießen und zugedeckt 1 Stunde schmoren.
-3. Kohlwurst und Kassler auf den Kohl legen und weitere 45 Minuten mitgaren.
-4. Kartoffeln schälen und in Salzwasser garen.
-5. Grünkohl mit Senf, Zucker, Salz und Pfeffer kräftig abschmecken und mit Wurst, Kassler und Kartoffeln servieren. Am besten nach dem ersten Frost – dann ist der Kohl milder.
+VALUES ('Grünkohl mit Kohlwurst und Kassler', 'Norddeutsche Winterküche, wie sie sein muss: lange geschmorter Grünkohl mit Kohlwurst, Kassler und Salzkartoffeln.', 150, 4, 'Portionen', 'Winter', '1. {1500 g} Grünkohl von den dicken Stielen streifen und in mehreren Durchgängen in kaltem Wasser gründlich waschen, zwischen den krausen Blättern sitzt oft Sand. In kochendem Salzwasser 2 Minuten blanchieren, abtropfen lassen und grob hacken.
+2. {2} Zwiebeln würfeln. {2 EL} Butterschmalz in einem großen Topf erhitzen und die Zwiebeln darin glasig dünsten. Den Grünkohl zugeben, mit {500 ml} Gemüsebrühe aufgießen und zugedeckt bei schwacher Hitze 1 Stunde schmoren. Gelegentlich umrühren.
+3. {4} Kohlwürste und {400 g} Kassler auf den Kohl legen und weitere 45 Minuten mitgaren. Das Fett und die Würze der Wurst ziehen dabei in den Kohl.
+4. Inzwischen {1000 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+5. Das Fleisch herausnehmen und warm halten. Den Grünkohl mit {1 TL} Senf, {1 TL} Zucker, Salz und Pfeffer kräftig abschmecken.
+6. Den Kassler in Scheiben schneiden und mit Kohlwurst, Grünkohl und Kartoffeln servieren.
+
+Tipp: Am besten nach dem ersten Frost kaufen, dann ist der Kohl milder und süßer. Aufgewärmt schmeckt er noch besser.
 
 Guten Appetit!', 'gruenkohl-mit-kohlwurst-und-kassler.jpg');
 
@@ -4497,11 +4590,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grünkohl-Chips
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grünkohl-Chips', NULL, 30, 4, 'Portionen', 'Winter', '1. Ofen auf 140 °C Umluft vorheizen.
-2. Grünkohlblätter von den harten Stielen zupfen, waschen und sehr gründlich trocken schleudern.
-3. Blätter in mundgerechte Stücke zupfen und mit Öl und Paprikapulver einmassieren.
-4. Ohne Überlappung auf {2} Bleche verteilen und 15–20 Minuten backen, bis sie knusprig sind. Die Ofentür ab und zu kurz öffnen, damit Feuchtigkeit entweicht.
-5. Mit Salz bestreuen und sofort genießen.
+VALUES ('Grünkohl-Chips', 'Hauchdünn, knusprig und rauchig gewürzt: Grünkohl als Knabberei aus dem Ofen.', 30, 4, 'Portionen', 'Winter', '1. Den Ofen auf 140 °C Umluft vorheizen.
+2. {200 g} Grünkohl von den harten Stielen zupfen, waschen und sehr gründlich trocken schleudern. Am besten zusätzlich mit einem Küchentuch abtrocknen, nasse Blätter werden nicht knusprig.
+3. Die Blätter in mundgerechte Stücke zupfen. Mit {2 EL} Olivenöl und {0.5 TL} geräuchertem Paprikapulver in einer Schüssel mit den Händen einmassieren, bis alle Blätter dünn überzogen sind.
+4. Ohne Überlappung auf {2} Blechen mit Backpapier verteilen und 15–20 Minuten backen, bis sie knusprig sind. Die Ofentür zwischendurch kurz öffnen, damit die Feuchtigkeit entweicht. Ab 12 Minuten genau hinsehen, sie verbrennen schnell.
+5. Mit {1 TL} Salz bestreuen und sofort genießen. Sie werden schnell wieder weich.
+
+Tipp: Auch mit Knoblauchpulver oder etwas Hefeflocken als „Käse“-Variante lecker.
 
 Guten Appetit!', 'gruenkohl-chips.jpg');
 
