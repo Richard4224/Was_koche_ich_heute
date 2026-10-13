@@ -6609,10 +6609,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hummus
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hummus', NULL, 10, 4, 'Portionen', 'Ganzjährig', '1. Kichererbsen abgießen und dabei etwas Flüssigkeit aus der Dose auffangen.
-2. Kichererbsen mit Tahini, Zitronensaft, Knoblauch, Kreuzkümmel, Salz und {3-4 EL} Eiswasser im Mixer mehrere Minuten sehr cremig pürieren.
-3. Bei Bedarf noch etwas Flüssigkeit zugeben und abschmecken.
-4. In eine Schale streichen, eine Mulde formen, mit Olivenöl beträufeln und mit Paprikapulver bestäuben.
+VALUES ('Hummus', 'Samtig, nussig und mit viel Zitrone: Hummus, der so cremig wird wie im Lieblingsimbiss.', 10, 4, 'Portionen', 'Ganzjährig', '1. {480 g} Kichererbsen in einem Sieb abgießen und dabei etwas Flüssigkeit aus der Dose auffangen. Wer besonders cremigen Hummus möchte, drückt die Kichererbsen aus ihren dünnen Häutchen. Das dauert 10 Minuten, lohnt sich aber.
+2. Kichererbsen, {4 EL} Tahini, den Saft der Zitrone, die Knoblauchzehe, {0.5 TL} Kreuzkümmel, Salz und {3-4 EL} Eiswasser in den Mixer geben. Mehrere Minuten pürieren, bis der Hummus ganz glatt und cremig ist. Das Eiswasser macht ihn besonders luftig.
+3. Ist er zu fest, noch etwas Flüssigkeit aus der Dose zugeben. Mit Salz und Zitronensaft abschmecken.
+4. In eine flache Schale streichen und mit dem Löffelrücken eine Mulde formen. Mit {3 EL} Olivenöl beträufeln und mit einer Prise Paprikapulver bestäuben.
+
+Tipp: Mit warmem Fladenbrot, Gemüsesticks oder als Aufstrich in Wraps servieren. Im Kühlschrank hält er sich 4–5 Tage.
 
 Guten Appetit!', 'hummus.jpg');
 
@@ -6627,12 +6629,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Moussaka
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Moussaka', NULL, 120, 6, 'Portionen', 'Ganzjährig', '1. Auberginen in 1 cm dicke Scheiben schneiden, salzen, 20 Minuten ziehen lassen und trocken tupfen. Kartoffeln schälen und in Scheiben schneiden.
-2. Auberginen- und Kartoffelscheiben mit Öl bepinseln und bei 220 °C im Ofen 20 Minuten vorbacken.
-3. Zwiebel und Knoblauch hacken und mit dem Hackfleisch krümelig braten. Tomatenmark, Rotwein, Tomaten, Zimt und Oregano zugeben, salzen, pfeffern und 20 Minuten köcheln.
-4. Für die Béchamel Butter schmelzen, Mehl anschwitzen, Milch einrühren und 5 Minuten köcheln. Vom Herd nehmen, Eier und die Hälfte des Käses einrühren und mit Muskat würzen.
-5. Kartoffeln, Auberginen und Hackfleischsoße in einer Form schichten, mit der Béchamel abschließen und mit dem restlichen Käse bestreuen.
-6. Bei 180 °C ca. 45 Minuten backen und vor dem Servieren 15 Minuten ruhen lassen.
+VALUES ('Moussaka', 'Griechenlands berühmtester Auflauf: Schichten aus Auberginen, Kartoffeln und zimtiger Hackfleischsoße unter einer dicken, goldenen Béchamel.', 120, 6, 'Portionen', 'Ganzjährig', '1. {3} Auberginen in 1 cm dicke Scheiben schneiden, von beiden Seiten salzen und 20 Minuten Wasser ziehen lassen. Gründlich trocken tupfen. {500 g} Kartoffeln schälen und in 5 mm dicke Scheiben schneiden.
+2. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. Auberginen- und Kartoffelscheiben auf zwei Bleche legen, mit {6 EL} Olivenöl bepinseln und 20 Minuten vorbacken, bis sie weich und leicht gebräunt sind.
+3. Inzwischen die Zwiebel und {2} Knoblauchzehen hacken und mit {500 g} Rinderhackfleisch in einer großen Pfanne krümelig braten. {2 EL} Tomatenmark kurz mitrösten, mit {100 ml} Rotwein ablöschen. {400 g} gehackte Tomaten, {1 TL} Zimt und {1 TL} Oregano zugeben, salzen, pfeffern und 20 Minuten köcheln lassen. Der Zimt ist typisch griechisch und macht die Soße warm und würzig.
+4. Für die Béchamel {60 g} Butter schmelzen, {60 g} Mehl einrühren und 1 Minute anschwitzen. {600 ml} Milch nach und nach einrühren und 5 Minuten köcheln lassen, bis die Soße dick ist. {60 g} Parmesan reiben. Die Soße vom Herd nehmen, {2} Eier und die Hälfte des Käses einrühren und mit Muskatnuss würzen.
+5. Den Ofen auf 180 °C herunterschalten. In einer Auflaufform zuerst die Kartoffeln, dann die Hälfte der Auberginen, die Hackfleischsoße und die restlichen Auberginen schichten. Mit der Béchamel abschließen und mit dem restlichen Käse bestreuen.
+6. Etwa 45 Minuten backen, bis die Oberfläche goldbraun ist. Vor dem Servieren mindestens 15 Minuten ruhen lassen, dann lässt sich die Moussaka sauber schneiden.
+
+Tipp: Moussaka schmeckt lauwarm am besten, so isst man sie auch in Griechenland.
 
 Guten Appetit!', 'moussaka.jpg');
 
@@ -6658,11 +6662,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Wiener Schnitzel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wiener Schnitzel', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Schnitzel zwischen Frischhaltefolie mit einem Plattiereisen oder Topf auf ca. 4 mm Dicke klopfen. Salzen und pfeffern.
-2. Eier in einem tiefen Teller verquirlen. Mehl und Paniermehl in zwei weitere Teller geben.
-3. Schnitzel erst in Mehl, dann im Ei und zuletzt im Paniermehl wenden. Die Panade nicht andrücken, damit sie später Wellen schlägt.
-4. Butterschmalz in einer großen Pfanne fingerhoch erhitzen. Schnitzel darin schwimmend pro Seite 2–3 Minuten goldbraun backen und die Pfanne dabei leicht schwenken.
-5. Auf Küchenpapier abtropfen lassen und mit Zitronenspalten und Preiselbeeren servieren. Dazu passt Kartoffelsalat.
+VALUES ('Wiener Schnitzel', 'Hauchdünnes Kalbfleisch in einer goldenen, gewellten Panade, schwimmend in Butterschmalz gebacken: Österreichs Nationalgericht.', 30, 4, 'Portionen', 'Ganzjährig', '1. {4} Kalbsschnitzel zwischen zwei Lagen Frischhaltefolie mit einem Plattiereisen oder dem Boden eines Topfes gleichmäßig auf etwa 4 mm Dicke klopfen. Von beiden Seiten salzen und pfeffern.
+2. Drei tiefe Teller bereitstellen: {50 g} Mehl, {2} verquirlte Eier und {100 g} Paniermehl.
+3. Die Schnitzel erst in Mehl wenden und abklopfen, dann durch das Ei ziehen und abtropfen lassen und zuletzt locker im Paniermehl wenden. Die Panade nicht andrücken, nur so löst sie sich beim Backen und schlägt die typischen Wellen.
+4. {150 g} Butterschmalz in einer großen Pfanne etwa fingerhoch erhitzen. Es ist heiß genug, wenn ein Bröselchen sofort zischt. Die Schnitzel einzeln oder zu zweit hineinlegen und pro Seite 2–3 Minuten goldbraun backen. Dabei die Pfanne leicht schwenken, sodass das Fett über die Oberseite schwappt.
+5. Auf Küchenpapier abtropfen lassen und sofort mit Zitronenspalten und {4 EL} Preiselbeeren servieren.
+
+Tipp: Dazu gehört in Wien ein lauwarmer Erdäpfelsalat oder Petersilienkartoffeln.
 
 Guten Appetit!', 'wiener-schnitzel.jpg');
 
@@ -6678,11 +6684,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Königsberger Klopse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Königsberger Klopse', NULL, 60, 4, 'Portionen', 'Ganzjährig', '1. Brötchen in Wasser einweichen und gut ausdrücken. Zwiebel und Sardellen sehr fein hacken.
-2. Hackfleisch mit Brötchen, Zwiebel, Sardellen, Ei, Senf, Salz und Pfeffer verkneten und {12} Klopse formen.
-3. Brühe mit Lorbeer und Piment aufkochen. Klopse hineinlegen und bei kleiner Hitze 15 Minuten gar ziehen lassen. Herausnehmen und die Brühe durch ein Sieb gießen.
-4. Butter schmelzen, Mehl anschwitzen und mit {500 ml} Brühe unter Rühren ablöschen. 5 Minuten köcheln, Sahne und Kapern zugeben und mit Zitronensaft, Salz und Pfeffer abschmecken.
-5. Kartoffeln als Salzkartoffeln garen. Klopse in der Soße erwärmen und mit den Kartoffeln servieren.
+VALUES ('Königsberger Klopse', 'Zarte Fleischklößchen in heller, säuerlicher Kapernsoße: ein Klassiker aus Ostpreußen, der heute noch in vielen Familien gekocht wird.', 60, 4, 'Portionen', 'Ganzjährig', '1. Das Brötchen in Wasser einweichen und gut ausdrücken. Die Zwiebel und {2} Sardellenfilets sehr fein hacken. Die Sardellen schmeckt man nicht heraus, sie geben nur Würze.
+2. {600 g} Hackfleisch mit Brötchen, Zwiebel, Sardellen, {1} Ei, {1 TL} Senf, Salz und Pfeffer gründlich verkneten. Mit nassen Händen {12} gleich große Klopse formen.
+3. {1000 ml} Rinderbrühe mit dem Lorbeerblatt und {3} Pimentkörnern aufkochen. Die Hitze reduzieren, die Klopse hineinlegen und 15 Minuten gar ziehen lassen, die Brühe darf nicht kochen. Mit einer Schaumkelle herausnehmen und die Brühe durch ein Sieb gießen.
+4. Inzwischen {800 g} Kartoffeln schälen und in Salzwasser garen.
+5. {30 g} Butter in einem Topf schmelzen, {30 g} Mehl einrühren und 1 Minute anschwitzen. Mit {500 ml} der Brühe unter Rühren ablöschen und 5 Minuten köcheln lassen. {100 ml} Sahne und {3 EL} Kapern zugeben und mit dem Saft der Zitrone, Salz und Pfeffer säuerlich abschmecken.
+6. Die Klopse in der Soße 5 Minuten erwärmen und mit den Kartoffeln servieren.
+
+Tipp: Dazu passt Rote-Bete-Salat. Die übrige Brühe ergibt eine gute Suppe für den nächsten Tag.
 
 Guten Appetit!', 'koenigsberger-klopse.jpg');
 
@@ -6706,11 +6715,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Frikadellen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Frikadellen', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Brötchen in Wasser einweichen und gut ausdrücken. Zwiebel fein würfeln und Petersilie hacken.
-2. Hackfleisch mit Brötchen, Zwiebel, Ei, Senf, Petersilie, Majoran, Paprika, Salz und Pfeffer kräftig verkneten.
-3. Mit nassen Händen {8} flache Frikadellen formen.
-4. Butterschmalz erhitzen und die Frikadellen bei mittlerer Hitze pro Seite 5–6 Minuten braten, bis sie durchgegart sind.
+VALUES ('Frikadellen', 'Saftig, würzig und außen schön knusprig: Frikadellen, die warm und kalt gleich gut schmecken.', 40, 4, 'Portionen', 'Ganzjährig', '1. Das Brötchen in Wasser einweichen und gut ausdrücken. Die Zwiebel fein würfeln und die Petersilie hacken.
+2. {600 g} Hackfleisch mit Brötchen, Zwiebel, {1} Ei, {1 EL} Senf, Petersilie, {1 TL} Majoran, {1 TL} Paprikapulver, Salz und Pfeffer in einer Schüssel mit den Händen kräftig verkneten, bis eine bindige Masse entsteht.
+3. Mit nassen Händen {8} gleich große, flache Frikadellen formen. Flache Frikadellen garen gleichmäßiger.
+4. {3 EL} Butterschmalz in einer großen Pfanne bei mittlerer Hitze erhitzen. Die Frikadellen darin pro Seite 5–6 Minuten braten, bis sie goldbraun und durchgegart sind. Zu große Hitze macht sie außen schwarz und innen roh.
 5. Warm mit Kartoffelsalat oder kalt mit Senf und Brot servieren.
+
+Tipp: Ein Löffel Senf direkt in die Masse und eine fein geriebene Kartoffel machen sie besonders saftig.
 
 Guten Appetit!', 'frikadellen.jpg');
 
@@ -6728,12 +6739,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zürcher Geschnetzeltes mit Rösti
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zürcher Geschnetzeltes mit Rösti', NULL, 50, 4, 'Portionen', 'Ganzjährig', '1. Für die Rösti festkochende Kartoffeln schälen, grob raspeln, in einem Tuch gut ausdrücken und salzen.
-2. Butterschmalz in einer Pfanne erhitzen, die Kartoffeln hineingeben, flach drücken und bei mittlerer Hitze 12 Minuten goldbraun braten. Mithilfe eines Tellers wenden und weitere 10 Minuten braten.
-3. Kalbfleisch in feine Streifen und Champignons in Scheiben schneiden, Schalotten fein würfeln.
-4. Fleisch portionsweise in {2 EL} Butter scharf anbraten, salzen, pfeffern und herausnehmen.
-5. Pilze und Schalotten in der restlichen Butter anbraten, mit Wein ablöschen und einkochen. Brühe und Sahne zugeben, 5 Minuten einkochen und mit angerührter Stärke binden.
-6. Fleisch in der Soße nur noch erwärmen, mit Zitronensaft abschmecken, mit Petersilie bestreuen und mit der Rösti servieren.
+VALUES ('Zürcher Geschnetzeltes mit Rösti', 'Zarte Kalbfleischstreifen in Champignon-Rahmsoße mit einer knusprigen, goldbraunen Rösti: Zürichs Stolz.', 50, 4, 'Portionen', 'Ganzjährig', '1. Für die Rösti {1000 g} festkochende Kartoffeln schälen und grob raspeln. In einem sauberen Geschirrtuch kräftig ausdrücken und salzen.
+2. {3 EL} Butterschmalz in einer großen, beschichteten Pfanne erhitzen. Die Kartoffeln hineingeben, zu einem Fladen flach drücken und bei mittlerer Hitze etwa 12 Minuten goldbraun braten. Einen Teller auflegen, die Pfanne umdrehen und die Rösti zurück in die Pfanne gleiten lassen. Weitere 10 Minuten braten und warm halten.
+3. {600 g} Kalbfleisch in feine Streifen schneiden. {250 g} Champignons in Scheiben schneiden und {2} Schalotten fein würfeln.
+4. {2 EL} Butter in einer Pfanne stark erhitzen und das Fleisch portionsweise jeweils nur 1–2 Minuten scharf anbraten. Salzen, pfeffern und herausnehmen. Es gart später in der Soße nicht mehr weiter, sonst wird es zäh.
+5. Pilze und Schalotten in der restlichen Butter 4 Minuten anbraten, mit {150 ml} Weißwein ablöschen und fast vollständig einkochen. {150 ml} Rinderbrühe und {200 ml} Sahne zugeben und 5 Minuten sämig einkochen. {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit binden.
+6. Das Fleisch mit dem ausgetretenen Saft in die Soße geben und nur noch erwärmen. Mit einem Spritzer Zitronensaft abschmecken, mit gehackter Petersilie bestreuen und mit der Rösti servieren.
+
+Tipp: Für die Rösti am besten Kartoffeln vom Vortag nehmen, die man in der Schale gekocht hat. Dann wird sie noch knuspriger.
 
 Guten Appetit!', 'zuercher-geschnetzeltes-mit-roesti.jpg');
 
@@ -6754,11 +6767,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Boeuf Stroganoff
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Boeuf Stroganoff', NULL, 35, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Fleisch (am besten Hüfte oder Filet) in fingerdicke Streifen schneiden. Zwiebel in Streifen, Pilze in Scheiben und Gurken in Stifte schneiden.
-2. Fleisch portionsweise in {1 EL} Butter bei starker Hitze 1–2 Minuten scharf anbraten, salzen, pfeffern und herausnehmen.
-3. Restliche Butter erhitzen, Zwiebel und Pilze darin 5 Minuten braten. Paprikapulver und Senf einrühren und mit Brühe ablöschen.
-4. Schmand einrühren und kurz einköcheln lassen. Fleisch und Gurken zugeben und nur noch erwärmen.
-5. Mit Salz und Pfeffer abschmecken, mit Petersilie bestreuen und mit dem Reis servieren.
+VALUES ('Boeuf Stroganoff', 'Zarte Rindfleischstreifen in einer cremigen Soße mit Pilzen, Gewürzgurke und Schmand: ein Klassiker aus dem alten Russland.', 35, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {600 g} Rindersteak, am besten Hüfte oder Filet, quer zur Faser in fingerdicke Streifen schneiden. Die Zwiebel in Streifen, {250 g} Champignons in Scheiben und {2} Gewürzgurken in feine Stifte schneiden.
+2. {1 EL} Butter in einer großen Pfanne sehr stark erhitzen. Das Fleisch portionsweise jeweils 1–2 Minuten scharf anbraten, es soll innen noch rosa sein. Salzen, pfeffern und herausnehmen.
+3. Die restliche Butter erhitzen und Zwiebel und Pilze darin 5 Minuten braten, bis sie Farbe nehmen. {1 TL} Paprikapulver und {1 TL} Senf einrühren und mit {150 ml} Rinderbrühe ablöschen.
+4. {150 g} Schmand einrühren und kurz einköcheln lassen, bis die Soße sämig ist.
+5. Fleisch, ausgetretenen Fleischsaft und Gurken zugeben und nur noch erwärmen. Mit Salz und Pfeffer abschmecken, mit gehackter Petersilie bestreuen und mit dem Reis servieren.
+
+Tipp: Statt Reis passen auch Bandnudeln oder Kartoffelpüree.
 
 Guten Appetit!', 'boeuf-stroganoff.jpg');
 
@@ -6778,11 +6793,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hühnerfrikassee
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hühnerfrikassee', NULL, 75, 4, 'Portionen', 'Ganzjährig', '1. Hähnchenbrust in der Brühe bei kleiner Hitze 20 Minuten gar ziehen lassen. Herausnehmen, in Würfel schneiden und die Brühe aufbewahren.
-2. Karotten in Scheiben und Champignons in Viertel schneiden und in der Brühe 5 Minuten garen, die Erbsen in den letzten 2 Minuten zugeben. Gemüse herausnehmen.
-3. Reis nach Packungsangabe garen.
-4. Butter schmelzen, Mehl anschwitzen und mit {500 ml} Brühe unter Rühren ablöschen. 5 Minuten köcheln und die Sahne einrühren.
-5. Fleisch, Gemüse und Kapern in die Soße geben und mit Zitronensaft, Muskat, Salz und Pfeffer abschmecken. Mit Petersilie und Reis servieren.
+VALUES ('Hühnerfrikassee', 'Zartes Hühnerfleisch und Gemüse in einer hellen, leicht säuerlichen Soße mit Kapern: Wohlfühlessen wie bei Oma.', 75, 4, 'Portionen', 'Ganzjährig', '1. {750 ml} Hühnerbrühe aufkochen. {600 g} Hähnchenbrust hineinlegen und bei schwacher Hitze 20 Minuten gar ziehen lassen, die Brühe soll nicht kochen. Herausnehmen, etwas abkühlen lassen und in Würfel schneiden. Die Brühe aufbewahren.
+2. {2} Karotten in Scheiben schneiden, {200 g} Champignons vierteln. Beides in der Brühe 5 Minuten garen, {150 g} Erbsen in den letzten 2 Minuten zugeben. Das Gemüse mit einer Schaumkelle herausnehmen.
+3. {250 g} Basmatireis nach Packungsangabe garen.
+4. {40 g} Butter in einem Topf schmelzen, {40 g} Mehl einrühren und 1 Minute anschwitzen. Mit {500 ml} der Brühe unter ständigem Rühren ablöschen und 5 Minuten köcheln lassen, bis die Soße sämig ist. {100 ml} Sahne einrühren.
+5. Fleisch, Gemüse und {1 EL} Kapern in die Soße geben. Mit dem Saft der halben Zitrone, Muskatnuss, Salz und Pfeffer abschmecken. Die Säure ist wichtig, sie macht das Frikassee frisch.
+6. Mit gehackter Petersilie bestreuen und mit dem Reis servieren.
+
+Tipp: Grüner Spargel ist im Frühjahr eine schöne Ergänzung, er gart zusammen mit den Karotten.
 
 Guten Appetit!', 'huehnerfrikassee.jpg');
 
@@ -6804,11 +6822,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Coq au Vin
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Coq au Vin', NULL, 120, 4, 'Portionen', 'Ganzjährig', '1. Ganze Hähnchenkeulen im Gelenk teilen, salzen und pfeffern.
-2. Speck würfeln, in einem Schmortopf auslassen und herausnehmen. Hähnchen im Speckfett rundherum goldbraun anbraten und herausnehmen.
-3. Geschälte Schalotten, Karottenstücke und Knoblauch im Bratfett anrösten und das Tomatenmark kurz mitrösten.
-4. Mit Rotwein ablöschen, Brühe, Thymian, Lorbeer, Speck und Hähnchen zugeben und zugedeckt ca. 1 Stunde schmoren.
-5. Champignons in Butter goldbraun braten und zugeben. Die Soße mit angerührter Stärke binden, abschmecken und mit Petersilie servieren. Dazu passen Baguette oder Kartoffelpüree.
+VALUES ('Coq au Vin', 'Hähnchen, langsam in Rotwein geschmort, mit Speck, Schalotten und Champignons: der Bistroklassiker aus Burgund.', 120, 4, 'Portionen', 'Ganzjährig', '1. {4} ganze Hähnchenschenkel im Gelenk in Ober- und Unterschenkel teilen. Trocken tupfen, salzen und pfeffern.
+2. {125 g} Speck würfeln und in einem Schmortopf bei mittlerer Hitze auslassen, bis er knusprig ist. Herausnehmen. Das Hähnchen im Speckfett rundherum goldbraun anbraten und herausnehmen.
+3. {12} kleine Schalotten schälen, {2} Karotten in Stücke schneiden und {2} Knoblauchzehen andrücken. Alles im Bratfett 5 Minuten anrösten. {1 EL} Tomatenmark einrühren und 1 Minute mitrösten.
+4. Mit {750 ml} Rotwein ablöschen und den Bratensatz vom Topfboden lösen. {200 ml} Hühnerbrühe, {3} Thymianzweige, {2} Lorbeerblätter, den Speck und das Hähnchen zugeben. Zugedeckt bei schwacher Hitze etwa 1 Stunde schmoren, bis sich das Fleisch leicht vom Knochen löst.
+5. {250 g} Champignons vierteln und in {2 EL} Butter goldbraun braten. Zum Hähnchen geben.
+6. Thymian und Lorbeer entfernen. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken. Mit gehackter Petersilie bestreuen und mit Baguette oder Kartoffelpüree servieren.
+
+Tipp: Einen Burgunder oder einen anderen kräftigen, trockenen Rotwein nehmen, den man auch selbst gern trinken würde.
 
 Guten Appetit!', 'coq-au-vin.jpg');
 
@@ -6831,11 +6852,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Saltimbocca alla Romana
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Saltimbocca alla Romana', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Dünne Kalbsschnitzel (à ca. 70 g) flach klopfen und leicht pfeffern.
-2. Je eine Scheibe Parmaschinken und ein Salbeiblatt auflegen und mit einem Zahnstocher feststecken.
-3. Nur die Unterseite leicht in Mehl tupfen.
-4. Öl und die Hälfte der Butter erhitzen. Schnitzel zuerst auf der Schinkenseite 1 Minute, dann auf der anderen Seite 1–2 Minuten braten. Herausnehmen und warm stellen.
-5. Bratensatz mit Weißwein ablöschen, etwas einkochen, die restliche Butter einschwenken und vorsichtig salzen. Soße über die Saltimbocca geben.
+VALUES ('Saltimbocca alla Romana', '„Spring in den Mund“: hauchdünne Kalbsschnitzel mit Parmaschinken und Salbei in Weißwein-Butter, in wenigen Minuten gebraten.', 25, 4, 'Portionen', 'Ganzjährig', '1. {8} dünne Kalbsschnitzel von je etwa 70 g zwischen Frischhaltefolie flach klopfen und leicht pfeffern. Nicht salzen, der Schinken ist salzig genug.
+2. Auf jedes Schnitzel eine Scheibe Parmaschinken und ein Salbeiblatt legen und mit einem Zahnstocher feststecken.
+3. Nur die Unterseite leicht in {2 EL} Mehl tupfen und überschüssiges Mehl abklopfen.
+4. {1 EL} Olivenöl und {20 g} Butter in einer großen Pfanne erhitzen. Die Schnitzel zuerst auf der Schinkenseite 1 Minute, dann auf der anderen Seite 1–2 Minuten braten. Herausnehmen und auf einer vorgewärmten Platte warm halten.
+5. Den Bratensatz mit {150 ml} Weißwein ablöschen, loskratzen und etwas einkochen lassen. Die restliche Butter in Stückchen einschwenken, bis die Soße leicht bindet, und vorsichtig salzen.
+6. Die Zahnstocher entfernen und die Soße über die Saltimbocca geben. Sofort servieren.
+
+Tipp: Dazu passen Rosmarinkartoffeln, Weißbrot oder grüne Bohnen.
 
 Guten Appetit!', 'saltimbocca-alla-romana.jpg');
 
@@ -6851,11 +6875,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Backfisch mit Remoulade
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Backfisch mit Remoulade', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Für die Remoulade Gewürzgurken, Kapern und Petersilie fein hacken und mit Mayonnaise, Joghurt und Senf verrühren. Mit Salz, Pfeffer und etwas Zitronensaft abschmecken.
-2. Mehl, Backpulver und Salz mischen und mit kaltem Bier und Ei zu einem glatten, dickflüssigen Teig verrühren.
-3. Fisch in Portionsstücke schneiden, trocken tupfen, mit Zitronensaft beträufeln und salzen.
-4. Öl in einem Topf auf 175 °C erhitzen. Fischstücke durch den Teig ziehen, abtropfen lassen und portionsweise 4–5 Minuten goldbraun ausbacken.
+VALUES ('Backfisch mit Remoulade', 'Fisch im knusprigen Bierteig, wie auf dem Fischmarkt, mit selbst gemachter Remoulade.', 40, 4, 'Portionen', 'Ganzjährig', '1. Für die Remoulade {2} Gewürzgurken, {1 EL} Kapern und die Petersilie fein hacken. Mit {150 g} Mayonnaise, {100 g} Joghurt und {1 TL} Senf verrühren und mit Salz, Pfeffer und etwas Zitronensaft abschmecken. Kalt stellen.
+2. {150 g} Mehl, {1 TL} Backpulver und eine Prise Salz mischen. {200 ml} kaltes Bier und {1} Ei zugeben und zu einem glatten, dickflüssigen Teig verrühren. Die Kohlensäure macht den Teig luftig und knusprig.
+3. {600 g} Seelachsfilet in Portionsstücke schneiden, trocken tupfen, mit etwas Zitronensaft beträufeln und salzen.
+4. {1000 ml} Rapsöl in einem hohen Topf auf 175 °C erhitzen. Die Fischstücke durch den Teig ziehen, abtropfen lassen und portionsweise 4–5 Minuten goldbraun ausbacken. Nicht zu viele auf einmal, sonst kühlt das Öl ab und der Teig wird fettig.
 5. Auf Küchenpapier abtropfen lassen und mit Remoulade und Zitronenspalten servieren.
+
+Tipp: Ohne Thermometer: Das Öl ist heiß genug, wenn ein Tropfen Teig sofort aufsteigt und brutzelt.
 
 Guten Appetit!', 'backfisch-mit-remoulade.jpg');
 
@@ -6877,11 +6903,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Lachs-Spinat-Pasta
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Lachs-Spinat-Pasta', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Nudeln in Salzwasser bissfest kochen.
-2. Lachs in 2 cm große Würfel schneiden. Schalotte und Knoblauch fein würfeln.
-3. Schalotte und Knoblauch in Butter andünsten, mit Weißwein ablöschen und etwas einkochen. Sahne zugeben und 3 Minuten köcheln.
-4. Lachswürfel und Spinat zugeben und 3 Minuten ziehen lassen, bis der Lachs gar und der Spinat zusammengefallen ist.
-5. Mit Zitronenabrieb, Zitronensaft, Salz und Pfeffer abschmecken, Nudeln untermischen und mit Dill servieren.
+VALUES ('Lachs-Spinat-Pasta', 'Cremige Bandnudeln mit zarten Lachswürfeln, Spinat und Zitrone: elegant, aber in 25 Minuten fertig.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Bandnudeln darin bissfest kochen.
+2. {300 g} Lachsfilet in 2 cm große Würfel schneiden. Die Schalotte und die Knoblauchzehe fein würfeln.
+3. {1 EL} Butter in einer großen Pfanne schmelzen und Schalotte und Knoblauch darin glasig dünsten. Mit {100 ml} Weißwein ablöschen und etwas einkochen lassen. {200 ml} Sahne zugeben und 3 Minuten köcheln lassen.
+4. Die Lachswürfel und {200 g} Spinat zugeben und bei schwacher Hitze 3 Minuten ziehen lassen, bis der Lachs gerade gar und der Spinat zusammengefallen ist. Nicht mehr umrühren, sonst zerfällt der Lachs.
+5. Mit abgeriebener Zitronenschale, etwas Zitronensaft, Salz und Pfeffer abschmecken. Die abgetropften Nudeln vorsichtig unterheben und mit gehacktem Dill servieren.
+
+Tipp: Mit Räucherlachs geht es noch schneller, dann erst ganz zum Schluss unterheben.
 
 Guten Appetit!', 'lachs-spinat-pasta.jpg');
 
@@ -6900,11 +6928,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kabeljau in Senfsoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kabeljau in Senfsoße', NULL, 35, 4, 'Portionen', 'Ganzjährig', '1. Kartoffeln schälen und in Salzwasser garen.
-2. Fisch in {4 Stücke} teilen, mit Zitronensaft beträufeln und salzen.
-3. Butter schmelzen, Mehl anschwitzen, mit Brühe und Sahne unter Rühren ablöschen und 5 Minuten köcheln. Senf (gern mittelscharf und körnig gemischt) einrühren und mit Zucker, Salz und Pfeffer abschmecken.
-4. Fisch in die Soße legen und zugedeckt bei kleiner Hitze 8–10 Minuten gar ziehen lassen.
-5. Mit gehacktem Dill bestreuen und mit Salzkartoffeln servieren.
+VALUES ('Kabeljau in Senfsoße', 'Zarter Kabeljau, sanft in würziger Senfsoße gegart, mit Salzkartoffeln und Dill: norddeutsch und schön einfach.', 35, 4, 'Portionen', 'Ganzjährig', '1. {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+2. {600 g} Kabeljaufilet in {4} Stücke teilen, mit dem Saft der halben Zitrone beträufeln und salzen.
+3. {30 g} Butter in einem breiten Topf schmelzen, {2 EL} Mehl einrühren und 1 Minute anschwitzen. Mit {300 ml} Gemüsebrühe und {150 ml} Sahne unter Rühren ablöschen und 5 Minuten köcheln lassen. {3 EL} Senf, gern mittelscharf und körnig gemischt, einrühren und mit einer Prise Zucker, Salz und Pfeffer abschmecken. Ab jetzt nicht mehr kochen lassen, Senf wird beim Kochen bitter.
+4. Den Fisch in die Soße legen und zugedeckt bei schwacher Hitze 8–10 Minuten gar ziehen lassen, bis er sich leicht in Lamellen teilen lässt.
+5. Mit gehacktem Dill bestreuen und mit den Salzkartoffeln servieren.
+
+Tipp: Dazu passt ein Gurkensalat.
 
 Guten Appetit!', 'kabeljau-in-senfsosse.jpg');
 
@@ -6923,12 +6953,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Vegane Maki-Sushi
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vegane Maki-Sushi', NULL, 60, 4, 'Portionen', 'Ganzjährig', '1. Sushireis waschen, bis das Wasser klar bleibt, abtropfen lassen und mit {400 ml} Wasser aufkochen. Zugedeckt bei kleinster Hitze 12 Minuten quellen und dann 10 Minuten ruhen lassen.
-2. Reisessig, Zucker und Salz verrühren, unter den warmen Reis heben und abkühlen lassen.
-3. Gurke, Avocado und Karotte in lange, dünne Stifte schneiden.
-4. Ein halbes Noriblatt auf eine Bambusmatte legen, mit nassen Händen dünn mit Reis bestreichen (oben 1 cm frei lassen) und mittig mit Gemüse belegen.
-5. Mithilfe der Matte fest aufrollen, den freien Rand mit Wasser befeuchten und andrücken. Mit einem nassen, scharfen Messer in sechs Stücke schneiden.
-6. Mit Sesam bestreuen und mit Sojasauce servieren.
+VALUES ('Vegane Maki-Sushi', 'Selbst gerollte Sushi mit Gurke, Avocado und Karotte: Es braucht etwas Übung, aber es macht Spaß, besonders zu mehreren.', 60, 4, 'Portionen', 'Ganzjährig', '1. {300 g} Sushireis in einem Sieb waschen, bis das Wasser klar bleibt, und 15 Minuten abtropfen lassen. Mit {400 ml} Wasser in einem Topf aufkochen, dann zugedeckt bei kleinster Hitze 12 Minuten quellen lassen. Vom Herd nehmen und weitere 10 Minuten ruhen lassen, ohne den Deckel zu öffnen.
+2. {4 EL} Reisessig, {1 EL} Zucker und {1 TL} Salz verrühren, bis sich alles gelöst hat. Den Reis in eine große Schüssel geben, die Mischung darüberträufeln und mit einem Holzspatel vorsichtig unterheben. Abkühlen lassen, bis er lauwarm ist.
+3. Die Gurke, die Avocado und die Karotte in lange, dünne Stifte schneiden.
+4. Ein halbes Noriblatt mit der glatten Seite nach unten auf eine Bambusmatte legen. Mit nassen Händen eine dünne Schicht Reis darauf verteilen und oben 1 cm frei lassen. Gemüse in einer Linie mittig darauflegen.
+5. Mithilfe der Matte von unten fest aufrollen. Den freien Rand mit etwas Wasser befeuchten und andrücken. Die Rolle mit einem scharfen, nassen Messer in sechs Stücke schneiden. Mit den übrigen {5} Noriblättern genauso verfahren.
+6. Mit {1 EL} Sesam bestreuen und mit {4 EL} Sojasauce servieren.
+
+Tipp: Die Messerklinge vor jedem Schnitt in Wasser tauchen, dann klebt der Reis nicht daran.
 
 Guten Appetit!', 'vegane-maki-sushi.jpg');
 
@@ -6945,11 +6977,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tofu-Gemüse-Pfanne mit Erdnusssoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tofu-Gemüse-Pfanne mit Erdnusssoße', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Reis garen. Tofu in Würfel schneiden, mit Stärke bestäuben und in {2 EL} Öl rundherum knusprig braten. Herausnehmen.
-2. Erdnussmus, Sojasauce, Limettensaft, Ahornsirup, geriebenen Ingwer, gepressten Knoblauch, Chili und {100 ml} warmes Wasser glatt rühren.
-3. Brokkoliröschen sowie Paprika und Karotten in Streifen im restlichen Öl 5 Minuten pfannenrühren.
-4. Soße und Tofu zugeben und 2 Minuten durchschwenken.
-5. Mit Frühlingszwiebeln und gehackten Erdnüssen bestreuen und mit dem Reis servieren.
+VALUES ('Tofu-Gemüse-Pfanne mit Erdnusssoße', 'Knuspriger Tofu und knackiges Gemüse in einer cremigen, würzigen Erdnusssoße: Feierabendessen mit Suchtpotenzial.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen. {400 g} Tofu trocken tupfen und in Würfel schneiden. Mit {1 EL} Speisestärke bestäuben und in {2 EL} Rapsöl rundherum knusprig braten. Herausnehmen.
+2. {4 EL} Erdnussmus, {3 EL} Sojasauce, den Saft der Limette, {1 EL} Ahornsirup, {15 g} geriebenen Ingwer, die gepresste Knoblauchzehe, {0.5 TL} Chiliflocken und {100 ml} warmes Wasser glatt rühren.
+3. {300 g} Brokkoli in kleine Röschen teilen, die Paprika und {2} Karotten in Streifen schneiden. Im restlichen Öl im Wok bei hoher Hitze 5 Minuten unter Rühren braten, bis das Gemüse bissfest ist.
+4. Die Soße und den Tofu zugeben und 2 Minuten durchschwenken, bis alles heiß und mit Soße überzogen ist. Ist die Soße zu dick, einen Schuss Wasser zugeben.
+5. {3} Frühlingszwiebeln in Ringe schneiden und {30 g} Erdnüsse grob hacken. Beides darüberstreuen und mit dem Reis servieren.
+
+Tipp: Tofu wird besonders knusprig, wenn man ihn vorher 10 Minuten zwischen Küchentüchern mit einem schweren Topf auspresst.
 
 Guten Appetit!', 'tofu-gemuese-pfanne-mit-erdnusssosse.jpg');
 
@@ -6972,11 +7006,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Buddha Bowl mit Tahini-Dressing
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Buddha Bowl mit Tahini-Dressing', NULL, 45, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 200 °C vorheizen. Süßkartoffel würfeln, mit abgetropften Kichererbsen, Öl, Paprika und Salz mischen und 25 Minuten rösten.
-2. Quinoa abspülen und in der doppelten Menge Salzwasser 15 Minuten garen.
-3. Rotkohl fein hobeln, Gurke in Scheiben und Avocado in Spalten schneiden.
-4. Tahini mit Zitronensaft, Ahornsirup, Salz, Pfeffer und {3-4 EL} Wasser zu einem cremigen Dressing verrühren.
-5. Quinoa, junge Spinatblätter, Gemüse, Süßkartoffeln und Kichererbsen in Schalen anrichten, mit Dressing beträufeln und mit Sesam bestreuen.
+VALUES ('Buddha Bowl mit Tahini-Dressing', 'Eine bunte Schale voller Gutem: geröstete Süßkartoffeln, knusprige Kichererbsen, Quinoa, Avocado und cremiges Tahini-Dressing.', 45, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {500 g} Süßkartoffeln schälen und würfeln. Mit {240 g} abgetropften Kichererbsen, {3 EL} Olivenöl, {1 TL} Paprikapulver und Salz mischen und auf einem Blech 25 Minuten rösten.
+2. {200 g} Quinoa in einem Sieb heiß abspülen und in der doppelten Menge Salzwasser etwa 15 Minuten garen. Auflockern.
+3. {200 g} Rotkohl fein hobeln und mit einer Prise Salz kurz durchkneten. Die Gurke in Scheiben und {2} Avocados in Spalten schneiden.
+4. {3 EL} Tahini mit dem Saft der Zitrone, {1 TL} Ahornsirup, Salz, Pfeffer und {3-4 EL} Wasser zu einem cremigen Dressing verrühren.
+5. Quinoa, {100 g} junge Spinatblätter, Rotkohl, Gurke, Avocado, Süßkartoffeln und Kichererbsen nebeneinander in Schalen anrichten. Mit dem Dressing beträufeln und mit {1 EL} Sesam bestreuen.
+
+Tipp: Alle Komponenten lassen sich vorbereiten. So hat man für mehrere Tage gesunde Mittagessen.
 
 Guten Appetit!', 'buddha-bowl-mit-tahini-dressing.jpg');
 
@@ -6998,11 +7034,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Quesadillas mit Bohnen und Käse
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Quesadillas mit Bohnen und Käse', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Bohnen abspülen, mit einer Gabel grob zerdrücken und mit Kreuzkümmel, Paprikapulver und Salz würzen.
-2. Paprika fein würfeln, Frühlingszwiebeln in Ringe schneiden und mit dem abgetropften Mais mischen.
-3. {4} Tortillas mit dem Bohnenmus bestreichen, Gemüse und geriebenen Cheddar darauf verteilen und mit den restlichen Tortillas belegen.
-4. In einer leicht geölten Pfanne bei mittlerer Hitze pro Seite 2–3 Minuten braten, bis der Käse geschmolzen und die Tortilla knusprig ist.
-5. In Viertel schneiden und mit saurer Sahne servieren.
+VALUES ('Quesadillas mit Bohnen und Käse', 'Knusprige Tortillas mit würzigem Bohnenmus, Gemüse und geschmolzenem Cheddar: mexikanisches Streetfood aus der Pfanne.', 25, 4, 'Portionen', 'Ganzjährig', '1. {240 g} Kidneybohnen abspülen, abtropfen lassen und mit einer Gabel grob zerdrücken. Mit {1 TL} Kreuzkümmel, {1 TL} Paprikapulver und Salz würzen.
+2. Die Paprika fein würfeln, {2} Frühlingszwiebeln in Ringe schneiden und mit {150 g} abgetropftem Mais mischen. {200 g} Cheddar reiben.
+3. {4} Tortillas mit dem Bohnenmus bestreichen. Gemüse und Käse darauf verteilen und mit den restlichen Tortillas belegen. Leicht andrücken.
+4. Eine große Pfanne mit {1 EL} Rapsöl auspinseln und bei mittlerer Hitze erhitzen. Die Quesadillas einzeln pro Seite 2–3 Minuten braten, bis der Käse geschmolzen und die Tortilla goldbraun und knusprig ist. Zum Wenden einen Teller zu Hilfe nehmen.
+5. In Viertel schneiden und mit {150 g} saurer Sahne servieren.
+
+Tipp: Dazu passen Guacamole und eine scharfe Salsa.
 
 Guten Appetit!', 'quesadillas-mit-bohnen-und-kaese.jpg');
 
@@ -7020,11 +7058,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schnelles Dinkelbrot
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schnelles Dinkelbrot', NULL, 75, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform fetten. Den Ofen nicht vorheizen.
-2. Mehl, Hefe, Salz, Sonnenblumen- und Kürbiskerne mischen. Je {1 EL} Kerne für die Oberfläche beiseitelegen.
-3. {500 ml} lauwarmes Wasser und Essig zugeben und mit einem Löffel zu einem klebrigen Teig verrühren – kneten ist nicht nötig.
-4. Teig in die Form füllen, glatt streichen und mit den restlichen Kernen bestreuen.
-5. In den kalten Ofen stellen und bei 200 °C Ober-/Unterhitze ca. 60 Minuten backen. Aus der Form lösen und auf einem Gitter auskühlen lassen.
+VALUES ('Schnelles Dinkelbrot', 'Ein saftiges Körnerbrot ohne Kneten, ohne Gehzeit und ohne Vorheizen: Abends gerührt, steht es nach einer Stunde duftend auf dem Tisch.', 75, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform (etwa 30 cm) gut fetten oder mit Backpapier auslegen. Den Ofen nicht vorheizen.
+2. {500 g} Dinkelmehl, die Trockenhefe, {2 TL} Salz, {50 g} Sonnenblumenkerne und {50 g} Kürbiskerne in einer Schüssel mischen. Je {1 EL} Sonnenblumen- und Kürbiskerne für die Oberfläche beiseitelegen.
+3. {500 ml} lauwarmes Wasser und {1 EL} Apfelessig zugeben und mit einem Löffel zu einem klebrigen, glatten Teig verrühren. Kneten ist nicht nötig, der Essig sorgt für Lockerheit.
+4. Den Teig in die Form füllen, glatt streichen und mit den restlichen Kernen bestreuen. Die Oberfläche mit einem nassen Messer etwa 1 cm tief längs einschneiden.
+5. In den kalten Ofen stellen und bei 200 °C Ober-/Unterhitze etwa 60 Minuten backen. Klingt es beim Klopfen auf die Unterseite hohl, ist es fertig. Aus der Form lösen und auf einem Gitter vollständig auskühlen lassen.
+
+Tipp: Eine Schale Wasser im Ofen sorgt für eine schöne, knusprige Kruste.
 
 Guten Appetit!', 'schnelles-dinkelbrot.jpg');
 
@@ -7037,11 +7077,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kartoffelpüree
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelpüree', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Mehligkochende Kartoffeln schälen, vierteln und in Salzwasser ca. 20 Minuten weich kochen.
-2. Milch mit Butter erhitzen.
-3. Kartoffeln abgießen, kurz ausdampfen lassen und durch eine Presse drücken oder fein stampfen.
-4. Heiße Milch nach und nach unterrühren, bis das Püree cremig ist. Nicht mit dem Pürierstab arbeiten, sonst wird es zäh.
-5. Mit Salz und Muskat abschmecken.
+VALUES ('Kartoffelpüree', 'Cremig, buttrig und mit einem Hauch Muskat: das perfekte Kartoffelpüree, Beilage und Trostessen zugleich.', 30, 4, 'Portionen', 'Ganzjährig', '1. {1000 g} mehligkochende Kartoffeln schälen, vierteln und in Salzwasser etwa 20 Minuten weich kochen.
+2. Inzwischen {250 ml} Milch mit {50 g} Butter in einem kleinen Topf erhitzen, bis die Butter geschmolzen ist.
+3. Die Kartoffeln abgießen und im Topf auf der warmen Herdplatte kurz ausdampfen lassen. Dann durch eine Kartoffelpresse drücken oder mit einem Kartoffelstampfer fein zerstampfen.
+4. Die heiße Milch nach und nach mit einem Kochlöffel unterrühren, bis das Püree cremig ist. Nicht mit dem Pürierstab arbeiten, sonst wird es zäh und kleisterig.
+5. Mit Salz und frisch geriebener Muskatnuss abschmecken.
+
+Tipp: Mit braun gerösteter Butter oder etwas geriebenem Käse wird das Püree zum Star auf dem Teller.
 
 Guten Appetit!', 'kartoffelpueree.jpg');
 
@@ -7053,10 +7095,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bratkartoffeln mit Speck und Zwiebeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bratkartoffeln mit Speck und Zwiebeln', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Festkochende Kartoffeln mit Schale kochen, pellen, vollständig auskühlen lassen (am besten am Vortag) und in Scheiben schneiden.
-2. Butterschmalz in einer großen Pfanne erhitzen und die Kartoffelscheiben in einer Lage hineingeben. Bei mittlerer Hitze ca. 10 Minuten braten, ohne zu rühren, dann wenden.
-3. Speck würfeln, Zwiebeln in Streifen schneiden und zugeben. Weitere 8–10 Minuten braten, bis alles goldbraun und knusprig ist.
-4. Mit Salz, Pfeffer, Majoran und Kümmel würzen und mit Schnittlauch bestreuen.
+VALUES ('Bratkartoffeln mit Speck und Zwiebeln', 'Knusprige Bratkartoffeln aus der Pfanne mit Speck, Zwiebeln und Kümmel: deftiges Glück für jeden Tag.', 40, 4, 'Portionen', 'Ganzjährig', '1. {1000 g} festkochende Kartoffeln mit Schale in Salzwasser etwa 20 Minuten kochen. Pellen und vollständig auskühlen lassen, am besten schon am Vortag. Warme Kartoffeln zerfallen in der Pfanne. In etwa 5 mm dicke Scheiben schneiden.
+2. {3 EL} Butterschmalz in einer großen Pfanne erhitzen. Die Kartoffelscheiben in einer Lage hineingeben und bei mittlerer Hitze etwa 10 Minuten braten, ohne zu rühren, bis sie unten goldbraun sind. Dann wenden. Geduld ist das Wichtigste bei Bratkartoffeln.
+3. {100 g} Speck würfeln und {2} Zwiebeln in Streifen schneiden. Beides zugeben und weitere 8–10 Minuten braten, gelegentlich wenden, bis alles goldbraun und knusprig ist.
+4. Mit Salz, Pfeffer, {1 TL} Majoran und {0.5 TL} Kümmel würzen und mit Schnittlauchröllchen bestreuen.
+
+Tipp: Mit einem Spiegelei obendrauf wird daraus ein vollwertiges Abendessen.
 
 Guten Appetit!', 'bratkartoffeln-mit-speck-und-zwiebeln.jpg');
 
@@ -7072,10 +7116,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Strammer Max
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Strammer Max', NULL, 15, 2, 'Portionen', 'Ganzjährig', '1. Brotscheiben mit {1 EL} Butter bestreichen und mit Schinken belegen.
-2. Restliche Butter in einer Pfanne erhitzen und {2} Spiegeleier braten, bis das Eiweiß gestockt und das Eigelb noch flüssig ist. Salzen und pfeffern.
-3. Spiegeleier auf die Schinkenbrote setzen.
-4. Mit Schnittlauch bestreuen und mit Gewürzgurken servieren.
+VALUES ('Strammer Max', 'Bauernbrot, Schinken und ein Spiegelei mit flüssigem Eigelb: die deftige Brotzeit, die in 15 Minuten satt macht.', 15, 2, 'Portionen', 'Ganzjährig', '1. {2} Scheiben Bauernbrot mit {1 EL} Butter bestreichen und mit {4} Scheiben Kochschinken belegen. Wer mag, röstet das Brot vorher kurz in der Pfanne an.
+2. Die restliche Butter in einer Pfanne bei mittlerer Hitze schmelzen. {2} Eier vorsichtig hineinschlagen und 3–4 Minuten braten, bis das Eiweiß gestockt und das Eigelb noch flüssig ist. Nur das Eiweiß salzen und pfeffern, auf dem Eigelb bilden sich sonst weiße Flecken.
+3. Die Spiegeleier mit einem Pfannenwender auf die Schinkenbrote setzen.
+4. Mit Schnittlauchröllchen bestreuen und mit {2} Gewürzgurken servieren.
+
+Tipp: In Berlin kommt manchmal noch eine Scheibe Käse zwischen Schinken und Ei.
 
 Guten Appetit!', 'strammer-max.jpg');
 
@@ -7090,10 +7136,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Toast Hawaii
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Toast Hawaii', NULL, 20, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 220 °C (Grillfunktion) vorheizen.
-2. Toastscheiben toasten und dünn mit Butter bestreichen.
-3. Mit je einer Scheibe Schinken und Ananas belegen und mit Käse abdecken.
-4. Ca. 8–10 Minuten überbacken, bis der Käse goldbraun ist. Mit Paprikapulver bestäuben – ein Klassiker der 1950er-Jahre.
+VALUES ('Toast Hawaii', 'Schinken, Ananas und geschmolzener Käse auf Toast: der Kultsnack der 1950er-Jahre, so herrlich retro wie lecker.', 20, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 220 °C mit Grillfunktion vorheizen.
+2. {4} Scheiben Toastbrot toasten und dünn mit {1 EL} Butter bestreichen.
+3. Jede Scheibe mit einer Scheibe Kochschinken und einer gut abgetropften Scheibe Ananas belegen. Mit je einer Scheibe Gouda abdecken, so dass die Ananas ganz bedeckt ist.
+4. Auf einem Blech mit Backpapier 8–10 Minuten überbacken, bis der Käse geschmolzen und goldbraun ist.
+5. Mit einer Prise Paprikapulver bestäuben und heiß servieren.
+
+Tipp: Klassisch kommt eine Cocktailkirsche in die Mitte der Ananas.
 
 Guten Appetit!', 'toast-hawaii.jpg');
 
@@ -7106,10 +7155,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Arme Ritter
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Arme Ritter', NULL, 20, 4, 'Portionen', 'Ganzjährig', '1. Milch, Eier, Vanillezucker und eine Prise Zimt verquirlen.
-2. Altbackene Toastscheiben darin von beiden Seiten kurz einweichen.
-3. Butter in einer Pfanne erhitzen und die Scheiben pro Seite 2–3 Minuten goldbraun braten.
-4. Zucker mit dem restlichen Zimt mischen und darüberstreuen. Mit Apfelmus servieren.
+VALUES ('Arme Ritter', 'Altes Brot, in Vanille-Eiermilch getaucht und goldbraun gebraten: die schönste Art, Reste zu verwerten.', 20, 4, 'Portionen', 'Ganzjährig', '1. {250 ml} Milch, {2} Eier, den Vanillezucker und eine Prise Zimt in einem tiefen Teller verquirlen.
+2. {8} Scheiben altbackenes Toastbrot nacheinander von beiden Seiten kurz in die Eiermilch tauchen, bis sie sich vollgesogen haben, aber nicht zerfallen. Etwas abtropfen lassen.
+3. Etwas Butter in einer Pfanne bei mittlerer Hitze schmelzen. Die Scheiben portionsweise pro Seite 2–3 Minuten goldbraun braten. Nach jeder Portion etwas Butter nachgeben.
+4. {2 EL} Zucker mit dem restlichen Zimt mischen und über die heißen Armen Ritter streuen.
+5. Mit {300 g} Apfelmus servieren.
+
+Tipp: Mit Brioche oder Hefezopf vom Vortag werden sie besonders fein.
 
 Guten Appetit!', 'arme-ritter.jpg');
 
@@ -7124,11 +7176,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Eier in Senfsoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Eier in Senfsoße', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Kartoffeln schälen und in Salzwasser garen.
-2. Eier 8–9 Minuten kochen, abschrecken und pellen.
-3. Butter schmelzen, Mehl anschwitzen und unter Rühren mit Brühe und Milch ablöschen. 5 Minuten köcheln.
-4. Senf einrühren und mit Zucker, Salz und Pfeffer kräftig abschmecken.
-5. Eier halbieren, in die Soße legen und mit Kartoffeln und Schnittlauch servieren. Ein Klassiker der Hausmannskost.
+VALUES ('Eier in Senfsoße', 'Hart gekochte Eier in einer würzigen, cremigen Senfsoße mit Salzkartoffeln: einfache Hausmannskost, die Kindheitserinnerungen weckt.', 30, 4, 'Portionen', 'Ganzjährig', '1. {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+2. {8} Eier in kochendem Wasser 8–9 Minuten kochen, in kaltem Wasser abschrecken und pellen. So ist das Eigelb fest, aber noch saftig.
+3. {30 g} Butter in einem Topf schmelzen, {2 EL} Mehl einrühren und 1 Minute anschwitzen. Unter ständigem Rühren mit {300 ml} Gemüsebrühe und {200 ml} Milch ablöschen und 5 Minuten köcheln lassen, bis die Soße sämig ist.
+4. {3 EL} Senf einrühren und mit einer Prise Zucker, Salz und Pfeffer kräftig abschmecken. Ab jetzt nicht mehr kochen, Senf wird beim Kochen bitter.
+5. Die Eier halbieren und in die Soße legen, kurz erwärmen. Mit den Kartoffeln anrichten und mit Schnittlauchröllchen bestreuen.
+
+Tipp: Eine Mischung aus mittelscharfem und körnigem Senf gibt der Soße Charakter.
 
 Guten Appetit!', 'eier-in-senfsosse.jpg');
 
@@ -7146,11 +7200,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Soljanka
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Soljanka', NULL, 60, 6, 'Portionen', 'Ganzjährig', '1. Kassler, Würstchen, Zwiebeln, Paprika und Gewürzgurken in kleine Würfel bzw. Streifen schneiden.
-2. Zwiebeln in Öl andünsten, Fleisch und Wurst zugeben und kurz anbraten.
-3. Tomatenmark und Paprikapulver einrühren und mitrösten. Mit Brühe, passierten Tomaten und {100 ml} Gurkenwasser aufgießen und den Lorbeer zugeben.
+VALUES ('Soljanka', 'Säuerlich-pikante Suppe mit Wurst, Kassler, Gewürzgurken und Paprika, serviert mit Schmand und Zitrone: ein Klassiker der DDR-Küche.', 60, 6, 'Portionen', 'Ganzjährig', '1. {200 g} Kassler und {4} Wiener Würstchen in kleine Würfel schneiden. {2} Zwiebeln würfeln, die Paprika in Streifen und {4} Gewürzgurken in Stifte schneiden.
+2. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebeln darin glasig dünsten. Kassler und Wurst zugeben und 3 Minuten anbraten.
+3. {3 EL} Tomatenmark und {2 TL} Paprikapulver einrühren und 1 Minute mitrösten. Mit {1000 ml} Rinderbrühe, {400 ml} passierten Tomaten und {100 ml} Gurkenwasser aus dem Glas aufgießen und das Lorbeerblatt zugeben.
 4. Paprika und Gurken zugeben und 30 Minuten köcheln lassen.
-5. Mit Salz, Pfeffer und Zitronensaft säuerlich-pikant abschmecken. Mit einer Zitronenscheibe, einem Klecks Schmand und Dill servieren – ein Klassiker aus der DDR-Küche.
+5. Das Lorbeerblatt entfernen. Mit Salz, Pfeffer und dem Saft einer halben Zitrone säuerlich-pikant abschmecken.
+6. In Teller füllen und mit einer Zitronenscheibe, einem Klecks von {150 g} Schmand und gehacktem Dill servieren.
+
+Tipp: In die Soljanka kommen gern alle Wurstreste, die der Kühlschrank hergibt.
 
 Guten Appetit!', 'soljanka.jpg');
 
@@ -7173,11 +7230,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schinkennudeln mit Ei
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schinkennudeln mit Ei', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Nudeln in Salzwasser bissfest kochen und abtropfen lassen.
-2. Zwiebel und Schinken würfeln. Zwiebel in Butter glasig dünsten, Schinken zugeben und kurz anbraten.
-3. Nudeln zugeben und unter Wenden 5 Minuten anbraten, bis sie leicht knusprig werden.
-4. Eier mit Milch, Salz, Pfeffer und Muskat verquirlen, über die Nudeln gießen und unter Rühren stocken lassen.
-5. Mit Schnittlauch bestreut servieren. Dazu passt grüner Salat.
+VALUES ('Schinkennudeln mit Ei', 'Angebratene Nudeln mit Schinken und Ei: das Resteessen, für das man extra Nudeln übrig lassen möchte.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Fusilli darin bissfest kochen. Abgießen und gut abtropfen lassen. Nudeln vom Vortag funktionieren genauso.
+2. Die Zwiebel und {200 g} Kochschinken würfeln. {2 EL} Butter in einer großen Pfanne schmelzen, die Zwiebel darin glasig dünsten, den Schinken zugeben und kurz anbraten.
+3. Die Nudeln zugeben und unter gelegentlichem Wenden etwa 5 Minuten braten, bis sie an einigen Stellen goldbraun und leicht knusprig werden.
+4. {4} Eier mit {50 ml} Milch, Salz, Pfeffer und Muskatnuss verquirlen. Über die Nudeln gießen und unter Wenden stocken lassen, bis das Ei gerade fest, aber noch saftig ist.
+5. Mit Schnittlauchröllchen bestreuen und mit einem grünen Salat servieren.
+
+Tipp: Mit geriebenem Käse, kurz vor Schluss untergehoben, wird es noch herzhafter.
 
 Guten Appetit!', 'schinkennudeln-mit-ei.jpg');
 
@@ -7194,11 +7253,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Flädlesuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Flädlesuppe', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Mehl, Milch, Eier, eine Prise Salz und {2 EL} gehackten Schnittlauch zu einem glatten, dünnflüssigen Teig verrühren und 10 Minuten quellen lassen.
-2. Butter in einer Pfanne erhitzen und nacheinander dünne Pfannkuchen backen.
-3. Pfannkuchen aufrollen und in feine Streifen (Flädle) schneiden.
-4. Rinderbrühe aufkochen und mit Salz und Muskat abschmecken.
-5. Flädle auf Teller verteilen, mit der heißen Brühe übergießen und mit dem restlichen Schnittlauch bestreuen. Ein schwäbischer Suppenklassiker.
+VALUES ('Flädlesuppe', 'Klare Rinderbrühe mit feinen Pfannkuchenstreifen und Schnittlauch: ein schwäbischer Suppenklassiker, ganz einfach und wohltuend.', 30, 4, 'Portionen', 'Ganzjährig', '1. {100 g} Mehl, {200 ml} Milch, {2} Eier, eine Prise Salz und {2 EL} fein geschnittenen Schnittlauch zu einem glatten, dünnflüssigen Teig verrühren. 10 Minuten quellen lassen.
+2. Etwas Butter in einer beschichteten Pfanne erhitzen. Eine kleine Kelle Teig hineingeben und durch Schwenken dünn verteilen. Bei mittlerer Hitze 1 Minute backen, wenden und kurz fertig backen. So weiter, bis der Teig verbraucht ist.
+3. Die Pfannkuchen etwas abkühlen lassen, eng aufrollen und in feine Streifen, die Flädle, schneiden.
+4. {1200 ml} Rinderbrühe aufkochen und mit Salz und Muskatnuss abschmecken.
+5. Die Flädle auf vorgewärmte Teller verteilen, mit der heißen Brühe übergießen und mit dem restlichen Schnittlauch bestreuen.
+
+Tipp: Die Flädle erst kurz vor dem Servieren in die Brühe geben, sonst werden sie weich.
 
 Guten Appetit!', 'flaedlesuppe.jpg');
 
@@ -7213,11 +7274,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Geschmälzte Maultaschen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Geschmälzte Maultaschen', NULL, 20, 4, 'Portionen', 'Ganzjährig', '1. Maultaschen in leicht siedendem Salzwasser 10 Minuten erwärmen, abtropfen lassen und in 2 cm breite Streifen schneiden.
-2. Zwiebeln in Ringe schneiden und in der Butter goldbraun braten.
-3. Maultaschenstreifen zugeben und von beiden Seiten anbraten.
-4. Verquirlte Eier darübergießen, salzen, pfeffern und unter Wenden stocken lassen.
-5. Mit Schnittlauch bestreuen und mit Kartoffelsalat servieren.
+VALUES ('Geschmälzte Maultaschen', 'Schwäbische Maultaschen in Streifen, mit Zwiebeln und Ei in Butter gebraten: das schnelle Mittagessen aus dem Ländle.', 20, 4, 'Portionen', 'Ganzjährig', '1. {8} Maultaschen in leicht siedendem Salzwasser etwa 10 Minuten erwärmen. Mit einer Schaumkelle herausheben, gut abtropfen lassen und in 2 cm breite Streifen schneiden.
+2. {2} Zwiebeln in Ringe schneiden. {3 EL} Butter in einer großen Pfanne schmelzen und die Zwiebeln darin bei mittlerer Hitze etwa 8 Minuten goldbraun braten.
+3. Die Maultaschenstreifen zugeben und von beiden Seiten goldbraun anbraten.
+4. {4} Eier verquirlen, über die Maultaschen gießen, salzen, pfeffern und unter vorsichtigem Wenden stocken lassen.
+5. Mit Schnittlauchröllchen bestreuen und mit Kartoffelsalat servieren.
+
+Tipp: Der Legende nach erfanden Mönche Maultaschen, um in der Fastenzeit das Fleisch vor dem Herrgott zu verstecken. Daher der Spitzname „Herrgottsbscheißerle“.
 
 Guten Appetit!', 'geschmaelzte-maultaschen.jpg');
 
@@ -7231,10 +7294,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Currywurst
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Currywurst', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel fein würfeln und in Öl glasig dünsten. Tomatenmark und {2 TL} Currypulver kurz mitrösten.
-2. Passierte Tomaten, Paprikapulver, Zucker, Essig und Cayennepfeffer zugeben und 15 Minuten einköcheln. Fein pürieren und mit Salz abschmecken.
-3. Bratwürste in einer Pfanne rundherum ca. 10 Minuten braten.
-4. Würste in Scheiben schneiden, mit der heißen Soße übergießen und mit dem restlichen Currypulver bestäuben. Dazu gehören Pommes oder ein Brötchen – Berliner Kult.
+VALUES ('Currywurst', 'Berliner Kult: gebratene Bratwurst in einer fruchtig-scharfen, selbst gekochten Currysoße.', 30, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel fein würfeln. {1 EL} Rapsöl in einem Topf erhitzen und die Zwiebel darin glasig dünsten. {2 EL} Tomatenmark und {2 TL} Currypulver zugeben und 1 Minute mitrösten, bis es duftet.
+2. {400 ml} passierte Tomaten, {1 TL} Paprikapulver, {2 EL} braunen Zucker, {1 EL} Apfelessig und eine Prise Cayennepfeffer zugeben. Offen etwa 15 Minuten einköcheln lassen, bis die Soße dicklich ist.
+3. Die Soße mit dem Stabmixer fein pürieren und mit Salz abschmecken. Sie soll süß, säuerlich und scharf zugleich sein.
+4. {4} Bratwürste in einer Pfanne bei mittlerer Hitze rundherum etwa 10 Minuten braten, bis sie gleichmäßig gebräunt sind.
+5. Die Würste in Scheiben schneiden, mit der heißen Soße übergießen und mit dem restlichen Currypulver bestäuben.
+
+Tipp: Dazu gehören Pommes oder ein Brötchen. Die Soße hält sich im Kühlschrank eine Woche.
 
 Guten Appetit!', 'currywurst.jpg');
 
@@ -7252,11 +7318,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schwäbischer Zwiebelrostbraten
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwäbischer Zwiebelrostbraten', NULL, 45, 4, 'Portionen', 'Ganzjährig', '1. Zwiebeln in sehr feine Ringe schneiden und mit {2 EL} Mehl und dem Paprikapulver bestäuben. In heißem Öl portionsweise goldbraun und knusprig frittieren und auf Küchenpapier abtropfen lassen.
-2. Den Fettrand der Steaks (am besten Roastbeef, à ca. 200 g) mehrmals einschneiden, damit sie sich nicht wölben. Fleisch leicht klopfen, pfeffern, eine Seite dünn mit Senf bestreichen und im restlichen Mehl wenden.
-3. Butterschmalz stark erhitzen und die Steaks pro Seite 2–3 Minuten braten. Salzen und warm stellen.
-4. Bratensatz mit Rotwein und Brühe ablöschen, sämig einkochen und die kalte Butter einschwenken.
-5. Rostbraten mit Soße und reichlich Röstzwiebeln servieren. Dazu gehören Spätzle.
+VALUES ('Schwäbischer Zwiebelrostbraten', 'Zartes Rostbratenstück mit kräftiger Bratensoße und einem Berg knuspriger Röstzwiebeln: schwäbisches Sonntagsessen.', 45, 4, 'Portionen', 'Ganzjährig', '1. {4} Zwiebeln schälen und in sehr feine Ringe schneiden oder hobeln. Mit {2 EL} Mehl und {1 TL} Paprikapulver bestäuben und gut durchmischen.
+2. {100 ml} Rapsöl in einer Pfanne stark erhitzen. Die Zwiebeln portionsweise darin goldbraun und knusprig frittieren, mit einer Schaumkelle herausheben und auf Küchenpapier abtropfen lassen. Leicht salzen.
+3. Den Fettrand der {4} Rindersteaks, am besten Roastbeef von je etwa 200 g, mehrmals einschneiden, damit sie sich beim Braten nicht wölben. Das Fleisch leicht flach klopfen, pfeffern, eine Seite dünn mit {1 TL} Senf bestreichen und im restlichen Mehl wenden.
+4. {2 EL} Butterschmalz in einer großen Pfanne stark erhitzen. Die Steaks pro Seite 2–3 Minuten braten, sie sollen innen rosa bleiben. Salzen und im Ofen bei 80 °C warm halten.
+5. Den Bratensatz mit {100 ml} Rotwein ablöschen und loskratzen. {250 ml} Rinderbrühe zugeben und sämig einkochen lassen. {1 EL} kalte Butter in Stückchen einschwenken.
+6. Die Rostbraten mit der Soße übergießen und mit reichlich Röstzwiebeln belegen.
+
+Tipp: Dazu gehören handgeschabte Spätzle.
 
 Guten Appetit!', 'schwaebischer-zwiebelrostbraten.jpg');
 
@@ -7275,11 +7344,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rindersteak mit Pfeffersoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rindersteak mit Pfeffersoße', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Steaks (z. B. Rumpsteak à ca. 200 g) 30 Minuten vor dem Braten aus dem Kühlschrank nehmen und trocken tupfen. Pfefferkörner grob zerstoßen.
-2. Butterschmalz in einer schweren Pfanne stark erhitzen und die Steaks pro Seite 2–3 Minuten scharf anbraten. Im Ofen bei 100 °C 8–10 Minuten nachziehen lassen (medium).
-3. Fett abgießen, Butter in der Pfanne schmelzen und die gehackte Schalotte mit dem Pfeffer andünsten.
-4. Mit Weißwein ablöschen, Brühe und Sahne zugeben und sämig einkochen lassen. Mit Salz abschmecken.
-5. Steaks salzen und mit der Pfeffersoße servieren.
+VALUES ('Rindersteak mit Pfeffersoße', 'Saftiges Steak, perfekt rosa gebraten, mit einer cremigen Pfefferrahmsoße wie im Steakhaus.', 40, 4, 'Portionen', 'Ganzjährig', '1. {4} Rindersteaks, etwa Rumpsteak von je 200 g, 30 Minuten vor dem Braten aus dem Kühlschrank nehmen und trocken tupfen. {2 TL} Pfefferkörner im Mörser grob zerstoßen. Den Ofen auf 100 °C vorheizen.
+2. {2 EL} Butterschmalz in einer schweren Pfanne sehr stark erhitzen. Die Steaks pro Seite 2–3 Minuten scharf anbraten, ohne sie zu bewegen, bis sich eine Kruste bildet. Dann auf einem Gitter im Ofen 8–10 Minuten nachziehen lassen. So werden sie medium.
+3. Das Fett aus der Pfanne gießen und {1 EL} Butter darin schmelzen. Die gehackte Schalotte und den Pfeffer darin 1 Minute andünsten.
+4. Mit {50 ml} Weißwein ablöschen und den Bratensatz loskratzen. {150 ml} Rinderbrühe und {150 ml} Sahne zugeben und sämig einkochen lassen, bis die Soße einen Löffel überzieht. Mit Salz abschmecken.
+5. Die Steaks erst jetzt salzen und mit der Pfeffersoße servieren.
+
+Tipp: Ohne Thermometer hilft der Drucktest: Ein medium Steak gibt auf Druck etwa so nach wie der Daumenballen, wenn man Daumen und Mittelfinger zusammenführt.
 
 Guten Appetit!', 'rindersteak-mit-pfeffersosse.jpg');
 
@@ -7295,11 +7366,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schweinefilet im Speckmantel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schweinefilet im Speckmantel', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 160 °C vorheizen. Filets parieren, pfeffern und dünn mit Senf bestreichen. Mit Thymianblättchen bestreuen.
-2. Speckscheiben überlappend auslegen, die Filets darauflegen und straff einwickeln.
-3. In Öl rundherum 5 Minuten anbraten, bis der Speck Farbe hat.
-4. Im Ofen ca. 15–20 Minuten garen (Kerntemperatur 62 °C) und 5 Minuten ruhen lassen.
-5. Bratensatz mit Weißwein ablöschen, Sahne zugeben, einkochen und mit Salz und Pfeffer abschmecken. Filet in Scheiben schneiden und mit der Soße servieren.
+VALUES ('Schweinefilet im Speckmantel', 'Zartes Schweinefilet mit Senf und Thymian, in knusprigen Speck gewickelt, mit einer cremigen Weißweinsoße.', 40, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {800 g} Schweinefilet von Sehnen und Silberhaut befreien, pfeffern und dünn mit {1 EL} Senf bestreichen. Mit den Blättchen von {4} Thymianzweigen bestreuen. Nicht salzen, der Speck bringt genug Salz mit.
+2. {12} Scheiben Speck leicht überlappend nebeneinander auslegen. Das Filet darauflegen und straff in den Speck einwickeln.
+3. {1 EL} Rapsöl in einer ofenfesten Pfanne erhitzen. Das Filet mit der Speck-Nahtseite nach unten hineinlegen und rundherum etwa 5 Minuten anbraten, bis der Speck Farbe hat.
+4. Im Ofen 15–20 Minuten garen, bis die Kerntemperatur 62 °C erreicht hat. Dann ist das Fleisch innen noch leicht rosa und saftig. Herausnehmen und in Alufolie 5 Minuten ruhen lassen.
+5. Den Bratensatz in der Pfanne mit {100 ml} Weißwein ablöschen, {150 ml} Sahne zugeben und sämig einkochen. Mit Salz und Pfeffer abschmecken.
+6. Das Filet in dicke Scheiben schneiden und mit der Soße servieren.
+
+Tipp: Dazu passen Kartoffelgratin, Bandnudeln oder grüne Bohnen.
 
 Guten Appetit!', 'schweinefilet-im-speckmantel.jpg');
 
@@ -7315,11 +7389,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kaiserschmarrn
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kaiserschmarrn', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Rosinen in Rum einweichen. Eier trennen.
-2. Eigelbe mit Milch, Mehl, Vanillezucker und Salz glatt rühren. Eiweiße mit dem Zucker steif schlagen und locker unterheben.
-3. Die Hälfte der Butter in einer großen Pfanne erhitzen, den Teig hineingießen und die Rosinen darüberstreuen. Bei mittlerer Hitze 4–5 Minuten backen, bis die Unterseite goldbraun ist.
-4. Teig vierteln, wenden und mit zwei Gabeln in Stücke reißen. Restliche Butter und {1 EL} Puderzucker zugeben und unter Wenden 3 Minuten karamellisieren.
-5. Mit Puderzucker bestäuben und mit Apfelmus servieren.
+VALUES ('Kaiserschmarrn', 'Fluffig, karamellisiert und mit Rosinen: der zerrupfte Pfannkuchen, den Kaiser Franz Joseph angeblich so liebte.', 30, 4, 'Portionen', 'Ganzjährig', '1. {40 g} Rosinen in {2 EL} Rum einweichen. {4} Eier trennen.
+2. Die Eigelbe mit {250 ml} Milch, {150 g} Mehl, dem Vanillezucker und einer Prise Salz glatt rühren. Die Eiweiße mit {40 g} Zucker zu steifem, glänzendem Schnee schlagen und locker unter den Teig heben. Der Eischnee macht den Schmarrn luftig.
+3. {20 g} Butter in einer großen Pfanne erhitzen. Den Teig hineingießen und die abgetropften Rosinen darüberstreuen. Bei mittlerer Hitze 4–5 Minuten backen, bis die Unterseite goldbraun ist und die Oberfläche zu stocken beginnt.
+4. Den Teig mit dem Pfannenwender vierteln, die Viertel wenden und mit zwei Gabeln in mundgerechte Stücke reißen. Die restliche Butter und {1 EL} Puderzucker zugeben und unter Wenden 3 Minuten karamellisieren lassen.
+5. Mit dem restlichen Puderzucker bestäuben und mit {300 g} Apfelmus servieren.
+
+Tipp: Statt Apfelmus passt Zwetschgenröster, das österreichische Pflaumenkompott.
 
 Guten Appetit!', 'kaiserschmarrn.jpg');
 
@@ -7337,11 +7413,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pfannkuchen (Eierkuchen)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pfannkuchen (Eierkuchen)', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Mehl, Milch, Eier, {1 EL} Zucker und Salz zu einem glatten Teig verrühren und 15 Minuten quellen lassen.
-2. Etwas Butter in einer beschichteten Pfanne erhitzen, eine Kelle Teig hineingeben und durch Schwenken dünn verteilen.
-3. Bei mittlerer Hitze 1–2 Minuten backen, bis die Unterseite goldbraun ist, wenden und fertig backen.
-4. Mit dem restlichen Teig ebenso verfahren und die Pfannkuchen warm halten.
-5. Restlichen Zucker mit Zimt mischen und darüberstreuen – oder mit Marmelade oder Apfelmus servieren.
+VALUES ('Pfannkuchen (Eierkuchen)', 'Dünne, goldene Pfannkuchen mit Zimt und Zucker: das Lieblingsessen vieler Kindheiten, schnell gemacht und immer gut.', 25, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Mehl, {500 ml} Milch, {3} Eier, {1 EL} Zucker und eine Prise Salz mit dem Schneebesen zu einem glatten Teig verrühren. 15 Minuten quellen lassen, dann werden die Pfannkuchen zarter.
+2. Etwas Butter in einer beschichteten Pfanne bei mittlerer Hitze schmelzen. Eine Kelle Teig hineingeben und die Pfanne sofort schwenken, sodass sich der Teig dünn verteilt.
+3. 1–2 Minuten backen, bis die Ränder sich lösen und die Unterseite goldbraun ist. Wenden und kurz fertig backen.
+4. Mit dem restlichen Teig genauso verfahren und vor jedem Pfannkuchen etwas Butter in die Pfanne geben. Fertige Pfannkuchen auf einem Teller im Ofen bei 80 °C warm halten.
+5. Den restlichen Zucker mit {1 TL} Zimt mischen und darüberstreuen. Oder mit Marmelade oder Apfelmus servieren.
+
+Tipp: Der erste Pfannkuchen misslingt fast immer. Das ist Tradition und gehört dem Koch.
 
 Guten Appetit!', 'pfannkuchen-eierkuchen.jpg');
 
@@ -7355,11 +7433,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Waffeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Waffeln', NULL, 30, 8, 'Stück', 'Ganzjährig', '1. Weiche Butter mit Zucker, Vanillezucker und Salz schaumig rühren. Eier einzeln unterrühren.
-2. Mehl mit Backpulver mischen und abwechselnd mit der Milch unterrühren.
-3. Waffeleisen vorheizen und leicht mit Öl einfetten.
-4. Je 2–3 EL Teig einfüllen und in 2–3 Minuten goldbraun backen.
-5. Mit Puderzucker bestäuben und warm servieren, zum Beispiel mit heißen Kirschen oder Sahne.
+VALUES ('Waffeln', 'Goldbraun, außen knusprig und innen fluffig, frisch aus dem Waffeleisen: Sonntagnachmittag in seiner schönsten Form.', 30, 8, 'Stück', 'Ganzjährig', '1. {125 g} weiche Butter mit {75 g} Zucker, dem Vanillezucker und einer Prise Salz mit dem Handrührgerät cremig rühren. {3} Eier einzeln unterrühren.
+2. {250 g} Mehl mit {1 TL} Backpulver mischen und abwechselnd mit {250 ml} Milch kurz unterrühren, bis ein glatter, dickflüssiger Teig entsteht. 10 Minuten ruhen lassen.
+3. Das Waffeleisen vorheizen und leicht mit {1 EL} Rapsöl einpinseln.
+4. Pro Waffel 2–3 EL Teig in die Mitte geben und das Eisen schließen. In 2–3 Minuten goldbraun backen. Erst öffnen, wenn kaum noch Dampf austritt.
+5. Die Waffeln auf einem Gitter kurz abkühlen lassen, damit sie knusprig bleiben. Mit {2 EL} Puderzucker bestäuben und warm servieren.
+
+Tipp: Klassisch dazu: heiße Kirschen und Schlagsahne.
 
 Guten Appetit!', 'waffeln.jpg');
 
@@ -7376,10 +7456,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bircher Müsli
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bircher Müsli', NULL, 75, 4, 'Portionen', 'Ganzjährig', '1. Haferflocken mit Milch mischen und abgedeckt mindestens 1 Stunde, am besten über Nacht, im Kühlschrank quellen lassen.
-2. Äpfel mit Schale grob raspeln und sofort mit Zitronensaft mischen.
-3. Joghurt, Äpfel und Honig unter die Haferflocken rühren.
-4. Haselnüsse grob hacken und mit den Beeren über das Müsli geben.
+VALUES ('Bircher Müsli', 'Das Original aus der Schweiz: über Nacht eingeweichte Haferflocken mit frisch geriebenem Apfel, Joghurt und Nüssen.', 75, 4, 'Portionen', 'Ganzjährig', '1. {150 g} Haferflocken mit {250 ml} Milch mischen und abgedeckt mindestens 1 Stunde, am besten über Nacht, im Kühlschrank quellen lassen.
+2. {2} Äpfel waschen, mit Schale grob raspeln und sofort mit dem Saft der halben Zitrone mischen, damit sie nicht braun werden.
+3. {200 g} Joghurt, die Äpfel und {2 EL} Honig unter die Haferflocken rühren. Ist das Müsli zu fest, einen Schuss Milch zugeben.
+4. {40 g} Haselnüsse grob hacken und kurz in einer Pfanne ohne Fett rösten. Mit {100 g} Heidelbeeren über das Müsli geben.
+
+Tipp: Im Kühlschrank hält es sich zwei Tage. Die Äpfel und Nüsse dann aber erst frisch zugeben.
 
 Guten Appetit!', 'bircher-muesli.jpg');
 
@@ -7394,11 +7476,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Knuspermüsli (Granola)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Knuspermüsli (Granola)', NULL, 40, 1, 'großes Glas', 'Ganzjährig', '1. Ofen auf 160 °C vorheizen.
-2. Haferflocken, grob gehackte Nüsse, Kerne, Kokosraspeln, Zimt und Salz mischen.
-3. Kokosöl schmelzen, mit Ahornsirup verrühren, über die Mischung gießen und alles gut vermengen.
-4. Auf einem mit Backpapier belegten Blech verteilen und ca. 25 Minuten goldbraun backen. Nach der Hälfte der Zeit vorsichtig wenden.
-5. Auf dem Blech vollständig abkühlen lassen – dabei wird es knusprig. Rosinen untermischen und luftdicht aufbewahren.
+VALUES ('Knuspermüsli (Granola)', 'Selbst geröstetes Knuspermüsli mit Nüssen, Kokos und Ahornsirup: viel besser und günstiger als gekauftes.', 40, 1, 'großes Glas', 'Ganzjährig', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen.
+2. {300 g} Haferflocken, {80 g} grob gehackte Mandeln, {50 g} grob gehackte Haselnüsse, {50 g} Sonnenblumenkerne, {30 g} Kokosraspeln, {1 TL} Zimt und eine Prise Salz in einer großen Schüssel mischen.
+3. {50 g} Kokosöl schmelzen, mit {80 ml} Ahornsirup verrühren, über die Mischung gießen und alles gründlich vermengen, bis alles leicht feucht glänzt.
+4. Auf einem mit Backpapier belegten Blech gleichmäßig verteilen und leicht andrücken, so entstehen beim Abkühlen schöne Cluster. Etwa 25 Minuten goldbraun backen, nach der Hälfte der Zeit vorsichtig wenden. Gegen Ende genau hinschauen, es wird schnell zu dunkel.
+5. Auf dem Blech vollständig abkühlen lassen, erst dabei wird es knusprig. In Stücke brechen, {50 g} Rosinen untermischen und luftdicht aufbewahren.
+
+Tipp: Im Schraubglas hält es sich mehrere Wochen und ist ein schönes Mitbringsel.
 
 Guten Appetit!', 'knuspermuesli-granola.jpg');
 
@@ -7415,11 +7499,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Veganes Bananenbrot
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Veganes Bananenbrot', NULL, 70, 1, 'Kastenform', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und eine Kastenform mit Backpapier auslegen.
-2. Sehr reife Bananen mit einer Gabel zerdrücken und mit Zucker, Öl und Sojamilch verrühren.
-3. Mehl, Backpulver, Natron, Zimt und Salz mischen und kurz unterrühren.
-4. Gehackte Walnüsse und Schokolade unterheben.
-5. Teig in die Form füllen und ca. 50 Minuten backen (Stäbchenprobe). In der Form abkühlen lassen.
+VALUES ('Veganes Bananenbrot', 'Saftig, süß und mit Schokostückchen: Bananenbrot ganz ohne Ei und Butter, die beste Rettung für überreife Bananen.', 70, 1, 'Kastenform', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Kastenform mit Backpapier auslegen.
+2. {3} sehr reife Bananen schälen und in einer Schüssel mit einer Gabel zerdrücken. Je brauner die Schale, desto süßer das Brot. Mit {80 g} braunem Zucker, {80 ml} Rapsöl und {100 ml} Sojamilch verrühren.
+3. {250 g} Dinkelmehl, {2 TL} Backpulver, {0.5 TL} Natron, {1 TL} Zimt und eine Prise Salz mischen und nur kurz unter die Bananenmasse rühren, bis kein trockenes Mehl mehr zu sehen ist.
+4. {50 g} Walnüsse und {50 g} Zartbitterschokolade grob hacken und unterheben.
+5. Den Teig in die Form füllen und etwa 50 Minuten backen. Mit einem Holzstäbchen hineinstechen: Kleben nur noch geschmolzene Schokolade, aber kein Teig daran, ist es fertig. In der Form abkühlen lassen.
+
+Tipp: Eine längs halbierte Banane obendrauf sieht schön aus und karamellisiert beim Backen.
 
 Guten Appetit!', 'veganes-bananenbrot.jpg');
 
@@ -7437,12 +7523,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Marmorkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Marmorkuchen', NULL, 80, 1, 'Gugelhupfform', 'Ganzjährig', '1. Ofen auf 175 °C vorheizen und eine Gugelhupfform fetten und mit Mehl ausstäuben.
-2. Weiche Butter mit Zucker, Vanillezucker und Salz schaumig rühren. Eier einzeln je 30 Sekunden unterrühren.
-3. Mehl mit Backpulver mischen und abwechselnd mit {100 ml} Milch unterrühren.
-4. Die Hälfte des Teigs in die Form füllen. Kakao und restliche Milch unter den übrigen Teig rühren und auf den hellen Teig geben.
-5. Mit einer Gabel spiralförmig durch beide Teige ziehen, damit das Marmormuster entsteht.
-6. Ca. 55 Minuten backen (Stäbchenprobe), 10 Minuten in der Form ruhen lassen, stürzen und mit Puderzucker bestäuben.
+VALUES ('Marmorkuchen', 'Hell und dunkel ineinander verwirbelt, saftig und buttrig: der Rührkuchen-Klassiker aus der Gugelhupfform.', 80, 1, 'Gugelhupfform', 'Ganzjährig', '1. Den Ofen auf 175 °C Ober-/Unterhitze vorheizen. Eine Gugelhupfform gründlich fetten und mit Mehl ausstäuben, auch in alle Rillen.
+2. {250 g} weiche Butter mit {250 g} Zucker, dem Vanillezucker und einer Prise Salz mit dem Handrührgerät 3–4 Minuten hell und cremig rühren. {5} Eier einzeln je 30 Sekunden unterrühren.
+3. {375 g} Mehl mit dem Backpulver mischen und abwechselnd mit {100 ml} Milch kurz unterrühren.
+4. Die Hälfte des Teigs in die Form füllen. {3 EL} Backkakao und die restliche Milch unter den übrigen Teig rühren und auf den hellen Teig geben.
+5. Mit einer Gabel spiralförmig einmal durch beide Teigschichten ziehen. Nicht zu oft, sonst vermischen sie sich und es entsteht kein Muster.
+6. Etwa 55 Minuten backen, bis ein Holzstäbchen sauber herauskommt. 10 Minuten in der Form ruhen lassen, dann auf ein Gitter stürzen und auskühlen lassen. Mit {1 EL} Puderzucker bestäuben.
+
+Tipp: Mit einem Schokoladenguss statt Puderzucker wird er noch saftiger.
 
 Guten Appetit!', 'marmorkuchen.jpg');
 
@@ -7459,11 +7547,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zitronenkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zitronenkuchen', NULL, 75, 1, 'Kastenform', 'Ganzjährig', '1. Ofen auf 175 °C vorheizen und eine Kastenform mit Backpapier auslegen.
-2. Weiche Butter mit Zucker und Salz cremig rühren und die Eier einzeln unterrühren. Abrieb von {2} Zitronen und den Saft von {1} Zitrone zugeben.
-3. Mehl und Backpulver mischen und kurz unterrühren.
-4. Teig in die Form füllen und ca. 50 Minuten backen (Stäbchenprobe).
-5. Kuchen noch warm mehrfach mit einem Holzstäbchen einstechen. Puderzucker mit dem Saft der übrigen Zitronen zu einem Guss verrühren und über den Kuchen gießen.
+VALUES ('Zitronenkuchen', 'Saftiger Rührkuchen mit viel Zitrone, getränkt mit einem süß-sauren Guss, der bis in die Mitte zieht.', 75, 1, 'Kastenform', 'Ganzjährig', '1. Den Ofen auf 175 °C Ober-/Unterhitze vorheizen und eine Kastenform mit Backpapier auslegen.
+2. {200 g} weiche Butter mit {200 g} Zucker und einer Prise Salz cremig rühren. {4} Eier einzeln unterrühren. Die Schale von {2} Zitronen fein abreiben und den Saft von {1} Zitrone auspressen. Beides unterrühren.
+3. {250 g} Mehl und {2 TL} Backpulver mischen und kurz unterrühren, bis ein glatter Teig entsteht.
+4. Den Teig in die Form füllen, glatt streichen und etwa 50 Minuten backen, bis ein Holzstäbchen sauber herauskommt.
+5. Den Kuchen noch warm in der Form mehrmals tief mit einem Holzstäbchen einstechen. {150 g} Puderzucker mit dem Saft der übrigen Zitronen zu einem flüssigen Guss verrühren und langsam über den Kuchen gießen, damit er einziehen kann.
+6. In der Form vollständig abkühlen lassen.
+
+Tipp: In Folie gewickelt bleibt der Kuchen mehrere Tage saftig und schmeckt am zweiten Tag am besten.
 
 Guten Appetit!', 'zitronenkuchen.jpg');
 
