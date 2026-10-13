@@ -4607,10 +4607,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ofen-Rosenkohl mit Balsamico
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Rosenkohl mit Balsamico', NULL, 35, 4, 'Portionen', 'Winter', '1. Ofen auf 220 °C vorheizen. Rosenkohl putzen und halbieren.
-2. Mit Öl, Salz und Pfeffer mischen und mit der Schnittfläche nach unten auf einem Blech verteilen.
-3. 20–25 Minuten rösten, bis die Schnittflächen tief goldbraun sind.
-4. Balsamico und Ahornsirup verrühren, über den heißen Rosenkohl träufeln und mit gerösteten Walnüssen bestreuen.
+VALUES ('Ofen-Rosenkohl mit Balsamico', 'Auch Rosenkohl-Skeptiker werden schwach: geröstet, bis die Schnittflächen karamellisieren, mit süßem Balsamico und Walnüssen.', 35, 4, 'Portionen', 'Winter', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. {600 g} Rosenkohl waschen, die Strünke knapp abschneiden, welke Außenblätter entfernen und die Röschen längs halbieren.
+2. Den Rosenkohl mit {3 EL} Olivenöl, Salz und Pfeffer mischen und mit der Schnittfläche nach unten auf einem Blech mit Backpapier verteilen. So bekommen die Schnittflächen den direkten Kontakt zur Hitze.
+3. 20–25 Minuten rösten, bis die Schnittflächen tief goldbraun und die Röschen gar, aber noch bissfest sind. Lose Blätter werden dabei knusprig wie Chips.
+4. Inzwischen {40 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten. {2 EL} Balsamicoessig mit {1 EL} Ahornsirup verrühren.
+5. Den heißen Rosenkohl mit der Balsamico-Mischung beträufeln, durchschwenken und mit den Walnüssen bestreuen.
+
+Tipp: Durch das Rösten verliert Rosenkohl seinen typischen Kohlgeschmack und wird nussig-süß.
 
 Guten Appetit!', 'ofen-rosenkohl-mit-balsamico.jpg');
 
@@ -4624,11 +4627,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Apfelrotkohl
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelrotkohl', NULL, 90, 6, 'Portionen', 'Winter', '1. Rotkohl vierteln, den Strunk entfernen, in feine Streifen hobeln und mit dem Essig und {1 TL} Salz mischen.
-2. Zwiebel würfeln, Äpfel schälen, entkernen und würfeln.
-3. Zucker im Öl leicht karamellisieren, Zwiebel und Äpfel zugeben und kurz andünsten.
-4. Rotkohl, Rotwein, Apfelsaft und die Gewürze (am besten in einem Gewürzsäckchen) zugeben und zugedeckt bei kleiner Hitze ca. 1 Stunde schmoren. Gelegentlich umrühren.
-5. Gewürze entfernen und mit Preiselbeeren, Salz, Pfeffer und eventuell etwas Zucker abschmecken. Aufgewärmt am nächsten Tag schmeckt er noch besser.
+VALUES ('Apfelrotkohl', 'Süß-säuerlich, mit Äpfeln, Rotwein und Wintergewürzen geschmort: die Beilage, ohne die kein Festtagsbraten komplett ist.', 90, 6, 'Portionen', 'Winter', '1. {1000 g} Rotkohl vierteln, den Strunk herausschneiden und den Kohl in feine Streifen hobeln. In einer großen Schüssel mit {4 EL} Rotweinessig und {1 TL} Salz mischen und kurz durchkneten. Die Säure sorgt dafür, dass der Kohl schön rot bleibt.
+2. Die Zwiebel würfeln. {2} Äpfel schälen, entkernen und würfeln.
+3. {2 EL} Zucker mit {2 EL} Rapsöl in einem großen Topf bei mittlerer Hitze leicht karamellisieren lassen. Zwiebel und Äpfel zugeben und 2 Minuten andünsten.
+4. Den Rotkohl, {150 ml} Rotwein und {200 ml} Apfelsaft zugeben. {2} Lorbeerblätter, {3} Gewürznelken, die Zimtstange und {4} Wacholderbeeren am besten in ein Gewürzsäckchen oder Teeei füllen und dazugeben, dann lassen sie sich später leicht entfernen.
+5. Zugedeckt bei schwacher Hitze etwa 1 Stunde schmoren und gelegentlich umrühren. Ist zu viel Flüssigkeit verdampft, etwas Wasser oder Apfelsaft nachgießen.
+6. Die Gewürze herausnehmen. Mit {2 EL} Preiselbeeren, Salz, Pfeffer und eventuell etwas Zucker süß-säuerlich abschmecken.
+
+Tipp: Aufgewärmt am nächsten Tag schmeckt er noch besser. Er lässt sich auch gut einfrieren.
 
 Guten Appetit!', 'apfelrotkohl.jpg');
 
@@ -4650,11 +4656,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kartoffelklöße halb und halb
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelklöße halb und halb', NULL, 75, 4, 'Portionen', 'Winter', '1. {500 g} mehligkochende Kartoffeln schälen, in Salzwasser weich kochen, durch eine Kartoffelpresse drücken und abkühlen lassen.
-2. Die restlichen Kartoffeln schälen, fein reiben und in einem Tuch sehr kräftig auspressen. Die Flüssigkeit stehen lassen, bis sich die Stärke abgesetzt hat, das Wasser abgießen und die Stärke zurück zu den Kartoffeln geben.
-3. Rohe und gekochte Kartoffeln mit Speisestärke, Salz und etwas Muskat zu einem glatten Teig verkneten.
-4. Mit nassen Händen {8} Klöße formen.
-5. In reichlich siedendem, nicht sprudelnd kochendem Salzwasser ca. 20 Minuten gar ziehen lassen, bis sie oben schwimmen.
+VALUES ('Kartoffelklöße halb und halb', 'Halb aus gekochten, halb aus rohen Kartoffeln: Klöße mit zarter, leicht körniger Struktur, wie in Thüringen und Franken.', 75, 4, 'Portionen', 'Winter', '1. {500 g} mehligkochende Kartoffeln schälen und in Salzwasser etwa 20 Minuten weich kochen. Abgießen, gut ausdampfen lassen, durch eine Kartoffelpresse drücken und abkühlen lassen.
+2. Die übrigen Kartoffeln schälen und auf der feinen Seite der Reibe reiben. In ein sauberes Geschirrtuch geben und über einer Schüssel so kräftig wie möglich auspressen. Die Flüssigkeit 10 Minuten stehen lassen, bis sich am Boden die Stärke abgesetzt hat. Das Wasser vorsichtig abgießen und die Stärke zu den rohen Kartoffeln geben.
+3. Rohe und gekochte Kartoffeln mit {2 EL} Speisestärke, {2 TL} Salz und etwas Muskatnuss zu einem glatten, formbaren Teig verkneten. Zügig arbeiten, sonst verfärben sich die rohen Kartoffeln grau.
+4. Mit nassen Händen {8} gleich große Klöße formen.
+5. Reichlich Salzwasser aufkochen, die Hitze reduzieren und die Klöße hineinlegen. Etwa 20 Minuten gar ziehen lassen, bis sie oben schwimmen. Das Wasser darf nicht sprudelnd kochen, sonst zerfallen sie.
+6. Mit einer Schaumkelle herausheben und sofort servieren.
+
+Tipp: Ein in Butter gerösteter Brotwürfel in der Mitte jedes Kloßes ist in Thüringen Tradition.
 
 Guten Appetit!', 'kartoffelkloesse-halb-und-halb.jpg');
 
@@ -4665,12 +4674,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rheinischer Sauerbraten
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rheinischer Sauerbraten', NULL, 4500, 6, 'Portionen', 'Winter', '1. Rotwein, Essig und {250 ml} Wasser mit dem grob geschnittenen Gemüse und den Gewürzen aufkochen und abkühlen lassen.
-2. Fleisch in ein enges Gefäß legen, vollständig mit der Marinade bedecken und zugedeckt 3 Tage im Kühlschrank ziehen lassen. Täglich wenden.
-3. Fleisch herausnehmen und trocken tupfen. Marinade durch ein Sieb gießen und Gemüse und Flüssigkeit getrennt aufbewahren.
-4. Fleisch in Butterschmalz rundherum kräftig anbraten und salzen. Gemüse mitrösten, mit der Marinade ablöschen und zugedeckt ca. 2,5 Stunden schmoren.
-5. Fleisch herausnehmen. Soße durch ein Sieb streichen, Rosinen und Rübensirup zugeben, 10 Minuten köcheln, mit angerührter Stärke binden und süß-sauer abschmecken.
-6. Braten in Scheiben schneiden und mit Soße, Rotkohl und Klößen servieren.
+VALUES ('Rheinischer Sauerbraten', 'Drei Tage in Rotwein und Essig eingelegt, dann zart geschmort und mit Rosinen süß-sauer abgeschmeckt: rheinische Festtagsküche.', 4500, 6, 'Portionen', 'Winter', '1. {500 ml} Rotwein, {250 ml} Rotweinessig und {250 ml} Wasser mit den grob geschnittenen {2} Zwiebeln, {2} Karotten und {150 g} Knollensellerie, {3} Lorbeerblättern, {8} Wacholderbeeren, {4} Gewürznelken, {5} Pimentkörnern und etwas Pfeffer aufkochen. Vollständig abkühlen lassen.
+2. {1500 g} Rinderbraten in ein enges Gefäß aus Glas oder Porzellan legen und vollständig mit der Marinade bedecken. Zugedeckt 3 Tage im Kühlschrank ziehen lassen und einmal täglich wenden. Die Säure macht das Fleisch mürbe.
+3. Das Fleisch herausnehmen und gründlich trocken tupfen. Die Marinade durch ein Sieb gießen und Gemüse und Flüssigkeit getrennt aufbewahren.
+4. {2 EL} Butterschmalz in einem Bräter stark erhitzen und das Fleisch rundherum kräftig anbraten. Salzen. Das Gemüse zugeben und 5 Minuten mitrösten. Mit der Marinade ablöschen und zugedeckt bei schwacher Hitze etwa 2,5 Stunden schmoren, bis das Fleisch weich ist.
+5. Das Fleisch herausnehmen und warm halten. Die Soße durch ein Sieb streichen, {60 g} Rosinen und {2 EL} Zuckerrübensirup zugeben und 10 Minuten köcheln lassen. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und süß-sauer abschmecken.
+6. Den Braten quer zur Faser in Scheiben schneiden und mit der Soße, Rotkohl und Klößen servieren.
+
+Tipp: Im Rheinland wird die Soße oft zusätzlich mit zerbröseltem Aachener Printen oder Lebkuchen gebunden.
 
 Guten Appetit!', 'rheinischer-sauerbraten.jpg');
 
@@ -4693,11 +4704,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gänsekeulen mit Beifuß
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gänsekeulen mit Beifuß', NULL, 150, 4, 'Portionen', 'Winter', '1. Ofen auf 160 °C vorheizen. Gänsekeulen waschen, trocken tupfen und rundherum mit Salz, Pfeffer, getrocknetem Beifuß und Majoran einreiben.
-2. Äpfel, Zwiebeln und Orange grob schneiden und in einen Bräter geben. Keulen mit der Hautseite nach oben darauflegen und {250 ml} Brühe angießen.
-3. Ca. 2 Stunden garen und regelmäßig mit dem Bratensaft begießen. Für knusprige Haut die letzten 15 Minuten auf 220 °C erhöhen.
-4. Keulen warm stellen. Bratfond durch ein Sieb gießen, das Fett abschöpfen, mit Rotwein und restlicher Brühe aufkochen und mit angerührter Stärke binden.
-5. Mit Rotkohl und Klößen servieren – das klassische Essen zu Sankt Martin und Weihnachten.
+VALUES ('Gänsekeulen mit Beifuß', 'Knusprige Gänsekeulen mit Beifuß und Majoran, im eigenen Saft mit Äpfeln und Orange geschmort: das Essen zu Sankt Martin und Weihnachten.', 150, 4, 'Portionen', 'Winter', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {4} Gänsekeulen kalt abspülen, gründlich trocken tupfen und überstehendes Fett abschneiden. Rundherum mit Salz, Pfeffer, {1 TL} getrocknetem Beifuß und {1 TL} Majoran einreiben. Beifuß macht das fette Gänsefleisch bekömmlicher.
+2. {2} Äpfel, {2} Zwiebeln und die Orange grob schneiden und in einen Bräter geben. Die Keulen mit der Hautseite nach oben darauflegen und {250 ml} Hühnerbrühe angießen.
+3. Etwa 2 Stunden im Ofen garen und alle 20 Minuten mit dem Bratensaft begießen. Für knusprige Haut die letzten 15 Minuten die Temperatur auf 220 °C erhöhen und nicht mehr begießen.
+4. Die Keulen herausnehmen und im ausgeschalteten Ofen warm halten. Den Bratenfond durch ein Sieb in einen Topf gießen und das Obst gut ausdrücken. Das Fett mit einer Kelle abschöpfen und für Bratkartoffeln aufheben.
+5. {200 ml} Rotwein und die restliche Brühe zum Fond geben und aufkochen. {1 EL} Speisestärke mit etwas kaltem Wasser glatt rühren, die Soße damit binden und abschmecken.
+6. Die Keulen mit der Soße, Rotkohl und Klößen servieren.
+
+Tipp: Gänseschmalz hält sich im Kühlschrank wochenlang und ist herrlich auf Brot.
 
 Guten Appetit!', 'gaensekeulen-mit-beifuss.jpg');
 
@@ -4715,12 +4729,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Entenbrust mit Orangensoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Entenbrust mit Orangensoße', NULL, 45, 4, 'Portionen', 'Winter', '1. Ofen auf 120 °C vorheizen. Die Haut der Entenbrüste rautenförmig einschneiden, ohne das Fleisch zu verletzen. Salzen und pfeffern.
-2. Mit der Hautseite nach unten in eine kalte Pfanne legen und bei mittlerer Hitze 8–10 Minuten braten, bis die Haut knusprig ist. Wenden, 1 Minute braten und im Ofen mit Thymian 15–20 Minuten rosa garen.
-3. {1} Orange abreiben und den Saft von {2} Orangen auspressen. Die restliche Orange filetieren.
-4. Fett aus der Pfanne abgießen, die gewürfelte Schalotte darin andünsten, Zucker karamellisieren und mit Essig, Orangensaft und Brühe ablöschen. Auf die Hälfte einkochen.
-5. Mit angerührter Stärke binden, Orangenabrieb, Filets und kalte Butter einrühren und abschmecken.
-6. Entenbrust 5 Minuten ruhen lassen, aufschneiden und mit der Orangensoße servieren.
+VALUES ('Entenbrust mit Orangensoße', 'Rosa gegarte Entenbrust mit knuspriger Haut in einer glänzenden Orangensoße: der französische Klassiker Canard à l''orange.', 45, 4, 'Portionen', 'Winter', '1. Den Ofen auf 120 °C Ober-/Unterhitze vorheizen. Die Haut von {2} Entenbrüsten mit einem scharfen Messer rautenförmig einschneiden, ohne ins Fleisch zu schneiden. Salzen und pfeffern.
+2. Die Entenbrüste mit der Hautseite nach unten in eine kalte Pfanne legen und bei mittlerer Hitze 8–10 Minuten braten. Dabei schmilzt das Fett langsam aus und die Haut wird knusprig. Wenden, 1 Minute braten und mit den Thymianzweigen in einer ofenfesten Form 15–20 Minuten im Ofen rosa garen.
+3. Inzwischen von {1} Orange die Schale fein abreiben und den Saft von {2} Orangen auspressen. Die dritte Orange mit einem Messer so schälen, dass auch die weiße Haut entfernt wird, und die Filets zwischen den Trennhäuten herausschneiden.
+4. Das Fett bis auf einen Esslöffel aus der Pfanne gießen. Die gewürfelte Schalotte darin andünsten. {1 EL} Zucker zugeben und hell karamellisieren lassen. Mit {1 EL} Weißweinessig, dem Orangensaft und {200 ml} Hühnerbrühe ablöschen und auf die Hälfte einkochen lassen.
+5. {1 TL} Speisestärke mit etwas kaltem Wasser glatt rühren und die Soße damit binden. Orangenabrieb und Orangenfilets zugeben und zum Schluss {1 EL} kalte Butter einrühren. Abschmecken.
+6. Die Entenbrust 5 Minuten ruhen lassen, schräg in Scheiben schneiden und mit der Orangensoße servieren.
+
+Tipp: Das ausgelassene Entenfett nicht wegschütten: Darin gebratene Kartoffeln sind ein Gedicht.
 
 Guten Appetit!', 'entenbrust-mit-orangensosse.jpg');
 
@@ -4738,11 +4754,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gulaschsuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gulaschsuppe', NULL, 120, 6, 'Portionen', 'Winter', '1. Fleisch in kleine Würfel (ca. 2 cm) schneiden und die Zwiebeln würfeln.
-2. Fleisch in Butterschmalz portionsweise kräftig anbraten. Zwiebeln zugeben und goldbraun mitbraten.
-3. Tomatenmark und Paprikapulver einrühren und kurz anrösten, ohne dass es verbrennt. Mit Brühe ablöschen, Kümmel, Majoran, gehackten Knoblauch und Lorbeer zugeben und zugedeckt 1 Stunde köcheln.
-4. Paprika und Kartoffeln würfeln, zugeben und weitere 25 Minuten köcheln.
-5. Mit Salz, Pfeffer und einem Spritzer Essig abschmecken. Dazu passt Brot.
+VALUES ('Gulaschsuppe', 'Kräftig, paprikarot und wärmend: die Suppe, die an kalten Abenden und nach langen Partynächten gleichermaßen gut tut.', 120, 6, 'Portionen', 'Winter', '1. {800 g} Rindergulasch in kleine Würfel von etwa 2 cm schneiden. {3} Zwiebeln würfeln.
+2. {2 EL} Butterschmalz in einem großen Topf stark erhitzen und das Fleisch portionsweise kräftig anbraten. Die Zwiebeln zugeben und goldbraun mitbraten.
+3. Die Hitze reduzieren. {2 EL} Tomatenmark und {2 EL} Paprikapulver einrühren und unter Rühren kurz anrösten. Paprikapulver verbrennt schnell und wird dann bitter, also nicht zu lange.
+4. Mit {1500 ml} Rinderbrühe ablöschen. {1 TL} Kümmel, {1 TL} Majoran, {2} gehackte Knoblauchzehen und das Lorbeerblatt zugeben und zugedeckt 1 Stunde köcheln lassen.
+5. {2} Paprika entkernen und würfeln, {500 g} Kartoffeln schälen und würfeln. Beides zugeben und weitere 25 Minuten köcheln, bis Fleisch und Kartoffeln weich sind.
+6. Das Lorbeerblatt entfernen, mit Salz, Pfeffer und {1 EL} Rotweinessig abschmecken. Mit frischem Brot servieren.
+
+Tipp: Wer es feurig mag, gibt eine Prise Chili oder scharfes Rosenpaprikapulver dazu.
 
 Guten Appetit!', 'gulaschsuppe.jpg');
 
@@ -4764,11 +4783,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rindergulasch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rindergulasch', NULL, 180, 4, 'Portionen', 'Winter', '1. Zwiebeln in feine Streifen schneiden und in {2 EL} Butterschmalz bei mittlerer Hitze 20 Minuten goldbraun dünsten.
-2. Fleisch in 4 cm große Würfel schneiden, in einer zweiten Pfanne im restlichen Butterschmalz portionsweise scharf anbraten und zu den Zwiebeln geben.
-3. Tomatenmark und Paprikapulver unterrühren, kurz mitrösten und mit Rotwein ablöschen.
-4. Brühe, Kümmel, Majoran und Lorbeer zugeben und zugedeckt ca. 2,5 Stunden schmoren, bis das Fleisch zart ist. Die Zwiebeln binden die Soße von selbst.
-5. Gehackten Knoblauch und Zitronenabrieb einrühren, 5 Minuten ziehen lassen und mit Salz und Pfeffer abschmecken. Dazu passen Nudeln, Knödel oder Brot.
+VALUES ('Rindergulasch', 'Zartes Rindfleisch in einer sämigen, dunklen Paprikasoße, die allein durch die Zwiebeln bindet: Gulasch nach Wiener Art.', 180, 4, 'Portionen', 'Winter', '1. {1000 g} Zwiebeln schälen und in feine Streifen schneiden. Das klingt nach viel, ist aber das Geheimnis eines guten Gulaschs. {2 EL} Butterschmalz in einem Schmortopf erhitzen und die Zwiebeln darin bei mittlerer Hitze etwa 20 Minuten goldbraun dünsten.
+2. {1000 g} Rindergulasch in 4 cm große Würfel schneiden. In einer zweiten Pfanne im restlichen Butterschmalz portionsweise scharf anbraten und zu den Zwiebeln geben.
+3. {2 EL} Tomatenmark und {3 EL} Paprikapulver unterrühren und 1 Minute mitrösten. Sofort mit {250 ml} Rotwein ablöschen, damit der Paprika nicht verbrennt.
+4. {500 ml} Rinderbrühe, {1 TL} Kümmel, {1 TL} Majoran und das Lorbeerblatt zugeben. Zugedeckt bei schwacher Hitze etwa 2,5 Stunden schmoren, bis das Fleisch zart ist. Die Zwiebeln zerfallen dabei und binden die Soße von selbst.
+5. {2} Knoblauchzehen fein hacken, die Zitronenschale abreiben. Beides einrühren und 5 Minuten ziehen lassen. Das Lorbeerblatt entfernen und mit Salz und Pfeffer abschmecken.
+
+Tipp: Dazu passen Nudeln, Semmelknödel oder einfach Brot. Gulasch schmeckt aufgewärmt immer besser.
 
 Guten Appetit!', 'rindergulasch.jpg');
 
@@ -4789,11 +4810,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Erbsensuppe mit Würstchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erbsensuppe mit Würstchen', NULL, 120, 6, 'Portionen', 'Winter', '1. Speck würfeln und in einem großen Topf auslassen. Gewürfelte Zwiebel zugeben und glasig dünsten.
-2. Schälerbsen in einem Sieb abspülen – sie müssen nicht eingeweicht werden. Mit Brühe und Lorbeer zugeben und zugedeckt ca. 60 Minuten köcheln, dabei gelegentlich umrühren.
-3. Karotten, Sellerie und Kartoffeln würfeln, Lauch in Ringe schneiden, zugeben und weitere 30 Minuten köcheln.
-4. Mit Majoran, Salz und Pfeffer würzen.
-5. Würstchen in Scheiben schneiden und in der Suppe erhitzen.
+VALUES ('Erbsensuppe mit Würstchen', 'Dick, deftig und sättigend: die Erbsensuppe aus der Gulaschkanone, mit Speck, Gemüse und Würstchen.', 120, 6, 'Portionen', 'Winter', '1. {100 g} Speck würfeln und in einem großen Topf bei mittlerer Hitze auslassen. Die gewürfelte Zwiebel zugeben und glasig dünsten.
+2. {500 g} Schälerbsen in einem Sieb abspülen. Sie müssen nicht eingeweicht werden. Mit {2000 ml} Gemüsebrühe und dem Lorbeerblatt in den Topf geben, aufkochen und zugedeckt etwa 60 Minuten köcheln lassen. Gelegentlich umrühren, da die Erbsen leicht ansetzen.
+3. {2} Karotten, {150 g} Knollensellerie und {300 g} Kartoffeln schälen und würfeln, den Lauch in Ringe schneiden. Alles zugeben und weitere 30 Minuten köcheln lassen, bis die Erbsen zerfallen und die Suppe sämig ist.
+4. Das Lorbeerblatt entfernen. Mit {1 TL} Majoran, Salz und Pfeffer würzen. Ist die Suppe zu dick, mit etwas Brühe verdünnen.
+5. {6} Würstchen in Scheiben schneiden und in der Suppe 5 Minuten erhitzen.
+
+Tipp: Wer es noch kräftiger mag, lässt ein Stück Kassler oder Eisbein in der Suppe mitkochen.
 
 Guten Appetit!', 'erbsensuppe-mit-wuerstchen.jpg');
 
@@ -4813,12 +4836,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Linsen mit Spätzle und Saitenwürstle
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Linsen mit Spätzle und Saitenwürstle', NULL, 90, 4, 'Portionen', 'Winter', '1. Speck und Zwiebel würfeln und in einem Topf anbraten. Karotte und Sellerie fein würfeln und kurz mitdünsten.
-2. {1 EL} Mehl darüberstäuben, mit Brühe ablöschen, Linsen und Lorbeer zugeben und ca. 40 Minuten weich köcheln.
-3. Für die Spätzle das restliche Mehl mit Eiern, {1 TL} Salz und ca. {100 ml} Wasser zu einem zähen Teig schlagen, bis er Blasen wirft.
-4. Teig portionsweise ins siedende Salzwasser schaben oder pressen. Spätzle abschöpfen, sobald sie oben schwimmen, und in Butter schwenken.
-5. Linsen mit Essig, Zucker, Salz und Pfeffer kräftig süß-sauer abschmecken und die Würstchen darin heiß werden lassen.
-6. Linsen mit Spätzle und Saitenwürstle servieren – das schwäbische Leibgericht.
+VALUES ('Linsen mit Spätzle und Saitenwürstle', 'Das schwäbische Leibgericht: süß-saure Linsen, handgemachte Spätzle und Saitenwürstle.', 90, 4, 'Portionen', 'Winter', '1. {100 g} Speck und die Zwiebel würfeln und in einem Topf anbraten. Die Karotte und {100 g} Knollensellerie fein würfeln und 2 Minuten mitdünsten.
+2. {1 EL} Mehl darüberstäuben und kurz anschwitzen. Mit {1000 ml} Gemüsebrühe ablöschen, {300 g} Tellerlinsen und das Lorbeerblatt zugeben und zugedeckt etwa 40 Minuten weich köcheln.
+3. Für die Spätzle das restliche Mehl mit {4} Eiern, {1 TL} Salz und etwa {100 ml} Wasser mit einem Kochlöffel zu einem zähen Teig schlagen, bis er Blasen wirft und sich vom Löffel zieht. 10 Minuten ruhen lassen.
+4. Reichlich Salzwasser aufkochen. Den Teig portionsweise vom Brett ins siedende Wasser schaben oder durch eine Spätzlepresse drücken. Sobald die Spätzle oben schwimmen, mit einer Schaumkelle herausheben und in {2 EL} Butter schwenken.
+5. Die Linsen mit {3 EL} Rotweinessig, {1 TL} Zucker, Salz und Pfeffer kräftig süß-sauer abschmecken. {4} Würstchen in den Linsen 5 Minuten heiß werden lassen.
+6. Linsen mit Spätzle und Saitenwürstle auf Tellern anrichten.
+
+Tipp: Am Tisch noch einen Schuss Essig über die Linsen geben, so machen es die Schwaben.
 
 Guten Appetit!', 'linsen-mit-spaetzle-und-saitenwuerstle.jpg');
 
@@ -4840,11 +4865,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Türkische Linsensuppe (Mercimek Çorbası)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Türkische Linsensuppe (Mercimek Çorbası)', NULL, 40, 4, 'Portionen', 'Winter', '1. Zwiebel, Karotte, Kartoffel und Knoblauch schälen und klein würfeln.
-2. Gemüse in {2 EL} Öl andünsten, Tomatenmark und Kreuzkümmel kurz mitrösten.
-3. Linsen waschen, mit der Brühe zugeben und ca. 20 Minuten köcheln, bis alles weich ist.
-4. Fein pürieren und mit Salz abschmecken.
-5. Restliches Öl mit Paprikapulver, Chiliflocken und getrockneter Minze kurz erhitzen und über die Suppe träufeln. Mit Zitronenspalten servieren.
+VALUES ('Türkische Linsensuppe (Mercimek Çorbası)', 'Samtig, wärmend und schnell gemacht: die rote Linsensuppe aus der Türkei mit Minz-Paprika-Butter und Zitrone.', 40, 4, 'Portionen', 'Winter', '1. Die Zwiebel, die Karotte, {150 g} Kartoffeln und {2} Knoblauchzehen schälen und klein würfeln.
+2. {2 EL} Olivenöl in einem Topf erhitzen und das Gemüse darin 3 Minuten andünsten. {1 EL} Tomatenmark und {1 TL} Kreuzkümmel zugeben und 1 Minute mitrösten.
+3. {250 g} rote Linsen in einem Sieb waschen, bis das Wasser klar bleibt. Mit {1200 ml} Gemüsebrühe zugeben und etwa 20 Minuten köcheln lassen, bis Linsen und Gemüse ganz weich sind. Rote Linsen zerfallen dabei von selbst.
+4. Die Suppe fein pürieren und mit Salz abschmecken. Ist sie zu dick, etwas Wasser zugeben.
+5. Das restliche Olivenöl in einer kleinen Pfanne erhitzen, vom Herd nehmen und {1 TL} Paprikapulver, {0.5 TL} Chiliflocken und {1 TL} getrocknete Minze einrühren. Sofort über die Suppe träufeln.
+6. Mit Zitronenspalten servieren, der frische Saft gehört unbedingt dazu.
+
+Tipp: Dazu passt warmes Fladenbrot.
 
 Guten Appetit!', 'tuerkische-linsensuppe-mercimek-corbas.jpg');
 
@@ -4865,11 +4893,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Steckrübeneintopf
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Steckrübeneintopf', NULL, 70, 4, 'Portionen', 'Winter', '1. Steckrübe schälen und in 2 cm große Würfel schneiden. Kartoffeln und Karotten schälen und würfeln, Zwiebel hacken.
-2. Zwiebel in Öl andünsten, Steckrübe zugeben und 5 Minuten anbraten – die Röstaromen machen den Eintopf herzhaft.
-3. Kartoffeln, Karotten, Brühe, Majoran und Lorbeer zugeben und ca. 35 Minuten köcheln.
-4. Einen Teil des Eintopfs zerstampfen, damit er sämig wird.
-5. Mit Salz, Pfeffer und Muskat abschmecken und mit Petersilie bestreuen.
+VALUES ('Steckrübeneintopf', 'Ein norddeutscher Wintereintopf mit leicht süßlichen Steckrüben, Kartoffeln und Majoran: ehrlich, deftig und günstig.', 70, 4, 'Portionen', 'Winter', '1. {1000 g} Steckrübe schälen, die Schale ist dick, also großzügig, und in 2 cm große Würfel schneiden. {400 g} Kartoffeln und {2} Karotten schälen und würfeln. Die Zwiebel hacken.
+2. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebel darin glasig dünsten. Die Steckrübe zugeben und 5 Minuten anbraten, bis sie an den Kanten leicht bräunt. Die Röstaromen machen den Eintopf herzhaft.
+3. Kartoffeln, Karotten, {1200 ml} Gemüsebrühe, {1 TL} Majoran und das Lorbeerblatt zugeben. Aufkochen und zugedeckt etwa 35 Minuten köcheln lassen.
+4. Das Lorbeerblatt herausnehmen. Einen Teil des Eintopfs mit dem Kartoffelstampfer zerdrücken, damit er sämig wird.
+5. Mit Salz, Pfeffer und Muskatnuss abschmecken und mit gehackter Petersilie bestreuen.
+
+Tipp: Klassisch kommt noch ein Stück Kassler oder Mettwurst mit in den Topf.
 
 Guten Appetit!', 'steckruebeneintopf.jpg');
 
@@ -4888,11 +4918,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pastinaken-Cremesuppe mit Birne
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pastinaken-Cremesuppe mit Birne', NULL, 35, 4, 'Portionen', 'Winter', '1. Pastinaken, Birne und Zwiebel schälen und würfeln.
-2. Zwiebel in Öl andünsten, Pastinaken und Birne zugeben und kurz mitdünsten.
-3. Mit Brühe aufgießen und 20 Minuten weich köcheln.
-4. Kokosmilch zugeben, fein pürieren und mit Zitronensaft, Muskat, Salz und Pfeffer abschmecken.
-5. Mit gerösteten Kürbiskernen und ein paar Tropfen Kürbiskernöl servieren.
+VALUES ('Pastinaken-Cremesuppe mit Birne', 'Süßlich, nussig und mit einem Hauch Birne: eine samtige Wintersuppe mit gerösteten Kürbiskernen und Kürbiskernöl.', 35, 4, 'Portionen', 'Winter', '1. {600 g} Pastinaken, die Birne und die Zwiebel schälen und würfeln.
+2. {2 EL} Rapsöl in einem Topf erhitzen und die Zwiebel darin glasig dünsten. Pastinaken und Birne zugeben und 2 Minuten mitdünsten.
+3. Mit {900 ml} Gemüsebrühe aufgießen und zugedeckt etwa 20 Minuten köcheln lassen, bis die Pastinaken weich sind.
+4. {200 ml} Kokosmilch zugeben und alles sehr fein pürieren. Mit dem Saft der halben Zitrone, Muskatnuss, Salz und Pfeffer abschmecken. Die Zitrone gleicht die Süße aus.
+5. {2 EL} Kürbiskerne in einer Pfanne ohne Fett rösten, bis sie knistern. Die Suppe in Teller füllen, mit den Kürbiskernen bestreuen und mit ein paar Tropfen von {1 EL} Kürbiskernöl beträufeln.
+
+Tipp: Pastinaken schmecken nach dem ersten Frost am süßesten.
 
 Guten Appetit!', 'pastinaken-cremesuppe-mit-birne.jpg');
 
@@ -4911,11 +4943,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Topinambur-Suppe mit Haselnüssen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Topinambur-Suppe mit Haselnüssen', NULL, 40, 4, 'Portionen', 'Winter', '1. Topinambur gründlich schrubben oder schälen, in Scheiben schneiden und sofort in Zitronenwasser legen.
-2. Schalotten und Kartoffel würfeln und mit Thymian in Butter andünsten. Abgetropften Topinambur zugeben.
-3. Mit Brühe aufgießen, 20 Minuten köcheln lassen und den Thymian entfernen.
-4. Sahne zugeben, fein pürieren und mit Salz, Pfeffer und dem restlichen Zitronensaft abschmecken.
-5. Haselnüsse grob hacken, ohne Fett rösten und über die Suppe streuen.
+VALUES ('Topinambur-Suppe mit Haselnüssen', 'Die Knolle mit dem feinen Artischockenaroma als cremige Suppe mit gerösteten Haselnüssen.', 40, 4, 'Portionen', 'Winter', '1. {600 g} Topinambur gründlich schrubben oder schälen. Die Schale ist dünn und kann bei jungen Knollen dranbleiben. In Scheiben schneiden und sofort in eine Schüssel mit Wasser und dem Saft der halben Zitrone legen, sonst werden sie braun.
+2. {2} Schalotten und {150 g} Kartoffeln schälen und würfeln. {2 EL} Butter in einem Topf schmelzen und beides mit {2} Thymianzweigen darin 3 Minuten andünsten. Den abgetropften Topinambur zugeben und kurz mitdünsten.
+3. Mit {800 ml} Gemüsebrühe aufgießen und zugedeckt etwa 20 Minuten köcheln lassen, bis alles weich ist. Den Thymian herausnehmen.
+4. {150 ml} Sahne zugeben und die Suppe sehr fein pürieren. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken.
+5. {30 g} Haselnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften. Über die Suppe streuen.
+
+Tipp: Topinambur ist verwandt mit der Sonnenblume und wächst sogar im eigenen Garten ganz von selbst.
 
 Guten Appetit!', 'topinambur-suppe-mit-haselnuessen.jpg');
 
@@ -4933,10 +4967,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schwarzwurzeln in Rahmsoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwarzwurzeln in Rahmsoße', NULL, 45, 4, 'Portionen', 'Winter', '1. Wasser mit der Hälfte des Zitronensafts und {1 EL} Mehl verrühren. Schwarzwurzeln mit Handschuhen schälen, in 4 cm lange Stücke schneiden und sofort ins Zitronenwasser legen.
-2. In Salzwasser ca. 15 Minuten bissfest garen und abgießen.
-3. Butter schmelzen, das restliche Mehl darin anschwitzen und unter Rühren mit Brühe und Sahne ablöschen. 5 Minuten köcheln lassen.
-4. Schwarzwurzeln in die Soße geben, mit Salz, Pfeffer, Muskat und restlichem Zitronensaft abschmecken und mit Petersilie bestreuen. Der "Winterspargel" passt gut zu Kartoffeln.
+VALUES ('Schwarzwurzeln in Rahmsoße', 'Der „Winterspargel“: zarte Schwarzwurzeln in heller Rahmsoße, mild und fein im Geschmack.', 45, 4, 'Portionen', 'Winter', '1. Eine große Schüssel mit kaltem Wasser füllen und den Saft der halben Zitrone und {1 EL} Mehl einrühren. Das Mehlwasser verhindert, dass die Schwarzwurzeln braun werden.
+2. {1000 g} Schwarzwurzeln mit Einmalhandschuhen unter fließendem Wasser abbürsten und mit einem Sparschäler schälen. Der Milchsaft klebt und färbt die Hände. Die Stangen in 4 cm lange Stücke schneiden und sofort ins Zitronenwasser legen.
+3. Die Schwarzwurzeln in Salzwasser etwa 15 Minuten bissfest garen und abgießen.
+4. {2 EL} Butter in einem Topf schmelzen, das restliche Mehl einrühren und 1 Minute anschwitzen. Unter Rühren mit {250 ml} Gemüsebrühe und {150 ml} Sahne ablöschen und 5 Minuten köcheln lassen, bis die Soße sämig ist.
+5. Die Schwarzwurzeln in die Soße geben und mit Salz, Pfeffer, Muskatnuss und dem restlichen Zitronensaft abschmecken. Mit gehackter Petersilie bestreuen.
+
+Tipp: Passt zu Salzkartoffeln, Kalbsschnitzel oder gebratenem Fisch.
 
 Guten Appetit!', 'schwarzwurzeln-in-rahmsosse.jpg');
 
@@ -4953,11 +4990,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Feldsalat mit Kartoffeldressing und Speck
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Feldsalat mit Kartoffeldressing und Speck', NULL, 30, 4, 'Portionen', 'Winter', '1. Mehligkochende Kartoffel schälen, klein würfeln und in der Brühe weich kochen.
-2. Kartoffel mit der Brühe, Essig, Senf, Zucker, fein gewürfelter Zwiebel und Öl fein pürieren und mit Salz und Pfeffer abschmecken.
-3. Feldsalat gründlich waschen, die Wurzeln abknipsen und trocken schleudern.
-4. Speck würfeln und in einer Pfanne knusprig braten.
-5. Feldsalat mit dem lauwarmen Kartoffeldressing anrichten und mit Speck bestreuen – in Schwaben heißt er Ackersalat.
+VALUES ('Feldsalat mit Kartoffeldressing und Speck', 'Zarter Feldsalat mit cremigem, lauwarmem Kartoffeldressing und knusprigem Speck: in Schwaben heißt er Ackersalat.', 30, 4, 'Portionen', 'Winter', '1. {150 g} mehligkochende Kartoffeln schälen, klein würfeln und in {150 ml} Gemüsebrühe etwa 12 Minuten weich kochen.
+2. Die Kartoffeln mit der Brühe, {3 EL} Weißweinessig, {1 TL} Senf, einer Prise Zucker, der fein gewürfelten Zwiebel und {4 EL} Rapsöl fein pürieren. Mit Salz und Pfeffer abschmecken. Das Dressing soll cremig und leicht säuerlich sein.
+3. {200 g} Feldsalat in reichlich kaltem Wasser gründlich waschen, zwischen den Rosetten sitzt oft Sand. Die Wurzelenden abknipsen, die Rosetten aber ganz lassen, und trocken schleudern.
+4. {100 g} Speck würfeln und in einer Pfanne ohne Fett knusprig braten.
+5. Den Feldsalat auf Teller verteilen, mit dem lauwarmen Dressing beträufeln und mit dem Speck bestreuen. Sofort servieren, sonst fällt der Salat zusammen.
+
+Tipp: Ein paar geröstete Brotwürfel machen den Salat noch knuspriger.
 
 Guten Appetit!', 'feldsalat-mit-kartoffeldressing-und-speck.jpg');
 
@@ -4975,11 +5014,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Fenchel-Orangen-Salat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Fenchel-Orangen-Salat', NULL, 15, 4, 'Portionen', 'Winter', '1. Fenchel putzen, das Grün beiseitelegen und die Knollen in hauchdünne Scheiben hobeln.
-2. Orangen so schälen, dass auch die weiße Haut entfernt wird, und in Scheiben schneiden. Den Saft dabei auffangen.
-3. Zwiebel in feine Ringe schneiden.
-4. Orangensaft, Essig, Öl, Salz und Pfeffer verrühren.
-5. Fenchel, Orangen, Zwiebeln und Oliven anrichten, mit dem Dressing beträufeln und mit Fenchelgrün garnieren.
+VALUES ('Fenchel-Orangen-Salat', 'Frischer Anis, süße Orangen und salzige Oliven: ein sizilianischer Wintersalat voller Sonne.', 15, 4, 'Portionen', 'Winter', '1. {2} Fenchelknollen putzen, das zarte Grün abzupfen und beiseitelegen. Die Knollen halbieren, den harten Strunk herausschneiden und die Hälften mit einem Gemüsehobel in hauchdünne Scheiben hobeln.
+2. {3} Orangen mit einem scharfen Messer so schälen, dass auch die weiße Haut vollständig entfernt wird. Die Orangen quer in Scheiben schneiden und den austretenden Saft dabei auffangen.
+3. Die Zwiebel in feine Ringe schneiden.
+4. Den aufgefangenen Orangensaft mit {1 EL} Weißweinessig, {3 EL} Olivenöl, Salz und Pfeffer verrühren.
+5. Fenchel, Orangen, Zwiebelringe und {50 g} Oliven auf einer Platte anrichten, mit dem Dressing beträufeln und mit dem Fenchelgrün bestreuen. 10 Minuten ziehen lassen.
+
+Tipp: Mit Blutorangen sieht der Salat besonders spektakulär aus.
 
 Guten Appetit!', 'fenchel-orangen-salat.jpg');
 
@@ -4994,11 +5035,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Chicorée-Salat mit Mandarinen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chicorée-Salat mit Mandarinen', NULL, 15, 4, 'Portionen', 'Winter', '1. Chicorée putzen, den bitteren Strunk keilförmig herausschneiden und die Blätter in Streifen schneiden.
-2. Mandarinen schälen und in Spalten teilen.
-3. Walnüsse grob hacken und ohne Fett rösten.
-4. Essig, Senf, Ahornsirup, Salz und Pfeffer verrühren und das Öl unterschlagen.
-5. Chicorée und Mandarinen mit dem Dressing mischen und mit den Walnüssen bestreuen.
+VALUES ('Chicorée-Salat mit Mandarinen', 'Leicht bitter, fruchtig süß und knackig: ein heller Wintersalat mit Mandarinen und gerösteten Walnüssen.', 15, 4, 'Portionen', 'Winter', '1. {3} Chicorée waschen, welke Außenblätter entfernen und den bitteren Strunk mit einem spitzen Messer keilförmig herausschneiden. Die Blätter in breite Streifen schneiden.
+2. {4} Mandarinen schälen, die weißen Fäden entfernen und in Spalten teilen.
+3. {40 g} Walnüsse grob hacken und in einer Pfanne ohne Fett rösten, bis sie duften.
+4. {2 EL} Apfelessig, {1 TL} Senf, {1 TL} Ahornsirup, Salz und Pfeffer verrühren und {3 EL} Rapsöl unterschlagen.
+5. Chicorée und Mandarinen mit dem Dressing mischen und mit den Walnüssen bestreuen. Sofort servieren.
+
+Tipp: Wem der Chicorée zu bitter ist, legt die Streifen 5 Minuten in lauwarmes Wasser.
 
 Guten Appetit!', 'chicoree-salat-mit-mandarinen.jpg');
 
@@ -5014,11 +5057,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Überbackener Chicorée mit Schinken
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Überbackener Chicorée mit Schinken', NULL, 45, 4, 'Portionen', 'Winter', '1. Ofen auf 200 °C vorheizen. Chicorée putzen und den bitteren Strunk keilförmig herausschneiden.
-2. Chicorée in Salzwasser mit Zitronensaft und einer Prise Zucker 5 Minuten blanchieren und gut abtropfen lassen.
-3. Jeden Kolben mit einer Scheibe Kochschinken umwickeln und in eine Auflaufform legen.
-4. Für die Béchamel die Butter schmelzen, das Mehl darin anschwitzen und unter Rühren die Milch zugießen. 5 Minuten köcheln und mit Salz, Pfeffer und Muskat würzen.
-5. Soße über den Chicorée gießen, mit geriebenem Gouda bestreuen und ca. 25 Minuten goldbraun überbacken.
+VALUES ('Überbackener Chicorée mit Schinken', 'Chicorée im Schinkenmantel, unter Béchamelsoße und Käse goldbraun überbacken: belgische Hausmannskost.', 45, 4, 'Portionen', 'Winter', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {4} Chicorée waschen und den bitteren Strunk keilförmig herausschneiden, die Kolben dabei ganz lassen.
+2. Reichlich Salzwasser mit dem Saft der halben Zitrone und einer Prise Zucker aufkochen. Den Chicorée darin 5 Minuten blanchieren, herausnehmen und sehr gut abtropfen lassen, am besten auf Küchenpapier ausdrücken. Sonst wird die Soße wässrig.
+3. Jeden Kolben mit einer Scheibe Kochschinken umwickeln und nebeneinander in eine gefettete Auflaufform legen.
+4. Für die Béchamel {30 g} Butter in einem Topf schmelzen, {2 EL} Mehl einrühren und 1 Minute anschwitzen. Unter ständigem Rühren mit dem Schneebesen {400 ml} Milch zugießen und 5 Minuten köcheln lassen, bis die Soße dicklich ist. Mit Salz, Pfeffer und Muskatnuss würzen.
+5. Die Soße über den Chicorée gießen und mit {100 g} geriebenem Gouda bestreuen. Etwa 25 Minuten überbacken, bis die Oberfläche goldbraun ist.
+
+Tipp: Dazu passen Salzkartoffeln oder Kartoffelpüree.
 
 Guten Appetit!', 'ueberbackener-chicoree-mit-schinken.jpg');
 
@@ -5036,11 +5081,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rotkohlsalat mit Granatapfel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rotkohlsalat mit Granatapfel', NULL, 20, 4, 'Portionen', 'Winter', '1. Rotkohl in sehr feine Streifen hobeln und mit Salz und Essig 3 Minuten kräftig durchkneten.
-2. Apfel entkernen und in feine Stifte schneiden.
-3. Granatapfelkerne auslösen.
-4. Öl, Ahornsirup und Pfeffer unterrühren und Apfel und gehackte Petersilie unterheben.
+VALUES ('Rotkohlsalat mit Granatapfel', 'Knackiger Rotkohl, roh mariniert mit Apfel und Granatapfel: leuchtend, frisch und voller Vitamine für den Winter.', 20, 4, 'Portionen', 'Winter', '1. {400 g} Rotkohl vierteln, den Strunk entfernen und in sehr feine Streifen hobeln. Mit {1 TL} Salz und {3 EL} Apfelessig in einer Schüssel 3 Minuten kräftig mit den Händen durchkneten, bis er weicher wird und Saft zieht.
+2. Den Apfel waschen, entkernen und in feine Stifte schneiden.
+3. Die Kerne aus dem halben Granatapfel lösen: mit der Schnittfläche nach unten über eine Schüssel halten und mit einem Kochlöffel kräftig auf die Schale klopfen.
+4. {3 EL} Rapsöl, {1 EL} Ahornsirup und Pfeffer unter den Rotkohl rühren. Apfel und gehackte Petersilie unterheben.
 5. 10 Minuten ziehen lassen und mit den Granatapfelkernen bestreuen.
+
+Tipp: Ein paar geröstete Walnüsse oder etwas Feta passen wunderbar dazu.
 
 Guten Appetit!', 'rotkohlsalat-mit-granatapfel.jpg');
 
@@ -5056,11 +5103,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kartoffelgratin
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kartoffelgratin', NULL, 75, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Eine Auflaufform mit der halbierten Knoblauchzehe ausreiben und mit Butter fetten.
-2. Kartoffeln schälen und in 2–3 mm dünne Scheiben hobeln.
-3. Sahne und Milch mit Salz, Pfeffer und Muskat aufkochen. Kartoffelscheiben zugeben und 5 Minuten unter vorsichtigem Rühren köcheln – die Stärke bindet die Soße.
-4. Alles in die Form geben, glatt streichen und mit geriebenem Käse bestreuen.
-5. Ca. 50 Minuten goldbraun backen und vor dem Servieren 5 Minuten ruhen lassen.
+VALUES ('Kartoffelgratin', 'Hauchdünne Kartoffelscheiben in Knoblauchsahne, goldbraun überbacken: das Gratin Dauphinois, die schönste Beilage zu Braten und Fisch.', 75, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Knoblauchzehe halbieren und eine Auflaufform kräftig damit ausreiben. Die Form mit {1 EL} Butter fetten.
+2. {1000 g} festkochende Kartoffeln schälen und mit einem Gemüsehobel in 2–3 mm dünne Scheiben hobeln. Nicht waschen, die Stärke wird gebraucht.
+3. {200 ml} Sahne und {200 ml} Milch mit Salz, Pfeffer und Muskatnuss in einem großen Topf aufkochen. Die Kartoffelscheiben zugeben und unter vorsichtigem Rühren 5 Minuten köcheln lassen. Die Stärke bindet dabei die Soße, und das Gratin wird später sicher gar.
+4. Alles in die Form geben, die Scheiben glatt streichen und mit {80 g} geriebenem Bergkäse bestreuen.
+5. Etwa 50 Minuten backen, bis die Oberfläche goldbraun ist und sich die Kartoffeln mit einem Messer ganz leicht einstechen lassen. Wird es zu schnell braun, mit Alufolie abdecken.
+6. Vor dem Servieren 5 Minuten ruhen lassen, dann zieht die Soße noch etwas an.
+
+Tipp: Das Gratin lässt sich gut vorbereiten und vor dem Servieren noch einmal 15 Minuten aufwärmen.
 
 Guten Appetit!', 'kartoffelgratin.jpg');
 
@@ -5076,11 +5126,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Käsespätzle mit Röstzwiebeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käsespätzle mit Röstzwiebeln', NULL, 50, 4, 'Portionen', 'Winter', '1. Mehl, Eier, {1 TL} Salz und ca. {150 ml} Wasser mit einem Kochlöffel zu einem zähen Teig schlagen, bis er Blasen wirft. 10 Minuten ruhen lassen.
-2. Zwiebeln in feine Ringe schneiden und in {2 EL} Butter bei mittlerer Hitze langsam goldbraun und knusprig rösten.
-3. Käse reiben und mischen. Ofen auf 100 °C vorheizen.
-4. Teig portionsweise in siedendes Salzwasser schaben oder pressen. Spätzle abschöpfen, sobald sie oben schwimmen, und abwechselnd mit Käse, Pfeffer und etwas Muskat in eine gebutterte, vorgewärmte Form schichten. Zwischendurch im Ofen warm halten.
-5. Mit Röstzwiebeln und Schnittlauch servieren.
+VALUES ('Käsespätzle mit Röstzwiebeln', 'Allgäuer Seelenfutter: handgeschabte Spätzle, Schicht um Schicht mit würzigem Bergkäse, und obendrauf knusprige Röstzwiebeln.', 50, 4, 'Portionen', 'Winter', '1. {400 g} Mehl, {4} Eier, {1 TL} Salz und etwa {150 ml} Wasser in einer Schüssel mit einem Kochlöffel kräftig zu einem zähen, glatten Teig schlagen, bis er Blasen wirft und sich vom Löffel zieht. 10 Minuten ruhen lassen.
+2. Inzwischen {3} Zwiebeln in feine Ringe schneiden. In {2 EL} Butter bei mittlerer Hitze etwa 15 Minuten langsam goldbraun und knusprig rösten. Auf Küchenpapier abtropfen lassen.
+3. {200 g} Bergkäse und {100 g} Emmentaler reiben und mischen. Den Ofen auf 100 °C vorheizen und eine Auflaufform mit der restlichen Butter fetten und im Ofen vorwärmen.
+4. Reichlich Salzwasser aufkochen. Den Teig portionsweise vom nassen Brett ins siedende Wasser schaben oder durch eine Spätzlepresse drücken. Sobald die Spätzle oben schwimmen, mit einer Schaumkelle herausheben, kurz abtropfen lassen und in die Form geben.
+5. Jede Lage Spätzle sofort mit Käse bestreuen, etwas Pfeffer und Muskatnuss darüber, und die Form zwischendurch im Ofen warm halten, damit der Käse schmilzt. So weiter schichten, bis Teig und Käse aufgebraucht sind.
+6. Die Röstzwiebeln obenauf verteilen und mit Schnittlauchröllchen bestreuen. Direkt aus der Form servieren.
+
+Tipp: Dazu gehört ein grüner Salat mit kräftiger Vinaigrette.
 
 Guten Appetit!', 'kaesespaetzle-mit-roestzwiebeln.jpg');
 
@@ -5097,11 +5150,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Raclette mit Pellkartoffeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Raclette mit Pellkartoffeln', NULL, 45, 4, 'Portionen', 'Winter', '1. Kleine Kartoffeln mit Schale ca. 20 Minuten garen und warm halten.
-2. Champignons in Scheiben und Paprika in Streifen schneiden. Gurken abtropfen lassen.
-3. Raclettekäse in Scheiben schneiden.
-4. Am Tisch Käse und Gemüse in Pfännchen unter dem Raclettegrill schmelzen bzw. garen und über die Kartoffeln geben.
-5. Mit frisch gemahlenem Pfeffer und Paprikapulver würzen und mit den Gurken servieren.
+VALUES ('Raclette mit Pellkartoffeln', 'Geschmolzener Käse über heißen Kartoffeln, gemeinsam am Tisch: das gemütlichste Essen für lange Winterabende.', 45, 4, 'Portionen', 'Winter', '1. {1000 g} kleine Kartoffeln waschen und mit Schale in Salzwasser etwa 20 Minuten garen. In einer Schüssel mit einem Küchentuch abgedeckt oder auf dem Raclettegrill warm halten.
+2. {200 g} Champignons in Scheiben, die Paprika in Streifen schneiden. {200 g} Gewürzgurken abtropfen lassen und in Scheiben schneiden. Alles in kleinen Schalen auf den Tisch stellen.
+3. {800 g} Raclettekäse in Scheiben schneiden, die in die Pfännchen passen.
+4. Den Raclettegrill auf dem Tisch anheizen. Jeder belegt sein Pfännchen mit Käse und nach Belieben mit Gemüse und lässt alles unter dem Grill schmelzen, bis der Käse blubbert und leicht braun wird.
+5. Den Käse über die Kartoffeln schaben, mit frisch gemahlenem Pfeffer und etwas Paprikapulver würzen und mit den Gurken essen.
+
+Tipp: Raclettekäse eine halbe Stunde vor dem Essen aus dem Kühlschrank nehmen, dann schmilzt er gleichmäßiger.
 
 Guten Appetit!', 'raclette-mit-pellkartoffeln.jpg');
 
@@ -5115,11 +5170,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Käsefondue
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Käsefondue', NULL, 30, 4, 'Portionen', 'Winter', '1. Käse grob reiben. Den Fonduetopf (Caquelon) mit der halbierten Knoblauchzehe ausreiben.
-2. Weißwein und Zitronensaft im Topf erhitzen. Den Käse nach und nach unter ständigem Rühren in Form einer Acht schmelzen lassen, nicht kochen.
-3. Stärke mit dem Kirschwasser glatt rühren, einrühren und kurz aufwallen lassen, bis das Fondue cremig bindet.
-4. Mit Pfeffer und Muskat würzen und auf dem Rechaud am Tisch warm halten.
-5. Baguette mit Kruste in Würfel schneiden und auf Fonduegabeln in den Käse tunken.
+VALUES ('Käsefondue', 'Cremig geschmolzener Käse mit Weißwein und Kirschwasser, in den man Brot tunkt: das Schweizer Gemeinschaftsessen schlechthin.', 30, 4, 'Portionen', 'Winter', '1. {400 g} Bergkäse und {400 g} Emmentaler grob reiben. Den Fonduetopf (Caquelon) mit der halbierten Knoblauchzehe kräftig ausreiben.
+2. {300 ml} Weißwein und den Saft der halben Zitrone im Topf auf dem Herd erhitzen, bis er dampft. Die Säure verhindert, dass der Käse fädig wird.
+3. Den Käse handvollweise zugeben und bei mittlerer Hitze unter ständigem Rühren in Form einer Acht schmelzen lassen. Erst die nächste Portion zugeben, wenn die vorige geschmolzen ist. Das Fondue darf nicht kochen.
+4. {2 TL} Speisestärke mit {40 ml} Kirschwasser glatt rühren, einrühren und kurz aufwallen lassen, bis das Fondue cremig bindet. Mit Pfeffer und Muskatnuss würzen.
+5. Den Topf auf das Rechaud am Tisch stellen und bei kleiner Flamme warm halten.
+6. {2} Baguettes so in Würfel schneiden, dass jedes Stück etwas Kruste hat. Mit Fonduegabeln in den Käse tunken und dabei umrühren, damit sich nichts absetzt.
+
+Tipp: Wer sein Brot im Topf verliert, muss in der Schweiz traditionell eine Runde ausgeben. Die Kruste am Topfboden, „la religieuse“, ist das Beste zum Schluss.
 
 Guten Appetit!', 'kaesefondue.jpg');
 
@@ -5136,12 +5194,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bratapfel mit Marzipan und Vanillesoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bratapfel mit Marzipan und Vanillesoße', NULL, 45, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Rosinen in Rum einweichen.
-2. Äpfel (am besten Boskop) waschen, das Kerngehäuse großzügig ausstechen und die Äpfel in eine gefettete Form setzen.
-3. Marzipan zerbröseln und mit Rosinen, gehackten Mandeln und Zimt verkneten. Äpfel damit füllen und je ein Butterflöckchen daraufsetzen.
-4. Ca. 30 Minuten backen, bis die Äpfel weich sind und die Schale aufplatzt.
-5. Für die Vanillesoße die Milch mit Vanillemark, Schote und Zucker aufkochen. Stärke mit dem Eigelb und etwas Milch glatt rühren, einrühren und unter Rühren aufkochen.
-6. Bratäpfel mit der warmen Vanillesoße servieren.
+VALUES ('Bratapfel mit Marzipan und Vanillesoße', 'Weiche, duftende Äpfel mit Marzipan-Rosinen-Füllung und warmer Vanillesoße: der Geschmack von Advent.', 45, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. {30 g} Rosinen in {2 EL} Rum einweichen.
+2. {4} säuerliche Äpfel, am besten Boskoop, waschen und das Kerngehäuse mit einem Apfelausstecher großzügig herausstechen. Die Äpfel in eine gefettete Auflaufform setzen.
+3. {80 g} Marzipanrohmasse zerbröseln. {30 g} Mandeln grob hacken. Marzipan, Rosinen, Mandeln und {1 TL} Zimt mit den Fingern verkneten und fest in die Äpfel drücken. Je ein Flöckchen von {20 g} Butter daraufsetzen.
+4. Etwa 30 Minuten backen, bis die Äpfel weich sind und die Schale aufplatzt.
+5. Für die Vanillesoße die Vanilleschote längs aufschneiden und das Mark herauskratzen. Von {400 ml} Milch 4 EL beiseitestellen, den Rest mit Vanillemark, Schote und {40 g} Zucker aufkochen. Die Schote herausnehmen.
+6. {1} Ei trennen. Das Eigelb mit {20 g} Speisestärke und der restlichen kalten Milch glatt rühren. In die heiße Milch rühren und unter Rühren einmal kurz aufkochen, bis die Soße bindet. Die Bratäpfel mit der warmen Vanillesoße servieren.
+
+Tipp: Statt Vanillesoße passt auch eine Kugel Vanilleeis, die auf dem heißen Apfel schmilzt.
 
 Guten Appetit!', 'bratapfel-mit-marzipan-und-vanillesosse.jpg');
 
@@ -5160,10 +5220,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Glühwein
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Glühwein', NULL, 20, 6, 'Tassen', 'Winter', '1. Orange und Zitrone heiß waschen und in Scheiben schneiden.
-2. Rotwein mit Zucker, Zitrusscheiben und allen Gewürzen in einen Topf geben.
-3. Langsam erhitzen und bei kleinster Hitze 15 Minuten ziehen lassen. Nicht kochen, sonst verfliegt der Alkohol und der Wein wird bitter.
-4. Durch ein Sieb in Tassen gießen und heiß servieren.
+VALUES ('Glühwein', 'Heißer Rotwein mit Orange, Zimt und Sternanis: der Duft des Weihnachtsmarkts für die eigene Küche.', 20, 6, 'Tassen', 'Winter', '1. Die Orange und die halbe Zitrone heiß waschen und in Scheiben schneiden.
+2. {1000 ml} Rotwein mit {60 g} Zucker, den Zitrusscheiben, {2} Zimtstangen, {4} Gewürznelken, {2} Sternanis und {3} leicht angedrückten Kardamomkapseln in einen Topf geben.
+3. Langsam erhitzen und bei kleinster Hitze 15 Minuten ziehen lassen. Der Wein darf nicht kochen, sonst verfliegt der Alkohol und er wird bitter. Er sollte gerade dampfen.
+4. Abschmecken und nach Belieben nachsüßen. Durch ein Sieb in vorgewärmte Tassen gießen und heiß servieren.
+
+Tipp: Ein fruchtiger, nicht zu teurer Rotwein ist ideal. Mit einem Schuss Rum wird daraus Glühwein mit Schuss.
 
 Zum Wohl!', 'gluehwein.jpg');
 
@@ -5178,10 +5240,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kinderpunsch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kinderpunsch', NULL, 20, 6, 'Tassen', 'Winter', '1. {500 ml} Wasser aufkochen, die Teebeutel darin 8 Minuten ziehen lassen und dann entfernen.
-2. Apfel- und Orangensaft, Orangenscheiben und Gewürze zugeben.
+VALUES ('Kinderpunsch', 'Warm, fruchtig und weihnachtlich gewürzt: der Punsch, bei dem die ganze Familie mittrinken kann.', 20, 6, 'Tassen', 'Winter', '1. {500 ml} Wasser aufkochen und über {4} Beutel Früchtetee gießen. 8 Minuten ziehen lassen und die Beutel herausnehmen.
+2. Den Tee mit {500 ml} Apfelsaft und {500 ml} Orangensaft in einen Topf geben. Die Orange heiß waschen, in Scheiben schneiden und mit {2} Zimtstangen, {3} Gewürznelken und dem Sternanis zugeben.
 3. Bei kleiner Hitze 10 Minuten ziehen lassen, nicht kochen.
-4. Mit Agavendicksaft süßen und heiß servieren.
+4. Mit {3 EL} Agavendicksaft süßen, abschmecken und heiß in Tassen servieren.
+
+Tipp: Ein paar Apfelstücke oder ein Spritzer Zitrone machen den Punsch noch frischer.
 
 Zum Wohl!', 'kinderpunsch.jpg');
 
@@ -5196,12 +5260,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Christstollen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Christstollen', NULL, 360, 2, 'Stollen', 'Winter', '1. Rosinen, Orangeat und Zitronat mit Rum mischen und zugedeckt mindestens 2 Stunden, besser über Nacht, durchziehen lassen.
-2. Hefe in lauwarmer Milch mit {1 TL} Zucker auflösen, mit {200 g} Mehl verrühren und 20 Minuten gehen lassen.
-3. Restliches Mehl, Zucker, Salz, Zitronenabrieb, Lebkuchengewürz und {400 g} weiche Butter zum Vorteig geben und zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-4. Rumfrüchte und gehackte Mandeln rasch unterkneten. Teig in {2} Portionen teilen, jeweils zu einem Oval ausrollen, eine Längsseite überklappen und zur typischen Stollenform drücken. Nochmals 30 Minuten gehen lassen.
-5. Bei 180 °C ca. 60 Minuten backen. Restliche Butter schmelzen, die heißen Stollen großzügig damit bestreichen und dick mit Puderzucker und Vanillezucker bestreuen.
-6. Abgekühlt in Folie wickeln und kühl lagern. Nach 2–3 Wochen Ruhezeit schmeckt er am besten.
+VALUES ('Christstollen', 'Buttrig, voller Rumfrüchte und dick mit Puderzucker: der Weihnachtsstollen, der Wochen vor dem Fest gebacken wird.', 360, 2, 'Stollen', 'Winter', '1. {400 g} Rosinen, {100 g} Orangeat und {100 g} Zitronat mit {100 ml} Rum mischen und zugedeckt mindestens 2 Stunden, besser über Nacht, durchziehen lassen.
+2. {250 ml} Milch lauwarm erwärmen. {84 g} frische Hefe hineinbröckeln und mit {1 TL} Zucker auflösen. Mit {200 g} Mehl zu einem Vorteig verrühren und abgedeckt 20 Minuten gehen lassen, bis er Blasen wirft.
+3. Das restliche Mehl, den restlichen Zucker, {1 TL} Salz, die abgeriebene Schale der Zitrone, {1 TL} Lebkuchengewürz und {400 g} weiche Butter zum Vorteig geben. Alles 10 Minuten zu einem glatten, geschmeidigen Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+4. {150 g} Mandeln grob hacken. Rumfrüchte und Mandeln mit den Händen rasch unterkneten, nur so lange, bis sie verteilt sind, sonst wird der Teig grau. Den Teig in {2} Portionen teilen. Jede zu einem Oval von etwa 30 cm Länge ausrollen, in der Mitte mit dem Nudelholz eine Mulde eindrücken und eine Längsseite überklappen. Das gibt die typische Stollenform. Auf ein Blech mit Backpapier legen und noch einmal 30 Minuten gehen lassen.
+5. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Stollen etwa 60 Minuten backen. Herausstehende Rosinen vorher in den Teig drücken, sie verbrennen sonst.
+6. Die restliche Butter schmelzen. Die heißen Stollen großzügig damit bestreichen, bis die Butter aufgesogen ist. {150 g} Puderzucker mit dem Vanillezucker mischen und die Stollen dick damit bestreuen.
+7. Vollständig abkühlen lassen, in Frischhaltefolie und Alufolie wickeln und kühl lagern. Nach 2–3 Wochen hat sich das Aroma voll entfaltet.
+
+Tipp: Vor dem Anschneiden noch einmal mit Puderzucker bestäuben. Immer von der Mitte aus schneiden und die Hälften zusammenschieben, so bleibt er saftig.
 
 Guten Appetit!', 'christstollen.jpg');
 
@@ -5223,10 +5290,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Vanillekipferl
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vanillekipferl', NULL, 120, 60, 'Stück', 'Winter', '1. Eier trennen. Mehl, Mandeln, Zucker, Salz, das Mark der Vanilleschote, kalte Butterwürfel und die Eigelbe rasch zu einem glatten Teig verkneten. In Folie 1 Stunde kühlen.
-2. Ofen auf 175 °C vorheizen. Teig portionsweise zu fingerdicken Rollen formen, in 3 cm lange Stücke schneiden und zu kleinen Hörnchen biegen.
-3. Auf Backbleche mit Backpapier legen und 10–12 Minuten hellgelb backen – sie sollen nicht braun werden.
-4. Puderzucker und Vanillezucker mischen und die noch warmen Kipferl vorsichtig darin wälzen.
+VALUES ('Vanillekipferl', 'Zarte, mürbe Hörnchen aus Mandelteig, in Vanillezucker gewälzt: die Königin der Weihnachtsplätzchen.', 120, 60, 'Stück', 'Winter', '1. {2} Eier trennen, die Eiweiße werden nicht gebraucht. {250 g} Mehl, {100 g} gemahlene Mandeln, {80 g} Zucker, eine Prise Salz und das Mark der Vanilleschote mischen. {200 g} kalte Butter in Würfeln und die Eigelbe zugeben und alles rasch zu einem glatten Teig verkneten. Zu lange kneten macht ihn brüchig. In Folie gewickelt 1 Stunde kühlen.
+2. Den Ofen auf 175 °C Ober-/Unterhitze vorheizen. Den Teig portionsweise zu fingerdicken Rollen formen und in 3 cm lange Stücke schneiden. Jedes Stück zwischen den Handflächen zu einer an den Enden dünneren Rolle formen und zu einem Hörnchen biegen.
+3. Die Kipferl mit etwas Abstand auf Bleche mit Backpapier legen und 10–12 Minuten backen. Sie sollen hellgelb bleiben und nur an den Spitzen leicht Farbe nehmen.
+4. {100 g} Puderzucker mit dem Vanillezucker in einem tiefen Teller mischen. Die Kipferl 2 Minuten abkühlen lassen und noch warm vorsichtig darin wälzen. Warm sind sie zerbrechlich, aber nur so haftet der Zucker.
+
+Tipp: In einer Blechdose halten sie sich mehrere Wochen und werden mit der Zeit noch zarter.
 
 Guten Appetit!', 'vanillekipferl.jpg');
 
@@ -5242,11 +5311,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zimtsterne
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zimtsterne', NULL, 90, 40, 'Stück', 'Winter', '1. Eier trennen und die Eigelbe anderweitig verwenden. Eiweiße mit Salz steif schlagen, Puderzucker einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht.
-2. {5 EL} Eischnee für die Glasur abnehmen und beiseitestellen.
-3. Restlichen Eischnee mit Mandeln und Zimt zu einem formbaren Teig verkneten. Falls er klebt, noch etwas Mandeln zugeben. 30 Minuten kühlen.
-4. Teig zwischen Frischhaltefolie 1 cm dick ausrollen, Sterne ausstechen (den Ausstecher immer wieder in Wasser tauchen) und auf Backpapier legen. Ofen auf 140 °C vorheizen.
-5. Sterne mit dem beiseitegestellten Eischnee bestreichen und ca. 10–12 Minuten backen – die Glasur soll weiß bleiben.
+VALUES ('Zimtsterne', 'Saftige Mandelsterne mit Zimt unter einer schneeweißen Glasur: ein Klassiker, der ganz ohne Mehl auskommt.', 90, 40, 'Stück', 'Winter', '1. {3} Eier sehr sauber trennen, die Eigelbe werden nicht gebraucht. Die Eiweiße mit einer Prise Salz steif schlagen. {250 g} Puderzucker nach und nach einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht.
+2. {5 EL} Eischnee für die Glasur abnehmen und abgedeckt beiseitestellen.
+3. Den restlichen Eischnee mit {300 g} gemahlenen Mandeln und {2 TL} Zimt zu einem formbaren Teig verkneten. Klebt er zu sehr, noch etwas Mandeln zugeben. In Folie 30 Minuten kühlen.
+4. Den Teig zwischen zwei Lagen Frischhaltefolie etwa 1 cm dick ausrollen. Sterne ausstechen und den Ausstecher dabei immer wieder in Wasser tauchen, dann klebt nichts. Auf Bleche mit Backpapier legen. Den Ofen auf 140 °C Ober-/Unterhitze vorheizen.
+5. Die Sterne mit einem Pinsel oder Messer dünn mit dem beiseitegestellten Eischnee bestreichen, auch bis in die Spitzen.
+6. 10–12 Minuten backen. Die Glasur soll weiß bleiben und die Sterne innen noch weich sein, sie werden beim Abkühlen fester.
+
+Tipp: In einer Dose mit einem Apfelschnitz bleiben Zimtsterne lange saftig.
 
 Guten Appetit!', 'zimtsterne.jpg');
 
@@ -5258,11 +5330,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spritzgebäck
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spritzgebäck', NULL, 60, 60, 'Stück', 'Winter', '1. Weiche Butter mit Zucker, Vanillezucker und Salz cremig rühren und das Ei unterrühren.
-2. Mehl und Mandeln mischen und unterkneten.
-3. Teig portionsweise in einen Fleischwolf mit Spritzgebäckaufsatz oder einen stabilen Spritzbeutel mit Sterntülle füllen und Stangen, Ringe oder S-Formen auf Backbleche spritzen.
-4. Bei 180 °C ca. 10–12 Minuten goldgelb backen und abkühlen lassen.
-5. Schokolade schmelzen und die Enden des Gebäcks eintauchen.
+VALUES ('Spritzgebäck', 'Buttrige Kringel und Stangen, mit dem Fleischwolf gespritzt und in Schokolade getaucht: Plätzchen wie aus Omas Dose.', 60, 60, 'Stück', 'Winter', '1. {250 g} weiche Butter mit {125 g} Zucker, dem Vanillezucker und einer Prise Salz mit dem Handrührgerät cremig rühren. Das Ei unterrühren.
+2. {375 g} Mehl und {125 g} gemahlene Mandeln mischen und mit den Knethaken oder den Händen unterkneten, bis ein glatter Teig entsteht. Er soll weich genug zum Spritzen, aber nicht klebrig sein.
+3. Den Teig portionsweise in einen Fleischwolf mit Spritzgebäckaufsatz oder in einen stabilen Spritzbeutel mit großer Sterntülle füllen. Stangen, Ringe oder S-Formen auf Bleche mit Backpapier spritzen.
+4. Im vorgeheizten Ofen bei 180 °C Ober-/Unterhitze 10–12 Minuten goldgelb backen und auf einem Gitter abkühlen lassen.
+5. {100 g} Zartbitterschokolade über einem Wasserbad schmelzen. Die Enden des Gebäcks hineintauchen, abstreifen und auf Backpapier fest werden lassen.
+
+Tipp: Ist der Teig zu fest zum Spritzen, ihn ein paar Minuten in der warmen Hand kneten.
 
 Guten Appetit!', 'spritzgebaeck.jpg');
 
@@ -5277,12 +5351,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Elisenlebkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Elisenlebkuchen', NULL, 90, 25, 'Stück', 'Winter', '1. Ofen auf 160 °C vorheizen. Orangeat und Zitronat sehr fein hacken.
-2. Eier mit Zucker und Honig 5 Minuten dickcremig aufschlagen.
-3. Nüsse, Mandeln, Orangeat, Zitronat, Lebkuchengewürz, Backpulver, Zitronenabrieb und Salz unterheben.
-4. Masse ca. 1 cm hoch auf die Oblaten (Ø 7 cm) streichen, dabei einen schmalen Rand frei lassen, und auf Backbleche setzen.
-5. Ca. 20–25 Minuten backen – sie sollen innen noch saftig sein. Abkühlen lassen.
-6. Schokolade schmelzen und die Lebkuchen damit überziehen.
+VALUES ('Elisenlebkuchen', 'Die feinsten Lebkuchen aus Nürnberg: saftig, nussig und mit Schokolade überzogen, fast ganz ohne Mehl.', 90, 25, 'Stück', 'Winter', '1. Den Ofen auf 160 °C Ober-/Unterhitze vorheizen. {50 g} Orangeat und {50 g} Zitronat sehr fein hacken.
+2. {3} Eier mit {150 g} braunem Zucker und {50 g} Honig mit dem Handrührgerät 5 Minuten dickcremig aufschlagen.
+3. {200 g} gemahlene Haselnüsse, {200 g} gemahlene Mandeln, Orangeat, Zitronat, {2 TL} Lebkuchengewürz, {0.5 TL} Backpulver, die abgeriebene Schale der Zitrone und eine Prise Salz mit einem Teigschaber unterheben.
+4. Die Masse mit einem nassen Messer etwa 1 cm hoch auf {25} Backoblaten (7 cm) streichen und dabei einen schmalen Rand frei lassen. Auf Bleche mit Backpapier setzen.
+5. 20–25 Minuten backen. Sie sollen sich an der Oberfläche fest anfühlen, innen aber noch saftig sein. Auf einem Gitter abkühlen lassen.
+6. {150 g} Zartbitterschokolade über einem Wasserbad schmelzen und die Lebkuchen damit überziehen. Fest werden lassen.
+
+Tipp: In einer Blechdose mit einem Stück Apfel werden die Lebkuchen nach ein paar Tagen noch weicher.
 
 Guten Appetit!', 'elisenlebkuchen.jpg');
 
@@ -5302,11 +5378,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Butterplätzchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Butterplätzchen', NULL, 120, 60, 'Stück', 'Winter', '1. Mehl, kalte Butter, Zucker, Vanillezucker, {1} Ei und Salz rasch zu einem Mürbeteig verkneten und 1 Stunde kühlen.
-2. Ofen auf 180 °C vorheizen. Teig portionsweise auf wenig Mehl 3 mm dünn ausrollen und Motive ausstechen.
-3. Auf Backbleche mit Backpapier legen und nach Belieben mit dem verquirlten Eigelb des restlichen Eis bestreichen.
-4. 8–10 Minuten hellgoldbraun backen und auskühlen lassen.
-5. Puderzucker mit etwas Zitronensaft zu einem dicken Guss verrühren und die Plätzchen damit verzieren.
+VALUES ('Butterplätzchen', 'Einfache, mürbe Ausstechplätzchen mit Zuckerguss: das Backvergnügen für die ganze Familie in der Adventszeit.', 120, 60, 'Stück', 'Winter', '1. {300 g} Mehl, {200 g} kalte Butter in Würfeln, {100 g} Zucker, den Vanillezucker, {1} Ei und eine Prise Salz rasch zu einem glatten Mürbeteig verkneten. Flach drücken, in Folie wickeln und 1 Stunde kühlen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Den Teig portionsweise auf wenig Mehl etwa 3 mm dünn ausrollen und Motive ausstechen. Den restlichen Teig dabei kühl halten, warm wird er klebrig.
+3. Die Plätzchen auf Bleche mit Backpapier legen. Das zweite Ei trennen, das Eigelb verquirlen und die Plätzchen nach Belieben damit bestreichen, dann glänzen sie goldgelb.
+4. 8–10 Minuten hellgoldbraun backen und auf einem Gitter auskühlen lassen.
+5. {150 g} Puderzucker mit wenig Zitronensaft zu einem dicken, glatten Guss verrühren und die Plätzchen damit verzieren.
+
+Tipp: Bunte Streusel oder Lebensmittelfarbe im Guss machen das Verzieren mit Kindern zum Fest.
 
 Guten Appetit!', 'butterplaetzchen.jpg');
 
@@ -5321,11 +5399,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kokosmakronen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kokosmakronen', NULL, 45, 30, 'Stück', 'Winter', '1. Ofen auf 150 °C vorheizen. Eier trennen und die Eigelbe anderweitig verwenden.
-2. Eiweiße mit Salz steif schlagen, Zucker und Vanillezucker einrieseln lassen und weiterschlagen, bis die Masse glänzt.
-3. Kokosraspeln vorsichtig unterheben.
-4. Mit zwei Teelöffeln kleine Häufchen auf ein mit Backpapier belegtes Blech setzen.
-5. Ca. 20–25 Minuten backen, bis die Spitzen leicht gebräunt sind, und auf dem Blech abkühlen lassen.
+VALUES ('Kokosmakronen', 'Außen leicht knusprig, innen weich und saftig: Kokosmakronen aus nur wenigen Zutaten.', 45, 30, 'Stück', 'Winter', '1. Den Ofen auf 150 °C Ober-/Unterhitze vorheizen. {3} Eier sehr sauber trennen, die Eigelbe werden nicht gebraucht.
+2. Die Eiweiße mit einer Prise Salz in einer fettfreien Schüssel steif schlagen. {200 g} Zucker und den Vanillezucker langsam einrieseln lassen und weiterschlagen, bis die Masse fest ist und glänzt.
+3. {200 g} Kokosraspeln mit einem Teigschaber vorsichtig unterheben.
+4. Mit zwei Teelöffeln kleine Häufchen mit etwas Abstand auf ein mit Backpapier belegtes Blech setzen. Wer mag, legt sie auf Backoblaten.
+5. Etwa 20–25 Minuten backen, bis die Spitzen leicht gebräunt sind. Auf dem Blech abkühlen lassen, warm sind sie noch weich.
+
+Tipp: Die Böden in geschmolzene Zartbitterschokolade tauchen, das schmeckt besonders gut.
 
 Guten Appetit!', 'kokosmakronen.jpg');
 
@@ -5337,10 +5417,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gebrannte Mandeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gebrannte Mandeln', NULL, 25, 300, 'g', 'Winter', '1. Zucker, Vanillezucker, Zimt und {100 ml} Wasser in einer beschichteten Pfanne aufkochen.
-2. Mandeln zugeben und unter ständigem Rühren köcheln lassen, bis das Wasser verdampft ist und der Zucker trocken und krümelig an den Mandeln haftet.
-3. Hitze reduzieren und weiterrühren, bis der Zucker wieder schmilzt und die Mandeln glänzend überzieht.
-4. Sofort auf Backpapier geben, mit zwei Gabeln voneinander trennen und abkühlen lassen.
+VALUES ('Gebrannte Mandeln', 'Süß, knackig und nach Zimt duftend: Gebrannte Mandeln wie vom Weihnachtsmarkt, frisch aus der eigenen Pfanne.', 25, 300, 'g', 'Winter', '1. {125 g} Zucker, den Vanillezucker, {1 TL} Zimt und {100 ml} Wasser in einer beschichteten Pfanne aufkochen.
+2. {200 g} Mandeln zugeben und bei mittlerer Hitze unter ständigem Rühren köcheln lassen, bis das Wasser verdampft ist. Der Zucker wird dann trocken und krümelig und haftet als weiße Kruste an den Mandeln. Weiterrühren!
+3. Die Hitze etwas reduzieren und weiterrühren, bis der Zucker wieder schmilzt, karamellisiert und die Mandeln glänzend überzieht. Das dauert ein paar Minuten.
+4. Die Mandeln sofort auf ein Backpapier geben und mit zwei Gabeln voneinander trennen, bevor der Zucker fest wird. Abkühlen lassen.
+
+Tipp: Die Pfanne gleich danach mit heißem Wasser einweichen, dann löst sich der Zucker von allein.
 
 Guten Appetit!', 'gebrannte-mandeln.jpg');
 
@@ -5351,10 +5433,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bratwurst mit Sauerkraut und Kartoffelpüree
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bratwurst mit Sauerkraut und Kartoffelpüree', NULL, 50, 4, 'Portionen', 'Winter', '1. Zwiebel würfeln und in {1 EL} Butterschmalz glasig dünsten. Sauerkraut, geriebenen Apfel, Lorbeer, Wacholder, Zucker und Brühe zugeben und zugedeckt 30 Minuten schmoren.
-2. Kartoffeln schälen und in Salzwasser 20 Minuten garen. Abgießen und mit heißer Milch und Butter zu Püree stampfen. Mit Salz und Muskat würzen.
-3. Bratwürste im restlichen Butterschmalz bei mittlerer Hitze rundherum 10–12 Minuten braten.
-4. Sauerkraut mit Salz und Pfeffer abschmecken und mit Bratwurst und Püree servieren.
+VALUES ('Bratwurst mit Sauerkraut und Kartoffelpüree', 'Ehrliche deutsche Küche: knusprige Bratwurst, mild geschmortes Sauerkraut mit Apfel und cremiges Kartoffelpüree.', 50, 4, 'Portionen', 'Winter', '1. Die Zwiebel würfeln. {1 EL} Butterschmalz in einem Topf erhitzen und die Zwiebel darin glasig dünsten. {800 g} Sauerkraut, den geriebenen Apfel, das Lorbeerblatt, {4} Wacholderbeeren, {1 TL} Zucker und {200 ml} Gemüsebrühe zugeben. Zugedeckt bei schwacher Hitze 30 Minuten schmoren. Der Apfel macht das Kraut milder.
+2. Inzwischen {1000 g} Kartoffeln schälen, würfeln und in Salzwasser etwa 20 Minuten garen. Abgießen, kurz ausdampfen lassen und mit {200 ml} heißer Milch und {50 g} Butter zu einem cremigen Püree stampfen. Mit Salz und Muskatnuss würzen.
+3. {8} Bratwürste im restlichen Butterschmalz bei mittlerer Hitze rundherum 10–12 Minuten braten, bis sie gleichmäßig gebräunt sind. Bei zu starker Hitze platzen sie.
+4. Das Sauerkraut mit Salz und Pfeffer abschmecken und mit Bratwurst und Püree servieren.
+
+Tipp: Ein Klecks mittelscharfer Senf gehört dazu.
 
 Guten Appetit!', 'bratwurst-mit-sauerkraut-und-kartoffelpueree.jpg');
 
@@ -5376,11 +5460,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schupfnudeln mit Sauerkraut und Speck
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schupfnudeln mit Sauerkraut und Speck', NULL, 75, 4, 'Portionen', 'Winter', '1. Mehligkochende Kartoffeln mit Schale ca. 25 Minuten kochen, pellen, noch heiß durch eine Presse drücken und abkühlen lassen.
-2. Mit Mehl, Ei, Salz und Muskat rasch zu einem glatten Teig verkneten.
-3. Daraus fingerlange, an den Enden spitze Nudeln rollen (schupfen) und in siedendem Salzwasser ca. 3 Minuten garen, bis sie oben schwimmen. Abschöpfen und abtropfen lassen.
-4. Speck und Zwiebel würfeln und in Butterschmalz anbraten. Schupfnudeln zugeben und goldbraun braten.
-5. Abgetropftes Sauerkraut und Kümmel zugeben, 5 Minuten mitbraten und mit Salz und Pfeffer abschmecken.
+VALUES ('Schupfnudeln mit Sauerkraut und Speck', 'Schwäbische Fingernudeln aus Kartoffelteig, goldbraun gebraten mit Sauerkraut und Speck.', 75, 4, 'Portionen', 'Winter', '1. {800 g} mehligkochende Kartoffeln mit Schale etwa 25 Minuten kochen. Pellen und noch heiß durch eine Kartoffelpresse drücken. Ausdampfen und abkühlen lassen.
+2. Die Kartoffeln mit {200 g} Mehl, {1} Ei, Salz und Muskatnuss rasch zu einem glatten Teig verkneten. Nicht zu lange kneten, sonst wird er klebrig.
+3. Aus dem Teig fingerdicke Rollen formen und in kleine Stücke schneiden. Jedes Stück auf der leicht bemehlten Arbeitsfläche mit den Handflächen zu einer etwa 6 cm langen Nudel mit spitzen Enden rollen, das nennt man schupfen.
+4. Die Schupfnudeln portionsweise in siedendes Salzwasser geben und etwa 3 Minuten garen, bis sie oben schwimmen. Mit einer Schaumkelle herausheben und gut abtropfen lassen.
+5. {150 g} Speck und die Zwiebel würfeln. {2 EL} Butterschmalz in einer großen Pfanne erhitzen und Speck und Zwiebel darin anbraten. Die Schupfnudeln zugeben und rundherum goldbraun braten.
+6. {500 g} abgetropftes Sauerkraut und {0.5 TL} Kümmel zugeben und 5 Minuten mitbraten. Mit Salz und Pfeffer abschmecken.
+
+Tipp: Fertige Schupfnudeln lassen sich gut einfrieren, am besten vor dem Braten.
 
 Guten Appetit!', 'schupfnudeln-mit-sauerkraut-und-speck.jpg');
 
@@ -5398,11 +5485,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kassler auf Sauerkraut aus dem Ofen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kassler auf Sauerkraut aus dem Ofen', NULL, 60, 4, 'Portionen', 'Winter', '1. Ofen auf 180 °C vorheizen. Zwiebel würfeln und in einem Bräter in Butterschmalz andünsten.
-2. Sauerkraut, geriebenen Apfel, Lorbeer, Wacholder, Kümmel und Brühe zugeben und aufkochen.
-3. Kassler am Stück auf das Kraut legen und zugedeckt im Ofen ca. 45 Minuten garen.
-4. Kartoffeln schälen und als Salzkartoffeln garen.
-5. Kassler in Scheiben schneiden, Kraut mit Salz und Pfeffer abschmecken und alles mit den Kartoffeln servieren.
+VALUES ('Kassler auf Sauerkraut aus dem Ofen', 'Saftiger Kassler, der auf würzigem Sauerkraut im Ofen gart: ein Wintergericht, das sich fast von allein macht.', 60, 4, 'Portionen', 'Winter', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Die Zwiebel würfeln und in einem Bräter in {1 EL} Butterschmalz glasig dünsten.
+2. {800 g} Sauerkraut, den geriebenen Apfel, das Lorbeerblatt, {5} Wacholderbeeren, {0.5 TL} Kümmel und {300 ml} Gemüsebrühe zugeben und aufkochen.
+3. {800 g} Kassler am Stück auf das Kraut legen. Den Bräter zudecken und alles im Ofen etwa 45 Minuten garen. Der Kassler ist schon gegart und soll nur heiß und saftig werden, er gibt dabei sein Aroma an das Kraut ab.
+4. Inzwischen {800 g} Kartoffeln schälen und in Salzwasser etwa 20 Minuten garen.
+5. Den Kassler in Scheiben schneiden. Das Kraut mit Salz und Pfeffer abschmecken und alles mit den Kartoffeln servieren.
+
+Tipp: Statt Salzkartoffeln passt auch Kartoffelpüree.
 
 Guten Appetit!', 'kassler-auf-sauerkraut-aus-dem-ofen.jpg');
 
@@ -5421,11 +5510,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Szegediner Gulasch
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Szegediner Gulasch', NULL, 120, 4, 'Portionen', 'Winter', '1. Fleisch in 3 cm große Würfel schneiden, Zwiebeln und Knoblauch würfeln.
-2. Fleisch in Butterschmalz portionsweise anbraten, Zwiebeln zugeben und goldbraun braten.
-3. Paprikapulver, Tomatenmark und Kümmel kurz mitrösten, mit Brühe ablöschen und Lorbeer zugeben. Zugedeckt 45 Minuten schmoren.
-4. Sauerkraut, Paprikastreifen und Knoblauch zugeben und weitere 40 Minuten schmoren.
-5. Mit Salz und Pfeffer abschmecken und mit einem Klecks Schmand servieren. Dazu passen Salzkartoffeln.
+VALUES ('Szegediner Gulasch', 'Schweinegulasch mit Sauerkraut und viel Paprika, mit Schmand verfeinert: deftig, würzig und herrlich wärmend.', 120, 4, 'Portionen', 'Winter', '1. {800 g} Schweinenacken in 3 cm große Würfel schneiden. {3} Zwiebeln und {2} Knoblauchzehen würfeln.
+2. {2 EL} Butterschmalz in einem Schmortopf erhitzen und das Fleisch portionsweise kräftig anbraten. Die Zwiebeln zugeben und goldbraun braten.
+3. {2 EL} Paprikapulver, {1 EL} Tomatenmark und {1 TL} Kümmel zugeben und kurz mitrösten. Mit {500 ml} Gemüsebrühe ablöschen, das Lorbeerblatt zugeben und zugedeckt 45 Minuten schmoren.
+4. {500 g} Sauerkraut abtropfen lassen und etwas auseinanderzupfen. Die Paprika in Streifen schneiden. Sauerkraut, Paprika und Knoblauch zum Fleisch geben und weitere 40 Minuten schmoren, bis das Fleisch zart ist.
+5. Das Lorbeerblatt entfernen, mit Salz und Pfeffer abschmecken und mit je einem Klecks von {200 g} Schmand servieren.
+
+Tipp: Dazu passen Salzkartoffeln oder Brot. Wie jedes Gulasch schmeckt es aufgewärmt noch besser.
 
 Guten Appetit!', 'szegediner-gulasch.jpg');
 
@@ -5446,11 +5537,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hühnersuppe mit Nudeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hühnersuppe mit Nudeln', NULL, 150, 6, 'Portionen', 'Winter', '1. Suppenhuhn waschen und mit {3 l} kaltem Wasser, der halbierten Zwiebel mit Schale, Lorbeer, Piment, Pfefferkörnern und {1 EL} Salz aufsetzen.
-2. Langsam aufkochen, den Schaum abschöpfen und bei kleiner Hitze ca. 2 Stunden sieden lassen. Nach 1,5 Stunden die Hälfte des grob geschnittenen Gemüses zugeben.
-3. Huhn herausnehmen und die Brühe durch ein Sieb gießen. Fleisch von Haut und Knochen lösen und klein zupfen.
-4. Restliches Gemüse in kleine Würfel bzw. Ringe schneiden und in der Brühe 10 Minuten garen. Suppennudeln nach Packungsangabe mitgaren.
-5. Fleisch zurück in die Suppe geben, mit Salz und Muskat abschmecken und mit gehackter Petersilie servieren. Hilft bei jeder Erkältung.
+VALUES ('Hühnersuppe mit Nudeln', 'Die heilende Suppe: klare, kräftige Hühnerbrühe mit zartem Fleisch, Gemüse und Nudeln. Hilft bei jeder Erkältung.', 150, 6, 'Portionen', 'Winter', '1. Das Suppenhuhn kalt abspülen und mit {3000 ml} kaltem Wasser in einen großen Topf geben. Die Zwiebel mit Schale halbieren, sie färbt die Brühe goldgelb. Mit dem Lorbeerblatt, {3} Pimentkörnern, {1 TL} Pfefferkörnern und {1 EL} Salz zugeben.
+2. Langsam aufkochen und den grauen Schaum, der aufsteigt, mit einer Kelle abschöpfen. Dann bei schwacher Hitze etwa 2 Stunden leise sieden lassen. Die Brühe soll nicht sprudeln, sonst wird sie trüb.
+3. {3} Karotten, {200 g} Knollensellerie und die Petersilienwurzel schälen, den Lauch waschen. Die Hälfte davon grob schneiden und nach 1,5 Stunden in die Brühe geben.
+4. Das Huhn herausnehmen und etwas abkühlen lassen. Die Brühe durch ein Sieb in einen sauberen Topf gießen. Das Fleisch von Haut und Knochen lösen und in mundgerechte Stücke zupfen.
+5. Das restliche Gemüse in kleine Würfel bzw. Ringe schneiden und in der Brühe 10 Minuten garen. {150 g} Suppennudeln nach Packungsangabe mitgaren.
+6. Das Fleisch zurück in die Suppe geben, mit Salz und Muskatnuss abschmecken und mit gehackter Petersilie servieren.
+
+Tipp: Übrige Brühe lässt sich portionsweise einfrieren und ist die Grundlage für viele Soßen und Suppen.
 
 Guten Appetit!', 'huehnersuppe-mit-nudeln.jpg');
 
