@@ -2721,11 +2721,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rote Grütze mit Vanillesoße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rote Grütze mit Vanillesoße', NULL, 160, 6, 'Portionen', 'Sommer', '1. Kirschen entsteinen, Johannisbeeren von den Rispen streifen und Erdbeeren halbieren.
-2. {400 ml} Kirschsaft mit {80 g} Zucker aufkochen. {40 g} Stärke mit dem restlichen Saft anrühren, einrühren und 1 Minute köcheln lassen.
-3. Früchte unterheben, kurz aufkochen und in Schalen füllen. Mindestens 2 Stunden kalt stellen.
-4. Für die Vanillesoße die Milch mit ausgekratztem Vanillemark, Schote und restlichem Zucker aufkochen und die Schote entfernen.
-5. Eigelbe mit der restlichen Stärke und etwas Milch verrühren, in die heiße Milch rühren und unter Rühren kurz aufkochen, bis die Soße bindet. Abkühlen lassen und zur Grütze servieren.
+VALUES ('Rote Grütze mit Vanillesoße', 'Norddeutschlands Lieblingsdessert: rote Sommerbeeren in fruchtigem Kirschsaft, dazu selbst gekochte Vanillesoße.', 160, 6, 'Portionen', 'Sommer', '1. {300 g} Kirschen waschen und entsteinen. {200 g} Johannisbeeren mit einer Gabel von den Rispen streifen. {200 g} Erdbeeren entkelchen und halbieren, {200 g} Himbeeren verlesen, aber nicht waschen, sie sind sehr empfindlich.
+2. {400 ml} Kirschsaft mit {80 g} Zucker in einem Topf aufkochen. {40 g} Speisestärke mit dem restlichen kalten Kirschsaft glatt rühren, in den kochenden Saft rühren und unter Rühren 1 Minute köcheln lassen, bis er klar und dick wird.
+3. Den Topf vom Herd nehmen. Kirschen und Johannisbeeren unterheben und kurz aufkochen, dann Erdbeeren und Himbeeren nur noch unterheben, damit sie ihre Form behalten. In eine Schüssel oder Schalen füllen und mindestens 2 Stunden kalt stellen.
+4. Für die Vanillesoße die Vanilleschote längs aufschneiden und das Mark herauskratzen. Von {500 ml} Milch 5 EL beiseitestellen, den Rest mit Vanillemark, Schote und dem restlichen Zucker aufkochen. Die Schote herausnehmen.
+5. {2} Eier trennen, das Eiweiß wird nicht gebraucht. Die Eigelbe mit der restlichen Speisestärke und der zurückbehaltenen kalten Milch glatt rühren. Unter ständigem Rühren in die heiße Milch gießen und einmal kurz aufkochen, bis die Soße bindet. Nicht länger kochen, sonst gerinnt das Eigelb.
+6. Die Soße in eine Schüssel füllen und abkühlen lassen. Damit sich keine Haut bildet, Frischhaltefolie direkt auf die Oberfläche legen. Zur kalten Grütze servieren.
+
+Tipp: Statt Vanillesoße schmeckt auch ein Klecks flüssige Sahne oder Vanilleeis.
 
 Guten Appetit!', 'rote-gruetze-mit-vanillesosse.jpg');
 
@@ -2742,11 +2745,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Heidelbeer-Pfannkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Heidelbeer-Pfannkuchen', NULL, 30, 4, 'Portionen', 'Sommer', '1. Mehl, Backpulver, Zucker und Salz mischen.
-2. Buttermilch, Eier und {30 g} geschmolzene Butter verquirlen und nur kurz unter die Mehlmischung rühren – kleine Klümpchen sind erwünscht.
-3. Etwas Butter in einer Pfanne erhitzen, je 2 EL Teig hineingeben und einige Heidelbeeren daraufstreuen.
-4. Wenn sich Bläschen an der Oberfläche bilden, wenden und weitere 1–2 Minuten goldbraun backen.
-5. Gestapelt mit Ahornsirup und den restlichen Heidelbeeren servieren.
+VALUES ('Heidelbeer-Pfannkuchen', 'Dicke, fluffige Pancakes mit Buttermilch und saftigen Heidelbeeren, gestapelt und mit Ahornsirup übergossen.', 30, 4, 'Portionen', 'Sommer', '1. {250 g} Mehl, {2 TL} Backpulver, {2 EL} Zucker und eine Prise Salz in einer großen Schüssel mischen.
+2. {30 g} Butter schmelzen. {300 ml} Buttermilch und {2} Eier verquirlen und die geschmolzene Butter unterrühren.
+3. Die flüssigen Zutaten zur Mehlmischung geben und nur kurz mit einem Schneebesen unterrühren, bis gerade kein trockenes Mehl mehr zu sehen ist. Kleine Klümpchen sind erwünscht, zu viel Rühren macht die Pancakes zäh. 5 Minuten ruhen lassen.
+4. Eine beschichtete Pfanne bei mittlerer Hitze erhitzen und mit etwas Butter auspinseln. Pro Pancake etwa 2 EL Teig hineingeben und gleich ein paar Heidelbeeren daraufstreuen.
+5. Wenn sich an der Oberfläche Bläschen bilden und die Ränder matt werden, nach etwa 2 Minuten, wenden und weitere 1–2 Minuten goldbraun backen. Fertige Pancakes im Ofen bei 80 °C warm halten.
+6. Gestapelt mit {4 EL} Ahornsirup und den restlichen Heidelbeeren servieren.
+
+Tipp: Die erste Portion wird meist nichts. Das ist normal, die Pfanne braucht ein wenig, bis sie die richtige Temperatur hat.
 
 Guten Appetit!', 'heidelbeer-pfannkuchen.jpg');
 
@@ -2762,11 +2768,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Johannisbeerkuchen mit Baiser
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Johannisbeerkuchen mit Baiser', NULL, 90, 1, 'Springform (26 cm)', 'Sommer', '1. Eier trennen. Mehl, Backpulver, kalte Butter, {80 g} Zucker, die Eigelbe und eine Prise Salz zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Ofen auf 180 °C vorheizen. Teig in einer gefetteten Springform als Boden mit 3 cm hohem Rand auslegen, mit Mandeln bestreuen und 15 Minuten vorbacken.
-3. Johannisbeeren waschen und mit einer Gabel von den Rispen streifen.
-4. Eiweiße steif schlagen, den restlichen Zucker einrieseln lassen und weiterschlagen, bis eine glänzende Masse entsteht. Stärke und Johannisbeeren vorsichtig unterheben.
-5. Masse auf den vorgebackenen Boden geben und ca. 30 Minuten backen, bis das Baiser goldgelb ist. Vollständig auskühlen lassen.
+VALUES ('Johannisbeerkuchen mit Baiser', 'Säuerliche Johannisbeeren unter einer süßen, luftigen Baiserhaube auf knusprigem Mürbeteig: ein Sommerkuchen wie aus der Konditorei.', 90, 1, 'Springform (26 cm)', 'Sommer', '1. {3} Eier trennen. {200 g} Mehl, {1 TL} Backpulver, {100 g} kalte Butter in Stücken, {80 g} Zucker, die Eigelbe und eine Prise Salz rasch zu einem glatten Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Springform (26 cm) fetten. Den Teig in der Form als Boden mit einem etwa 3 cm hohen Rand auslegen und mehrmals mit einer Gabel einstechen. Mit {50 g} gemahlenen Mandeln bestreuen, sie saugen später den Fruchtsaft auf. 15 Minuten vorbacken.
+3. Inzwischen {500 g} Johannisbeeren waschen, gut abtropfen lassen und mit einer Gabel von den Rispen streifen.
+4. Die Eiweiße in einer fettfreien Schüssel steif schlagen. Den restlichen Zucker langsam einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht, in der sich der Zucker gelöst hat. {1 EL} Speisestärke und die Johannisbeeren vorsichtig unterheben.
+5. Die Masse auf dem vorgebackenen Boden verteilen und mit einem Löffel kleine Spitzen hochziehen. Etwa 30 Minuten backen, bis das Baiser goldgelb ist und die Spitzen leicht gebräunt sind.
+6. In der Form vollständig auskühlen lassen und erst dann vorsichtig herauslösen. Zum Schneiden das Messer zwischendurch in heißes Wasser tauchen.
+
+Tipp: Mit Stachelbeeren schmeckt der Kuchen genauso gut.
 
 Guten Appetit!', 'johannisbeerkuchen-mit-baiser.jpg');
 
@@ -2782,11 +2791,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Wassermelonen-Limetten-Sorbet
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wassermelonen-Limetten-Sorbet', NULL, 260, 6, 'Portionen', 'Sommer', '1. Zucker mit {100 ml} Wasser aufkochen, bis er sich gelöst hat, und abkühlen lassen.
-2. Wassermelone schälen, entkernen und mit Limettensaft und -abrieb fein pürieren.
-3. Püree mit dem Zuckersirup verrühren und in einer flachen Form ins Gefrierfach stellen.
-4. In den ersten 3 Stunden alle 30 Minuten mit einer Gabel kräftig durchrühren, damit sich feine Kristalle bilden. Alternativ in der Eismaschine gefrieren.
-5. In Gläsern anrichten und mit Minze garnieren.
+VALUES ('Wassermelonen-Limetten-Sorbet', 'Leuchtend rosa, eiskalt und herrlich erfrischend: Sorbet aus Wassermelone und Limette, ganz ohne Sahne.', 260, 6, 'Portionen', 'Sommer', '1. {100 g} Zucker mit {100 ml} Wasser aufkochen und rühren, bis sich der Zucker gelöst hat. Den Sirup vollständig abkühlen lassen.
+2. {1000 g} Wassermelone schälen, die Kerne entfernen und das Fruchtfleisch grob würfeln. {2} Limetten heiß waschen, die Schale fein abreiben und den Saft auspressen.
+3. Melone, Limettensaft und Limettenabrieb im Mixer fein pürieren und mit dem Zuckersirup verrühren. Abschmecken: Es soll etwas süßer schmecken als gewünscht, Kälte dämpft die Süße.
+4. Die Masse in eine flache Metall- oder Glasform gießen und ins Gefrierfach stellen. In den ersten 3 Stunden alle 30 Minuten mit einer Gabel kräftig durchrühren und die gefrorenen Ränder in die Mitte ziehen. So bilden sich feine Eiskristalle statt eines festen Blocks. Mit einer Eismaschine geht es schneller.
+5. Vor dem Servieren 5 Minuten antauen lassen, mit einem Löffel in Gläser schaben und mit {4} Minzblättern garnieren.
+
+Tipp: Ein Schuss Wodka oder Rum in der Masse hält das Sorbet weicher, dann aber nur für Erwachsene.
 
 Guten Appetit!', 'wassermelonen-limetten-sorbet.jpg');
 
@@ -2797,10 +2808,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grüner Bohnensalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüner Bohnensalat', NULL, 25, 4, 'Portionen', 'Sommer', '1. Bohnen putzen und mit Bohnenkraut in Salzwasser 8–10 Minuten bissfest garen. In Eiswasser abschrecken.
-2. Schalotten fein würfeln.
-3. Essig, Senf, Zucker, Salz und Pfeffer verrühren, das Öl unterschlagen und die Schalotten zugeben.
-4. Bohnen noch lauwarm mit der Vinaigrette mischen und 15 Minuten ziehen lassen.
+VALUES ('Grüner Bohnensalat', 'Knackige grüne Bohnen in einer würzigen Schalotten-Vinaigrette mit Bohnenkraut: der Salat zu Bratkartoffeln und Grillgut.', 25, 4, 'Portionen', 'Sommer', '1. {600 g} grüne Bohnen waschen und die Enden abknipsen. In reichlich Salzwasser mit {2} Bohnenkrautzweigen 8–10 Minuten bissfest garen.
+2. Die Bohnen abgießen und sofort in Eiswasser abschrecken, damit sie ihre leuchtend grüne Farbe behalten. Gut abtropfen lassen.
+3. {2} Schalotten schälen und sehr fein würfeln.
+4. {3 EL} Weißweinessig, {1 TL} Senf, eine Prise Zucker, Salz und Pfeffer verrühren. {4 EL} Rapsöl unterschlagen und die Schalotten zugeben.
+5. Die noch lauwarmen Bohnen mit der Vinaigrette mischen und mindestens 15 Minuten ziehen lassen. Lauwarm nehmen die Bohnen die Marinade besser auf. Vor dem Servieren noch einmal abschmecken.
+
+Tipp: Grüne Bohnen nie roh essen, sie enthalten Stoffe, die erst beim Kochen unschädlich werden.
 
 Guten Appetit!', 'gruener-bohnensalat.jpg');
 
@@ -2816,9 +2830,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grüne Bohnen im Speckmantel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüne Bohnen im Speckmantel', NULL, 25, 4, 'Portionen', 'Sommer', '1. Bohnen putzen und mit Bohnenkraut in Salzwasser 6 Minuten vorgaren. Abschrecken und gut abtropfen lassen.
-2. Je 6–8 Bohnen bündeln, pfeffern und mit einer Scheibe Speck umwickeln.
-3. Butter in einer Pfanne erhitzen und die Bündel rundherum 5–6 Minuten braten, bis der Speck knusprig ist. Eine klassische Beilage zu Steak oder Braten.
+VALUES ('Grüne Bohnen im Speckmantel', 'Kleine Bohnenbündel in knusprigem Speck: die klassische Beilage zu Steak, Braten und Festtagsessen.', 25, 4, 'Portionen', 'Sommer', '1. {500 g} grüne Bohnen waschen und die Enden abknipsen. Mit dem Bohnenkraut in Salzwasser 6 Minuten vorgaren, sie sollen noch deutlich Biss haben. In Eiswasser abschrecken und gut abtropfen lassen, am besten auf einem Küchentuch.
+2. Jeweils 6–8 Bohnen zu einem Bündel legen und pfeffern. Mit {12} Scheiben Speck je ein Bündel straff umwickeln, die Enden des Specks liegen unten.
+3. {1 EL} Butter in einer Pfanne bei mittlerer Hitze erhitzen. Die Bündel mit der Speckenden-Seite nach unten hineinlegen, so halten sie zusammen. Rundherum 5–6 Minuten braten, bis der Speck knusprig ist.
+4. Nur wenn nötig leicht salzen, der Speck bringt Salz mit. Sofort servieren.
+
+Tipp: Im Ofen geht es auch: bei 200 °C etwa 15 Minuten, praktisch, wenn der Braten ohnehin drin ist.
 
 Guten Appetit!', 'gruene-bohnen-im-speckmantel.jpg');
 
@@ -2831,10 +2848,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grüne-Bohnen-Eintopf
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüne-Bohnen-Eintopf', NULL, 50, 4, 'Portionen', 'Sommer', '1. Zwiebel würfeln und in Öl glasig dünsten.
-2. Kartoffeln und Karotten schälen und würfeln, Bohnen putzen und in 3 cm lange Stücke brechen.
-3. Gemüse zur Zwiebel geben, mit Brühe auffüllen, Bohnenkraut zugeben und ca. 25 Minuten köcheln lassen.
-4. Bohnenkraut entfernen, mit Salz und Pfeffer abschmecken und mit Petersilie bestreuen.
+VALUES ('Grüne-Bohnen-Eintopf', 'Ein Eintopf wie früher: grüne Bohnen, Kartoffeln und Karotten mit viel Bohnenkraut, einfach und wärmend.', 50, 4, 'Portionen', 'Sommer', '1. Die Zwiebel schälen und würfeln. {2 EL} Rapsöl in einem großen Topf erhitzen und die Zwiebel darin glasig dünsten.
+2. {500 g} Kartoffeln und {2} Karotten schälen und in mundgerechte Würfel schneiden. {500 g} grüne Bohnen waschen, die Enden abknipsen und in 3 cm lange Stücke brechen.
+3. Das Gemüse zur Zwiebel geben, kurz mitdünsten und mit {1200 ml} Gemüsebrühe auffüllen. {3} Bohnenkrautzweige zugeben, aufkochen und zugedeckt bei mittlerer Hitze etwa 25 Minuten köcheln lassen, bis Kartoffeln und Bohnen weich sind.
+4. Das Bohnenkraut herausnehmen. Ein paar Kartoffelstücke mit dem Kochlöffel am Topfrand zerdrücken, das macht den Eintopf sämiger. Mit Salz und Pfeffer abschmecken.
+5. Die Petersilie hacken und darüberstreuen.
+
+Tipp: Wer mag, lässt ein paar Würstchen oder geräucherten Speck in der Brühe mitziehen.
 
 Guten Appetit!', 'gruene-bohnen-eintopf.jpg');
 
@@ -2851,11 +2871,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tomatensuppe aus frischen Tomaten
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tomatensuppe aus frischen Tomaten', NULL, 40, 4, 'Portionen', 'Sommer', '1. Tomaten grob würfeln, Zwiebel und Knoblauch hacken.
-2. Zwiebel und Knoblauch in Öl andünsten und das Tomatenmark kurz anrösten.
-3. Tomaten und Brühe zugeben und 25 Minuten köcheln lassen.
-4. Fein pürieren und durch ein Sieb streichen, damit Schalen und Kerne zurückbleiben.
-5. Mit Zucker, Salz und Pfeffer abschmecken und mit Basilikum und einem Schuss Olivenöl servieren.
+VALUES ('Tomatensuppe aus frischen Tomaten', 'Samtig, fruchtig und konzentriert nach Sommer: Tomatensuppe aus reifen Tomaten, ganz ohne Dose.', 40, 4, 'Portionen', 'Sommer', '1. {1200 g} reife Tomaten waschen, den Stielansatz entfernen und grob würfeln. Die Zwiebel und {2} Knoblauchzehen schälen und hacken.
+2. {3 EL} Olivenöl in einem großen Topf erhitzen. Zwiebel und Knoblauch darin 3 Minuten glasig dünsten. {1 EL} Tomatenmark einrühren und 1 Minute mitrösten, bis es dunkler wird. Das bringt Tiefe in die Suppe.
+3. Tomaten und {400 ml} Gemüsebrühe zugeben, aufkochen und offen etwa 25 Minuten köcheln lassen, bis die Tomaten zerfallen sind.
+4. Die Suppe fein pürieren und durch ein Sieb streichen, damit Schalen und Kerne zurückbleiben. Das ist etwas Arbeit, macht die Suppe aber wunderbar samtig.
+5. Mit {1 TL} Zucker, Salz und Pfeffer abschmecken. Der Zucker gleicht die Säure der Tomaten aus.
+6. In Teller füllen, mit gezupftem Basilikum bestreuen und mit einem Schuss Olivenöl servieren.
+
+Tipp: Ein Klecks Sahne oder ein paar geröstete Brotwürfel machen die Suppe noch runder.
 
 Guten Appetit!', 'tomatensuppe-aus-frischen-tomaten.jpg');
 
@@ -2872,11 +2895,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tomaten-Blätterteig-Tarte
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tomaten-Blätterteig-Tarte', NULL, 40, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Blätterteig auf einem Blech entrollen, einen 2 cm breiten Rand leicht einritzen und die Innenfläche mehrmals mit einer Gabel einstechen.
-2. Innenfläche dünn mit Senf bestreichen.
-3. Tomaten in Scheiben schneiden, dachziegelartig darauflegen und den Ziegenkäse darüberbröseln.
-4. Mit Thymianblättchen, Salz und Pfeffer würzen und mit Olivenöl und Honig beträufeln.
-5. 20–25 Minuten backen, bis der Rand aufgegangen und goldbraun ist.
+VALUES ('Tomaten-Blätterteig-Tarte', 'Goldener, aufgegangener Blätterteig, reife Tomaten, Ziegenkäse und ein Hauch Honig: schnell gemacht und hübsch anzusehen.', 40, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {275 g} Blätterteig mit dem Backpapier auf ein Blech entrollen. Mit einem Messer einen 2 cm breiten Rand leicht einritzen, nicht durchschneiden. Die Innenfläche mehrmals mit einer Gabel einstechen, so geht nur der Rand auf.
+2. Die Innenfläche dünn mit {1 EL} Senf bestreichen.
+3. {4} Tomaten in dünne Scheiben schneiden und kurz auf Küchenpapier abtropfen lassen, damit der Teig nicht durchweicht. Dachziegelartig auf die Innenfläche legen und {100 g} Ziegenkäse darüberbröseln.
+4. Mit den Blättchen von {3} Thymianzweigen, Salz und Pfeffer bestreuen und mit {1 EL} Olivenöl und {1 EL} Honig beträufeln.
+5. 20–25 Minuten backen, bis der Rand hoch aufgegangen und goldbraun ist. Etwas abkühlen lassen und in Stücke schneiden.
+
+Tipp: Mit einem grünen Salat ist die Tarte ein leichtes Abendessen, in kleine Quadrate geschnitten ein schöner Fingerfood.
 
 Guten Appetit!', 'tomaten-blaetterteig-tarte.jpg');
 
@@ -2892,11 +2917,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gemista (gefüllte Tomaten mit Reis)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gemista (gefüllte Tomaten mit Reis)', NULL, 90, 4, 'Portionen', 'Sommer', '1. Ofen auf 190 °C vorheizen. Von großen Fleischtomaten einen Deckel abschneiden, das Innere herauslöffeln und fein hacken. Tomaten innen leicht salzen und umgedreht abtropfen lassen.
-2. Zwiebel und Knoblauch hacken und in {2 EL} Öl andünsten. Reis, Tomatenfruchtfleisch, gehackte Kräuter, Zucker, Salz und Pfeffer zugeben und 5 Minuten köcheln.
-3. Tomaten zu drei Vierteln mit der Reismischung füllen – der Reis quillt noch – und den Deckel aufsetzen.
-4. In eine Auflaufform setzen, Kartoffelspalten dazwischenlegen, mit Oregano und Salz würzen, mit dem restlichen Öl beträufeln und {100 ml} Wasser angießen.
-5. Ca. 60 Minuten backen, bis der Reis gar ist und die Tomaten leicht gebräunt sind.
+VALUES ('Gemista (gefüllte Tomaten mit Reis)', 'Griechische Sommerküche: große Tomaten, gefüllt mit Kräuterreis, langsam im Ofen gegart, mit Kartoffeln im Bratensaft.', 90, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen. Von {8} großen Fleischtomaten einen Deckel abschneiden und aufbewahren. Das Innere mit einem Teelöffel herauskratzen und fein hacken. Die Tomaten innen leicht salzen und umgedreht abtropfen lassen.
+2. Die Zwiebel und {2} Knoblauchzehen hacken und in {2 EL} Olivenöl glasig dünsten. {150 g} Reis, das Tomatenfruchtfleisch, die gehackte Minze und Petersilie, eine Prise Zucker, Salz und Pfeffer zugeben und 5 Minuten köcheln lassen. Der Reis ist danach noch hart, er gart im Ofen fertig.
+3. Die Tomaten zu drei Vierteln mit der Reismischung füllen, der Reis quillt noch, und die Deckel aufsetzen.
+4. {500 g} Kartoffeln schälen und in Spalten schneiden. Die Tomaten in eine Auflaufform setzen und die Kartoffelspalten dazwischenlegen. Mit {1 TL} Oregano und Salz würzen, mit dem restlichen Olivenöl beträufeln und {100 ml} Wasser angießen.
+5. Etwa 60 Minuten backen, bis der Reis weich und die Tomaten an den Rändern leicht gebräunt sind. Werden die Deckel zu dunkel, mit Alufolie abdecken.
+6. Etwas abkühlen lassen und lauwarm servieren, so schmecken Gemista in Griechenland am besten.
+
+Tipp: Genauso lassen sich Paprika füllen, am besten gemischt mit den Tomaten in einer Form.
 
 Guten Appetit!', 'gemista-gefuellte-tomaten-mit-reis.jpg');
 
@@ -2915,11 +2943,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schweine-Souvlaki mit Pita
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schweine-Souvlaki mit Pita', NULL, 100, 4, 'Portionen', 'Sommer', '1. Fleisch in 3 cm große Würfel schneiden und mit Zitronensaft, Öl, Oregano, {1} gepressten Knoblauchzehe, Salz und Pfeffer mindestens 1 Stunde marinieren.
-2. Für einen schnellen Tzatziki die Gurke raspeln, gut ausdrücken und mit Joghurt, dem restlichen gepressten Knoblauch und Salz verrühren.
-3. Fleisch auf Spieße stecken und auf dem Grill oder in der Grillpfanne rundherum 8–10 Minuten grillen.
-4. Pitabrote kurz auf dem Grill erwärmen.
-5. Fleisch mit Tomatenscheiben, Zwiebelringen und Tzatziki im Pita servieren.
+VALUES ('Schweine-Souvlaki mit Pita', 'Zarte, zitronig marinierte Fleischspieße mit Tzatziki, Tomaten und Zwiebeln im warmen Fladenbrot: Griechenland zum Reinbeißen.', 100, 4, 'Portionen', 'Sommer', '1. {600 g} Schweinenacken in 3 cm große Würfel schneiden. Den Saft der Zitrone, {4 EL} Olivenöl, {2 TL} Oregano, {1} gepresste Knoblauchzehe, Salz und Pfeffer verrühren und das Fleisch darin abgedeckt mindestens 1 Stunde im Kühlschrank marinieren.
+2. Für einen schnellen Tzatziki die halbe Gurke grob raspeln, mit etwas Salz mischen und kräftig ausdrücken. Mit {250 g} Joghurt und der restlichen gepressten Knoblauchzehe verrühren und mit Salz abschmecken.
+3. Das Fleisch auf Spieße stecken und auf dem heißen Grill oder in der Grillpfanne rundherum 8–10 Minuten grillen, bis es gebräunt und durchgegart ist.
+4. {4} Fladenbrote kurz auf dem Grill oder in der Pfanne erwärmen, bis sie weich und leicht geröstet sind.
+5. {2} Tomaten in Scheiben, die Zwiebel in Ringe schneiden. Das Fleisch von den Spießen streifen und mit Tomaten, Zwiebeln und Tzatziki in den Fladenbroten servieren.
+
+Tipp: Ein paar Pommes direkt mit ins Fladenbrot sind in Griechenland ganz normal.
 
 Guten Appetit!', 'schweine-souvlaki-mit-pita.jpg');
 
@@ -2938,11 +2968,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Cevapcici mit Ajvar
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Cevapcici mit Ajvar', NULL, 50, 4, 'Portionen', 'Sommer', '1. Zwiebel sehr fein reiben und den Knoblauch pressen.
-2. Hackfleisch mit Zwiebel, Knoblauch, Paprikapulver, Natron, {1 TL} Salz und Pfeffer kräftig verkneten und 30 Minuten kühlen. Das Natron macht die Röllchen schön locker.
-3. Mit feuchten Händen fingerlange, daumendicke Röllchen formen.
-4. Auf dem heißen Grill oder in einer leicht geölten Pfanne rundherum 8–10 Minuten braten.
-5. Mit Ajvar und fein gehackter roter Zwiebel servieren.
+VALUES ('Cevapcici mit Ajvar', 'Würzige Hackfleischröllchen vom Balkan, gegrillt und mit Ajvar und frischer Zwiebel serviert.', 50, 4, 'Portionen', 'Sommer', '1. Die Zwiebel schälen und auf der feinen Seite der Reibe reiben. {3} Knoblauchzehen schälen und pressen.
+2. {500 g} Rinderhackfleisch mit Zwiebel, Knoblauch, {1 TL} Paprikapulver, {0.5 TL} Natron, {1 TL} Salz und Pfeffer gründlich und kräftig verkneten, gern 3–4 Minuten. So wird die Masse bindig. Abgedeckt 30 Minuten kühlen. Das Natron macht die Röllchen locker und saftig.
+3. Mit feuchten Händen fingerlange, etwa daumendicke Röllchen formen.
+4. Auf dem heißen Grill oder in einer Pfanne mit {1 EL} Rapsöl rundherum 8–10 Minuten braten, bis sie gebräunt und durchgegart sind.
+5. Die rote Zwiebel fein hacken. Die Cevapcici mit {200 g} Ajvar und der rohen Zwiebel servieren.
+
+Tipp: Dazu passen Djuvec-Reis, Pommes oder einfach frisches Fladenbrot.
 
 Guten Appetit!', 'cevapcici-mit-ajvar.jpg');
 
@@ -2959,10 +2991,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Belugalinsen-Salat mit Paprika
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Belugalinsen-Salat mit Paprika', NULL, 35, 4, 'Portionen', 'Sommer', '1. Linsen mit dem Lorbeerblatt in ungesalzenem Wasser ca. 20 Minuten bissfest garen, abgießen und abkühlen lassen.
-2. Paprika würfeln, Frühlingszwiebeln in Ringe schneiden und Petersilie hacken.
-3. Essig, Senf, Ahornsirup, Salz und Pfeffer verrühren und das Öl unterschlagen.
-4. Linsen, Gemüse und Petersilie mit dem Dressing mischen und mindestens 10 Minuten ziehen lassen.
+VALUES ('Belugalinsen-Salat mit Paprika', 'Glänzend schwarze Linsen, die beim Kochen ihre Form behalten, mit knackiger Paprika und einer würzigen Senfvinaigrette.', 35, 4, 'Portionen', 'Sommer', '1. {200 g} Belugalinsen in einem Sieb abspülen. Mit dem Lorbeerblatt in reichlich ungesalzenem Wasser etwa 20 Minuten bissfest garen. Salz im Kochwasser würde die Schale hart machen.
+2. Die Linsen abgießen, das Lorbeerblatt entfernen und abkühlen lassen.
+3. {2} Paprika entkernen und würfeln, {3} Frühlingszwiebeln in Ringe schneiden und die Petersilie hacken.
+4. {3 EL} Apfelessig, {1 TL} Senf, {1 TL} Ahornsirup, Salz und Pfeffer verrühren und {4 EL} Olivenöl unterschlagen.
+5. Linsen, Gemüse und Petersilie mit dem Dressing mischen und mindestens 10 Minuten ziehen lassen. Linsen schlucken viel Würze, deshalb vor dem Servieren noch einmal abschmecken.
+
+Tipp: Mit zerbröseltem Feta oder Ziegenkäse wird aus dem Salat ein Hauptgericht.
 
 Guten Appetit!', 'belugalinsen-salat-mit-paprika.jpg');
 
@@ -2980,10 +3015,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Quinoa-Salat mit Mango und Avocado
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Quinoa-Salat mit Mango und Avocado', NULL, 30, 4, 'Portionen', 'Sommer', '1. Quinoa in einem Sieb heiß abspülen und in der doppelten Menge Salzwasser 15 Minuten garen. Abkühlen lassen.
-2. Mango und Avocado würfeln, Zwiebel und Chili fein hacken, Bohnen abspülen.
-3. Limettensaft, Öl, Salz und Pfeffer verrühren.
-4. Alles vorsichtig mischen und mit gehacktem Koriander bestreuen.
+VALUES ('Quinoa-Salat mit Mango und Avocado', 'Bunt, frisch und sättigend: Quinoa mit süßer Mango, cremiger Avocado, schwarzen Bohnen und Limette.', 30, 4, 'Portionen', 'Sommer', '1. {200 g} Quinoa in einem feinen Sieb heiß abspülen, das entfernt die Bitterstoffe. In der doppelten Menge Salzwasser aufkochen und zugedeckt bei schwacher Hitze etwa 15 Minuten garen, bis das Wasser aufgesogen ist. Mit einer Gabel auflockern und abkühlen lassen.
+2. Die Mango schälen, das Fruchtfleisch vom Stein schneiden und würfeln. {2} Avocados halbieren, entkernen und würfeln. Die Zwiebel und die entkernte Chilischote fein hacken. {240 g} schwarze Bohnen abspülen und abtropfen lassen.
+3. Den Saft der {2} Limetten, {3 EL} Olivenöl, Salz und Pfeffer verrühren. Die Avocadowürfel gleich mit etwas Dressing beträufeln, damit sie nicht braun werden.
+4. Quinoa, Mango, Avocado, Bohnen, Zwiebel und Chili mit dem Dressing vorsichtig mischen und mit gehacktem Koriander bestreuen.
+
+Tipp: Ein paar geröstete Kürbiskerne obendrauf sorgen für Biss.
 
 Guten Appetit!', 'quinoa-salat-mit-mango-und-avocado.jpg');
 
@@ -3001,10 +3038,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Guacamole
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Guacamole', NULL, 10, 4, 'Portionen', 'Sommer', '1. Avocados halbieren, entkernen, das Fruchtfleisch herauslöffeln und mit einer Gabel grob zerdrücken.
-2. Sofort mit dem Limettensaft mischen, damit die Avocado nicht braun wird.
-3. Tomate entkernen und fein würfeln, Zwiebel und Chili sehr fein hacken, Koriander hacken.
-4. Alles unter die Avocado mischen und mit Salz abschmecken. Dazu passen Tortillachips oder Gemüsesticks.
+VALUES ('Guacamole', 'Cremig, frisch und mit einem Hauch Schärfe: Guacamole, wie man sie in Mexiko macht, grob zerdrückt statt püriert.', 10, 4, 'Portionen', 'Sommer', '1. {3} reife Avocados halbieren, entkernen und das Fruchtfleisch mit einem Löffel herauslösen. Mit einer Gabel grob zerdrücken, es dürfen ruhig Stückchen bleiben.
+2. Sofort den Saft der Limette untermischen, damit die Avocado nicht braun wird.
+3. Die Tomate entkernen und fein würfeln. Die Zwiebel und die Chilischote sehr fein hacken, den Koriander hacken.
+4. Alles unter die Avocado mischen und mit Salz abschmecken. Wer es schärfer mag, gibt mehr Chili dazu.
+5. Direkt servieren, dazu passen Tortillachips oder Gemüsesticks.
+
+Tipp: Reife Avocados geben auf leichten Druck nach. Harte Avocados reifen neben einem Apfel in ein bis zwei Tagen nach.
 
 Guten Appetit!', 'guacamole.jpg');
 
@@ -3018,10 +3058,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Mexikanischer Maissalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mexikanischer Maissalat', NULL, 15, 4, 'Portionen', 'Sommer', '1. Mais und Bohnen abspülen und abtropfen lassen.
-2. Paprika würfeln, Zwiebel fein hacken und Tomaten halbieren.
-3. Limettensaft, Öl, Kreuzkümmel, Salz und Pfeffer verrühren.
-4. Alles mit dem Dressing und gehacktem Koriander mischen und kurz ziehen lassen.
+VALUES ('Mexikanischer Maissalat', 'Bunter Bohnen-Mais-Salat mit Limette und Kreuzkümmel: in 15 Minuten fertig und perfekt zum Grillen.', 15, 4, 'Portionen', 'Sommer', '1. {300 g} Mais und {240 g} Kidneybohnen in einem Sieb abspülen und gut abtropfen lassen.
+2. Die Paprika entkernen und würfeln, die Zwiebel fein hacken und {150 g} Kirschtomaten halbieren.
+3. Den Saft der Limette, {3 EL} Olivenöl, {0.5 TL} Kreuzkümmel, Salz und Pfeffer verrühren.
+4. Alles mit dem Dressing und dem gehackten Koriander mischen und kurz ziehen lassen. Der Salat schmeckt nach einer halben Stunde im Kühlschrank noch besser.
+
+Tipp: Mit gewürfelter Avocado oder etwas Feta wird der Salat zur vollwertigen Mahlzeit.
 
 Guten Appetit!', 'mexikanischer-maissalat.jpg');
 
@@ -3039,11 +3081,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Vitello tonnato
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vitello tonnato', NULL, 190, 4, 'Portionen', 'Sommer', '1. Karotte, Sellerie und Zwiebel grob schneiden und mit Lorbeer, Weißwein, {1 l} Wasser und Salz aufkochen.
-2. Kalbfleisch (Kalbsnuss) hineinlegen, bei kleiner Hitze ca. 50 Minuten sieden lassen und im Sud vollständig abkühlen lassen.
-3. Thunfisch, Sardellen, {1 EL} Kapern, Mayonnaise, Zitronensaft und {3-4 EL} Kochsud fein pürieren und mit Pfeffer abschmecken.
-4. Fleisch in hauchdünne Scheiben schneiden und auf einer Platte auslegen.
-5. Mit der Thunfischsoße überziehen, mit den restlichen Kapern bestreuen und mindestens 1 Stunde kühl durchziehen lassen.
+VALUES ('Vitello tonnato', 'Der piemontesische Klassiker: zartes, kalt aufgeschnittenes Kalbfleisch unter einer cremigen Thunfischsoße.', 190, 4, 'Portionen', 'Sommer', '1. Karotte, Selleriestange und Zwiebel grob schneiden. Mit dem Lorbeerblatt, {200 ml} Weißwein, {1000 ml} Wasser und Salz in einem Topf aufkochen.
+2. {600 g} Kalbfleisch, am besten Kalbsnuss, hineinlegen. Das Fleisch soll bedeckt sein. Bei schwacher Hitze etwa 50 Minuten sieden lassen, nicht kochen, sonst wird es zäh. Dann im Sud vollständig abkühlen lassen, so bleibt es saftig.
+3. Für die Soße {150 g} abgetropften Thunfisch, {3} Sardellenfilets, {1 EL} Kapern, {150 g} Mayonnaise, den Saft der Zitrone und {3-4 EL} vom Kochsud fein pürieren, bis eine glatte, cremige Soße entsteht. Mit Pfeffer abschmecken.
+4. Das Fleisch aus dem Sud nehmen, trocken tupfen und mit einem scharfen Messer quer zur Faser in hauchdünne Scheiben schneiden. Leicht überlappend auf einer Platte auslegen.
+5. Mit der Thunfischsoße überziehen, mit den restlichen Kapern bestreuen und abgedeckt mindestens 1 Stunde im Kühlschrank durchziehen lassen.
+
+Tipp: Der Kochsud ist eine feine Brühe für Suppen oder Risotto, also nicht wegschütten.
 
 Guten Appetit!', 'vitello-tonnato.jpg');
 
@@ -3063,12 +3107,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Panna Cotta mit Beeren
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Panna Cotta mit Beeren', NULL, 270, 4, 'Portionen', 'Sommer', '1. Vanilleschote aufschneiden und das Mark herauskratzen.
-2. Sahne mit Zucker, Vanillemark und Schote aufkochen und die Schote entfernen.
-3. Agar-Agar einrühren und unter Rühren 2 Minuten sprudelnd kochen lassen. Mit Agar-Agar statt Gelatine bleibt die Panna cotta vegetarisch.
-4. In Förmchen oder Gläser füllen und mindestens 4 Stunden kühlen.
-5. Die Hälfte der Himbeeren mit Puderzucker und Zitronensaft pürieren und durch ein Sieb streichen.
-6. Panna cotta stürzen oder im Glas mit Himbeersoße, restlichen Himbeeren und Heidelbeeren servieren.
+VALUES ('Panna Cotta mit Beeren', 'Zart, cremig und mit Vanille: italienische Panna Cotta mit frischer Himbeersoße und Beeren.', 270, 4, 'Portionen', 'Sommer', '1. Die Vanilleschote längs aufschneiden und das Mark herauskratzen.
+2. {500 ml} Sahne mit {60 g} Zucker, dem Vanillemark und der Schote in einem Topf aufkochen. Die Schote herausnehmen.
+3. {1 TL} Agar-Agar einstreuen und unter Rühren 2 Minuten sprudelnd kochen lassen. Agar-Agar bindet nur, wenn es richtig kocht. Mit Agar-Agar statt Gelatine bleibt die Panna Cotta vegetarisch.
+4. In kalt ausgespülte Förmchen oder Gläser füllen und mindestens 4 Stunden kühl stellen, bis sie fest ist.
+5. Für die Soße die Hälfte von {200 g} Himbeeren mit {1 EL} Puderzucker und dem Saft der halben Zitrone pürieren und durch ein Sieb streichen, damit die Kerne zurückbleiben.
+6. Die Panna Cotta stürzen, dafür die Förmchen kurz in heißes Wasser tauchen, oder im Glas lassen. Mit der Himbeersoße, den restlichen Himbeeren und {100 g} Heidelbeeren servieren.
+
+Tipp: Die Panna Cotta lässt sich gut ein bis zwei Tage vorher zubereiten.
 
 Guten Appetit!', 'panna-cotta-mit-beeren.jpg');
 
@@ -3083,11 +3129,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pavlova mit Beeren
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pavlova mit Beeren', NULL, 180, 8, 'Portionen', 'Sommer', '1. Ofen auf 120 °C vorheizen. Eier trennen und die Eigelbe anderweitig verwenden.
-2. Eiweiße steif schlagen, den Zucker esslöffelweise einrieseln lassen und weiterschlagen, bis eine feste, glänzende Masse entsteht. Stärke und Essig unterheben.
-3. Masse als runden Boden (ca. 22 cm) mit erhöhtem Rand auf ein mit Backpapier belegtes Blech streichen.
-4. 90 Minuten backen und bei geschlossener Tür im Ofen auskühlen lassen.
-5. Sahne mit Vanillezucker steif schlagen und kurz vor dem Servieren auf das Baiser streichen. Mit Beeren und Minze belegen.
+VALUES ('Pavlova mit Beeren', 'Außen knusprig, innen weich wie Marshmallow: ein Baiser-Nest mit Sahne und einem Berg frischer Beeren.', 180, 8, 'Portionen', 'Sommer', '1. Den Ofen auf 120 °C Ober-/Unterhitze vorheizen und ein Blech mit Backpapier belegen. Auf das Papier einen Kreis von etwa 22 cm zeichnen und das Papier umdrehen.
+2. {4} Eier sehr sauber trennen, schon ein Tropfen Eigelb verhindert, dass das Eiweiß steif wird. Die Eigelbe anderweitig verwenden.
+3. Die Eiweiße in einer fettfreien Schüssel steif schlagen. {220 g} Zucker esslöffelweise einrieseln lassen und nach jeder Zugabe gut weiterschlagen, bis eine feste, glänzende Masse entsteht, in der sich der Zucker vollständig gelöst hat. Zwischen den Fingern gerieben darf sie nicht mehr körnig sein. {1 TL} Speisestärke und {1 TL} Weißweinessig unterheben.
+4. Die Masse in den Kreis streichen und den Rand etwas höher formen, sodass ein Nest entsteht.
+5. 90 Minuten backen. Dann den Ofen ausschalten und die Pavlova bei geschlossener Tür vollständig im Ofen auskühlen lassen, so reißt sie nicht.
+6. Kurz vor dem Servieren {300 ml} Sahne mit dem Vanillezucker steif schlagen und in das Nest streichen. Mit {250 g} halbierten Erdbeeren, {150 g} Himbeeren, {150 g} Heidelbeeren und den Minzblättern belegen.
+
+Tipp: Das Baiser lässt sich in einer Dose zwei Tage vorher backen. Mit Sahne und Früchten nur kurz vor dem Servieren belegen, sonst weicht es auf.
 
 Guten Appetit!', 'pavlova-mit-beeren.jpg');
 
@@ -3104,11 +3153,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ofen-Feta-Pasta
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofen-Feta-Pasta', NULL, 35, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Kirschtomaten und geschälte Knoblauchzehen in eine Auflaufform geben und den Feta als Block in die Mitte legen.
-2. Mit Olivenöl beträufeln, mit Oregano, Chiliflocken, Salz und Pfeffer würzen und ca. 30 Minuten backen, bis die Tomaten aufplatzen.
-3. In der Zwischenzeit die Penne bissfest kochen.
-4. Feta, Tomaten und Knoblauch direkt in der Form zu einer cremigen Soße zerdrücken.
-5. Nudeln mit etwas Nudelwasser untermischen und mit Basilikum servieren.
+VALUES ('Ofen-Feta-Pasta', 'Der Internet-Klassiker: Feta und Kirschtomaten schmelzen im Ofen zu einer cremigen Soße.', 35, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {500 g} Kirschtomaten und {3} geschälte Knoblauchzehen in eine Auflaufform geben und {200 g} Feta als Block in die Mitte legen.
+2. Mit {5 EL} Olivenöl beträufeln und mit {1 TL} Oregano, einer Prise Chiliflocken, Salz und Pfeffer würzen. Etwa 30 Minuten backen, bis die Tomaten aufplatzen und der Feta weich und an den Rändern leicht gebräunt ist.
+3. Inzwischen reichlich Salzwasser aufkochen und {400 g} Penne darin bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+4. Feta, Tomaten und Knoblauch direkt in der Form mit einer Gabel zu einer cremigen Soße zerdrücken.
+5. Die Nudeln mit einem Schuss Nudelwasser untermischen, bis alles cremig überzogen ist. Mit gezupftem Basilikum bestreut servieren.
+
+Tipp: Eine Handvoll Spinat, unter die heißen Nudeln gemischt, fällt sofort zusammen und bringt etwas Grün in die Pasta.
 
 Guten Appetit!', 'ofen-feta-pasta.jpg');
 
@@ -3125,11 +3176,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Caesar Salad mit Hähnchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Caesar Salad mit Hähnchen', NULL, 35, 4, 'Portionen', 'Sommer', '1. Für das Dressing Sardellen und Knoblauch fein hacken und mit Mayonnaise, Zitronensaft, Senf, Worcestershiresauce, der Hälfte des fein geriebenen Parmesans und {1 EL} Öl verrühren. Mit Pfeffer abschmecken.
-2. Baguette würfeln und in {2 EL} Öl zu goldbraunen Croûtons rösten.
-3. Hähnchenbrust salzen, pfeffern und im restlichen Öl pro Seite 5–6 Minuten braten. Kurz ruhen lassen und in Streifen schneiden.
-4. Romanasalat waschen und in breite Streifen schneiden.
-5. Salat mit dem Dressing mischen und mit Hähnchen, Croûtons und dem restlichen, gehobelten Parmesan anrichten.
+VALUES ('Caesar Salad mit Hähnchen', 'Knackiger Romanasalat, cremiges Sardellendressing, knusprige Croûtons und saftiges Hähnchen: der Salatklassiker aus Kalifornien.', 35, 4, 'Portionen', 'Sommer', '1. Für das Dressing {2} Sardellenfilets und die Knoblauchzehe sehr fein hacken. Mit {4 EL} Mayonnaise, dem Saft der halben Zitrone, {1 TL} Senf, {1 TL} Worcestershiresauce, der Hälfte des fein geriebenen Parmesans und {1 EL} Olivenöl glatt rühren. Mit Pfeffer abschmecken. Die Sardellen schmeckt man nicht heraus, sie geben nur Würze.
+2. {150 g} Baguette in 2 cm große Würfel schneiden. {2 EL} Olivenöl in einer Pfanne erhitzen und die Brotwürfel darin unter Wenden 5 Minuten goldbraun rösten. Auf Küchenpapier abkühlen lassen.
+3. {400 g} Hähnchenbrust trocken tupfen, salzen und pfeffern. Im restlichen Öl bei mittlerer Hitze pro Seite 5–6 Minuten braten, bis sie durchgegart ist. 5 Minuten ruhen lassen und in Streifen schneiden.
+4. {2} Romanasalatköpfe waschen, trocken schleudern und in breite Streifen schneiden.
+5. Den Salat in einer großen Schüssel mit dem Dressing mischen, bis alle Blätter überzogen sind. Auf Tellern anrichten, Hähnchen und Croûtons darauf verteilen und den restlichen Parmesan darüberhobeln. Mit Zitronenspalten servieren.
+
+Tipp: Ein Sparschäler hobelt den Parmesan in schöne, dünne Späne.
 
 Guten Appetit!', 'caesar-salad-mit-haehnchen.jpg');
 
@@ -3149,11 +3202,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spareribs mit BBQ-Soße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spareribs mit BBQ-Soße', NULL, 210, 4, 'Portionen', 'Sommer', '1. Die Silberhaut auf der Knochenseite der Rippchen abziehen.
-2. Beide Paprikapulver, {1 EL} braunen Zucker, {2 TL} Salz und Pfeffer mischen und die Rippchen damit rundherum einreiben.
-3. In Alufolie wickeln und im Ofen bei 150 °C ca. 2,5 Stunden garen.
-4. Für die BBQ-Soße Ketchup, Honig, Essig, restlichen Zucker, Worcestershiresauce, Senf und gepressten Knoblauch 5 Minuten einköcheln.
-5. Rippchen auswickeln, mit Soße bestreichen und auf dem Grill oder unter dem Backofengrill 10–15 Minuten karamellisieren lassen. Dabei mehrmals bestreichen.
+VALUES ('Spareribs mit BBQ-Soße', 'Zarte Rippchen, die vom Knochen fallen, mit rauchiger Würzmischung und klebrig-süßer BBQ-Soße.', 210, 4, 'Portionen', 'Sommer', '1. Die Silberhaut auf der Knochenseite der {2000 g} Spareribs mit einem Messer anheben, mit Küchenpapier greifen und in einem Stück abziehen. Sie würde beim Garen zäh werden.
+2. {2 TL} Paprikapulver, {1 TL} geräuchertes Paprikapulver, {1 EL} braunen Zucker, {2 TL} Salz und Pfeffer mischen. Die Rippchen damit rundherum kräftig einreiben.
+3. Den Ofen auf 150 °C Ober-/Unterhitze vorheizen. Die Rippchen fest in Alufolie wickeln und auf einem Blech etwa 2,5 Stunden garen, bis sich das Fleisch leicht vom Knochen löst.
+4. Für die BBQ-Soße {200 ml} Ketchup, {2 EL} Honig, {2 EL} Apfelessig, den restlichen braunen Zucker, {1 EL} Worcestershiresauce, {1 TL} Senf und {2} gepresste Knoblauchzehen in einem kleinen Topf verrühren und 5 Minuten einköcheln lassen, bis sie dicklich ist.
+5. Die Rippchen auswickeln, rundherum dick mit Soße bestreichen und auf dem Grill oder unter dem Backofengrill 10–15 Minuten karamellisieren lassen. Dabei mehrmals wenden und neu bestreichen, bis die Soße glänzt und an den Rändern leicht schwarz wird.
+6. Zwischen den Knochen in Portionen schneiden und mit der restlichen Soße servieren.
+
+Tipp: Dazu passen Krautsalat, Maiskolben und reichlich Servietten.
 
 Guten Appetit!', 'spareribs-mit-bbq-sosse.jpg');
 
@@ -3172,10 +3228,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Bayerischer Krautsalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Bayerischer Krautsalat', NULL, 80, 6, 'Portionen', 'Sommer', '1. Kohl vierteln, den Strunk entfernen und den Kohl in sehr feine Streifen hobeln.
-2. Mit Salz und Zucker bestreuen und 5 Minuten kräftig durchkneten, bis er weich wird.
-3. Zwiebel fein würfeln. Essig mit {100 ml} Wasser und Kümmel aufkochen und mit der Zwiebel heiß über den Kohl gießen.
-4. Öl unterheben, mit Pfeffer abschmecken und mindestens 1 Stunde durchziehen lassen. Schmeckt am nächsten Tag noch besser.
+VALUES ('Bayerischer Krautsalat', 'Fein gehobelter Weißkohl mit Kümmel und warmer Essigmarinade: der Salat zu Schweinsbraten, Haxe und Brotzeit.', 80, 6, 'Portionen', 'Sommer', '1. {800 g} Weißkohl vierteln, den harten Strunk herausschneiden und den Kohl mit einem Gemüsehobel oder scharfen Messer in sehr feine Streifen schneiden.
+2. Den Kohl in einer großen Schüssel mit {1 TL} Salz und {1 EL} Zucker bestreuen und 5 Minuten kräftig mit den Händen durchkneten, bis er Saft zieht und weicher wird. Das ist das Geheimnis eines guten Krautsalats.
+3. Die Zwiebel schälen und fein würfeln. {5 EL} Weißweinessig mit {100 ml} Wasser und {1 TL} Kümmel aufkochen und mit der Zwiebel heiß über den Kohl gießen. Gut mischen.
+4. {4 EL} Rapsöl unterheben und mit Pfeffer abschmecken.
+5. Abgedeckt mindestens 1 Stunde durchziehen lassen, gelegentlich umrühren und vor dem Servieren noch einmal abschmecken.
+
+Tipp: Am nächsten Tag schmeckt er noch besser. Im Kühlschrank hält er sich mehrere Tage.
 
 Guten Appetit!', 'bayerischer-krautsalat.jpg');
 
@@ -3190,9 +3249,11 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Melone mit Parmaschinken
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Melone mit Parmaschinken', NULL, 10, 4, 'Portionen', 'Sommer', '1. Melone halbieren, entkernen, in schmale Spalten schneiden und die Schale entfernen.
-2. Melonenspalten mit dem Parmaschinken umwickeln oder die Schinkenscheiben locker darüberlegen.
-3. Mit frisch gemahlenem Pfeffer und ein paar Tropfen Olivenöl servieren.
+VALUES ('Melone mit Parmaschinken', 'Süß und salzig, zart und saftig: die einfachste und eleganteste Vorspeise Italiens.', 10, 4, 'Portionen', 'Sommer', '1. Die Honigmelone halbieren und die Kerne mit einem Löffel herausschaben. In schmale Spalten schneiden und die Schale mit einem scharfen Messer entfernen.
+2. Die Melonenspalten mit je einer Scheibe von {150 g} Parmaschinken umwickeln oder die Schinkenscheiben locker darüberlegen.
+3. Mit frisch gemahlenem Pfeffer bestreuen und mit {1 EL} Olivenöl beträufeln. Gut gekühlt servieren.
+
+Tipp: Die Melone ist reif, wenn sie am Stielansatz süß duftet und leicht nachgibt.
 
 Guten Appetit!', 'melone-mit-parmaschinken.jpg');
 
@@ -3203,10 +3264,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ofenkartoffeln mit Sour Cream
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofenkartoffeln mit Sour Cream', NULL, 60, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Große, mehligkochende Kartoffeln gründlich waschen, trocknen und mehrmals mit einer Gabel einstechen.
-2. Mit Öl einreiben, mit grobem Salz bestreuen und auf dem Rost ca. 50–60 Minuten backen, bis sie innen weich sind.
-3. Saure Sahne, Quark, gepressten Knoblauch und Zitronensaft verrühren, Schnittlauchröllchen unterrühren und mit Salz und Pfeffer abschmecken.
-4. Kartoffeln kreuzweise einschneiden, leicht aufdrücken und mit der Sour Cream füllen.
+VALUES ('Ofenkartoffeln mit Sour Cream', 'Große Kartoffeln mit knuspriger Salzkruste und fluffigem Inneren, gefüllt mit kühler Schnittlauch-Sour-Cream.', 60, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {4} große, mehligkochende Kartoffeln gründlich waschen und abtrocknen. Mehrmals mit einer Gabel einstechen, damit der Dampf entweichen kann.
+2. Die Kartoffeln mit {1 EL} Olivenöl einreiben und mit grobem Salz bestreuen. Direkt auf den Rost legen, mit einem Blech darunter, und 50–60 Minuten backen, bis sie sich beim Hineinstechen ganz weich anfühlen und die Schale knusprig ist.
+3. Inzwischen {200 g} saure Sahne, {100 g} Quark, die gepresste Knoblauchzehe und den Saft der halben Zitrone verrühren. Den Schnittlauch in Röllchen schneiden und unterrühren. Mit Salz und Pfeffer abschmecken.
+4. Die Kartoffeln oben kreuzweise einschneiden und von unten leicht zusammendrücken, sodass sie sich öffnen. Etwas Salz und Pfeffer in die Öffnung streuen und großzügig mit der Sour Cream füllen.
+
+Tipp: Wer mag, streut knusprig gebratene Speckwürfel oder geriebenen Käse darüber.
 
 Guten Appetit!', 'ofenkartoffeln-mit-sour-cream.jpg');
 
@@ -3222,11 +3285,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Salade Niçoise
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Salade Niçoise', NULL, 35, 4, 'Portionen', 'Sommer', '1. Kartoffeln in Salzwasser ca. 20 Minuten garen, abkühlen lassen und in Scheiben schneiden.
-2. Bohnen in Salzwasser 7 Minuten garen und abschrecken. Eier 8 Minuten kochen, abschrecken, pellen und vierteln.
-3. Tomaten in Spalten und Zwiebel in Ringe schneiden, Salat zerpflücken.
-4. Essig, Senf, Salz und Pfeffer verrühren und das Öl unterschlagen.
-5. Salat, Kartoffeln, Bohnen, Tomaten und Zwiebeln auf Tellern anrichten. Thunfisch, Eier, Oliven und Sardellen darauf verteilen und mit der Vinaigrette beträufeln.
+VALUES ('Salade Niçoise', 'Der Salat aus Nizza ist eine ganze Mahlzeit: Kartoffeln, grüne Bohnen, Eier, Thunfisch, Oliven und Sardellen.', 35, 4, 'Portionen', 'Sommer', '1. {400 g} Kartoffeln in Salzwasser etwa 20 Minuten garen, abgießen, abkühlen lassen, pellen und in Scheiben schneiden.
+2. {200 g} grüne Bohnen putzen, in Salzwasser 7 Minuten garen und in Eiswasser abschrecken. {4} Eier 8 Minuten kochen, sodass das Eigelb noch leicht cremig ist, abschrecken, pellen und vierteln.
+3. {3} Tomaten in Spalten und die Zwiebel in dünne Ringe schneiden. Den Kopfsalat waschen, trocken schleudern und zerpflücken.
+4. {2 EL} Weißweinessig, {1 TL} Senf, Salz und Pfeffer verrühren und {5 EL} Olivenöl unterschlagen.
+5. Den Salat auf Teller verteilen und Kartoffeln, Bohnen, Tomaten und Zwiebeln darauf anrichten. {200 g} abgetropften Thunfisch in groben Stücken, die Eier, {60 g} Oliven und {6} Sardellenfilets darauf verteilen. Mit der Vinaigrette beträufeln.
+
+Tipp: Die Kartoffeln noch warm mit etwas Vinaigrette mischen, so nehmen sie den Geschmack besonders gut auf.
 
 Guten Appetit!', 'salade-nicoise.jpg');
 
@@ -3252,10 +3317,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ofenkürbis mit Feta und Walnüssen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ofenkürbis mit Feta und Walnüssen', NULL, 40, 4, 'Portionen', 'Herbst', '1. Ofen auf 200 °C vorheizen. Kürbis waschen, halbieren, entkernen und mit Schale in Spalten schneiden. Zwiebeln in Spalten schneiden.
-2. Kürbis und Zwiebeln auf einem Blech mit Öl, Rosmarinnadeln, Chiliflocken, Salz und Pfeffer mischen.
-3. 25 Minuten rösten, dann mit Honig beträufeln, den Feta darüberbröseln und die grob gehackten Walnüsse darüberstreuen.
-4. Weitere 10 Minuten backen, bis der Feta leicht gebräunt ist.
+VALUES ('Ofenkürbis mit Feta und Walnüssen', 'Karamellisierte Kürbisspalten mit Honig, salzigem Feta und knackigen Walnüssen: ein Herbstessen vom Blech.', 40, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Den Hokkaido-Kürbis waschen, halbieren, die Kerne herauskratzen und mit Schale in etwa 2 cm breite Spalten schneiden. {2} rote Zwiebeln in Spalten schneiden.
+2. Kürbis und Zwiebeln auf einem Blech mit {4 EL} Olivenöl, den gehackten Nadeln von {2} Rosmarinzweigen, einer Prise Chiliflocken, Salz und Pfeffer mischen und nebeneinander verteilen.
+3. 25 Minuten rösten, bis der Kürbis weich ist und an den Rändern braun wird.
+4. Mit {2 EL} Honig beträufeln, {200 g} Feta darüberbröseln und {50 g} grob gehackte Walnüsse darüberstreuen.
+5. Weitere 10 Minuten backen, bis der Feta leicht gebräunt ist und die Walnüsse duften.
+
+Tipp: Mit etwas Rucola und einem Spritzer Balsamico wird daraus ein warmer Herbstsalat.
 
 Guten Appetit!', 'ofenkuerbis-mit-feta-und-walnuessen.jpg');
 
@@ -3272,11 +3340,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kürbis-Risotto mit Salbeibutter
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbis-Risotto mit Salbeibutter', NULL, 45, 4, 'Portionen', 'Herbst', '1. Kürbis schälen, entkernen und in 1 cm große Würfel schneiden. Brühe erhitzen.
-2. Schalotten würfeln und in der Hälfte der Butter andünsten. Kürbis und Reis zugeben und 2 Minuten mitdünsten.
-3. Mit Weißwein ablöschen und nach und nach die heiße Brühe angießen. Unter Rühren ca. 20 Minuten garen, bis der Reis cremig und bissfest ist und der Kürbis teilweise zerfällt.
-4. Restliche Butter in einer kleinen Pfanne aufschäumen lassen und die Salbeiblätter darin knusprig braten.
-5. Käse unter das Risotto rühren, mit Salz, Pfeffer und Muskat abschmecken und mit der Salbeibutter servieren.
+VALUES ('Kürbis-Risotto mit Salbeibutter', 'Cremiges Risotto, das durch den Kürbis leuchtend orange wird, mit knusprigen Salbeiblättern in brauner Butter.', 45, 4, 'Portionen', 'Herbst', '1. {500 g} Butternut-Kürbis schälen, entkernen und in 1 cm große Würfel schneiden. {1000 ml} Gemüsebrühe erhitzen und heiß halten.
+2. {2} Schalotten fein würfeln. Die Hälfte der Butter in einem breiten Topf schmelzen und die Schalotten darin glasig dünsten. Kürbis und {300 g} Risottoreis zugeben und 2 Minuten unter Rühren mitdünsten.
+3. Mit {100 ml} Weißwein ablöschen und einkochen lassen. Dann nach und nach die heiße Brühe angießen, immer erst, wenn der Reis die vorige Kelle fast aufgenommen hat. Unter häufigem Rühren etwa 20 Minuten garen, bis der Reis cremig und bissfest ist und der Kürbis teilweise zerfällt.
+4. Kurz vor Ende die restliche Butter in einer kleinen Pfanne aufschäumen lassen. {6} Salbeiblätter darin bei mittlerer Hitze 1–2 Minuten braten, bis sie knusprig sind und die Butter nussig duftet.
+5. {60 g} Hartkäse reiben und unter das Risotto rühren. Mit Salz, Pfeffer und etwas Muskatnuss abschmecken.
+6. Auf Teller verteilen und mit der Salbeibutter und den knusprigen Blättern beträufeln.
+
+Tipp: Ein paar geröstete Kürbiskerne obendrauf bringen Biss.
 
 Guten Appetit!', 'kuerbis-risotto-mit-salbeibutter.jpg');
 
@@ -3294,11 +3365,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kürbis-Kichererbsen-Curry
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbis-Kichererbsen-Curry', NULL, 40, 4, 'Portionen', 'Herbst', '1. Reis nach Packungsangabe garen.
-2. Kürbis entkernen und in 2 cm große Würfel schneiden. Zwiebel, Knoblauch und Ingwer fein hacken.
-3. Kokosöl erhitzen und Zwiebel, Knoblauch und Ingwer andünsten. Gewürze zugeben und 1 Minute mitrösten.
-4. Kürbis, abgetropfte Kichererbsen, Tomaten und Kokosmilch zugeben und ca. 20 Minuten köcheln, bis der Kürbis weich ist.
-5. Spinat unterrühren und zusammenfallen lassen. Mit Limettensaft und Salz abschmecken und mit Koriander zum Reis servieren.
+VALUES ('Kürbis-Kichererbsen-Curry', 'Wärmend, cremig und voller Gewürze: ein Herbstcurry mit Kürbis, Kichererbsen und Spinat in Kokosmilch.', 40, 4, 'Portionen', 'Herbst', '1. {250 g} Basmatireis waschen und nach Packungsangabe garen.
+2. {800 g} Hokkaido-Kürbis waschen, entkernen und mit Schale in 2 cm große Würfel schneiden. Die Zwiebel, {2} Knoblauchzehen und {20 g} Ingwer fein hacken.
+3. {1 EL} Kokosöl in einem großen Topf erhitzen. Zwiebel, Knoblauch und Ingwer darin 3 Minuten andünsten. {2 TL} Currypulver, {1 TL} Kurkuma und {1 TL} Kreuzkümmel zugeben und 1 Minute mitrösten, bis es duftet. Das Rösten weckt die Aromen der Gewürze.
+4. Kürbis, {240 g} abgetropfte Kichererbsen, {400 g} gehackte Tomaten und {400 ml} Kokosmilch zugeben, salzen und zugedeckt etwa 20 Minuten köcheln lassen, bis der Kürbis weich ist.
+5. {100 g} Spinat unterrühren und zusammenfallen lassen. Mit dem Saft der Limette und Salz abschmecken.
+6. Mit gezupftem Koriander bestreuen und mit dem Reis servieren.
+
+Tipp: Das Curry schmeckt aufgewärmt am nächsten Tag noch besser und lässt sich gut einfrieren.
 
 Guten Appetit!', 'kuerbis-kichererbsen-curry.jpg');
 
@@ -3321,10 +3395,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kürbis-Pommes mit Rosmarin
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kürbis-Pommes mit Rosmarin', NULL, 35, 4, 'Portionen', 'Herbst', '1. Ofen auf 220 °C vorheizen. Kürbis schälen, entkernen und in pommesdicke Stifte schneiden.
-2. Mit Stärke bestäuben und dann mit Öl, Paprikapulver, gehacktem Rosmarin und Pfeffer mischen.
-3. Mit Abstand nebeneinander auf {2} mit Backpapier belegten Blechen verteilen.
-4. 25–30 Minuten backen und nach der Hälfte der Zeit wenden. Erst nach dem Backen salzen.
+VALUES ('Kürbis-Pommes mit Rosmarin', 'Süßlich, würzig und außen knusprig: Pommes aus Kürbis, im Ofen gebacken statt frittiert.', 35, 4, 'Portionen', 'Herbst', '1. Den Ofen auf 220 °C Ober-/Unterhitze vorheizen. {1000 g} Butternut-Kürbis schälen, entkernen und in etwa 1 cm dicke Stifte schneiden.
+2. Die Stifte in einer großen Schüssel mit {1 EL} Speisestärke bestäuben und durchschwenken. Die Stärke macht sie knuspriger. Dann mit {3 EL} Olivenöl, {1 TL} Paprikapulver, den gehackten Nadeln von {2} Rosmarinzweigen und Pfeffer mischen.
+3. Mit Abstand nebeneinander auf {2} mit Backpapier belegten Blechen verteilen. Liegen sie zu dicht, dämpfen sie, statt knusprig zu werden.
+4. 25–30 Minuten backen, nach der Hälfte der Zeit wenden. Erst nach dem Backen salzen, sonst ziehen sie Wasser.
+
+Tipp: Dazu passt ein Dip aus Joghurt, Knoblauch und etwas Zitrone.
 
 Guten Appetit!', 'kuerbis-pommes-mit-rosmarin.jpg');
 
@@ -3338,11 +3414,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pumpkin Pie (amerikanischer Kürbiskuchen)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pumpkin Pie (amerikanischer Kürbiskuchen)', NULL, 120, 1, 'Tarteform (26 cm)', 'Herbst', '1. Mehl, kalte Butterwürfel, Zucker, {1} Ei und Salz zu einem Mürbeteig verkneten und 30 Minuten kühlen.
-2. Kürbis schälen, würfeln und in wenig Wasser ca. 15 Minuten weich dämpfen. Gut abtropfen lassen und fein pürieren.
-3. Ofen auf 180 °C vorheizen. Teig ausrollen, eine gefettete Tarteform damit auslegen, mehrmals einstechen und 15 Minuten blind backen.
-4. Kürbispüree mit Sahne, braunem Zucker, den restlichen Eiern, Zimt, Lebkuchengewürz und einer Prise Muskat glatt verrühren.
-5. Füllung auf den Boden gießen und ca. 45 Minuten backen, bis sie gestockt ist. In der Form auskühlen lassen. Dazu passt geschlagene Sahne.
+VALUES ('Pumpkin Pie (amerikanischer Kürbiskuchen)', 'Der Star des amerikanischen Thanksgiving: cremige, würzige Kürbisfüllung auf knusprigem Mürbeteig.', 120, 1, 'Tarteform (26 cm)', 'Herbst', '1. {200 g} Mehl, {100 g} kalte Butter in Würfeln, {30 g} Zucker, {1} Ei und eine Prise Salz rasch zu einem glatten Mürbeteig verkneten. In Folie gewickelt 30 Minuten kühlen.
+2. {600 g} Butternut-Kürbis schälen, entkernen und würfeln. In einem Topf mit wenig Wasser zugedeckt etwa 15 Minuten weich dämpfen. Gut abtropfen lassen, etwas ausdampfen lassen und fein pürieren. Je trockener das Püree, desto besser schneidet sich der Kuchen.
+3. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen. Den Teig ausrollen und eine gefettete Tarteform (26 cm) damit auslegen. Mehrmals mit einer Gabel einstechen, mit Backpapier und getrockneten Hülsenfrüchten beschweren und 15 Minuten blind backen. Papier und Hülsenfrüchte entfernen.
+4. Das Kürbispüree mit {200 ml} Sahne, {100 g} braunem Zucker, den restlichen Eiern, {1 TL} Zimt, {1 TL} Lebkuchengewürz und einer Prise Muskatnuss glatt verrühren.
+5. Die Füllung auf den vorgebackenen Boden gießen und etwa 45 Minuten backen, bis sie gestockt ist und in der Mitte nur noch leicht wackelt.
+6. In der Form vollständig auskühlen lassen, so wird die Füllung schnittfest. Mit geschlagener Sahne servieren.
+
+Tipp: Die Hülsenfrüchte zum Blindbacken können immer wieder verwendet werden, nur nicht mehr zum Kochen.
 
 Guten Appetit!', 'pumpkin-pie-amerikanischer-kuerbiskuchen.jpg');
 
@@ -3360,11 +3439,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Steinpilz-Risotto
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Steinpilz-Risotto', NULL, 45, 4, 'Portionen', 'Herbst', '1. Steinpilze trocken putzen und in Scheiben schneiden. Brühe erhitzen.
-2. Pilze in {20 g} Butter mit Thymian kräftig anbraten, salzen, pfeffern und herausnehmen.
-3. Schalotten und Knoblauch fein würfeln und in {15 g} Butter andünsten. Reis zugeben, glasig anschwitzen und mit Weißwein ablöschen.
-4. Nach und nach die heiße Brühe angießen und unter Rühren ca. 18 Minuten garen.
-5. Pilze (einige zum Garnieren beiseitelegen), restliche Butter und Käse unterrühren. Abschmecken und mit Petersilie und den restlichen Pilzen servieren.
+VALUES ('Steinpilz-Risotto', 'Der König der Pilze in cremigem Risotto: herbstlich, nussig und unglaublich aromatisch.', 45, 4, 'Portionen', 'Herbst', '1. {300 g} Steinpilze mit einem Pinsel oder Küchenpapier trocken putzen, nur nicht waschen. Madige Stellen großzügig wegschneiden. Die Pilze in Scheiben schneiden. {1000 ml} Gemüsebrühe erhitzen und heiß halten.
+2. {20 g} Butter in einer großen Pfanne stark erhitzen. Die Pilze mit den Thymianzweigen darin 4–5 Minuten kräftig anbraten, bis sie goldbraun sind. Salzen, pfeffern und herausnehmen. Ein paar schöne Scheiben zum Garnieren beiseitelegen.
+3. {2} Schalotten und den Knoblauch fein würfeln und in {15 g} Butter in einem breiten Topf glasig dünsten. {300 g} Risottoreis zugeben und 1–2 Minuten anschwitzen, bis er glasig schimmert. Mit {100 ml} Weißwein ablöschen und einkochen lassen.
+4. Nach und nach die heiße Brühe angießen und unter häufigem Rühren etwa 18 Minuten garen, bis der Reis cremig ist, aber noch Biss hat.
+5. Die Pilze, die restliche Butter und {60 g} geriebenen Hartkäse unterrühren. Mit Salz und Pfeffer abschmecken und 2 Minuten ruhen lassen.
+6. Mit gehackter Petersilie und den beiseitegelegten Pilzscheiben servieren.
+
+Tipp: Mit getrockneten Steinpilzen geht es das ganze Jahr: 30 g in warmem Wasser einweichen und das Einweichwasser mit der Brühe angießen.
 
 Guten Appetit!', 'steinpilz-risotto.jpg');
 
@@ -3383,11 +3465,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Rahmchampignons mit Bandnudeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Rahmchampignons mit Bandnudeln', NULL, 30, 4, 'Portionen', 'Herbst', '1. Bandnudeln in Salzwasser bissfest kochen.
-2. Champignons putzen und in Scheiben schneiden. Zwiebel und Knoblauch fein würfeln.
-3. Pilze in Butter bei starker Hitze portionsweise goldbraun braten. Zwiebel und Knoblauch zugeben und 2 Minuten mitbraten.
-4. Mit Weißwein ablöschen, die Sahne zugießen und 5 Minuten einkochen lassen.
-5. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken, Petersilie unterrühren und mit den Nudeln servieren.
+VALUES ('Rahmchampignons mit Bandnudeln', 'Goldbraun gebratene Champignons in cremiger Weißwein-Sahnesoße auf breiten Bandnudeln: schnell, einfach, gut.', 30, 4, 'Portionen', 'Herbst', '1. Reichlich Salzwasser aufkochen und {400 g} Bandnudeln darin bissfest kochen.
+2. {500 g} Champignons mit Küchenpapier abreiben und in Scheiben schneiden. Die Zwiebel und den Knoblauch fein würfeln.
+3. Die Butter in einer großen Pfanne stark erhitzen und die Pilze portionsweise darin goldbraun braten. Erst wenden, wenn sie unten Farbe haben. In einer zu vollen Pfanne ziehen sie Wasser und werden grau. Zum Schluss alle Pilze zurück in die Pfanne geben, Zwiebel und Knoblauch zugeben und 2 Minuten mitbraten.
+4. Mit {100 ml} Weißwein ablöschen und fast vollständig einkochen lassen. {200 ml} Sahne zugießen und 5 Minuten sämig einkochen.
+5. Mit Salz, Pfeffer und einem Spritzer Zitronensaft abschmecken. Die Petersilie hacken und unterrühren.
+6. Die Nudeln abgießen und mit den Rahmchampignons servieren.
+
+Tipp: Pilze erst am Ende salzen, sonst ziehen sie in der Pfanne Wasser.
 
 Guten Appetit!', 'rahmchampignons-mit-bandnudeln.jpg');
 
@@ -3405,11 +3490,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Waldpilz-Ragout mit Polenta
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Waldpilz-Ragout mit Polenta', NULL, 40, 4, 'Portionen', 'Herbst', '1. Brühe aufkochen, Polenta unter Rühren einrieseln lassen und bei kleiner Hitze unter gelegentlichem Rühren nach Packungsangabe quellen lassen.
-2. Pilze putzen und in mundgerechte Stücke schneiden, Schalotten würfeln.
-3. Pilze portionsweise in {30 g} Butter kräftig anbraten, Schalotten und Thymian zugeben und kurz mitbraten.
-4. Sahne angießen, 3 Minuten einköcheln lassen und mit Salz, Pfeffer und Petersilie abschmecken.
-5. Restliche Butter und Käse unter die Polenta rühren und mit dem Pilzragout servieren.
+VALUES ('Waldpilz-Ragout mit Polenta', 'Ein Herbstabend auf dem Teller: gemischte Pilze in Thymiansahne auf cremiger, goldgelber Polenta.', 40, 4, 'Portionen', 'Herbst', '1. {1000 ml} Gemüsebrühe aufkochen. {250 g} Polenta unter ständigem Rühren mit dem Schneebesen einrieseln lassen, damit keine Klümpchen entstehen. Bei schwacher Hitze unter gelegentlichem Rühren nach Packungsangabe quellen lassen. Vorsicht, die Polenta blubbert und spritzt.
+2. {250 g} Kräuterseitlinge, {250 g} Champignons und {150 g} Pfifferlinge trocken putzen und in mundgerechte Stücke schneiden. {2} Schalotten fein würfeln.
+3. Die Pilze portionsweise in {30 g} Butter bei hoher Hitze kräftig anbraten, bis sie gebräunt sind. Alle Pilze zurück in die Pfanne geben, Schalotten und die Blättchen von {3} Thymianzweigen zugeben und 2 Minuten mitbraten.
+4. {150 ml} Sahne angießen und 3 Minuten einköcheln lassen. Mit Salz, Pfeffer und gehackter Petersilie abschmecken.
+5. Die restliche Butter und {50 g} geriebenen Hartkäse unter die Polenta rühren. Ist sie zu fest, einen Schuss Brühe oder Wasser einrühren.
+6. Die Polenta auf Teller verteilen und das Pilzragout darauf anrichten.
+
+Tipp: Übrige Polenta auf einem Blech fest werden lassen, in Scheiben schneiden und am nächsten Tag knusprig braten.
 
 Guten Appetit!', 'waldpilz-ragout-mit-polenta.jpg');
 
@@ -3429,11 +3517,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Champignon-Cremesuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Champignon-Cremesuppe', NULL, 30, 4, 'Portionen', 'Herbst', '1. Champignons putzen und in Scheiben schneiden. Einige Scheiben zum Garnieren beiseitelegen.
-2. Zwiebel und Knoblauch würfeln und in Butter andünsten. Pilze und Thymian zugeben und 5 Minuten braten.
-3. Mit Brühe ablöschen und 15 Minuten köcheln lassen. Thymianzweige entfernen.
-4. Sahne zugeben, fein pürieren und mit Salz, Pfeffer und Muskat abschmecken.
-5. Die beiseitegelegten Pilzscheiben kurz anbraten und mit Petersilie auf der Suppe anrichten.
+VALUES ('Champignon-Cremesuppe', 'Samtig, aromatisch und ganz einfach: eine cremige Pilzsuppe mit Thymian, die nach Wald schmeckt.', 30, 4, 'Portionen', 'Herbst', '1. {500 g} Champignons mit Küchenpapier abreiben und in Scheiben schneiden. Ein paar schöne Scheiben zum Garnieren beiseitelegen.
+2. Die Zwiebel und den Knoblauch fein würfeln. {2 EL} Butter in einem Topf schmelzen und beides darin glasig dünsten. Die Pilze und {2} Thymianzweige zugeben und bei mittlerer bis hoher Hitze etwa 5 Minuten braten, bis die Pilze Farbe bekommen. Die Röstaromen machen die Suppe kräftig.
+3. Mit {700 ml} Gemüsebrühe ablöschen und zugedeckt 15 Minuten köcheln lassen. Die Thymianzweige herausnehmen.
+4. {200 ml} Sahne zugeben und die Suppe mit dem Stabmixer fein pürieren. Mit Salz, Pfeffer und etwas Muskatnuss abschmecken.
+5. Die beiseitegelegten Pilzscheiben in einer kleinen Pfanne ohne Fett kurz goldbraun anbraten. Die Suppe mit den Pilzscheiben und gehackter Petersilie servieren.
+
+Tipp: Ein Schuss Weißwein oder trockener Sherry, nach dem Anbraten zugegeben, macht die Suppe noch feiner.
 
 Guten Appetit!', 'champignon-cremesuppe.jpg');
 
@@ -3451,11 +3541,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Schwäbischer Zwiebelkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Schwäbischer Zwiebelkuchen', NULL, 120, 1, 'Blech', 'Herbst', '1. Mehl mit Hefe, Zucker und {1 TL} Salz mischen. Lauwarme Milch und {40 g} weiche Butter zugeben, zu einem glatten Teig kneten und 45 Minuten gehen lassen.
-2. Zwiebeln in feine Streifen schneiden. Speck würfeln und in der restlichen Butter auslassen, Zwiebeln zugeben und ca. 20 Minuten glasig dünsten. Etwas abkühlen lassen.
-3. Eier mit Schmand und Sahne verquirlen, mit Salz, Pfeffer, Muskat und Kümmel würzen und unter die Zwiebeln mischen.
-4. Ofen auf 200 °C vorheizen. Teig auf einem gefetteten Blech ausrollen, einen kleinen Rand formen und die Zwiebelmasse daraufstreichen.
-5. Ca. 35–40 Minuten goldbraun backen. Warm servieren – traditionell mit einem Glas Federweißer.
+VALUES ('Schwäbischer Zwiebelkuchen', 'Hefeteig, ein Berg weich gedünsteter Zwiebeln, Speck und eine würzige Eier-Schmand-Füllung: der Herbstklassiker zum Federweißen.', 120, 1, 'Blech', 'Herbst', '1. {400 g} Mehl, die Trockenhefe, {1 TL} Zucker und {1 TL} Salz mischen. {200 ml} Milch lauwarm erwärmen und mit {40 g} weicher Butter zugeben. Alles 5–8 Minuten zu einem glatten Teig kneten und zugedeckt an einem warmen Ort 45 Minuten gehen lassen.
+2. Inzwischen {1500 g} Zwiebeln schälen, halbieren und in feine Streifen schneiden. Das dauert eine Weile, eine Küchenmaschine hilft. {150 g} Speck würfeln und in einem großen Topf in der restlichen Butter auslassen. Die Zwiebeln zugeben und bei mittlerer Hitze etwa 20 Minuten glasig und weich dünsten, ohne dass sie braun werden. Etwas abkühlen lassen.
+3. {4} Eier mit {200 g} Schmand und {100 ml} Sahne verquirlen. Mit Salz, Pfeffer, Muskatnuss und {1 TL} Kümmel würzen und unter die Zwiebeln mischen.
+4. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. Den Teig auf einem gefetteten Blech ausrollen und einen kleinen Rand hochdrücken. Die Zwiebelmasse gleichmäßig daraufstreichen.
+5. Etwa 35–40 Minuten backen, bis die Oberfläche goldbraun ist und die Füllung gestockt hat.
+6. Etwas abkühlen lassen und warm in Stücken servieren.
+
+Tipp: Traditionell gibt es dazu ein Glas Federweißer, und das erste Stück schmeckt immer am besten direkt vom Blech.
 
 Guten Appetit!', 'schwaebischer-zwiebelkuchen.jpg');
 
@@ -3476,11 +3569,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Französische Zwiebelsuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Französische Zwiebelsuppe', NULL, 75, 4, 'Portionen', 'Herbst', '1. Zwiebeln halbieren und in feine Streifen schneiden.
-2. Butter in einem großen Topf schmelzen, Zwiebeln und Zucker zugeben und bei mittlerer Hitze 30–40 Minuten unter häufigem Rühren goldbraun karamellisieren.
-3. Mit Weißwein ablöschen und einkochen lassen. Brühe, Thymian und Lorbeer zugeben, 20 Minuten köcheln und mit Salz und Pfeffer abschmecken.
-4. Baguette in Scheiben schneiden und rösten. Suppe in ofenfeste Schalen füllen, je zwei Brotscheiben auflegen und dick mit geriebenem Bergkäse bestreuen.
-5. Unter dem Backofengrill 3–5 Minuten goldbraun überbacken.
+VALUES ('Französische Zwiebelsuppe', 'Tief karamellisierte Zwiebeln in kräftiger Brühe, darauf geröstetes Brot unter einer Schicht geschmolzenem Käse.', 75, 4, 'Portionen', 'Herbst', '1. {1000 g} Zwiebeln schälen, halbieren und in feine Streifen schneiden.
+2. {40 g} Butter in einem großen Topf mit schwerem Boden schmelzen. Zwiebeln und {1 TL} Zucker zugeben und bei mittlerer Hitze 30–40 Minuten unter häufigem Rühren karamellisieren, bis sie tief goldbraun und weich sind. Das braucht Geduld, ist aber der Schlüssel zur Suppe. Setzen sie am Boden an, einen Schuss Wasser zugeben und den Bratensatz loskratzen.
+3. Mit {200 ml} Weißwein ablöschen und fast vollständig einkochen lassen. {1000 ml} Gemüsebrühe, die Thymianzweige und das Lorbeerblatt zugeben und 20 Minuten leise köcheln lassen. Kräuter herausnehmen und mit Salz und Pfeffer abschmecken.
+4. Das halbe Baguette in Scheiben schneiden und im Ofen oder Toaster rösten. {150 g} Bergkäse reiben. Den Backofengrill vorheizen.
+5. Die Suppe in ofenfeste Schalen füllen, je zwei Brotscheiben auflegen und dick mit Käse bestreuen.
+6. Die Schalen auf ein Blech stellen und unter dem Grill 3–5 Minuten überbacken, bis der Käse blubbert und goldbraun ist. Vorsicht, die Schalen sind sehr heiß.
+
+Tipp: Mit Rinderbrühe wird die Suppe noch kräftiger, so wie in Paris.
 
 Guten Appetit!', 'franzoesische-zwiebelsuppe.jpg');
 
@@ -3498,12 +3594,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Apfelstrudel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelstrudel', NULL, 120, 8, 'Stück', 'Herbst', '1. Mehl, Öl, Salz und ca. {125 ml} lauwarmes Wasser 10 Minuten zu einem sehr geschmeidigen Teig kneten. Mit Öl bestreichen und abgedeckt 30 Minuten ruhen lassen.
-2. Rosinen in Rum einweichen. Äpfel schälen, vierteln, entkernen und in dünne Scheiben schneiden. Mit Zitronensaft, Zucker, Zimt, Rosinen und gehackten Walnüssen mischen.
-3. {40 g} Butter schmelzen und das Paniermehl darin goldbraun rösten. Die restliche Butter schmelzen.
-4. Teig auf einem bemehlten Tuch ausrollen und mit den Handrücken hauchdünn ausziehen. Mit flüssiger Butter bestreichen.
-5. Brösel auf zwei Dritteln des Teigs verteilen und die Äpfel daraufgeben. Mithilfe des Tuchs aufrollen und mit der Naht nach unten auf ein Blech legen.
-6. Mit Butter bestreichen und bei 190 °C ca. 40 Minuten goldbraun backen. Mit Puderzucker bestäuben und lauwarm servieren.
+VALUES ('Apfelstrudel', 'Hauchdünn ausgezogener Teig, saftige Äpfel, Rosinen, Walnüsse und Zimt: Wiens berühmtestes Gebäck.', 120, 8, 'Stück', 'Herbst', '1. {250 g} Mehl, {3 EL} Rapsöl, eine Prise Salz und etwa {125 ml} lauwarmes Wasser 10 Minuten zu einem sehr geschmeidigen, glatten Teig kneten. Je länger, desto dehnbarer wird er. Zu einer Kugel formen, mit etwas Öl bestreichen und abgedeckt 30 Minuten ruhen lassen.
+2. {50 g} Rosinen in {2 EL} Rum einweichen. {1200 g} Äpfel schälen, vierteln, entkernen und in dünne Scheiben schneiden. Sofort mit dem Saft der Zitrone, {80 g} Zucker, {1 TL} Zimt, den Rosinen und {50 g} grob gehackten Walnüssen mischen.
+3. {40 g} Butter in einer Pfanne schmelzen und {60 g} Paniermehl darin goldbraun rösten. Die restliche Butter in einem kleinen Topf schmelzen. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen.
+4. Ein großes Küchentuch mit Mehl bestäuben. Den Teig darauf ausrollen, dann mit beiden Handrücken von der Mitte aus vorsichtig nach außen ziehen, bis er hauchdünn ist. Man sollte die Muster des Tuchs hindurch sehen. Dicke Ränder abschneiden und den Teig mit etwas flüssiger Butter bestreichen.
+5. Die Butterbrösel auf zwei Drittel des Teigs streuen und die Äpfel darauf verteilen. Die Seiten einschlagen und den Strudel mithilfe des Tuchs aufrollen. Mit der Naht nach unten auf ein mit Backpapier belegtes Blech legen.
+6. Mit der restlichen Butter bestreichen und etwa 40 Minuten goldbraun backen. Zwischendurch noch einmal mit Butter bestreichen. Etwas abkühlen lassen, mit {1 EL} Puderzucker bestäuben und lauwarm servieren.
+
+Tipp: Reißt der Teig, die Löcher einfach mit Teigresten flicken, unter den Äpfeln sieht das niemand. Dazu Vanillesoße oder Schlagsahne.
 
 Guten Appetit!', 'apfelstrudel.jpg');
 
@@ -3523,11 +3621,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Versunkener Apfelkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Versunkener Apfelkuchen', NULL, 75, 1, 'Springform (26 cm)', 'Herbst', '1. Ofen auf 180 °C vorheizen und eine Springform fetten.
-2. Äpfel schälen, vierteln und entkernen. Die Rückseiten mehrfach längs einritzen und mit Zitronensaft beträufeln.
-3. Butter, Zucker, Vanillezucker und Salz schaumig rühren und die Eier einzeln unterrühren. Mehl mit Backpulver mischen und mit der Milch unterrühren.
-4. Teig in die Form streichen und die Apfelviertel mit der eingeritzten Seite nach oben leicht hineindrücken.
-5. Ca. 45 Minuten backen (Stäbchenprobe), abkühlen lassen und mit Puderzucker bestäuben.
+VALUES ('Versunkener Apfelkuchen', 'Saftiger Rührteig, in den Apfelviertel sanft versinken: der Kuchen, der in keiner Familie fehlen darf.', 75, 1, 'Springform (26 cm)', 'Herbst', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Springform (26 cm) fetten.
+2. {4} Äpfel schälen, vierteln und entkernen. Die gewölbten Rückseiten mit einem Messer mehrmals längs einritzen, so garen sie gleichmäßiger und sehen hübsch aus. Mit dem Saft der Zitrone beträufeln, damit sie nicht braun werden.
+3. {150 g} weiche Butter, {150 g} Zucker, den Vanillezucker und eine Prise Salz mit dem Handrührgerät 3 Minuten schaumig rühren. Die {3} Eier einzeln je eine halbe Minute unterrühren.
+4. {250 g} Mehl mit {2 TL} Backpulver mischen und abwechselnd mit {3 EL} Milch kurz unterrühren, bis ein glatter Teig entsteht.
+5. Den Teig in die Form streichen und die Apfelviertel mit der eingeritzten Seite nach oben kreisförmig leicht hineindrücken.
+6. Etwa 45 Minuten backen, bis der Kuchen goldbraun ist. Mit einem Holzstäbchen zwischen den Äpfeln in den Teig stechen: Bleibt nichts kleben, ist er fertig. In der Form abkühlen lassen und mit {1 EL} Puderzucker bestäuben.
+
+Tipp: Säuerliche Apfelsorten wie Boskoop oder Elstar schmecken im Kuchen am besten.
 
 Guten Appetit!', 'versunkener-apfelkuchen.jpg');
 
@@ -3545,10 +3646,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Apfelmus selbst gemacht
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Apfelmus selbst gemacht', NULL, 30, 4, 'Portionen', 'Herbst', '1. Äpfel schälen, vierteln, entkernen und klein schneiden.
-2. Mit {100 ml} Wasser, Zitronensaft, Zucker und Zimtstange in einen Topf geben und zugedeckt ca. 15 Minuten weich kochen.
-3. Zimtstange entfernen und die Äpfel mit dem Kartoffelstampfer oder Pürierstab zur gewünschten Konsistenz zerkleinern.
-4. Warm oder kalt servieren oder heiß in ausgekochte Gläser füllen.
+VALUES ('Apfelmus selbst gemacht', 'Fruchtig, leicht zimtig und viel besser als aus dem Glas: Apfelmus in einer halben Stunde.', 30, 4, 'Portionen', 'Herbst', '1. {1000 g} Äpfel schälen, vierteln, entkernen und in kleine Stücke schneiden. Je kleiner, desto schneller zerfallen sie.
+2. Die Äpfel mit {100 ml} Wasser, dem Saft der halben Zitrone, {2 EL} Zucker und der Zimtstange in einen Topf geben. Zugedeckt bei mittlerer Hitze etwa 15 Minuten weich kochen, dabei ab und zu umrühren.
+3. Die Zimtstange herausnehmen. Die Äpfel mit einem Kartoffelstampfer stückig oder mit dem Stabmixer ganz fein zerkleinern, ganz nach Geschmack. Abschmecken und bei Bedarf noch etwas Zucker zugeben.
+4. Warm oder kalt servieren, zu Kartoffelpuffern, Milchreis oder einfach pur. Zum Aufbewahren heiß in ausgekochte Gläser füllen und sofort verschließen.
+
+Tipp: Eine Mischung aus süßen und säuerlichen Sorten ergibt das aromatischste Mus.
 
 Guten Appetit!', 'apfelmus-selbst-gemacht.jpg');
 
