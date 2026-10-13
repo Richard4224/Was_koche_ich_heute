@@ -7,36 +7,33 @@
 {% block main %}
     <p class="back-link"><a href="/#rezepte">← Zurück zum Rezeptbuch</a></p>
 
-    {% if recipe.image %}
-        {% set photo = url_for('static', filename='images/' + recipe.image) %}
-        <!-- The whole photo, on a blurred copy of itself that fills the rest of the header -->
-        <header class="recipe-header has-photo" style="--photo: url('{{ photo }}')">
-            <div class="recipe-photo">
-                <img src="{{ photo }}" alt="{{ recipe.name }}" class="recipe-image">
-            </div>
-    {% else %}
-        <header class="recipe-header">
+    {# With a photo: title and credit next to the whole, uncropped photo. Without: the title under a moon #}
+    <header class="recipe-header{% if recipe.image %} glass has-photo{% endif %}">
+        {% if not recipe.image %}
             <div class="recipe-image image-placeholder">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
             </div>
-    {% endif %}
+        {% endif %}
         <div class="recipe-title">
             <h1>{{ recipe.name }}</h1>
             <p class="recipe-meta">{{ recipe.time }} · {{ recipe.season }}</p>
-        </div>
-    </header>
-    {% if recipe.credit %}
-        <p class="image-credit">
-            Foto: <a href="{{ recipe.credit.source }}" rel="noopener">{{ recipe.credit.author }}</a>
-            ·
-            {% if recipe.credit.license_url %}
-                <a href="{{ recipe.credit.license_url }}" rel="noopener license">{{ recipe.credit.license }}</a>
-            {% else %}
-                {{ recipe.credit.license }}
+            {% if recipe.credit %}
+                <p class="image-credit">
+                    Foto: <a href="{{ recipe.credit.source }}" rel="noopener">{{ recipe.credit.author }}</a>
+                    ·
+                    {% if recipe.credit.license_url %}
+                        <a href="{{ recipe.credit.license_url }}" rel="noopener license">{{ recipe.credit.license }}</a>
+                    {% else %}
+                        {{ recipe.credit.license }}
+                    {% endif %}
+                    · <a href="/bildnachweise">Bildnachweise</a>
+                </p>
             {% endif %}
-            · <a href="/bildnachweise">Bildnachweise</a>
-        </p>
-    {% endif %}
+        </div>
+        {% if recipe.image %}
+            <img src="{{ url_for('static', filename='images/' + recipe.image) }}" alt="{{ recipe.name }}" class="recipe-image">
+        {% endif %}
+    </header>
 
     <div class="recipe-body">
         <aside class="glass ingredients">

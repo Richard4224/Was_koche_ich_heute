@@ -877,44 +877,65 @@ a {
 
 .recipe-header {
     position: relative;
-    isolation: isolate;
     overflow: hidden;
     border: 1px solid var(--glass-border);
     border-radius: calc(var(--radius) * 1.2);
     box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
 }
 
-/* With a photo: the whole photo, uncropped, on a blurred and darkened copy of itself,
-   so photos of any shape fill the header; the title sits below the photo */
-.recipe-header.has-photo::before {
-    content: "";
-    position: absolute;
-    inset: -60px;
-    z-index: -1;
-    background: var(--photo) center / cover;
-    filter: blur(36px) brightness(0.42) saturate(1.3);
+/* With a photo: on phones the photo on top and the title below it,
+   from tablets on the title on the left and the photo on the right */
+.recipe-header.has-photo {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-.recipe-photo {
-    display: flex;
-    justify-content: center;
-}
-
-.recipe-photo .recipe-image {
+.has-photo .recipe-image {
+    order: -1;
+    justify-self: center;
     display: block;
     max-width: 100%;
-    height: auto;
-    max-height: min(65vh, 560px);
+    height: auto;  /* the whole photo, never cropped */
+    max-height: 60vh;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
-@media (min-width: 576px) {
-    .recipe-photo {
-        padding: 1.5rem 1.5rem 0;
+.has-photo .recipe-title {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.25rem 0.25rem;
+}
+
+/* The credit sits at the bottom of the title column */
+.has-photo .image-credit {
+    margin: 1rem 0 0;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .recipe-header.has-photo {
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        padding: 1.5rem;
     }
 
-    .recipe-photo .recipe-image {
-        border-radius: var(--radius);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+    .has-photo .recipe-image {
+        order: 0;
+        max-width: min(460px, 45vw);
+        max-height: 320px;
+    }
+
+    .has-photo .recipe-title {
+        padding: 0 0 0 0.25rem;
+    }
+
+    /* Title in the middle of the free space, credit at the bottom */
+    .has-photo .recipe-title h1,
+    .has-photo .image-credit {
+        margin-top: auto;
     }
 }
 
@@ -940,10 +961,6 @@ a {
     inset: auto 0 0 0;
     z-index: 1;
     padding: 1.25rem;
-}
-
-.has-photo .recipe-title {
-    position: static;
 }
 
 @media (min-width: 576px) {
