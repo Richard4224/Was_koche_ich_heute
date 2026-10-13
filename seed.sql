@@ -7569,11 +7569,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Brownies
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Brownies', NULL, 45, 16, 'Stück', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und eine eckige Form (ca. 20 × 20 cm) mit Backpapier auslegen.
-2. Schokolade und Butter über einem Wasserbad schmelzen und etwas abkühlen lassen.
-3. Eier mit Zucker 3 Minuten schaumig schlagen und die Schokoladenbutter unterrühren.
-4. Mehl, Kakao und Salz darübersieben und kurz unterheben. Gehackte Walnüsse untermischen.
-5. Teig in die Form streichen und ca. 22–25 Minuten backen – innen dürfen sie noch feucht sein. Abkühlen lassen und in Stücke schneiden.
+VALUES ('Brownies', 'Außen eine zarte Kruste, innen schokoladig und fast flüssig: Brownies mit Walnüssen, wie sie sein sollen.', 45, 16, 'Stück', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine eckige Form (etwa 20 × 20 cm) mit Backpapier auslegen.
+2. {200 g} Zartbitterschokolade grob hacken und mit {150 g} Butter in einer Schüssel über einem leise siedenden Wasserbad unter Rühren schmelzen. Etwas abkühlen lassen.
+3. {3} Eier mit {200 g} Zucker mit dem Handrührgerät 3 Minuten hell und schaumig schlagen. Die Schokoladenbutter unterrühren.
+4. {100 g} Mehl, {2 EL} Backkakao und eine Prise Salz darübersieben und mit einem Teigschaber nur kurz unterheben, bis kein Mehl mehr zu sehen ist. {80 g} Walnüsse grob hacken und untermischen.
+5. Den Teig in die Form streichen und 22–25 Minuten backen. Mit einem Holzstäbchen hineinstechen: Es sollen noch feuchte Krümel daran haften, dann sind sie innen schön fudgy. Lieber zu kurz als zu lang backen.
+6. In der Form vollständig abkühlen lassen, dann in {16} Stücke schneiden.
+
+Tipp: Über Nacht im Kühlschrank werden sie noch dichter und lassen sich ganz sauber schneiden.
 
 Guten Appetit!', 'brownies.jpg');
 
@@ -7588,11 +7591,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Mousse au Chocolat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mousse au Chocolat', NULL, 270, 6, 'Portionen', 'Ganzjährig', '1. Schokolade grob hacken, über einem warmen Wasserbad schmelzen und etwas abkühlen lassen.
-2. Eier trennen. Eigelbe mit der Hälfte des Zuckers cremig schlagen und mit dem Espresso unter die Schokolade rühren.
-3. Sahne steif schlagen und unterheben.
-4. Eiweiße mit Salz steif schlagen, den restlichen Zucker einrieseln lassen und den Eischnee vorsichtig in zwei Portionen unterheben.
-5. In Gläser füllen und mindestens 4 Stunden kühlen. Da die Eier roh verwendet werden, nur ganz frische Eier nehmen.
+VALUES ('Mousse au Chocolat', 'Luftig, tiefdunkel und mit einem Hauch Espresso: die klassische französische Schokoladenmousse.', 270, 6, 'Portionen', 'Ganzjährig', '1. {200 g} Zartbitterschokolade grob hacken und über einem warmen, nicht kochenden Wasserbad schmelzen. Etwas abkühlen lassen, bis sie nur noch lauwarm ist.
+2. {4} sehr frische Eier trennen. Die Eigelbe mit {20 g} Zucker cremig schlagen. Mit {2 EL} Espresso unter die Schokolade rühren.
+3. {200 ml} Sahne steif schlagen und mit einem Teigschaber unter die Schokoladenmasse heben.
+4. Die Eiweiße mit einer Prise Salz steif schlagen, dabei den restlichen Zucker einrieseln lassen. Den Eischnee in zwei Portionen vorsichtig unterheben, nicht rühren, sonst geht die Luft verloren.
+5. In Gläser oder eine Schüssel füllen und abgedeckt mindestens 4 Stunden kühlen, bis die Mousse fest ist.
+
+Tipp: Da die Eier roh verwendet werden, nur ganz frische Eier nehmen und die Mousse innerhalb eines Tages essen.
 
 Guten Appetit!', 'mousse-au-chocolat.jpg');
 
@@ -7605,11 +7610,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tiramisu
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tiramisu', NULL, 270, 6, 'Portionen', 'Ganzjährig', '1. Espresso kochen, abkühlen lassen und mit dem Rum mischen.
-2. Eier trennen. Eigelbe mit Zucker sehr cremig schlagen und die Mascarpone unterrühren.
-3. Eiweiße mit Salz steif schlagen und vorsichtig unter die Creme heben.
-4. Löffelbiskuits kurz in den Espresso tauchen und eine Form damit auslegen. Die Hälfte der Creme daraufstreichen und mit einer zweiten Lage Biskuits und Creme wiederholen.
-5. Mindestens 4 Stunden, besser über Nacht, kühlen und vor dem Servieren dick mit Kakao bestäuben.
+VALUES ('Tiramisu', 'Kaffeegetränkte Löffelbiskuits, luftige Mascarponecreme und Kakao: Italiens berühmtestes Dessert.', 270, 6, 'Portionen', 'Ganzjährig', '1. {300 ml} Espresso kochen, in einen tiefen Teller gießen, abkühlen lassen und mit {2 EL} Rum mischen.
+2. {4} sehr frische Eier trennen. Die Eigelbe mit {80 g} Zucker mit dem Handrührgerät 5 Minuten sehr hell und cremig schlagen. {500 g} Mascarpone löffelweise unterrühren, nur kurz, sonst wird sie flüssig.
+3. Die Eiweiße mit einer Prise Salz steif schlagen und vorsichtig unter die Creme heben.
+4. Die Hälfte von {200 g} Löffelbiskuits nacheinander kurz in den Espresso tauchen, eine Sekunde pro Seite genügt, und eine Form (etwa 20 × 30 cm) damit auslegen. Die Hälfte der Creme daraufstreichen. Mit den restlichen Biskuits und der restlichen Creme eine zweite Schicht bilden.
+5. Abgedeckt mindestens 4 Stunden, besser über Nacht, im Kühlschrank durchziehen lassen.
+6. Kurz vor dem Servieren {2 EL} Backkakao durch ein feines Sieb dick darüberstäuben.
+
+Tipp: Wer keinen Alkohol möchte, lässt den Rum einfach weg. Nur ganz frische Eier verwenden.
 
 Guten Appetit!', 'tiramisu.jpg');
 
@@ -7624,11 +7632,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Milchreis mit Zimt und Kirschen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Milchreis mit Zimt und Kirschen', NULL, 45, 4, 'Portionen', 'Ganzjährig', '1. Milch mit {2 EL} Zucker, Vanillemark, Schote, Salz und Butter aufkochen.
-2. Reis einrühren und bei kleinster Hitze zugedeckt ca. 30 Minuten quellen lassen. Regelmäßig umrühren, damit nichts ansetzt.
-3. Kirschen aus dem Glas abtropfen lassen und den Saft auffangen. {150 ml} Saft aufkochen, mit der angerührten Stärke binden und die Kirschen unterheben.
-4. Restlichen Zucker mit Zimt mischen.
-5. Vanilleschote entfernen und den Milchreis mit Zimtzucker und warmen Kirschen servieren.
+VALUES ('Milchreis mit Zimt und Kirschen', 'Cremiger Vanille-Milchreis mit warmen Kirschen und Zimtzucker: ein süßes Mittagessen wie aus Kindertagen.', 45, 4, 'Portionen', 'Ganzjährig', '1. Die Vanilleschote längs aufschneiden und das Mark herauskratzen. {1000 ml} Milch mit {2 EL} Zucker, Vanillemark, Schote, einer Prise Salz und {1 EL} Butter in einem großen Topf aufkochen. Dabei rühren, damit die Milch nicht anbrennt.
+2. {250 g} Milchreis einrühren und bei kleinster Hitze zugedeckt etwa 30 Minuten quellen lassen. Alle 5 Minuten umrühren, damit nichts am Boden ansetzt. Er ist fertig, wenn die Körner weich sind und der Reis cremig, aber nicht trocken ist.
+3. Inzwischen {300 g} Kirschen aus dem Glas abtropfen lassen und den Saft auffangen. {150 ml} Saft aufkochen. {1 TL} Speisestärke mit etwas kaltem Saft glatt rühren, einrühren und kurz aufkochen, bis er bindet. Die Kirschen unterheben und warm halten.
+4. Den restlichen Zucker mit {1 TL} Zimt mischen.
+5. Die Vanilleschote entfernen und den Milchreis mit Zimtzucker und den warmen Kirschen servieren.
+
+Tipp: Auch kalt aus dem Kühlschrank ist Milchreis ein Genuss. Dann vor dem Servieren einen Schuss Milch unterrühren.
 
 Guten Appetit!', 'milchreis-mit-zimt-und-kirschen.jpg');
 
@@ -7644,12 +7654,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zimtschnecken
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zimtschnecken', NULL, 150, 12, 'Stück', 'Ganzjährig', '1. Mehl, Hefe, Zucker, Salz und Kardamom mischen. Lauwarme Milch, {50 g} weiche Butter und das Ei zugeben und 8 Minuten zu einem glatten Teig kneten. 1 Stunde gehen lassen.
-2. Restliche Butter weich rühren und mit braunem Zucker und Zimt mischen.
-3. Teig zu einem Rechteck (ca. 40 × 30 cm) ausrollen, mit der Zimtbutter bestreichen und von der langen Seite her aufrollen.
-4. In {12 Scheiben} schneiden, in eine gefettete Form setzen und 30 Minuten gehen lassen. Ofen auf 180 °C vorheizen.
-5. Ca. 25 Minuten goldbraun backen.
-6. Puderzucker mit Frischkäse und {1-2 EL} Wasser verrühren und auf die noch warmen Schnecken streichen.
+VALUES ('Zimtschnecken', 'Fluffige Hefeschnecken mit einer klebrigen Zimt-Zucker-Füllung und Frischkäseguss: schwedisches Fika-Glück.', 150, 12, 'Stück', 'Ganzjährig', '1. {500 g} Mehl, die Trockenhefe, {100 g} Zucker, eine Prise Salz und {0.5 TL} Kardamom mischen. {250 ml} Milch lauwarm erwärmen und mit {50 g} weicher Butter und {1} Ei zugeben. Alles 8 Minuten zu einem glatten, weichen Teig kneten. Zugedeckt an einem warmen Ort 1 Stunde gehen lassen.
+2. Die restliche Butter weich rühren und mit {80 g} braunem Zucker und {2 EL} Zimt zu einer streichfähigen Paste mischen.
+3. Den Teig auf einer leicht bemehlten Fläche zu einem Rechteck von etwa 40 × 30 cm ausrollen. Mit der Zimtbutter bis an die Ränder bestreichen und von der langen Seite her fest aufrollen.
+4. Die Rolle mit einem scharfen Messer oder einem Zahnseidenfaden in {12} Scheiben schneiden. Mit der Schnittfläche nach oben in eine gefettete Auflaufform setzen und zugedeckt 30 Minuten gehen lassen. Inzwischen den Ofen auf 180 °C Ober-/Unterhitze vorheizen.
+5. Etwa 25 Minuten goldbraun backen.
+6. {100 g} Puderzucker mit {50 g} Frischkäse und {1-2 EL} Wasser glatt rühren und auf die noch warmen Schnecken streichen.
+
+Tipp: Mit Zahnseide geschnitten werden die Schnecken nicht zerdrückt: Faden unter die Rolle legen, die Enden kreuzen und fest ziehen.
 
 Guten Appetit!', 'zimtschnecken.jpg');
 
@@ -7668,10 +7680,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Avocado-Toast
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Avocado-Toast', NULL, 10, 2, 'Portionen', 'Ganzjährig', '1. Brotscheiben toasten oder in einer Pfanne rösten und mit etwas Olivenöl beträufeln.
-2. Avocado halbieren, entkernen und das Fruchtfleisch mit Limettensaft, Salz und Pfeffer grob zerdrücken.
-3. Avocadocreme auf das Brot streichen.
-4. Mit halbierten Kirschtomaten, Kresse und Chiliflocken belegen.
+VALUES ('Avocado-Toast', 'Knuspriges Bauernbrot, cremige Avocado, Tomaten und Kresse: das Frühstück, das in zehn Minuten richtig gute Laune macht.', 10, 2, 'Portionen', 'Ganzjährig', '1. {2} Scheiben Bauernbrot im Toaster oder in einer Pfanne goldbraun rösten und mit {1 EL} Olivenöl beträufeln.
+2. Die Avocado halbieren, den Kern entfernen und das Fruchtfleisch mit einem Löffel herausholen. Mit dem Saft der halben Limette, Salz und Pfeffer grob mit der Gabel zerdrücken, es dürfen ruhig Stückchen bleiben.
+3. Die Avocadocreme großzügig auf die Brotscheiben streichen.
+4. {6} Kirschtomaten halbieren und darauf verteilen. Die Kresse abschneiden, darüberstreuen und mit einer Prise Chiliflocken würzen.
+
+Tipp: Mit einem pochierten oder gebratenen Ei obendrauf wird daraus ein richtiges Brunch-Gericht.
 
 Guten Appetit!', 'avocado-toast.jpg');
 
@@ -7687,10 +7701,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Chia-Pudding mit Mango
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Chia-Pudding mit Mango', NULL, 250, 2, 'Portionen', 'Ganzjährig', '1. Chiasamen mit Sojamilch, Ahornsirup und Vanillezucker verrühren. Nach 5 Minuten nochmals umrühren, damit keine Klümpchen entstehen.
-2. Abgedeckt mindestens 4 Stunden oder über Nacht im Kühlschrank quellen lassen.
-3. Mango schälen, die Hälfte mit Limettensaft pürieren und den Rest würfeln.
-4. Chia-Pudding in Gläser füllen, mit Mangopüree und Mangowürfeln schichten und mit Kokosraspeln bestreuen.
+VALUES ('Chia-Pudding mit Mango', 'Cremiger Chia-Pudding über Nacht, geschichtet mit Mangopüree und frischen Mangowürfeln: ein Frühstück, das schon fertig ist, wenn man aufwacht.', 250, 2, 'Portionen', 'Ganzjährig', '1. {4 EL} Chiasamen mit {250 ml} Sojamilch, {1 EL} Ahornsirup und {1 TL} Vanillezucker in einer Schüssel verrühren. Nach 5 Minuten noch einmal kräftig umrühren, sonst bilden sich Klümpchen.
+2. Abgedeckt mindestens 4 Stunden oder über Nacht im Kühlschrank quellen lassen, bis der Pudding fest und cremig ist.
+3. Die Mango schälen und das Fruchtfleisch vom Stein schneiden. Die Hälfte mit dem Saft der halben Limette fein pürieren, den Rest in kleine Würfel schneiden.
+4. Den Chia-Pudding in Gläser füllen, mit Mangopüree und Mangowürfeln schichten und mit {1 EL} Kokosraspeln bestreuen.
+
+Tipp: Im Kühlschrank hält sich der Pudding drei Tage. Gut zum Vorbereiten für die Woche.
 
 Guten Appetit!', 'chia-pudding-mit-mango.jpg');
 
@@ -7704,11 +7720,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Energy Balls mit Datteln und Kakao
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Energy Balls mit Datteln und Kakao', NULL, 50, 20, 'Stück', 'Ganzjährig', '1. Entsteinte Datteln 10 Minuten in warmem Wasser einweichen, falls sie nicht sehr weich sind, und abtropfen lassen.
-2. Haselnüsse und Mandeln im Mixer fein hacken.
-3. Datteln, Kakao, Kokosöl und Salz zugeben und zu einer klebrigen Masse mixen.
-4. Mit feuchten Händen walnussgroße Kugeln formen und in Kokosraspeln wälzen.
-5. Im Kühlschrank mindestens 30 Minuten fest werden lassen. Dort halten sie sich etwa eine Woche.
+VALUES ('Energy Balls mit Datteln und Kakao', 'Kleine Schokokugeln aus Datteln und Nüssen, ganz ohne Zucker und Backen: der Snack für zwischendurch und unterwegs.', 50, 20, 'Stück', 'Ganzjährig', '1. {200 g} entsteinte Datteln, falls sie nicht sehr weich sind, 10 Minuten in warmem Wasser einweichen und gut abtropfen lassen.
+2. {100 g} Haselnüsse und {50 g} Mandeln im Mixer fein hacken, aber nicht zu Mehl mahlen.
+3. Datteln, {2 EL} Backkakao, {1 EL} Kokosöl und eine Prise Salz zugeben und alles zu einer klebrigen Masse mixen, die beim Zusammendrücken zusammenhält.
+4. Mit leicht feuchten Händen {20} walnussgroße Kugeln formen und in {3 EL} Kokosraspeln wälzen.
+5. Im Kühlschrank mindestens 30 Minuten fest werden lassen. Dort halten sie sich in einer Dose etwa eine Woche.
+
+Tipp: Ein Teelöffel Erdnussmus oder etwas Orangenabrieb in der Masse geben neue Geschmacksrichtungen.
 
 Guten Appetit!', 'energy-balls-mit-datteln-und-kakao.jpg');
 
@@ -7722,13 +7740,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Donauwelle
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Donauwelle', NULL, 240, 1, 'Blech', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und ein tiefes Blech mit Backpapier auslegen.
-2. {250 g} weiche Butter mit {250 g} Zucker, Vanillezucker und Salz schaumig rühren und die Eier einzeln unterrühren. Mehl und Backpulver mit {100 ml} Milch unterrühren.
-3. Die Hälfte des Teigs auf das Blech streichen. Kakao unter den restlichen Teig rühren und auf dem hellen Teig verteilen. Abgetropfte Kirschen aus dem Glas darauf verteilen und leicht eindrücken.
-4. Ca. 30 Minuten backen und vollständig auskühlen lassen.
-5. Für die Creme {500 ml} Milch mit Vanillemark aufkochen. Stärke mit {100 g} Zucker und etwas Milch anrühren, einrühren und zu einem dicken Pudding kochen. Mit Frischhaltefolie abdecken und auf Zimmertemperatur abkühlen lassen.
-6. {200 g} zimmerwarme Butter cremig schlagen und den ebenfalls zimmerwarmen Pudding löffelweise unterschlagen. Auf den Kuchen streichen und 1 Stunde kühlen.
-7. Schokolade mit Kokosöl schmelzen, auf der Creme verteilen, mit einer Gabel Wellen ziehen und fest werden lassen.
+VALUES ('Donauwelle', 'Hell und dunkel, mit Kirschen, Buttercreme und Schokoladenwellen: der Blechkuchen, der auf keiner Familienfeier fehlen darf.', 240, 1, 'Blech', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und ein tiefes Backblech mit Backpapier auslegen. {700 g} Kirschen aus dem Glas gut abtropfen lassen.
+2. {250 g} weiche Butter mit {250 g} Zucker, dem Vanillezucker und einer Prise Salz schaumig rühren. {5} Eier einzeln unterrühren. {375 g} Mehl mit dem Backpulver mischen und mit {100 ml} Milch kurz unterrühren.
+3. Die Hälfte des Teigs auf das Blech streichen. {2 EL} Backkakao unter den restlichen Teig rühren und gleichmäßig auf dem hellen Teig verteilen. Die Kirschen darauf verteilen und leicht eindrücken, beim Backen sinken sie ein und erzeugen die Wellen.
+4. Etwa 30 Minuten backen und vollständig auskühlen lassen.
+5. Für die Creme die Vanilleschote aufschneiden und das Mark herauskratzen. Von {500 ml} Milch etwas abnehmen, den Rest mit dem Vanillemark aufkochen. {40 g} Speisestärke mit {100 g} Zucker und der kalten Milch glatt rühren, einrühren und unter Rühren zu einem dicken Pudding kochen. Frischhaltefolie direkt auf die Oberfläche legen und auf Zimmertemperatur abkühlen lassen.
+6. {200 g} zimmerwarme Butter cremig schlagen und den ebenfalls zimmerwarmen Pudding löffelweise unterschlagen. Beide müssen die gleiche Temperatur haben, sonst gerinnt die Creme. Auf den Kuchen streichen und 1 Stunde kühlen.
+7. {200 g} Zartbitterschokolade mit {20 g} Kokosöl schmelzen, auf der Creme verstreichen und mit einer Gabel oder einem Tortenkamm Wellen hineinziehen. Fest werden lassen und mit einem heißen Messer in Stücke schneiden.
+
+Tipp: Das Kokosöl verhindert, dass die Schokolade beim Schneiden splittert.
 
 Guten Appetit!', 'donauwelle.jpg');
 
@@ -7749,11 +7769,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Vanillepudding
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vanillepudding', NULL, 140, 4, 'Portionen', 'Ganzjährig', '1. Vanilleschote längs aufschneiden und das Mark herauskratzen.
-2. {400 ml} Milch mit Vanillemark, Schote, Zucker und Salz aufkochen und die Schote entfernen.
-3. Restliche Milch mit Stärke und den Eigelben glatt rühren.
-4. Mischung unter ständigem Rühren in die kochende Milch geben und 1 Minute köcheln lassen, bis der Pudding eindickt.
-5. Butter unterrühren und den Pudding in Schälchen füllen. Abgedeckt mindestens 2 Stunden kühlen.
+VALUES ('Vanillepudding', 'Selbst gekochter Pudding mit echter Vanille: so viel cremiger und feiner als aus der Tüte.', 140, 4, 'Portionen', 'Ganzjährig', '1. Die Vanilleschote längs aufschneiden und das Mark mit dem Messerrücken herauskratzen.
+2. {400 ml} Milch mit Vanillemark, Schote, {50 g} Zucker und einer Prise Salz in einem Topf aufkochen. Die Schote herausnehmen.
+3. {2} Eier trennen, die Eiweiße werden nicht gebraucht. Die restliche Milch mit {40 g} Speisestärke und den Eigelben glatt rühren.
+4. Die Mischung unter ständigem Rühren mit dem Schneebesen in die kochende Milch gießen und 1 Minute köcheln lassen, bis der Pudding dick wird. Dabei immer weiterrühren, sonst brennt er an.
+5. Vom Herd nehmen und {1 EL} Butter unterrühren, sie macht den Pudding glänzend. In Schälchen füllen.
+6. Frischhaltefolie direkt auf die Oberfläche legen, damit sich keine Haut bildet, und mindestens 2 Stunden kühlen.
+
+Tipp: Dazu passen frische Beeren, Rote Grütze oder heiße Kirschen.
 
 Guten Appetit!', 'vanillepudding.jpg');
 
@@ -7767,12 +7790,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Crème brûlée
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Crème brûlée', NULL, 300, 4, 'Portionen', 'Ganzjährig', '1. Ofen auf 150 °C vorheizen.
-2. Sahne und Milch mit Vanillemark und Schote erhitzen, aber nicht kochen. Schote entfernen.
-3. Eier trennen. Eigelbe mit Zucker verrühren (nicht schaumig schlagen) und die warme Sahne langsam unterrühren.
-4. Masse in {4} flache, ofenfeste Förmchen füllen, in ein tiefes Blech stellen und heißes Wasser bis zur halben Höhe angießen. Ca. 35–40 Minuten stocken lassen.
-5. Abkühlen lassen und mindestens 4 Stunden kühlen.
-6. Vor dem Servieren mit braunem Zucker bestreuen und mit einem Küchenbrenner karamellisieren.
+VALUES ('Crème brûlée', 'Zarte Vanillecreme unter einer gläsernen Karamellkruste, die beim Löffeln knackt.', 300, 4, 'Portionen', 'Ganzjährig', '1. Den Ofen auf 150 °C Ober-/Unterhitze vorheizen.
+2. Die Vanilleschote längs aufschneiden und das Mark herauskratzen. {400 ml} Sahne und {100 ml} Milch mit Vanillemark und Schote erhitzen, bis es dampft, aber nicht kocht. Die Schote entfernen.
+3. {5} Eier trennen. Die Eigelbe mit {60 g} Zucker nur verrühren, nicht schaumig schlagen, sonst bilden sich Bläschen. Die warme Sahne langsam unter Rühren zugießen.
+4. Die Masse durch ein feines Sieb in {4} flache, ofenfeste Förmchen füllen. Die Förmchen in ein tiefes Blech stellen und heißes Wasser bis zur halben Höhe angießen. Etwa 35–40 Minuten im Ofen stocken lassen. Die Creme soll am Rand fest sein und in der Mitte noch leicht wackeln.
+5. Aus dem Wasserbad nehmen, abkühlen lassen und abgedeckt mindestens 4 Stunden kühlen.
+6. Kurz vor dem Servieren gleichmäßig mit {4 EL} braunem Zucker bestreuen und mit einem Küchenbrenner karamellisieren, bis der Zucker schmilzt und goldbraun wird. 1 Minute fest werden lassen.
+
+Tipp: Ohne Brenner geht es unter dem sehr heißen Backofengrill. Dann aber dabeibleiben, der Zucker verbrennt schnell.
 
 Guten Appetit!', 'creme-brulee.jpg');
 
@@ -7785,11 +7810,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kalte Hundeschnauze
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kalte Hundeschnauze', NULL, 390, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform mit Backpapier oder Frischhaltefolie auslegen.
-2. Kokosöl bei kleiner Hitze schmelzen und die gehackte Schokolade darin auflösen. Etwas abkühlen lassen, bis es nur noch lauwarm ist.
-3. Kakao, Puderzucker und Vanillezucker darübersieben und mit der Milch glatt rühren.
-4. Abwechselnd eine dünne Schicht Schokoladenmasse und eine Lage Butterkekse in die Form schichten und mit Schokolade abschließen.
-5. Mindestens 6 Stunden, besser über Nacht, im Kühlschrank fest werden lassen. Stürzen und in dünne Scheiben schneiden – der Kindergeburtstagsklassiker.
+VALUES ('Kalte Hundeschnauze', 'Schicht um Schicht Butterkekse und Schokolade, ohne Backen: der Kindergeburtstagsklassiker, den jeder kennt.', 390, 1, 'Kastenform', 'Ganzjährig', '1. Eine Kastenform (etwa 25 cm) mit Backpapier oder Frischhaltefolie auslegen, so lässt sich der Kuchen später leicht herausheben.
+2. {250 g} Kokosöl bei kleiner Hitze schmelzen. {100 g} Zartbitterschokolade hacken und darin unter Rühren auflösen. Etwas abkühlen lassen, bis die Masse nur noch lauwarm ist.
+3. {50 g} Backkakao, {125 g} Puderzucker und den Vanillezucker darübersieben und mit {4 EL} Milch glatt rühren.
+4. Eine dünne Schicht Schokoladenmasse in die Form streichen und mit einer Lage von {300 g} Butterkeksen belegen. Abwechselnd weiter schichten und mit Schokolade abschließen.
+5. Mindestens 6 Stunden, besser über Nacht, im Kühlschrank fest werden lassen. Stürzen, das Papier abziehen und mit einem in heißes Wasser getauchten Messer in dünne Scheiben schneiden.
+
+Tipp: Im Kühlschrank aufbewahren und erst kurz vor dem Servieren herausnehmen, bei Zimmertemperatur wird sie schnell weich.
 
 Guten Appetit!', 'kalte-hundeschnauze.jpg');
 
@@ -7803,9 +7830,11 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Grüner Smoothie
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Grüner Smoothie', NULL, 10, 2, 'Gläser', 'Ganzjährig', '1. Spinat waschen. Banane schälen, Apfel entkernen und grob schneiden, Ingwer schälen.
-2. Alles mit Zitronensaft und {250 ml} kaltem Wasser im Mixer sehr fein pürieren.
-3. In Gläser füllen und sofort trinken.
+VALUES ('Grüner Smoothie', 'Spinat, Banane, Apfel und Ingwer im Glas: frisch, fruchtig und voller Vitamine, man schmeckt den Spinat kaum.', 10, 2, 'Gläser', 'Ganzjährig', '1. {50 g} Spinat waschen. Die Banane schälen, den Apfel entkernen und grob schneiden. {10 g} Ingwer schälen.
+2. Alles mit dem Saft der halben Zitrone und {250 ml} kaltem Wasser im Mixer etwa 1 Minute sehr fein pürieren, bis keine Spinatstücke mehr zu sehen sind.
+3. Abschmecken und bei Bedarf noch etwas Wasser zugeben. In Gläser füllen und sofort trinken, dann sind die Vitamine am frischesten.
+
+Tipp: Mit einer gefrorenen Banane wird der Smoothie eiskalt und cremig.
 
 Zum Wohl!', 'gruener-smoothie.jpg');
 
@@ -7817,11 +7846,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Marokkanischer Gemüse-Couscous
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Marokkanischer Gemüse-Couscous', NULL, 40, 4, 'Portionen', 'Ganzjährig', '1. Zwiebel würfeln und in {2 EL} Öl andünsten. Ras el Hanout und Harissa 1 Minute mitrösten.
-2. Karotten, Zucchini und Paprika in mundgerechte Stücke schneiden und zugeben.
-3. Tomaten, abgetropfte Kichererbsen, Rosinen und {300 ml} Brühe zugeben und 20 Minuten köcheln. Mit Salz abschmecken.
-4. Restliche Brühe aufkochen, über den Couscous gießen, abdecken und 5 Minuten quellen lassen. Mit dem restlichen Öl auflockern.
-5. Couscous mit dem Gemüse anrichten und mit Petersilie bestreuen.
+VALUES ('Marokkanischer Gemüse-Couscous', 'Duftendes Gemüse mit Ras el Hanout, Kichererbsen und Rosinen auf lockerem Couscous: Marokko in einer halben Stunde.', 40, 4, 'Portionen', 'Ganzjährig', '1. Die Zwiebel würfeln. {2 EL} Olivenöl in einem Topf erhitzen und die Zwiebel darin 3 Minuten andünsten. {2 TL} Ras el Hanout und {1 TL} Harissa zugeben und 1 Minute mitrösten, bis es duftet.
+2. {2} Karotten, die Zucchini und die Paprika in mundgerechte Stücke schneiden und zugeben.
+3. {400 g} gehackte Tomaten, {240 g} abgetropfte Kichererbsen, {30 g} Rosinen und {300 ml} Gemüsebrühe zugeben. Zugedeckt etwa 20 Minuten köcheln lassen, bis das Gemüse weich ist. Mit Salz abschmecken.
+4. Die restliche Brühe aufkochen und über {250 g} Couscous in einer Schüssel gießen. Abdecken und 5 Minuten quellen lassen. Das restliche Olivenöl zugeben und den Couscous mit einer Gabel auflockern.
+5. Den Couscous auf Tellern anrichten, das Gemüse darauf verteilen und mit gehackter Petersilie bestreuen.
+
+Tipp: Ein Klecks Joghurt mit Minze oder ein paar geröstete Mandeln passen wunderbar dazu.
 
 Guten Appetit!', 'marokkanischer-gemuese-couscous.jpg');
 
@@ -7842,11 +7873,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Vegane Carbonara mit Räuchertofu
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vegane Carbonara mit Räuchertofu', NULL, 25, 4, 'Portionen', 'Ganzjährig', '1. Spaghetti in Salzwasser bissfest kochen.
-2. Cashewkerne mit Sojamilch, Knoblauch, Kurkuma (für die Farbe) und einer Prise Salz im Mixer sehr cremig pürieren.
-3. Räuchertofu in kleine Würfel schneiden und in Olivenöl knusprig braten.
-4. Spaghetti abgießen, etwas Nudelwasser auffangen und die Nudeln mit der Cashewsoße und etwas Nudelwasser in der Pfanne kurz erhitzen, bis die Soße bindet.
-5. Tofuwürfel unterheben, kräftig pfeffern und mit Petersilie servieren.
+VALUES ('Vegane Carbonara mit Räuchertofu', 'Cremig, rauchig und pfeffrig: eine Carbonara ohne Ei und Speck, die mit Cashewsoße und Räuchertofu überrascht.', 25, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin bissfest kochen.
+2. {80 g} Cashewkerne mit {250 ml} Sojamilch, der Knoblauchzehe, einer Prise Kurkuma für die gelbe Farbe und einer Prise Salz im Mixer sehr cremig pürieren. Je länger, desto glatter wird die Soße.
+3. {200 g} Räuchertofu in kleine Würfel schneiden. {2 EL} Olivenöl in einer großen Pfanne erhitzen und den Tofu darin rundherum knusprig braten, er übernimmt die Rolle des Specks.
+4. Die Spaghetti abgießen und dabei eine Tasse Nudelwasser auffangen. Nudeln, Cashewsoße und einen Schuss Nudelwasser in die Pfanne geben und bei mittlerer Hitze unter Schwenken kurz erhitzen, bis die Soße bindet und cremig glänzt.
+5. Den Tofu unterheben, kräftig pfeffern und mit gehackter Petersilie servieren.
+
+Tipp: Ein Esslöffel Hefeflocken in der Soße gibt eine käsige Note.
 
 Guten Appetit!', 'vegane-carbonara-mit-raeuchertofu.jpg');
 
@@ -7863,11 +7896,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Penne mit getrockneten Tomaten und Rucola
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Penne mit getrockneten Tomaten und Rucola', NULL, 20, 4, 'Portionen', 'Ganzjährig', '1. Penne in Salzwasser bissfest kochen.
-2. Getrocknete Tomaten in Streifen schneiden. Pinienkerne ohne Fett goldbraun rösten.
-3. Knoblauch in Scheiben schneiden und in Olivenöl mit den Chiliflocken kurz anbraten. Tomaten zugeben und 2 Minuten mitbraten.
-4. Penne mit etwas Nudelwasser zugeben und durchschwenken.
-5. Rucola unterheben, mit Salz und Pfeffer abschmecken und mit Pinienkernen bestreuen.
+VALUES ('Penne mit getrockneten Tomaten und Rucola', 'Fruchtig-intensive getrocknete Tomaten, Knoblauch, Pinienkerne und frischer Rucola: mediterrane Pasta in 20 Minuten.', 20, 4, 'Portionen', 'Ganzjährig', '1. Reichlich Salzwasser aufkochen und {400 g} Penne darin bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. {100 g} getrocknete Tomaten in Streifen schneiden. {40 g} Pinienkerne in einer Pfanne ohne Fett goldbraun rösten und herausnehmen.
+3. {2} Knoblauchzehen in dünne Scheiben schneiden. {4 EL} Olivenöl in der Pfanne erhitzen und Knoblauch und eine Prise Chiliflocken darin kurz anbraten, bis der Knoblauch hellgolden ist. Die Tomaten zugeben und 2 Minuten mitbraten.
+4. Die abgetropften Penne mit einem Schuss Nudelwasser zugeben und gut durchschwenken.
+5. {80 g} Rucola unterheben, er soll nur leicht zusammenfallen. Mit Salz und Pfeffer abschmecken und mit den Pinienkernen bestreuen.
+
+Tipp: In Öl eingelegte Tomaten verwenden und einen Löffel vom Öl mit in die Pfanne geben.
 
 Guten Appetit!', 'penne-mit-getrockneten-tomaten-und-rucola.jpg');
 
@@ -7883,11 +7918,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hähnchen in Estragon-Senf-Soße
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hähnchen in Estragon-Senf-Soße', NULL, 30, 4, 'Portionen', 'Ganzjährig', '1. Reis nach Packungsangabe garen.
-2. Hähnchenbrust salzen, pfeffern und in {1 EL} Butter pro Seite 5–6 Minuten goldbraun braten. Herausnehmen und warm halten.
-3. Schalotten fein würfeln und in der restlichen Butter andünsten. Mit Weißwein ablöschen und etwas einkochen.
-4. Sahne und Senf einrühren und 3 Minuten sämig köcheln. Gehackten Estragon unterrühren und abschmecken.
-5. Hähnchen in Scheiben schneiden, in die Soße legen und mit dem Reis servieren.
+VALUES ('Hähnchen in Estragon-Senf-Soße', 'Saftige Hähnchenbrust in einer cremigen Soße mit Dijon-Senf und frischem Estragon: französische Bistroküche für zu Hause.', 30, 4, 'Portionen', 'Ganzjährig', '1. {250 g} Basmatireis nach Packungsangabe garen.
+2. {600 g} Hähnchenbrust trocken tupfen, salzen und pfeffern. {1 EL} Butter in einer Pfanne bei mittlerer Hitze erhitzen und das Fleisch darin pro Seite 5–6 Minuten goldbraun braten, bis es durchgegart ist. Herausnehmen und warm halten.
+3. {2} Schalotten fein würfeln und in der restlichen Butter glasig dünsten. Mit {100 ml} Weißwein ablöschen, den Bratensatz loskratzen und etwas einkochen lassen.
+4. {200 ml} Sahne und {2 EL} Senf einrühren und 3 Minuten sämig köcheln lassen. Die Estragonblätter hacken, unterrühren und mit Salz und Pfeffer abschmecken. Estragon ist intensiv, also lieber erst wenig nehmen.
+5. Das Hähnchen in Scheiben schneiden, in die Soße legen und mit dem Reis servieren.
+
+Tipp: Statt Reis passen auch Bandnudeln oder grüne Bohnen.
 
 Guten Appetit!', 'haehnchen-in-estragon-senf-sosse.jpg');
 
@@ -7904,11 +7941,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Vegane Schoko-Muffins
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Vegane Schoko-Muffins', NULL, 35, 12, 'Stück', 'Ganzjährig', '1. Ofen auf 180 °C vorheizen und ein Muffinblech mit Papierförmchen auslegen.
-2. Sojamilch mit Essig verrühren und 5 Minuten stehen lassen, damit sie leicht andickt.
-3. Mehl, Zucker, Kakao, Backpulver, Natron, Salz und Vanillezucker mischen.
-4. Geschmolzene Margarine und Sojamilch zugeben und nur kurz verrühren. Gehackte Schokolade unterheben.
-5. Teig in die Förmchen füllen und ca. 20 Minuten backen (Stäbchenprobe).
+VALUES ('Vegane Schoko-Muffins', 'Saftig, schokoladig und ganz ohne Ei und Butter: Muffins, bei denen niemand etwas vermisst.', 35, 12, 'Stück', 'Ganzjährig', '1. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und ein Muffinblech mit {12} Papierförmchen auslegen.
+2. {250 ml} Sojamilch mit {1 EL} Apfelessig verrühren und 5 Minuten stehen lassen, bis sie leicht andickt. Das ersetzt die Buttermilch und macht die Muffins locker.
+3. {250 g} Mehl, {150 g} Zucker, {40 g} Backkakao, {2 TL} Backpulver, {0.5 TL} Natron, eine Prise Salz und den Vanillezucker in einer großen Schüssel mischen.
+4. {100 g} Margarine schmelzen. Mit der Sojamilch zu den trockenen Zutaten geben und nur kurz verrühren, bis alles gerade verbunden ist. Zu langes Rühren macht die Muffins zäh. {80 g} Zartbitterschokolade hacken und unterheben.
+5. Den Teig in die Förmchen füllen und etwa 20 Minuten backen, bis ein Holzstäbchen sauber herauskommt. Im Blech kurz abkühlen lassen, dann herausnehmen.
+
+Tipp: Mit einer Himbeere in jedem Muffin werden sie fruchtig.
 
 Guten Appetit!', 'vegane-schoko-muffins.jpg');
 

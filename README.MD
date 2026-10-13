@@ -14,8 +14,8 @@ My CS50x final project. I also want to use it at home, which is why everything a
 
 - **Signs of the sky:** the current moon phase (drawn as an actual moon), the astronomical season and the live weather with "feels like" temperature and place name.
 - **Your location, if you allow it:** the browser shares its position. If it doesn't (or times out), the server guesses the city from the IP address, and if that fails too, it falls back to Berlin. The season flips on the southern hemisphere.
-- **318 recipes** in an SQLite database, each with ingredients, amounts, time, season and step-by-step instructions.
-- **Recipe pages with adjustable servings:** all amounts are recalculated, including amounts mentioned inside the instructions, and shown in kitchen-friendly form (`¼ Zwiebel`, `1,2 kg`, `2 Prisen`, `3 Tage 3 Std.`).
+- **318 recipes** in an SQLite database, each with a short description, ingredients, amounts, time, season, detailed step-by-step instructions (heat, timing, how to tell when it's done) and usually a tip.
+- **Recipe pages with adjustable servings:** all amounts are recalculated, including amounts mentioned inside the instructions, and shown in kitchen-friendly form (`¼ Zwiebel`, `1,2 kg`, `2 Prisen`, `3 Tage 3 Std.`). The whole photo sits next to the title, and badges show at a glance whether a dish is vegan, vegetarian or gluten-free.
 - **Search and filters** that update the results while you type: by name, vegan, vegetarian, gluten-free, by what you have at home and by what you don't want. Pick your ingredients and the recipes that miss the fewest come first, each card saying what's missing ("Es fehlt: Sahne") or "Alles da".
 - **A quick bar of main ingredients** ("Worauf hast du Lust?"): Geflügel, Rind & Kalb, Schwein, Fisch, Ei, Käse, Tofu, Pilze, Kartoffeln, Nudeln, Reis, … One click for "with", the minus next to it for "without".
 - **Results scroll in their own box** and load more as you reach its end, so the page stays where it is.
@@ -112,6 +112,8 @@ The app keeps nothing that has to survive a restart (the database is rebuilt fro
 - **Vegan, vegetarian and gluten-free are stored per ingredient,** not per recipe. A recipe is vegan if all of its ingredients are. One deliberate call: Parmesan and Pecorino count as not vegetarian (animal rennet).
 - **Amounts are numbers** (`REAL`), always for the recipe's base `servings`, so they can be scaled. `NULL` means "to taste" (salt, pepper, …).
 - **Amounts inside the instructions are placeholders** like `{100 g}` or `{2-3 EL}`, so "add 100 g flour" scales along with the ingredient list.
+- **Instructions are plain text with a little structure:** numbered lines are steps, a line starting with `Tipp:` becomes the tip box, and the rest ("Guten Appetit!") is the closing line.
+- **Diet badges are worked out, not stored:** a recipe is vegan, vegetarian or gluten-free if all its ingredients are, the same rule the search filters use. Vegan already implies vegetarian, so only "Vegan" is shown then.
 - **Servings are whole numbers,** so a cake for one springform scales to 2 springforms, never 1.5.
 - **Foreign keys are switched on** (`PRAGMA foreign_keys = ON`) for every connection. SQLite doesn't check them by default.
 - **Python's built-in `sqlite3`** instead of the CS50 library, so the project needs nothing beyond Flask.
@@ -189,7 +191,7 @@ The vibe I wanted: mysterious and enchanted, a moonlit night in a forest lit by 
 
 ## Credits and use of AI
 
-- **AI:** I built this project with the help of AI. Claude (Anthropic) helped with brainstorming the idea, the database layout and pseudocode, explained concepts to me, and wrote large parts of the code, the design and the scenery generator together with me. The recipe data (`seed.sql`) was generated with AI and checked with automated tests (no orphaned rows, no duplicate ingredients, plausible vegan/vegetarian/gluten-free flags).
+- **AI:** I built this project with the help of AI. Claude (Anthropic) helped with brainstorming the idea, the database layout and pseudocode, explained concepts to me, and wrote large parts of the code, the design and the scenery generator together with me. The recipe data (`seed.sql`) was generated with AI and checked with automated tests (no orphaned rows, no duplicate ingredients, plausible vegan/vegetarian/gluten-free flags). The first version of the instructions turned out too terse, so Claude rewrote all of them in more detail and added the descriptions and tips; a script checked that every amount placeholder is valid and every ingredient is mentioned.
 - **Weather data:** [Open-Meteo](https://open-meteo.com) (CC BY 4.0).
 - **Place names:** [Nominatim](https://nominatim.openstreetmap.org), data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (ODbL).
 - **IP location:** [ipinfo.io](https://ipinfo.io).
