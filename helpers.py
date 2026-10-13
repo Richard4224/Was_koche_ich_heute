@@ -1,5 +1,3 @@
-#todo: implement these for real
-
 import ipaddress
 import json
 import os
@@ -16,6 +14,7 @@ from scaling import format_amount, format_duration, scale_text, servings_unit_na
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, "recipes.db")
+DATABASE_SOURCES = ("schema.sql", "seed.sql", "images.sql")  # recipes.db is built from these, in this order
 MAX_SERVINGS = 1000
 
 # Diet filters as they appear in the URL (?vegan=1), mapped to their column in the ingredients table
@@ -161,22 +160,43 @@ def get_dish_of_the_day(now=None, latitude=LATITUDE, weather=None):
 
 
 
-def get_db():
-    """Open the recipe database, building it from schema.sql, seed.sql and images.sql on first use."""
+def database_version():
+    """Make sure recipes.db is up to date and return when it was built (changes whenever it is rebuilt).
 
-    is_new = not os.path.exists(DATABASE)
+    recipes.db is built from schema.sql, seed.sql and images.sql, and built anew as soon as one of them is newer,
+    e.g. after editing the recipes or pulling new ones with git.
+    """
+
+    sources = [os.path.join(BASE_DIR, name) for name in DATABASE_SOURCES]
+    sources = [path for path in sources if os.path.exists(path)]  # images.sql only exists once photos are chosen
+    built = os.path.getmtime(DATABASE) if os.path.exists(DATABASE) else None
+    if built is None or any(os.path.getmtime(path) > built for path in sources):
+        # Build next to it and swap it in at once, so other requests never see a half-built database
+        temporary = f"{DATABASE}.{os.getpid()}.tmp"
+        if os.path.exists(temporary):
+            os.remove(temporary)
+        with closing(sqlite3.connect(temporary)) as db:
+            for path in sources:
+                with open(path, encoding="utf-8") as file:
+                    db.executescript(file.read())
+        try:
+            os.replace(temporary, DATABASE)
+        except PermissionError:  # Windows won't replace a file that is open; the next request tries again
+            os.remove(temporary)
+            if built is None:
+                raise
+    return os.path.getmtime(DATABASE)
+
+
+def get_db():
+    """Open the recipe database, (re)building it first if needed (see database_version)."""
+
+    database_version()
     db = sqlite3.connect(DATABASE)
     db.row_factory = sqlite3.Row
     db.execute("PRAGMA foreign_keys = ON")
     # SQLite's own lower() and LIKE ignore case only for A-Z, so "kürbis" wouldn't find "Kürbis"
     db.create_function("casefold", 1, lambda text: text.casefold() if text else text, deterministic=True)
-
-    if is_new:
-        for script in ("schema.sql", "seed.sql", "images.sql"):
-            path = os.path.join(BASE_DIR, script)
-            if os.path.exists(path):  # images.sql only exists once photos have been chosen
-                with open(path, encoding="utf-8") as file:
-                    db.executescript(file.read())
     return db
 
 

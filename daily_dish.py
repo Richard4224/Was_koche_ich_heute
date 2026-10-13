@@ -200,9 +200,15 @@ def moon_fit(recipe, phase):
     return 0.0, None
 
 
-@lru_cache(maxsize=1)
 def load_recipes():
-    """Everything the scoring needs about every possible dish of the day (read once, the recipes don't change)."""
+    """Everything the scoring needs about every possible dish of the day."""
+    from helpers import database_version
+    return read_recipes(database_version())
+
+
+@lru_cache(maxsize=1)
+def read_recipes(version):
+    """The recipes as load_recipes returns them, read once per version of the database."""
     from helpers import get_db
 
     with closing(get_db()) as db:
@@ -261,7 +267,8 @@ def rank(day, hour, latitude, weather):
 
 REPEAT_DAYS = 7  # a dish doesn't come back within a week (at the same time of day)
 
-# The dishes of past days, worked out once: (southern hemisphere?, meal time) -> {day: recipe id}
+# The dishes of past days, worked out once per version of the database:
+# (version, southern hemisphere?, meal time) -> {day: recipe id}
 _history = {}
 
 
@@ -276,7 +283,11 @@ def chosen_on(day, hour, latitude):
     Which dish a day gets depends on the days before it (no repeats within a week), so the days of a year are
     worked out one after another from 1 January, and remembered.
     """
-    history = _history.setdefault((latitude < 0, time_slot(hour)), {})
+    from helpers import database_version
+    version = database_version()
+    if any(key[0] != version for key in _history):
+        _history.clear()  # the recipes changed
+    history = _history.setdefault((version, latitude < 0, time_slot(hour)), {})
     if day not in history:
         known = [past for past in history if past.year == day.year and past < day]
         current = max(known) + timedelta(days=1) if known else date(day.year, 1, 1)
