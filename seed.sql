@@ -1778,11 +1778,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Norddeutscher Kartoffelsalat mit Mayonnaise
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Norddeutscher Kartoffelsalat mit Mayonnaise', NULL, 110, 4, 'Portionen', 'Sommer', '1. Kartoffeln mit Schale ca. 20 Minuten kochen, pellen, abkühlen lassen und in Scheiben schneiden.
-2. Eier hart kochen, pellen und würfeln. Gewürzgurken und Zwiebel fein würfeln.
-3. Mayonnaise, Joghurt, Senf und {3-4 EL} Gurkenwasser aus dem Glas verrühren und mit Salz und Pfeffer würzen.
-4. Alle Zutaten vorsichtig mit dem Dressing vermengen und mindestens 1 Stunde im Kühlschrank durchziehen lassen.
-5. Vor dem Servieren abschmecken und mit Schnittlauch bestreuen.
+VALUES ('Norddeutscher Kartoffelsalat mit Mayonnaise', 'Cremig, mit Ei und Gewürzgurken: der Kartoffelsalat aus dem Norden, der zu jedem Grillfest und an Heiligabend auf den Tisch gehört.', 110, 4, 'Portionen', 'Sommer', '1. {1000 g} festkochende Kartoffeln waschen und mit Schale in Salzwasser etwa 20 Minuten kochen, bis sie gerade gar sind. Abgießen, pellen und vollständig abkühlen lassen. Dann in Scheiben schneiden. Kalte Kartoffeln zerfallen nicht so leicht.
+2. Inzwischen {3} Eier in kochendem Wasser 10 Minuten hart kochen, kalt abschrecken, pellen und würfeln. {4} Gewürzgurken und die Zwiebel fein würfeln.
+3. {150 g} Mayonnaise, {100 g} Joghurt, {1 TL} Senf und {3-4 EL} Gurkenwasser aus dem Glas glatt rühren. Mit Salz und Pfeffer kräftig würzen. Das Gurkenwasser bringt die typische säuerliche Note.
+4. Kartoffeln, Eier, Gurken und Zwiebel in einer großen Schüssel mit dem Dressing vorsichtig vermengen.
+5. Abgedeckt mindestens 1 Stunde im Kühlschrank durchziehen lassen. Die Kartoffeln saugen dabei Dressing auf, deshalb vor dem Servieren noch einmal abschmecken und bei Bedarf einen Schuss Gurkenwasser zugeben.
+6. Den Schnittlauch in Röllchen schneiden und darüberstreuen.
+
+Tipp: Am besten schmeckt der Salat, wenn er schon am Vortag gemacht wird.
 
 Guten Appetit!', 'norddeutscher-kartoffelsalat-mit-mayonnaise.jpg');
 
@@ -1799,10 +1802,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Nudelsalat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Nudelsalat', NULL, 90, 6, 'Portionen', 'Sommer', '1. Fusilli in Salzwasser bissfest kochen, abschrecken und abtropfen lassen. Die Erbsen in den letzten 2 Minuten mitgaren.
-2. Paprika, Gewürzgurken und Gouda in kleine Würfel schneiden. Mais abtropfen lassen.
-3. Mayonnaise, Joghurt und etwas Gurkenwasser verrühren und mit Salz, Pfeffer und Paprikapulver würzen.
-4. Alles vermengen und mindestens 1 Stunde durchziehen lassen. Vor dem Servieren abschmecken und mit Schnittlauch bestreuen.
+VALUES ('Nudelsalat', 'Der Partyklassiker mit Erbsen, Mais, Paprika und Gouda: bunt, cremig und immer als Erstes leer.', 90, 6, 'Portionen', 'Sommer', '1. Reichlich Salzwasser aufkochen und {500 g} Fusilli darin bissfest kochen. In den letzten 2 Minuten {200 g} Erbsen mitgaren. Abgießen, kalt abschrecken, damit die Nudeln nicht weitergaren und nicht zusammenkleben, und gut abtropfen lassen.
+2. Die Paprika entkernen und mit {4} Gewürzgurken und {150 g} Gouda in kleine Würfel schneiden. {150 g} Mais in einem Sieb abtropfen lassen.
+3. {200 g} Mayonnaise, {150 g} Joghurt und einen kräftigen Schuss Gurkenwasser aus dem Glas glatt rühren. Mit Salz, Pfeffer und {1 TL} Paprikapulver würzen.
+4. Nudeln, Erbsen, Paprika, Gurken, Gouda und Mais mit dem Dressing vermengen.
+5. Abgedeckt mindestens 1 Stunde im Kühlschrank durchziehen lassen. Vor dem Servieren noch einmal abschmecken: Nudeln schlucken viel Dressing, eventuell noch etwas Joghurt oder Gurkenwasser unterrühren.
+6. Den Schnittlauch in Röllchen schneiden und darüberstreuen.
+
+Tipp: Wer mag, gibt noch gewürfelten Kochschinken oder Fleischwurst dazu.
 
 Guten Appetit!', 'nudelsalat.jpg');
 
@@ -1821,10 +1828,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Couscous-Salat
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Couscous-Salat', NULL, 25, 4, 'Portionen', 'Sommer', '1. Couscous mit der kochenden Brühe übergießen, abdecken und 5 Minuten quellen lassen. Mit einer Gabel auflockern und abkühlen lassen.
-2. Gurke, Paprika und Tomaten würfeln, Frühlingszwiebeln in Ringe schneiden. Kichererbsen abspülen und abtropfen lassen.
-3. Kräuter hacken. Zitronensaft, Öl, Kreuzkümmel, Salz und Pfeffer verrühren.
-4. Alles mit dem Couscous mischen und 10 Minuten ziehen lassen.
+VALUES ('Couscous-Salat', 'Locker, frisch und schnell gemacht: Couscous mit knackigem Gemüse, Kichererbsen, Minze und Zitrone.', 25, 4, 'Portionen', 'Sommer', '1. {250 ml} Gemüsebrühe aufkochen und über {250 g} Couscous in einer großen Schüssel gießen. Abdecken und 5 Minuten quellen lassen. Mit einer Gabel auflockern, damit keine Klumpen bleiben, und abkühlen lassen.
+2. Die Gurke und die entkernte Paprika in kleine Würfel schneiden, {200 g} Kirschtomaten vierteln und {3} Frühlingszwiebeln in feine Ringe schneiden. {240 g} Kichererbsen in einem Sieb abspülen und abtropfen lassen.
+3. Minze und Petersilie fein hacken.
+4. Für das Dressing den Saft der Zitrone, {4 EL} Olivenöl, {0.5 TL} Kreuzkümmel, Salz und Pfeffer verrühren.
+5. Gemüse, Kichererbsen, Kräuter und Dressing unter den Couscous mischen und 10 Minuten durchziehen lassen. Noch einmal abschmecken: Couscous braucht meist mehr Salz und Zitrone, als man denkt.
+
+Tipp: Ideal zum Mitnehmen ins Büro oder zum Picknick. Der Salat hält sich zwei Tage im Kühlschrank.
 
 Guten Appetit!', 'couscous-salat.jpg');
 
@@ -1845,10 +1855,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Tabouleh
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Tabouleh', NULL, 30, 4, 'Portionen', 'Sommer', '1. Feinen Bulgur mit {150 ml} kochendem Wasser übergießen und 15 Minuten quellen lassen.
-2. Petersilie und Minze waschen, sehr gut trocknen und fein hacken – Tabouleh ist ein Kräutersalat, kein Getreidesalat.
-3. Tomaten fein würfeln, Frühlingszwiebeln in feine Ringe schneiden.
-4. Bulgur, Kräuter, Tomaten und Frühlingszwiebeln mischen und mit Zitronensaft, Öl, Salz und Pfeffer kräftig abschmecken.
+VALUES ('Tabouleh', 'Ein libanesischer Kräutersalat, kein Getreidesalat: viel Petersilie und Minze, wenig Bulgur und eine Menge Zitrone.', 30, 4, 'Portionen', 'Sommer', '1. {100 g} feinen Bulgur in eine Schüssel geben, mit {150 ml} kochendem Wasser übergießen, abdecken und 15 Minuten quellen lassen. Mit einer Gabel auflockern und abkühlen lassen.
+2. {3 Bund} Petersilie und {1 Bund} Minze waschen und sehr gründlich trocken schleudern. Die groben Stiele entfernen und die Blätter mit einem scharfen Messer fein hacken. Nicht im Mixer, sonst werden die Kräuter matschig.
+3. {3} Tomaten in kleine Würfel schneiden, {4} Frühlingszwiebeln in feine Ringe schneiden.
+4. Bulgur, Kräuter, Tomaten und Frühlingszwiebeln in einer großen Schüssel mischen.
+5. Mit dem Saft der {2} Zitronen, {5 EL} Olivenöl, Salz und Pfeffer kräftig abschmecken. Tabouleh soll frisch und deutlich zitronig schmecken.
+
+Tipp: Im Libanon isst man Tabouleh mit knackigen Romanasalatblättern, die man als Löffel benutzt.
 
 Guten Appetit!', 'tabouleh.jpg');
 
@@ -1864,10 +1877,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Wassermelonen-Feta-Salat mit Minze
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Wassermelonen-Feta-Salat mit Minze', NULL, 15, 4, 'Portionen', 'Sommer', '1. Wassermelone schälen, entkernen und in mundgerechte Würfel schneiden.
-2. Zwiebel in hauchdünne Ringe schneiden und kurz in Limettensaft einlegen.
-3. Melone auf einer Platte verteilen, Feta darüberbröseln und Zwiebelringe, Oliven und Minzblätter darauf verteilen.
-4. Mit Olivenöl und dem Limettensaft beträufeln, mit Pfeffer würzen und sofort servieren.
+VALUES ('Wassermelonen-Feta-Salat mit Minze', 'Süß, salzig, frisch: Wassermelone und Feta sind die überraschendste Kombination des Sommers.', 15, 4, 'Portionen', 'Sommer', '1. {1000 g} Wassermelone schälen, die Kerne so gut es geht entfernen und das Fruchtfleisch in mundgerechte Würfel schneiden. Kalt stellen, bis alles andere fertig ist.
+2. Die Zwiebel in hauchdünne Ringe schneiden. Die Limette auspressen und die Zwiebelringe 10 Minuten im Limettensaft einlegen. So verlieren sie ihre Schärfe und werden schön rosa.
+3. Die Melonenwürfel auf einer großen Platte verteilen. {200 g} Feta darüberbröseln und die Zwiebelringe, {50 g} Oliven und die gezupften Minzblätter darauf verteilen.
+4. Mit {2 EL} Olivenöl und dem Limettensaft beträufeln, mit Pfeffer würzen und sofort servieren. Salz ist nicht nötig, der Feta bringt genug mit.
+
+Tipp: Gut gekühlt schmeckt der Salat am besten. Er passt perfekt zu Gegrilltem.
 
 Guten Appetit!', 'wassermelonen-feta-salat-mit-minze.jpg');
 
@@ -1882,11 +1897,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Ratatouille
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Ratatouille', NULL, 70, 4, 'Portionen', 'Sommer', '1. Aubergine, Zucchini und Paprika in 2 cm große Würfel schneiden. Tomaten häuten und würfeln. Zwiebel und Knoblauch hacken.
-2. Aubergine in {2 EL} Öl kräftig anbraten und herausnehmen, dann Zucchini und Paprika nacheinander ebenso anbraten.
-3. Zwiebel und Knoblauch im restlichen Öl andünsten, Tomatenmark kurz mitrösten und die Tomaten zugeben.
-4. Das angebratene Gemüse, Thymian, Rosmarin und Lorbeer zugeben und zugedeckt bei kleiner Hitze 30–40 Minuten schmoren.
-5. Kräuterzweige entfernen, mit Salz und Pfeffer abschmecken und mit Basilikum bestreuen. Schmeckt warm und kalt.
+VALUES ('Ratatouille', 'Provenzalisches Sommergemüse, langsam geschmort mit Thymian und Rosmarin: schmeckt warm wie kalt und am nächsten Tag noch besser.', 70, 4, 'Portionen', 'Sommer', '1. Die Aubergine, {2} Zucchini und {2} Paprika in etwa 2 cm große Würfel schneiden. {4} Tomaten am Boden kreuzweise einritzen, kurz in kochendes Wasser legen, häuten und würfeln. Zwiebel und {3} Knoblauchzehen schälen und fein hacken.
+2. {2 EL} Olivenöl in einem großen Schmortopf stark erhitzen und die Aubergine darin 5 Minuten kräftig anbraten, bis sie goldbraun ist. Herausnehmen. Dann nacheinander Zucchini und Paprika mit je etwas Öl ebenso anbraten und herausnehmen. Getrennt gebraten behält jedes Gemüse seinen eigenen Geschmack.
+3. Im restlichen Öl Zwiebel und Knoblauch 3 Minuten andünsten. {1 EL} Tomatenmark kurz mitrösten und die Tomaten zugeben.
+4. Das angebratene Gemüse, Thymian, Rosmarin und das Lorbeerblatt zugeben, salzen und pfeffern. Zugedeckt bei schwacher Hitze 30–40 Minuten schmoren, bis das Gemüse weich ist, aber nicht zerfällt. Gelegentlich vorsichtig umrühren.
+5. Die Kräuterzweige und das Lorbeerblatt herausnehmen, mit Salz und Pfeffer abschmecken und mit gezupftem Basilikum bestreuen.
+
+Tipp: Dazu passen Baguette, Reis oder ein Stück gebratener Fisch.
 
 Guten Appetit!', 'ratatouille.jpg');
 
@@ -1907,11 +1924,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gefüllte Paprika mit Hackfleisch und Reis
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Paprika mit Hackfleisch und Reis', NULL, 75, 4, 'Portionen', 'Sommer', '1. Reis in Salzwasser 10 Minuten vorgaren und abgießen.
-2. Von den Paprika einen Deckel abschneiden und die Kerne entfernen.
-3. Hackfleisch mit Reis, fein gewürfelter Zwiebel, Ei, Paprikapulver, gehackter Petersilie, Salz und Pfeffer verkneten und in die Paprika füllen.
-4. Passierte Tomaten mit Tomatenmark, Zucker, Salz und Pfeffer in einem breiten Topf aufkochen.
-5. Paprika hineinsetzen, Deckel auflegen und zugedeckt ca. 45 Minuten bei kleiner Hitze schmoren. Dazu passen Kartoffeln oder Reis.
+VALUES ('Gefüllte Paprika mit Hackfleisch und Reis', 'Ein Stück Kindheit: Paprikaschoten, gefüllt mit würzigem Hackfleisch und Reis, in fruchtiger Tomatensoße geschmort.', 75, 4, 'Portionen', 'Sommer', '1. {100 g} Reis in Salzwasser 10 Minuten vorgaren und abgießen. Er gart in der Paprika fertig.
+2. Von {4} Paprika oben einen Deckel abschneiden, die Kerne und weißen Trennwände mit einem Löffel herauslösen. Die Paprika innen leicht salzen.
+3. Die Zwiebel schälen und fein würfeln, die Petersilie hacken. {400 g} Hackfleisch mit Reis, Zwiebel, {1} Ei, {1 TL} Paprikapulver, Petersilie, Salz und Pfeffer gründlich verkneten. In die Paprika füllen und die Deckel aufsetzen.
+4. {500 ml} passierte Tomaten mit {1 EL} Tomatenmark, einer Prise Zucker, Salz und Pfeffer in einem breiten Topf aufkochen, in den die Paprika aufrecht nebeneinander passen.
+5. Die Paprika hineinsetzen, den Topf zudecken und alles bei schwacher Hitze etwa 45 Minuten schmoren, bis die Paprika weich und die Füllung durchgegart ist. Zwischendurch etwas Soße über die Paprika löffeln.
+6. Die Soße abschmecken und die Paprika mit reichlich Soße servieren. Dazu passen Kartoffeln oder Reis.
+
+Tipp: Übrige Füllung zu kleinen Bällchen formen und in der Soße mitgaren.
 
 Guten Appetit!', 'gefuellte-paprika-mit-hackfleisch-und-reis.jpg');
 
@@ -1930,11 +1950,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gefüllte Zucchini mit Couscous und Feta
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gefüllte Zucchini mit Couscous und Feta', NULL, 50, 4, 'Portionen', 'Sommer', '1. Ofen auf 200 °C vorheizen. Große Zucchini längs halbieren und mit einem Löffel aushöhlen. Das Fruchtfleisch fein hacken.
-2. Couscous mit der heißen Brühe übergießen und 5 Minuten quellen lassen.
-3. Zucchinifruchtfleisch und Knoblauch in {1 EL} Öl anbraten und mit Couscous, halbierten Tomaten, der Hälfte des Fetas, Pinienkernen, Oregano, Salz und Pfeffer mischen.
-4. Zucchinihälften in eine geölte Form legen, die Füllung hineingeben und mit dem restlichen Feta bestreuen.
-5. Mit dem restlichen Öl beträufeln und ca. 25 Minuten backen.
+VALUES ('Gefüllte Zucchini mit Couscous und Feta', 'Mediterrane Zucchiniboote mit Couscous, Tomaten, Feta und gerösteten Pinienkernen.', 50, 4, 'Portionen', 'Sommer', '1. Den Ofen auf 200 °C Ober-/Unterhitze vorheizen. {2} große Zucchini längs halbieren und das Innere mit einem Teelöffel herauskratzen, sodass ein etwa 1 cm dicker Rand bleibt. Das Fruchtfleisch fein hacken.
+2. {120 ml} Gemüsebrühe aufkochen, über {100 g} Couscous gießen und abgedeckt 5 Minuten quellen lassen. Mit einer Gabel auflockern.
+3. {2 EL} Pinienkerne in einer Pfanne ohne Fett goldbraun rösten. Den Knoblauch fein hacken. {1 EL} Olivenöl in der Pfanne erhitzen und Zucchinifruchtfleisch und Knoblauch darin 3 Minuten braten.
+4. {150 g} Kirschtomaten halbieren. Couscous, Zucchinimasse, Tomaten, die Hälfte des Fetas, die Pinienkerne und {1 TL} Oregano mischen und mit Salz und Pfeffer abschmecken.
+5. Die Zucchinihälften in eine geölte Auflaufform legen, leicht salzen und die Füllung hineingeben. Den restlichen Feta darüberbröseln und mit dem restlichen Olivenöl beträufeln.
+6. Etwa 25 Minuten backen, bis die Zucchini weich und der Feta leicht gebräunt ist.
+
+Tipp: Dazu passt ein Klecks Joghurt mit etwas Knoblauch und Minze.
 
 Guten Appetit!', 'gefuellte-zucchini-mit-couscous-und-feta.jpg');
 
@@ -1952,11 +1975,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Zucchini-Puffer mit Joghurt-Dip
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Zucchini-Puffer mit Joghurt-Dip', NULL, 35, 4, 'Portionen', 'Sommer', '1. Zucchini grob raspeln, salzen und 10 Minuten ziehen lassen. Dann in einem Tuch kräftig ausdrücken.
-2. Zucchini mit Eiern, Mehl, zerbröseltem Feta, Frühlingszwiebelringen, der Hälfte des Dills und Pfeffer verrühren.
-3. Öl in einer Pfanne erhitzen, je 1 EL Teig hineingeben, flach drücken und pro Seite 3 Minuten goldbraun braten.
-4. Für den Dip Joghurt mit gepresstem Knoblauch, restlichem Dill, Zitronensaft, Salz und Pfeffer verrühren.
-5. Puffer auf Küchenpapier abtropfen lassen und mit dem Dip servieren.
+VALUES ('Zucchini-Puffer mit Joghurt-Dip', 'Außen knusprig, innen saftig: Zucchini-Puffer mit Feta und Dill, dazu ein frischer Joghurt-Dip.', 35, 4, 'Portionen', 'Sommer', '1. {2} Zucchini waschen und grob raspeln. In einer Schüssel mit etwas Salz mischen und 10 Minuten ziehen lassen. Dann in einem sauberen Geschirrtuch kräftig ausdrücken. Je trockener die Zucchini, desto knuspriger die Puffer.
+2. {2} Frühlingszwiebeln in feine Ringe schneiden und den Dill hacken. Die Zucchini mit {2} Eiern, {4 EL} Mehl, {100 g} zerbröseltem Feta, den Frühlingszwiebeln, der Hälfte des Dills und Pfeffer verrühren.
+3. {4 EL} Rapsöl in einer großen Pfanne bei mittlerer Hitze erhitzen. Pro Puffer einen gehäuften Esslöffel Teig hineingeben, flach drücken und pro Seite etwa 3 Minuten goldbraun braten. Nicht zu früh wenden, sonst zerfallen sie.
+4. Für den Dip {200 g} Joghurt mit der gepressten Knoblauchzehe, dem restlichen Dill, dem Saft der halben Zitrone, Salz und Pfeffer verrühren.
+5. Die Puffer auf Küchenpapier abtropfen lassen und warm mit dem Dip servieren.
+
+Tipp: Im Ofen bei 100 °C bleiben die fertigen Puffer warm und knusprig, während der Rest brät.
 
 Guten Appetit!', 'zucchini-puffer-mit-joghurt-dip.jpg');
 
@@ -1975,11 +2000,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Melanzane alla Parmigiana (Auberginen-Auflauf)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Melanzane alla Parmigiana (Auberginen-Auflauf)', NULL, 90, 4, 'Portionen', 'Sommer', '1. Auberginen längs in 1 cm dicke Scheiben schneiden, salzen und 20 Minuten Wasser ziehen lassen. Trocken tupfen.
-2. Scheiben portionsweise in Olivenöl goldbraun braten oder mit Öl bepinselt bei 220 °C im Ofen rösten.
-3. Zwiebel und Knoblauch in {1 EL} Öl andünsten, passierte Tomaten zugeben und mit Zucker, Salz und Pfeffer 15 Minuten einkochen. Basilikum unterrühren.
-4. Ofen auf 200 °C einstellen. Tomatensoße, Auberginen, Mozzarellascheiben und geriebenen Käse in einer Auflaufform schichten und mit Soße und Käse abschließen.
-5. Ca. 30 Minuten backen und vor dem Anschneiden 10 Minuten ruhen lassen.
+VALUES ('Melanzane alla Parmigiana (Auberginen-Auflauf)', 'Der Stolz Süditaliens: Schicht um Schicht gebratene Auberginen, Tomatensoße, Mozzarella und Hartkäse.', 90, 4, 'Portionen', 'Sommer', '1. {3} Auberginen längs in 1 cm dicke Scheiben schneiden, von beiden Seiten salzen und 20 Minuten Wasser ziehen lassen. Mit Küchenpapier gründlich trocken tupfen. So werden sie beim Braten nicht bitter und saugen weniger Öl auf.
+2. Die Scheiben portionsweise in reichlich Olivenöl bei mittlerer bis hoher Hitze von beiden Seiten goldbraun braten und auf Küchenpapier abtropfen lassen. Schneller geht es, die Scheiben mit Öl zu bepinseln und bei 220 °C im Ofen 15–20 Minuten zu rösten.
+3. Für die Soße die Zwiebel und {2} Knoblauchzehen fein hacken und in {1 EL} Olivenöl glasig dünsten. {700 ml} passierte Tomaten, eine Prise Zucker, Salz und Pfeffer zugeben und offen 15 Minuten einkochen lassen. Die Hälfte des Basilikums zupfen und unterrühren.
+4. Den Ofen auf 200 °C einstellen. {250 g} Mozzarella in Scheiben schneiden und {80 g} Hartkäse reiben. In eine Auflaufform erst etwas Tomatensoße streichen, dann abwechselnd Auberginen, Soße, Mozzarella und Hartkäse schichten. Mit Soße und Hartkäse abschließen.
+5. Etwa 30 Minuten backen, bis die Oberfläche goldbraun ist und an den Rändern blubbert.
+6. Vor dem Anschneiden mindestens 10 Minuten ruhen lassen, dann halten die Schichten zusammen. Mit dem restlichen Basilikum bestreuen.
+
+Tipp: Lauwarm schmeckt die Parmigiana fast noch besser als heiß.
 
 Guten Appetit!', 'melanzane-alla-parmigiana-auberginen-auflauf.jpg');
 
@@ -1997,10 +2025,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Baba Ganoush
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Baba Ganoush', NULL, 50, 4, 'Portionen', 'Sommer', '1. Auberginen mehrfach mit einer Gabel einstechen und unter dem Backofengrill oder auf dem Grill rundherum ca. 30 Minuten rösten, bis die Haut schwarz und das Innere ganz weich ist.
-2. Etwas abkühlen lassen, längs aufschneiden und das Fruchtfleisch herauslöffeln. In einem Sieb 10 Minuten abtropfen lassen.
-3. Fruchtfleisch mit Tahini, gepresstem Knoblauch, Zitronensaft, Kreuzkümmel und Salz grob zerdrücken oder kurz pürieren.
-4. Mit Olivenöl beträufeln und mit Petersilie und Granatapfelkernen bestreuen. Dazu passt Fladenbrot.
+VALUES ('Baba Ganoush', 'Rauchig, cremig und nussig: der Auberginendip aus der Levante, der am besten über offener Flamme gelingt.', 50, 4, 'Portionen', 'Sommer', '1. {2} Auberginen mehrmals mit einer Gabel einstechen, damit sie nicht platzen. Unter dem heißen Backofengrill, auf dem Grill oder direkt über der Gasflamme rundherum etwa 30 Minuten rösten, bis die Haut schwarz und das Innere ganz weich ist. Die verkohlte Haut sorgt für das typische Raucharoma.
+2. Etwas abkühlen lassen, längs aufschneiden und das Fruchtfleisch mit einem Löffel herauskratzen. In einem Sieb 10 Minuten abtropfen lassen, damit der Dip nicht wässrig wird.
+3. Das Fruchtfleisch mit {2 EL} Tahini, der gepressten Knoblauchzehe, dem Saft der Zitrone, {0.5 TL} Kreuzkümmel und Salz mit einer Gabel grob zerdrücken oder nur kurz pürieren. Er soll noch etwas Struktur haben.
+4. Abschmecken: Es darf ruhig zitronig sein.
+5. Auf einem Teller verstreichen, eine Mulde hineindrücken und mit {2 EL} Olivenöl beträufeln. Mit gehackter Petersilie und den Kernen des halben Granatapfels bestreuen. Dazu passt warmes Fladenbrot.
+
+Tipp: Granatapfelkerne löst man am einfachsten, indem man die halbierte Frucht mit der Schnittfläche nach unten über eine Schüssel hält und mit einem Kochlöffel kräftig auf die Schale klopft.
 
 Guten Appetit!', 'baba-ganoush.jpg');
 
@@ -2016,11 +2047,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Shakshuka
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Shakshuka', NULL, 30, 4, 'Portionen', 'Sommer', '1. Zwiebel und Paprika in Streifen schneiden, Knoblauch hacken und alles in einer großen Pfanne in Öl 8 Minuten weich dünsten.
-2. Kreuzkümmel, Paprikapulver und Chiliflocken kurz mitrösten. Tomaten zugeben, salzen und 10 Minuten einköcheln lassen.
-3. Mit einem Löffel {6} Mulden in die Soße drücken und je ein Ei hineinschlagen.
-4. Zugedeckt bei kleiner Hitze 6–8 Minuten garen, bis das Eiweiß gestockt und das Eigelb noch flüssig ist.
-5. Mit zerbröseltem Feta, Koriander und Pfeffer bestreuen und in der Pfanne servieren.
+VALUES ('Shakshuka', 'Eier, pochiert in würziger Tomaten-Paprika-Soße, direkt aus der Pfanne: Frühstück für alle, die es kräftig mögen.', 30, 4, 'Portionen', 'Sommer', '1. Die Zwiebel und {2} Paprika in Streifen schneiden und {2} Knoblauchzehen hacken. {2 EL} Olivenöl in einer großen Pfanne mit Deckel erhitzen und alles darin bei mittlerer Hitze etwa 8 Minuten weich dünsten.
+2. {1 TL} Kreuzkümmel, {1 TL} Paprikapulver und {0.5 TL} Chiliflocken zugeben und 1 Minute mitrösten, bis es duftet. {800 g} gehackte Tomaten zugeben, salzen und offen etwa 10 Minuten einköcheln lassen, bis die Soße dicklich ist.
+3. Mit einem Löffel {6} Mulden in die Soße drücken und in jede vorsichtig ein Ei schlagen. Das Eiweiß leicht salzen.
+4. Den Deckel auflegen und bei schwacher Hitze 6–8 Minuten garen, bis das Eiweiß gestockt und das Eigelb noch flüssig ist. Zwischendurch nachsehen, die Eier garen schnell nach.
+5. {100 g} Feta darüberbröseln, mit gezupftem Koriander und Pfeffer bestreuen und direkt in der Pfanne servieren.
+
+Tipp: Unbedingt frisches Brot zum Tunken dazu reichen.
 
 Guten Appetit!', 'shakshuka.jpg');
 
@@ -2040,10 +2073,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Peperonata
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Peperonata', NULL, 40, 4, 'Portionen', 'Sommer', '1. Rote und gelbe Paprika in Streifen und die Zwiebel in Ringe schneiden, Knoblauch hacken und Tomaten würfeln.
-2. Öl in einem breiten Topf erhitzen und Zwiebel und Paprika 10 Minuten bei mittlerer Hitze dünsten.
-3. Knoblauch und Tomaten zugeben und zugedeckt 20 Minuten schmoren, bis die Paprika ganz weich sind.
-4. Mit Essig, Zucker, Salz und Pfeffer abschmecken und das Basilikum unterheben. Warm oder lauwarm als Beilage oder auf Brot servieren.
+VALUES ('Peperonata', 'Langsam geschmorte Paprika, süß-säuerlich abgeschmeckt: Italiens bunte Beilage für warme Abende.', 40, 4, 'Portionen', 'Sommer', '1. {4} rote und gelbe Paprika entkernen und in etwa 1 cm breite Streifen schneiden. Die Zwiebel in Ringe schneiden, {2} Knoblauchzehen hacken und {2} Tomaten würfeln.
+2. {4 EL} Olivenöl in einem breiten Topf erhitzen. Zwiebel und Paprika darin bei mittlerer Hitze unter gelegentlichem Rühren 10 Minuten dünsten, bis sie weicher werden.
+3. Knoblauch und Tomaten zugeben, salzen und zugedeckt bei schwacher Hitze etwa 20 Minuten schmoren, bis die Paprika ganz weich und süß ist.
+4. Mit {1 EL} Weißweinessig, {1 TL} Zucker, Salz und Pfeffer süß-säuerlich abschmecken. Die Basilikumblätter zupfen und unterheben.
+5. Warm oder lauwarm als Beilage zu Fleisch und Fisch servieren, oder auf geröstetem Brot.
+
+Tipp: Im Kühlschrank hält sie sich mehrere Tage und schmeckt durchgezogen sogar besser.
 
 Guten Appetit!', 'peperonata.jpg');
 
@@ -2060,10 +2096,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Halloumi-Gemüse-Spieße vom Grill
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Halloumi-Gemüse-Spieße vom Grill', NULL, 35, 4, 'Portionen', 'Sommer', '1. Halloumi, Zucchini, Paprika und Zwiebel in mundgerechte Stücke schneiden.
-2. Olivenöl, Zitronensaft, Oregano, gepressten Knoblauch und Pfeffer verrühren und alles darin 15 Minuten marinieren.
-3. Abwechselnd mit den Tomaten auf Spieße stecken. Holzspieße vorher wässern.
-4. Auf dem heißen Grill oder in der Grillpfanne rundherum 8–10 Minuten grillen. Halloumi ist salzig genug, zusätzliches Salz ist nicht nötig.
+VALUES ('Halloumi-Gemüse-Spieße vom Grill', 'Quietschender Grillkäse mit buntem Gemüse und Zitronen-Oregano-Marinade: der Liebling jeder vegetarischen Grillparty.', 35, 4, 'Portionen', 'Sommer', '1. Holzspieße mindestens 30 Minuten in Wasser einweichen, damit sie auf dem Grill nicht verbrennen.
+2. {250 g} Halloumi, die Zucchini, die Paprika und die Zwiebel in etwa 3 cm große Stücke schneiden.
+3. {4 EL} Olivenöl, den Saft der Zitrone, {1 TL} Oregano, die gepresste Knoblauchzehe und Pfeffer verrühren. Halloumi und Gemüse darin wenden und 15 Minuten marinieren.
+4. Halloumi, Gemüse und {200 g} Kirschtomaten abwechselnd auf die Spieße stecken.
+5. Auf dem heißen Grill oder in einer Grillpfanne rundherum 8–10 Minuten grillen, bis der Halloumi goldbraune Streifen hat und das Gemüse weich ist. Zwischendurch mit der übrigen Marinade bestreichen. Halloumi ist salzig genug, zusätzliches Salz ist nicht nötig.
+
+Tipp: Dazu passen Tzatziki und Fladenbrot.
 
 Guten Appetit!', 'halloumi-gemuese-spiesse-vom-grill.jpg');
 
@@ -2080,11 +2119,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Hähnchen-Gemüse-Spieße vom Grill
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Hähnchen-Gemüse-Spieße vom Grill', NULL, 100, 4, 'Portionen', 'Sommer', '1. Hähnchenbrust in 3 cm große Würfel schneiden.
-2. Joghurt mit Zitronensaft, gepresstem Knoblauch, Paprikapulver, Kreuzkümmel, Öl, Salz und Pfeffer verrühren und das Fleisch darin mindestens 1 Stunde marinieren.
-3. Paprika, Zucchini und Zwiebel in Stücke schneiden.
-4. Fleisch und Gemüse abwechselnd auf Spieße stecken.
-5. Auf dem Grill bei mittlerer Hitze 10–12 Minuten rundherum grillen, bis das Fleisch durchgegart ist.
+VALUES ('Hähnchen-Gemüse-Spieße vom Grill', 'Saftiges Hähnchen in würziger Joghurtmarinade mit buntem Gemüse vom Grill.', 100, 4, 'Portionen', 'Sommer', '1. {600 g} Hähnchenbrust trocken tupfen und in 3 cm große Würfel schneiden.
+2. {150 g} Joghurt mit dem Saft der Zitrone, {2} gepressten Knoblauchzehen, {1 TL} Paprikapulver, {0.5 TL} Kreuzkümmel, {2 EL} Olivenöl, Salz und Pfeffer verrühren. Das Fleisch darin wenden und abgedeckt mindestens 1 Stunde im Kühlschrank marinieren. Der Joghurt macht das Hähnchen besonders zart.
+3. Holzspieße inzwischen in Wasser einweichen. {2} Paprika, die Zucchini und die Zwiebel in etwa 3 cm große Stücke schneiden.
+4. Fleisch und Gemüse abwechselnd auf die Spieße stecken. Überschüssige Marinade leicht abstreifen, damit sie auf dem Grill nicht verbrennt.
+5. Auf dem Grill bei mittlerer Hitze 10–12 Minuten rundherum grillen, bis das Fleisch durchgegart und leicht gebräunt ist. Zur Probe ein Stück aufschneiden: Innen darf es nicht mehr rosa sein.
+
+Tipp: In der Grillpfanne oder unter dem Backofengrill gelingen die Spieße genauso gut.
 
 Guten Appetit!', 'haehnchen-gemuese-spiesse-vom-grill.jpg');
 
@@ -2103,11 +2144,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gegrillter Schweinenacken mit Kräutermarinade
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gegrillter Schweinenacken mit Kräutermarinade', NULL, 160, 4, 'Portionen', 'Sommer', '1. Kräuter fein hacken und mit gepresstem Knoblauch, Senf, Paprikapulver, Öl und Pfeffer verrühren.
-2. Nackensteaks (ca. 2 cm dick) mit der Marinade einreiben und abgedeckt mindestens 2 Stunden, besser über Nacht, im Kühlschrank ziehen lassen.
-3. Steaks 30 Minuten vor dem Grillen aus dem Kühlschrank nehmen und überschüssige Marinade abstreifen.
-4. Bei direkter, starker Hitze pro Seite 4–5 Minuten grillen und anschließend bei indirekter Hitze 5 Minuten ziehen lassen.
-5. Erst nach dem Grillen salzen und servieren.
+VALUES ('Gegrillter Schweinenacken mit Kräutermarinade', 'Saftige Nackensteaks mit Rosmarin, Thymian und Knoblauch: der Grillklassiker, selbst mariniert statt aus der Schale.', 160, 4, 'Portionen', 'Sommer', '1. Die Nadeln von {2} Rosmarinzweigen und die Blättchen von {4} Thymianzweigen abzupfen und fein hacken. {3} Knoblauchzehen schälen und pressen.
+2. Kräuter und Knoblauch mit {1 EL} Senf, {1 TL} Paprikapulver, {6 EL} Rapsöl und Pfeffer verrühren. Kein Salz in die Marinade, es würde dem Fleisch Saft entziehen.
+3. {800 g} Schweinenacken in etwa 2 cm dicke Steaks schneiden oder fertig geschnittene Steaks nehmen. Rundherum mit der Marinade einreiben und abgedeckt mindestens 2 Stunden, besser über Nacht, im Kühlschrank ziehen lassen.
+4. Die Steaks 30 Minuten vor dem Grillen aus dem Kühlschrank nehmen und überschüssige Marinade abstreifen. Die Kräuter würden sonst auf dem Rost verbrennen.
+5. Bei direkter, starker Hitze pro Seite 4–5 Minuten grillen, bis sie ein schönes Grillmuster haben. Dann an den Rand des Grills legen und bei indirekter Hitze noch 5 Minuten ziehen lassen.
+6. Erst nach dem Grillen salzen und sofort servieren.
+
+Tipp: Nacken bleibt durch seine Fettmarmorierung auch bei etwas längerer Grillzeit saftig, ideal für Grillanfänger.
 
 Guten Appetit!', 'gegrillter-schweinenacken-mit-kraeutermarinade.jpg');
 
@@ -2123,11 +2167,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Klassischer Burger
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Klassischer Burger', NULL, 40, 4, 'Portionen', 'Sommer', '1. Hackfleisch mit Salz und Pfeffer locker vermengen und zu {4} flachen Patties (ca. 1,5 cm dick) formen. Mit dem Daumen eine leichte Mulde in die Mitte drücken.
-2. Tomaten und Zwiebel in Scheiben, Gewürzgurken in dünne Scheiben schneiden. Salat waschen.
-3. Für die Soße Mayonnaise, Ketchup und Senf verrühren.
-4. Patties auf dem heißen Grill oder in einer Pfanne mit wenig Öl pro Seite 3–4 Minuten braten. In der letzten Minute mit Cheddar belegen und schmelzen lassen.
-5. Brötchen aufschneiden, die Schnittflächen kurz rösten und mit Soße, Salat, Patty, Tomate, Zwiebel und Gurke belegen.
+VALUES ('Klassischer Burger', 'Saftiges Rindfleisch, geschmolzener Cheddar und eine schnelle Burgersoße: der Burger, für den man nicht ins Restaurant muss.', 40, 4, 'Portionen', 'Sommer', '1. {600 g} Rinderhackfleisch mit Salz und Pfeffer nur locker vermengen, nicht kneten, sonst wird es zäh. Zu {4} flachen Patties von etwa 1,5 cm Dicke formen, die etwas größer sind als die Brötchen. Mit dem Daumen eine leichte Mulde in die Mitte drücken, damit sie sich beim Braten nicht wölben.
+2. {2} Tomaten und die Zwiebel in Scheiben, {2} Gewürzgurken in dünne Scheiben schneiden. Die Salatblätter waschen und trocken tupfen.
+3. Für die Soße {2 EL} Mayonnaise, {4 EL} Ketchup und {1 TL} Senf verrühren.
+4. Den Grill oder eine Pfanne mit {1 EL} Rapsöl stark erhitzen. Die Patties pro Seite 3–4 Minuten braten und dabei nicht flach drücken, sonst läuft der Saft heraus. In der letzten Minute je eine Scheibe Cheddar auflegen und schmelzen lassen, in der Pfanne mit Deckel.
+5. {4} Brötchen aufschneiden und die Schnittflächen kurz anrösten. Die Unterseiten mit Soße bestreichen und mit Salat, Patty, Tomate, Zwiebel und Gurke belegen. Deckel drauf und sofort servieren.
+
+Tipp: Angeröstete Brötchen weichen nicht so schnell durch.
 
 Guten Appetit!', 'klassischer-burger.jpg');
 
@@ -2147,11 +2193,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kichererbsen-Burger
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kichererbsen-Burger', NULL, 45, 4, 'Portionen', 'Sommer', '1. Kichererbsen abspülen und gut abtropfen lassen. Zwiebel halbieren: eine Hälfte fein würfeln, die andere in Ringe schneiden.
-2. Kichererbsen mit Zwiebelwürfeln, Knoblauch, Haferflocken, Gewürzen, Petersilie, Salz und Pfeffer grob pürieren, sodass noch Stückchen bleiben.
-3. Mit feuchten Händen {4} Patties formen und 15 Minuten kühlen.
-4. Patties in Öl pro Seite ca. 4 Minuten knusprig braten.
-5. Sojajoghurt mit Zitronensaft, Salz und Pfeffer verrühren. Brötchen rösten und mit Soße, Salat, Patty, Tomatenscheiben und Zwiebelringen belegen.
+VALUES ('Kichererbsen-Burger', 'Würzige Kichererbsen-Patties mit knuspriger Kruste und frischer Zitronen-Joghurtsoße: ein Burger, der niemanden vermissen lässt.', 45, 4, 'Portionen', 'Sommer', '1. {480 g} Kichererbsen in einem Sieb abspülen und sehr gut abtropfen lassen, am besten noch mit Küchenpapier trocken tupfen. Die Zwiebel halbieren: eine Hälfte fein würfeln, die andere in Ringe schneiden.
+2. Kichererbsen, Zwiebelwürfel, den Knoblauch, {60 g} Haferflocken, {1 TL} Kreuzkümmel, {1 TL} Paprikapulver, die Petersilie, Salz und Pfeffer im Mixer oder mit dem Kartoffelstampfer grob zerkleinern. Es sollen noch Stückchen zu sehen sein, sonst wird die Masse breiig.
+3. Mit feuchten Händen {4} Patties formen und 15 Minuten im Kühlschrank fest werden lassen.
+4. {3 EL} Rapsöl in einer Pfanne bei mittlerer Hitze erhitzen und die Patties pro Seite etwa 4 Minuten knusprig braten. Vorsichtig wenden, sie sind recht zart.
+5. {100 g} Sojajoghurt mit dem Saft der halben Zitrone, Salz und Pfeffer verrühren.
+6. {4} Brötchen aufschneiden und rösten. Mit Soße, Salat, Patty, Tomatenscheiben und Zwiebelringen belegen.
+
+Tipp: Zerfallen die Patties beim Formen, noch einen Esslöffel Haferflocken untermischen und kurz quellen lassen.
 
 Guten Appetit!', 'kichererbsen-burger.jpg');
 
@@ -2173,10 +2222,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Maiskolben vom Grill mit Kräuterbutter
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Maiskolben vom Grill mit Kräuterbutter', NULL, 30, 4, 'Portionen', 'Sommer', '1. Weiche Butter mit fein gehackten Kräutern, gepresstem Knoblauch, etwas Zitronenabrieb, Salz und Pfeffer verrühren und kalt stellen.
-2. Maiskolben von Blättern und Fäden befreien und in Salzwasser 10 Minuten vorgaren.
-3. Auf dem heißen Grill unter Wenden 8–10 Minuten grillen, bis sie rundherum leicht gebräunt sind.
-4. Heiß mit der Kräuterbutter bestreichen und mit etwas Salz bestreuen.
+VALUES ('Maiskolben vom Grill mit Kräuterbutter', 'Süße, leicht rauchige Maiskolben, frisch vom Grill und dick mit Kräuterbutter bestrichen.', 30, 4, 'Portionen', 'Sommer', '1. {80 g} weiche Butter mit fein gehackter Petersilie, Schnittlauchröllchen, der gepressten Knoblauchzehe, etwas abgeriebener Zitronenschale, Salz und Pfeffer verrühren. Kalt stellen.
+2. {4} Maiskolben von Blättern und Fäden befreien. In kochendem Salzwasser 10 Minuten vorgaren, dann werden sie auf dem Grill schön zart.
+3. Die Kolben auf dem heißen Grill unter häufigem Wenden 8–10 Minuten grillen, bis sie rundherum leicht gebräunt sind und einzelne Körner etwas Farbe haben.
+4. Heiß mit der Kräuterbutter bestreichen, mit etwas Salz bestreuen und sofort servieren.
+
+Tipp: Ein Spritzer Limettensaft und eine Prise Chili machen den Mais mexikanisch.
 
 Guten Appetit!', 'maiskolben-vom-grill-mit-kraeuterbutter.jpg');
 
@@ -2191,11 +2242,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Stockbrot
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Stockbrot', NULL, 90, 8, 'Stück', 'Sommer', '1. Mehl, Hefe, Zucker, Salz und fein gehackten Rosmarin mischen. Olivenöl und ca. {300 ml} lauwarmes Wasser zugeben und zu einem glatten Teig kneten.
-2. Zugedeckt ca. 1 Stunde gehen lassen.
-3. Teig in {8} Portionen teilen und zu langen, fingerdicken Strängen rollen.
-4. Stränge spiralförmig um das Ende langer, geschälter Stöcke wickeln.
-5. Über der Glut – nicht in den Flammen – unter ständigem Drehen 10–15 Minuten goldbraun backen.
+VALUES ('Stockbrot', 'Teig am Stock über der Glut: das schönste Lagerfeuerritual für Groß und Klein, mit einem Hauch Rosmarin.', 90, 8, 'Stück', 'Sommer', '1. {500 g} Mehl, die Trockenhefe, {1 TL} Zucker, {1 TL} Salz und die fein gehackten Nadeln des Rosmarinzweigs in einer Schüssel mischen.
+2. {3 EL} Olivenöl und etwa {300 ml} lauwarmes Wasser zugeben und alles 5–8 Minuten zu einem glatten, geschmeidigen Teig kneten. Klebt er zu sehr, etwas Mehl zugeben.
+3. Den Teig zugedeckt an einem warmen Ort etwa 1 Stunde gehen lassen, bis er sich sichtbar vergrößert hat.
+4. In der Zwischenzeit lange, fingerdicke Stöcke suchen und die Enden auf 20 cm Länge mit einem Messer von der Rinde befreien.
+5. Den Teig in {8} Portionen teilen und jede zu einem langen, fingerdicken Strang rollen. Die Stränge spiralförmig um die geschälten Stockenden wickeln und die Enden gut andrücken.
+6. Über der Glut, nicht in den Flammen, unter ständigem Drehen 10–15 Minuten backen, bis das Brot goldbraun ist und sich leicht vom Stock lösen lässt.
+
+Tipp: Ein Klecks Kräuterbutter oder Kräuterquark in das Loch, das der Stock hinterlässt, macht Stockbrot zum Fest.
 
 Guten Appetit!', 'stockbrot.jpg');
 
@@ -2208,11 +2262,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Elsässer Flammkuchen
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Elsässer Flammkuchen', NULL, 40, 2, 'Bleche', 'Sommer', '1. Ofen mit einem Blech auf höchster Stufe (mindestens 250 °C) vorheizen.
-2. Mehl, Öl, Salz und ca. {150 ml} Wasser zu einem glatten Teig kneten, in {2} Portionen teilen und auf Backpapier hauchdünn ausrollen.
-3. Crème fraîche und Schmand verrühren und mit Salz, Pfeffer und Muskat würzen. Dünn auf die Teigfladen streichen.
-4. Zwiebeln in feine Ringe und Speck in feine Streifen schneiden und darauf verteilen.
-5. Nacheinander auf dem heißen Blech 8–10 Minuten knusprig backen.
+VALUES ('Elsässer Flammkuchen', 'Hauchdünn, knusprig und in zehn Minuten gebacken: Flammkuchen mit Crème fraîche, Zwiebeln und Speck, wie im Elsass.', 40, 2, 'Bleche', 'Sommer', '1. Den Ofen mit einem Backblech auf höchster Stufe vorheizen, mindestens 250 °C Ober-/Unterhitze. Je heißer der Ofen, desto knuspriger der Boden.
+2. {250 g} Mehl, {2 EL} Rapsöl, eine Prise Salz und etwa {150 ml} lauwarmes Wasser 5 Minuten zu einem glatten, geschmeidigen Teig kneten. Er kommt ohne Hefe aus.
+3. Den Teig in {2} Portionen teilen und jede Portion auf einem Bogen Backpapier hauchdünn rechteckig ausrollen, so dünn, dass man fast durchsehen kann.
+4. {200 g} Crème fraîche und {100 g} Schmand verrühren und mit Salz, Pfeffer und etwas Muskatnuss würzen. Dünn auf die Teigfladen streichen und einen schmalen Rand frei lassen.
+5. {2} Zwiebeln schälen und in hauchdünne Ringe schneiden, {150 g} Speck in feine Streifen schneiden. Beides gleichmäßig auf den Fladen verteilen.
+6. Einen Flammkuchen mit dem Backpapier auf das heiße Blech ziehen und 8–10 Minuten backen, bis die Ränder braun und knusprig sind. Mit dem zweiten genauso verfahren. Sofort in Stücke schneiden und heiß servieren.
+
+Tipp: Für die süße Variante den Belag durch Apfelscheiben, Zimt und Zucker ersetzen.
 
 Guten Appetit!', 'elsaesser-flammkuchen.jpg');
 
@@ -2228,12 +2285,15 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pizza Margherita
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pizza Margherita', NULL, 120, 2, 'Pizzen', 'Sommer', '1. Mehl, Hefe, Salz und Zucker mischen. {250 ml} lauwarmes Wasser und {2 EL} Öl zugeben und 10 Minuten zu einem glatten Teig kneten.
-2. Abgedeckt ca. 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
-3. Ofen mit einem Blech oder Pizzastein auf höchster Stufe vorheizen.
-4. Passierte Tomaten mit Oregano, einer Prise Salz und {1 EL} Öl verrühren. Teig in {2} Portionen teilen und dünn ausrollen.
-5. Mit Tomatensoße bestreichen, mit zerzupftem Mozzarella belegen und je ca. 10 Minuten backen.
-6. Mit frischem Basilikum belegen und sofort servieren.
+VALUES ('Pizza Margherita', 'Die Königin der Pizzen: dünner, luftiger Teig, fruchtige Tomatensoße, Mozzarella und frisches Basilikum.', 120, 2, 'Pizzen', 'Sommer', '1. {400 g} Mehl, die Trockenhefe, {1 TL} Salz und eine Prise Zucker in einer Schüssel mischen. {250 ml} lauwarmes Wasser und {2 EL} Olivenöl zugeben und 10 Minuten zu einem glatten, elastischen Teig kneten. Er soll leicht klebrig sein.
+2. Abgedeckt an einem warmen Ort etwa 1 Stunde gehen lassen, bis sich das Volumen verdoppelt hat.
+3. Den Ofen mit einem Backblech oder Pizzastein auf höchster Stufe vorheizen, mindestens 30 Minuten lang. Je heißer, desto näher kommt man an den Holzofen heran.
+4. {200 ml} passierte Tomaten mit {1 TL} Oregano, einer Prise Salz und {1 EL} Olivenöl verrühren. Die Soße wird nicht gekocht, sie gart im Ofen.
+5. Den Teig in {2} Portionen teilen und auf Backpapier dünn rund ausrollen oder mit den Fingern auseinanderziehen, der Rand darf etwas dicker bleiben. Mit der Tomatensoße bestreichen und {250 g} gut abgetropften Mozzarella in Stücken darauf verteilen.
+6. Die Pizzen nacheinander mit dem Backpapier auf das heiße Blech ziehen und je etwa 10 Minuten backen, bis der Rand gebräunt ist und der Käse blubbert.
+7. Mit frischen Basilikumblättern belegen und sofort servieren.
+
+Tipp: Wer Zeit hat, lässt den Teig abgedeckt über Nacht im Kühlschrank gehen. Er wird dadurch aromatischer und bekömmlicher.
 
 Guten Appetit!', 'pizza-margherita.jpg');
 
@@ -2249,11 +2309,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spaghetti mit Kirschtomaten und Basilikum
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti mit Kirschtomaten und Basilikum', NULL, 20, 4, 'Portionen', 'Sommer', '1. Spaghetti in Salzwasser bissfest kochen.
-2. Knoblauch in dünne Scheiben schneiden und in Olivenöl bei mittlerer Hitze leicht anbraten.
-3. Halbierte Kirschtomaten und Chiliflocken zugeben und 5 Minuten braten, bis die Tomaten aufplatzen.
-4. Spaghetti mit einer Kelle Nudelwasser zu den Tomaten geben und gut durchschwenken.
-5. Mit Salz und Pfeffer abschmecken und mit reichlich Basilikum servieren.
+VALUES ('Spaghetti mit Kirschtomaten und Basilikum', 'Schnell, sommerlich und voller Geschmack: Kirschtomaten, die in Knoblauchöl aufplatzen, und viel frisches Basilikum.', 20, 4, 'Portionen', 'Sommer', '1. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin nach Packungsangabe bissfest kochen. Vor dem Abgießen eine Tasse Nudelwasser abschöpfen.
+2. Inzwischen {3} Knoblauchzehen schälen und in dünne Scheiben schneiden. {5 EL} Olivenöl in einer großen Pfanne bei mittlerer Hitze erwärmen und den Knoblauch darin 1–2 Minuten sanft braten, bis er hellgolden ist. Er darf nicht braun werden, sonst wird er bitter.
+3. {500 g} Kirschtomaten halbieren und mit einer Prise Chiliflocken in die Pfanne geben. Bei mittlerer bis hoher Hitze etwa 5 Minuten braten, bis die Tomaten aufplatzen und Saft abgeben. Leicht salzen.
+4. Die abgetropften Spaghetti mit einer Kelle Nudelwasser zu den Tomaten geben und kräftig durchschwenken, bis eine leicht sämige Soße entsteht.
+5. Mit Salz und Pfeffer abschmecken, die Basilikumblätter grob zerzupfen und unterheben. Sofort servieren.
+
+Tipp: Geriebener Hartkäse oder ein paar Stücke Burrata obendrauf machen das Gericht noch feiner.
 
 Guten Appetit!', 'spaghetti-mit-kirschtomaten-und-basilikum.jpg');
 
@@ -2268,11 +2330,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spaghetti mit Basilikumpesto
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spaghetti mit Basilikumpesto', NULL, 20, 4, 'Portionen', 'Sommer', '1. Pinienkerne ohne Fett goldbraun rösten und abkühlen lassen.
-2. Basilikumblätter, Pinienkerne, Knoblauch und eine Prise Salz im Mörser oder Mixer zerkleinern und nach und nach das Olivenöl einarbeiten.
-3. Fein geriebenen Käse unterrühren.
-4. Spaghetti in Salzwasser bissfest kochen, abgießen und dabei etwas Nudelwasser auffangen.
-5. Pesto mit {2-3 EL} Nudelwasser unter die Nudeln mischen. Das Pesto nicht erhitzen, sonst wird das Basilikum bitter.
+VALUES ('Spaghetti mit Basilikumpesto', 'Pesto alla Genovese, frisch gemacht: duftendes Basilikum, geröstete Pinienkerne, Knoblauch und gutes Olivenöl.', 20, 4, 'Portionen', 'Sommer', '1. {40 g} Pinienkerne in einer Pfanne ohne Fett bei mittlerer Hitze goldbraun rösten und abkühlen lassen.
+2. Die Blätter von {2 Bund} Basilikum abzupfen. Mit den Pinienkernen, dem Knoblauch und einer Prise Salz im Mörser zerstoßen oder im Mixer kurz zerkleinern. Nach und nach {120 ml} Olivenöl einarbeiten, bis eine cremige Paste entsteht. Im Mixer nur kurz pulsieren, die Wärme der Messer macht das Basilikum dunkel und bitter.
+3. {50 g} Hartkäse fein reiben und unterrühren.
+4. Reichlich Salzwasser aufkochen und {400 g} Spaghetti darin bissfest kochen. Beim Abgießen etwas Nudelwasser auffangen.
+5. Die Nudeln zurück in den Topf geben und das Pesto mit {2-3 EL} Nudelwasser unterheben, bis alles cremig überzogen ist. Das Pesto nicht erhitzen, sonst wird das Basilikum bitter. Sofort servieren.
+
+Tipp: In Ligurien kommen noch ein paar Kartoffelwürfel und grüne Bohnen mit ins Nudelwasser.
 
 Guten Appetit!', 'spaghetti-mit-basilikumpesto.jpg');
 
@@ -2286,10 +2350,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kalte Gurkensuppe
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kalte Gurkensuppe', NULL, 75, 4, 'Portionen', 'Sommer', '1. Gurken schälen, längs halbieren, entkernen und grob würfeln. Einige Würfel zum Garnieren beiseitelegen.
-2. Gurke mit Joghurt, Knoblauch, dem Großteil des Dills, Zitronensaft und kalter Brühe fein pürieren.
-3. Mit Salz und Pfeffer kräftig abschmecken und mindestens 1 Stunde kalt stellen.
-4. In Schalen füllen, mit Gurkenwürfeln und Dill garnieren und mit Olivenöl beträufeln.
+VALUES ('Kalte Gurkensuppe', 'Erfrischend wie ein Sprung in den See: kalte Gurken-Joghurt-Suppe mit Dill für die heißesten Tage.', 75, 4, 'Portionen', 'Sommer', '1. {2} Gurken schälen, längs halbieren und die Kerne mit einem Teelöffel herauskratzen. Grob würfeln und ein paar kleine Würfel zum Garnieren beiseitelegen.
+2. Gurke, {500 g} Joghurt, die Knoblauchzehe, den größten Teil des Dills, den Saft der halben Zitrone und {150 ml} kalte Gemüsebrühe im Mixer sehr fein pürieren.
+3. Mit Salz und Pfeffer kräftig abschmecken. Kalte Suppen brauchen mehr Würze, als man denkt.
+4. Mindestens 1 Stunde kalt stellen, damit sich die Aromen verbinden und die Suppe richtig kühl ist.
+5. Noch einmal durchrühren und abschmecken. In Schalen füllen, mit den Gurkenwürfeln und dem restlichen Dill garnieren und mit {2 EL} Olivenöl beträufeln.
+
+Tipp: Ein paar Eiswürfel in den Schalen halten die Suppe auch draußen auf der Terrasse kühl.
 
 Guten Appetit!', 'kalte-gurkensuppe.jpg');
 
@@ -2305,12 +2372,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Pfifferlinge in Rahmsoße mit Semmelknödeln
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Pfifferlinge in Rahmsoße mit Semmelknödeln', NULL, 60, 4, 'Portionen', 'Sommer', '1. Altbackene Brötchen würfeln, mit warmer Milch übergießen und 15 Minuten einweichen.
-2. {1} Zwiebel würfeln und in {1 EL} Butter glasig dünsten. Mit Eiern, der Hälfte der gehackten Petersilie, Salz, Pfeffer und Muskat zu den Brötchen geben und gut verkneten.
-3. Mit nassen Händen {8} Knödel formen und in siedendem Salzwasser ca. 20 Minuten gar ziehen lassen.
-4. Pfifferlinge trocken putzen und große Exemplare halbieren. Die restliche Zwiebel würfeln.
-5. Pilze in der restlichen Butter bei starker Hitze anbraten, Zwiebel zugeben und kurz mitbraten. Mit Brühe und Sahne ablöschen und 5 Minuten einkochen.
-6. Mit Salz und Pfeffer abschmecken, restliche Petersilie unterrühren und mit den Knödeln servieren.
+VALUES ('Pfifferlinge in Rahmsoße mit Semmelknödeln', 'Waldpilze in cremiger Soße mit fluffigen Semmelknödeln: ein Spätsommergericht, das nach Wald und Wiese duftet.', 60, 4, 'Portionen', 'Sommer', '1. {300 g} altbackene Brötchen in kleine Würfel schneiden. {250 ml} Milch lauwarm erwärmen, darübergießen und 15 Minuten einweichen.
+2. {1} Zwiebel schälen und fein würfeln, die Petersilie hacken. {1 EL} Butter in einer Pfanne schmelzen und die Zwiebel darin glasig dünsten. Zwiebel, {2} Eier, die Hälfte der Petersilie, Salz, Pfeffer und etwas Muskatnuss zu den Brötchen geben und mit den Händen gut verkneten.
+3. In einem großen Topf Salzwasser aufkochen und die Hitze reduzieren, bis es nur noch siedet. Mit nassen Händen {8} Knödel formen und etwa 20 Minuten gar ziehen lassen. Das Wasser darf nicht sprudeln, sonst zerfallen sie.
+4. Inzwischen {500 g} Pfifferlinge mit einem Pinsel oder Küchenpapier trocken putzen. Nur stark verschmutzte Pilze kurz abbrausen, sie saugen sich sonst mit Wasser voll. Große Pilze halbieren. Die restliche Zwiebel fein würfeln.
+5. Die restliche Butter in einer großen Pfanne stark erhitzen und die Pfifferlinge darin 3–4 Minuten anbraten, bis sie leicht gebräunt sind. Die Zwiebel zugeben und 1 Minute mitbraten. Mit {100 ml} Gemüsebrühe und {200 ml} Sahne ablöschen und 5 Minuten sämig einkochen lassen.
+6. Mit Salz und Pfeffer abschmecken, die restliche Petersilie unterrühren und mit den Knödeln servieren.
+
+Tipp: Pilze in einer großen Pfanne nicht zu dicht braten, sonst ziehen sie Wasser, statt zu bräunen. Lieber in zwei Portionen.
 
 Guten Appetit!', 'pfifferlinge-in-rahmsosse-mit-semmelknoedeln.jpg');
 
@@ -2329,11 +2398,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Matjes nach Hausfrauenart
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Matjes nach Hausfrauenart', NULL, 45, 4, 'Portionen', 'Sommer', '1. Kartoffeln als Pellkartoffeln kochen.
-2. Matjesfilets kurz wässern, trocken tupfen und in mundgerechte Stücke schneiden.
-3. Apfel entkernen und würfeln, Zwiebel in feine Ringe und Gewürzgurken in Scheiben schneiden.
-4. Saure Sahne, Joghurt, Zitronensaft und Zucker verrühren und mit Pfeffer und wenig Salz würzen.
-5. Matjes, Apfel, Zwiebel und Gurken unterheben, mindestens 15 Minuten ziehen lassen und mit Dill bestreut zu den Pellkartoffeln servieren.
+VALUES ('Matjes nach Hausfrauenart', 'Zarte Matjesfilets in einer frischen Soße mit Apfel, Zwiebeln und Gewürzgurke: Norddeutschland auf dem Teller.', 45, 4, 'Portionen', 'Sommer', '1. {800 g} Kartoffeln waschen und in Salzwasser zugedeckt etwa 20 Minuten als Pellkartoffeln garen.
+2. {8} Matjesfilets kurz in kaltem Wasser wässern, wenn sie sehr salzig sind, trocken tupfen und in mundgerechte Stücke schneiden.
+3. Den Apfel waschen, entkernen und in kleine Würfel schneiden. Die Zwiebel in feine Ringe und {2} Gewürzgurken in Scheiben schneiden.
+4. {200 g} saure Sahne, {150 g} Joghurt, den Saft der halben Zitrone und eine Prise Zucker verrühren. Mit Pfeffer und nur wenig Salz würzen, der Matjes ist schon salzig.
+5. Matjes, Apfel, Zwiebel und Gurken unterheben und mindestens 15 Minuten im Kühlschrank ziehen lassen.
+6. Den Dill hacken und darüberstreuen. Mit den heißen Pellkartoffeln servieren.
+
+Tipp: Die beste Matjeszeit ist im Frühsommer, wenn der neue Fang auf den Markt kommt.
 
 Guten Appetit!', 'matjes-nach-hausfrauenart.jpg');
 
@@ -2352,11 +2424,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Fisch-Tacos mit Mango-Salsa
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Fisch-Tacos mit Mango-Salsa', NULL, 35, 4, 'Portionen', 'Sommer', '1. Mango schälen und würfeln, Zwiebel und Chili fein hacken. Mit dem Saft einer Limette, der Hälfte des Korianders und Salz zu einer Salsa mischen.
-2. Weißkohl in sehr feine Streifen schneiden und mit etwas Limettensaft und Salz verkneten.
-3. Fisch in breite Streifen schneiden, mit Paprika, Kreuzkümmel und Salz würzen und in Öl pro Seite 2–3 Minuten braten.
-4. Tortillas in einer trockenen Pfanne kurz erwärmen.
-5. Tortillas mit Kohl, Fisch, Salsa und einem Klecks saurer Sahne füllen. Mit restlichem Koriander und Limettenspalten servieren.
+VALUES ('Fisch-Tacos mit Mango-Salsa', 'Knusprig gewürzter Fisch, fruchtige Mango-Salsa und knackiger Kohl in warmen Tortillas: Urlaub zum Mitnehmen.', 35, 4, 'Portionen', 'Sommer', '1. Für die Salsa die Mango schälen, das Fruchtfleisch vom Stein schneiden und klein würfeln. Die Zwiebel fein hacken. Die Chilischote entkernen und sehr fein hacken. Alles mit dem Saft {1} Limette, der Hälfte des gehackten Korianders und etwas Salz mischen.
+2. {150 g} Weißkohl in sehr feine Streifen schneiden oder hobeln. Mit etwas Limettensaft und Salz kräftig mit den Händen verkneten, bis er etwas weicher wird.
+3. {500 g} Kabeljaufilet trocken tupfen und in breite Streifen schneiden. Mit {1 TL} Paprikapulver, {0.5 TL} Kreuzkümmel und Salz würzen.
+4. {2 EL} Rapsöl in einer Pfanne erhitzen und den Fisch pro Seite 2–3 Minuten braten, bis er leicht gebräunt ist und in große Stücke zerfällt. Vorsichtig wenden.
+5. {8} Maistortillas in einer trockenen Pfanne kurz von beiden Seiten erwärmen, bis sie weich und biegsam sind.
+6. Die Tortillas mit Kohl, Fisch, Salsa und einem Klecks von {150 g} saurer Sahne füllen. Mit dem restlichen Koriander und Limettenspalten servieren.
+
+Tipp: Die Tortillas zwischen zwei Küchentüchern warm halten, bis alle am Tisch sitzen.
 
 Guten Appetit!', 'fisch-tacos-mit-mango-salsa.jpg');
 
@@ -2376,11 +2451,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gambas al Ajillo
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gambas al Ajillo', NULL, 15, 4, 'Portionen', 'Sommer', '1. Garnelen schälen, den Darm entfernen und trocken tupfen.
-2. Knoblauch in feine Scheiben und Chili in Ringe schneiden.
-3. Olivenöl in einer Tonform oder Pfanne erhitzen und Knoblauch und Chili darin 1 Minute anschwitzen, ohne dass der Knoblauch braun wird.
-4. Garnelen zugeben und 2–3 Minuten garen, bis sie rosa sind.
-5. Mit Salz und gehackter Petersilie bestreuen und brutzelnd servieren. Dazu passt Weißbrot zum Tunken.
+VALUES ('Gambas al Ajillo', 'Garnelen in brutzelndem Knoblauchöl, direkt aus der Pfanne: Spaniens berühmteste Tapa.', 15, 4, 'Portionen', 'Sommer', '1. {400 g} Garnelen schälen, falls nötig, am Rücken längs einschneiden und den dunklen Darm entfernen. Gründlich trocken tupfen.
+2. {6} Knoblauchzehen schälen und in feine Scheiben schneiden. Die Chilischote in dünne Ringe schneiden.
+3. {150 ml} Olivenöl in einer Tonform oder kleinen Pfanne bei mittlerer Hitze erwärmen. Knoblauch und Chili darin 1 Minute anschwitzen, bis es duftet. Der Knoblauch darf nicht braun werden, sonst schmeckt das Öl bitter.
+4. Die Garnelen zugeben und unter Wenden 2–3 Minuten garen, bis sie rosa und gerade durch sind. Nicht länger, sonst werden sie gummiartig.
+5. Mit Salz und gehackter Petersilie bestreuen und brutzelnd heiß in der Form servieren.
+
+Tipp: Unbedingt Weißbrot dazu reichen. Das Knoblauchöl ist fast das Beste daran.
 
 Guten Appetit!', 'gambas-al-ajillo.jpg');
 
@@ -2393,12 +2470,16 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Paella
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Paella', NULL, 60, 4, 'Portionen', 'Sommer', '1. Entbeintes Hähnchen in Stücke, Chorizo in Scheiben und Paprika in Streifen schneiden. Zwiebel und Knoblauch hacken, Tomaten fein würfeln.
-2. Öl in einer Paellapfanne erhitzen und Hähnchen und Chorizo rundherum anbraten. Zwiebel, Knoblauch und Paprika zugeben und 5 Minuten mitbraten.
-3. Tomaten und Paprikapulver einrühren, dann den Reis zugeben und kurz anrösten.
-4. Heiße Brühe mit dem Safran zugießen, salzen, einmal umrühren und danach nicht mehr rühren. 10 Minuten kräftig köcheln lassen.
-5. Garnelen, geputzte Muscheln und Erbsen auf dem Reis verteilen und bei kleiner Hitze weitere 10 Minuten garen, bis die Flüssigkeit aufgesogen ist und sich die Muscheln geöffnet haben. Geschlossene Muscheln wegwerfen.
-6. Abgedeckt 5 Minuten ruhen lassen und mit Zitronenspalten servieren.
+VALUES ('Paella', 'Safrangelber Reis mit Hähnchen, Chorizo, Garnelen und Muscheln, gegart in einer großen Pfanne: ein Fest zum Teilen.', 60, 4, 'Portionen', 'Sommer', '1. {400 g} entbeintes Hähnchenschenkelfleisch in mundgerechte Stücke, {100 g} Chorizo in Scheiben und die Paprika in Streifen schneiden. Die Zwiebel und {2} Knoblauchzehen fein hacken, {2} Tomaten fein würfeln.
+2. {900 ml} Hühnerbrühe erhitzen und den Safran darin auflösen.
+3. {4 EL} Olivenöl in einer Paellapfanne oder einer großen, flachen Pfanne erhitzen. Hähnchen und Chorizo darin rundherum anbraten, bis das Hähnchen gebräunt ist. Zwiebel, Knoblauch und Paprika zugeben und 5 Minuten mitbraten.
+4. Tomaten und {1 TL} Paprikapulver einrühren und 2 Minuten einkochen. {300 g} Reis zugeben und 1 Minute unter Rühren anrösten.
+5. Die heiße Safranbrühe angießen, salzen, den Reis gleichmäßig verteilen und ab jetzt nicht mehr rühren. 10 Minuten kräftig köcheln lassen.
+6. Inzwischen {500 g} Miesmuscheln unter kaltem Wasser abbürsten und die Bärte entfernen. Geöffnete Muscheln, die sich beim Antippen nicht schließen, wegwerfen.
+7. {200 g} Garnelen, die Muscheln und {100 g} Erbsen auf dem Reis verteilen und leicht hineindrücken. Bei schwacher Hitze weitere 10 Minuten garen, bis die Flüssigkeit aufgesogen ist und sich die Muscheln geöffnet haben. Geschlossene Muscheln wegwerfen.
+8. Mit einem Tuch oder Alufolie abdecken, 5 Minuten ruhen lassen und mit Zitronenspalten in der Pfanne servieren.
+
+Tipp: Die leicht angeröstete Reiskruste am Pfannenboden heißt Socarrat und ist in Spanien heiß begehrt.
 
 Guten Appetit!', 'paella.jpg');
 
@@ -2421,11 +2502,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Spanische Tortilla
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Spanische Tortilla', NULL, 50, 4, 'Portionen', 'Sommer', '1. Kartoffeln schälen, vierteln und in dünne Scheiben schneiden. Zwiebel in feine Streifen schneiden.
-2. Öl in einer beschichteten Pfanne erhitzen und Kartoffeln und Zwiebeln bei mittlerer Hitze ca. 20 Minuten weich garen, ohne sie zu bräunen. In einem Sieb abtropfen lassen und das Öl auffangen.
-3. Eier mit Salz verquirlen, Kartoffeln untermischen und 10 Minuten ziehen lassen.
-4. {2 EL} vom aufgefangenen Öl in der Pfanne erhitzen, die Masse hineingeben und bei kleiner Hitze 6–8 Minuten stocken lassen.
-5. Tortilla mithilfe eines Tellers wenden und weitere 4–5 Minuten garen. Warm oder kalt in Stücken servieren.
+VALUES ('Spanische Tortilla', 'Dick, saftig und nur aus Kartoffeln, Zwiebeln und Eiern: die Tortilla de patatas, wie man sie in jeder spanischen Bar findet.', 50, 4, 'Portionen', 'Sommer', '1. {700 g} Kartoffeln schälen, vierteln und in dünne Scheiben schneiden. Die Zwiebel in feine Streifen schneiden.
+2. {200 ml} Olivenöl in einer beschichteten Pfanne (etwa 24 cm) erhitzen. Kartoffeln und Zwiebel hineingeben, salzen und bei mittlerer Hitze etwa 20 Minuten mehr schmoren als braten, bis die Kartoffeln weich sind. Dabei öfter wenden, sie sollen nicht braun werden.
+3. Kartoffeln und Zwiebel in ein Sieb über einer Schüssel geben und das Öl auffangen.
+4. {6} Eier mit Salz in einer großen Schüssel verquirlen. Die noch warmen Kartoffeln untermischen und 10 Minuten ziehen lassen, damit sie sich mit dem Ei verbinden.
+5. {2 EL} vom aufgefangenen Öl in der Pfanne erhitzen. Die Masse hineingeben, glatt streichen und bei schwacher Hitze 6–8 Minuten stocken lassen, bis der Rand fest ist. Die Mitte darf noch weich sein.
+6. Einen großen Teller auf die Pfanne legen, beides mit Schwung umdrehen und die Tortilla zurück in die Pfanne gleiten lassen. Weitere 4–5 Minuten garen. Warm oder kalt in Stücken servieren.
+
+Tipp: Das übrige Öl hat Kartoffel- und Zwiebelaroma und eignet sich prima zum Braten.
 
 Guten Appetit!', 'spanische-tortilla.jpg');
 
@@ -2437,11 +2521,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Sommerrollen mit Erdnuss-Dip
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Sommerrollen mit Erdnuss-Dip', NULL, 40, 4, 'Portionen', 'Sommer', '1. Reisnudeln nach Packungsangabe garen, abschrecken und abtropfen lassen.
-2. Karotten und Gurke in feine Stifte und Tofu in Streifen schneiden. Salat in Streifen schneiden und Kräuterblätter abzupfen.
-3. Ein Reispapierblatt kurz in lauwarmes Wasser tauchen und auf ein feuchtes Brett legen. Mit Salat, Nudeln, Gemüse, Tofu und Kräutern belegen.
-4. Seiten einschlagen und straff aufrollen. Mit den übrigen Blättern ebenso verfahren.
-5. Für den Dip Erdnussmus, Sojasauce, Limettensaft, Ahornsirup, Chili und {3-4 EL} warmes Wasser glatt rühren.
+VALUES ('Sommerrollen mit Erdnuss-Dip', 'Frisch, knackig und durchscheinend: vietnamesische Sommerrollen voller Gemüse, Kräuter und Tofu mit cremigem Erdnuss-Dip.', 40, 4, 'Portionen', 'Sommer', '1. {100 g} Reisnudeln nach Packungsangabe garen, kalt abschrecken und gut abtropfen lassen.
+2. {2} Karotten schälen und mit der Gurke in feine Stifte schneiden. {200 g} Tofu trocken tupfen und in Streifen schneiden. Die Salatblätter in Streifen schneiden, Minz- und Korianderblätter abzupfen.
+3. Alle Zutaten griffbereit vor sich aufstellen. Ein Reispapierblatt 2–3 Sekunden in lauwarmes Wasser tauchen und auf ein feuchtes Brett legen. Es wird nach kurzer Zeit weich.
+4. Auf das untere Drittel etwas Salat, Nudeln, Gemüse, Tofu und Kräuter legen. Nicht zu viel, sonst reißt das Papier. Die Seiten einschlagen und von unten straff aufrollen. Mit den übrigen {12} Blättern genauso verfahren und die fertigen Rollen mit etwas Abstand auf eine Platte legen, damit sie nicht zusammenkleben.
+5. Für den Dip {3 EL} Erdnussmus, {2 EL} Sojasauce, den Saft der Limette, {1 TL} Ahornsirup, eine Prise Chiliflocken und {3-4 EL} warmes Wasser glatt rühren.
+6. Die Rollen halbieren und mit dem Dip servieren.
+
+Tipp: Mit einem feuchten Küchentuch abgedeckt bleiben die Rollen ein paar Stunden frisch.
 
 Guten Appetit!', 'sommerrollen-mit-erdnuss-dip.jpg');
 
@@ -2461,11 +2548,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)', NULL, 30, 4, 'Portionen', 'Sommer', '1. Glasnudeln 10 Minuten in heißem Wasser einweichen, abgießen und mit einer Schere kürzen.
-2. Garnelen in kochendem Wasser 2 Minuten garen und abtropfen lassen.
-3. Tomaten halbieren, Zwiebel in feine Streifen und Sellerie in dünne Scheiben schneiden. Koriander grob hacken.
-4. Für das Dressing Limettensaft, Fischsauce, Zucker, gehackten Knoblauch und fein gehackte Chili verrühren.
-5. Nudeln, Garnelen, Gemüse und Koriander mit dem Dressing mischen und mit gehackten, gerösteten Erdnüssen bestreuen.
+VALUES ('Thai-Glasnudelsalat mit Garnelen (Yam Woon Sen)', 'Scharf, sauer, salzig und süß zugleich: ein leichter thailändischer Glasnudelsalat mit Garnelen und viel Koriander.', 30, 4, 'Portionen', 'Sommer', '1. {150 g} Glasnudeln 10 Minuten in heißem Wasser einweichen, abgießen, kalt abspülen und mit einer Küchenschere in kürzere Stücke schneiden.
+2. {250 g} Garnelen in kochendem Wasser etwa 2 Minuten garen, bis sie rosa sind. Abgießen und abtropfen lassen.
+3. {150 g} Kirschtomaten halbieren, die Zwiebel in feine Streifen und {2} Selleriestangen in dünne Scheiben schneiden. Den Koriander grob hacken.
+4. Für das Dressing den Saft der {2} Limetten, {3 EL} Fischsauce, {1 TL} Zucker, den fein gehackten Knoblauch und die fein gehackte Chilischote verrühren, bis sich der Zucker gelöst hat. Es soll kräftig sauer-salzig mit leichter Schärfe schmecken.
+5. {30 g} Erdnüsse in einer Pfanne ohne Fett rösten und grob hacken.
+6. Nudeln, Garnelen, Gemüse und Koriander mit dem Dressing mischen und mit den Erdnüssen bestreuen. Sofort servieren.
+
+Tipp: Wer es weniger scharf mag, entkernt die Chilischote vorher.
 
 Guten Appetit!', 'thai-glasnudelsalat-mit-garnelen-yam-woon-sen.jpg');
 
@@ -2484,9 +2574,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Mango-Lassi
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Mango-Lassi', NULL, 5, 2, 'Gläser', 'Sommer', '1. Mango schälen, das Fruchtfleisch vom Stein schneiden und grob würfeln.
-2. Mango mit Joghurt, Milch, Honig und Kardamom im Mixer fein pürieren.
-3. In Gläser füllen und gut gekühlt, nach Belieben mit Eiswürfeln, servieren.
+VALUES ('Mango-Lassi', 'Cremig, fruchtig und mit einem Hauch Kardamom: der indische Joghurtdrink, der jeden heißen Tag rettet.', 5, 2, 'Gläser', 'Sommer', '1. Die Mango schälen, das Fruchtfleisch vom Stein schneiden und grob würfeln. Am besten eine sehr reife, duftende Mango nehmen.
+2. Mango, {300 g} Joghurt, {100 ml} Milch, {1 EL} Honig und eine Prise Kardamom im Mixer so lange pürieren, bis der Lassi ganz glatt und schaumig ist.
+3. Abschmecken und bei Bedarf noch etwas Honig oder Milch zugeben.
+4. In Gläser füllen und gut gekühlt servieren, nach Belieben mit Eiswürfeln.
+
+Tipp: Mit tiefgekühlten Mangowürfeln wird der Lassi direkt eiskalt und noch cremiger.
 
 Zum Wohl!', 'mango-lassi.jpg');
 
@@ -2498,11 +2591,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Erdbeer-Tiramisu
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Erdbeer-Tiramisu', NULL, 270, 6, 'Portionen', 'Sommer', '1. Die Hälfte der Erdbeeren mit {2 EL} Zucker pürieren, die andere Hälfte in Scheiben schneiden.
-2. Mascarpone, Quark, restlichen Zucker, Vanillezucker und Zitronenabrieb glatt rühren.
-3. Orangensaft mit {3 EL} Erdbeerpüree mischen, die Löffelbiskuits kurz darin tränken und eine Form damit auslegen.
-4. Erdbeerpüree, Erdbeerscheiben und Creme daraufschichten und mit einer zweiten Lage Biskuits und Creme wiederholen.
-5. Mindestens 4 Stunden kühlen und vor dem Servieren mit Erdbeeren garnieren.
+VALUES ('Erdbeer-Tiramisu', 'Die sommerliche Schwester des Klassikers: Erdbeeren statt Kaffee, leichte Mascarponecreme und Orangensaft.', 270, 6, 'Portionen', 'Sommer', '1. {500 g} Erdbeeren waschen und entkelchen. Die Hälfte mit {2 EL} Zucker fein pürieren, die andere Hälfte in Scheiben schneiden.
+2. {250 g} Mascarpone, {250 g} Quark, den restlichen Zucker, den Vanillezucker und die abgeriebene Schale der Zitrone glatt rühren. Nicht zu lange rühren, sonst wird die Mascarpone flüssig.
+3. {150 ml} Orangensaft mit {3 EL} Erdbeerpüree in einem tiefen Teller mischen. Die Hälfte von {200 g} Löffelbiskuits nacheinander kurz darin wenden, wirklich nur kurz, sonst werden sie matschig, und eine Form (etwa 20 × 30 cm) damit auslegen.
+4. Die Hälfte des übrigen Erdbeerpürees auf den Biskuits verteilen, die Hälfte der Erdbeerscheiben darauflegen und die Hälfte der Creme darüberstreichen.
+5. Mit den übrigen Biskuits, Püree, Erdbeerscheiben und Creme eine zweite Schicht genauso aufbauen. Ein paar Erdbeerscheiben für die Deko zurückbehalten.
+6. Abgedeckt mindestens 4 Stunden im Kühlschrank durchziehen lassen. Vor dem Servieren mit den übrigen Erdbeeren garnieren.
+
+Tipp: Am Vortag zubereitet schmeckt es noch besser, dann ist alles schön durchgezogen.
 
 Guten Appetit!', 'erdbeer-tiramisu.jpg');
 
@@ -2517,11 +2613,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kirschenmichel
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kirschenmichel', NULL, 75, 6, 'Portionen', 'Sommer', '1. Altbackene Brötchen in Scheiben schneiden, mit warmer Milch übergießen und 15 Minuten einweichen. Kirschen waschen und entsteinen.
-2. Ofen auf 180 °C vorheizen und eine Auflaufform mit Butter fetten.
-3. Eier trennen. Weiche Butter mit Zucker, Vanillezucker und Eigelben schaumig rühren. Mandeln, Zimt, Zitronenabrieb und die eingeweichten Brötchen unterrühren.
-4. Eiweiße steif schlagen und mit den Kirschen vorsichtig unterheben.
-5. In die Form füllen und ca. 45 Minuten goldbraun backen. Mit Puderzucker bestäuben – dazu passt Vanillesoße.
+VALUES ('Kirschenmichel', 'Ein pfälzischer Auflauf aus altbackenen Brötchen und saftigen Kirschen: Resteverwertung, die nach Sonntag schmeckt.', 75, 6, 'Portionen', 'Sommer', '1. {300 g} altbackene Brötchen in dünne Scheiben schneiden. {400 ml} Milch lauwarm erwärmen, darübergießen und 15 Minuten einweichen.
+2. {750 g} Kirschen waschen und entsteinen. Den Ofen auf 180 °C Ober-/Unterhitze vorheizen und eine Auflaufform mit etwas Butter fetten.
+3. {4} Eier trennen. Die restliche weiche Butter mit {100 g} Zucker, dem Vanillezucker und den Eigelben 3 Minuten schaumig rühren. {50 g} gemahlene Mandeln, {1 TL} Zimt, die abgeriebene Schale der Zitrone und die eingeweichten Brötchen unterrühren.
+4. Die Eiweiße steif schlagen. Zusammen mit den Kirschen vorsichtig unter die Masse heben.
+5. In die Form füllen, glatt streichen und etwa 45 Minuten backen, bis die Oberfläche goldbraun ist und der Auflauf in der Mitte fest wird.
+6. Mit {1 EL} Puderzucker bestäuben und warm servieren.
+
+Tipp: Dazu passt Vanillesoße. Außerhalb der Kirschzeit gehen auch abgetropfte Kirschen aus dem Glas.
 
 Guten Appetit!', 'kirschenmichel.jpg');
 
@@ -2539,11 +2638,13 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Kirsch-Clafoutis
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Kirsch-Clafoutis', NULL, 50, 6, 'Portionen', 'Sommer', '1. Ofen auf 190 °C vorheizen. Eine Auflaufform mit Butter fetten und mit {1 EL} Zucker ausstreuen.
-2. Kirschen waschen und in der Form verteilen. Traditionell bleiben die Steine drin, das gibt mehr Aroma – dann beim Essen aufpassen.
-3. Eier mit restlichem Zucker, Vanillezucker und Salz verquirlen. Mehl einrühren, dann Milch und Sahne zu einem glatten, dünnen Teig unterrühren.
-4. Teig über die Kirschen gießen und ca. 35 Minuten backen, bis der Clafoutis goldbraun und gestockt ist.
-5. Lauwarm mit Puderzucker bestäubt servieren.
+VALUES ('Kirsch-Clafoutis', 'Ein französisches Ofen-Dessert: saftige Kirschen in einem zarten, puddingartigen Pfannkuchenteig.', 50, 6, 'Portionen', 'Sommer', '1. Den Ofen auf 190 °C Ober-/Unterhitze vorheizen. Eine Auflaufform (etwa 24 cm) mit {1 EL} Butter fetten und mit {1 EL} Zucker ausstreuen. Der Zucker gibt später eine leicht karamellisierte Kruste.
+2. {500 g} Kirschen waschen, trocken tupfen und in der Form verteilen. Traditionell bleiben die Steine drin, das gibt ein feines Mandelaroma. Dann beim Essen aufpassen, oder die Kirschen vorher entsteinen.
+3. {3} Eier mit dem restlichen Zucker, dem Vanillezucker und einer Prise Salz verquirlen. {60 g} Mehl einrühren, dann nach und nach {250 ml} Milch und {100 ml} Sahne zugeben, bis ein glatter, dünnflüssiger Teig entsteht.
+4. Den Teig über die Kirschen gießen und etwa 35 Minuten backen, bis der Clafoutis goldbraun aufgegangen und in der Mitte gestockt ist. Er fällt beim Abkühlen wieder etwas zusammen, das ist normal.
+5. Lauwarm mit {1 EL} Puderzucker bestäubt servieren.
+
+Tipp: Im Herbst gelingt der Clafoutis genauso gut mit Birnen oder Pflaumen.
 
 Guten Appetit!', 'kirsch-clafoutis.jpg');
 
@@ -2560,12 +2661,14 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Marillenknödel (Aprikosenknödel)
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Marillenknödel (Aprikosenknödel)', NULL, 60, 4, 'Portionen', 'Sommer', '1. Quark gut abtropfen lassen und mit {30 g} weicher Butter, Ei, Mehl, Grieß und Salz zu einem glatten Teig verkneten. 30 Minuten kühlen.
-2. Aprikosen waschen, seitlich aufschneiden, entsteinen und mit je etwas Zucker füllen.
-3. Teig zu einer Rolle formen, in {8 Stücke} teilen, flach drücken und jede Aprikose darin einschlagen. Gut verschließen.
-4. Knödel in leicht siedendem Salzwasser ca. 12 Minuten ziehen lassen.
-5. Restliche Butter in einer Pfanne schmelzen und Paniermehl mit {1 EL} Zucker und Zimt darin goldbraun rösten.
-6. Knödel in den Bröseln wälzen und mit Puderzucker bestäubt servieren.
+VALUES ('Marillenknödel (Aprikosenknödel)', 'Österreichischer Sommergenuss: zarte Topfenknödel mit einer ganzen Aprikose im Inneren, gewälzt in Butterbröseln.', 60, 4, 'Portionen', 'Sommer', '1. {250 g} Quark in einem Sieb gut abtropfen lassen, damit der Teig nicht zu weich wird. Mit {30 g} weicher Butter, {1} Ei, {150 g} Mehl, {30 g} Grieß und einer Prise Salz zu einem glatten Teig verkneten. Abgedeckt 30 Minuten kühlen, damit der Grieß quellen kann.
+2. {8} Aprikosen waschen, seitlich aufschneiden, ohne sie zu halbieren, und den Stein herauslösen. In jede Aprikose etwas Zucker füllen.
+3. Den Teig auf der bemehlten Arbeitsfläche zu einer Rolle formen und in {8} gleich große Stücke teilen. Jedes Stück flach drücken, eine Aprikose daraufsetzen und mit dem Teig rundherum einschlagen. Gut verschließen und zwischen den Handflächen rund formen.
+4. Reichlich leicht gesalzenes Wasser aufkochen, die Hitze reduzieren und die Knödel hineingeben. Etwa 12 Minuten sanft ziehen lassen, bis sie an die Oberfläche steigen.
+5. Inzwischen die restliche Butter in einer Pfanne schmelzen. {80 g} Paniermehl mit {1 EL} Zucker und {1 TL} Zimt darin unter Rühren goldbraun rösten.
+6. Die Knödel mit einer Schaumkelle herausheben, abtropfen lassen und in den Butterbröseln wälzen. Mit {2 EL} Puderzucker bestäubt servieren.
+
+Tipp: Im Herbst gelingen die Knödel genauso mit Zwetschgen.
 
 Guten Appetit!', 'marillenknoedel-aprikosenknoedel.jpg');
 
@@ -2583,10 +2686,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Gegrillte Pfirsiche mit Ricotta und Honig
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Gegrillte Pfirsiche mit Ricotta und Honig', NULL, 15, 4, 'Portionen', 'Sommer', '1. Pfirsiche halbieren und entsteinen. Die Schnittflächen mit flüssiger Butter bepinseln.
-2. Mit der Schnittfläche nach unten auf dem heißen Grill oder in der Grillpfanne 3–4 Minuten grillen, bis sich Röststreifen bilden.
-3. Pistazien grob hacken.
-4. Pfirsiche mit je einem Löffel Ricotta füllen, mit Honig beträufeln und mit Pistazien und Thymianblättchen bestreuen.
+VALUES ('Gegrillte Pfirsiche mit Ricotta und Honig', 'Warme, karamellisierte Pfirsiche mit cremigem Ricotta, Honig und Pistazien: das Dessert, das gleich mit auf den Grill wandert.', 15, 4, 'Portionen', 'Sommer', '1. {4} reife, aber noch feste Pfirsiche halbieren und entsteinen. {1 EL} Butter schmelzen und die Schnittflächen damit bepinseln.
+2. Die Pfirsiche mit der Schnittfläche nach unten auf den heißen Grill oder in eine Grillpfanne legen und 3–4 Minuten grillen, bis sich Röststreifen bilden und sie leicht weich werden. Nicht bewegen, sonst gibt es keine Streifen.
+3. {30 g} Pistazien grob hacken. Die Thymianblättchen abzupfen.
+4. Die Pfirsiche auf Tellern anrichten und jede Hälfte mit einem Löffel von {200 g} Ricotta füllen. Mit {3 EL} Honig beträufeln und mit Pistazien und Thymian bestreuen. Warm servieren.
+
+Tipp: Statt Ricotta passt auch eine Kugel Vanilleeis.
 
 Guten Appetit!', 'gegrillte-pfirsiche-mit-ricotta-und-honig.jpg');
 
@@ -2599,9 +2704,12 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 -- Beeren-Frozen-Joghurt
 INSERT INTO recipes (name, description, preparation_time, servings, servings_unit, season, instructions, image)
-VALUES ('Beeren-Frozen-Joghurt', NULL, 40, 4, 'Portionen', 'Sommer', '1. Tiefgekühlte Beeren verwenden oder frische Beeren mindestens 4 Stunden einfrieren.
-2. Gefrorene Beeren mit Joghurt, Honig und Zitronensaft in einem leistungsstarken Mixer cremig pürieren.
-3. Sofort als Softeis servieren oder für eine festere Konsistenz 30 Minuten ins Gefrierfach stellen.
+VALUES ('Beeren-Frozen-Joghurt', 'Cremiges Softeis in fünf Minuten, ganz ohne Eismaschine: gefrorene Beeren, Joghurt und Honig.', 40, 4, 'Portionen', 'Sommer', '1. Tiefgekühlte Beeren verwenden oder {250 g} frische Himbeeren und {250 g} Heidelbeeren mindestens 4 Stunden einfrieren, am besten ausgebreitet auf einem Teller, damit sie nicht zusammenfrieren.
+2. Die gefrorenen Beeren mit {300 g} Joghurt, {3 EL} Honig und dem Saft der halben Zitrone in einen leistungsstarken Mixer geben. Kurz antauen lassen, das schont den Mixer.
+3. Alles pürieren, bis eine cremige Masse entsteht. Zwischendurch mit einem Teigschaber nach unten schieben.
+4. Sofort als Softeis servieren oder für eine festere Konsistenz 30 Minuten ins Gefrierfach stellen. Länger gefroren wird es steinhart, dann vor dem Servieren 10 Minuten antauen lassen.
+
+Tipp: Mit griechischem Joghurt wird das Eis besonders cremig.
 
 Guten Appetit!', 'beeren-frozen-joghurt.jpg');
 
