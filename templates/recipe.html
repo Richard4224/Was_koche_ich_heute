@@ -4,6 +4,21 @@
     {{ recipe.name }}
 {% endblock %}
 
+{% block description %}{{ recipe.description or super() }}{% endblock %}
+
+{# Small icons for the diets, drawn in the current text colour #}
+{% macro diet_icon(diet) %}
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        {% if diet == "vegan" %}
+            <path d="M5 19C5 10.5 10.5 5 19 5c0 8.5-5.5 14-14 14Z"/><path d="M5 19l7.5-7.5"/>
+        {% elif diet == "vegetarisch" %}
+            <path d="M12 21v-9"/><path d="M12 12c0-4-3-6.5-7-6.5 0 4 3 6.5 7 6.5Z"/><path d="M12 10c0-3.2 2.5-5.5 6.5-5.5 0 3.5-2.5 5.5-6.5 5.5Z"/>
+        {% else %}
+            <path d="M12 21V8"/><path d="M12 9.5C9.8 9.5 8.5 8 8.5 6c2.2 0 3.5 1.5 3.5 3.5Zm0 0c2.2 0 3.5-1.5 3.5-3.5-2.2 0-3.5 1.5-3.5 3.5Z"/><path d="M12 14c-2.2 0-3.5-1.5-3.5-3.5 2.2 0 3.5 1.5 3.5 3.5Zm0 0c2.2 0 3.5-1.5 3.5-3.5-2.2 0-3.5 1.5-3.5 3.5Z"/><path d="M12 6.5V3"/><path d="M4 4l16 16"/>
+        {% endif %}
+    </svg>
+{% endmacro %}
+
 {% block main %}
     <p class="back-link"><a href="/#rezepte">← Zurück zum Rezeptbuch</a></p>
 
@@ -17,6 +32,20 @@
         <div class="recipe-title">
             <h1>{{ recipe.name }}</h1>
             <p class="recipe-meta">{{ recipe.time }} · {{ recipe.season }}</p>
+            {% if recipe.diets %}
+                <ul class="diet-badges" aria-label="Ernährung">
+                    {% for diet in recipe.diets %}
+                        <li class="diet-badge diet-{{ diet }}"
+                            {% if diet == "vegan" %}title="Vegan, also auch vegetarisch"{% endif %}>
+                            {{ diet_icon(diet) }}
+                            {{ diet | capitalize }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if recipe.description %}
+                <p class="recipe-description">{{ recipe.description }}</p>
+            {% endif %}
             {% if recipe.credit %}
                 <p class="image-credit">
                     Foto: <a href="{{ recipe.credit.source }}" rel="noopener">{{ recipe.credit.author }}</a>
@@ -71,6 +100,9 @@
                     <li>{{ step }}</li>
                 {% endfor %}
             </ol>
+            {% if recipe.tip %}
+                <p class="recipe-tip"><span class="label label-amber">Tipp</span>{{ recipe.tip }}</p>
+            {% endif %}
             {% if recipe.closing %}
                 <p class="closing">{{ recipe.closing }}</p>
             {% endif %}

@@ -1,6 +1,7 @@
 CREATE TABLE recipes (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
+    description TEXT,                                      -- a sentence or two that make you want to cook it
     preparation_time INTEGER NOT NULL,                     -- total time in minutes
     servings INTEGER NOT NULL CHECK (servings > 0),        -- the amounts are for this many
     servings_unit TEXT NOT NULL DEFAULT 'Portionen',       -- e.g. 'Portionen', 'Stück', 'Springform (26 cm)'

@@ -981,6 +981,58 @@ a {
     opacity: 0.85;
 }
 
+/* Vegan / vegetarisch / glutenfrei at a glance */
+.diet-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.diet-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.7rem 0.2rem 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: rgba(10, 8, 30, 0.45);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.diet-badge svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.diet-vegan {
+    color: #86efac;
+}
+
+.diet-vegetarisch {
+    color: #bef264;
+}
+
+.diet-glutenfrei {
+    color: var(--amber);
+}
+
+.recipe-description {
+    max-width: 60ch;
+    margin: 0.9rem 0 0;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: var(--text);
+}
+
 .recipe-body {
     display: grid;
     gap: 1.25rem;
@@ -1101,6 +1153,19 @@ a {
     font-weight: 600;
     color: #fff;
     box-shadow: 0 0 14px rgba(167, 139, 250, 0.45);
+}
+
+.recipe-tip {
+    margin: 0.5rem 0 1.25rem;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid rgba(255, 181, 71, 0.3);
+    border-radius: var(--radius);
+    background: rgba(255, 181, 71, 0.07);
+    line-height: 1.6;
+}
+
+.recipe-tip .label {
+    display: block;
 }
 
 .closing {

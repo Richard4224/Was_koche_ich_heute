@@ -352,7 +352,8 @@ def get_recipe(recipe_id, servings=None):
             return None
         ingredients = db.execute(
             """
-            SELECT ingredients.name, recipe_ingredients.amount, recipe_ingredients.unit
+            SELECT ingredients.name, recipe_ingredients.amount, recipe_ingredients.unit,
+                   ingredients.vegan, ingredients.vegetarian, ingredients.gluten_free
             FROM recipe_ingredients
             JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id
             WHERE recipe_ingredients.recipe_id = ?
@@ -373,6 +374,8 @@ def get_recipe(recipe_id, servings=None):
     return {
         "id": recipe["id"],
         "name": recipe["name"],
+        "description": recipe["description"],
+        "diets": recipe_diets(ingredients),
         "time": format_duration(recipe["preparation_time"]),
         "season": recipe["season"],
         "servings": servings,
@@ -390,17 +393,36 @@ def get_recipe(recipe_id, servings=None):
     }
 
 
-def split_instructions(text):
-    """Split "1. Do this\n2. Do that\n\nGuten Appetit!" into steps and closing lines."""
+def recipe_diets(ingredients):
+    """Which of vegan, vegetarian and gluten-free a recipe is, judged by its ingredients, e.g. ["vegan", "glutenfrei"].
+    Vegan already says vegetarian, so vegetarian is only named for recipes that aren't vegan."""
 
-    steps, closing_lines = [], []
+    def all_are(column):
+        return all(row[column] for row in ingredients)
+
+    diets = []
+    if all_are("vegan"):
+        diets.append("vegan")
+    elif all_are("vegetarian"):
+        diets.append("vegetarisch")
+    if all_are("gluten_free"):
+        diets.append("glutenfrei")
+    return diets
+
+
+def split_instructions(text):
+    """Split "1. Do this\n2. Do that\n\nTipp: …\n\nGuten Appetit!" into steps, a tip (or None) and closing lines."""
+
+    steps, tip, closing_lines = [], None, []
     for line in text.splitlines():
         match = re.match(r"\d+\.\s+(.*)", line)
         if match:
             steps.append(match.group(1))
+        elif line.startswith("Tipp:"):
+            tip = line.removeprefix("Tipp:").strip()
         elif line.strip():
             closing_lines.append(line.strip())
-    return {"steps": steps, "closing": " ".join(closing_lines)}
+    return {"steps": steps, "tip": tip, "closing": " ".join(closing_lines)}
 
 
 def return_error(message="Da ist etwas schiefgelaufen.", code=400):
