@@ -1,0 +1,4 @@
+# For the tests: pip install -r tests/requirements.txt, then python -m pytest
+-r ../requirements.txt
+-r ../tools/requirements.txt  # the tools are tested too
+pytest>=8.0

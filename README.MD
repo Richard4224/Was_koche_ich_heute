@@ -57,6 +57,11 @@ Then open http://127.0.0.1:5000.
   python tools/fetch_images.py path/to/bildauswahl.json
   ```
   Both only look at recipes that don't have a credited photo yet (`--all` for every recipe). `--pixabay` searches Pixabay instead of Commons; it needs a free API key (log in, then it's shown on [pixabay.com/api/docs](https://pixabay.com/api/docs/)) in `tools/images/pixabay-key.txt` (or the environment variable `PIXABAY_API_KEY`).
+- **Tests:** every script has its own test file in `tests/` (`test_app.py`, `test_helpers.py`, …), and `test_seed.py` checks the recipe data. They build a database of their own and never go online (the answers of Open-Meteo, FormSubmit & co. are made up), so they run anywhere in a few seconds:
+  ```bash
+  pip install -r tests/requirements.txt
+  python -m pytest
+  ```
 
 ## Hosting
 
@@ -98,6 +103,7 @@ The app keeps nothing that has to survive a restart (the database is rebuilt fro
 | `tools/generate_scenery.py` | Generates all scenery SVGs. |
 | `tools/find_images.py` | Searches Wikimedia Commons or Pixabay for photos of the recipes and builds a page to choose them. |
 | `tools/fetch_images.py` | Downloads the chosen photos in web size and writes their credits to `images.sql`. |
+| `tests/` | One test file per script, `test_seed.py` for the recipe data, and `conftest.py`, which gives the tests their own database and keeps them offline. |
 | `requirements.txt`, `.env.example` | What to install, and the settings (see Getting started). |
 | `deploy/` | gunicorn service and Caddy configuration for hosting on a Raspberry Pi. |
 
