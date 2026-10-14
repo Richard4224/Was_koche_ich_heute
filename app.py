@@ -13,7 +13,7 @@ from helpers import (DIETS, LATITUDE, MAIN_GROUPS, describe_weather, get_dish_of
                      get_place, get_recipe, get_season, get_weather_data, local_now, return_error, search_recipes,
                      shorten_ip)
 
-load_dotenv()  # settings like the mail account from .env (see README), if there is one
+load_dotenv()  # settings like the FormSubmit alias from .env (see README), if there is one
 
 app = Flask(__name__)
 

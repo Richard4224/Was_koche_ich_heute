@@ -1,16 +1,16 @@
--- seed.sql (generiert)
--- Zutaten-Flags: vegan, vegetarian, gluten_free (1 = ja, 0 = nein)
--- recipe_ingredients.amount gilt immer für recipes.servings; NULL = nach Geschmack
--- Einheiten: Gewicht in g, Flüssigkeit in ml, Zähleinheiten im Singular (Zweig, Scheibe, ...)
--- recipes.instructions: skalierbare Mengen stehen als Platzhalter {Zahl Einheit}, z. B. {100 g},
---   {2-3 EL} oder {4}. Anzeige: Zahl * (gewünschte Portionen / servings), Dezimalpunkt im Platzhalter.
---   Zeiten, Temperaturen, Größen und Angaben pro Stück ("je 2 EL Teig") bleiben bewusst fest.
+-- The recipes and their ingredients (generated with AI, see the README).
+-- Ingredient flags: vegan, vegetarian, gluten_free (1 = yes, 0 = no)
+-- recipe_ingredients.amount is always for recipes.servings; NULL = to taste
+-- Units: weight in g, liquids in ml, counted units in the singular (Zweig, Scheibe, ...)
+-- recipes.instructions: amounts that scale are placeholders {number unit}, e.g. {100 g},
+--   {2-3 EL} or {4}, shown as number * (servings wanted / servings); decimals with a point ({0.5 TL}).
+--   Times, temperatures, sizes and amounts per piece ("je 2 EL Teig") deliberately stay fixed.
 
 PRAGMA foreign_keys = ON;
 
 BEGIN TRANSACTION;
 
--- Zutaten der Kürbissuppe (ursprüngliche Reihenfolge)
+-- Ingredients of the Kürbissuppe (in their original order)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Zwiebel', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Hokkaido-Kürbis', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Knoblauchzehe', 1, 1, 1);
@@ -23,7 +23,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Muskatnu
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Gemüsebrühe', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Kürbiskerne', 1, 1, 1);
 
--- Gemüse (vegan, vegetarisch, glutenfrei)
+-- Vegetables (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rote Zwiebel', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Frühlingszwiebel', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Schalotte', 1, 1, 1);
@@ -91,7 +91,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Maronen'
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Meerrettich', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Edamame', 1, 1, 1);
 
--- Kräuter (vegan, vegetarisch, glutenfrei)
+-- Herbs (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Petersilie', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Schnittlauch', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Dill', 1, 1, 1);
@@ -114,7 +114,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Zitronen
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Bohnenkraut', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Beifuß', 1, 1, 1);
 
--- Gewürze (vegan, vegetarisch, glutenfrei)
+-- Spices (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Paprikapulver', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Geräuchertes Paprikapulver', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Chiliflocken', 1, 1, 1);
@@ -140,7 +140,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Safran',
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Mohn', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sesam', 1, 1, 1);
 
--- Öle und Essig (vegan, vegetarisch, glutenfrei)
+-- Oils and vinegar (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rapsöl', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sesamöl', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Kokosöl', 1, 1, 1);
@@ -152,7 +152,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Apfeless
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rotweinessig', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Reisessig', 1, 1, 1);
 
--- Vorrat (vegan, vegetarisch, glutenfrei)
+-- Pantry staples (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Tomatenmark', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Passierte Tomaten', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Gehackte Tomaten', 1, 1, 1);
@@ -230,7 +230,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sojajogh
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sojasahne', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Margarine', 1, 1, 1);
 
--- Obst (vegan, vegetarisch, glutenfrei)
+-- Fruit (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Zitrone', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Limette', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Orange', 1, 1, 1);
@@ -258,7 +258,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Honigmel
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Granatapfel', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Holunderblüten', 1, 1, 1);
 
--- Getränke (vegan, vegetarisch, glutenfrei)
+-- Drinks (vegan, vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Weißwein', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rotwein', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rum', 1, 1, 1);
@@ -266,7 +266,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Kirschwa
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Espresso', 1, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Früchtetee', 1, 1, 1);
 
--- Milchprodukte, Eier, Honig (vegetarisch, glutenfrei)
+-- Dairy, eggs, honey (vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Butter', 0, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Butterschmalz', 0, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sahne', 0, 1, 1);
@@ -298,11 +298,11 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Honig', 
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Mayonnaise', 0, 1, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Vanilleeis', 0, 1, 1);
 
--- Käse mit tierischem Lab (nicht vegetarisch, glutenfrei)
+-- Cheese made with animal rennet (not vegetarian, gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Parmesan', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Pecorino', 0, 0, 1);
 
--- Fleisch und Wurst (glutenfrei)
+-- Meat and sausages (gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rinderhackfleisch', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Gemischtes Hackfleisch', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rindergulasch', 0, 0, 1);
@@ -341,7 +341,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Blutwurs
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Hühnerbrühe', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Rinderbrühe', 0, 0, 1);
 
--- Fisch und Meeresfrüchte (glutenfrei)
+-- Fish and seafood (gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Lachsfilet', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Kabeljaufilet', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Seelachsfilet', 0, 0, 1);
@@ -356,7 +356,7 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Thunfisc
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sardellenfilets', 0, 0, 1);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Fischsauce', 0, 0, 1);
 
--- Getreideprodukte und Co. (vegan, vegetarisch, NICHT glutenfrei)
+-- Grain products and the like (vegan, vegetarian, NOT gluten-free)
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Weizenmehl', 1, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Dinkelmehl', 1, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Paniermehl', 1, 1, 0);
@@ -381,20 +381,20 @@ INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Sojasauc
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Gochujang', 1, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Bier', 1, 1, 0);
 
--- Vegetarisch, NICHT glutenfrei
+-- Vegetarian, NOT gluten-free
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Bandnudeln', 0, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Suppennudeln', 0, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Löffelbiskuits', 0, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Butterkekse', 0, 1, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Toastbrot', 0, 1, 0);
 
--- Weder vegetarisch noch glutenfrei
+-- Neither vegetarian nor gluten-free
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Worcestershiresauce', 0, 0, 0);
 INSERT INTO ingredients (name, vegan, vegetarian, gluten_free) VALUES ('Maultaschen', 0, 0, 0);
 
 
 -- ======================================================================
--- URSPRÜNGLICHES REZEPT
+-- THE ORIGINAL RECIPE
 -- ======================================================================
 
 -- Kürbissuppe
@@ -426,7 +426,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 
 -- ======================================================================
--- FRÜHLING
+-- SPRING
 -- ======================================================================
 
 -- Bärlauchsuppe
@@ -1579,7 +1579,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 
 -- ======================================================================
--- SOMMER
+-- SUMMER
 -- ======================================================================
 
 -- Gazpacho
@@ -3312,7 +3312,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 
 -- ======================================================================
--- HERBST
+-- AUTUMN
 -- ======================================================================
 
 -- Ofenkürbis mit Feta und Walnüssen
@@ -5973,7 +5973,7 @@ INSERT INTO recipe_ingredients (recipe_id, ingredient_id, amount, unit) VALUES (
 
 
 -- ======================================================================
--- GANZJÄHRIG
+-- ALL YEAR
 -- ======================================================================
 
 -- Spaghetti Bolognese

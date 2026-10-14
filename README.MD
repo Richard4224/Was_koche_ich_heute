@@ -67,7 +67,7 @@ The app needs no paid service. The plan is a Raspberry Pi at home with a free [D
 3. **HTTPS:** install [Caddy](https://caddyserver.com) and use `deploy/Caddyfile` with your address. Caddy gets the certificate by itself. Browsers only share the location over HTTPS, so this matters for the weather.
 4. **Updates:** `git pull` and `sudo systemctl restart recipe-search`; the database rebuilds itself.
 
-The app keeps nothing that has to survive a restart (the database is rebuilt from the SQL files), so a free hosting service with a temporary file system would work too. Check that it allows outgoing requests to Open-Meteo, Nominatim, ipinfo.io and the mail server, and set `PROXY_COUNT` to its number of proxies.
+The app keeps nothing that has to survive a restart (the database is rebuilt from the SQL files), so a free hosting service with a temporary file system would work too. Check that it allows outgoing requests to Open-Meteo, Nominatim, ipinfo.io and FormSubmit, and set `PROXY_COUNT` to its number of proxies.
 
 ## Project structure
 
