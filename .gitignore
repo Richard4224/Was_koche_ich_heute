@@ -4,6 +4,7 @@ venv/
 __pycache__/
 *.pyc
 flask_session/
+.pytest_cache/
 
 # Built from schema.sql + seed.sql
 *.db
